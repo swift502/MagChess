@@ -1753,30 +1753,32 @@
 			)
 			(embedded_fonts no)
 		)
-		(symbol "Sensor_Magnetic:A1302xUA"
+		(symbol "SS49E:SS49E"
+			(pin_names
+				(offset 0.254)
+			)
 			(exclude_from_sim no)
 			(in_bom yes)
 			(on_board yes)
 			(property "Reference" "U"
-				(at 0 11.43 0)
+				(at 0 12.7 0)
 				(effects
 					(font
-						(size 1.27 1.27)
+						(size 1.524 1.524)
 					)
-					(justify left)
+					(hide yes)
 				)
 			)
-			(property "Value" "A1302xUA"
-				(at 0 8.89 0)
+			(property "Value" "SS49E"
+				(at 0 7.366 0)
 				(effects
 					(font
-						(size 1.27 1.27)
+						(size 1.524 1.524)
 					)
-					(justify left)
 				)
 			)
-			(property "Footprint" "Package_TO_SOT_THT:TO-92S"
-				(at 0 -17.018 0)
+			(property "Footprint" "SEN3_SS49E_HNW"
+				(at 0 0 0)
 				(effects
 					(font
 						(size 1.27 1.27)
@@ -1785,25 +1787,17 @@
 					(hide yes)
 				)
 			)
-			(property "Datasheet" "http://www.allegromicro.com/~/media/Files/Datasheets/A1301-2-Datasheet.ashx"
-				(at 0 -12.954 0)
+			(property "Datasheet" "SS49E"
+				(at 0 0 0)
 				(effects
 					(font
 						(size 1.27 1.27)
+						(italic yes)
 					)
 					(hide yes)
 				)
 			)
-			(property "Description" "Linear Hall Effect Sensor, 1.3 mV/G, 4.5-6.0V supply, TO-92S (3-pin SIP)"
-				(at 0 -14.986 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-					(hide yes)
-				)
-			)
-			(property "ki_keywords" "ratiometric Obsolete"
+			(property "Description" ""
 				(at 0 0 0)
 				(effects
 					(font
@@ -1812,7 +1806,15 @@
 					(hide yes)
 				)
 			)
-			(property "ki_fp_filters" "*TO?92S*"
+			(property "ki_locked" ""
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "ki_keywords" "SS49E"
 				(at 0 0 0)
 				(effects
 					(font
@@ -1821,119 +1823,20 @@
 					(hide yes)
 				)
 			)
-			(symbol "A1302xUA_0_1"
-				(rectangle
-					(start -6.35 7.62)
-					(end 5.08 -7.62)
-					(stroke
-						(width 0.254)
-						(type default)
+			(property "ki_fp_filters" "SEN3_SS49E_HNW"
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
 					)
-					(fill
-						(type background)
-					)
-				)
-				(polyline
-					(pts
-						(xy -4.699 0.381) (xy -4.953 0.127)
-					)
-					(stroke
-						(width 0)
-						(type default)
-					)
-					(fill
-						(type none)
-					)
-				)
-				(polyline
-					(pts
-						(xy -4.699 0.381) (xy -4.445 0.127)
-					)
-					(stroke
-						(width 0)
-						(type default)
-					)
-					(fill
-						(type none)
-					)
-				)
-				(polyline
-					(pts
-						(xy -3.4544 0.8382) (xy -2.8702 0.254) (xy -2.6162 0.508) (xy -3.2004 1.0922) (xy -3.4544 0.8382)
-					)
-					(stroke
-						(width 0)
-						(type default)
-					)
-					(fill
-						(type outline)
-					)
-				)
-				(arc
-					(start -0.635 0.381)
-					(mid -2.667 -1.651)
-					(end -4.699 0.381)
-					(stroke
-						(width 0)
-						(type default)
-					)
-					(fill
-						(type none)
-					)
-				)
-				(polyline
-					(pts
-						(xy -0.635 0.381) (xy -0.889 0.127)
-					)
-					(stroke
-						(width 0)
-						(type default)
-					)
-					(fill
-						(type none)
-					)
-				)
-				(polyline
-					(pts
-						(xy -0.635 0.381) (xy -0.381 0.127)
-					)
-					(stroke
-						(width 0)
-						(type default)
-					)
-					(fill
-						(type none)
-					)
+					(hide yes)
 				)
 			)
-			(symbol "A1302xUA_1_1"
-				(circle
-					(center -2.667 0.381)
-					(radius 1.524)
-					(stroke
-						(width 0.254)
-						(type default)
-					)
-					(fill
-						(type none)
-					)
-				)
-				(polyline
-					(pts
-						(xy -2.6162 0.508) (xy -1.9304 -0.1778) (xy -2.1844 -0.4318) (xy -2.8702 0.254)
-					)
-					(stroke
-						(width 0)
-						(type default)
-					)
-					(fill
-						(type none)
-					)
-				)
+			(symbol "SS49E_0_1"
 				(pin power_in line
-					(at -2.54 10.16 270)
-					(length 2.54)
-					(name "V_{CC}"
+					(at -10.16 1.27 0)
+					(length 5.08)
+					(name "VCC"
 						(effects
 							(font
 								(size 1.27 1.27)
@@ -1949,8 +1852,8 @@
 					)
 				)
 				(pin power_in line
-					(at -2.54 -10.16 90)
-					(length 2.54)
+					(at 0 -8.89 90)
+					(length 5.08)
 					(name "GND"
 						(effects
 							(font
@@ -1967,9 +1870,9 @@
 					)
 				)
 				(pin output line
-					(at 7.62 0 180)
-					(length 2.54)
-					(name "V_{OUT}"
+					(at 10.16 1.27 180)
+					(length 5.08)
+					(name "OUT"
 						(effects
 							(font
 								(size 1.27 1.27)
@@ -1982,6 +1885,21 @@
 								(size 1.27 1.27)
 							)
 						)
+					)
+				)
+			)
+			(symbol "SS49E_1_1"
+				(polyline
+					(pts
+						(xy 5.08 -3.81) (xy 5.08 2.54) (xy 2.54 5.08) (xy -2.54 5.08) (xy -5.08 2.54) (xy -5.08 -3.81)
+						(xy 5.08 -3.81)
+					)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type none)
 					)
 				)
 			)
@@ -2013,976 +1931,1006 @@
 		(uuid c3f80e06-7246-4a4e-8d1c-e56721b52ec8)
 	)
 	(junction
-		(at 232.41 62.23)
+		(at 212.09 106.68)
 		(diameter 0)
 		(color 0 0 0 0)
-		(uuid "0060e4f4-f268-4506-a3fe-0546e6e91149")
+		(uuid "00a20ba9-3019-4e80-a0cb-6da80a81355e")
 	)
 	(junction
-		(at 59.69 62.23)
+		(at 59.69 106.68)
 		(diameter 0)
 		(color 0 0 0 0)
-		(uuid "00c57328-ef6a-4dba-abb6-3688043489af")
+		(uuid "0207f62f-8671-4f6c-afda-458af993dd08")
 	)
 	(junction
-		(at 156.21 148.59)
+		(at 80.01 106.68)
 		(diameter 0)
 		(color 0 0 0 0)
-		(uuid "02d2a0f9-c2ba-40d1-859c-ba9e09d8771c")
+		(uuid "03c24dbe-7ca1-4aa4-b2c4-e17ff21980c3")
 	)
 	(junction
-		(at 110.49 83.82)
+		(at 54.61 171.45)
 		(diameter 0)
 		(color 0 0 0 0)
-		(uuid "07925224-449b-4679-a3ff-73370d24b8e4")
+		(uuid "05811930-ed56-4115-b021-3988c7ba8431")
 	)
 	(junction
-		(at 80.01 191.77)
+		(at 105.41 171.45)
 		(diameter 0)
 		(color 0 0 0 0)
-		(uuid "0bcc5afc-49ef-4366-b512-daf6eb07b30c")
+		(uuid "07815571-8ab0-4b2b-997a-d09f416e3587")
 	)
 	(junction
-		(at 80.01 105.41)
+		(at 135.89 193.04)
 		(diameter 0)
 		(color 0 0 0 0)
-		(uuid "10893b54-9059-43dd-a3c1-774e51ea2a51")
+		(uuid "09ed314d-fce8-4f8a-a574-53c21f058ac5")
 	)
 	(junction
-		(at 110.49 191.77)
+		(at 207.01 63.5)
 		(diameter 0)
 		(color 0 0 0 0)
-		(uuid "118b5b06-9268-40c9-8708-27f7087f383c")
+		(uuid "0ee30da4-9bdd-4e09-bc6d-0adffe01e8ff")
 	)
 	(junction
-		(at 161.29 62.23)
+		(at 212.09 171.45)
 		(diameter 0)
 		(color 0 0 0 0)
-		(uuid "13fa00f2-319a-490b-ab2c-723b4fdde5cc")
+		(uuid "0ffe73ca-8e92-42a6-99eb-b5ddf57b3a2c")
 	)
 	(junction
-		(at 181.61 148.59)
+		(at 80.01 85.09)
 		(diameter 0)
 		(color 0 0 0 0)
-		(uuid "15db6bb1-5916-41e5-9daf-76ac7fb05acf")
+		(uuid "10fb3872-327b-4091-b55e-1aadd0991555")
 	)
 	(junction
-		(at 130.81 170.18)
+		(at 110.49 106.68)
 		(diameter 0)
 		(color 0 0 0 0)
-		(uuid "16d27802-d2f4-4198-9ca4-2b27b672b2d0")
+		(uuid "1294f13e-a08b-4ec6-8791-a00d188cbfa7")
 	)
 	(junction
-		(at 105.41 127)
+		(at 34.29 193.04)
 		(diameter 0)
 		(color 0 0 0 0)
-		(uuid "1a6fcd5d-3798-40a0-a118-161d32ef3329")
+		(uuid "138a2bec-2bb4-4955-a5b8-abfc100d8c82")
 	)
 	(junction
-		(at 212.09 170.18)
+		(at 105.41 85.09)
 		(diameter 0)
 		(color 0 0 0 0)
-		(uuid "1c7d2aa5-522c-4e61-91e8-68c0f25cbdfb")
+		(uuid "14126a66-cdc3-4070-afac-ad874d134f70")
 	)
 	(junction
-		(at 34.29 83.82)
+		(at 80.01 171.45)
 		(diameter 0)
 		(color 0 0 0 0)
-		(uuid "1dc66df5-ec39-480b-84fd-3a5841b1a074")
+		(uuid "15cd8ffb-39a6-485b-a3c6-71f5a3e048e8")
 	)
 	(junction
-		(at 181.61 105.41)
+		(at 161.29 193.04)
 		(diameter 0)
 		(color 0 0 0 0)
-		(uuid "1f8bc747-917f-4f83-9691-6758a8099456")
+		(uuid "16976ada-1be3-49af-ad00-8b034d69b9df")
 	)
 	(junction
-		(at 161.29 170.18)
+		(at 110.49 63.5)
 		(diameter 0)
 		(color 0 0 0 0)
-		(uuid "222c66f8-14b7-4d5e-bdca-5d797c81e759")
+		(uuid "18802130-c476-4b5d-b895-52eeaf6a9ab6")
 	)
 	(junction
-		(at 59.69 83.82)
+		(at 181.61 85.09)
 		(diameter 0)
 		(color 0 0 0 0)
-		(uuid "23ac18f0-b9bf-48d0-8018-0ee00cc1193b")
+		(uuid "1a6aa6dc-52e5-4d82-9aba-2dffe8a3c41a")
 	)
 	(junction
-		(at 85.09 191.77)
+		(at 54.61 149.86)
 		(diameter 0)
 		(color 0 0 0 0)
-		(uuid "2579711f-6374-4af3-87da-bb6b2eb6f85e")
+		(uuid "1b430e5d-d559-4c52-9a74-71a277c14ab9")
 	)
 	(junction
-		(at 80.01 83.82)
+		(at 156.21 85.09)
 		(diameter 0)
 		(color 0 0 0 0)
-		(uuid "298a6ad7-cb02-449e-a0a1-f0b3ef321f23")
+		(uuid "1c574899-2d07-46f9-ba7d-f40e2e0867cf")
 	)
 	(junction
-		(at 85.09 127)
+		(at 181.61 193.04)
 		(diameter 0)
 		(color 0 0 0 0)
-		(uuid "2fc86c57-9dd6-414e-bdec-92d8b8541cfc")
+		(uuid "1e059d43-d806-407a-ae86-b8ef1aabdf76")
 	)
 	(junction
-		(at 130.81 62.23)
+		(at 186.69 63.5)
 		(diameter 0)
 		(color 0 0 0 0)
-		(uuid "31b08c44-e18b-4937-b6b8-ecd8a35aee1d")
+		(uuid "290c4d4e-e483-4886-bbfe-ea552b911f65")
 	)
 	(junction
-		(at 54.61 191.77)
+		(at 156.21 63.5)
 		(diameter 0)
 		(color 0 0 0 0)
-		(uuid "333c2ad2-488a-469b-896c-2fb9a657c400")
+		(uuid "29af1dba-2094-4393-9f19-9beb192f8941")
 	)
 	(junction
-		(at 232.41 83.82)
+		(at 105.41 128.27)
 		(diameter 0)
 		(color 0 0 0 0)
-		(uuid "39499a30-11ac-4b06-8c80-82f5b25c4765")
+		(uuid "2aabd748-5dbc-42ed-a681-e3c93fd8ab5d")
 	)
 	(junction
-		(at 80.01 148.59)
+		(at 212.09 85.09)
 		(diameter 0)
 		(color 0 0 0 0)
-		(uuid "39cf8e52-42ac-44a5-83d7-adc27b3f258f")
+		(uuid "35de1711-dde1-41ed-ae9a-127d39ab840d")
 	)
 	(junction
-		(at 212.09 62.23)
+		(at 207.01 193.04)
 		(diameter 0)
 		(color 0 0 0 0)
-		(uuid "3ae1d281-9d59-4a8a-8729-05a3a3eca6ea")
+		(uuid "3ebac8d3-7522-438c-bb6f-734fdc5ea196")
 	)
 	(junction
-		(at 135.89 105.41)
+		(at 181.61 149.86)
 		(diameter 0)
 		(color 0 0 0 0)
-		(uuid "3b3a4987-4f1d-4b6c-8fc8-a615faaef5f1")
+		(uuid "413ecc63-1d5c-47b7-92c1-45ec5c5c48e3")
 	)
 	(junction
-		(at 207.01 127)
+		(at 135.89 128.27)
 		(diameter 0)
 		(color 0 0 0 0)
-		(uuid "3dede7d9-92e7-45d1-8c9f-35d133125f8c")
+		(uuid "433d34d5-a9da-4cb0-accc-e58311afd154")
 	)
 	(junction
-		(at 212.09 148.59)
+		(at 85.09 193.04)
 		(diameter 0)
 		(color 0 0 0 0)
-		(uuid "3f381ce0-690f-4006-ba3d-fb3eafae134f")
+		(uuid "46272c60-738c-4726-8d88-a6578542f2c6")
 	)
 	(junction
-		(at 161.29 105.41)
+		(at 135.89 106.68)
 		(diameter 0)
 		(color 0 0 0 0)
-		(uuid "42a55778-4cb7-463d-8bd3-615f19119887")
+		(uuid "48ad7b9a-0636-480f-a603-64d48ef371e0")
 	)
 	(junction
-		(at 54.61 148.59)
+		(at 54.61 193.04)
 		(diameter 0)
 		(color 0 0 0 0)
-		(uuid "43d749bf-c6f6-43e1-821a-4fca1ccc0f2f")
+		(uuid "48b8740c-688b-40f7-a972-97513fdeefc9")
 	)
 	(junction
-		(at 212.09 191.77)
+		(at 105.41 149.86)
 		(diameter 0)
 		(color 0 0 0 0)
-		(uuid "46319e98-ae09-4619-b239-ebcf10747eea")
+		(uuid "4b81c697-c363-4f36-8485-378e2476f1cc")
 	)
 	(junction
-		(at 161.29 191.77)
+		(at 59.69 193.04)
 		(diameter 0)
 		(color 0 0 0 0)
-		(uuid "4a93e197-b721-401d-bfd0-c6a75be0ea60")
+		(uuid "4c33f04d-5c46-400b-b65b-971d7b0a8962")
 	)
 	(junction
-		(at 135.89 127)
+		(at 186.69 85.09)
 		(diameter 0)
 		(color 0 0 0 0)
-		(uuid "4cdc71d5-aff1-4de9-80fb-8f0924305276")
+		(uuid "4c372d92-4d4a-452e-86d9-e424f066a8e9")
 	)
 	(junction
-		(at 232.41 105.41)
+		(at 130.81 63.5)
 		(diameter 0)
 		(color 0 0 0 0)
-		(uuid "4de54b25-db19-4f5e-9713-d71555c75797")
+		(uuid "4c867b36-8051-4079-a7df-dc992a772dd4")
 	)
 	(junction
-		(at 212.09 83.82)
+		(at 161.29 63.5)
 		(diameter 0)
 		(color 0 0 0 0)
-		(uuid "50081841-7d02-4d33-b7b4-48d7ba864586")
+		(uuid "4d5c1216-d30b-41ce-af21-54e7fad11302")
 	)
 	(junction
-		(at 105.41 105.41)
+		(at 80.01 63.5)
 		(diameter 0)
 		(color 0 0 0 0)
-		(uuid "51c2e41c-516b-4d5f-8d23-39718a56e09e")
+		(uuid "4fb5d293-a7c6-4bd6-a987-ba61ddb5c253")
 	)
 	(junction
-		(at 110.49 170.18)
+		(at 181.61 171.45)
 		(diameter 0)
 		(color 0 0 0 0)
-		(uuid "53678c74-2107-487f-9a29-30296d2afdbb")
+		(uuid "4fcbef78-6f3f-485e-a593-7bb4d0cbc283")
 	)
 	(junction
-		(at 186.69 83.82)
+		(at 186.69 149.86)
 		(diameter 0)
 		(color 0 0 0 0)
-		(uuid "5c4982af-1060-4419-933e-9b9d86031f39")
+		(uuid "536eaac7-7d7f-40d9-8caa-57a44012c8d0")
 	)
 	(junction
-		(at 54.61 62.23)
+		(at 105.41 193.04)
 		(diameter 0)
 		(color 0 0 0 0)
-		(uuid "5cf0ba77-667b-4e5b-939f-3559b28daafa")
+		(uuid "537b5396-c5cf-4cbb-b705-94eaae40180d")
 	)
 	(junction
-		(at 130.81 83.82)
+		(at 85.09 128.27)
 		(diameter 0)
 		(color 0 0 0 0)
-		(uuid "5d265d77-f7e1-46a1-858d-c1ce29870734")
+		(uuid "56eff858-fb12-46ee-ac38-6a720d9e1acd")
 	)
 	(junction
-		(at 232.41 148.59)
+		(at 130.81 193.04)
 		(diameter 0)
 		(color 0 0 0 0)
-		(uuid "61c6e0af-0b7e-439b-b25e-1f162048dce0")
+		(uuid "5772431b-bc69-4aae-83b2-6cd0314d9998")
 	)
 	(junction
-		(at 135.89 148.59)
+		(at 80.01 149.86)
 		(diameter 0)
 		(color 0 0 0 0)
-		(uuid "690a9a07-ad0b-4f83-b51a-9db33de988b3")
+		(uuid "5893b7f3-383f-421f-bf1a-73b89070f0c5")
 	)
 	(junction
-		(at 186.69 191.77)
+		(at 34.29 171.45)
 		(diameter 0)
 		(color 0 0 0 0)
-		(uuid "6d2bf56a-11a5-47b6-92d2-27a69215a2fe")
+		(uuid "5cd182ea-6aaa-4c68-a812-3c64e93fadf4")
 	)
 	(junction
-		(at 186.69 170.18)
+		(at 156.21 149.86)
 		(diameter 0)
 		(color 0 0 0 0)
-		(uuid "6dfc9f0d-f9a9-4ffe-b3ce-b364b641924b")
+		(uuid "5d732057-3586-4353-a38c-3857c0f94aa2")
 	)
 	(junction
-		(at 156.21 170.18)
+		(at 85.09 85.09)
 		(diameter 0)
 		(color 0 0 0 0)
-		(uuid "6e0216e1-561f-4675-b3fa-12c4387a92d1")
+		(uuid "5e11e1ce-eb67-478e-9b3a-2d0ad7e9afd0")
 	)
 	(junction
-		(at 110.49 105.41)
+		(at 207.01 106.68)
 		(diameter 0)
 		(color 0 0 0 0)
-		(uuid "71449fe8-105f-45ad-aeb3-d51989fd0c1d")
+		(uuid "5eb4bd04-1060-43df-9487-4a9d0464c8f9")
 	)
 	(junction
-		(at 156.21 105.41)
+		(at 34.29 63.5)
 		(diameter 0)
 		(color 0 0 0 0)
-		(uuid "7170dab4-a6d9-4c8e-9982-878f90960cc0")
+		(uuid "64963908-d6e3-4b8e-af8e-b5e434d847f2")
 	)
 	(junction
-		(at 85.09 105.41)
+		(at 135.89 85.09)
 		(diameter 0)
 		(color 0 0 0 0)
-		(uuid "719fb653-0a59-45a1-bf7c-588e26d09b2b")
+		(uuid "65233229-fdc6-4cfb-9021-097d2e4fb08a")
 	)
 	(junction
-		(at 80.01 170.18)
+		(at 181.61 63.5)
 		(diameter 0)
 		(color 0 0 0 0)
-		(uuid "728756d7-095e-4ddb-a854-e84251202750")
+		(uuid "6b32592e-741d-4695-bf0a-204fd3de1540")
 	)
 	(junction
-		(at 54.61 105.41)
+		(at 130.81 171.45)
 		(diameter 0)
 		(color 0 0 0 0)
-		(uuid "779b649f-44e6-4484-89d9-a1c374f0c995")
+		(uuid "6d450b08-1ad9-466a-b4f8-61267334db25")
 	)
 	(junction
-		(at 207.01 105.41)
+		(at 161.29 171.45)
 		(diameter 0)
 		(color 0 0 0 0)
-		(uuid "7a2bbdca-ac39-47a2-9707-fae283db611a")
+		(uuid "6e6cd5fe-2858-4327-a43d-fcec9925b5a4")
 	)
 	(junction
-		(at 34.29 105.41)
+		(at 186.69 193.04)
 		(diameter 0)
 		(color 0 0 0 0)
-		(uuid "7ce60a78-3884-4b20-8f17-c9dfc94d5a77")
+		(uuid "746ecca2-3897-402d-b6e8-419d2d5b75f4")
 	)
 	(junction
-		(at 59.69 148.59)
+		(at 34.29 85.09)
 		(diameter 0)
 		(color 0 0 0 0)
-		(uuid "7e72ca1d-08b1-4004-a452-2259111052b2")
+		(uuid "75adb71c-8cf1-43a5-a543-a89d88d23bef")
 	)
 	(junction
-		(at 54.61 127)
+		(at 156.21 106.68)
 		(diameter 0)
 		(color 0 0 0 0)
-		(uuid "7ed36427-1db4-4fc5-bf59-943d290246fc")
+		(uuid "79fd24c2-9d8f-4993-b8db-109fc63a2eba")
 	)
 	(junction
-		(at 161.29 127)
+		(at 59.69 85.09)
 		(diameter 0)
 		(color 0 0 0 0)
-		(uuid "80911647-92bc-4f89-91a1-28f251b6005b")
+		(uuid "8171a3a6-6ce5-4826-8d67-529f323a7143")
 	)
 	(junction
-		(at 105.41 191.77)
+		(at 59.69 149.86)
 		(diameter 0)
 		(color 0 0 0 0)
-		(uuid "81402fbc-9748-4481-8619-2a4bb5a7e04c")
+		(uuid "820589fc-019d-4fef-a5bc-77caf2e184d9")
 	)
 	(junction
-		(at 34.29 127)
+		(at 212.09 149.86)
 		(diameter 0)
 		(color 0 0 0 0)
-		(uuid "86fdab86-4553-44ca-9892-daaa83f72190")
+		(uuid "83a31d14-9681-4db9-b688-fd6c12818db1")
 	)
 	(junction
-		(at 59.69 127)
+		(at 54.61 106.68)
 		(diameter 0)
 		(color 0 0 0 0)
-		(uuid "8bc63689-1dca-4679-b9f1-41382b85cc56")
+		(uuid "8be0d5a8-9d0e-40a7-b976-30382f5b0ffd")
 	)
 	(junction
-		(at 85.09 83.82)
+		(at 135.89 171.45)
 		(diameter 0)
 		(color 0 0 0 0)
-		(uuid "8d4b1b6f-1c13-4486-87e1-e9f17bcfcb64")
+		(uuid "9052bee4-54c6-4c76-a3da-7be8f680d539")
 	)
 	(junction
-		(at 186.69 127)
+		(at 161.29 85.09)
 		(diameter 0)
 		(color 0 0 0 0)
-		(uuid "8fa4add2-be8c-4e74-9b7a-10379d921ccd")
+		(uuid "90f1870e-5778-4ba9-b253-a37cdf6a060a")
 	)
 	(junction
-		(at 186.69 105.41)
+		(at 105.41 106.68)
 		(diameter 0)
 		(color 0 0 0 0)
-		(uuid "921fedf5-41e3-4636-a359-09bac6c62f4c")
+		(uuid "918baf6e-a4c4-4900-84e3-9f9c63462e9c")
 	)
 	(junction
-		(at 105.41 148.59)
+		(at 232.41 63.5)
 		(diameter 0)
 		(color 0 0 0 0)
-		(uuid "9231f4e6-2095-44aa-a5ff-764f58e2d156")
+		(uuid "936d37a9-f353-4eff-9cbe-22fe06dd418c")
 	)
 	(junction
-		(at 34.29 191.77)
+		(at 156.21 193.04)
 		(diameter 0)
 		(color 0 0 0 0)
-		(uuid "93e1fe43-d64e-4e78-8880-f6f8fbe6d898")
+		(uuid "948902ae-517d-4f34-81c5-afacded22918")
 	)
 	(junction
-		(at 232.41 191.77)
+		(at 54.61 85.09)
 		(diameter 0)
 		(color 0 0 0 0)
-		(uuid "962bc446-b682-4741-ab02-8a62d78003cf")
+		(uuid "94af0064-964c-496f-a9b1-88811ece3796")
 	)
 	(junction
-		(at 181.61 127)
+		(at 207.01 171.45)
 		(diameter 0)
 		(color 0 0 0 0)
-		(uuid "97922303-88f9-4786-aa65-6143cd6164ef")
+		(uuid "95e45bae-4f21-4e8f-b5d8-062cdc5785a0")
 	)
 	(junction
-		(at 135.89 170.18)
+		(at 232.41 193.04)
 		(diameter 0)
 		(color 0 0 0 0)
-		(uuid "995432f7-4a79-4756-bf76-117393e0f553")
+		(uuid "9905bc73-1127-4e54-aedd-bae490c0e6be")
 	)
 	(junction
-		(at 59.69 105.41)
+		(at 34.29 106.68)
 		(diameter 0)
 		(color 0 0 0 0)
-		(uuid "99d30471-e4ab-4c53-9e85-937be0f7a2e1")
+		(uuid "9b7a8e7d-4591-412f-a95c-dbc766148843")
 	)
 	(junction
-		(at 207.01 148.59)
+		(at 105.41 63.5)
 		(diameter 0)
 		(color 0 0 0 0)
-		(uuid "9aebfa28-6000-40aa-bd9c-790c3271ed3f")
+		(uuid "9d565587-afb0-4827-a727-ae5bcf13b79b")
 	)
 	(junction
-		(at 80.01 62.23)
+		(at 59.69 128.27)
 		(diameter 0)
 		(color 0 0 0 0)
-		(uuid "9bbc2861-f889-4039-a427-5776b73e939c")
+		(uuid "a012f250-18b4-473c-b297-0f8414f94750")
 	)
 	(junction
-		(at 156.21 127)
+		(at 85.09 63.5)
 		(diameter 0)
 		(color 0 0 0 0)
-		(uuid "9dd5f268-c87c-4085-85b7-f1cf5803730e")
+		(uuid "a2f32439-60bd-4bab-8d0b-352f7e4fa2ca")
 	)
 	(junction
-		(at 181.61 191.77)
+		(at 156.21 171.45)
 		(diameter 0)
 		(color 0 0 0 0)
-		(uuid "9e9e830e-2691-4048-9ebc-17dd49fb8f4a")
+		(uuid "aa0757bf-5fed-4021-ac03-247570c0f807")
 	)
 	(junction
-		(at 80.01 127)
+		(at 34.29 128.27)
 		(diameter 0)
 		(color 0 0 0 0)
-		(uuid "9fbbea30-5ae4-42ad-8c17-ad8dfd0b6530")
+		(uuid "aa8f2175-a09b-4d3f-af31-fc308409eae7")
 	)
 	(junction
-		(at 207.01 62.23)
+		(at 186.69 171.45)
 		(diameter 0)
 		(color 0 0 0 0)
-		(uuid "a743af92-99d7-428b-9df7-6e27baa59f4e")
+		(uuid "aac45c96-3fe9-494f-bfba-0fe4a26dfce9")
 	)
 	(junction
-		(at 59.69 191.77)
+		(at 212.09 128.27)
 		(diameter 0)
 		(color 0 0 0 0)
-		(uuid "a841adfd-0b5c-4faa-b889-1cd420c69206")
+		(uuid "ac94ec8a-fef3-4219-884b-ba6051b4c985")
 	)
 	(junction
-		(at 34.29 62.23)
+		(at 59.69 63.5)
 		(diameter 0)
 		(color 0 0 0 0)
-		(uuid "ac64ac29-c840-44d0-8734-d023fc5206c3")
+		(uuid "ad7a28fa-f345-4a70-b959-dedc13515a45")
 	)
 	(junction
-		(at 110.49 148.59)
+		(at 186.69 128.27)
 		(diameter 0)
 		(color 0 0 0 0)
-		(uuid "af20e8ce-adef-4648-ad30-51cb8c7c29be")
+		(uuid "b00bd56f-5f03-4968-85c0-d92dc10f2b2d")
 	)
 	(junction
-		(at 181.61 83.82)
+		(at 130.81 85.09)
 		(diameter 0)
 		(color 0 0 0 0)
-		(uuid "b39b5cb9-5200-4d3b-b041-bf53cfaabfda")
+		(uuid "b15c131b-f81e-4bb3-bd56-fa22377e49c8")
 	)
 	(junction
-		(at 232.41 170.18)
+		(at 85.09 106.68)
 		(diameter 0)
 		(color 0 0 0 0)
-		(uuid "b8445602-5d1c-4dc6-9ae0-e0d71b60fe86")
+		(uuid "b389ef3a-9447-4310-8cd1-cd7a8bad6afd")
 	)
 	(junction
-		(at 135.89 62.23)
+		(at 161.29 128.27)
 		(diameter 0)
 		(color 0 0 0 0)
-		(uuid "b8b162a0-aff6-48c2-b136-d275f98639d7")
+		(uuid "b8c5300d-67c1-4503-9471-e30498be7b87")
 	)
 	(junction
-		(at 212.09 127)
+		(at 232.41 171.45)
 		(diameter 0)
 		(color 0 0 0 0)
-		(uuid "bc782b7d-eac8-4a08-8f3d-950e6143c595")
+		(uuid "bdc40408-3d3b-4d93-bbd7-6a39ad072a31")
 	)
 	(junction
-		(at 105.41 62.23)
+		(at 34.29 149.86)
 		(diameter 0)
 		(color 0 0 0 0)
-		(uuid "bdef6614-9664-4efc-ab41-e7be432cb6c2")
+		(uuid "bf9bd990-95f3-4c07-abfd-1f7c233e1fdf")
 	)
 	(junction
-		(at 156.21 83.82)
+		(at 161.29 106.68)
 		(diameter 0)
 		(color 0 0 0 0)
-		(uuid "c55b4e15-741e-49d1-91d7-86562b6675a6")
+		(uuid "c2135e9f-aa77-4462-8888-a0cb63f7af28")
 	)
 	(junction
-		(at 135.89 83.82)
+		(at 110.49 171.45)
 		(diameter 0)
 		(color 0 0 0 0)
-		(uuid "c7bd935c-b147-4e57-ab8a-6e38edb09b52")
+		(uuid "c5cc5a1f-88fc-41ba-96dd-e4e37010e0ef")
 	)
 	(junction
-		(at 130.81 148.59)
+		(at 54.61 128.27)
 		(diameter 0)
 		(color 0 0 0 0)
-		(uuid "c8f470e4-b835-4d20-a2e8-8cc6c788d246")
+		(uuid "c693d189-9276-4601-86ad-9eb33765fe99")
 	)
 	(junction
-		(at 85.09 170.18)
+		(at 156.21 128.27)
 		(diameter 0)
 		(color 0 0 0 0)
-		(uuid "c9f14155-99de-438a-b937-2db255db1c51")
+		(uuid "c8482240-94ab-4065-9fc8-713975ccd619")
 	)
 	(junction
-		(at 85.09 148.59)
+		(at 130.81 149.86)
 		(diameter 0)
 		(color 0 0 0 0)
-		(uuid "cd69cd7e-4814-48d7-bf41-449175db400a")
+		(uuid "cafd5c4f-3aee-4b49-b90b-fff478363392")
 	)
 	(junction
-		(at 212.09 105.41)
+		(at 130.81 128.27)
 		(diameter 0)
 		(color 0 0 0 0)
-		(uuid "cdb37e34-d2d5-40a9-9d0c-fb2df714105a")
+		(uuid "cc327bed-95df-4ae2-9d57-c8968b070f7e")
 	)
 	(junction
-		(at 85.09 62.23)
+		(at 161.29 149.86)
 		(diameter 0)
 		(color 0 0 0 0)
-		(uuid "cf75cee7-c2c6-486c-82b9-d13c1fc17fb3")
+		(uuid "ccfd817e-d123-4fdc-b6ad-fd20c7ca2387")
 	)
 	(junction
-		(at 130.81 127)
+		(at 232.41 106.68)
 		(diameter 0)
 		(color 0 0 0 0)
-		(uuid "cf96ea0a-039c-4bff-a384-ad6d6a715102")
+		(uuid "cd2e2d5a-8a5f-4381-bf34-c14b36846c38")
 	)
 	(junction
-		(at 156.21 62.23)
+		(at 59.69 171.45)
 		(diameter 0)
 		(color 0 0 0 0)
-		(uuid "d095aa97-3997-42ca-863d-bc8f580bab59")
+		(uuid "cdb16bcf-b889-4241-b5fe-b3ab136d40d7")
 	)
 	(junction
-		(at 181.61 170.18)
+		(at 207.01 128.27)
 		(diameter 0)
 		(color 0 0 0 0)
-		(uuid "d740b527-0260-4750-a19c-c1a68598df66")
+		(uuid "cdf05053-eb80-4e2f-850d-a40b222dc9fd")
 	)
 	(junction
-		(at 207.01 83.82)
+		(at 186.69 106.68)
 		(diameter 0)
 		(color 0 0 0 0)
-		(uuid "d809ee57-cec9-4b16-ac47-77ae26688d0f")
+		(uuid "d2f306db-e1f2-4ed4-90a0-110e4d3d4bc6")
 	)
 	(junction
-		(at 34.29 170.18)
+		(at 85.09 149.86)
 		(diameter 0)
 		(color 0 0 0 0)
-		(uuid "db2c15ae-b619-4a62-9530-73ef85683419")
+		(uuid "d367d20f-04f2-4ce8-bbce-41271feb3539")
 	)
 	(junction
-		(at 34.29 148.59)
+		(at 135.89 63.5)
 		(diameter 0)
 		(color 0 0 0 0)
-		(uuid "dc7424e5-51e8-40cb-9455-d0f811396590")
+		(uuid "d7be7d11-6465-4a7e-ba34-8a52439ba18b")
 	)
 	(junction
-		(at 181.61 62.23)
+		(at 212.09 63.5)
 		(diameter 0)
 		(color 0 0 0 0)
-		(uuid "e2e13012-5a4a-4675-896a-ec321c66e3e4")
+		(uuid "d8a8304c-b049-4f1a-a951-a50ea05fc133")
 	)
 	(junction
-		(at 207.01 170.18)
+		(at 80.01 128.27)
 		(diameter 0)
 		(color 0 0 0 0)
-		(uuid "e2eacfeb-feea-4ac8-82da-6ff652908c59")
+		(uuid "dbc7bc77-29b3-4ffa-bf6f-dd9eb6b21af9")
 	)
 	(junction
-		(at 54.61 83.82)
+		(at 110.49 149.86)
 		(diameter 0)
 		(color 0 0 0 0)
-		(uuid "e2f34b24-17a1-4b61-8d10-93d9811561d6")
+		(uuid "e25d9044-99a4-4d76-8486-40452ec9a1d1")
 	)
 	(junction
-		(at 54.61 170.18)
+		(at 212.09 193.04)
 		(diameter 0)
 		(color 0 0 0 0)
-		(uuid "e37b683a-aff2-47cf-8bbe-9a6a2d63a95c")
+		(uuid "e4996f5d-6a4f-46fa-9829-1295def8c2ed")
 	)
 	(junction
-		(at 105.41 83.82)
+		(at 232.41 128.27)
 		(diameter 0)
 		(color 0 0 0 0)
-		(uuid "e3b614d0-840c-444c-bc23-639562885d96")
+		(uuid "e4a868fe-1958-44f1-b265-7177187e63be")
 	)
 	(junction
-		(at 105.41 170.18)
+		(at 181.61 106.68)
 		(diameter 0)
 		(color 0 0 0 0)
-		(uuid "e496f8d5-506b-4c98-9a23-8745a75bb18a")
+		(uuid "e56f341d-da10-4780-9b35-7cc19202a8ff")
 	)
 	(junction
-		(at 161.29 148.59)
+		(at 85.09 171.45)
 		(diameter 0)
 		(color 0 0 0 0)
-		(uuid "e498046f-1a80-4613-bed3-a744fbcd32a4")
+		(uuid "ec72ccda-356f-42b6-a3fe-587ab34b6058")
 	)
 	(junction
-		(at 161.29 83.82)
+		(at 232.41 85.09)
 		(diameter 0)
 		(color 0 0 0 0)
-		(uuid "e704e11f-e498-4f3e-82a1-e87936bbd455")
+		(uuid "ecd23edf-8502-4372-9782-bb2abb7551cc")
 	)
 	(junction
-		(at 135.89 191.77)
+		(at 130.81 106.68)
 		(diameter 0)
 		(color 0 0 0 0)
-		(uuid "e75cdbee-8e99-410a-be6f-172c6ce70efe")
+		(uuid "ed06852d-ce1b-49d9-bcff-4800507f68f5")
 	)
 	(junction
-		(at 207.01 191.77)
+		(at 110.49 85.09)
 		(diameter 0)
 		(color 0 0 0 0)
-		(uuid "ead0feaf-7f4e-4701-9742-b7405ddb3d63")
+		(uuid "edea6c39-2d20-4b5d-b207-7635a1b47f23")
 	)
 	(junction
-		(at 156.21 191.77)
+		(at 54.61 63.5)
 		(diameter 0)
 		(color 0 0 0 0)
-		(uuid "ebd16f1b-7ac9-49d5-a75f-07c392c66395")
+		(uuid "f2cec192-36c7-428e-8429-f739f93f9ad7")
 	)
 	(junction
-		(at 110.49 127)
+		(at 181.61 128.27)
 		(diameter 0)
 		(color 0 0 0 0)
-		(uuid "ecc746b5-d3b2-4ad3-b774-b219e22e71f8")
+		(uuid "f70f8810-cb13-49d4-babc-4f79412e73ca")
 	)
 	(junction
-		(at 186.69 62.23)
+		(at 232.41 149.86)
 		(diameter 0)
 		(color 0 0 0 0)
-		(uuid "ef6039c2-38b5-4ea5-9543-ee278d695259")
+		(uuid "f7b4291e-7605-4e95-8ec6-563890fe6085")
 	)
 	(junction
-		(at 110.49 62.23)
+		(at 207.01 85.09)
 		(diameter 0)
 		(color 0 0 0 0)
-		(uuid "f4777bc6-cad3-4589-bab8-d6d1d4e9303f")
+		(uuid "f7e22153-54a2-4475-a429-37a8a732533f")
 	)
 	(junction
-		(at 130.81 105.41)
+		(at 207.01 149.86)
 		(diameter 0)
 		(color 0 0 0 0)
-		(uuid "f5115032-b2d9-4cd1-877d-ff48d42b5b58")
+		(uuid "f9cff202-59c4-4daa-81d9-f66b05be84ea")
 	)
 	(junction
-		(at 59.69 170.18)
+		(at 135.89 149.86)
 		(diameter 0)
 		(color 0 0 0 0)
-		(uuid "fa3508e6-b6de-4de3-9202-cb219185289b")
+		(uuid "faec1bb6-fdef-4720-8759-55e4da44ab7a")
 	)
 	(junction
-		(at 130.81 191.77)
+		(at 110.49 128.27)
 		(diameter 0)
 		(color 0 0 0 0)
-		(uuid "fec2d14a-d7d4-469a-afff-3314c927a536")
+		(uuid "fc3a6f0e-f2a3-4da0-a4b9-59916535b3fa")
 	)
 	(junction
-		(at 186.69 148.59)
+		(at 110.49 193.04)
 		(diameter 0)
 		(color 0 0 0 0)
-		(uuid "ff4d181e-7f7d-4eaf-9a94-4c8f68b9c79d")
+		(uuid "fe5c315a-ab74-443b-8ee8-a9242174e887")
 	)
 	(junction
-		(at 232.41 127)
+		(at 80.01 193.04)
 		(diameter 0)
 		(color 0 0 0 0)
-		(uuid "ffbbbc12-e10d-423e-af22-75dbe071ca0d")
+		(uuid "ff454bbf-f5d2-4a89-b2b3-534460f51049")
 	)
 	(wire
 		(pts
-			(xy 212.09 62.23) (xy 212.09 83.82)
+			(xy 156.21 149.86) (xy 156.21 171.45)
 		)
 		(stroke
 			(width 0)
 			(type default)
 		)
-		(uuid "00a26d3d-931e-4b85-83c0-87a03037652e")
+		(uuid "0071754e-915f-4b6f-b068-9f915cac37c1")
 	)
 	(wire
 		(pts
-			(xy 207.01 191.77) (xy 207.01 207.01)
+			(xy 156.21 85.09) (xy 156.21 106.68)
 		)
 		(stroke
 			(width 0)
 			(type default)
 		)
-		(uuid "08a356ec-d55c-422c-b9e7-248a73de9337")
+		(uuid "00b5ea72-bfab-48f6-a478-d4e1a11438e8")
 	)
 	(wire
 		(pts
-			(xy 181.61 40.64) (xy 181.61 62.23)
+			(xy 135.89 193.04) (xy 135.89 207.01)
 		)
 		(stroke
 			(width 0)
 			(type default)
 		)
-		(uuid "0b11845b-3291-4484-9972-b7c17b221559")
+		(uuid "030c9c26-5459-4d21-86ea-3c4cf85937ca")
 	)
 	(wire
 		(pts
-			(xy 110.49 62.23) (xy 110.49 83.82)
+			(xy 186.69 171.45) (xy 186.69 193.04)
 		)
 		(stroke
 			(width 0)
 			(type default)
 		)
-		(uuid "0c287899-be86-4dad-87af-9b374fe71f47")
+		(uuid "03b0d46b-72d1-4a2c-accb-74a70ad83d25")
 	)
 	(wire
 		(pts
-			(xy 212.09 83.82) (xy 212.09 105.41)
+			(xy 207.01 106.68) (xy 207.01 128.27)
 		)
 		(stroke
 			(width 0)
 			(type default)
 		)
-		(uuid "0e92eeaa-2a36-4b5c-ad7d-e3151323ba6e")
+		(uuid "05985208-17f7-4b48-a159-a1b5b4db414a")
 	)
 	(wire
 		(pts
-			(xy 130.81 127) (xy 130.81 148.59)
+			(xy 105.41 149.86) (xy 105.41 171.45)
 		)
 		(stroke
 			(width 0)
 			(type default)
 		)
-		(uuid "10dde9bc-9463-485c-9642-6c8202531cf8")
+		(uuid "06dfa55d-467b-4339-8761-45b72da0a140")
 	)
 	(wire
 		(pts
-			(xy 54.61 83.82) (xy 54.61 105.41)
+			(xy 34.29 106.68) (xy 34.29 128.27)
 		)
 		(stroke
 			(width 0)
 			(type default)
 		)
-		(uuid "114b2fe8-3d75-4e22-bd42-5fcc0c52397a")
+		(uuid "0906a2d7-f93e-4815-8efc-3cb177335038")
 	)
 	(wire
 		(pts
-			(xy 135.89 127) (xy 135.89 148.59)
+			(xy 212.09 41.91) (xy 212.09 63.5)
 		)
 		(stroke
 			(width 0)
 			(type default)
 		)
-		(uuid "119e700b-fece-4a1f-ad27-5b8355bb02ac")
+		(uuid "0cd3a960-4419-4841-94b6-c32f8254384c")
 	)
 	(wire
 		(pts
-			(xy 80.01 127) (xy 80.01 148.59)
+			(xy 54.61 193.04) (xy 54.61 207.01)
 		)
 		(stroke
 			(width 0)
 			(type default)
 		)
-		(uuid "130fbeee-5539-4171-a826-66158f938dea")
+		(uuid "0e79953e-886f-45c7-9d4f-ff7c80561a14")
 	)
 	(wire
 		(pts
-			(xy 54.61 105.41) (xy 54.61 127)
+			(xy 156.21 106.68) (xy 156.21 128.27)
 		)
 		(stroke
 			(width 0)
 			(type default)
 		)
-		(uuid "1553cdbc-1c09-4b09-836e-fc1701ab8345")
+		(uuid "1186fabb-e65f-45be-afe3-c39c403dcb54")
 	)
 	(wire
 		(pts
-			(xy 59.69 62.23) (xy 59.69 83.82)
+			(xy 186.69 106.68) (xy 186.69 128.27)
 		)
 		(stroke
 			(width 0)
 			(type default)
 		)
-		(uuid "15b9b45a-b83e-4fa4-8369-2545db956ebc")
+		(uuid "151f9c38-f91f-409d-ad29-bfe9af2adcce")
 	)
 	(wire
 		(pts
-			(xy 161.29 105.41) (xy 161.29 127)
+			(xy 110.49 41.91) (xy 110.49 63.5)
 		)
 		(stroke
 			(width 0)
 			(type default)
 		)
-		(uuid "16b536a7-0206-4a58-b212-03daef480c43")
+		(uuid "17ada714-8caa-42f1-aab3-e17df9ba89d0")
 	)
 	(wire
 		(pts
-			(xy 105.41 191.77) (xy 105.41 207.01)
+			(xy 54.61 149.86) (xy 54.61 171.45)
 		)
 		(stroke
 			(width 0)
 			(type default)
 		)
-		(uuid "177c6e31-e5e3-4ca9-95bc-5edf7c4cf0fb")
+		(uuid "185c6905-f1a9-41ff-adc2-2042c942b2d2")
 	)
 	(wire
 		(pts
-			(xy 54.61 191.77) (xy 54.61 207.01)
+			(xy 181.61 85.09) (xy 181.61 106.68)
 		)
 		(stroke
 			(width 0)
 			(type default)
 		)
-		(uuid "1c94e4f0-2375-4ff0-a4ff-3e1249fc0587")
+		(uuid "19605252-6060-4fad-b056-3341e1799110")
 	)
 	(wire
 		(pts
-			(xy 105.41 105.41) (xy 105.41 127)
+			(xy 34.29 85.09) (xy 34.29 106.68)
 		)
 		(stroke
 			(width 0)
 			(type default)
 		)
-		(uuid "20a65ea1-7800-4f52-ad19-66c268e6240c")
+		(uuid "1a5e75bc-529e-464d-a002-a4db26661c79")
 	)
 	(wire
 		(pts
-			(xy 110.49 148.59) (xy 110.49 170.18)
+			(xy 130.81 85.09) (xy 130.81 106.68)
 		)
 		(stroke
 			(width 0)
 			(type default)
 		)
-		(uuid "23fc9fd3-2d27-4ab6-8e6d-697038eeb917")
+		(uuid "1b409a54-8663-4ad0-bdfd-33787103d22c")
 	)
 	(wire
 		(pts
-			(xy 110.49 170.18) (xy 110.49 191.77)
+			(xy 110.49 193.04) (xy 110.49 207.01)
 		)
 		(stroke
 			(width 0)
 			(type default)
 		)
-		(uuid "2746e408-e079-4dc4-a8e8-d01fbf62840d")
+		(uuid "211691ca-6419-433d-98ab-95c716afaab6")
 	)
 	(wire
 		(pts
-			(xy 161.29 40.64) (xy 161.29 62.23)
+			(xy 212.09 85.09) (xy 212.09 106.68)
 		)
 		(stroke
 			(width 0)
 			(type default)
 		)
-		(uuid "27cbfb9d-16cc-4e67-9744-f6d4773f531a")
+		(uuid "2255ba0f-9671-45c6-8d5d-ec6ff57ac086")
 	)
 	(wire
 		(pts
-			(xy 212.09 40.64) (xy 212.09 62.23)
+			(xy 207.01 193.04) (xy 207.01 207.01)
 		)
 		(stroke
 			(width 0)
 			(type default)
 		)
-		(uuid "27df1f40-f12f-4815-99dd-a9082e56fc85")
+		(uuid "23c0d1ec-ced3-4db3-8a60-839bf79a9b08")
 	)
 	(wire
 		(pts
-			(xy 110.49 127) (xy 110.49 148.59)
+			(xy 186.69 41.91) (xy 186.69 63.5)
 		)
 		(stroke
 			(width 0)
 			(type default)
 		)
-		(uuid "29f4f28c-7d68-40ef-9694-4599373919ac")
+		(uuid "240fe0d9-f1ed-4213-8476-3dcb28450c3f")
 	)
 	(wire
 		(pts
-			(xy 181.61 83.82) (xy 181.61 105.41)
+			(xy 130.81 128.27) (xy 130.81 149.86)
 		)
 		(stroke
 			(width 0)
 			(type default)
 		)
-		(uuid "2cd0f992-bc4e-4926-aabc-d50da55b5b1e")
+		(uuid "26da4b8e-f4ad-4485-8748-5959b699c1bd")
 	)
 	(wire
 		(pts
-			(xy 34.29 191.77) (xy 34.29 207.01)
+			(xy 161.29 149.86) (xy 161.29 171.45)
 		)
 		(stroke
 			(width 0)
 			(type default)
 		)
-		(uuid "2d6c39cc-2252-4825-95cc-ec13f327c3f8")
+		(uuid "27ceb64b-7f7e-4636-9c1f-e06e30e44ebb")
 	)
 	(wire
 		(pts
-			(xy 130.81 40.64) (xy 130.81 62.23)
+			(xy 54.61 128.27) (xy 54.61 149.86)
 		)
 		(stroke
 			(width 0)
 			(type default)
 		)
-		(uuid "304cb3ce-469b-4056-bc15-9c73b4d8f6df")
+		(uuid "29d38c4e-11f6-4a1e-89f1-1d0f1d7a9cde")
 	)
 	(wire
 		(pts
-			(xy 181.61 62.23) (xy 181.61 83.82)
+			(xy 105.41 106.68) (xy 105.41 128.27)
 		)
 		(stroke
 			(width 0)
 			(type default)
 		)
-		(uuid "30a9ecbc-b988-4f4a-b242-9e6a6a75dd45")
+		(uuid "2a194e70-0c4b-4c84-80b1-b88d391172e6")
 	)
 	(wire
 		(pts
-			(xy 207.01 127) (xy 207.01 148.59)
+			(xy 59.69 149.86) (xy 59.69 171.45)
 		)
 		(stroke
 			(width 0)
 			(type default)
 		)
-		(uuid "36495774-c65b-4ee3-9cf7-a961b5152033")
+		(uuid "2adf8407-fc1b-49db-a189-9e706ed7d766")
 	)
 	(wire
 		(pts
-			(xy 105.41 40.64) (xy 105.41 62.23)
+			(xy 135.89 85.09) (xy 135.89 106.68)
 		)
 		(stroke
 			(width 0)
 			(type default)
 		)
-		(uuid "364a992b-1e5c-4a8d-ace0-af3c23e53ca5")
+		(uuid "2b7d3857-85fe-4826-b436-2596adc3408a")
 	)
 	(wire
 		(pts
-			(xy 80.01 83.82) (xy 80.01 105.41)
+			(xy 110.49 128.27) (xy 110.49 149.86)
 		)
 		(stroke
 			(width 0)
 			(type default)
 		)
-		(uuid "366ea536-1a12-4cf0-92ba-200e7eb06436")
+		(uuid "2d5d609f-2bb9-4589-b6c4-a61ac3a0c4ac")
 	)
 	(wire
 		(pts
-			(xy 156.21 191.77) (xy 156.21 207.01)
+			(xy 80.01 149.86) (xy 80.01 171.45)
 		)
 		(stroke
 			(width 0)
 			(type default)
 		)
-		(uuid "376ec67c-48a2-4fe9-bb52-1d15cc2a05d3")
+		(uuid "2e5aec9f-2ef9-4c53-a0e2-8999d2d92ac7")
 	)
 	(wire
 		(pts
-			(xy 34.29 62.23) (xy 34.29 83.82)
+			(xy 186.69 149.86) (xy 186.69 171.45)
 		)
 		(stroke
 			(width 0)
 			(type default)
 		)
-		(uuid "3960bb08-001a-4460-991f-f997c7643e1e")
+		(uuid "38d9978d-b63f-45d9-9455-05f4b161db0e")
 	)
 	(wire
 		(pts
-			(xy 156.21 105.41) (xy 156.21 127)
+			(xy 85.09 193.04) (xy 85.09 207.01)
 		)
 		(stroke
 			(width 0)
 			(type default)
 		)
-		(uuid "3d39db3b-07ec-4190-bff8-4a1760fc6222")
+		(uuid "3a215629-88fb-43d5-a5ce-c81144e82c5e")
+	)
+	(wire
+		(pts
+			(xy 34.29 128.27) (xy 34.29 149.86)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "3ad5f4f7-2ae5-4c8f-b988-87e86ce0a619")
+	)
+	(wire
+		(pts
+			(xy 161.29 85.09) (xy 161.29 106.68)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "3c82584f-3ebf-4b6e-94a5-c3d01afee9c2")
+	)
+	(wire
+		(pts
+			(xy 232.41 149.86) (xy 232.41 171.45)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "3cafcfe7-be9c-4d0a-be1a-04b8d44ab69e")
 	)
 	(wire
 		(pts
@@ -2996,233 +2944,223 @@
 	)
 	(wire
 		(pts
-			(xy 161.29 83.82) (xy 161.29 105.41)
+			(xy 135.89 171.45) (xy 135.89 193.04)
 		)
 		(stroke
 			(width 0)
 			(type default)
 		)
-		(uuid "428bddce-48aa-4c6d-9467-c692192f9cb1")
+		(uuid "43c4820d-5353-46db-b577-c51c8e4a5485")
 	)
 	(wire
 		(pts
-			(xy 161.29 62.23) (xy 161.29 83.82)
+			(xy 232.41 106.68) (xy 232.41 128.27)
 		)
 		(stroke
 			(width 0)
 			(type default)
 		)
-		(uuid "43b98ba0-9c46-48ae-b8b1-6dbf82b07336")
+		(uuid "4479c570-5e43-4cd3-86d5-f2f95f965d5c")
 	)
 	(wire
 		(pts
-			(xy 232.41 83.82) (xy 232.41 105.41)
+			(xy 207.01 63.5) (xy 207.01 85.09)
 		)
 		(stroke
 			(width 0)
 			(type default)
 		)
-		(uuid "4462096b-2187-4356-8a3a-d71873f6699b")
+		(uuid "463118b8-2b72-4532-9566-d64ba9f580a9")
 	)
 	(wire
 		(pts
-			(xy 135.89 62.23) (xy 135.89 83.82)
+			(xy 85.09 106.68) (xy 85.09 128.27)
 		)
 		(stroke
 			(width 0)
 			(type default)
 		)
-		(uuid "45340913-681e-4988-8b70-f5cba7b3f1ba")
+		(uuid "4782e950-1037-4a2c-8c0e-319aedfb1fb1")
 	)
 	(wire
 		(pts
-			(xy 54.61 62.23) (xy 54.61 83.82)
+			(xy 80.01 128.27) (xy 80.01 149.86)
 		)
 		(stroke
 			(width 0)
 			(type default)
 		)
-		(uuid "4650a0d4-845d-4e70-a497-506b13a1d97b")
+		(uuid "48759a9a-1dd0-4c2e-ad75-532cc1971d0c")
 	)
 	(wire
 		(pts
-			(xy 110.49 40.64) (xy 110.49 62.23)
+			(xy 85.09 171.45) (xy 85.09 193.04)
 		)
 		(stroke
 			(width 0)
 			(type default)
 		)
-		(uuid "46c982bb-d7ed-4bce-a742-8552a137c388")
+		(uuid "48c54096-e5e4-490e-928f-0789b3b0149d")
 	)
 	(wire
 		(pts
-			(xy 186.69 40.64) (xy 186.69 62.23)
+			(xy 161.29 171.45) (xy 161.29 193.04)
 		)
 		(stroke
 			(width 0)
 			(type default)
 		)
-		(uuid "4914d17a-3e1a-42d6-9745-41d104dba147")
+		(uuid "4bc5a77b-bc8a-4d6e-91a0-9ae0c3987207")
 	)
 	(wire
 		(pts
-			(xy 105.41 127) (xy 105.41 148.59)
+			(xy 80.01 193.04) (xy 80.01 207.01)
 		)
 		(stroke
 			(width 0)
 			(type default)
 		)
-		(uuid "4c4e84a0-5496-4a4e-833b-2a56e66b51ee")
+		(uuid "4ccebe55-7ed1-44ef-b10f-6e7a2abe3f7f")
 	)
 	(wire
 		(pts
-			(xy 59.69 127) (xy 59.69 148.59)
+			(xy 135.89 41.91) (xy 135.89 63.5)
 		)
 		(stroke
 			(width 0)
 			(type default)
 		)
-		(uuid "4f372f1c-4bc7-4747-a197-721d25ab8796")
+		(uuid "4f1d9229-7bfd-4fbc-8cb4-1c3834288e40")
 	)
 	(wire
 		(pts
-			(xy 156.21 62.23) (xy 156.21 83.82)
+			(xy 54.61 106.68) (xy 54.61 128.27)
 		)
 		(stroke
 			(width 0)
 			(type default)
 		)
-		(uuid "4fc324eb-942a-4319-8016-129ce3200ef9")
+		(uuid "54628f6c-d7f8-418d-8a53-b46d4eb0eb79")
 	)
 	(wire
 		(pts
-			(xy 135.89 40.64) (xy 135.89 62.23)
+			(xy 161.29 106.68) (xy 161.29 128.27)
 		)
 		(stroke
 			(width 0)
 			(type default)
 		)
-		(uuid "50262a7c-09f3-4047-8d97-ea8d72914f0a")
+		(uuid "58293bdf-dcc1-477d-9d80-4a006497065a")
 	)
 	(wire
 		(pts
-			(xy 130.81 105.41) (xy 130.81 127)
+			(xy 156.21 193.04) (xy 156.21 207.01)
 		)
 		(stroke
 			(width 0)
 			(type default)
 		)
-		(uuid "50a3ad13-6d0b-4b72-b8fe-4ac955a5c8ca")
+		(uuid "5ac3ae64-5eab-4ca2-8de9-38a7ac5ce7b8")
 	)
 	(wire
 		(pts
-			(xy 186.69 105.41) (xy 186.69 127)
+			(xy 54.61 171.45) (xy 54.61 193.04)
 		)
 		(stroke
 			(width 0)
 			(type default)
 		)
-		(uuid "56baf69b-fe82-4e14-a58e-87acb6ac9bbe")
+		(uuid "5cc809e2-d3b5-439f-a399-8000ccf24881")
 	)
 	(wire
 		(pts
-			(xy 80.01 105.41) (xy 80.01 127)
+			(xy 130.81 41.91) (xy 130.81 63.5)
 		)
 		(stroke
 			(width 0)
 			(type default)
 		)
-		(uuid "56ce228e-b15d-4258-92c8-27cbf78837c8")
+		(uuid "5eb033ec-7bc4-42cd-a00e-d05109a457aa")
 	)
 	(wire
 		(pts
-			(xy 232.41 62.23) (xy 232.41 83.82)
+			(xy 181.61 171.45) (xy 181.61 193.04)
 		)
 		(stroke
 			(width 0)
 			(type default)
 		)
-		(uuid "5ee622b2-3024-43b5-ab51-9058f03e51ba")
+		(uuid "5fa2c265-20db-4226-ad28-2b3c86a02db6")
 	)
 	(wire
 		(pts
-			(xy 212.09 191.77) (xy 212.09 207.01)
+			(xy 85.09 63.5) (xy 85.09 85.09)
 		)
 		(stroke
 			(width 0)
 			(type default)
 		)
-		(uuid "6570326c-eaec-4691-ba0c-210c4d33e09a")
+		(uuid "61bf2973-5862-445b-a062-fdb2c7ceb66c")
 	)
 	(wire
 		(pts
-			(xy 161.29 127) (xy 161.29 148.59)
+			(xy 110.49 149.86) (xy 110.49 171.45)
 		)
 		(stroke
 			(width 0)
 			(type default)
 		)
-		(uuid "6643fdb5-e000-4901-848d-d41fa6171528")
+		(uuid "662d090e-241c-45c8-b293-312f3cc3ed94")
 	)
 	(wire
 		(pts
-			(xy 105.41 148.59) (xy 105.41 170.18)
+			(xy 105.41 63.5) (xy 105.41 85.09)
 		)
 		(stroke
 			(width 0)
 			(type default)
 		)
-		(uuid "675cf224-cdd5-49a3-a9d1-6107f0bee4e5")
+		(uuid "66ac3775-9820-4262-be18-3d9619e7d088")
 	)
 	(wire
 		(pts
-			(xy 156.21 170.18) (xy 156.21 191.77)
+			(xy 181.61 128.27) (xy 181.61 149.86)
 		)
 		(stroke
 			(width 0)
 			(type default)
 		)
-		(uuid "683cbe32-b4b9-4bcd-b06f-16717ae2e263")
+		(uuid "677b182c-1a1f-4bf5-bf8b-b9e4c2c2642e")
 	)
 	(wire
 		(pts
-			(xy 207.01 105.41) (xy 207.01 127)
+			(xy 232.41 128.27) (xy 232.41 149.86)
 		)
 		(stroke
 			(width 0)
 			(type default)
 		)
-		(uuid "694bf9e0-71b8-4a80-a5a7-52ee717283f6")
+		(uuid "68d41693-6856-46a0-adb5-e33699d90246")
 	)
 	(wire
 		(pts
-			(xy 105.41 83.82) (xy 105.41 105.41)
+			(xy 186.69 63.5) (xy 186.69 85.09)
 		)
 		(stroke
 			(width 0)
 			(type default)
 		)
-		(uuid "694ff29c-7368-4384-b303-579fb8e71e9e")
+		(uuid "6bc62b9f-49f4-4132-b0c0-b3b501f35a50")
 	)
 	(wire
 		(pts
-			(xy 232.41 40.64) (xy 232.41 62.23)
+			(xy 105.41 128.27) (xy 105.41 149.86)
 		)
 		(stroke
 			(width 0)
 			(type default)
 		)
-		(uuid "699c7107-2347-42fb-aa0e-65719be4a675")
-	)
-	(wire
-		(pts
-			(xy 85.09 40.64) (xy 85.09 62.23)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "69cf1a26-affe-41ef-9b7d-787230421be1")
+		(uuid "6bda541b-cd0a-4b6c-8788-736e2954ebdb")
 	)
 	(wire
 		(pts
@@ -3236,123 +3174,123 @@
 	)
 	(wire
 		(pts
-			(xy 135.89 83.82) (xy 135.89 105.41)
+			(xy 85.09 149.86) (xy 85.09 171.45)
 		)
 		(stroke
 			(width 0)
 			(type default)
 		)
-		(uuid "6f580f73-ca6f-4ea5-88a8-f813ff895c76")
+		(uuid "6d1a8a66-57bd-4fe9-b54f-735b12ca5927")
 	)
 	(wire
 		(pts
-			(xy 110.49 105.41) (xy 110.49 127)
+			(xy 161.29 193.04) (xy 161.29 207.01)
 		)
 		(stroke
 			(width 0)
 			(type default)
 		)
-		(uuid "7257295d-82f7-46a2-a681-53a94720ea04")
+		(uuid "6e8257f2-2c20-4c08-ab3b-5bcae213320d")
 	)
 	(wire
 		(pts
-			(xy 232.41 170.18) (xy 232.41 191.77)
+			(xy 161.29 128.27) (xy 161.29 149.86)
 		)
 		(stroke
 			(width 0)
 			(type default)
 		)
-		(uuid "736af6f4-621e-45e4-a4cd-2feafcb583d0")
+		(uuid "7080e58d-8f25-4f11-85c5-23e54ce16daf")
 	)
 	(wire
 		(pts
-			(xy 105.41 170.18) (xy 105.41 191.77)
+			(xy 59.69 85.09) (xy 59.69 106.68)
 		)
 		(stroke
 			(width 0)
 			(type default)
 		)
-		(uuid "74bcc7b6-d26c-43d3-abf6-5c950013ac61")
+		(uuid "70e53996-7c64-481a-a4d5-576265fd3052")
 	)
 	(wire
 		(pts
-			(xy 212.09 127) (xy 212.09 148.59)
+			(xy 156.21 128.27) (xy 156.21 149.86)
 		)
 		(stroke
 			(width 0)
 			(type default)
 		)
-		(uuid "7638de52-f147-4385-a6ad-f626c68286e0")
+		(uuid "712ca535-e948-46f1-b186-e7dde904cdb9")
 	)
 	(wire
 		(pts
-			(xy 85.09 127) (xy 85.09 148.59)
+			(xy 59.69 41.91) (xy 59.69 63.5)
 		)
 		(stroke
 			(width 0)
 			(type default)
 		)
-		(uuid "7668ac58-f80e-47b6-8d96-abd562faf9d4")
+		(uuid "71a7197c-29fd-42c2-917b-be22f5704e0a")
 	)
 	(wire
 		(pts
-			(xy 130.81 83.82) (xy 130.81 105.41)
+			(xy 181.61 193.04) (xy 181.61 207.01)
 		)
 		(stroke
 			(width 0)
 			(type default)
 		)
-		(uuid "80069b31-4b54-4547-b87f-cac90fee3286")
+		(uuid "76323fda-277e-444f-9f65-84824c082877")
 	)
 	(wire
 		(pts
-			(xy 186.69 127) (xy 186.69 148.59)
+			(xy 161.29 41.91) (xy 161.29 63.5)
 		)
 		(stroke
 			(width 0)
 			(type default)
 		)
-		(uuid "82347608-da7b-4e4e-9a1b-632b6ba140d3")
+		(uuid "7761906e-f4fe-4690-bab0-4847e8f284f1")
 	)
 	(wire
 		(pts
-			(xy 34.29 40.64) (xy 34.29 62.23)
+			(xy 207.01 171.45) (xy 207.01 193.04)
 		)
 		(stroke
 			(width 0)
 			(type default)
 		)
-		(uuid "83d99880-8888-4ddc-845b-2b0e19bf1768")
+		(uuid "7d17cda7-5c52-4526-a870-4c480fc1377e")
 	)
 	(wire
 		(pts
-			(xy 135.89 105.41) (xy 135.89 127)
+			(xy 156.21 171.45) (xy 156.21 193.04)
 		)
 		(stroke
 			(width 0)
 			(type default)
 		)
-		(uuid "848c9f46-ba3a-4bf5-bd26-421ae45783e1")
+		(uuid "7fc723a0-07b2-4c15-9fb4-c1c72dab35ef")
 	)
 	(wire
 		(pts
-			(xy 161.29 170.18) (xy 161.29 191.77)
+			(xy 232.41 171.45) (xy 232.41 193.04)
 		)
 		(stroke
 			(width 0)
 			(type default)
 		)
-		(uuid "8793c267-c5da-4984-9438-8efd7d8a28d4")
+		(uuid "809c4ff3-31b5-4b0e-9498-8a8cdd98580a")
 	)
 	(wire
 		(pts
-			(xy 54.61 40.64) (xy 54.61 62.23)
+			(xy 110.49 171.45) (xy 110.49 193.04)
 		)
 		(stroke
 			(width 0)
 			(type default)
 		)
-		(uuid "87e6a199-099e-4285-8b59-13149c403c1b")
+		(uuid "885383cb-5476-4d75-8558-6ffccd225973")
 	)
 	(wire
 		(pts
@@ -3366,83 +3304,63 @@
 	)
 	(wire
 		(pts
-			(xy 161.29 191.77) (xy 161.29 207.01)
+			(xy 181.61 63.5) (xy 181.61 85.09)
 		)
 		(stroke
 			(width 0)
 			(type default)
 		)
-		(uuid "892ec591-6ba4-4572-ad11-508543d95d83")
+		(uuid "8942cabf-d4d3-4227-8664-543e62b38d92")
 	)
 	(wire
 		(pts
-			(xy 80.01 62.23) (xy 80.01 83.82)
+			(xy 59.69 171.45) (xy 59.69 193.04)
 		)
 		(stroke
 			(width 0)
 			(type default)
 		)
-		(uuid "8a152a46-ce2f-4ce7-9955-0d8ed839da5d")
+		(uuid "8b5bdde0-b503-46f1-941c-86688afeb53c")
 	)
 	(wire
 		(pts
-			(xy 156.21 83.82) (xy 156.21 105.41)
+			(xy 161.29 63.5) (xy 161.29 85.09)
 		)
 		(stroke
 			(width 0)
 			(type default)
 		)
-		(uuid "8a35d60a-7496-42cf-b26f-43d3a3167359")
+		(uuid "8b604661-de85-425f-ba23-4584bb0e58ea")
 	)
 	(wire
 		(pts
-			(xy 85.09 105.41) (xy 85.09 127)
+			(xy 110.49 106.68) (xy 110.49 128.27)
 		)
 		(stroke
 			(width 0)
 			(type default)
 		)
-		(uuid "8a47ff3f-3c3b-450d-a15e-0eeb928dfe79")
+		(uuid "8bb3d8d7-a009-4ec1-a371-86995096be60")
 	)
 	(wire
 		(pts
-			(xy 54.61 127) (xy 54.61 148.59)
+			(xy 186.69 85.09) (xy 186.69 106.68)
 		)
 		(stroke
 			(width 0)
 			(type default)
 		)
-		(uuid "8d3886ec-ba07-466a-a09d-ba1f3a850569")
+		(uuid "8db45fc4-7c26-4748-860a-ccc616dcf048")
 	)
 	(wire
 		(pts
-			(xy 59.69 40.64) (xy 59.69 62.23)
+			(xy 135.89 106.68) (xy 135.89 128.27)
 		)
 		(stroke
 			(width 0)
 			(type default)
 		)
-		(uuid "8e68e540-64dd-4719-8c55-c67a8bbef5e6")
-	)
-	(wire
-		(pts
-			(xy 181.61 170.18) (xy 181.61 191.77)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "8e9dcad6-1a41-46cb-95ff-c6b4d33ef4cb")
-	)
-	(wire
-		(pts
-			(xy 232.41 127) (xy 232.41 148.59)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "8ef7b860-a17c-4c64-9e54-a96362e8abe9")
+		(uuid "8e1bdccc-e129-4ac7-b1fa-7e411eb93f51")
 	)
 	(wire
 		(pts
@@ -3456,113 +3374,93 @@
 	)
 	(wire
 		(pts
-			(xy 34.29 127) (xy 34.29 148.59)
+			(xy 54.61 63.5) (xy 54.61 85.09)
 		)
 		(stroke
 			(width 0)
 			(type default)
 		)
-		(uuid "9000713b-98a9-4a4c-9c49-cd524e93c419")
+		(uuid "8f82e2cc-651c-4602-b032-8588d02ac1d0")
 	)
 	(wire
 		(pts
-			(xy 105.41 62.23) (xy 105.41 83.82)
+			(xy 59.69 128.27) (xy 59.69 149.86)
 		)
 		(stroke
 			(width 0)
 			(type default)
 		)
-		(uuid "90089b25-07f4-426f-b192-f5812ab31636")
+		(uuid "93cbb6c9-b927-4bfd-82ac-e74bb34f9c0f")
 	)
 	(wire
 		(pts
-			(xy 207.01 83.82) (xy 207.01 105.41)
+			(xy 80.01 106.68) (xy 80.01 128.27)
 		)
 		(stroke
 			(width 0)
 			(type default)
 		)
-		(uuid "91e2715f-bdb5-4462-87ec-9777035f179e")
+		(uuid "93da06e5-e3c8-48d4-b775-a386a8ef31da")
 	)
 	(wire
 		(pts
-			(xy 130.81 191.77) (xy 130.81 207.01)
+			(xy 181.61 41.91) (xy 181.61 63.5)
 		)
 		(stroke
 			(width 0)
 			(type default)
 		)
-		(uuid "9282d96a-b504-438a-a0a9-b88e53d11757")
+		(uuid "945155e8-846a-449d-91b6-06eacc4de13c")
 	)
 	(wire
 		(pts
-			(xy 232.41 191.77) (xy 232.41 207.01)
+			(xy 212.09 106.68) (xy 212.09 128.27)
 		)
 		(stroke
 			(width 0)
 			(type default)
 		)
-		(uuid "931b1ffa-1b88-4ba9-8afa-3f6961b9c350")
+		(uuid "94692556-99f4-49a9-a2ef-17a2c1668398")
 	)
 	(wire
 		(pts
-			(xy 186.69 170.18) (xy 186.69 191.77)
+			(xy 186.69 128.27) (xy 186.69 149.86)
 		)
 		(stroke
 			(width 0)
 			(type default)
 		)
-		(uuid "96a52a92-0d70-4ae0-8080-f7fccc0ad738")
+		(uuid "9bbc25f2-2aa0-4c43-b34b-a2d4a9e946e1")
 	)
 	(wire
 		(pts
-			(xy 110.49 191.77) (xy 110.49 207.01)
+			(xy 105.41 171.45) (xy 105.41 193.04)
 		)
 		(stroke
 			(width 0)
 			(type default)
 		)
-		(uuid "96c76065-53de-43e3-b522-2e74d6678b8c")
+		(uuid "9c130c07-f627-4c9c-85f2-946ac1d1e104")
 	)
 	(wire
 		(pts
-			(xy 34.29 148.59) (xy 34.29 170.18)
+			(xy 105.41 193.04) (xy 105.41 207.01)
 		)
 		(stroke
 			(width 0)
 			(type default)
 		)
-		(uuid "97c015bb-966f-43e1-bcca-7ded3ad3ffae")
+		(uuid "9c91fdc1-fb9d-4d0c-abce-87358a0d4224")
 	)
 	(wire
 		(pts
-			(xy 54.61 148.59) (xy 54.61 170.18)
+			(xy 207.01 128.27) (xy 207.01 149.86)
 		)
 		(stroke
 			(width 0)
 			(type default)
 		)
-		(uuid "9b0a97a7-02c0-40b8-9300-49cc34fe4bd4")
-	)
-	(wire
-		(pts
-			(xy 80.01 170.18) (xy 80.01 191.77)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "9c2508ef-2c08-4e2f-9afa-744010100bae")
-	)
-	(wire
-		(pts
-			(xy 85.09 62.23) (xy 85.09 83.82)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "9e13baaf-860d-4d2d-aaec-f4f50fc203b5")
+		(uuid "9d9d4b8f-b894-4779-b9f3-bee9897193b0")
 	)
 	(wire
 		(pts
@@ -3576,33 +3474,53 @@
 	)
 	(wire
 		(pts
-			(xy 181.61 148.59) (xy 181.61 170.18)
+			(xy 110.49 85.09) (xy 110.49 106.68)
 		)
 		(stroke
 			(width 0)
 			(type default)
 		)
-		(uuid "a2da5eae-3e95-4f80-add0-6edfe02e12a9")
+		(uuid "9ee2e531-f453-4843-8a63-23f167d541c2")
 	)
 	(wire
 		(pts
-			(xy 130.81 170.18) (xy 130.81 191.77)
+			(xy 80.01 41.91) (xy 80.01 63.5)
 		)
 		(stroke
 			(width 0)
 			(type default)
 		)
-		(uuid "a31d49a0-db13-414d-80d6-c3e21b919a4b")
+		(uuid "9ef47f63-bade-4cc7-8675-dc0399ec383c")
 	)
 	(wire
 		(pts
-			(xy 135.89 191.77) (xy 135.89 207.01)
+			(xy 85.09 41.91) (xy 85.09 63.5)
 		)
 		(stroke
 			(width 0)
 			(type default)
 		)
-		(uuid "a3fb9ee0-eb1d-4d2a-8800-7b600d24352e")
+		(uuid "a0d610fd-d9d5-4559-b1f6-d3cadd14a617")
+	)
+	(wire
+		(pts
+			(xy 207.01 41.91) (xy 207.01 63.5)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "a2ade640-643b-4d1a-99df-cd8568d8dc13")
+	)
+	(wire
+		(pts
+			(xy 212.09 193.04) (xy 212.09 207.01)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "a51fdb92-b73b-4b2b-8ad9-75b2ffbc2c8b")
 	)
 	(wire
 		(pts
@@ -3616,63 +3534,23 @@
 	)
 	(wire
 		(pts
-			(xy 80.01 148.59) (xy 80.01 170.18)
+			(xy 232.41 63.5) (xy 232.41 85.09)
 		)
 		(stroke
 			(width 0)
 			(type default)
 		)
-		(uuid "a64399bd-9d57-4085-8f44-b46a9809f5b8")
+		(uuid "a72f840b-6edf-453b-966e-d76fb69a2442")
 	)
 	(wire
 		(pts
-			(xy 156.21 127) (xy 156.21 148.59)
+			(xy 130.81 149.86) (xy 130.81 171.45)
 		)
 		(stroke
 			(width 0)
 			(type default)
 		)
-		(uuid "a6c9c283-37b5-43f5-bbbf-21421fe9dda8")
-	)
-	(wire
-		(pts
-			(xy 212.09 170.18) (xy 212.09 191.77)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "a788164c-eedf-4efa-96c4-1cb7d850b8e3")
-	)
-	(wire
-		(pts
-			(xy 212.09 105.41) (xy 212.09 127)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "a858785f-2e56-4bdb-9f3a-ffd6db8d1106")
-	)
-	(wire
-		(pts
-			(xy 59.69 83.82) (xy 59.69 105.41)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "a9b9e373-538f-471c-9387-313d9a4a20f5")
-	)
-	(wire
-		(pts
-			(xy 181.61 191.77) (xy 181.61 207.01)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "ac440c8c-5b74-4b6f-b7f2-8660e94e0e4a")
+		(uuid "aa9798cc-a8d7-401f-b7db-5b0b7bbf6b0a")
 	)
 	(wire
 		(pts
@@ -3686,153 +3564,133 @@
 	)
 	(wire
 		(pts
-			(xy 207.01 62.23) (xy 207.01 83.82)
+			(xy 54.61 41.91) (xy 54.61 63.5)
 		)
 		(stroke
 			(width 0)
 			(type default)
 		)
-		(uuid "ae1de8b7-f98d-4eba-ad66-309ef43ba72b")
+		(uuid "afaaec9f-99b2-4050-8fad-7de0f0587cc6")
 	)
 	(wire
 		(pts
-			(xy 232.41 148.59) (xy 232.41 170.18)
+			(xy 130.81 63.5) (xy 130.81 85.09)
 		)
 		(stroke
 			(width 0)
 			(type default)
 		)
-		(uuid "ae376c7d-40c4-4ffb-b7bc-dd2a46fd5843")
+		(uuid "b03bd321-2ef4-4a9f-8efe-2f253b92aba1")
 	)
 	(wire
 		(pts
-			(xy 156.21 148.59) (xy 156.21 170.18)
+			(xy 181.61 106.68) (xy 181.61 128.27)
 		)
 		(stroke
 			(width 0)
 			(type default)
 		)
-		(uuid "affb6b05-2f53-4d2e-ada3-ccb547345017")
+		(uuid "b110d5dc-3fdd-4e8d-8092-540500b8ce2e")
 	)
 	(wire
 		(pts
-			(xy 212.09 148.59) (xy 212.09 170.18)
+			(xy 80.01 63.5) (xy 80.01 85.09)
 		)
 		(stroke
 			(width 0)
 			(type default)
 		)
-		(uuid "b05a79cc-64b1-428a-b124-67ac3a1ab893")
+		(uuid "b41bb171-a9fe-4ba2-823f-921bce1304c1")
 	)
 	(wire
 		(pts
-			(xy 181.61 105.41) (xy 181.61 127)
+			(xy 85.09 85.09) (xy 85.09 106.68)
 		)
 		(stroke
 			(width 0)
 			(type default)
 		)
-		(uuid "b05d3af9-bb31-44a5-ba68-4adb30c65fd3")
+		(uuid "bb21a563-cc30-487f-bcd7-96f5aca83395")
 	)
 	(wire
 		(pts
-			(xy 59.69 191.77) (xy 59.69 207.01)
+			(xy 59.69 63.5) (xy 59.69 85.09)
 		)
 		(stroke
 			(width 0)
 			(type default)
 		)
-		(uuid "b55d4eca-3d95-4fff-8e11-c4833fbca4e5")
+		(uuid "bb2ee38a-18cf-47be-998f-a8a65d54b072")
 	)
 	(wire
 		(pts
-			(xy 34.29 83.82) (xy 34.29 105.41)
+			(xy 85.09 128.27) (xy 85.09 149.86)
 		)
 		(stroke
 			(width 0)
 			(type default)
 		)
-		(uuid "b649b0c8-9530-4cd4-b276-2eebb22ca22d")
+		(uuid "bce5f7c5-8c34-43a2-bf64-f591ea781546")
 	)
 	(wire
 		(pts
-			(xy 110.49 83.82) (xy 110.49 105.41)
+			(xy 59.69 193.04) (xy 59.69 207.01)
 		)
 		(stroke
 			(width 0)
 			(type default)
 		)
-		(uuid "b7cbb019-35f1-4adc-8356-a0e5d6b6e193")
+		(uuid "bf58cc6e-9c33-43de-8570-a3ca24b843be")
 	)
 	(wire
 		(pts
-			(xy 207.01 170.18) (xy 207.01 191.77)
+			(xy 135.89 63.5) (xy 135.89 85.09)
 		)
 		(stroke
 			(width 0)
 			(type default)
 		)
-		(uuid "baf26a25-2074-493c-833c-8895e1f7228b")
+		(uuid "bf5f58e8-c457-444b-b909-45281c668c5a")
 	)
 	(wire
 		(pts
-			(xy 80.01 191.77) (xy 80.01 207.01)
+			(xy 34.29 193.04) (xy 34.29 207.01)
 		)
 		(stroke
 			(width 0)
 			(type default)
 		)
-		(uuid "bc64009a-5800-4ede-8eaf-a8d662635a8e")
+		(uuid "c212432e-73ac-4d05-b16e-e448d3755ebb")
 	)
 	(wire
 		(pts
-			(xy 156.21 40.64) (xy 156.21 62.23)
+			(xy 130.81 193.04) (xy 130.81 207.01)
 		)
 		(stroke
 			(width 0)
 			(type default)
 		)
-		(uuid "bcf47db5-1c78-4137-b495-9e3bce87b030")
+		(uuid "c4426770-221f-4a32-8a92-b1cdd5dedf57")
 	)
 	(wire
 		(pts
-			(xy 186.69 83.82) (xy 186.69 105.41)
+			(xy 110.49 63.5) (xy 110.49 85.09)
 		)
 		(stroke
 			(width 0)
 			(type default)
 		)
-		(uuid "bfaf07bd-b29e-49c1-bd5a-9b93cdc2a64e")
+		(uuid "c82d5f41-5f20-4fb4-b528-ac42d27831af")
 	)
 	(wire
 		(pts
-			(xy 85.09 148.59) (xy 85.09 170.18)
+			(xy 34.29 63.5) (xy 34.29 85.09)
 		)
 		(stroke
 			(width 0)
 			(type default)
 		)
-		(uuid "c7489ee3-73c9-42de-a66e-a746d6d8c151")
-	)
-	(wire
-		(pts
-			(xy 85.09 170.18) (xy 85.09 191.77)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "c7dba2a8-a0c2-4b04-b846-4e0123e81f08")
-	)
-	(wire
-		(pts
-			(xy 135.89 170.18) (xy 135.89 191.77)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "c963ba13-d243-468f-8c8b-f7c443a1ca17")
+		(uuid "c92ea5ef-f987-4c49-a74f-3528bee049fa")
 	)
 	(wire
 		(pts
@@ -3846,103 +3704,113 @@
 	)
 	(wire
 		(pts
-			(xy 161.29 148.59) (xy 161.29 170.18)
+			(xy 105.41 85.09) (xy 105.41 106.68)
 		)
 		(stroke
 			(width 0)
 			(type default)
 		)
-		(uuid "cd4640c0-0052-47c0-985d-aaa85e1bbeb4")
+		(uuid "ca5b7f5b-4c4b-4c61-9508-ce86f798196c")
 	)
 	(wire
 		(pts
-			(xy 59.69 148.59) (xy 59.69 170.18)
+			(xy 212.09 149.86) (xy 212.09 171.45)
 		)
 		(stroke
 			(width 0)
 			(type default)
 		)
-		(uuid "cf2b3928-de6f-4362-b8a2-d49fdbd1c14e")
+		(uuid "cb0d9a48-a576-4a04-91da-e81f956029a6")
 	)
 	(wire
 		(pts
-			(xy 186.69 191.77) (xy 186.69 207.01)
+			(xy 212.09 63.5) (xy 212.09 85.09)
 		)
 		(stroke
 			(width 0)
 			(type default)
 		)
-		(uuid "d387c3c2-dbee-4813-8aa5-d9063f3c584b")
+		(uuid "cf2894e1-605d-4ee4-89ae-98fd8b0378a7")
 	)
 	(wire
 		(pts
-			(xy 232.41 105.41) (xy 232.41 127)
+			(xy 232.41 193.04) (xy 232.41 207.01)
 		)
 		(stroke
 			(width 0)
 			(type default)
 		)
-		(uuid "d7f0cdb6-4ddc-42ed-8fb4-e58fe9dec22e")
+		(uuid "cf328a32-e8d7-42ea-9bc4-dad544e553b9")
 	)
 	(wire
 		(pts
-			(xy 186.69 62.23) (xy 186.69 83.82)
+			(xy 130.81 106.68) (xy 130.81 128.27)
 		)
 		(stroke
 			(width 0)
 			(type default)
 		)
-		(uuid "d92dbf72-43f5-44a6-bca4-88ae37ecdcce")
+		(uuid "cfe3d7e4-19a2-40bf-aa32-82a74a93a357")
 	)
 	(wire
 		(pts
-			(xy 85.09 191.77) (xy 85.09 207.01)
+			(xy 156.21 41.91) (xy 156.21 63.5)
 		)
 		(stroke
 			(width 0)
 			(type default)
 		)
-		(uuid "d9e01036-3855-4cbd-8d7f-d9749f7776d8")
+		(uuid "d631706b-c256-4f31-9af4-fe48ba7cf9e8")
 	)
 	(wire
 		(pts
-			(xy 207.01 148.59) (xy 207.01 170.18)
+			(xy 212.09 171.45) (xy 212.09 193.04)
 		)
 		(stroke
 			(width 0)
 			(type default)
 		)
-		(uuid "db0194f2-7668-4dac-b3d4-5e891d3ff850")
+		(uuid "d7137a3e-0fbc-4643-b47c-f2b408698de1")
 	)
 	(wire
 		(pts
-			(xy 59.69 170.18) (xy 59.69 191.77)
+			(xy 80.01 171.45) (xy 80.01 193.04)
 		)
 		(stroke
 			(width 0)
 			(type default)
 		)
-		(uuid "dd4b9880-1f59-47d0-bb3a-15ee04845aed")
+		(uuid "da7822e1-7ddf-4549-8eb6-bf66dccd5a22")
 	)
 	(wire
 		(pts
-			(xy 80.01 40.64) (xy 80.01 62.23)
+			(xy 34.29 149.86) (xy 34.29 171.45)
 		)
 		(stroke
 			(width 0)
 			(type default)
 		)
-		(uuid "df2285cc-92b5-4944-951e-092c38e671d1")
+		(uuid "daec5582-e528-4156-b087-0836e9c777db")
 	)
 	(wire
 		(pts
-			(xy 34.29 170.18) (xy 34.29 191.77)
+			(xy 207.01 85.09) (xy 207.01 106.68)
 		)
 		(stroke
 			(width 0)
 			(type default)
 		)
-		(uuid "dff0fb37-379a-49a9-ad66-c06684344373")
+		(uuid "db873d46-efe9-45ea-878c-635343e113bf")
+	)
+	(wire
+		(pts
+			(xy 34.29 41.91) (xy 34.29 63.5)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "df7ac13a-eb86-4ccc-a795-4eb8d3f3084d")
 	)
 	(wire
 		(pts
@@ -3956,33 +3824,33 @@
 	)
 	(wire
 		(pts
-			(xy 34.29 105.41) (xy 34.29 127)
+			(xy 34.29 171.45) (xy 34.29 193.04)
 		)
 		(stroke
 			(width 0)
 			(type default)
 		)
-		(uuid "e14c41f6-0b12-4512-8d52-2ba8655f62fb")
+		(uuid "e0e13bdc-e13f-4afa-8ad5-4af59aa5d256")
 	)
 	(wire
 		(pts
-			(xy 135.89 148.59) (xy 135.89 170.18)
+			(xy 232.41 41.91) (xy 232.41 63.5)
 		)
 		(stroke
 			(width 0)
 			(type default)
 		)
-		(uuid "e3209eeb-749f-4de5-a747-5fbeb5f8f587")
+		(uuid "e338d4b1-2333-4530-87ef-7a964fb20dd0")
 	)
 	(wire
 		(pts
-			(xy 130.81 62.23) (xy 130.81 83.82)
+			(xy 156.21 63.5) (xy 156.21 85.09)
 		)
 		(stroke
 			(width 0)
 			(type default)
 		)
-		(uuid "e331d0ca-c439-4ac2-a4cd-601534c1a39f")
+		(uuid "e4262f86-d32f-44f8-b93b-920724d1bc17")
 	)
 	(wire
 		(pts
@@ -3996,6 +3864,36 @@
 	)
 	(wire
 		(pts
+			(xy 207.01 149.86) (xy 207.01 171.45)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "e73bbdec-d35d-4d4d-842e-b97d8d001579")
+	)
+	(wire
+		(pts
+			(xy 54.61 85.09) (xy 54.61 106.68)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "e9701336-ef7c-4905-8f62-740f602cfa0b")
+	)
+	(wire
+		(pts
+			(xy 135.89 149.86) (xy 135.89 171.45)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "ea56f7f7-27de-434a-896a-259702d3b6f4")
+	)
+	(wire
+		(pts
 			(xy 356.87 87.63) (xy 356.87 107.95)
 		)
 		(stroke
@@ -4006,43 +3904,53 @@
 	)
 	(wire
 		(pts
-			(xy 130.81 148.59) (xy 130.81 170.18)
+			(xy 105.41 41.91) (xy 105.41 63.5)
 		)
 		(stroke
 			(width 0)
 			(type default)
 		)
-		(uuid "f21c04f1-2a80-464d-9769-9cf9b1be6179")
+		(uuid "ed3a8020-4291-4d5c-b77c-cfc88155c8d1")
 	)
 	(wire
 		(pts
-			(xy 59.69 105.41) (xy 59.69 127)
+			(xy 212.09 128.27) (xy 212.09 149.86)
 		)
 		(stroke
 			(width 0)
 			(type default)
 		)
-		(uuid "f31dd840-82aa-4a6e-8692-088f9a435d29")
+		(uuid "f6d4e46d-5181-4921-bf5b-1f95a5ce53cb")
 	)
 	(wire
 		(pts
-			(xy 85.09 83.82) (xy 85.09 105.41)
+			(xy 186.69 193.04) (xy 186.69 207.01)
 		)
 		(stroke
 			(width 0)
 			(type default)
 		)
-		(uuid "f7ef5cf9-b5b8-465a-a4f6-ffdb53be3ff0")
+		(uuid "f8ac9456-039d-4287-948d-4abbe64601b5")
 	)
 	(wire
 		(pts
-			(xy 54.61 170.18) (xy 54.61 191.77)
+			(xy 232.41 85.09) (xy 232.41 106.68)
 		)
 		(stroke
 			(width 0)
 			(type default)
 		)
-		(uuid "f84a0345-812b-48af-9dc9-0c272dce2c42")
+		(uuid "f8d418d0-e5b8-4b42-8b84-721a72e2e46c")
+	)
+	(wire
+		(pts
+			(xy 80.01 85.09) (xy 80.01 106.68)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "f9d2c594-4495-47ff-8251-d94e086627c7")
 	)
 	(wire
 		(pts
@@ -4056,43 +3964,43 @@
 	)
 	(wire
 		(pts
-			(xy 186.69 148.59) (xy 186.69 170.18)
+			(xy 130.81 171.45) (xy 130.81 193.04)
 		)
 		(stroke
 			(width 0)
 			(type default)
 		)
-		(uuid "fa87746b-e9fd-4964-b4b3-57c135541f94")
+		(uuid "fb41a4f2-aa15-459a-b3bc-c53590e86cd0")
 	)
 	(wire
 		(pts
-			(xy 207.01 40.64) (xy 207.01 62.23)
+			(xy 181.61 149.86) (xy 181.61 171.45)
 		)
 		(stroke
 			(width 0)
 			(type default)
 		)
-		(uuid "fb161c30-3e0e-4e39-be12-6db90943064c")
+		(uuid "fba7ee2d-458a-4de2-8ad0-c96d579a48f8")
 	)
 	(wire
 		(pts
-			(xy 181.61 127) (xy 181.61 148.59)
+			(xy 135.89 128.27) (xy 135.89 149.86)
 		)
 		(stroke
 			(width 0)
 			(type default)
 		)
-		(uuid "fc4af49b-5f09-4e65-a2e8-f705fa7439d3")
+		(uuid "fc080388-048b-42d9-8164-b297dd557168")
 	)
-	(label "MP1584EN"
-		(at 368.3 193.04 0)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify left bottom)
+	(wire
+		(pts
+			(xy 59.69 106.68) (xy 59.69 128.27)
 		)
-		(uuid "02861a4f-6428-42ac-a15f-ac14d79429dc")
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "fc897290-ccb5-495d-8db7-173eb180f8b3")
 	)
 	(label "ADDR → GND (for address 0x48)"
 		(at 375.92 119.38 0)
@@ -4216,7 +4124,7 @@
 	)
 	(global_label "3.3V"
 		(shape input)
-		(at 207.01 207.01 270)
+		(at 186.69 207.01 270)
 		(fields_autoplaced yes)
 		(effects
 			(font
@@ -4226,7 +4134,7 @@
 		)
 		(uuid "206e6fb6-0418-4fa5-aee3-b9fe3a7763a4")
 		(property "Intersheetrefs" "${INTERSHEET_REFS}"
-			(at 207.01 214.1076 90)
+			(at 186.69 214.1076 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -4260,7 +4168,7 @@
 	)
 	(global_label "5V"
 		(shape input)
-		(at 358.14 181.61 180)
+		(at 356.87 184.15 180)
 		(fields_autoplaced yes)
 		(effects
 			(font
@@ -4270,7 +4178,7 @@
 		)
 		(uuid "27b73785-6f1d-4d1d-97c2-8fd086415e97")
 		(property "Intersheetrefs" "${INTERSHEET_REFS}"
-			(at 352.8567 181.61 0)
+			(at 351.5867 184.15 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -4414,7 +4322,7 @@
 	)
 	(global_label "GND"
 		(shape input)
-		(at 186.69 207.01 270)
+		(at 181.61 207.01 270)
 		(fields_autoplaced yes)
 		(effects
 			(font
@@ -4424,7 +4332,7 @@
 		)
 		(uuid "4f8bc17f-7af6-49ac-85ca-6eaed4657b2b")
 		(property "Intersheetrefs" "${INTERSHEET_REFS}"
-			(at 186.69 213.8657 90)
+			(at 181.61 213.8657 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -4436,7 +4344,7 @@
 	)
 	(global_label "3.3V"
 		(shape input)
-		(at 80.01 207.01 270)
+		(at 59.69 207.01 270)
 		(fields_autoplaced yes)
 		(effects
 			(font
@@ -4446,7 +4354,7 @@
 		)
 		(uuid "5ac2cca6-27d6-4ea1-92aa-9b73725d05b6")
 		(property "Intersheetrefs" "${INTERSHEET_REFS}"
-			(at 80.01 214.1076 90)
+			(at 59.69 214.1076 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -4480,7 +4388,29 @@
 	)
 	(global_label "GND"
 		(shape input)
-		(at 110.49 207.01 270)
+		(at 232.41 207.01 270)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right)
+		)
+		(uuid "61fdcac0-6d81-4e9f-b63e-43f8936d82e5")
+		(property "Intersheetrefs" "${INTERSHEET_REFS}"
+			(at 232.41 213.8657 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+				(hide yes)
+			)
+		)
+	)
+	(global_label "GND"
+		(shape input)
+		(at 105.41 207.01 270)
 		(fields_autoplaced yes)
 		(effects
 			(font
@@ -4490,7 +4420,7 @@
 		)
 		(uuid "6516b6dd-2890-4f24-aa67-19ae9cacecba")
 		(property "Intersheetrefs" "${INTERSHEET_REFS}"
-			(at 110.49 213.8657 90)
+			(at 105.41 213.8657 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -4568,29 +4498,7 @@
 	)
 	(global_label "GND"
 		(shape input)
-		(at 34.29 207.01 270)
-		(fields_autoplaced yes)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify right)
-		)
-		(uuid "75563f6c-9a05-42f8-acaa-deb9681d7a30")
-		(property "Intersheetrefs" "${INTERSHEET_REFS}"
-			(at 34.29 213.8657 90)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify right)
-				(hide yes)
-			)
-		)
-	)
-	(global_label "GND"
-		(shape input)
-		(at 135.89 207.01 270)
+		(at 130.81 207.01 270)
 		(fields_autoplaced yes)
 		(effects
 			(font
@@ -4600,7 +4508,7 @@
 		)
 		(uuid "7d83a20e-6f2a-40f3-bc2f-0b87094410b8")
 		(property "Intersheetrefs" "${INTERSHEET_REFS}"
-			(at 135.89 213.8657 90)
+			(at 130.81 213.8657 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -4700,7 +4608,7 @@
 	)
 	(global_label "GND"
 		(shape input)
-		(at 161.29 207.01 270)
+		(at 156.21 207.01 270)
 		(fields_autoplaced yes)
 		(effects
 			(font
@@ -4710,7 +4618,7 @@
 		)
 		(uuid "8fd7d80e-d7a4-43c6-a20f-b1118b11d706")
 		(property "Intersheetrefs" "${INTERSHEET_REFS}"
-			(at 161.29 213.8657 90)
+			(at 156.21 213.8657 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -4766,7 +4674,7 @@
 	)
 	(global_label "GND"
 		(shape input)
-		(at 375.92 185.42 0)
+		(at 374.65 187.96 0)
 		(fields_autoplaced yes)
 		(effects
 			(font
@@ -4776,7 +4684,7 @@
 		)
 		(uuid "a2acbf38-c191-49e1-beb5-9256b6fa44d7")
 		(property "Intersheetrefs" "${INTERSHEET_REFS}"
-			(at 382.7757 185.42 0)
+			(at 381.5057 187.96 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -4788,7 +4696,7 @@
 	)
 	(global_label "GND"
 		(shape input)
-		(at 59.69 207.01 270)
+		(at 54.61 207.01 270)
 		(fields_autoplaced yes)
 		(effects
 			(font
@@ -4798,7 +4706,7 @@
 		)
 		(uuid "a51f3b0e-5d4c-4bfa-8547-9ed1471ad60f")
 		(property "Intersheetrefs" "${INTERSHEET_REFS}"
-			(at 59.69 213.8657 90)
+			(at 54.61 213.8657 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -4832,7 +4740,7 @@
 	)
 	(global_label "3.3V"
 		(shape input)
-		(at 130.81 207.01 270)
+		(at 110.49 207.01 270)
 		(fields_autoplaced yes)
 		(effects
 			(font
@@ -4842,7 +4750,7 @@
 		)
 		(uuid "a5f19194-2510-46d0-b0b9-1bcd461f6bed")
 		(property "Intersheetrefs" "${INTERSHEET_REFS}"
-			(at 130.81 214.1076 90)
+			(at 110.49 214.1076 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -4898,7 +4806,7 @@
 	)
 	(global_label "GND"
 		(shape input)
-		(at 212.09 207.01 270)
+		(at 207.01 207.01 270)
 		(fields_autoplaced yes)
 		(effects
 			(font
@@ -4908,7 +4816,7 @@
 		)
 		(uuid "a9fb5279-15da-4752-9606-cd4e3ba1333e")
 		(property "Intersheetrefs" "${INTERSHEET_REFS}"
-			(at 212.09 213.8657 90)
+			(at 207.01 213.8657 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -4986,7 +4894,7 @@
 	)
 	(global_label "3.3V"
 		(shape input)
-		(at 105.41 207.01 270)
+		(at 85.09 207.01 270)
 		(fields_autoplaced yes)
 		(effects
 			(font
@@ -4996,7 +4904,7 @@
 		)
 		(uuid "b2c926be-5bdc-45c0-b9c5-86a0cf3aeca9")
 		(property "Intersheetrefs" "${INTERSHEET_REFS}"
-			(at 105.41 214.1076 90)
+			(at 85.09 214.1076 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -5008,7 +4916,7 @@
 	)
 	(global_label "GND"
 		(shape input)
-		(at 85.09 207.01 270)
+		(at 80.01 207.01 270)
 		(fields_autoplaced yes)
 		(effects
 			(font
@@ -5018,7 +4926,7 @@
 		)
 		(uuid "b36e75cf-0906-489c-ac73-11e9b1ae11fe")
 		(property "Intersheetrefs" "${INTERSHEET_REFS}"
-			(at 85.09 213.8657 90)
+			(at 80.01 213.8657 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -5096,7 +5004,7 @@
 	)
 	(global_label "3.3V"
 		(shape input)
-		(at 156.21 207.01 270)
+		(at 135.89 207.01 270)
 		(fields_autoplaced yes)
 		(effects
 			(font
@@ -5106,7 +5014,7 @@
 		)
 		(uuid "bfb825a1-715f-4d6d-ade9-f8d60896b423")
 		(property "Intersheetrefs" "${INTERSHEET_REFS}"
-			(at 156.21 214.1076 90)
+			(at 135.89 214.1076 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -5140,7 +5048,7 @@
 	)
 	(global_label "GND"
 		(shape input)
-		(at 358.14 185.42 180)
+		(at 356.87 187.96 180)
 		(fields_autoplaced yes)
 		(effects
 			(font
@@ -5150,7 +5058,7 @@
 		)
 		(uuid "c621fa71-c156-427d-8a35-993b296cac42")
 		(property "Intersheetrefs" "${INTERSHEET_REFS}"
-			(at 351.2843 185.42 0)
+			(at 350.0143 187.96 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -5162,7 +5070,7 @@
 	)
 	(global_label "3.3V"
 		(shape input)
-		(at 232.41 207.01 270)
+		(at 212.09 207.01 270)
 		(fields_autoplaced yes)
 		(effects
 			(font
@@ -5172,7 +5080,7 @@
 		)
 		(uuid "c80f54e3-ee34-4ad1-9ea1-d2cdaa8aced1")
 		(property "Intersheetrefs" "${INTERSHEET_REFS}"
-			(at 232.41 214.1076 90)
+			(at 212.09 214.1076 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -5206,7 +5114,7 @@
 	)
 	(global_label "3.3V"
 		(shape input)
-		(at 181.61 207.01 270)
+		(at 161.29 207.01 270)
 		(fields_autoplaced yes)
 		(effects
 			(font
@@ -5216,7 +5124,7 @@
 		)
 		(uuid "d2f98bc5-28a8-4841-95b0-9a93f6520a00")
 		(property "Intersheetrefs" "${INTERSHEET_REFS}"
-			(at 181.61 214.1076 90)
+			(at 161.29 214.1076 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -5294,7 +5202,7 @@
 	)
 	(global_label "3.3V"
 		(shape input)
-		(at 375.92 181.61 0)
+		(at 374.65 184.15 0)
 		(fields_autoplaced yes)
 		(effects
 			(font
@@ -5304,7 +5212,7 @@
 		)
 		(uuid "df380aa1-7786-47cd-85f3-4f96fbc5ee82")
 		(property "Intersheetrefs" "${INTERSHEET_REFS}"
-			(at 383.0176 181.61 0)
+			(at 381.7476 184.15 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -5338,7 +5246,7 @@
 	)
 	(global_label "3.3V"
 		(shape input)
-		(at 54.61 207.01 270)
+		(at 34.29 207.01 270)
 		(fields_autoplaced yes)
 		(effects
 			(font
@@ -5348,7 +5256,7 @@
 		)
 		(uuid "f24d0244-3459-4aed-a6c3-3dfc6fd560ea")
 		(property "Intersheetrefs" "${INTERSHEET_REFS}"
-			(at 54.61 214.1076 90)
+			(at 34.29 214.1076 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -5425,8 +5333,8 @@
 		)
 	)
 	(symbol
-		(lib_id "Sensor_Magnetic:A1302xUA")
-		(at 146.05 194.31 270)
+		(lib_id "SS49E:SS49E")
+		(at 146.05 194.31 0)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
@@ -5435,25 +5343,23 @@
 		(fields_autoplaced yes)
 		(uuid "0146aad6-6424-4d3f-b4e5-bc5553681b5a")
 		(property "Reference" "U50"
-			(at 147.3201 186.69 0)
+			(at 146.05 184.15 0)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
-				(justify right)
 			)
 		)
 		(property "Value" "A1302xUA"
-			(at 144.7801 186.69 0)
+			(at 146.05 186.69 0)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
-				(justify right)
 			)
 		)
-		(property "Footprint" "Package_TO_SOT_THT:TO-92S"
-			(at 129.032 194.31 0)
+		(property "Footprint" "SEN3_SS49E_HNW"
+			(at 146.05 194.31 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -5462,17 +5368,18 @@
 				(hide yes)
 			)
 		)
-		(property "Datasheet" "http://www.allegromicro.com/~/media/Files/Datasheets/A1301-2-Datasheet.ashx"
-			(at 133.096 194.31 0)
+		(property "Datasheet" "SS49E"
+			(at 146.05 194.31 0)
 			(effects
 				(font
 					(size 1.27 1.27)
+					(italic yes)
 				)
 				(hide yes)
 			)
 		)
 		(property "Description" "Linear Hall Effect Sensor, 1.3 mV/G, 4.5-6.0V supply, TO-92S (3-pin SIP)"
-			(at 131.064 194.31 0)
+			(at 146.05 194.31 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -5499,8 +5406,8 @@
 		)
 	)
 	(symbol
-		(lib_id "Sensor_Magnetic:A1302xUA")
-		(at 171.45 107.95 270)
+		(lib_id "SS49E:SS49E")
+		(at 171.45 107.95 0)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
@@ -5509,25 +5416,23 @@
 		(fields_autoplaced yes)
 		(uuid "02d77c21-ffd1-4dc3-bd5d-d11123bf348c")
 		(property "Reference" "U37"
-			(at 172.7201 100.33 0)
+			(at 171.45 97.79 0)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
-				(justify right)
 			)
 		)
 		(property "Value" "A1302xUA"
-			(at 170.1801 100.33 0)
+			(at 171.45 100.33 0)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
-				(justify right)
 			)
 		)
-		(property "Footprint" "Package_TO_SOT_THT:TO-92S"
-			(at 154.432 107.95 0)
+		(property "Footprint" "SEN3_SS49E_HNW"
+			(at 171.45 107.95 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -5536,17 +5441,18 @@
 				(hide yes)
 			)
 		)
-		(property "Datasheet" "http://www.allegromicro.com/~/media/Files/Datasheets/A1301-2-Datasheet.ashx"
-			(at 158.496 107.95 0)
+		(property "Datasheet" "SS49E"
+			(at 171.45 107.95 0)
 			(effects
 				(font
 					(size 1.27 1.27)
+					(italic yes)
 				)
 				(hide yes)
 			)
 		)
 		(property "Description" "Linear Hall Effect Sensor, 1.3 mV/G, 4.5-6.0V supply, TO-92S (3-pin SIP)"
-			(at 156.464 107.95 0)
+			(at 171.45 107.95 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -5573,8 +5479,8 @@
 		)
 	)
 	(symbol
-		(lib_id "Sensor_Magnetic:A1302xUA")
-		(at 95.25 194.31 270)
+		(lib_id "SS49E:SS49E")
+		(at 95.25 194.31 0)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
@@ -5583,25 +5489,23 @@
 		(fields_autoplaced yes)
 		(uuid "049c90d6-8edc-4f96-9b71-980657fb3547")
 		(property "Reference" "U73"
-			(at 96.5201 186.69 0)
+			(at 95.25 184.15 0)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
-				(justify right)
 			)
 		)
 		(property "Value" "A1302xUA"
-			(at 93.9801 186.69 0)
+			(at 95.25 186.69 0)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
-				(justify right)
 			)
 		)
-		(property "Footprint" "Package_TO_SOT_THT:TO-92S"
-			(at 78.232 194.31 0)
+		(property "Footprint" "SEN3_SS49E_HNW"
+			(at 95.25 194.31 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -5610,17 +5514,18 @@
 				(hide yes)
 			)
 		)
-		(property "Datasheet" "http://www.allegromicro.com/~/media/Files/Datasheets/A1301-2-Datasheet.ashx"
-			(at 82.296 194.31 0)
+		(property "Datasheet" "SS49E"
+			(at 95.25 194.31 0)
 			(effects
 				(font
 					(size 1.27 1.27)
+					(italic yes)
 				)
 				(hide yes)
 			)
 		)
 		(property "Description" "Linear Hall Effect Sensor, 1.3 mV/G, 4.5-6.0V supply, TO-92S (3-pin SIP)"
-			(at 80.264 194.31 0)
+			(at 95.25 194.31 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -5647,8 +5552,8 @@
 		)
 	)
 	(symbol
-		(lib_id "Sensor_Magnetic:A1302xUA")
-		(at 95.25 107.95 270)
+		(lib_id "SS49E:SS49E")
+		(at 95.25 107.95 0)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
@@ -5657,25 +5562,23 @@
 		(fields_autoplaced yes)
 		(uuid "05e1343b-2c2c-4dd6-a423-83d18b856990")
 		(property "Reference" "U61"
-			(at 96.5201 100.33 0)
+			(at 95.25 97.79 0)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
-				(justify right)
 			)
 		)
 		(property "Value" "A1302xUA"
-			(at 93.9801 100.33 0)
+			(at 95.25 100.33 0)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
-				(justify right)
 			)
 		)
-		(property "Footprint" "Package_TO_SOT_THT:TO-92S"
-			(at 78.232 107.95 0)
+		(property "Footprint" "SEN3_SS49E_HNW"
+			(at 95.25 107.95 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -5684,17 +5587,18 @@
 				(hide yes)
 			)
 		)
-		(property "Datasheet" "http://www.allegromicro.com/~/media/Files/Datasheets/A1301-2-Datasheet.ashx"
-			(at 82.296 107.95 0)
+		(property "Datasheet" "SS49E"
+			(at 95.25 107.95 0)
 			(effects
 				(font
 					(size 1.27 1.27)
+					(italic yes)
 				)
 				(hide yes)
 			)
 		)
 		(property "Description" "Linear Hall Effect Sensor, 1.3 mV/G, 4.5-6.0V supply, TO-92S (3-pin SIP)"
-			(at 80.264 107.95 0)
+			(at 95.25 107.95 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -5952,8 +5856,8 @@
 		)
 	)
 	(symbol
-		(lib_id "Sensor_Magnetic:A1302xUA")
-		(at 95.25 172.72 270)
+		(lib_id "SS49E:SS49E")
+		(at 95.25 172.72 0)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
@@ -5962,25 +5866,23 @@
 		(fields_autoplaced yes)
 		(uuid "1715accc-0a9e-4982-88ad-41d03165ccca")
 		(property "Reference" "U70"
-			(at 96.5201 165.1 0)
+			(at 95.25 162.56 0)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
-				(justify right)
 			)
 		)
 		(property "Value" "A1302xUA"
-			(at 93.9801 165.1 0)
+			(at 95.25 165.1 0)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
-				(justify right)
 			)
 		)
-		(property "Footprint" "Package_TO_SOT_THT:TO-92S"
-			(at 78.232 172.72 0)
+		(property "Footprint" "SEN3_SS49E_HNW"
+			(at 95.25 172.72 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -5989,17 +5891,18 @@
 				(hide yes)
 			)
 		)
-		(property "Datasheet" "http://www.allegromicro.com/~/media/Files/Datasheets/A1301-2-Datasheet.ashx"
-			(at 82.296 172.72 0)
+		(property "Datasheet" "SS49E"
+			(at 95.25 172.72 0)
 			(effects
 				(font
 					(size 1.27 1.27)
+					(italic yes)
 				)
 				(hide yes)
 			)
 		)
 		(property "Description" "Linear Hall Effect Sensor, 1.3 mV/G, 4.5-6.0V supply, TO-92S (3-pin SIP)"
-			(at 80.264 172.72 0)
+			(at 95.25 172.72 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -6026,8 +5929,8 @@
 		)
 	)
 	(symbol
-		(lib_id "Sensor_Magnetic:A1302xUA")
-		(at 222.25 194.31 270)
+		(lib_id "SS49E:SS49E")
+		(at 222.25 194.31 0)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
@@ -6036,25 +5939,23 @@
 		(fields_autoplaced yes)
 		(uuid "1990a2ef-7041-4a1f-a92c-1afca666d016")
 		(property "Reference" "U19"
-			(at 223.5201 186.69 0)
+			(at 222.25 184.15 0)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
-				(justify right)
 			)
 		)
 		(property "Value" "A1302xUA"
-			(at 220.9801 186.69 0)
+			(at 222.25 186.69 0)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
-				(justify right)
 			)
 		)
-		(property "Footprint" "Package_TO_SOT_THT:TO-92S"
-			(at 205.232 194.31 0)
+		(property "Footprint" "SEN3_SS49E_HNW"
+			(at 222.25 194.31 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -6063,17 +5964,18 @@
 				(hide yes)
 			)
 		)
-		(property "Datasheet" "http://www.allegromicro.com/~/media/Files/Datasheets/A1301-2-Datasheet.ashx"
-			(at 209.296 194.31 0)
+		(property "Datasheet" "SS49E"
+			(at 222.25 194.31 0)
 			(effects
 				(font
 					(size 1.27 1.27)
+					(italic yes)
 				)
 				(hide yes)
 			)
 		)
 		(property "Description" "Linear Hall Effect Sensor, 1.3 mV/G, 4.5-6.0V supply, TO-92S (3-pin SIP)"
-			(at 207.264 194.31 0)
+			(at 222.25 194.31 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -6100,8 +6002,8 @@
 		)
 	)
 	(symbol
-		(lib_id "Sensor_Magnetic:A1302xUA")
-		(at 222.25 64.77 270)
+		(lib_id "SS49E:SS49E")
+		(at 222.25 64.77 0)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
@@ -6110,25 +6012,23 @@
 		(fields_autoplaced yes)
 		(uuid "1c46ebb1-238c-47cc-b1f7-56760e48b48b")
 		(property "Reference" "U13"
-			(at 223.5201 57.15 0)
+			(at 222.25 54.61 0)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
-				(justify right)
 			)
 		)
 		(property "Value" "A1302xUA"
-			(at 220.9801 57.15 0)
+			(at 222.25 57.15 0)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
-				(justify right)
 			)
 		)
-		(property "Footprint" "Package_TO_SOT_THT:TO-92S"
-			(at 205.232 64.77 0)
+		(property "Footprint" "SEN3_SS49E_HNW"
+			(at 222.25 64.77 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -6137,17 +6037,18 @@
 				(hide yes)
 			)
 		)
-		(property "Datasheet" "http://www.allegromicro.com/~/media/Files/Datasheets/A1301-2-Datasheet.ashx"
-			(at 209.296 64.77 0)
+		(property "Datasheet" "SS49E"
+			(at 222.25 64.77 0)
 			(effects
 				(font
 					(size 1.27 1.27)
+					(italic yes)
 				)
 				(hide yes)
 			)
 		)
 		(property "Description" "Linear Hall Effect Sensor, 1.3 mV/G, 4.5-6.0V supply, TO-92S (3-pin SIP)"
-			(at 207.264 64.77 0)
+			(at 222.25 64.77 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -6174,8 +6075,8 @@
 		)
 	)
 	(symbol
-		(lib_id "Sensor_Magnetic:A1302xUA")
-		(at 171.45 172.72 270)
+		(lib_id "SS49E:SS49E")
+		(at 171.45 172.72 0)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
@@ -6184,25 +6085,23 @@
 		(fields_autoplaced yes)
 		(uuid "1cfe3e42-f3b6-4436-ba79-f3a8979fe20c")
 		(property "Reference" "U46"
-			(at 172.7201 165.1 0)
+			(at 171.45 162.56 0)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
-				(justify right)
 			)
 		)
 		(property "Value" "A1302xUA"
-			(at 170.1801 165.1 0)
+			(at 171.45 165.1 0)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
-				(justify right)
 			)
 		)
-		(property "Footprint" "Package_TO_SOT_THT:TO-92S"
-			(at 154.432 172.72 0)
+		(property "Footprint" "SEN3_SS49E_HNW"
+			(at 171.45 172.72 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -6211,17 +6110,18 @@
 				(hide yes)
 			)
 		)
-		(property "Datasheet" "http://www.allegromicro.com/~/media/Files/Datasheets/A1301-2-Datasheet.ashx"
-			(at 158.496 172.72 0)
+		(property "Datasheet" "SS49E"
+			(at 171.45 172.72 0)
 			(effects
 				(font
 					(size 1.27 1.27)
+					(italic yes)
 				)
 				(hide yes)
 			)
 		)
 		(property "Description" "Linear Hall Effect Sensor, 1.3 mV/G, 4.5-6.0V supply, TO-92S (3-pin SIP)"
-			(at 156.464 172.72 0)
+			(at 171.45 172.72 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -6248,8 +6148,8 @@
 		)
 	)
 	(symbol
-		(lib_id "Sensor_Magnetic:A1302xUA")
-		(at 95.25 151.13 270)
+		(lib_id "SS49E:SS49E")
+		(at 95.25 151.13 0)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
@@ -6258,25 +6158,23 @@
 		(fields_autoplaced yes)
 		(uuid "1e134f15-0e92-4d82-8090-189548ddd458")
 		(property "Reference" "U67"
-			(at 96.5201 143.51 0)
+			(at 95.25 140.97 0)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
-				(justify right)
 			)
 		)
 		(property "Value" "A1302xUA"
-			(at 93.9801 143.51 0)
+			(at 95.25 143.51 0)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
-				(justify right)
 			)
 		)
-		(property "Footprint" "Package_TO_SOT_THT:TO-92S"
-			(at 78.232 151.13 0)
+		(property "Footprint" "SEN3_SS49E_HNW"
+			(at 95.25 151.13 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -6285,17 +6183,18 @@
 				(hide yes)
 			)
 		)
-		(property "Datasheet" "http://www.allegromicro.com/~/media/Files/Datasheets/A1301-2-Datasheet.ashx"
-			(at 82.296 151.13 0)
+		(property "Datasheet" "SS49E"
+			(at 95.25 151.13 0)
 			(effects
 				(font
 					(size 1.27 1.27)
+					(italic yes)
 				)
 				(hide yes)
 			)
 		)
 		(property "Description" "Linear Hall Effect Sensor, 1.3 mV/G, 4.5-6.0V supply, TO-92S (3-pin SIP)"
-			(at 80.264 151.13 0)
+			(at 95.25 151.13 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -6322,8 +6221,8 @@
 		)
 	)
 	(symbol
-		(lib_id "Sensor_Magnetic:A1302xUA")
-		(at 196.85 194.31 270)
+		(lib_id "SS49E:SS49E")
+		(at 196.85 194.31 0)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
@@ -6332,25 +6231,23 @@
 		(fields_autoplaced yes)
 		(uuid "1e96b476-4064-42ce-b8b0-7ea7d85fccb6")
 		(property "Reference" "U27"
-			(at 198.1201 186.69 0)
+			(at 196.85 184.15 0)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
-				(justify right)
 			)
 		)
 		(property "Value" "A1302xUA"
-			(at 195.5801 186.69 0)
+			(at 196.85 186.69 0)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
-				(justify right)
 			)
 		)
-		(property "Footprint" "Package_TO_SOT_THT:TO-92S"
-			(at 179.832 194.31 0)
+		(property "Footprint" "SEN3_SS49E_HNW"
+			(at 196.85 194.31 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -6359,17 +6256,18 @@
 				(hide yes)
 			)
 		)
-		(property "Datasheet" "http://www.allegromicro.com/~/media/Files/Datasheets/A1301-2-Datasheet.ashx"
-			(at 183.896 194.31 0)
+		(property "Datasheet" "SS49E"
+			(at 196.85 194.31 0)
 			(effects
 				(font
 					(size 1.27 1.27)
+					(italic yes)
 				)
 				(hide yes)
 			)
 		)
 		(property "Description" "Linear Hall Effect Sensor, 1.3 mV/G, 4.5-6.0V supply, TO-92S (3-pin SIP)"
-			(at 181.864 194.31 0)
+			(at 196.85 194.31 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -6396,8 +6294,8 @@
 		)
 	)
 	(symbol
-		(lib_id "Sensor_Magnetic:A1302xUA")
-		(at 171.45 43.18 270)
+		(lib_id "SS49E:SS49E")
+		(at 171.45 43.18 0)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
@@ -6406,25 +6304,23 @@
 		(fields_autoplaced yes)
 		(uuid "2559db17-6481-4b82-a7be-942ed7089bfd")
 		(property "Reference" "U28"
-			(at 172.7201 35.56 0)
+			(at 171.45 33.02 0)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
-				(justify right)
 			)
 		)
 		(property "Value" "A1302xUA"
-			(at 170.1801 35.56 0)
+			(at 171.45 35.56 0)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
-				(justify right)
 			)
 		)
-		(property "Footprint" "Package_TO_SOT_THT:TO-92S"
-			(at 154.432 43.18 0)
+		(property "Footprint" "SEN3_SS49E_HNW"
+			(at 171.45 43.18 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -6433,17 +6329,18 @@
 				(hide yes)
 			)
 		)
-		(property "Datasheet" "http://www.allegromicro.com/~/media/Files/Datasheets/A1301-2-Datasheet.ashx"
-			(at 158.496 43.18 0)
+		(property "Datasheet" "SS49E"
+			(at 171.45 43.18 0)
 			(effects
 				(font
 					(size 1.27 1.27)
+					(italic yes)
 				)
 				(hide yes)
 			)
 		)
 		(property "Description" "Linear Hall Effect Sensor, 1.3 mV/G, 4.5-6.0V supply, TO-92S (3-pin SIP)"
-			(at 156.464 43.18 0)
+			(at 171.45 43.18 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -6470,8 +6367,8 @@
 		)
 	)
 	(symbol
-		(lib_id "Sensor_Magnetic:A1302xUA")
-		(at 95.25 64.77 270)
+		(lib_id "SS49E:SS49E")
+		(at 95.25 64.77 0)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
@@ -6480,25 +6377,23 @@
 		(fields_autoplaced yes)
 		(uuid "279d62df-38f4-4160-add0-56d243cf62c8")
 		(property "Reference" "U55"
-			(at 96.5201 57.15 0)
+			(at 95.25 54.61 0)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
-				(justify right)
 			)
 		)
 		(property "Value" "A1302xUA"
-			(at 93.9801 57.15 0)
+			(at 95.25 57.15 0)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
-				(justify right)
 			)
 		)
-		(property "Footprint" "Package_TO_SOT_THT:TO-92S"
-			(at 78.232 64.77 0)
+		(property "Footprint" "SEN3_SS49E_HNW"
+			(at 95.25 64.77 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -6507,17 +6402,18 @@
 				(hide yes)
 			)
 		)
-		(property "Datasheet" "http://www.allegromicro.com/~/media/Files/Datasheets/A1301-2-Datasheet.ashx"
-			(at 82.296 64.77 0)
+		(property "Datasheet" "SS49E"
+			(at 95.25 64.77 0)
 			(effects
 				(font
 					(size 1.27 1.27)
+					(italic yes)
 				)
 				(hide yes)
 			)
 		)
 		(property "Description" "Linear Hall Effect Sensor, 1.3 mV/G, 4.5-6.0V supply, TO-92S (3-pin SIP)"
-			(at 80.264 64.77 0)
+			(at 95.25 64.77 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -6544,8 +6440,8 @@
 		)
 	)
 	(symbol
-		(lib_id "Sensor_Magnetic:A1302xUA")
-		(at 196.85 107.95 270)
+		(lib_id "SS49E:SS49E")
+		(at 196.85 107.95 0)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
@@ -6554,25 +6450,23 @@
 		(fields_autoplaced yes)
 		(uuid "27b6742b-448b-46c0-ad10-6f32da650cbf")
 		(property "Reference" "U23"
-			(at 198.1201 100.33 0)
+			(at 196.85 97.79 0)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
-				(justify right)
 			)
 		)
 		(property "Value" "A1302xUA"
-			(at 195.5801 100.33 0)
+			(at 196.85 100.33 0)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
-				(justify right)
 			)
 		)
-		(property "Footprint" "Package_TO_SOT_THT:TO-92S"
-			(at 179.832 107.95 0)
+		(property "Footprint" "SEN3_SS49E_HNW"
+			(at 196.85 107.95 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -6581,17 +6475,18 @@
 				(hide yes)
 			)
 		)
-		(property "Datasheet" "http://www.allegromicro.com/~/media/Files/Datasheets/A1301-2-Datasheet.ashx"
-			(at 183.896 107.95 0)
+		(property "Datasheet" "SS49E"
+			(at 196.85 107.95 0)
 			(effects
 				(font
 					(size 1.27 1.27)
+					(italic yes)
 				)
 				(hide yes)
 			)
 		)
 		(property "Description" "Linear Hall Effect Sensor, 1.3 mV/G, 4.5-6.0V supply, TO-92S (3-pin SIP)"
-			(at 181.864 107.95 0)
+			(at 196.85 107.95 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -6618,8 +6513,8 @@
 		)
 	)
 	(symbol
-		(lib_id "Sensor_Magnetic:A1302xUA")
-		(at 222.25 172.72 270)
+		(lib_id "SS49E:SS49E")
+		(at 222.25 172.72 0)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
@@ -6628,25 +6523,23 @@
 		(fields_autoplaced yes)
 		(uuid "2839a53c-fa90-4a1d-a887-044746760be7")
 		(property "Reference" "U18"
-			(at 223.5201 165.1 0)
+			(at 222.25 162.56 0)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
-				(justify right)
 			)
 		)
 		(property "Value" "A1302xUA"
-			(at 220.9801 165.1 0)
+			(at 222.25 165.1 0)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
-				(justify right)
 			)
 		)
-		(property "Footprint" "Package_TO_SOT_THT:TO-92S"
-			(at 205.232 172.72 0)
+		(property "Footprint" "SEN3_SS49E_HNW"
+			(at 222.25 172.72 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -6655,17 +6548,18 @@
 				(hide yes)
 			)
 		)
-		(property "Datasheet" "http://www.allegromicro.com/~/media/Files/Datasheets/A1301-2-Datasheet.ashx"
-			(at 209.296 172.72 0)
+		(property "Datasheet" "SS49E"
+			(at 222.25 172.72 0)
 			(effects
 				(font
 					(size 1.27 1.27)
+					(italic yes)
 				)
 				(hide yes)
 			)
 		)
 		(property "Description" "Linear Hall Effect Sensor, 1.3 mV/G, 4.5-6.0V supply, TO-92S (3-pin SIP)"
-			(at 207.264 172.72 0)
+			(at 222.25 172.72 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -6692,8 +6586,8 @@
 		)
 	)
 	(symbol
-		(lib_id "Sensor_Magnetic:A1302xUA")
-		(at 44.45 43.18 270)
+		(lib_id "SS49E:SS49E")
+		(at 44.45 43.18 0)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
@@ -6702,25 +6596,23 @@
 		(fields_autoplaced yes)
 		(uuid "3e73f48a-e39c-4c36-aa80-e4f87b9c2a4d")
 		(property "Reference" "U54"
-			(at 45.7201 35.56 0)
+			(at 44.45 33.02 0)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
-				(justify right)
 			)
 		)
 		(property "Value" "A1302xUA"
-			(at 43.1801 35.56 0)
+			(at 44.45 35.56 0)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
-				(justify right)
 			)
 		)
-		(property "Footprint" "Package_TO_SOT_THT:TO-92S"
-			(at 27.432 43.18 0)
+		(property "Footprint" "SEN3_SS49E_HNW"
+			(at 44.45 43.18 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -6729,17 +6621,18 @@
 				(hide yes)
 			)
 		)
-		(property "Datasheet" "http://www.allegromicro.com/~/media/Files/Datasheets/A1301-2-Datasheet.ashx"
-			(at 31.496 43.18 0)
+		(property "Datasheet" "SS49E"
+			(at 44.45 43.18 0)
 			(effects
 				(font
 					(size 1.27 1.27)
+					(italic yes)
 				)
 				(hide yes)
 			)
 		)
 		(property "Description" "Linear Hall Effect Sensor, 1.3 mV/G, 4.5-6.0V supply, TO-92S (3-pin SIP)"
-			(at 29.464 43.18 0)
+			(at 44.45 43.18 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -6766,8 +6659,8 @@
 		)
 	)
 	(symbol
-		(lib_id "Sensor_Magnetic:A1302xUA")
-		(at 69.85 64.77 270)
+		(lib_id "SS49E:SS49E")
+		(at 69.85 64.77 0)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
@@ -6776,25 +6669,23 @@
 		(fields_autoplaced yes)
 		(uuid "3f06a71b-dff0-46f9-a815-185255e18da4")
 		(property "Reference" "U56"
-			(at 71.1201 57.15 0)
+			(at 69.85 54.61 0)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
-				(justify right)
 			)
 		)
 		(property "Value" "A1302xUA"
-			(at 68.5801 57.15 0)
+			(at 69.85 57.15 0)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
-				(justify right)
 			)
 		)
-		(property "Footprint" "Package_TO_SOT_THT:TO-92S"
-			(at 52.832 64.77 0)
+		(property "Footprint" "SEN3_SS49E_HNW"
+			(at 69.85 64.77 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -6803,17 +6694,18 @@
 				(hide yes)
 			)
 		)
-		(property "Datasheet" "http://www.allegromicro.com/~/media/Files/Datasheets/A1301-2-Datasheet.ashx"
-			(at 56.896 64.77 0)
+		(property "Datasheet" "SS49E"
+			(at 69.85 64.77 0)
 			(effects
 				(font
 					(size 1.27 1.27)
+					(italic yes)
 				)
 				(hide yes)
 			)
 		)
 		(property "Description" "Linear Hall Effect Sensor, 1.3 mV/G, 4.5-6.0V supply, TO-92S (3-pin SIP)"
-			(at 54.864 64.77 0)
+			(at 69.85 64.77 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -6840,8 +6732,8 @@
 		)
 	)
 	(symbol
-		(lib_id "Sensor_Magnetic:A1302xUA")
-		(at 69.85 172.72 270)
+		(lib_id "SS49E:SS49E")
+		(at 69.85 172.72 0)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
@@ -6850,25 +6742,23 @@
 		(fields_autoplaced yes)
 		(uuid "431a5f55-6764-4a00-a4aa-de83eaddcf0d")
 		(property "Reference" "U71"
-			(at 71.1201 165.1 0)
+			(at 69.85 162.56 0)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
-				(justify right)
 			)
 		)
 		(property "Value" "A1302xUA"
-			(at 68.5801 165.1 0)
+			(at 69.85 165.1 0)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
-				(justify right)
 			)
 		)
-		(property "Footprint" "Package_TO_SOT_THT:TO-92S"
-			(at 52.832 172.72 0)
+		(property "Footprint" "SEN3_SS49E_HNW"
+			(at 69.85 172.72 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -6877,17 +6767,18 @@
 				(hide yes)
 			)
 		)
-		(property "Datasheet" "http://www.allegromicro.com/~/media/Files/Datasheets/A1301-2-Datasheet.ashx"
-			(at 56.896 172.72 0)
+		(property "Datasheet" "SS49E"
+			(at 69.85 172.72 0)
 			(effects
 				(font
 					(size 1.27 1.27)
+					(italic yes)
 				)
 				(hide yes)
 			)
 		)
 		(property "Description" "Linear Hall Effect Sensor, 1.3 mV/G, 4.5-6.0V supply, TO-92S (3-pin SIP)"
-			(at 54.864 172.72 0)
+			(at 69.85 172.72 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -6914,8 +6805,8 @@
 		)
 	)
 	(symbol
-		(lib_id "Sensor_Magnetic:A1302xUA")
-		(at 69.85 151.13 270)
+		(lib_id "SS49E:SS49E")
+		(at 69.85 151.13 0)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
@@ -6924,25 +6815,23 @@
 		(fields_autoplaced yes)
 		(uuid "449d9436-c444-483b-8f0a-4b7b428af3a6")
 		(property "Reference" "U68"
-			(at 71.1201 143.51 0)
+			(at 69.85 140.97 0)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
-				(justify right)
 			)
 		)
 		(property "Value" "A1302xUA"
-			(at 68.5801 143.51 0)
+			(at 69.85 143.51 0)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
-				(justify right)
 			)
 		)
-		(property "Footprint" "Package_TO_SOT_THT:TO-92S"
-			(at 52.832 151.13 0)
+		(property "Footprint" "SEN3_SS49E_HNW"
+			(at 69.85 151.13 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -6951,17 +6840,18 @@
 				(hide yes)
 			)
 		)
-		(property "Datasheet" "http://www.allegromicro.com/~/media/Files/Datasheets/A1301-2-Datasheet.ashx"
-			(at 56.896 151.13 0)
+		(property "Datasheet" "SS49E"
+			(at 69.85 151.13 0)
 			(effects
 				(font
 					(size 1.27 1.27)
+					(italic yes)
 				)
 				(hide yes)
 			)
 		)
 		(property "Description" "Linear Hall Effect Sensor, 1.3 mV/G, 4.5-6.0V supply, TO-92S (3-pin SIP)"
-			(at 54.864 151.13 0)
+			(at 69.85 151.13 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -6988,8 +6878,8 @@
 		)
 	)
 	(symbol
-		(lib_id "Sensor_Magnetic:A1302xUA")
-		(at 44.45 64.77 270)
+		(lib_id "SS49E:SS49E")
+		(at 44.45 64.77 0)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
@@ -6998,25 +6888,23 @@
 		(fields_autoplaced yes)
 		(uuid "4b9efdad-cef6-49c9-aec3-24ec7c096956")
 		(property "Reference" "U57"
-			(at 45.7201 57.15 0)
+			(at 44.45 54.61 0)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
-				(justify right)
 			)
 		)
 		(property "Value" "A1302xUA"
-			(at 43.1801 57.15 0)
+			(at 44.45 57.15 0)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
-				(justify right)
 			)
 		)
-		(property "Footprint" "Package_TO_SOT_THT:TO-92S"
-			(at 27.432 64.77 0)
+		(property "Footprint" "SEN3_SS49E_HNW"
+			(at 44.45 64.77 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -7025,17 +6913,18 @@
 				(hide yes)
 			)
 		)
-		(property "Datasheet" "http://www.allegromicro.com/~/media/Files/Datasheets/A1301-2-Datasheet.ashx"
-			(at 31.496 64.77 0)
+		(property "Datasheet" "SS49E"
+			(at 44.45 64.77 0)
 			(effects
 				(font
 					(size 1.27 1.27)
+					(italic yes)
 				)
 				(hide yes)
 			)
 		)
 		(property "Description" "Linear Hall Effect Sensor, 1.3 mV/G, 4.5-6.0V supply, TO-92S (3-pin SIP)"
-			(at 29.464 64.77 0)
+			(at 44.45 64.77 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -7062,8 +6951,8 @@
 		)
 	)
 	(symbol
-		(lib_id "Sensor_Magnetic:A1302xUA")
-		(at 120.65 194.31 270)
+		(lib_id "SS49E:SS49E")
+		(at 120.65 194.31 0)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
@@ -7072,25 +6961,23 @@
 		(fields_autoplaced yes)
 		(uuid "4c2929f5-2e2f-4ee4-8343-229b41c18716")
 		(property "Reference" "U51"
-			(at 121.9201 186.69 0)
+			(at 120.65 184.15 0)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
-				(justify right)
 			)
 		)
 		(property "Value" "A1302xUA"
-			(at 119.3801 186.69 0)
+			(at 120.65 186.69 0)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
-				(justify right)
 			)
 		)
-		(property "Footprint" "Package_TO_SOT_THT:TO-92S"
-			(at 103.632 194.31 0)
+		(property "Footprint" "SEN3_SS49E_HNW"
+			(at 120.65 194.31 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -7099,17 +6986,18 @@
 				(hide yes)
 			)
 		)
-		(property "Datasheet" "http://www.allegromicro.com/~/media/Files/Datasheets/A1301-2-Datasheet.ashx"
-			(at 107.696 194.31 0)
+		(property "Datasheet" "SS49E"
+			(at 120.65 194.31 0)
 			(effects
 				(font
 					(size 1.27 1.27)
+					(italic yes)
 				)
 				(hide yes)
 			)
 		)
 		(property "Description" "Linear Hall Effect Sensor, 1.3 mV/G, 4.5-6.0V supply, TO-92S (3-pin SIP)"
-			(at 105.664 194.31 0)
+			(at 120.65 194.31 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -7136,8 +7024,8 @@
 		)
 	)
 	(symbol
-		(lib_id "Sensor_Magnetic:A1302xUA")
-		(at 44.45 151.13 270)
+		(lib_id "SS49E:SS49E")
+		(at 44.45 151.13 0)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
@@ -7146,25 +7034,23 @@
 		(fields_autoplaced yes)
 		(uuid "4f4cced7-4cfc-4578-b32b-c4c55d1d6acd")
 		(property "Reference" "U69"
-			(at 45.7201 143.51 0)
+			(at 44.45 140.97 0)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
-				(justify right)
 			)
 		)
 		(property "Value" "A1302xUA"
-			(at 43.1801 143.51 0)
+			(at 44.45 143.51 0)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
-				(justify right)
 			)
 		)
-		(property "Footprint" "Package_TO_SOT_THT:TO-92S"
-			(at 27.432 151.13 0)
+		(property "Footprint" "SEN3_SS49E_HNW"
+			(at 44.45 151.13 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -7173,17 +7059,18 @@
 				(hide yes)
 			)
 		)
-		(property "Datasheet" "http://www.allegromicro.com/~/media/Files/Datasheets/A1301-2-Datasheet.ashx"
-			(at 31.496 151.13 0)
+		(property "Datasheet" "SS49E"
+			(at 44.45 151.13 0)
 			(effects
 				(font
 					(size 1.27 1.27)
+					(italic yes)
 				)
 				(hide yes)
 			)
 		)
 		(property "Description" "Linear Hall Effect Sensor, 1.3 mV/G, 4.5-6.0V supply, TO-92S (3-pin SIP)"
-			(at 29.464 151.13 0)
+			(at 44.45 151.13 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -7210,8 +7097,8 @@
 		)
 	)
 	(symbol
-		(lib_id "Sensor_Magnetic:A1302xUA")
-		(at 44.45 107.95 270)
+		(lib_id "SS49E:SS49E")
+		(at 44.45 107.95 0)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
@@ -7220,25 +7107,23 @@
 		(fields_autoplaced yes)
 		(uuid "51dfb972-6a59-4398-baaa-bf4c77556ecd")
 		(property "Reference" "U63"
-			(at 45.7201 100.33 0)
+			(at 44.45 97.79 0)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
-				(justify right)
 			)
 		)
 		(property "Value" "A1302xUA"
-			(at 43.1801 100.33 0)
+			(at 44.45 100.33 0)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
-				(justify right)
 			)
 		)
-		(property "Footprint" "Package_TO_SOT_THT:TO-92S"
-			(at 27.432 107.95 0)
+		(property "Footprint" "SEN3_SS49E_HNW"
+			(at 44.45 107.95 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -7247,17 +7132,18 @@
 				(hide yes)
 			)
 		)
-		(property "Datasheet" "http://www.allegromicro.com/~/media/Files/Datasheets/A1301-2-Datasheet.ashx"
-			(at 31.496 107.95 0)
+		(property "Datasheet" "SS49E"
+			(at 44.45 107.95 0)
 			(effects
 				(font
 					(size 1.27 1.27)
+					(italic yes)
 				)
 				(hide yes)
 			)
 		)
 		(property "Description" "Linear Hall Effect Sensor, 1.3 mV/G, 4.5-6.0V supply, TO-92S (3-pin SIP)"
-			(at 29.464 107.95 0)
+			(at 44.45 107.95 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -7421,8 +7307,8 @@
 		)
 	)
 	(symbol
-		(lib_id "Sensor_Magnetic:A1302xUA")
-		(at 120.65 43.18 270)
+		(lib_id "SS49E:SS49E")
+		(at 120.65 43.18 0)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
@@ -7431,25 +7317,23 @@
 		(fields_autoplaced yes)
 		(uuid "5b7926ad-1536-44c3-bad4-9dfdc6f1d1ab")
 		(property "Reference" "U30"
-			(at 121.9201 35.56 0)
+			(at 120.65 33.02 0)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
-				(justify right)
 			)
 		)
 		(property "Value" "A1302xUA"
-			(at 119.3801 35.56 0)
+			(at 120.65 35.56 0)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
-				(justify right)
 			)
 		)
-		(property "Footprint" "Package_TO_SOT_THT:TO-92S"
-			(at 103.632 43.18 0)
+		(property "Footprint" "SEN3_SS49E_HNW"
+			(at 120.65 43.18 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -7458,17 +7342,18 @@
 				(hide yes)
 			)
 		)
-		(property "Datasheet" "http://www.allegromicro.com/~/media/Files/Datasheets/A1301-2-Datasheet.ashx"
-			(at 107.696 43.18 0)
+		(property "Datasheet" "SS49E"
+			(at 120.65 43.18 0)
 			(effects
 				(font
 					(size 1.27 1.27)
+					(italic yes)
 				)
 				(hide yes)
 			)
 		)
 		(property "Description" "Linear Hall Effect Sensor, 1.3 mV/G, 4.5-6.0V supply, TO-92S (3-pin SIP)"
-			(at 105.664 43.18 0)
+			(at 120.65 43.18 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -7495,8 +7380,8 @@
 		)
 	)
 	(symbol
-		(lib_id "Sensor_Magnetic:A1302xUA")
-		(at 44.45 86.36 270)
+		(lib_id "SS49E:SS49E")
+		(at 44.45 86.36 0)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
@@ -7505,25 +7390,23 @@
 		(fields_autoplaced yes)
 		(uuid "6073e6ba-6052-4570-a942-069bf1f6647a")
 		(property "Reference" "U60"
-			(at 45.7201 78.74 0)
+			(at 44.45 76.2 0)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
-				(justify right)
 			)
 		)
 		(property "Value" "A1302xUA"
-			(at 43.1801 78.74 0)
+			(at 44.45 78.74 0)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
-				(justify right)
 			)
 		)
-		(property "Footprint" "Package_TO_SOT_THT:TO-92S"
-			(at 27.432 86.36 0)
+		(property "Footprint" "SEN3_SS49E_HNW"
+			(at 44.45 86.36 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -7532,17 +7415,18 @@
 				(hide yes)
 			)
 		)
-		(property "Datasheet" "http://www.allegromicro.com/~/media/Files/Datasheets/A1301-2-Datasheet.ashx"
-			(at 31.496 86.36 0)
+		(property "Datasheet" "SS49E"
+			(at 44.45 86.36 0)
 			(effects
 				(font
 					(size 1.27 1.27)
+					(italic yes)
 				)
 				(hide yes)
 			)
 		)
 		(property "Description" "Linear Hall Effect Sensor, 1.3 mV/G, 4.5-6.0V supply, TO-92S (3-pin SIP)"
-			(at 29.464 86.36 0)
+			(at 44.45 86.36 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -7569,8 +7453,8 @@
 		)
 	)
 	(symbol
-		(lib_id "Sensor_Magnetic:A1302xUA")
-		(at 222.25 151.13 270)
+		(lib_id "SS49E:SS49E")
+		(at 222.25 151.13 0)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
@@ -7579,25 +7463,23 @@
 		(fields_autoplaced yes)
 		(uuid "63c99536-8b46-4dc0-92cf-20ab1c929e74")
 		(property "Reference" "U17"
-			(at 223.5201 143.51 0)
+			(at 222.25 140.97 0)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
-				(justify right)
 			)
 		)
 		(property "Value" "A1302xUA"
-			(at 220.9801 143.51 0)
+			(at 222.25 143.51 0)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
-				(justify right)
 			)
 		)
-		(property "Footprint" "Package_TO_SOT_THT:TO-92S"
-			(at 205.232 151.13 0)
+		(property "Footprint" "SEN3_SS49E_HNW"
+			(at 222.25 151.13 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -7606,17 +7488,18 @@
 				(hide yes)
 			)
 		)
-		(property "Datasheet" "http://www.allegromicro.com/~/media/Files/Datasheets/A1301-2-Datasheet.ashx"
-			(at 209.296 151.13 0)
+		(property "Datasheet" "SS49E"
+			(at 222.25 151.13 0)
 			(effects
 				(font
 					(size 1.27 1.27)
+					(italic yes)
 				)
 				(hide yes)
 			)
 		)
 		(property "Description" "Linear Hall Effect Sensor, 1.3 mV/G, 4.5-6.0V supply, TO-92S (3-pin SIP)"
-			(at 207.264 151.13 0)
+			(at 222.25 151.13 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -7643,8 +7526,8 @@
 		)
 	)
 	(symbol
-		(lib_id "Sensor_Magnetic:A1302xUA")
-		(at 171.45 86.36 270)
+		(lib_id "SS49E:SS49E")
+		(at 171.45 86.36 0)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
@@ -7653,25 +7536,23 @@
 		(fields_autoplaced yes)
 		(uuid "652a3117-5fd2-4714-8ae2-604cad901d39")
 		(property "Reference" "U34"
-			(at 172.7201 78.74 0)
+			(at 171.45 76.2 0)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
-				(justify right)
 			)
 		)
 		(property "Value" "A1302xUA"
-			(at 170.1801 78.74 0)
+			(at 171.45 78.74 0)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
-				(justify right)
 			)
 		)
-		(property "Footprint" "Package_TO_SOT_THT:TO-92S"
-			(at 154.432 86.36 0)
+		(property "Footprint" "SEN3_SS49E_HNW"
+			(at 171.45 86.36 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -7680,17 +7561,18 @@
 				(hide yes)
 			)
 		)
-		(property "Datasheet" "http://www.allegromicro.com/~/media/Files/Datasheets/A1301-2-Datasheet.ashx"
-			(at 158.496 86.36 0)
+		(property "Datasheet" "SS49E"
+			(at 171.45 86.36 0)
 			(effects
 				(font
 					(size 1.27 1.27)
+					(italic yes)
 				)
 				(hide yes)
 			)
 		)
 		(property "Description" "Linear Hall Effect Sensor, 1.3 mV/G, 4.5-6.0V supply, TO-92S (3-pin SIP)"
-			(at 156.464 86.36 0)
+			(at 171.45 86.36 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -7717,8 +7599,8 @@
 		)
 	)
 	(symbol
-		(lib_id "Sensor_Magnetic:A1302xUA")
-		(at 196.85 172.72 270)
+		(lib_id "SS49E:SS49E")
+		(at 196.85 172.72 0)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
@@ -7727,25 +7609,23 @@
 		(fields_autoplaced yes)
 		(uuid "66518334-5172-4665-b5d9-a99be7ba8cc8")
 		(property "Reference" "U26"
-			(at 198.1201 165.1 0)
+			(at 196.85 162.56 0)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
-				(justify right)
 			)
 		)
 		(property "Value" "A1302xUA"
-			(at 195.5801 165.1 0)
+			(at 196.85 165.1 0)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
-				(justify right)
 			)
 		)
-		(property "Footprint" "Package_TO_SOT_THT:TO-92S"
-			(at 179.832 172.72 0)
+		(property "Footprint" "SEN3_SS49E_HNW"
+			(at 196.85 172.72 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -7754,17 +7634,18 @@
 				(hide yes)
 			)
 		)
-		(property "Datasheet" "http://www.allegromicro.com/~/media/Files/Datasheets/A1301-2-Datasheet.ashx"
-			(at 183.896 172.72 0)
+		(property "Datasheet" "SS49E"
+			(at 196.85 172.72 0)
 			(effects
 				(font
 					(size 1.27 1.27)
+					(italic yes)
 				)
 				(hide yes)
 			)
 		)
 		(property "Description" "Linear Hall Effect Sensor, 1.3 mV/G, 4.5-6.0V supply, TO-92S (3-pin SIP)"
-			(at 181.864 172.72 0)
+			(at 196.85 172.72 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -7791,8 +7672,8 @@
 		)
 	)
 	(symbol
-		(lib_id "Sensor_Magnetic:A1302xUA")
-		(at 95.25 43.18 270)
+		(lib_id "SS49E:SS49E")
+		(at 95.25 43.18 0)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
@@ -7801,25 +7682,23 @@
 		(fields_autoplaced yes)
 		(uuid "68bba2dd-cb78-4b52-a8a7-6dd8debc73ef")
 		(property "Reference" "U52"
-			(at 96.5201 35.56 0)
+			(at 95.25 33.02 0)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
-				(justify right)
 			)
 		)
 		(property "Value" "A1302xUA"
-			(at 93.9801 35.56 0)
+			(at 95.25 35.56 0)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
-				(justify right)
 			)
 		)
-		(property "Footprint" "Package_TO_SOT_THT:TO-92S"
-			(at 78.232 43.18 0)
+		(property "Footprint" "SEN3_SS49E_HNW"
+			(at 95.25 43.18 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -7828,17 +7707,18 @@
 				(hide yes)
 			)
 		)
-		(property "Datasheet" "http://www.allegromicro.com/~/media/Files/Datasheets/A1301-2-Datasheet.ashx"
-			(at 82.296 43.18 0)
+		(property "Datasheet" "SS49E"
+			(at 95.25 43.18 0)
 			(effects
 				(font
 					(size 1.27 1.27)
+					(italic yes)
 				)
 				(hide yes)
 			)
 		)
 		(property "Description" "Linear Hall Effect Sensor, 1.3 mV/G, 4.5-6.0V supply, TO-92S (3-pin SIP)"
-			(at 80.264 43.18 0)
+			(at 95.25 43.18 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -7865,8 +7745,8 @@
 		)
 	)
 	(symbol
-		(lib_id "Sensor_Magnetic:A1302xUA")
-		(at 95.25 86.36 270)
+		(lib_id "SS49E:SS49E")
+		(at 95.25 86.36 0)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
@@ -7875,25 +7755,23 @@
 		(fields_autoplaced yes)
 		(uuid "6a4ccdd7-42e7-47e8-a9d1-25da3360ed99")
 		(property "Reference" "U58"
-			(at 96.5201 78.74 0)
+			(at 95.25 76.2 0)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
-				(justify right)
 			)
 		)
 		(property "Value" "A1302xUA"
-			(at 93.9801 78.74 0)
+			(at 95.25 78.74 0)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
-				(justify right)
 			)
 		)
-		(property "Footprint" "Package_TO_SOT_THT:TO-92S"
-			(at 78.232 86.36 0)
+		(property "Footprint" "SEN3_SS49E_HNW"
+			(at 95.25 86.36 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -7902,17 +7780,18 @@
 				(hide yes)
 			)
 		)
-		(property "Datasheet" "http://www.allegromicro.com/~/media/Files/Datasheets/A1301-2-Datasheet.ashx"
-			(at 82.296 86.36 0)
+		(property "Datasheet" "SS49E"
+			(at 95.25 86.36 0)
 			(effects
 				(font
 					(size 1.27 1.27)
+					(italic yes)
 				)
 				(hide yes)
 			)
 		)
 		(property "Description" "Linear Hall Effect Sensor, 1.3 mV/G, 4.5-6.0V supply, TO-92S (3-pin SIP)"
-			(at 80.264 86.36 0)
+			(at 95.25 86.36 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -7939,8 +7818,8 @@
 		)
 	)
 	(symbol
-		(lib_id "Sensor_Magnetic:A1302xUA")
-		(at 222.25 86.36 270)
+		(lib_id "SS49E:SS49E")
+		(at 222.25 86.36 0)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
@@ -7949,25 +7828,23 @@
 		(fields_autoplaced yes)
 		(uuid "6f3214c9-adbf-4627-942e-bf71afa9874b")
 		(property "Reference" "U14"
-			(at 223.5201 78.74 0)
+			(at 222.25 76.2 0)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
-				(justify right)
 			)
 		)
 		(property "Value" "A1302xUA"
-			(at 220.9801 78.74 0)
+			(at 222.25 78.74 0)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
-				(justify right)
 			)
 		)
-		(property "Footprint" "Package_TO_SOT_THT:TO-92S"
-			(at 205.232 86.36 0)
+		(property "Footprint" "SEN3_SS49E_HNW"
+			(at 222.25 86.36 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -7976,17 +7853,18 @@
 				(hide yes)
 			)
 		)
-		(property "Datasheet" "http://www.allegromicro.com/~/media/Files/Datasheets/A1301-2-Datasheet.ashx"
-			(at 209.296 86.36 0)
+		(property "Datasheet" "SS49E"
+			(at 222.25 86.36 0)
 			(effects
 				(font
 					(size 1.27 1.27)
+					(italic yes)
 				)
 				(hide yes)
 			)
 		)
 		(property "Description" "Linear Hall Effect Sensor, 1.3 mV/G, 4.5-6.0V supply, TO-92S (3-pin SIP)"
-			(at 207.264 86.36 0)
+			(at 222.25 86.36 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -8013,8 +7891,8 @@
 		)
 	)
 	(symbol
-		(lib_id "Sensor_Magnetic:A1302xUA")
-		(at 146.05 172.72 270)
+		(lib_id "SS49E:SS49E")
+		(at 146.05 172.72 0)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
@@ -8023,25 +7901,23 @@
 		(fields_autoplaced yes)
 		(uuid "71002b1e-5e12-4bff-a3c4-928111125b5f")
 		(property "Reference" "U47"
-			(at 147.3201 165.1 0)
+			(at 146.05 162.56 0)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
-				(justify right)
 			)
 		)
 		(property "Value" "A1302xUA"
-			(at 144.7801 165.1 0)
+			(at 146.05 165.1 0)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
-				(justify right)
 			)
 		)
-		(property "Footprint" "Package_TO_SOT_THT:TO-92S"
-			(at 129.032 172.72 0)
+		(property "Footprint" "SEN3_SS49E_HNW"
+			(at 146.05 172.72 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -8050,17 +7926,18 @@
 				(hide yes)
 			)
 		)
-		(property "Datasheet" "http://www.allegromicro.com/~/media/Files/Datasheets/A1301-2-Datasheet.ashx"
-			(at 133.096 172.72 0)
+		(property "Datasheet" "SS49E"
+			(at 146.05 172.72 0)
 			(effects
 				(font
 					(size 1.27 1.27)
+					(italic yes)
 				)
 				(hide yes)
 			)
 		)
 		(property "Description" "Linear Hall Effect Sensor, 1.3 mV/G, 4.5-6.0V supply, TO-92S (3-pin SIP)"
-			(at 131.064 172.72 0)
+			(at 146.05 172.72 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -8087,8 +7964,8 @@
 		)
 	)
 	(symbol
-		(lib_id "Sensor_Magnetic:A1302xUA")
-		(at 69.85 43.18 270)
+		(lib_id "SS49E:SS49E")
+		(at 69.85 43.18 0)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
@@ -8097,25 +7974,23 @@
 		(fields_autoplaced yes)
 		(uuid "7c31a5af-f4b7-4b76-98d4-e2a169cfdfd5")
 		(property "Reference" "U53"
-			(at 71.1201 35.56 0)
+			(at 69.85 33.02 0)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
-				(justify right)
 			)
 		)
 		(property "Value" "A1302xUA"
-			(at 68.5801 35.56 0)
+			(at 69.85 35.56 0)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
-				(justify right)
 			)
 		)
-		(property "Footprint" "Package_TO_SOT_THT:TO-92S"
-			(at 52.832 43.18 0)
+		(property "Footprint" "SEN3_SS49E_HNW"
+			(at 69.85 43.18 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -8124,17 +7999,18 @@
 				(hide yes)
 			)
 		)
-		(property "Datasheet" "http://www.allegromicro.com/~/media/Files/Datasheets/A1301-2-Datasheet.ashx"
-			(at 56.896 43.18 0)
+		(property "Datasheet" "SS49E"
+			(at 69.85 43.18 0)
 			(effects
 				(font
 					(size 1.27 1.27)
+					(italic yes)
 				)
 				(hide yes)
 			)
 		)
 		(property "Description" "Linear Hall Effect Sensor, 1.3 mV/G, 4.5-6.0V supply, TO-92S (3-pin SIP)"
-			(at 54.864 43.18 0)
+			(at 69.85 43.18 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -8161,8 +8037,8 @@
 		)
 	)
 	(symbol
-		(lib_id "Sensor_Magnetic:A1302xUA")
-		(at 222.25 107.95 270)
+		(lib_id "SS49E:SS49E")
+		(at 222.25 107.95 0)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
@@ -8171,25 +8047,23 @@
 		(fields_autoplaced yes)
 		(uuid "7c5e8ecf-4ddc-4fdb-bcda-a18d4136bc23")
 		(property "Reference" "U15"
-			(at 223.5201 100.33 0)
+			(at 222.25 97.79 0)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
-				(justify right)
 			)
 		)
 		(property "Value" "A1302xUA"
-			(at 220.9801 100.33 0)
+			(at 222.25 100.33 0)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
-				(justify right)
 			)
 		)
-		(property "Footprint" "Package_TO_SOT_THT:TO-92S"
-			(at 205.232 107.95 0)
+		(property "Footprint" "SEN3_SS49E_HNW"
+			(at 222.25 107.95 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -8198,17 +8072,18 @@
 				(hide yes)
 			)
 		)
-		(property "Datasheet" "http://www.allegromicro.com/~/media/Files/Datasheets/A1301-2-Datasheet.ashx"
-			(at 209.296 107.95 0)
+		(property "Datasheet" "SS49E"
+			(at 222.25 107.95 0)
 			(effects
 				(font
 					(size 1.27 1.27)
+					(italic yes)
 				)
 				(hide yes)
 			)
 		)
 		(property "Description" "Linear Hall Effect Sensor, 1.3 mV/G, 4.5-6.0V supply, TO-92S (3-pin SIP)"
-			(at 207.264 107.95 0)
+			(at 222.25 107.95 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -8235,8 +8110,8 @@
 		)
 	)
 	(symbol
-		(lib_id "Sensor_Magnetic:A1302xUA")
-		(at 146.05 64.77 270)
+		(lib_id "SS49E:SS49E")
+		(at 146.05 64.77 0)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
@@ -8245,25 +8120,23 @@
 		(fields_autoplaced yes)
 		(uuid "7c716149-a71b-4f94-8205-d6b9399d0839")
 		(property "Reference" "U32"
-			(at 147.3201 57.15 0)
+			(at 146.05 54.61 0)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
-				(justify right)
 			)
 		)
 		(property "Value" "A1302xUA"
-			(at 144.7801 57.15 0)
+			(at 146.05 57.15 0)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
-				(justify right)
 			)
 		)
-		(property "Footprint" "Package_TO_SOT_THT:TO-92S"
-			(at 129.032 64.77 0)
+		(property "Footprint" "SEN3_SS49E_HNW"
+			(at 146.05 64.77 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -8272,17 +8145,18 @@
 				(hide yes)
 			)
 		)
-		(property "Datasheet" "http://www.allegromicro.com/~/media/Files/Datasheets/A1301-2-Datasheet.ashx"
-			(at 133.096 64.77 0)
+		(property "Datasheet" "SS49E"
+			(at 146.05 64.77 0)
 			(effects
 				(font
 					(size 1.27 1.27)
+					(italic yes)
 				)
 				(hide yes)
 			)
 		)
 		(property "Description" "Linear Hall Effect Sensor, 1.3 mV/G, 4.5-6.0V supply, TO-92S (3-pin SIP)"
-			(at 131.064 64.77 0)
+			(at 146.05 64.77 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -8309,8 +8183,8 @@
 		)
 	)
 	(symbol
-		(lib_id "Sensor_Magnetic:A1302xUA")
-		(at 146.05 151.13 270)
+		(lib_id "SS49E:SS49E")
+		(at 146.05 151.13 0)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
@@ -8319,25 +8193,23 @@
 		(fields_autoplaced yes)
 		(uuid "80ac002f-d030-47c7-8819-e871e948b2f8")
 		(property "Reference" "U44"
-			(at 147.3201 143.51 0)
+			(at 146.05 140.97 0)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
-				(justify right)
 			)
 		)
 		(property "Value" "A1302xUA"
-			(at 144.7801 143.51 0)
+			(at 146.05 143.51 0)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
-				(justify right)
 			)
 		)
-		(property "Footprint" "Package_TO_SOT_THT:TO-92S"
-			(at 129.032 151.13 0)
+		(property "Footprint" "SEN3_SS49E_HNW"
+			(at 146.05 151.13 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -8346,17 +8218,18 @@
 				(hide yes)
 			)
 		)
-		(property "Datasheet" "http://www.allegromicro.com/~/media/Files/Datasheets/A1301-2-Datasheet.ashx"
-			(at 133.096 151.13 0)
+		(property "Datasheet" "SS49E"
+			(at 146.05 151.13 0)
 			(effects
 				(font
 					(size 1.27 1.27)
+					(italic yes)
 				)
 				(hide yes)
 			)
 		)
 		(property "Description" "Linear Hall Effect Sensor, 1.3 mV/G, 4.5-6.0V supply, TO-92S (3-pin SIP)"
-			(at 131.064 151.13 0)
+			(at 146.05 151.13 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -8383,8 +8256,8 @@
 		)
 	)
 	(symbol
-		(lib_id "Sensor_Magnetic:A1302xUA")
-		(at 69.85 86.36 270)
+		(lib_id "SS49E:SS49E")
+		(at 69.85 86.36 0)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
@@ -8393,25 +8266,23 @@
 		(fields_autoplaced yes)
 		(uuid "840ed3e6-c733-46e1-8b0f-a85b0d8815f8")
 		(property "Reference" "U59"
-			(at 71.1201 78.74 0)
+			(at 69.85 76.2 0)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
-				(justify right)
 			)
 		)
 		(property "Value" "A1302xUA"
-			(at 68.5801 78.74 0)
+			(at 69.85 78.74 0)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
-				(justify right)
 			)
 		)
-		(property "Footprint" "Package_TO_SOT_THT:TO-92S"
-			(at 52.832 86.36 0)
+		(property "Footprint" "SEN3_SS49E_HNW"
+			(at 69.85 86.36 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -8420,17 +8291,18 @@
 				(hide yes)
 			)
 		)
-		(property "Datasheet" "http://www.allegromicro.com/~/media/Files/Datasheets/A1301-2-Datasheet.ashx"
-			(at 56.896 86.36 0)
+		(property "Datasheet" "SS49E"
+			(at 69.85 86.36 0)
 			(effects
 				(font
 					(size 1.27 1.27)
+					(italic yes)
 				)
 				(hide yes)
 			)
 		)
 		(property "Description" "Linear Hall Effect Sensor, 1.3 mV/G, 4.5-6.0V supply, TO-92S (3-pin SIP)"
-			(at 54.864 86.36 0)
+			(at 69.85 86.36 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -8457,8 +8329,8 @@
 		)
 	)
 	(symbol
-		(lib_id "Sensor_Magnetic:A1302xUA")
-		(at 120.65 129.54 270)
+		(lib_id "SS49E:SS49E")
+		(at 120.65 129.54 0)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
@@ -8467,25 +8339,23 @@
 		(fields_autoplaced yes)
 		(uuid "842a6ce8-2e53-4c1e-a88f-483cc8e3fd95")
 		(property "Reference" "U42"
-			(at 121.9201 121.92 0)
+			(at 120.65 119.38 0)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
-				(justify right)
 			)
 		)
 		(property "Value" "A1302xUA"
-			(at 119.3801 121.92 0)
+			(at 120.65 121.92 0)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
-				(justify right)
 			)
 		)
-		(property "Footprint" "Package_TO_SOT_THT:TO-92S"
-			(at 103.632 129.54 0)
+		(property "Footprint" "SEN3_SS49E_HNW"
+			(at 120.65 129.54 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -8494,17 +8364,18 @@
 				(hide yes)
 			)
 		)
-		(property "Datasheet" "http://www.allegromicro.com/~/media/Files/Datasheets/A1301-2-Datasheet.ashx"
-			(at 107.696 129.54 0)
+		(property "Datasheet" "SS49E"
+			(at 120.65 129.54 0)
 			(effects
 				(font
 					(size 1.27 1.27)
+					(italic yes)
 				)
 				(hide yes)
 			)
 		)
 		(property "Description" "Linear Hall Effect Sensor, 1.3 mV/G, 4.5-6.0V supply, TO-92S (3-pin SIP)"
-			(at 105.664 129.54 0)
+			(at 120.65 129.54 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -8531,8 +8402,8 @@
 		)
 	)
 	(symbol
-		(lib_id "Sensor_Magnetic:A1302xUA")
-		(at 44.45 172.72 270)
+		(lib_id "SS49E:SS49E")
+		(at 44.45 172.72 0)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
@@ -8541,25 +8412,23 @@
 		(fields_autoplaced yes)
 		(uuid "84a87366-f956-49e5-b979-5ff90e29ec56")
 		(property "Reference" "U72"
-			(at 45.7201 165.1 0)
+			(at 44.45 162.56 0)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
-				(justify right)
 			)
 		)
 		(property "Value" "A1302xUA"
-			(at 43.1801 165.1 0)
+			(at 44.45 165.1 0)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
-				(justify right)
 			)
 		)
-		(property "Footprint" "Package_TO_SOT_THT:TO-92S"
-			(at 27.432 172.72 0)
+		(property "Footprint" "SEN3_SS49E_HNW"
+			(at 44.45 172.72 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -8568,17 +8437,18 @@
 				(hide yes)
 			)
 		)
-		(property "Datasheet" "http://www.allegromicro.com/~/media/Files/Datasheets/A1301-2-Datasheet.ashx"
-			(at 31.496 172.72 0)
+		(property "Datasheet" "SS49E"
+			(at 44.45 172.72 0)
 			(effects
 				(font
 					(size 1.27 1.27)
+					(italic yes)
 				)
 				(hide yes)
 			)
 		)
 		(property "Description" "Linear Hall Effect Sensor, 1.3 mV/G, 4.5-6.0V supply, TO-92S (3-pin SIP)"
-			(at 29.464 172.72 0)
+			(at 44.45 172.72 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -8605,8 +8475,8 @@
 		)
 	)
 	(symbol
-		(lib_id "Sensor_Magnetic:A1302xUA")
-		(at 69.85 194.31 270)
+		(lib_id "SS49E:SS49E")
+		(at 69.85 194.31 0)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
@@ -8615,25 +8485,23 @@
 		(fields_autoplaced yes)
 		(uuid "85f46222-dda8-4864-a901-eff311164169")
 		(property "Reference" "U74"
-			(at 71.1201 186.69 0)
+			(at 69.85 184.15 0)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
-				(justify right)
 			)
 		)
 		(property "Value" "A1302xUA"
-			(at 68.5801 186.69 0)
+			(at 69.85 186.69 0)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
-				(justify right)
 			)
 		)
-		(property "Footprint" "Package_TO_SOT_THT:TO-92S"
-			(at 52.832 194.31 0)
+		(property "Footprint" "SEN3_SS49E_HNW"
+			(at 69.85 194.31 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -8642,17 +8510,18 @@
 				(hide yes)
 			)
 		)
-		(property "Datasheet" "http://www.allegromicro.com/~/media/Files/Datasheets/A1301-2-Datasheet.ashx"
-			(at 56.896 194.31 0)
+		(property "Datasheet" "SS49E"
+			(at 69.85 194.31 0)
 			(effects
 				(font
 					(size 1.27 1.27)
+					(italic yes)
 				)
 				(hide yes)
 			)
 		)
 		(property "Description" "Linear Hall Effect Sensor, 1.3 mV/G, 4.5-6.0V supply, TO-92S (3-pin SIP)"
-			(at 54.864 194.31 0)
+			(at 69.85 194.31 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -8861,8 +8730,8 @@
 		)
 	)
 	(symbol
-		(lib_id "Sensor_Magnetic:A1302xUA")
-		(at 196.85 43.18 270)
+		(lib_id "SS49E:SS49E")
+		(at 196.85 43.18 0)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
@@ -8871,25 +8740,23 @@
 		(fields_autoplaced yes)
 		(uuid "8869d1cc-7d25-4645-82e2-45c8fa103953")
 		(property "Reference" "U20"
-			(at 198.1201 35.56 0)
+			(at 196.85 33.02 0)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
-				(justify right)
 			)
 		)
 		(property "Value" "A1302xUA"
-			(at 195.5801 35.56 0)
+			(at 196.85 35.56 0)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
-				(justify right)
 			)
 		)
-		(property "Footprint" "Package_TO_SOT_THT:TO-92S"
-			(at 179.832 43.18 0)
+		(property "Footprint" "SEN3_SS49E_HNW"
+			(at 196.85 43.18 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -8898,17 +8765,18 @@
 				(hide yes)
 			)
 		)
-		(property "Datasheet" "http://www.allegromicro.com/~/media/Files/Datasheets/A1301-2-Datasheet.ashx"
-			(at 183.896 43.18 0)
+		(property "Datasheet" "SS49E"
+			(at 196.85 43.18 0)
 			(effects
 				(font
 					(size 1.27 1.27)
+					(italic yes)
 				)
 				(hide yes)
 			)
 		)
 		(property "Description" "Linear Hall Effect Sensor, 1.3 mV/G, 4.5-6.0V supply, TO-92S (3-pin SIP)"
-			(at 181.864 43.18 0)
+			(at 196.85 43.18 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -8935,8 +8803,8 @@
 		)
 	)
 	(symbol
-		(lib_id "Sensor_Magnetic:A1302xUA")
-		(at 146.05 129.54 270)
+		(lib_id "SS49E:SS49E")
+		(at 146.05 129.54 0)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
@@ -8945,25 +8813,23 @@
 		(fields_autoplaced yes)
 		(uuid "8fd4d284-717c-4601-8b7d-f2ea62b17241")
 		(property "Reference" "U41"
-			(at 147.3201 121.92 0)
+			(at 146.05 119.38 0)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
-				(justify right)
 			)
 		)
 		(property "Value" "A1302xUA"
-			(at 144.7801 121.92 0)
+			(at 146.05 121.92 0)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
-				(justify right)
 			)
 		)
-		(property "Footprint" "Package_TO_SOT_THT:TO-92S"
-			(at 129.032 129.54 0)
+		(property "Footprint" "SEN3_SS49E_HNW"
+			(at 146.05 129.54 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -8972,17 +8838,18 @@
 				(hide yes)
 			)
 		)
-		(property "Datasheet" "http://www.allegromicro.com/~/media/Files/Datasheets/A1301-2-Datasheet.ashx"
-			(at 133.096 129.54 0)
+		(property "Datasheet" "SS49E"
+			(at 146.05 129.54 0)
 			(effects
 				(font
 					(size 1.27 1.27)
+					(italic yes)
 				)
 				(hide yes)
 			)
 		)
 		(property "Description" "Linear Hall Effect Sensor, 1.3 mV/G, 4.5-6.0V supply, TO-92S (3-pin SIP)"
-			(at 131.064 129.54 0)
+			(at 146.05 129.54 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -9009,8 +8876,8 @@
 		)
 	)
 	(symbol
-		(lib_id "Sensor_Magnetic:A1302xUA")
-		(at 171.45 194.31 270)
+		(lib_id "SS49E:SS49E")
+		(at 171.45 194.31 0)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
@@ -9019,25 +8886,23 @@
 		(fields_autoplaced yes)
 		(uuid "91ad7a5d-2eac-46ab-be5d-4ddea83a95f5")
 		(property "Reference" "U49"
-			(at 172.7201 186.69 0)
+			(at 171.45 184.15 0)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
-				(justify right)
 			)
 		)
 		(property "Value" "A1302xUA"
-			(at 170.1801 186.69 0)
+			(at 171.45 186.69 0)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
-				(justify right)
 			)
 		)
-		(property "Footprint" "Package_TO_SOT_THT:TO-92S"
-			(at 154.432 194.31 0)
+		(property "Footprint" "SEN3_SS49E_HNW"
+			(at 171.45 194.31 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -9046,17 +8911,18 @@
 				(hide yes)
 			)
 		)
-		(property "Datasheet" "http://www.allegromicro.com/~/media/Files/Datasheets/A1301-2-Datasheet.ashx"
-			(at 158.496 194.31 0)
+		(property "Datasheet" "SS49E"
+			(at 171.45 194.31 0)
 			(effects
 				(font
 					(size 1.27 1.27)
+					(italic yes)
 				)
 				(hide yes)
 			)
 		)
 		(property "Description" "Linear Hall Effect Sensor, 1.3 mV/G, 4.5-6.0V supply, TO-92S (3-pin SIP)"
-			(at 156.464 194.31 0)
+			(at 171.45 194.31 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -9083,8 +8949,8 @@
 		)
 	)
 	(symbol
-		(lib_id "Sensor_Magnetic:A1302xUA")
-		(at 44.45 129.54 270)
+		(lib_id "SS49E:SS49E")
+		(at 44.45 129.54 0)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
@@ -9093,25 +8959,23 @@
 		(fields_autoplaced yes)
 		(uuid "94136c4c-e4e3-46b8-86c9-0afa62e272f9")
 		(property "Reference" "U66"
-			(at 45.7201 121.92 0)
+			(at 44.45 119.38 0)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
-				(justify right)
 			)
 		)
 		(property "Value" "A1302xUA"
-			(at 43.1801 121.92 0)
+			(at 44.45 121.92 0)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
-				(justify right)
 			)
 		)
-		(property "Footprint" "Package_TO_SOT_THT:TO-92S"
-			(at 27.432 129.54 0)
+		(property "Footprint" "SEN3_SS49E_HNW"
+			(at 44.45 129.54 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -9120,17 +8984,18 @@
 				(hide yes)
 			)
 		)
-		(property "Datasheet" "http://www.allegromicro.com/~/media/Files/Datasheets/A1301-2-Datasheet.ashx"
-			(at 31.496 129.54 0)
+		(property "Datasheet" "SS49E"
+			(at 44.45 129.54 0)
 			(effects
 				(font
 					(size 1.27 1.27)
+					(italic yes)
 				)
 				(hide yes)
 			)
 		)
 		(property "Description" "Linear Hall Effect Sensor, 1.3 mV/G, 4.5-6.0V supply, TO-92S (3-pin SIP)"
-			(at 29.464 129.54 0)
+			(at 44.45 129.54 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -9157,8 +9022,8 @@
 		)
 	)
 	(symbol
-		(lib_id "Sensor_Magnetic:A1302xUA")
-		(at 196.85 129.54 270)
+		(lib_id "SS49E:SS49E")
+		(at 196.85 129.54 0)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
@@ -9167,25 +9032,23 @@
 		(fields_autoplaced yes)
 		(uuid "9c69fe59-810f-4fc9-8bad-3c0fa43353a5")
 		(property "Reference" "U24"
-			(at 198.1201 121.92 0)
+			(at 196.85 119.38 0)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
-				(justify right)
 			)
 		)
 		(property "Value" "A1302xUA"
-			(at 195.5801 121.92 0)
+			(at 196.85 121.92 0)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
-				(justify right)
 			)
 		)
-		(property "Footprint" "Package_TO_SOT_THT:TO-92S"
-			(at 179.832 129.54 0)
+		(property "Footprint" "SEN3_SS49E_HNW"
+			(at 196.85 129.54 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -9194,17 +9057,18 @@
 				(hide yes)
 			)
 		)
-		(property "Datasheet" "http://www.allegromicro.com/~/media/Files/Datasheets/A1301-2-Datasheet.ashx"
-			(at 183.896 129.54 0)
+		(property "Datasheet" "SS49E"
+			(at 196.85 129.54 0)
 			(effects
 				(font
 					(size 1.27 1.27)
+					(italic yes)
 				)
 				(hide yes)
 			)
 		)
 		(property "Description" "Linear Hall Effect Sensor, 1.3 mV/G, 4.5-6.0V supply, TO-92S (3-pin SIP)"
-			(at 181.864 129.54 0)
+			(at 196.85 129.54 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -9231,8 +9095,8 @@
 		)
 	)
 	(symbol
-		(lib_id "Sensor_Magnetic:A1302xUA")
-		(at 196.85 64.77 270)
+		(lib_id "SS49E:SS49E")
+		(at 196.85 64.77 0)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
@@ -9241,25 +9105,23 @@
 		(fields_autoplaced yes)
 		(uuid "aae6f137-d38e-4db0-9275-30ee3b67abf2")
 		(property "Reference" "U21"
-			(at 198.1201 57.15 0)
+			(at 196.85 54.61 0)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
-				(justify right)
 			)
 		)
 		(property "Value" "A1302xUA"
-			(at 195.5801 57.15 0)
+			(at 196.85 57.15 0)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
-				(justify right)
 			)
 		)
-		(property "Footprint" "Package_TO_SOT_THT:TO-92S"
-			(at 179.832 64.77 0)
+		(property "Footprint" "SEN3_SS49E_HNW"
+			(at 196.85 64.77 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -9268,17 +9130,18 @@
 				(hide yes)
 			)
 		)
-		(property "Datasheet" "http://www.allegromicro.com/~/media/Files/Datasheets/A1301-2-Datasheet.ashx"
-			(at 183.896 64.77 0)
+		(property "Datasheet" "SS49E"
+			(at 196.85 64.77 0)
 			(effects
 				(font
 					(size 1.27 1.27)
+					(italic yes)
 				)
 				(hide yes)
 			)
 		)
 		(property "Description" "Linear Hall Effect Sensor, 1.3 mV/G, 4.5-6.0V supply, TO-92S (3-pin SIP)"
-			(at 181.864 64.77 0)
+			(at 196.85 64.77 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -9305,8 +9168,8 @@
 		)
 	)
 	(symbol
-		(lib_id "Sensor_Magnetic:A1302xUA")
-		(at 120.65 172.72 270)
+		(lib_id "SS49E:SS49E")
+		(at 120.65 172.72 0)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
@@ -9315,25 +9178,23 @@
 		(fields_autoplaced yes)
 		(uuid "af5c10e9-671f-4798-9191-b5d6da887bc5")
 		(property "Reference" "U48"
-			(at 121.9201 165.1 0)
+			(at 120.65 162.56 0)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
-				(justify right)
 			)
 		)
 		(property "Value" "A1302xUA"
-			(at 119.3801 165.1 0)
+			(at 120.65 165.1 0)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
-				(justify right)
 			)
 		)
-		(property "Footprint" "Package_TO_SOT_THT:TO-92S"
-			(at 103.632 172.72 0)
+		(property "Footprint" "SEN3_SS49E_HNW"
+			(at 120.65 172.72 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -9342,17 +9203,18 @@
 				(hide yes)
 			)
 		)
-		(property "Datasheet" "http://www.allegromicro.com/~/media/Files/Datasheets/A1301-2-Datasheet.ashx"
-			(at 107.696 172.72 0)
+		(property "Datasheet" "SS49E"
+			(at 120.65 172.72 0)
 			(effects
 				(font
 					(size 1.27 1.27)
+					(italic yes)
 				)
 				(hide yes)
 			)
 		)
 		(property "Description" "Linear Hall Effect Sensor, 1.3 mV/G, 4.5-6.0V supply, TO-92S (3-pin SIP)"
-			(at 105.664 172.72 0)
+			(at 120.65 172.72 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -9379,8 +9241,8 @@
 		)
 	)
 	(symbol
-		(lib_id "Sensor_Magnetic:A1302xUA")
-		(at 120.65 86.36 270)
+		(lib_id "SS49E:SS49E")
+		(at 120.65 86.36 0)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
@@ -9389,25 +9251,23 @@
 		(fields_autoplaced yes)
 		(uuid "b4e5526c-fd4e-4664-a41b-a44af36cdd9e")
 		(property "Reference" "U36"
-			(at 121.9201 78.74 0)
+			(at 120.65 76.2 0)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
-				(justify right)
 			)
 		)
 		(property "Value" "A1302xUA"
-			(at 119.3801 78.74 0)
+			(at 120.65 78.74 0)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
-				(justify right)
 			)
 		)
-		(property "Footprint" "Package_TO_SOT_THT:TO-92S"
-			(at 103.632 86.36 0)
+		(property "Footprint" "SEN3_SS49E_HNW"
+			(at 120.65 86.36 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -9416,17 +9276,18 @@
 				(hide yes)
 			)
 		)
-		(property "Datasheet" "http://www.allegromicro.com/~/media/Files/Datasheets/A1301-2-Datasheet.ashx"
-			(at 107.696 86.36 0)
+		(property "Datasheet" "SS49E"
+			(at 120.65 86.36 0)
 			(effects
 				(font
 					(size 1.27 1.27)
+					(italic yes)
 				)
 				(hide yes)
 			)
 		)
 		(property "Description" "Linear Hall Effect Sensor, 1.3 mV/G, 4.5-6.0V supply, TO-92S (3-pin SIP)"
-			(at 105.664 86.36 0)
+			(at 120.65 86.36 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -9453,8 +9314,8 @@
 		)
 	)
 	(symbol
-		(lib_id "Sensor_Magnetic:A1302xUA")
-		(at 69.85 129.54 270)
+		(lib_id "SS49E:SS49E")
+		(at 69.85 129.54 0)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
@@ -9463,25 +9324,23 @@
 		(fields_autoplaced yes)
 		(uuid "b77044e5-745e-4d38-9a86-695e12fbd524")
 		(property "Reference" "U65"
-			(at 71.1201 121.92 0)
+			(at 69.85 119.38 0)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
-				(justify right)
 			)
 		)
 		(property "Value" "A1302xUA"
-			(at 68.5801 121.92 0)
+			(at 69.85 121.92 0)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
-				(justify right)
 			)
 		)
-		(property "Footprint" "Package_TO_SOT_THT:TO-92S"
-			(at 52.832 129.54 0)
+		(property "Footprint" "SEN3_SS49E_HNW"
+			(at 69.85 129.54 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -9490,17 +9349,18 @@
 				(hide yes)
 			)
 		)
-		(property "Datasheet" "http://www.allegromicro.com/~/media/Files/Datasheets/A1301-2-Datasheet.ashx"
-			(at 56.896 129.54 0)
+		(property "Datasheet" "SS49E"
+			(at 69.85 129.54 0)
 			(effects
 				(font
 					(size 1.27 1.27)
+					(italic yes)
 				)
 				(hide yes)
 			)
 		)
 		(property "Description" "Linear Hall Effect Sensor, 1.3 mV/G, 4.5-6.0V supply, TO-92S (3-pin SIP)"
-			(at 54.864 129.54 0)
+			(at 69.85 129.54 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -9527,8 +9387,8 @@
 		)
 	)
 	(symbol
-		(lib_id "Sensor_Magnetic:A1302xUA")
-		(at 120.65 151.13 270)
+		(lib_id "SS49E:SS49E")
+		(at 120.65 151.13 0)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
@@ -9537,25 +9397,23 @@
 		(fields_autoplaced yes)
 		(uuid "bb05a965-d2d8-423f-9630-cd1e0eb65cd5")
 		(property "Reference" "U45"
-			(at 121.9201 143.51 0)
+			(at 120.65 140.97 0)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
-				(justify right)
 			)
 		)
 		(property "Value" "A1302xUA"
-			(at 119.3801 143.51 0)
+			(at 120.65 143.51 0)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
-				(justify right)
 			)
 		)
-		(property "Footprint" "Package_TO_SOT_THT:TO-92S"
-			(at 103.632 151.13 0)
+		(property "Footprint" "SEN3_SS49E_HNW"
+			(at 120.65 151.13 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -9564,17 +9422,18 @@
 				(hide yes)
 			)
 		)
-		(property "Datasheet" "http://www.allegromicro.com/~/media/Files/Datasheets/A1301-2-Datasheet.ashx"
-			(at 107.696 151.13 0)
+		(property "Datasheet" "SS49E"
+			(at 120.65 151.13 0)
 			(effects
 				(font
 					(size 1.27 1.27)
+					(italic yes)
 				)
 				(hide yes)
 			)
 		)
 		(property "Description" "Linear Hall Effect Sensor, 1.3 mV/G, 4.5-6.0V supply, TO-92S (3-pin SIP)"
-			(at 105.664 151.13 0)
+			(at 120.65 151.13 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -9601,8 +9460,8 @@
 		)
 	)
 	(symbol
-		(lib_id "Sensor_Magnetic:A1302xUA")
-		(at 171.45 129.54 270)
+		(lib_id "SS49E:SS49E")
+		(at 171.45 129.54 0)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
@@ -9611,25 +9470,23 @@
 		(fields_autoplaced yes)
 		(uuid "bdfe6afb-5c11-4e66-bbff-6e480b27f869")
 		(property "Reference" "U40"
-			(at 172.7201 121.92 0)
+			(at 171.45 119.38 0)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
-				(justify right)
 			)
 		)
 		(property "Value" "A1302xUA"
-			(at 170.1801 121.92 0)
+			(at 171.45 121.92 0)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
-				(justify right)
 			)
 		)
-		(property "Footprint" "Package_TO_SOT_THT:TO-92S"
-			(at 154.432 129.54 0)
+		(property "Footprint" "SEN3_SS49E_HNW"
+			(at 171.45 129.54 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -9638,17 +9495,18 @@
 				(hide yes)
 			)
 		)
-		(property "Datasheet" "http://www.allegromicro.com/~/media/Files/Datasheets/A1301-2-Datasheet.ashx"
-			(at 158.496 129.54 0)
+		(property "Datasheet" "SS49E"
+			(at 171.45 129.54 0)
 			(effects
 				(font
 					(size 1.27 1.27)
+					(italic yes)
 				)
 				(hide yes)
 			)
 		)
 		(property "Description" "Linear Hall Effect Sensor, 1.3 mV/G, 4.5-6.0V supply, TO-92S (3-pin SIP)"
-			(at 156.464 129.54 0)
+			(at 171.45 129.54 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -9675,8 +9533,8 @@
 		)
 	)
 	(symbol
-		(lib_id "Sensor_Magnetic:A1302xUA")
-		(at 95.25 129.54 270)
+		(lib_id "SS49E:SS49E")
+		(at 95.25 129.54 0)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
@@ -9685,25 +9543,23 @@
 		(fields_autoplaced yes)
 		(uuid "be2159fe-dad6-410f-943e-c9eca4c1e1a3")
 		(property "Reference" "U64"
-			(at 96.5201 121.92 0)
+			(at 95.25 119.38 0)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
-				(justify right)
 			)
 		)
 		(property "Value" "A1302xUA"
-			(at 93.9801 121.92 0)
+			(at 95.25 121.92 0)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
-				(justify right)
 			)
 		)
-		(property "Footprint" "Package_TO_SOT_THT:TO-92S"
-			(at 78.232 129.54 0)
+		(property "Footprint" "SEN3_SS49E_HNW"
+			(at 95.25 129.54 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -9712,17 +9568,18 @@
 				(hide yes)
 			)
 		)
-		(property "Datasheet" "http://www.allegromicro.com/~/media/Files/Datasheets/A1301-2-Datasheet.ashx"
-			(at 82.296 129.54 0)
+		(property "Datasheet" "SS49E"
+			(at 95.25 129.54 0)
 			(effects
 				(font
 					(size 1.27 1.27)
+					(italic yes)
 				)
 				(hide yes)
 			)
 		)
 		(property "Description" "Linear Hall Effect Sensor, 1.3 mV/G, 4.5-6.0V supply, TO-92S (3-pin SIP)"
-			(at 80.264 129.54 0)
+			(at 95.25 129.54 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -9749,8 +9606,8 @@
 		)
 	)
 	(symbol
-		(lib_id "Sensor_Magnetic:A1302xUA")
-		(at 120.65 64.77 270)
+		(lib_id "SS49E:SS49E")
+		(at 120.65 64.77 0)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
@@ -9759,25 +9616,23 @@
 		(fields_autoplaced yes)
 		(uuid "bec00b72-70d0-42d6-a7a9-4e0555fc0baf")
 		(property "Reference" "U33"
-			(at 121.9201 57.15 0)
+			(at 120.65 54.61 0)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
-				(justify right)
 			)
 		)
 		(property "Value" "A1302xUA"
-			(at 119.3801 57.15 0)
+			(at 120.65 57.15 0)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
-				(justify right)
 			)
 		)
-		(property "Footprint" "Package_TO_SOT_THT:TO-92S"
-			(at 103.632 64.77 0)
+		(property "Footprint" "SEN3_SS49E_HNW"
+			(at 120.65 64.77 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -9786,17 +9641,18 @@
 				(hide yes)
 			)
 		)
-		(property "Datasheet" "http://www.allegromicro.com/~/media/Files/Datasheets/A1301-2-Datasheet.ashx"
-			(at 107.696 64.77 0)
+		(property "Datasheet" "SS49E"
+			(at 120.65 64.77 0)
 			(effects
 				(font
 					(size 1.27 1.27)
+					(italic yes)
 				)
 				(hide yes)
 			)
 		)
 		(property "Description" "Linear Hall Effect Sensor, 1.3 mV/G, 4.5-6.0V supply, TO-92S (3-pin SIP)"
-			(at 105.664 64.77 0)
+			(at 120.65 64.77 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -9823,8 +9679,8 @@
 		)
 	)
 	(symbol
-		(lib_id "Sensor_Magnetic:A1302xUA")
-		(at 196.85 151.13 270)
+		(lib_id "SS49E:SS49E")
+		(at 196.85 151.13 0)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
@@ -9833,25 +9689,23 @@
 		(fields_autoplaced yes)
 		(uuid "c55621c9-e425-4778-9805-284365d363ab")
 		(property "Reference" "U25"
-			(at 198.1201 143.51 0)
+			(at 196.85 140.97 0)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
-				(justify right)
 			)
 		)
 		(property "Value" "A1302xUA"
-			(at 195.5801 143.51 0)
+			(at 196.85 143.51 0)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
-				(justify right)
 			)
 		)
-		(property "Footprint" "Package_TO_SOT_THT:TO-92S"
-			(at 179.832 151.13 0)
+		(property "Footprint" "SEN3_SS49E_HNW"
+			(at 196.85 151.13 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -9860,17 +9714,18 @@
 				(hide yes)
 			)
 		)
-		(property "Datasheet" "http://www.allegromicro.com/~/media/Files/Datasheets/A1301-2-Datasheet.ashx"
-			(at 183.896 151.13 0)
+		(property "Datasheet" "SS49E"
+			(at 196.85 151.13 0)
 			(effects
 				(font
 					(size 1.27 1.27)
+					(italic yes)
 				)
 				(hide yes)
 			)
 		)
 		(property "Description" "Linear Hall Effect Sensor, 1.3 mV/G, 4.5-6.0V supply, TO-92S (3-pin SIP)"
-			(at 181.864 151.13 0)
+			(at 196.85 151.13 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -9897,8 +9752,8 @@
 		)
 	)
 	(symbol
-		(lib_id "Sensor_Magnetic:A1302xUA")
-		(at 44.45 194.31 270)
+		(lib_id "SS49E:SS49E")
+		(at 44.45 194.31 0)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
@@ -9907,25 +9762,23 @@
 		(fields_autoplaced yes)
 		(uuid "c9678906-aa19-485c-85c8-6c46e34b0da5")
 		(property "Reference" "U75"
-			(at 45.7201 186.69 0)
+			(at 44.45 184.15 0)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
-				(justify right)
 			)
 		)
 		(property "Value" "A1302xUA"
-			(at 43.1801 186.69 0)
+			(at 44.45 186.69 0)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
-				(justify right)
 			)
 		)
-		(property "Footprint" "Package_TO_SOT_THT:TO-92S"
-			(at 27.432 194.31 0)
+		(property "Footprint" "SEN3_SS49E_HNW"
+			(at 44.45 194.31 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -9934,17 +9787,18 @@
 				(hide yes)
 			)
 		)
-		(property "Datasheet" "http://www.allegromicro.com/~/media/Files/Datasheets/A1301-2-Datasheet.ashx"
-			(at 31.496 194.31 0)
+		(property "Datasheet" "SS49E"
+			(at 44.45 194.31 0)
 			(effects
 				(font
 					(size 1.27 1.27)
+					(italic yes)
 				)
 				(hide yes)
 			)
 		)
 		(property "Description" "Linear Hall Effect Sensor, 1.3 mV/G, 4.5-6.0V supply, TO-92S (3-pin SIP)"
-			(at 29.464 194.31 0)
+			(at 44.45 194.31 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -9971,8 +9825,8 @@
 		)
 	)
 	(symbol
-		(lib_id "Sensor_Magnetic:A1302xUA")
-		(at 120.65 107.95 270)
+		(lib_id "SS49E:SS49E")
+		(at 120.65 107.95 0)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
@@ -9981,25 +9835,23 @@
 		(fields_autoplaced yes)
 		(uuid "cb62f943-a84c-4602-97c4-1af076ca1a06")
 		(property "Reference" "U39"
-			(at 121.9201 100.33 0)
+			(at 120.65 97.79 0)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
-				(justify right)
 			)
 		)
 		(property "Value" "A1302xUA"
-			(at 119.3801 100.33 0)
+			(at 120.65 100.33 0)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
-				(justify right)
 			)
 		)
-		(property "Footprint" "Package_TO_SOT_THT:TO-92S"
-			(at 103.632 107.95 0)
+		(property "Footprint" "SEN3_SS49E_HNW"
+			(at 120.65 107.95 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -10008,17 +9860,18 @@
 				(hide yes)
 			)
 		)
-		(property "Datasheet" "http://www.allegromicro.com/~/media/Files/Datasheets/A1301-2-Datasheet.ashx"
-			(at 107.696 107.95 0)
+		(property "Datasheet" "SS49E"
+			(at 120.65 107.95 0)
 			(effects
 				(font
 					(size 1.27 1.27)
+					(italic yes)
 				)
 				(hide yes)
 			)
 		)
 		(property "Description" "Linear Hall Effect Sensor, 1.3 mV/G, 4.5-6.0V supply, TO-92S (3-pin SIP)"
-			(at 105.664 107.95 0)
+			(at 120.65 107.95 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -10045,8 +9898,8 @@
 		)
 	)
 	(symbol
-		(lib_id "Sensor_Magnetic:A1302xUA")
-		(at 171.45 151.13 270)
+		(lib_id "SS49E:SS49E")
+		(at 171.45 151.13 0)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
@@ -10055,25 +9908,23 @@
 		(fields_autoplaced yes)
 		(uuid "da8f8d32-d86d-4b9b-b5e4-5cc6830fb712")
 		(property "Reference" "U43"
-			(at 172.7201 143.51 0)
+			(at 171.45 140.97 0)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
-				(justify right)
 			)
 		)
 		(property "Value" "A1302xUA"
-			(at 170.1801 143.51 0)
+			(at 171.45 143.51 0)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
-				(justify right)
 			)
 		)
-		(property "Footprint" "Package_TO_SOT_THT:TO-92S"
-			(at 154.432 151.13 0)
+		(property "Footprint" "SEN3_SS49E_HNW"
+			(at 171.45 151.13 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -10082,17 +9933,18 @@
 				(hide yes)
 			)
 		)
-		(property "Datasheet" "http://www.allegromicro.com/~/media/Files/Datasheets/A1301-2-Datasheet.ashx"
-			(at 158.496 151.13 0)
+		(property "Datasheet" "SS49E"
+			(at 171.45 151.13 0)
 			(effects
 				(font
 					(size 1.27 1.27)
+					(italic yes)
 				)
 				(hide yes)
 			)
 		)
 		(property "Description" "Linear Hall Effect Sensor, 1.3 mV/G, 4.5-6.0V supply, TO-92S (3-pin SIP)"
-			(at 156.464 151.13 0)
+			(at 171.45 151.13 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -10119,8 +9971,8 @@
 		)
 	)
 	(symbol
-		(lib_id "Sensor_Magnetic:A1302xUA")
-		(at 146.05 107.95 270)
+		(lib_id "SS49E:SS49E")
+		(at 146.05 107.95 0)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
@@ -10129,25 +9981,23 @@
 		(fields_autoplaced yes)
 		(uuid "daa1ba97-21cb-411b-b026-ed102d7cba91")
 		(property "Reference" "U38"
-			(at 147.3201 100.33 0)
+			(at 146.05 97.79 0)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
-				(justify right)
 			)
 		)
 		(property "Value" "A1302xUA"
-			(at 144.7801 100.33 0)
+			(at 146.05 100.33 0)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
-				(justify right)
 			)
 		)
-		(property "Footprint" "Package_TO_SOT_THT:TO-92S"
-			(at 129.032 107.95 0)
+		(property "Footprint" "SEN3_SS49E_HNW"
+			(at 146.05 107.95 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -10156,17 +10006,18 @@
 				(hide yes)
 			)
 		)
-		(property "Datasheet" "http://www.allegromicro.com/~/media/Files/Datasheets/A1301-2-Datasheet.ashx"
-			(at 133.096 107.95 0)
+		(property "Datasheet" "SS49E"
+			(at 146.05 107.95 0)
 			(effects
 				(font
 					(size 1.27 1.27)
+					(italic yes)
 				)
 				(hide yes)
 			)
 		)
 		(property "Description" "Linear Hall Effect Sensor, 1.3 mV/G, 4.5-6.0V supply, TO-92S (3-pin SIP)"
-			(at 131.064 107.95 0)
+			(at 146.05 107.95 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -10330,8 +10181,8 @@
 		)
 	)
 	(symbol
-		(lib_id "Sensor_Magnetic:A1302xUA")
-		(at 69.85 107.95 270)
+		(lib_id "SS49E:SS49E")
+		(at 69.85 107.95 0)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
@@ -10340,25 +10191,23 @@
 		(fields_autoplaced yes)
 		(uuid "dd9c5cf7-428f-4a2b-8852-d20c4a9ca01e")
 		(property "Reference" "U62"
-			(at 71.1201 100.33 0)
+			(at 69.85 97.79 0)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
-				(justify right)
 			)
 		)
 		(property "Value" "A1302xUA"
-			(at 68.5801 100.33 0)
+			(at 69.85 100.33 0)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
-				(justify right)
 			)
 		)
-		(property "Footprint" "Package_TO_SOT_THT:TO-92S"
-			(at 52.832 107.95 0)
+		(property "Footprint" "SEN3_SS49E_HNW"
+			(at 69.85 107.95 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -10367,17 +10216,18 @@
 				(hide yes)
 			)
 		)
-		(property "Datasheet" "http://www.allegromicro.com/~/media/Files/Datasheets/A1301-2-Datasheet.ashx"
-			(at 56.896 107.95 0)
+		(property "Datasheet" "SS49E"
+			(at 69.85 107.95 0)
 			(effects
 				(font
 					(size 1.27 1.27)
+					(italic yes)
 				)
 				(hide yes)
 			)
 		)
 		(property "Description" "Linear Hall Effect Sensor, 1.3 mV/G, 4.5-6.0V supply, TO-92S (3-pin SIP)"
-			(at 54.864 107.95 0)
+			(at 69.85 107.95 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -10541,8 +10391,8 @@
 		)
 	)
 	(symbol
-		(lib_id "Sensor_Magnetic:A1302xUA")
-		(at 146.05 86.36 270)
+		(lib_id "SS49E:SS49E")
+		(at 146.05 86.36 0)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
@@ -10551,25 +10401,23 @@
 		(fields_autoplaced yes)
 		(uuid "e5225d26-0911-40c7-a4a8-fe33e84ddab8")
 		(property "Reference" "U35"
-			(at 147.3201 78.74 0)
+			(at 146.05 76.2 0)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
-				(justify right)
 			)
 		)
 		(property "Value" "A1302xUA"
-			(at 144.7801 78.74 0)
+			(at 146.05 78.74 0)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
-				(justify right)
 			)
 		)
-		(property "Footprint" "Package_TO_SOT_THT:TO-92S"
-			(at 129.032 86.36 0)
+		(property "Footprint" "SEN3_SS49E_HNW"
+			(at 146.05 86.36 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -10578,17 +10426,18 @@
 				(hide yes)
 			)
 		)
-		(property "Datasheet" "http://www.allegromicro.com/~/media/Files/Datasheets/A1301-2-Datasheet.ashx"
-			(at 133.096 86.36 0)
+		(property "Datasheet" "SS49E"
+			(at 146.05 86.36 0)
 			(effects
 				(font
 					(size 1.27 1.27)
+					(italic yes)
 				)
 				(hide yes)
 			)
 		)
 		(property "Description" "Linear Hall Effect Sensor, 1.3 mV/G, 4.5-6.0V supply, TO-92S (3-pin SIP)"
-			(at 131.064 86.36 0)
+			(at 146.05 86.36 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -10615,8 +10464,8 @@
 		)
 	)
 	(symbol
-		(lib_id "Sensor_Magnetic:A1302xUA")
-		(at 222.25 43.18 270)
+		(lib_id "SS49E:SS49E")
+		(at 222.25 43.18 0)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
@@ -10625,25 +10474,23 @@
 		(fields_autoplaced yes)
 		(uuid "e9a49c94-1b1c-4f8a-a5d9-a7f22296f07c")
 		(property "Reference" "U12"
-			(at 223.5201 35.56 0)
+			(at 222.25 33.02 0)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
-				(justify right)
 			)
 		)
 		(property "Value" "A1302xUA"
-			(at 220.9801 35.56 0)
+			(at 222.25 35.56 0)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
-				(justify right)
 			)
 		)
-		(property "Footprint" "Package_TO_SOT_THT:TO-92S"
-			(at 205.232 43.18 0)
+		(property "Footprint" "SEN3_SS49E_HNW"
+			(at 222.25 43.18 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -10652,17 +10499,18 @@
 				(hide yes)
 			)
 		)
-		(property "Datasheet" "http://www.allegromicro.com/~/media/Files/Datasheets/A1301-2-Datasheet.ashx"
-			(at 209.296 43.18 0)
+		(property "Datasheet" "SS49E"
+			(at 222.25 43.18 0)
 			(effects
 				(font
 					(size 1.27 1.27)
+					(italic yes)
 				)
 				(hide yes)
 			)
 		)
 		(property "Description" "Linear Hall Effect Sensor, 1.3 mV/G, 4.5-6.0V supply, TO-92S (3-pin SIP)"
-			(at 207.264 43.18 0)
+			(at 222.25 43.18 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -10689,8 +10537,8 @@
 		)
 	)
 	(symbol
-		(lib_id "Sensor_Magnetic:A1302xUA")
-		(at 146.05 43.18 270)
+		(lib_id "SS49E:SS49E")
+		(at 146.05 43.18 0)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
@@ -10699,25 +10547,23 @@
 		(fields_autoplaced yes)
 		(uuid "ea8ffafd-725f-48ae-aac5-ca7f20726d48")
 		(property "Reference" "U29"
-			(at 147.3201 35.56 0)
+			(at 146.05 33.02 0)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
-				(justify right)
 			)
 		)
 		(property "Value" "A1302xUA"
-			(at 144.7801 35.56 0)
+			(at 146.05 35.56 0)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
-				(justify right)
 			)
 		)
-		(property "Footprint" "Package_TO_SOT_THT:TO-92S"
-			(at 129.032 43.18 0)
+		(property "Footprint" "SEN3_SS49E_HNW"
+			(at 146.05 43.18 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -10726,17 +10572,18 @@
 				(hide yes)
 			)
 		)
-		(property "Datasheet" "http://www.allegromicro.com/~/media/Files/Datasheets/A1301-2-Datasheet.ashx"
-			(at 133.096 43.18 0)
+		(property "Datasheet" "SS49E"
+			(at 146.05 43.18 0)
 			(effects
 				(font
 					(size 1.27 1.27)
+					(italic yes)
 				)
 				(hide yes)
 			)
 		)
 		(property "Description" "Linear Hall Effect Sensor, 1.3 mV/G, 4.5-6.0V supply, TO-92S (3-pin SIP)"
-			(at 131.064 43.18 0)
+			(at 146.05 43.18 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -10763,8 +10610,8 @@
 		)
 	)
 	(symbol
-		(lib_id "Sensor_Magnetic:A1302xUA")
-		(at 196.85 86.36 270)
+		(lib_id "SS49E:SS49E")
+		(at 196.85 86.36 0)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
@@ -10773,25 +10620,23 @@
 		(fields_autoplaced yes)
 		(uuid "ec5d3655-ae39-420c-9dd6-dec41eef7a6c")
 		(property "Reference" "U22"
-			(at 198.1201 78.74 0)
+			(at 196.85 76.2 0)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
-				(justify right)
 			)
 		)
 		(property "Value" "A1302xUA"
-			(at 195.5801 78.74 0)
+			(at 196.85 78.74 0)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
-				(justify right)
 			)
 		)
-		(property "Footprint" "Package_TO_SOT_THT:TO-92S"
-			(at 179.832 86.36 0)
+		(property "Footprint" "SEN3_SS49E_HNW"
+			(at 196.85 86.36 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -10800,17 +10645,18 @@
 				(hide yes)
 			)
 		)
-		(property "Datasheet" "http://www.allegromicro.com/~/media/Files/Datasheets/A1301-2-Datasheet.ashx"
-			(at 183.896 86.36 0)
+		(property "Datasheet" "SS49E"
+			(at 196.85 86.36 0)
 			(effects
 				(font
 					(size 1.27 1.27)
+					(italic yes)
 				)
 				(hide yes)
 			)
 		)
 		(property "Description" "Linear Hall Effect Sensor, 1.3 mV/G, 4.5-6.0V supply, TO-92S (3-pin SIP)"
-			(at 181.864 86.36 0)
+			(at 196.85 86.36 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -10837,8 +10683,8 @@
 		)
 	)
 	(symbol
-		(lib_id "Sensor_Magnetic:A1302xUA")
-		(at 222.25 129.54 270)
+		(lib_id "SS49E:SS49E")
+		(at 222.25 129.54 0)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
@@ -10847,25 +10693,23 @@
 		(fields_autoplaced yes)
 		(uuid "ed9af7b6-4031-4d4a-99a4-a8b949aa8431")
 		(property "Reference" "U16"
-			(at 223.5201 121.92 0)
+			(at 222.25 119.38 0)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
-				(justify right)
 			)
 		)
 		(property "Value" "A1302xUA"
-			(at 220.9801 121.92 0)
+			(at 222.25 121.92 0)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
-				(justify right)
 			)
 		)
-		(property "Footprint" "Package_TO_SOT_THT:TO-92S"
-			(at 205.232 129.54 0)
+		(property "Footprint" "SEN3_SS49E_HNW"
+			(at 222.25 129.54 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -10874,17 +10718,18 @@
 				(hide yes)
 			)
 		)
-		(property "Datasheet" "http://www.allegromicro.com/~/media/Files/Datasheets/A1301-2-Datasheet.ashx"
-			(at 209.296 129.54 0)
+		(property "Datasheet" "SS49E"
+			(at 222.25 129.54 0)
 			(effects
 				(font
 					(size 1.27 1.27)
+					(italic yes)
 				)
 				(hide yes)
 			)
 		)
 		(property "Description" "Linear Hall Effect Sensor, 1.3 mV/G, 4.5-6.0V supply, TO-92S (3-pin SIP)"
-			(at 207.264 129.54 0)
+			(at 222.25 129.54 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -10912,7 +10757,7 @@
 	)
 	(symbol
 		(lib_id "New_Library:MP1584EN")
-		(at 367.03 181.61 0)
+		(at 365.76 184.15 0)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
@@ -10921,7 +10766,7 @@
 		(fields_autoplaced yes)
 		(uuid "f5210b5a-47ad-476c-94b2-6ef27f667075")
 		(property "Reference" "U3"
-			(at 363.22 178.435 0)
+			(at 361.95 180.975 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -10930,7 +10775,7 @@
 			)
 		)
 		(property "Value" "MP1584EN"
-			(at 367.03 177.8 0)
+			(at 365.76 180.34 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -10938,7 +10783,7 @@
 			)
 		)
 		(property "Footprint" "Package_TO_SOT_SMD:SOT-223-3_TabPin2"
-			(at 367.03 176.53 0)
+			(at 365.76 179.07 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -10947,7 +10792,7 @@
 			)
 		)
 		(property "Datasheet" "http://www.diodes.com/datasheets/AP1117.pdf"
-			(at 369.57 187.96 0)
+			(at 368.3 190.5 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -10956,7 +10801,7 @@
 			)
 		)
 		(property "Description" "1A Low Dropout regulator, positive, adjustable output, SOT-223"
-			(at 367.03 181.61 0)
+			(at 365.76 184.15 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -10986,8 +10831,8 @@
 		)
 	)
 	(symbol
-		(lib_id "Sensor_Magnetic:A1302xUA")
-		(at 171.45 64.77 270)
+		(lib_id "SS49E:SS49E")
+		(at 171.45 64.77 0)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
@@ -10996,25 +10841,23 @@
 		(fields_autoplaced yes)
 		(uuid "fd16221b-af2e-4a42-9e0c-1d90eb10ad11")
 		(property "Reference" "U31"
-			(at 172.7201 57.15 0)
+			(at 171.45 54.61 0)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
-				(justify right)
 			)
 		)
 		(property "Value" "A1302xUA"
-			(at 170.1801 57.15 0)
+			(at 171.45 57.15 0)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
-				(justify right)
 			)
 		)
-		(property "Footprint" "Package_TO_SOT_THT:TO-92S"
-			(at 154.432 64.77 0)
+		(property "Footprint" "SEN3_SS49E_HNW"
+			(at 171.45 64.77 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -11023,17 +10866,18 @@
 				(hide yes)
 			)
 		)
-		(property "Datasheet" "http://www.allegromicro.com/~/media/Files/Datasheets/A1301-2-Datasheet.ashx"
-			(at 158.496 64.77 0)
+		(property "Datasheet" "SS49E"
+			(at 171.45 64.77 0)
 			(effects
 				(font
 					(size 1.27 1.27)
+					(italic yes)
 				)
 				(hide yes)
 			)
 		)
 		(property "Description" "Linear Hall Effect Sensor, 1.3 mV/G, 4.5-6.0V supply, TO-92S (3-pin SIP)"
-			(at 156.464 64.77 0)
+			(at 171.45 64.77 0)
 			(effects
 				(font
 					(size 1.27 1.27)
