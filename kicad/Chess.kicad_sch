@@ -1207,7 +1207,7 @@
 				)
 			)
 			(property "Value" "MP1584EN"
-				(at -5.08 3.556 0)
+				(at -5.08 4.064 0)
 				(effects
 					(font
 						(size 1.27 1.27)
@@ -1215,7 +1215,7 @@
 					(justify left)
 				)
 			)
-			(property "Footprint" "Package_TO_SOT_SMD:SOT-223-3_TabPin2"
+			(property "Footprint" "MagChess Footprints:MP1584"
 				(at 0 5.08 0)
 				(effects
 					(font
@@ -1224,7 +1224,7 @@
 					(hide yes)
 				)
 			)
-			(property "Datasheet" "http://www.diodes.com/datasheets/AP1117.pdf"
+			(property "Datasheet" ""
 				(at 2.54 -6.35 0)
 				(effects
 					(font
@@ -1233,7 +1233,7 @@
 					(hide yes)
 				)
 			)
-			(property "Description" "1A Low Dropout regulator, positive, adjustable output, SOT-223"
+			(property "Description" ""
 				(at 0 0 0)
 				(effects
 					(font
@@ -1262,8 +1262,8 @@
 			)
 			(symbol "MP1584EN_0_1"
 				(rectangle
-					(start -6.35 1.905)
-					(end 6.35 -5.08)
+					(start -6.35 2.54)
+					(end 6.35 -6.35)
 					(stroke
 						(width 0.254)
 						(type default)
@@ -1277,7 +1277,7 @@
 				(pin power_in line
 					(at -8.89 0 0)
 					(length 2.54)
-					(name "IN+"
+					(name "IN-"
 						(effects
 							(font
 								(size 1.27 1.27)
@@ -1295,7 +1295,7 @@
 				(pin power_out line
 					(at -8.89 -3.81 0)
 					(length 2.54)
-					(name "IN-"
+					(name "IN+"
 						(effects
 							(font
 								(size 1.27 1.27)
@@ -1313,7 +1313,7 @@
 				(pin power_in line
 					(at 8.89 0 180)
 					(length 2.54)
-					(name "OUT+"
+					(name "OUT-"
 						(effects
 							(font
 								(size 1.27 1.27)
@@ -1331,7 +1331,7 @@
 				(pin power_out line
 					(at 8.89 -3.81 180)
 					(length 2.54)
-					(name "OUT-"
+					(name "OUT+"
 						(effects
 							(font
 								(size 1.27 1.27)
@@ -13112,7 +13112,7 @@
 				)
 			)
 		)
-		(property "Footprint" "Package_TO_SOT_SMD:SOT-223-3_TabPin2"
+		(property "Footprint" "MagChess Footprints:MP1584"
 			(at 407.67 229.87 0)
 			(effects
 				(font
@@ -13121,7 +13121,7 @@
 				(hide yes)
 			)
 		)
-		(property "Datasheet" "http://www.diodes.com/datasheets/AP1117.pdf"
+		(property "Datasheet" ""
 			(at 410.21 241.3 0)
 			(effects
 				(font
@@ -13130,7 +13130,7 @@
 				(hide yes)
 			)
 		)
-		(property "Description" "1A Low Dropout regulator, positive, adjustable output, SOT-223"
+		(property "Description" ""
 			(at 407.67 234.95 0)
 			(effects
 				(font
