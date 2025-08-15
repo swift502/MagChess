@@ -1777,7 +1777,7 @@
 					)
 				)
 			)
-			(property "Footprint" "SEN3_SS49E_HNW"
+			(property "Footprint" "MagChess Footprints:SS49E"
 				(at 0 0 0)
 				(effects
 					(font
@@ -1804,14 +1804,6 @@
 						(size 1.27 1.27)
 					)
 					(hide yes)
-				)
-			)
-			(property "ki_locked" ""
-				(at 0 0 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
 				)
 			)
 			(property "ki_keywords" "SS49E"
@@ -8196,7 +8188,7 @@
 				)
 			)
 		)
-		(property "Footprint" "SEN3_SS49E_HNW"
+		(property "Footprint" "MagChess Footprints:SS49E"
 			(at 203.2 237.49 0)
 			(effects
 				(font
@@ -8269,7 +8261,7 @@
 				)
 			)
 		)
-		(property "Footprint" "SEN3_SS49E_HNW"
+		(property "Footprint" "MagChess Footprints:SS49E"
 			(at 228.6 151.13 0)
 			(effects
 				(font
@@ -8342,7 +8334,7 @@
 				)
 			)
 		)
-		(property "Footprint" "SEN3_SS49E_HNW"
+		(property "Footprint" "MagChess Footprints:SS49E"
 			(at 152.4 237.49 0)
 			(effects
 				(font
@@ -8415,7 +8407,7 @@
 				)
 			)
 		)
-		(property "Footprint" "SEN3_SS49E_HNW"
+		(property "Footprint" "MagChess Footprints:SS49E"
 			(at 152.4 151.13 0)
 			(effects
 				(font
@@ -8719,7 +8711,7 @@
 				)
 			)
 		)
-		(property "Footprint" "SEN3_SS49E_HNW"
+		(property "Footprint" "MagChess Footprints:SS49E"
 			(at 152.4 215.9 0)
 			(effects
 				(font
@@ -8792,7 +8784,7 @@
 				)
 			)
 		)
-		(property "Footprint" "SEN3_SS49E_HNW"
+		(property "Footprint" "MagChess Footprints:SS49E"
 			(at 279.4 237.49 0)
 			(effects
 				(font
@@ -8865,7 +8857,7 @@
 				)
 			)
 		)
-		(property "Footprint" "SEN3_SS49E_HNW"
+		(property "Footprint" "MagChess Footprints:SS49E"
 			(at 279.4 107.95 0)
 			(effects
 				(font
@@ -8938,7 +8930,7 @@
 				)
 			)
 		)
-		(property "Footprint" "SEN3_SS49E_HNW"
+		(property "Footprint" "MagChess Footprints:SS49E"
 			(at 228.6 215.9 0)
 			(effects
 				(font
@@ -9011,7 +9003,7 @@
 				)
 			)
 		)
-		(property "Footprint" "SEN3_SS49E_HNW"
+		(property "Footprint" "MagChess Footprints:SS49E"
 			(at 152.4 194.31 0)
 			(effects
 				(font
@@ -9084,7 +9076,7 @@
 				)
 			)
 		)
-		(property "Footprint" "SEN3_SS49E_HNW"
+		(property "Footprint" "MagChess Footprints:SS49E"
 			(at 254 237.49 0)
 			(effects
 				(font
@@ -9157,7 +9149,7 @@
 				)
 			)
 		)
-		(property "Footprint" "SEN3_SS49E_HNW"
+		(property "Footprint" "MagChess Footprints:SS49E"
 			(at 228.6 86.36 0)
 			(effects
 				(font
@@ -9230,7 +9222,7 @@
 				)
 			)
 		)
-		(property "Footprint" "SEN3_SS49E_HNW"
+		(property "Footprint" "MagChess Footprints:SS49E"
 			(at 152.4 107.95 0)
 			(effects
 				(font
@@ -9303,7 +9295,7 @@
 				)
 			)
 		)
-		(property "Footprint" "SEN3_SS49E_HNW"
+		(property "Footprint" "MagChess Footprints:SS49E"
 			(at 254 151.13 0)
 			(effects
 				(font
@@ -9376,7 +9368,7 @@
 				)
 			)
 		)
-		(property "Footprint" "SEN3_SS49E_HNW"
+		(property "Footprint" "MagChess Footprints:SS49E"
 			(at 279.4 215.9 0)
 			(effects
 				(font
@@ -9449,7 +9441,7 @@
 				)
 			)
 		)
-		(property "Footprint" "SEN3_SS49E_HNW"
+		(property "Footprint" "MagChess Footprints:SS49E"
 			(at 101.6 86.36 0)
 			(effects
 				(font
@@ -9522,7 +9514,7 @@
 				)
 			)
 		)
-		(property "Footprint" "SEN3_SS49E_HNW"
+		(property "Footprint" "MagChess Footprints:SS49E"
 			(at 127 107.95 0)
 			(effects
 				(font
@@ -9595,7 +9587,7 @@
 				)
 			)
 		)
-		(property "Footprint" "SEN3_SS49E_HNW"
+		(property "Footprint" "MagChess Footprints:SS49E"
 			(at 127 215.9 0)
 			(effects
 				(font
@@ -9668,7 +9660,7 @@
 				)
 			)
 		)
-		(property "Footprint" "SEN3_SS49E_HNW"
+		(property "Footprint" "MagChess Footprints:SS49E"
 			(at 127 194.31 0)
 			(effects
 				(font
@@ -9741,7 +9733,7 @@
 				)
 			)
 		)
-		(property "Footprint" "SEN3_SS49E_HNW"
+		(property "Footprint" "MagChess Footprints:SS49E"
 			(at 101.6 107.95 0)
 			(effects
 				(font
@@ -9814,7 +9806,7 @@
 				)
 			)
 		)
-		(property "Footprint" "SEN3_SS49E_HNW"
+		(property "Footprint" "MagChess Footprints:SS49E"
 			(at 177.8 237.49 0)
 			(effects
 				(font
@@ -9887,7 +9879,7 @@
 				)
 			)
 		)
-		(property "Footprint" "SEN3_SS49E_HNW"
+		(property "Footprint" "MagChess Footprints:SS49E"
 			(at 101.6 194.31 0)
 			(effects
 				(font
@@ -9960,7 +9952,7 @@
 				)
 			)
 		)
-		(property "Footprint" "SEN3_SS49E_HNW"
+		(property "Footprint" "MagChess Footprints:SS49E"
 			(at 101.6 151.13 0)
 			(effects
 				(font
@@ -10170,7 +10162,7 @@
 				)
 			)
 		)
-		(property "Footprint" "SEN3_SS49E_HNW"
+		(property "Footprint" "MagChess Footprints:SS49E"
 			(at 177.8 86.36 0)
 			(effects
 				(font
@@ -10243,7 +10235,7 @@
 				)
 			)
 		)
-		(property "Footprint" "SEN3_SS49E_HNW"
+		(property "Footprint" "MagChess Footprints:SS49E"
 			(at 101.6 129.54 0)
 			(effects
 				(font
@@ -10316,7 +10308,7 @@
 				)
 			)
 		)
-		(property "Footprint" "SEN3_SS49E_HNW"
+		(property "Footprint" "MagChess Footprints:SS49E"
 			(at 279.4 194.31 0)
 			(effects
 				(font
@@ -10389,7 +10381,7 @@
 				)
 			)
 		)
-		(property "Footprint" "SEN3_SS49E_HNW"
+		(property "Footprint" "MagChess Footprints:SS49E"
 			(at 228.6 129.54 0)
 			(effects
 				(font
@@ -10462,7 +10454,7 @@
 				)
 			)
 		)
-		(property "Footprint" "SEN3_SS49E_HNW"
+		(property "Footprint" "MagChess Footprints:SS49E"
 			(at 254 215.9 0)
 			(effects
 				(font
@@ -10535,7 +10527,7 @@
 				)
 			)
 		)
-		(property "Footprint" "SEN3_SS49E_HNW"
+		(property "Footprint" "MagChess Footprints:SS49E"
 			(at 152.4 86.36 0)
 			(effects
 				(font
@@ -10608,7 +10600,7 @@
 				)
 			)
 		)
-		(property "Footprint" "SEN3_SS49E_HNW"
+		(property "Footprint" "MagChess Footprints:SS49E"
 			(at 152.4 129.54 0)
 			(effects
 				(font
@@ -10681,7 +10673,7 @@
 				)
 			)
 		)
-		(property "Footprint" "SEN3_SS49E_HNW"
+		(property "Footprint" "MagChess Footprints:SS49E"
 			(at 279.4 129.54 0)
 			(effects
 				(font
@@ -10754,7 +10746,7 @@
 				)
 			)
 		)
-		(property "Footprint" "SEN3_SS49E_HNW"
+		(property "Footprint" "MagChess Footprints:SS49E"
 			(at 203.2 215.9 0)
 			(effects
 				(font
@@ -10827,7 +10819,7 @@
 				)
 			)
 		)
-		(property "Footprint" "SEN3_SS49E_HNW"
+		(property "Footprint" "MagChess Footprints:SS49E"
 			(at 127 86.36 0)
 			(effects
 				(font
@@ -10900,7 +10892,7 @@
 				)
 			)
 		)
-		(property "Footprint" "SEN3_SS49E_HNW"
+		(property "Footprint" "MagChess Footprints:SS49E"
 			(at 279.4 151.13 0)
 			(effects
 				(font
@@ -10973,7 +10965,7 @@
 				)
 			)
 		)
-		(property "Footprint" "SEN3_SS49E_HNW"
+		(property "Footprint" "MagChess Footprints:SS49E"
 			(at 203.2 107.95 0)
 			(effects
 				(font
@@ -11046,7 +11038,7 @@
 				)
 			)
 		)
-		(property "Footprint" "SEN3_SS49E_HNW"
+		(property "Footprint" "MagChess Footprints:SS49E"
 			(at 203.2 194.31 0)
 			(effects
 				(font
@@ -11119,7 +11111,7 @@
 				)
 			)
 		)
-		(property "Footprint" "SEN3_SS49E_HNW"
+		(property "Footprint" "MagChess Footprints:SS49E"
 			(at 127 129.54 0)
 			(effects
 				(font
@@ -11192,7 +11184,7 @@
 				)
 			)
 		)
-		(property "Footprint" "SEN3_SS49E_HNW"
+		(property "Footprint" "MagChess Footprints:SS49E"
 			(at 177.8 172.72 0)
 			(effects
 				(font
@@ -11265,7 +11257,7 @@
 				)
 			)
 		)
-		(property "Footprint" "SEN3_SS49E_HNW"
+		(property "Footprint" "MagChess Footprints:SS49E"
 			(at 101.6 215.9 0)
 			(effects
 				(font
@@ -11338,7 +11330,7 @@
 				)
 			)
 		)
-		(property "Footprint" "SEN3_SS49E_HNW"
+		(property "Footprint" "MagChess Footprints:SS49E"
 			(at 127 237.49 0)
 			(effects
 				(font
@@ -11593,7 +11585,7 @@
 				)
 			)
 		)
-		(property "Footprint" "SEN3_SS49E_HNW"
+		(property "Footprint" "MagChess Footprints:SS49E"
 			(at 254 86.36 0)
 			(effects
 				(font
@@ -11666,7 +11658,7 @@
 				)
 			)
 		)
-		(property "Footprint" "SEN3_SS49E_HNW"
+		(property "Footprint" "MagChess Footprints:SS49E"
 			(at 203.2 172.72 0)
 			(effects
 				(font
@@ -11739,7 +11731,7 @@
 				)
 			)
 		)
-		(property "Footprint" "SEN3_SS49E_HNW"
+		(property "Footprint" "MagChess Footprints:SS49E"
 			(at 228.6 237.49 0)
 			(effects
 				(font
@@ -11812,7 +11804,7 @@
 				)
 			)
 		)
-		(property "Footprint" "SEN3_SS49E_HNW"
+		(property "Footprint" "MagChess Footprints:SS49E"
 			(at 101.6 172.72 0)
 			(effects
 				(font
@@ -11885,7 +11877,7 @@
 				)
 			)
 		)
-		(property "Footprint" "SEN3_SS49E_HNW"
+		(property "Footprint" "MagChess Footprints:SS49E"
 			(at 254 172.72 0)
 			(effects
 				(font
@@ -11958,7 +11950,7 @@
 				)
 			)
 		)
-		(property "Footprint" "SEN3_SS49E_HNW"
+		(property "Footprint" "MagChess Footprints:SS49E"
 			(at 254 107.95 0)
 			(effects
 				(font
@@ -12031,7 +12023,7 @@
 				)
 			)
 		)
-		(property "Footprint" "SEN3_SS49E_HNW"
+		(property "Footprint" "MagChess Footprints:SS49E"
 			(at 177.8 215.9 0)
 			(effects
 				(font
@@ -12104,7 +12096,7 @@
 				)
 			)
 		)
-		(property "Footprint" "SEN3_SS49E_HNW"
+		(property "Footprint" "MagChess Footprints:SS49E"
 			(at 177.8 129.54 0)
 			(effects
 				(font
@@ -12177,7 +12169,7 @@
 				)
 			)
 		)
-		(property "Footprint" "SEN3_SS49E_HNW"
+		(property "Footprint" "MagChess Footprints:SS49E"
 			(at 127 172.72 0)
 			(effects
 				(font
@@ -12250,7 +12242,7 @@
 				)
 			)
 		)
-		(property "Footprint" "SEN3_SS49E_HNW"
+		(property "Footprint" "MagChess Footprints:SS49E"
 			(at 177.8 194.31 0)
 			(effects
 				(font
@@ -12323,7 +12315,7 @@
 				)
 			)
 		)
-		(property "Footprint" "SEN3_SS49E_HNW"
+		(property "Footprint" "MagChess Footprints:SS49E"
 			(at 228.6 172.72 0)
 			(effects
 				(font
@@ -12396,7 +12388,7 @@
 				)
 			)
 		)
-		(property "Footprint" "SEN3_SS49E_HNW"
+		(property "Footprint" "MagChess Footprints:SS49E"
 			(at 152.4 172.72 0)
 			(effects
 				(font
@@ -12469,7 +12461,7 @@
 				)
 			)
 		)
-		(property "Footprint" "SEN3_SS49E_HNW"
+		(property "Footprint" "MagChess Footprints:SS49E"
 			(at 177.8 107.95 0)
 			(effects
 				(font
@@ -12542,7 +12534,7 @@
 				)
 			)
 		)
-		(property "Footprint" "SEN3_SS49E_HNW"
+		(property "Footprint" "MagChess Footprints:SS49E"
 			(at 254 194.31 0)
 			(effects
 				(font
@@ -12615,7 +12607,7 @@
 				)
 			)
 		)
-		(property "Footprint" "SEN3_SS49E_HNW"
+		(property "Footprint" "MagChess Footprints:SS49E"
 			(at 101.6 237.49 0)
 			(effects
 				(font
@@ -12688,7 +12680,7 @@
 				)
 			)
 		)
-		(property "Footprint" "SEN3_SS49E_HNW"
+		(property "Footprint" "MagChess Footprints:SS49E"
 			(at 177.8 151.13 0)
 			(effects
 				(font
@@ -12761,7 +12753,7 @@
 				)
 			)
 		)
-		(property "Footprint" "SEN3_SS49E_HNW"
+		(property "Footprint" "MagChess Footprints:SS49E"
 			(at 228.6 194.31 0)
 			(effects
 				(font
@@ -12834,7 +12826,7 @@
 				)
 			)
 		)
-		(property "Footprint" "SEN3_SS49E_HNW"
+		(property "Footprint" "MagChess Footprints:SS49E"
 			(at 203.2 151.13 0)
 			(effects
 				(font
@@ -13044,7 +13036,7 @@
 				)
 			)
 		)
-		(property "Footprint" "SEN3_SS49E_HNW"
+		(property "Footprint" "MagChess Footprints:SS49E"
 			(at 127 151.13 0)
 			(effects
 				(font
@@ -13254,7 +13246,7 @@
 				)
 			)
 		)
-		(property "Footprint" "SEN3_SS49E_HNW"
+		(property "Footprint" "MagChess Footprints:SS49E"
 			(at 203.2 129.54 0)
 			(effects
 				(font
@@ -13327,7 +13319,7 @@
 				)
 			)
 		)
-		(property "Footprint" "SEN3_SS49E_HNW"
+		(property "Footprint" "MagChess Footprints:SS49E"
 			(at 279.4 86.36 0)
 			(effects
 				(font
@@ -13400,7 +13392,7 @@
 				)
 			)
 		)
-		(property "Footprint" "SEN3_SS49E_HNW"
+		(property "Footprint" "MagChess Footprints:SS49E"
 			(at 203.2 86.36 0)
 			(effects
 				(font
@@ -13473,7 +13465,7 @@
 				)
 			)
 		)
-		(property "Footprint" "SEN3_SS49E_HNW"
+		(property "Footprint" "MagChess Footprints:SS49E"
 			(at 254 129.54 0)
 			(effects
 				(font
@@ -13546,7 +13538,7 @@
 				)
 			)
 		)
-		(property "Footprint" "SEN3_SS49E_HNW"
+		(property "Footprint" "MagChess Footprints:SS49E"
 			(at 279.4 172.72 0)
 			(effects
 				(font
@@ -13694,7 +13686,7 @@
 				)
 			)
 		)
-		(property "Footprint" "SEN3_SS49E_HNW"
+		(property "Footprint" "MagChess Footprints:SS49E"
 			(at 228.6 107.95 0)
 			(effects
 				(font
