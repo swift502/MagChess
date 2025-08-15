@@ -1422,7 +1422,7 @@
 			)
 			(symbol "SS49E_0_1"
 				(pin power_in line
-					(at -10.16 1.27 0)
+					(at -10.16 2.54 0)
 					(length 5.08)
 					(name "VCC"
 						(effects
@@ -1439,26 +1439,8 @@
 						)
 					)
 				)
-				(pin power_in line
-					(at 0 -8.89 90)
-					(length 5.08)
-					(name "GND"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-					(number "2"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-				)
 				(pin output line
-					(at 10.16 1.27 180)
+					(at 0 -8.89 90)
 					(length 5.08)
 					(name "OUT"
 						(effects
@@ -1475,12 +1457,30 @@
 						)
 					)
 				)
+				(pin power_in line
+					(at 10.16 2.54 180)
+					(length 5.08)
+					(name "GND"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "2"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
 			)
 			(symbol "SS49E_1_1"
 				(polyline
 					(pts
-						(xy 5.08 -3.81) (xy 5.08 2.54) (xy 2.54 5.08) (xy -2.54 5.08) (xy -5.08 2.54) (xy -5.08 -3.81)
-						(xy 5.08 -3.81)
+						(xy 2.54 -3.81) (xy 5.08 -1.27) (xy 5.08 5.08) (xy -5.08 5.08) (xy -5.08 -1.27) (xy -2.54 -3.81)
+						(xy 2.54 -3.81)
 					)
 					(stroke
 						(width 0)
@@ -1519,680 +1519,690 @@
 		(uuid c3f80e06-7246-4a4e-8d1c-e56721b52ec8)
 	)
 	(junction
-		(at 265.43 182.88)
-		(diameter 0)
-		(color 0 0 0 0)
-		(uuid "00a20ba9-3019-4e80-a0cb-6da80a81355e")
-	)
-	(junction
-		(at 113.03 182.88)
-		(diameter 0)
-		(color 0 0 0 0)
-		(uuid "0207f62f-8671-4f6c-afda-458af993dd08")
-	)
-	(junction
-		(at 133.35 182.88)
-		(diameter 0)
-		(color 0 0 0 0)
-		(uuid "03c24dbe-7ca1-4aa4-b2c4-e17ff21980c3")
-	)
-	(junction
-		(at 107.95 247.65)
-		(diameter 0)
-		(color 0 0 0 0)
-		(uuid "05811930-ed56-4115-b021-3988c7ba8431")
-	)
-	(junction
-		(at 158.75 247.65)
-		(diameter 0)
-		(color 0 0 0 0)
-		(uuid "07815571-8ab0-4b2b-997a-d09f416e3587")
-	)
-	(junction
-		(at 189.23 269.24)
-		(diameter 0)
-		(color 0 0 0 0)
-		(uuid "09ed314d-fce8-4f8a-a574-53c21f058ac5")
-	)
-	(junction
-		(at 260.35 139.7)
-		(diameter 0)
-		(color 0 0 0 0)
-		(uuid "0ee30da4-9bdd-4e09-bc6d-0adffe01e8ff")
-	)
-	(junction
-		(at 265.43 247.65)
-		(diameter 0)
-		(color 0 0 0 0)
-		(uuid "0ffe73ca-8e92-42a6-99eb-b5ddf57b3a2c")
-	)
-	(junction
-		(at 133.35 161.29)
-		(diameter 0)
-		(color 0 0 0 0)
-		(uuid "10fb3872-327b-4091-b55e-1aadd0991555")
-	)
-	(junction
-		(at 163.83 182.88)
-		(diameter 0)
-		(color 0 0 0 0)
-		(uuid "1294f13e-a08b-4ec6-8791-a00d188cbfa7")
-	)
-	(junction
-		(at 87.63 269.24)
-		(diameter 0)
-		(color 0 0 0 0)
-		(uuid "138a2bec-2bb4-4955-a5b8-abfc100d8c82")
-	)
-	(junction
-		(at 158.75 161.29)
-		(diameter 0)
-		(color 0 0 0 0)
-		(uuid "14126a66-cdc3-4070-afac-ad874d134f70")
-	)
-	(junction
-		(at 133.35 247.65)
-		(diameter 0)
-		(color 0 0 0 0)
-		(uuid "15cd8ffb-39a6-485b-a3c6-71f5a3e048e8")
-	)
-	(junction
-		(at 214.63 269.24)
-		(diameter 0)
-		(color 0 0 0 0)
-		(uuid "16976ada-1be3-49af-ad00-8b034d69b9df")
-	)
-	(junction
-		(at 163.83 139.7)
-		(diameter 0)
-		(color 0 0 0 0)
-		(uuid "18802130-c476-4b5d-b895-52eeaf6a9ab6")
-	)
-	(junction
-		(at 234.95 161.29)
-		(diameter 0)
-		(color 0 0 0 0)
-		(uuid "1a6aa6dc-52e5-4d82-9aba-2dffe8a3c41a")
-	)
-	(junction
-		(at 107.95 226.06)
-		(diameter 0)
-		(color 0 0 0 0)
-		(uuid "1b430e5d-d559-4c52-9a74-71a277c14ab9")
-	)
-	(junction
-		(at 209.55 161.29)
-		(diameter 0)
-		(color 0 0 0 0)
-		(uuid "1c574899-2d07-46f9-ba7d-f40e2e0867cf")
-	)
-	(junction
-		(at 234.95 269.24)
-		(diameter 0)
-		(color 0 0 0 0)
-		(uuid "1e059d43-d806-407a-ae86-b8ef1aabdf76")
-	)
-	(junction
-		(at 240.03 139.7)
-		(diameter 0)
-		(color 0 0 0 0)
-		(uuid "290c4d4e-e483-4886-bbfe-ea552b911f65")
-	)
-	(junction
-		(at 209.55 139.7)
-		(diameter 0)
-		(color 0 0 0 0)
-		(uuid "29af1dba-2094-4393-9f19-9beb192f8941")
-	)
-	(junction
-		(at 158.75 204.47)
-		(diameter 0)
-		(color 0 0 0 0)
-		(uuid "2aabd748-5dbc-42ed-a681-e3c93fd8ab5d")
-	)
-	(junction
-		(at 265.43 161.29)
-		(diameter 0)
-		(color 0 0 0 0)
-		(uuid "35de1711-dde1-41ed-ae9a-127d39ab840d")
-	)
-	(junction
-		(at 260.35 269.24)
-		(diameter 0)
-		(color 0 0 0 0)
-		(uuid "3ebac8d3-7522-438c-bb6f-734fdc5ea196")
-	)
-	(junction
-		(at 234.95 226.06)
-		(diameter 0)
-		(color 0 0 0 0)
-		(uuid "413ecc63-1d5c-47b7-92c1-45ec5c5c48e3")
-	)
-	(junction
-		(at 189.23 204.47)
-		(diameter 0)
-		(color 0 0 0 0)
-		(uuid "433d34d5-a9da-4cb0-accc-e58311afd154")
-	)
-	(junction
-		(at 138.43 269.24)
-		(diameter 0)
-		(color 0 0 0 0)
-		(uuid "46272c60-738c-4726-8d88-a6578542f2c6")
-	)
-	(junction
-		(at 189.23 182.88)
-		(diameter 0)
-		(color 0 0 0 0)
-		(uuid "48ad7b9a-0636-480f-a603-64d48ef371e0")
-	)
-	(junction
-		(at 107.95 269.24)
-		(diameter 0)
-		(color 0 0 0 0)
-		(uuid "48b8740c-688b-40f7-a972-97513fdeefc9")
-	)
-	(junction
-		(at 158.75 226.06)
-		(diameter 0)
-		(color 0 0 0 0)
-		(uuid "4b81c697-c363-4f36-8485-378e2476f1cc")
-	)
-	(junction
-		(at 113.03 269.24)
-		(diameter 0)
-		(color 0 0 0 0)
-		(uuid "4c33f04d-5c46-400b-b65b-971d7b0a8962")
-	)
-	(junction
-		(at 240.03 161.29)
-		(diameter 0)
-		(color 0 0 0 0)
-		(uuid "4c372d92-4d4a-452e-86d9-e424f066a8e9")
-	)
-	(junction
-		(at 184.15 139.7)
-		(diameter 0)
-		(color 0 0 0 0)
-		(uuid "4c867b36-8051-4079-a7df-dc992a772dd4")
-	)
-	(junction
-		(at 214.63 139.7)
-		(diameter 0)
-		(color 0 0 0 0)
-		(uuid "4d5c1216-d30b-41ce-af21-54e7fad11302")
-	)
-	(junction
-		(at 133.35 139.7)
-		(diameter 0)
-		(color 0 0 0 0)
-		(uuid "4fb5d293-a7c6-4bd6-a987-ba61ddb5c253")
-	)
-	(junction
 		(at 234.95 247.65)
 		(diameter 0)
 		(color 0 0 0 0)
-		(uuid "4fcbef78-6f3f-485e-a593-7bb4d0cbc283")
-	)
-	(junction
-		(at 240.03 226.06)
-		(diameter 0)
-		(color 0 0 0 0)
-		(uuid "536eaac7-7d7f-40d9-8caa-57a44012c8d0")
-	)
-	(junction
-		(at 158.75 269.24)
-		(diameter 0)
-		(color 0 0 0 0)
-		(uuid "537b5396-c5cf-4cbb-b705-94eaae40180d")
-	)
-	(junction
-		(at 138.43 204.47)
-		(diameter 0)
-		(color 0 0 0 0)
-		(uuid "56eff858-fb12-46ee-ac38-6a720d9e1acd")
-	)
-	(junction
-		(at 184.15 269.24)
-		(diameter 0)
-		(color 0 0 0 0)
-		(uuid "5772431b-bc69-4aae-83b2-6cd0314d9998")
-	)
-	(junction
-		(at 133.35 226.06)
-		(diameter 0)
-		(color 0 0 0 0)
-		(uuid "5893b7f3-383f-421f-bf1a-73b89070f0c5")
-	)
-	(junction
-		(at 87.63 247.65)
-		(diameter 0)
-		(color 0 0 0 0)
-		(uuid "5cd182ea-6aaa-4c68-a812-3c64e93fadf4")
-	)
-	(junction
-		(at 209.55 226.06)
-		(diameter 0)
-		(color 0 0 0 0)
-		(uuid "5d732057-3586-4353-a38c-3857c0f94aa2")
-	)
-	(junction
-		(at 138.43 161.29)
-		(diameter 0)
-		(color 0 0 0 0)
-		(uuid "5e11e1ce-eb67-478e-9b3a-2d0ad7e9afd0")
-	)
-	(junction
-		(at 260.35 182.88)
-		(diameter 0)
-		(color 0 0 0 0)
-		(uuid "5eb4bd04-1060-43df-9487-4a9d0464c8f9")
-	)
-	(junction
-		(at 87.63 139.7)
-		(diameter 0)
-		(color 0 0 0 0)
-		(uuid "64963908-d6e3-4b8e-af8e-b5e434d847f2")
-	)
-	(junction
-		(at 189.23 161.29)
-		(diameter 0)
-		(color 0 0 0 0)
-		(uuid "65233229-fdc6-4cfb-9021-097d2e4fb08a")
-	)
-	(junction
-		(at 234.95 139.7)
-		(diameter 0)
-		(color 0 0 0 0)
-		(uuid "6b32592e-741d-4695-bf0a-204fd3de1540")
-	)
-	(junction
-		(at 184.15 247.65)
-		(diameter 0)
-		(color 0 0 0 0)
-		(uuid "6d450b08-1ad9-466a-b4f8-61267334db25")
-	)
-	(junction
-		(at 214.63 247.65)
-		(diameter 0)
-		(color 0 0 0 0)
-		(uuid "6e6cd5fe-2858-4327-a43d-fcec9925b5a4")
-	)
-	(junction
-		(at 240.03 269.24)
-		(diameter 0)
-		(color 0 0 0 0)
-		(uuid "746ecca2-3897-402d-b6e8-419d2d5b75f4")
-	)
-	(junction
-		(at 87.63 161.29)
-		(diameter 0)
-		(color 0 0 0 0)
-		(uuid "75adb71c-8cf1-43a5-a543-a89d88d23bef")
-	)
-	(junction
-		(at 209.55 182.88)
-		(diameter 0)
-		(color 0 0 0 0)
-		(uuid "79fd24c2-9d8f-4993-b8db-109fc63a2eba")
-	)
-	(junction
-		(at 113.03 161.29)
-		(diameter 0)
-		(color 0 0 0 0)
-		(uuid "8171a3a6-6ce5-4826-8d67-529f323a7143")
-	)
-	(junction
-		(at 113.03 226.06)
-		(diameter 0)
-		(color 0 0 0 0)
-		(uuid "820589fc-019d-4fef-a5bc-77caf2e184d9")
-	)
-	(junction
-		(at 265.43 226.06)
-		(diameter 0)
-		(color 0 0 0 0)
-		(uuid "83a31d14-9681-4db9-b688-fd6c12818db1")
-	)
-	(junction
-		(at 107.95 182.88)
-		(diameter 0)
-		(color 0 0 0 0)
-		(uuid "8be0d5a8-9d0e-40a7-b976-30382f5b0ffd")
-	)
-	(junction
-		(at 189.23 247.65)
-		(diameter 0)
-		(color 0 0 0 0)
-		(uuid "9052bee4-54c6-4c76-a3da-7be8f680d539")
-	)
-	(junction
-		(at 214.63 161.29)
-		(diameter 0)
-		(color 0 0 0 0)
-		(uuid "90f1870e-5778-4ba9-b253-a37cdf6a060a")
-	)
-	(junction
-		(at 158.75 182.88)
-		(diameter 0)
-		(color 0 0 0 0)
-		(uuid "918baf6e-a4c4-4900-84e3-9f9c63462e9c")
-	)
-	(junction
-		(at 285.75 139.7)
-		(diameter 0)
-		(color 0 0 0 0)
-		(uuid "936d37a9-f353-4eff-9cbe-22fe06dd418c")
-	)
-	(junction
-		(at 209.55 269.24)
-		(diameter 0)
-		(color 0 0 0 0)
-		(uuid "948902ae-517d-4f34-81c5-afacded22918")
-	)
-	(junction
-		(at 107.95 161.29)
-		(diameter 0)
-		(color 0 0 0 0)
-		(uuid "94af0064-964c-496f-a9b1-88811ece3796")
-	)
-	(junction
-		(at 260.35 247.65)
-		(diameter 0)
-		(color 0 0 0 0)
-		(uuid "95e45bae-4f21-4e8f-b5d8-062cdc5785a0")
-	)
-	(junction
-		(at 285.75 269.24)
-		(diameter 0)
-		(color 0 0 0 0)
-		(uuid "9905bc73-1127-4e54-aedd-bae490c0e6be")
-	)
-	(junction
-		(at 87.63 182.88)
-		(diameter 0)
-		(color 0 0 0 0)
-		(uuid "9b7a8e7d-4591-412f-a95c-dbc766148843")
-	)
-	(junction
-		(at 158.75 139.7)
-		(diameter 0)
-		(color 0 0 0 0)
-		(uuid "9d565587-afb0-4827-a727-ae5bcf13b79b")
-	)
-	(junction
-		(at 113.03 204.47)
-		(diameter 0)
-		(color 0 0 0 0)
-		(uuid "a012f250-18b4-473c-b297-0f8414f94750")
-	)
-	(junction
-		(at 138.43 139.7)
-		(diameter 0)
-		(color 0 0 0 0)
-		(uuid "a2f32439-60bd-4bab-8d0b-352f7e4fa2ca")
-	)
-	(junction
-		(at 209.55 247.65)
-		(diameter 0)
-		(color 0 0 0 0)
-		(uuid "aa0757bf-5fed-4021-ac03-247570c0f807")
-	)
-	(junction
-		(at 87.63 204.47)
-		(diameter 0)
-		(color 0 0 0 0)
-		(uuid "aa8f2175-a09b-4d3f-af31-fc308409eae7")
-	)
-	(junction
-		(at 240.03 247.65)
-		(diameter 0)
-		(color 0 0 0 0)
-		(uuid "aac45c96-3fe9-494f-bfba-0fe4a26dfce9")
-	)
-	(junction
-		(at 265.43 204.47)
-		(diameter 0)
-		(color 0 0 0 0)
-		(uuid "ac94ec8a-fef3-4219-884b-ba6051b4c985")
-	)
-	(junction
-		(at 113.03 139.7)
-		(diameter 0)
-		(color 0 0 0 0)
-		(uuid "ad7a28fa-f345-4a70-b959-dedc13515a45")
-	)
-	(junction
-		(at 240.03 204.47)
-		(diameter 0)
-		(color 0 0 0 0)
-		(uuid "b00bd56f-5f03-4968-85c0-d92dc10f2b2d")
-	)
-	(junction
-		(at 184.15 161.29)
-		(diameter 0)
-		(color 0 0 0 0)
-		(uuid "b15c131b-f81e-4bb3-bd56-fa22377e49c8")
-	)
-	(junction
-		(at 138.43 182.88)
-		(diameter 0)
-		(color 0 0 0 0)
-		(uuid "b389ef3a-9447-4310-8cd1-cd7a8bad6afd")
-	)
-	(junction
-		(at 214.63 204.47)
-		(diameter 0)
-		(color 0 0 0 0)
-		(uuid "b8c5300d-67c1-4503-9471-e30498be7b87")
-	)
-	(junction
-		(at 285.75 247.65)
-		(diameter 0)
-		(color 0 0 0 0)
-		(uuid "bdc40408-3d3b-4d93-bbd7-6a39ad072a31")
-	)
-	(junction
-		(at 87.63 226.06)
-		(diameter 0)
-		(color 0 0 0 0)
-		(uuid "bf9bd990-95f3-4c07-abfd-1f7c233e1fdf")
-	)
-	(junction
-		(at 214.63 182.88)
-		(diameter 0)
-		(color 0 0 0 0)
-		(uuid "c2135e9f-aa77-4462-8888-a0cb63f7af28")
-	)
-	(junction
-		(at 163.83 247.65)
-		(diameter 0)
-		(color 0 0 0 0)
-		(uuid "c5cc5a1f-88fc-41ba-96dd-e4e37010e0ef")
-	)
-	(junction
-		(at 107.95 204.47)
-		(diameter 0)
-		(color 0 0 0 0)
-		(uuid "c693d189-9276-4601-86ad-9eb33765fe99")
-	)
-	(junction
-		(at 209.55 204.47)
-		(diameter 0)
-		(color 0 0 0 0)
-		(uuid "c8482240-94ab-4065-9fc8-713975ccd619")
-	)
-	(junction
-		(at 184.15 226.06)
-		(diameter 0)
-		(color 0 0 0 0)
-		(uuid "cafd5c4f-3aee-4b49-b90b-fff478363392")
-	)
-	(junction
-		(at 184.15 204.47)
-		(diameter 0)
-		(color 0 0 0 0)
-		(uuid "cc327bed-95df-4ae2-9d57-c8968b070f7e")
-	)
-	(junction
-		(at 214.63 226.06)
-		(diameter 0)
-		(color 0 0 0 0)
-		(uuid "ccfd817e-d123-4fdc-b6ad-fd20c7ca2387")
-	)
-	(junction
-		(at 285.75 182.88)
-		(diameter 0)
-		(color 0 0 0 0)
-		(uuid "cd2e2d5a-8a5f-4381-bf34-c14b36846c38")
-	)
-	(junction
-		(at 113.03 247.65)
-		(diameter 0)
-		(color 0 0 0 0)
-		(uuid "cdb16bcf-b889-4241-b5fe-b3ab136d40d7")
-	)
-	(junction
-		(at 260.35 204.47)
-		(diameter 0)
-		(color 0 0 0 0)
-		(uuid "cdf05053-eb80-4e2f-850d-a40b222dc9fd")
-	)
-	(junction
-		(at 240.03 182.88)
-		(diameter 0)
-		(color 0 0 0 0)
-		(uuid "d2f306db-e1f2-4ed4-90a0-110e4d3d4bc6")
-	)
-	(junction
-		(at 138.43 226.06)
-		(diameter 0)
-		(color 0 0 0 0)
-		(uuid "d367d20f-04f2-4ce8-bbce-41271feb3539")
-	)
-	(junction
-		(at 189.23 139.7)
-		(diameter 0)
-		(color 0 0 0 0)
-		(uuid "d7be7d11-6465-4a7e-ba34-8a52439ba18b")
-	)
-	(junction
-		(at 265.43 139.7)
-		(diameter 0)
-		(color 0 0 0 0)
-		(uuid "d8a8304c-b049-4f1a-a951-a50ea05fc133")
-	)
-	(junction
-		(at 133.35 204.47)
-		(diameter 0)
-		(color 0 0 0 0)
-		(uuid "dbc7bc77-29b3-4ffa-bf6f-dd9eb6b21af9")
-	)
-	(junction
-		(at 163.83 226.06)
-		(diameter 0)
-		(color 0 0 0 0)
-		(uuid "e25d9044-99a4-4d76-8486-40452ec9a1d1")
-	)
-	(junction
-		(at 265.43 269.24)
-		(diameter 0)
-		(color 0 0 0 0)
-		(uuid "e4996f5d-6a4f-46fa-9829-1295def8c2ed")
-	)
-	(junction
-		(at 285.75 204.47)
-		(diameter 0)
-		(color 0 0 0 0)
-		(uuid "e4a868fe-1958-44f1-b265-7177187e63be")
-	)
-	(junction
-		(at 234.95 182.88)
-		(diameter 0)
-		(color 0 0 0 0)
-		(uuid "e56f341d-da10-4780-9b35-7cc19202a8ff")
-	)
-	(junction
-		(at 138.43 247.65)
-		(diameter 0)
-		(color 0 0 0 0)
-		(uuid "ec72ccda-356f-42b6-a3fe-587ab34b6058")
-	)
-	(junction
-		(at 285.75 161.29)
-		(diameter 0)
-		(color 0 0 0 0)
-		(uuid "ecd23edf-8502-4372-9782-bb2abb7551cc")
-	)
-	(junction
-		(at 184.15 182.88)
-		(diameter 0)
-		(color 0 0 0 0)
-		(uuid "ed06852d-ce1b-49d9-bcff-4800507f68f5")
-	)
-	(junction
-		(at 163.83 161.29)
-		(diameter 0)
-		(color 0 0 0 0)
-		(uuid "edea6c39-2d20-4b5d-b207-7635a1b47f23")
-	)
-	(junction
-		(at 107.95 139.7)
-		(diameter 0)
-		(color 0 0 0 0)
-		(uuid "f2cec192-36c7-428e-8429-f739f93f9ad7")
+		(uuid "00fe38bb-625a-4e8d-b79c-54b6d0185219")
 	)
 	(junction
 		(at 234.95 204.47)
 		(diameter 0)
 		(color 0 0 0 0)
-		(uuid "f70f8810-cb13-49d4-babc-4f79412e73ca")
+		(uuid "0101a6ca-8f64-40d2-af03-92583e2ac1cd")
 	)
 	(junction
-		(at 285.75 226.06)
+		(at 113.03 182.88)
 		(diameter 0)
 		(color 0 0 0 0)
-		(uuid "f7b4291e-7605-4e95-8ec6-563890fe6085")
+		(uuid "02262f1c-0a93-451f-baeb-153cd22af869")
+	)
+	(junction
+		(at 184.15 226.06)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "03e0520d-1517-4791-b332-1f7dba3ae28a")
+	)
+	(junction
+		(at 158.75 161.29)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "0661d035-cb79-4547-b602-ff3f65e374d9")
+	)
+	(junction
+		(at 87.63 269.24)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "0cb5c8f6-85fb-4376-b653-47c8e5cf774c")
+	)
+	(junction
+		(at 234.95 226.06)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "0d1b64da-4ca6-4bac-b398-91513d50e997")
+	)
+	(junction
+		(at 133.35 161.29)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "103e6e6f-1810-4e2e-83a8-2250922b5e31")
+	)
+	(junction
+		(at 240.03 204.47)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "12e3f1cc-57ca-4d23-9986-6e23273f1c56")
+	)
+	(junction
+		(at 87.63 161.29)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "136e281a-21e1-4905-8c21-1f791ea6cafd")
+	)
+	(junction
+		(at 285.75 139.7)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "1809a934-698b-479f-a839-82c63959231a")
+	)
+	(junction
+		(at 184.15 139.7)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "19fc38ff-ac7f-40f8-82b7-4ec09e9b0652")
+	)
+	(junction
+		(at 285.75 161.29)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "1c8f39f1-1959-43fa-8767-2e68b714bf3d")
+	)
+	(junction
+		(at 184.15 247.65)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "1d6bd501-aaf8-48b8-a121-9fc0684aa925")
+	)
+	(junction
+		(at 265.43 161.29)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "21ae87ab-c0d5-4b4c-87fe-d6167e229aa0")
+	)
+	(junction
+		(at 113.03 161.29)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "26ed19c1-7481-4381-a971-9db2c65144b8")
+	)
+	(junction
+		(at 107.95 161.29)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "28de4540-6132-4807-9816-376f3e1658d2")
+	)
+	(junction
+		(at 138.43 247.65)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "2e9e0686-252b-446d-a49d-7d080f7a5c63")
+	)
+	(junction
+		(at 184.15 182.88)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "32328747-fdee-4c34-9b5a-2160c4479236")
+	)
+	(junction
+		(at 189.23 204.47)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "3578542c-a4f7-4e6f-9c01-803282d79781")
+	)
+	(junction
+		(at 260.35 247.65)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "382b54b8-5ebb-4609-9526-a9d48386bf3c")
+	)
+	(junction
+		(at 133.35 226.06)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "383e008a-2b22-476e-9538-e0979cfdd909")
+	)
+	(junction
+		(at 209.55 247.65)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "3a1bfb14-4eb5-4fca-bce2-a38092182fc0")
+	)
+	(junction
+		(at 107.95 139.7)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "3ce89946-6996-4b40-a6b4-8ce803916d3b")
 	)
 	(junction
 		(at 260.35 161.29)
 		(diameter 0)
 		(color 0 0 0 0)
-		(uuid "f7e22153-54a2-4475-a429-37a8a732533f")
+		(uuid "3d8ed17b-71ac-466d-bc86-001f1a9eded5")
 	)
 	(junction
-		(at 260.35 226.06)
+		(at 163.83 226.06)
 		(diameter 0)
 		(color 0 0 0 0)
-		(uuid "f9cff202-59c4-4daa-81d9-f66b05be84ea")
+		(uuid "40bdea04-e06c-41fa-ad01-71953e9fa609")
+	)
+	(junction
+		(at 158.75 247.65)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "433cd44c-ae24-438f-9586-7afbf7d14e3b")
+	)
+	(junction
+		(at 107.95 226.06)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "4426afa7-f473-4fae-9dd2-ce97475aad4f")
+	)
+	(junction
+		(at 189.23 269.24)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "44a42460-0a85-483d-a1d3-04154eb782ad")
+	)
+	(junction
+		(at 184.15 204.47)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "4530c6ac-0632-45e5-a972-babfc03ed925")
+	)
+	(junction
+		(at 189.23 161.29)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "45dd3de6-7180-49f9-89a9-4de5b93325d0")
+	)
+	(junction
+		(at 158.75 226.06)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "4c633372-29fc-4203-b3d2-a853a7a8519f")
+	)
+	(junction
+		(at 158.75 139.7)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "50ad4561-43c1-4814-9479-4cc0df64f379")
+	)
+	(junction
+		(at 113.03 226.06)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "54beea6a-abc2-4ff4-9d7a-0d43eda348dd")
+	)
+	(junction
+		(at 285.75 269.24)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "57b785d3-5663-4332-8d9d-b11b24dfe6bf")
+	)
+	(junction
+		(at 240.03 139.7)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "583ea438-3210-4edf-9b7d-fd931960d08f")
+	)
+	(junction
+		(at 138.43 182.88)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "5a70bcdf-d8f1-4609-9506-9b84fdd56a7f")
+	)
+	(junction
+		(at 163.83 247.65)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "5d542ff9-81c9-4906-b7bf-a6e800e0f4e3")
+	)
+	(junction
+		(at 234.95 161.29)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "5db402b1-aad6-4fc4-9153-29b5dd993ac4")
+	)
+	(junction
+		(at 234.95 139.7)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "60e1b7fe-e7c9-4b33-a544-07e0cca74f52")
+	)
+	(junction
+		(at 189.23 247.65)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "6292a845-3824-423a-b7f5-1da8e6af17e6")
+	)
+	(junction
+		(at 285.75 204.47)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "63ad8432-c9ca-46b7-bed6-3d39cc72396e")
+	)
+	(junction
+		(at 265.43 182.88)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "67edf93f-fb18-4ffb-9615-eae4ac41fd8c")
+	)
+	(junction
+		(at 107.95 204.47)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "68e0f0bd-7a1e-4d7f-a69d-abc4c76de27b")
+	)
+	(junction
+		(at 240.03 247.65)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "6a114c6b-8253-48f2-b3a2-5734aac2552f")
+	)
+	(junction
+		(at 209.55 182.88)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "6da57f8b-71da-4f37-b329-ca7ab8e08361")
+	)
+	(junction
+		(at 209.55 204.47)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "6ed23d4a-f121-46fb-b910-b86cc8b50f1c")
+	)
+	(junction
+		(at 133.35 139.7)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "6ed7658c-382c-4f33-9042-2ccbc569f9d6")
+	)
+	(junction
+		(at 265.43 204.47)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "729fab64-7a67-4e8f-95fe-4f149bbd4fe1")
+	)
+	(junction
+		(at 214.63 226.06)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "81ecd127-4eb4-4204-b0b6-555e0d126fa8")
+	)
+	(junction
+		(at 189.23 182.88)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "824a05b7-bba8-4dd6-9c46-c60d7975fee0")
+	)
+	(junction
+		(at 240.03 226.06)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "87c6a3a5-52bb-42cb-bd19-d9b9a19b9cc8")
+	)
+	(junction
+		(at 133.35 247.65)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "886d63f8-c44d-4d8d-a3f2-f246d5ce4a90")
 	)
 	(junction
 		(at 189.23 226.06)
 		(diameter 0)
 		(color 0 0 0 0)
-		(uuid "faec1bb6-fdef-4720-8759-55e4da44ab7a")
+		(uuid "898c7c7b-fc90-423d-9582-eb647f2bf8e7")
 	)
 	(junction
-		(at 163.83 204.47)
+		(at 240.03 182.88)
 		(diameter 0)
 		(color 0 0 0 0)
-		(uuid "fc3a6f0e-f2a3-4da0-a4b9-59916535b3fa")
+		(uuid "8acf8612-36d6-4697-a52a-a4c03a265a39")
+	)
+	(junction
+		(at 285.75 182.88)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "8b37de6c-e9f4-45f8-87d5-2288a13835b3")
+	)
+	(junction
+		(at 265.43 139.7)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "8d8623b2-c19d-4fb2-b359-21763f705010")
+	)
+	(junction
+		(at 113.03 269.24)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "936471e4-21ae-4f40-8526-54a787126512")
+	)
+	(junction
+		(at 285.75 247.65)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "93df4592-be48-48c7-9345-4adac4958620")
+	)
+	(junction
+		(at 265.43 269.24)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "98af46a1-32c8-4432-b163-65648feed2d0")
+	)
+	(junction
+		(at 163.83 161.29)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "99e8a238-f6cb-4514-9e99-b62d77bdfc8d")
 	)
 	(junction
 		(at 163.83 269.24)
 		(diameter 0)
 		(color 0 0 0 0)
-		(uuid "fe5c315a-ab74-443b-8ee8-a9242174e887")
+		(uuid "9a246ec0-571e-4720-ba85-523a89a89355")
+	)
+	(junction
+		(at 189.23 139.7)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "9afdcfc9-e036-4c49-aed9-6c0b888ba48c")
+	)
+	(junction
+		(at 209.55 161.29)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "9d95ced0-7ba6-4ef5-bfed-e41ede4c59a6")
+	)
+	(junction
+		(at 87.63 204.47)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "9e8c06b7-f619-420e-8ead-c6c63b9e4cc8")
+	)
+	(junction
+		(at 234.95 182.88)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "9eb5775a-84e6-4b0a-8dfa-4bb0415f13de")
+	)
+	(junction
+		(at 133.35 182.88)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "a194b0fb-cc62-4fbe-ab6c-e9fbb973cf23")
+	)
+	(junction
+		(at 113.03 247.65)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "a250d486-a55c-4b42-8ae8-9758c817241c")
+	)
+	(junction
+		(at 209.55 226.06)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "a6007f7f-7137-4e4e-9a39-f75663faf7c1")
+	)
+	(junction
+		(at 87.63 139.7)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "a6f50a97-baff-42bc-8746-03c06f97133d")
+	)
+	(junction
+		(at 163.83 139.7)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "a8042eca-fa48-45f1-899d-0b53c49df27a")
+	)
+	(junction
+		(at 265.43 247.65)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "a9b1950d-1178-4822-8b4e-26e2fbb09e6e")
+	)
+	(junction
+		(at 87.63 226.06)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "aaa861a9-1374-4ed9-ab65-559b75f06af5")
+	)
+	(junction
+		(at 260.35 182.88)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "ae664fd3-1686-4c0a-8e8a-491d7264f513")
+	)
+	(junction
+		(at 214.63 139.7)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "b01ef2ea-8df3-48ec-afa2-98b68c960616")
+	)
+	(junction
+		(at 107.95 182.88)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "b22855e3-37dd-4581-bde2-b8364caa2433")
+	)
+	(junction
+		(at 138.43 226.06)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "b5602a6b-aedb-4638-877e-e6d868819735")
+	)
+	(junction
+		(at 163.83 204.47)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "b89a48b2-f41b-4524-b63f-def6fa2e95e8")
+	)
+	(junction
+		(at 260.35 204.47)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "b9187a1e-7be1-40bb-b32d-e95edb4cdc31")
+	)
+	(junction
+		(at 214.63 269.24)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "ba067a3a-7845-4842-b686-021751b5afd6")
+	)
+	(junction
+		(at 209.55 269.24)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "bbb34d5a-0886-42bc-9fa8-7a1a413b1637")
+	)
+	(junction
+		(at 138.43 269.24)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "c41561a1-95b2-440c-806b-e9a176b6bca0")
+	)
+	(junction
+		(at 107.95 269.24)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "c461a487-b9dc-45fd-9da5-3df05d87c3de")
+	)
+	(junction
+		(at 260.35 226.06)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "c6303b31-5ee3-4386-bf3b-b611c35f8a1e")
+	)
+	(junction
+		(at 158.75 269.24)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "c86e4e4b-23ea-4e4e-9111-1833b986e015")
+	)
+	(junction
+		(at 87.63 247.65)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "c9e87ccc-fd23-49c8-8882-83d8754b8898")
+	)
+	(junction
+		(at 163.83 182.88)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "cc1ca973-02d7-4b3b-8bd4-197df7f43bca")
+	)
+	(junction
+		(at 214.63 247.65)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "cd98e1bb-27e8-44f0-a607-53c70462e303")
+	)
+	(junction
+		(at 265.43 226.06)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "ce7f044f-ae85-4efe-80ae-d5ef2125cd22")
+	)
+	(junction
+		(at 184.15 161.29)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "d110fde8-914b-40da-ba4f-db8063167c02")
+	)
+	(junction
+		(at 158.75 182.88)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "d14d8f28-47f3-4bd7-bce8-421e4b4885ac")
+	)
+	(junction
+		(at 214.63 182.88)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "d194d37a-bccd-452b-9aac-08c40b9d9e4e")
+	)
+	(junction
+		(at 138.43 161.29)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "d40d9679-e9c6-44fa-bda0-1405a17573af")
+	)
+	(junction
+		(at 138.43 139.7)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "d4246670-15c8-479b-8b99-3312f9f0703b")
 	)
 	(junction
 		(at 133.35 269.24)
 		(diameter 0)
 		(color 0 0 0 0)
-		(uuid "ff454bbf-f5d2-4a89-b2b3-534460f51049")
+		(uuid "d7795aa1-6424-447e-a4f2-368d6bb0798e")
+	)
+	(junction
+		(at 87.63 182.88)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "d8b44690-1c94-4114-ad59-1d03384bd713")
+	)
+	(junction
+		(at 285.75 226.06)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "d942a9d8-d23d-40fe-99c6-8063322d30c4")
+	)
+	(junction
+		(at 234.95 269.24)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "dbe5fd90-30e4-4949-9a6d-4db8cdddaf12")
+	)
+	(junction
+		(at 209.55 139.7)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "dc366555-4516-4d68-a85e-f60f12f0cb97")
+	)
+	(junction
+		(at 158.75 204.47)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "df988b08-b109-4f0b-add1-cdbc4696bef1")
+	)
+	(junction
+		(at 260.35 139.7)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "e3c406cc-242e-462e-aa6d-3e20d46f20ef")
+	)
+	(junction
+		(at 240.03 269.24)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "e7aa9dcd-0565-4bbf-9482-e9143cea65e0")
+	)
+	(junction
+		(at 260.35 269.24)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "e8497a04-ee6d-433c-8aaf-5e56515f8f86")
+	)
+	(junction
+		(at 214.63 204.47)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "eb25dc1f-7fbf-4f85-aeda-02b9b9be5e49")
+	)
+	(junction
+		(at 133.35 204.47)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "ef10aefd-04b9-4fec-8765-7de4adc6bbb3")
+	)
+	(junction
+		(at 214.63 161.29)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "f6740d82-a939-45e6-b258-f4989d466f0f")
+	)
+	(junction
+		(at 138.43 204.47)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "f71f1588-5f70-45e5-b785-7463093cc5a6")
+	)
+	(junction
+		(at 184.15 269.24)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "fc3d0bc9-c0b9-417a-a98e-5069e6381c6f")
+	)
+	(junction
+		(at 240.03 161.29)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "fcb08e6f-9be6-4f6e-a463-c0ee56b5608f")
+	)
+	(junction
+		(at 113.03 139.7)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "fe85ffb3-be9a-442e-b999-143a78037a75")
+	)
+	(junction
+		(at 107.95 247.65)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "fef6dd8c-70c6-45fe-b667-be5a5c6c78c1")
+	)
+	(junction
+		(at 113.03 204.47)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "ffb0d330-b6a1-4970-8dec-154ac8cd6130")
 	)
 	(wire
 		(pts
-			(xy 209.55 226.06) (xy 209.55 247.65)
+			(xy 240.03 269.24) (xy 240.03 283.21)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "0049ceae-6487-4daf-8196-d1991ef42beb")
+	)
+	(wire
+		(pts
+			(xy 209.55 118.11) (xy 209.55 139.7)
 		)
 		(stroke
 			(width 0)
@@ -2202,17 +2212,27 @@
 	)
 	(wire
 		(pts
-			(xy 209.55 161.29) (xy 209.55 182.88)
+			(xy 285.75 161.29) (xy 285.75 182.88)
 		)
 		(stroke
 			(width 0)
 			(type default)
 		)
-		(uuid "00b5ea72-bfab-48f6-a478-d4e1a11438e8")
+		(uuid "00a3972e-f528-4c7c-8f2b-4da50aeb6013")
 	)
 	(wire
 		(pts
-			(xy 189.23 269.24) (xy 189.23 283.21)
+			(xy 189.23 226.06) (xy 189.23 247.65)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "00ff4ff3-61b2-4ca0-bc5f-eecbd86fa236")
+	)
+	(wire
+		(pts
+			(xy 189.23 118.11) (xy 189.23 139.7)
 		)
 		(stroke
 			(width 0)
@@ -2222,93 +2242,23 @@
 	)
 	(wire
 		(pts
-			(xy 240.03 247.65) (xy 240.03 269.24)
+			(xy 163.83 247.65) (xy 163.83 269.24)
 		)
 		(stroke
 			(width 0)
 			(type default)
 		)
-		(uuid "03b0d46b-72d1-4a2c-accb-74a70ad83d25")
+		(uuid "0436265a-969a-4aef-853e-6347be9cc09a")
 	)
 	(wire
 		(pts
-			(xy 260.35 182.88) (xy 260.35 204.47)
+			(xy 184.15 226.06) (xy 184.15 247.65)
 		)
 		(stroke
 			(width 0)
 			(type default)
 		)
-		(uuid "05985208-17f7-4b48-a159-a1b5b4db414a")
-	)
-	(wire
-		(pts
-			(xy 158.75 226.06) (xy 158.75 247.65)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "06dfa55d-467b-4339-8761-45b72da0a140")
-	)
-	(wire
-		(pts
-			(xy 87.63 182.88) (xy 87.63 204.47)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "0906a2d7-f93e-4815-8efc-3cb177335038")
-	)
-	(wire
-		(pts
-			(xy 265.43 118.11) (xy 265.43 139.7)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "0cd3a960-4419-4841-94b6-c32f8254384c")
-	)
-	(wire
-		(pts
-			(xy 107.95 269.24) (xy 107.95 283.21)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "0e79953e-886f-45c7-9d4f-ff7c80561a14")
-	)
-	(wire
-		(pts
-			(xy 209.55 182.88) (xy 209.55 204.47)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "1186fabb-e65f-45be-afe3-c39c403dcb54")
-	)
-	(wire
-		(pts
-			(xy 240.03 182.88) (xy 240.03 204.47)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "151f9c38-f91f-409d-ad29-bfe9af2adcce")
-	)
-	(wire
-		(pts
-			(xy 163.83 118.11) (xy 163.83 139.7)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "17ada714-8caa-42f1-aab3-e17df9ba89d0")
+		(uuid "096ede1d-ecef-4b08-8c55-5e161b4f9d92")
 	)
 	(wire
 		(pts
@@ -2318,107 +2268,37 @@
 			(width 0)
 			(type default)
 		)
-		(uuid "185c6905-f1a9-41ff-adc2-2042c942b2d2")
+		(uuid "0f03cf1d-06a1-4720-a632-dae948732a6d")
 	)
 	(wire
 		(pts
-			(xy 234.95 161.29) (xy 234.95 182.88)
+			(xy 158.75 226.06) (xy 158.75 247.65)
 		)
 		(stroke
 			(width 0)
 			(type default)
 		)
-		(uuid "19605252-6060-4fad-b056-3341e1799110")
+		(uuid "0f9f58e3-6c4b-43c8-8e29-e7aac386aff7")
 	)
 	(wire
 		(pts
-			(xy 87.63 161.29) (xy 87.63 182.88)
+			(xy 113.03 161.29) (xy 113.03 182.88)
 		)
 		(stroke
 			(width 0)
 			(type default)
 		)
-		(uuid "1a5e75bc-529e-464d-a002-a4db26661c79")
+		(uuid "1161ad59-0f31-40df-a393-d3d7c1b50c5b")
 	)
 	(wire
 		(pts
-			(xy 184.15 161.29) (xy 184.15 182.88)
+			(xy 260.35 204.47) (xy 260.35 226.06)
 		)
 		(stroke
 			(width 0)
 			(type default)
 		)
-		(uuid "1b409a54-8663-4ad0-bdfd-33787103d22c")
-	)
-	(wire
-		(pts
-			(xy 163.83 269.24) (xy 163.83 283.21)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "211691ca-6419-433d-98ab-95c716afaab6")
-	)
-	(wire
-		(pts
-			(xy 265.43 161.29) (xy 265.43 182.88)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "2255ba0f-9671-45c6-8d5d-ec6ff57ac086")
-	)
-	(wire
-		(pts
-			(xy 260.35 269.24) (xy 260.35 283.21)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "23c0d1ec-ced3-4db3-8a60-839bf79a9b08")
-	)
-	(wire
-		(pts
-			(xy 240.03 118.11) (xy 240.03 139.7)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "240fe0d9-f1ed-4213-8476-3dcb28450c3f")
-	)
-	(wire
-		(pts
-			(xy 184.15 204.47) (xy 184.15 226.06)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "26da4b8e-f4ad-4485-8748-5959b699c1bd")
-	)
-	(wire
-		(pts
-			(xy 214.63 226.06) (xy 214.63 247.65)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "27ceb64b-7f7e-4636-9c1f-e06e30e44ebb")
-	)
-	(wire
-		(pts
-			(xy 107.95 204.47) (xy 107.95 226.06)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "29d38c4e-11f6-4a1e-89f1-1d0f1d7a9cde")
+		(uuid "126a3df3-4e68-4eb5-98c7-a0429cfb796e")
 	)
 	(wire
 		(pts
@@ -2428,17 +2308,147 @@
 			(width 0)
 			(type default)
 		)
-		(uuid "2a194e70-0c4b-4c84-80b1-b88d391172e6")
+		(uuid "15ccb46c-b960-4c81-bbd3-822de66a84ea")
 	)
 	(wire
 		(pts
-			(xy 113.03 226.06) (xy 113.03 247.65)
+			(xy 133.35 182.88) (xy 133.35 204.47)
 		)
 		(stroke
 			(width 0)
 			(type default)
 		)
-		(uuid "2adf8407-fc1b-49db-a189-9e706ed7d766")
+		(uuid "16fbb41e-7076-486b-ac73-8dde2db5a729")
+	)
+	(wire
+		(pts
+			(xy 209.55 247.65) (xy 209.55 269.24)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "18be23cc-48da-4475-b358-bc67e6b26c43")
+	)
+	(wire
+		(pts
+			(xy 234.95 118.11) (xy 234.95 139.7)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "19605252-6060-4fad-b056-3341e1799110")
+	)
+	(wire
+		(pts
+			(xy 107.95 182.88) (xy 107.95 204.47)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "203b8020-21a4-414a-a600-dcb41dbc71b8")
+	)
+	(wire
+		(pts
+			(xy 265.43 118.11) (xy 265.43 139.7)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "2255ba0f-9671-45c6-8d5d-ec6ff57ac086")
+	)
+	(wire
+		(pts
+			(xy 285.75 139.7) (xy 285.75 161.29)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "22648e6d-fbc6-44a7-a485-27d2fa57acc9")
+	)
+	(wire
+		(pts
+			(xy 184.15 139.7) (xy 184.15 161.29)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "22bb1ed3-dd35-40d1-b599-e8c45a91522f")
+	)
+	(wire
+		(pts
+			(xy 113.03 204.47) (xy 113.03 226.06)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "22c605cc-59ae-4353-914e-cf9912942fa2")
+	)
+	(wire
+		(pts
+			(xy 163.83 139.7) (xy 163.83 161.29)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "246aa14c-edd7-40d7-a865-51bc1419fc80")
+	)
+	(wire
+		(pts
+			(xy 138.43 204.47) (xy 138.43 226.06)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "25f3c6e9-af71-46be-9e47-ebbe800473b5")
+	)
+	(wire
+		(pts
+			(xy 189.23 139.7) (xy 189.23 161.29)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "263fcb3f-f540-4f50-a453-bdf60c3ff726")
+	)
+	(wire
+		(pts
+			(xy 158.75 161.29) (xy 158.75 182.88)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "28153e99-5a57-4102-b587-413a6043788a")
+	)
+	(wire
+		(pts
+			(xy 234.95 269.24) (xy 234.95 283.21)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "2846a450-edf1-4139-b7b9-b24018d4efd5")
+	)
+	(wire
+		(pts
+			(xy 113.03 247.65) (xy 113.03 269.24)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "293f3cc4-6d14-4ab5-a72c-cf9bc274c299")
 	)
 	(wire
 		(pts
@@ -2448,11 +2458,11 @@
 			(width 0)
 			(type default)
 		)
-		(uuid "2b7d3857-85fe-4826-b436-2596adc3408a")
+		(uuid "2b0624c7-8d5b-4943-9f32-7acab43ab064")
 	)
 	(wire
 		(pts
-			(xy 163.83 204.47) (xy 163.83 226.06)
+			(xy 163.83 118.11) (xy 163.83 139.7)
 		)
 		(stroke
 			(width 0)
@@ -2462,33 +2472,83 @@
 	)
 	(wire
 		(pts
-			(xy 133.35 226.06) (xy 133.35 247.65)
+			(xy 158.75 139.7) (xy 158.75 161.29)
 		)
 		(stroke
 			(width 0)
 			(type default)
 		)
-		(uuid "2e5aec9f-2ef9-4c53-a0e2-8999d2d92ac7")
+		(uuid "30cf17e1-2fcb-44c9-9254-afd57148c6a6")
 	)
 	(wire
 		(pts
-			(xy 240.03 226.06) (xy 240.03 247.65)
+			(xy 133.35 204.47) (xy 133.35 226.06)
 		)
 		(stroke
 			(width 0)
 			(type default)
 		)
-		(uuid "38d9978d-b63f-45d9-9455-05f4b161db0e")
+		(uuid "31d2fb81-1383-4c34-9f5e-ee217c872c48")
 	)
 	(wire
 		(pts
-			(xy 138.43 269.24) (xy 138.43 283.21)
+			(xy 184.15 161.29) (xy 184.15 182.88)
 		)
 		(stroke
 			(width 0)
 			(type default)
 		)
-		(uuid "3a215629-88fb-43d5-a5ce-c81144e82c5e")
+		(uuid "32513e10-5568-4f1e-94d0-b9b9aaef0db0")
+	)
+	(wire
+		(pts
+			(xy 234.95 182.88) (xy 234.95 204.47)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "3329028c-c750-4077-9a09-ff87945efc7d")
+	)
+	(wire
+		(pts
+			(xy 214.63 204.47) (xy 214.63 226.06)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "353c78ca-b3b2-47ed-a813-460fae78eaa1")
+	)
+	(wire
+		(pts
+			(xy 234.95 139.7) (xy 234.95 161.29)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "38453cb6-5a9d-47d0-8032-6e3e5def2a46")
+	)
+	(wire
+		(pts
+			(xy 285.75 182.88) (xy 285.75 204.47)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "39327b24-2c4c-4573-86d4-02019174e140")
+	)
+	(wire
+		(pts
+			(xy 214.63 139.7) (xy 214.63 161.29)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "39954346-ebc2-4f4f-951d-0e49d89f7b8f")
 	)
 	(wire
 		(pts
@@ -2498,27 +2558,17 @@
 			(width 0)
 			(type default)
 		)
-		(uuid "3ad5f4f7-2ae5-4c8f-b988-87e86ce0a619")
+		(uuid "3da47366-ee4a-47c7-841f-42dd94e27cc9")
 	)
 	(wire
 		(pts
-			(xy 214.63 161.29) (xy 214.63 182.88)
+			(xy 138.43 161.29) (xy 138.43 182.88)
 		)
 		(stroke
 			(width 0)
 			(type default)
 		)
-		(uuid "3c82584f-3ebf-4b6e-94a5-c3d01afee9c2")
-	)
-	(wire
-		(pts
-			(xy 285.75 226.06) (xy 285.75 247.65)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "3cafcfe7-be9c-4d0a-be1a-04b8d44ab69e")
+		(uuid "3eeec821-e144-42a2-86cd-8bc999ea32c8")
 	)
 	(wire
 		(pts
@@ -2532,143 +2582,63 @@
 	)
 	(wire
 		(pts
-			(xy 189.23 247.65) (xy 189.23 269.24)
+			(xy 260.35 226.06) (xy 260.35 247.65)
 		)
 		(stroke
 			(width 0)
 			(type default)
 		)
-		(uuid "43c4820d-5353-46db-b577-c51c8e4a5485")
+		(uuid "3ffbb52b-04b5-4a96-a7f9-f1f1bc4dd8e0")
 	)
 	(wire
 		(pts
-			(xy 285.75 182.88) (xy 285.75 204.47)
+			(xy 138.43 226.06) (xy 138.43 247.65)
 		)
 		(stroke
 			(width 0)
 			(type default)
 		)
-		(uuid "4479c570-5e43-4cd3-86d5-f2f95f965d5c")
+		(uuid "406511de-ca57-40a4-883e-54a25c16fb8b")
 	)
 	(wire
 		(pts
-			(xy 260.35 139.7) (xy 260.35 161.29)
+			(xy 107.95 269.24) (xy 107.95 283.21)
 		)
 		(stroke
 			(width 0)
 			(type default)
 		)
-		(uuid "463118b8-2b72-4532-9566-d64ba9f580a9")
+		(uuid "45af95eb-77db-45af-8f2d-ff89bb3320cd")
 	)
 	(wire
 		(pts
-			(xy 138.43 182.88) (xy 138.43 204.47)
+			(xy 234.95 161.29) (xy 234.95 182.88)
 		)
 		(stroke
 			(width 0)
 			(type default)
 		)
-		(uuid "4782e950-1037-4a2c-8c0e-319aedfb1fb1")
+		(uuid "4b8d079c-3069-4296-bce1-739e98aa836b")
 	)
 	(wire
 		(pts
-			(xy 133.35 204.47) (xy 133.35 226.06)
+			(xy 113.03 226.06) (xy 113.03 247.65)
 		)
 		(stroke
 			(width 0)
 			(type default)
 		)
-		(uuid "48759a9a-1dd0-4c2e-ad75-532cc1971d0c")
+		(uuid "4bcd26a6-20d9-4cba-b726-ac15fb5cf53c")
 	)
 	(wire
 		(pts
-			(xy 138.43 247.65) (xy 138.43 269.24)
+			(xy 189.23 182.88) (xy 189.23 204.47)
 		)
 		(stroke
 			(width 0)
 			(type default)
 		)
-		(uuid "48c54096-e5e4-490e-928f-0789b3b0149d")
-	)
-	(wire
-		(pts
-			(xy 214.63 247.65) (xy 214.63 269.24)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "4bc5a77b-bc8a-4d6e-91a0-9ae0c3987207")
-	)
-	(wire
-		(pts
-			(xy 133.35 269.24) (xy 133.35 283.21)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "4ccebe55-7ed1-44ef-b10f-6e7a2abe3f7f")
-	)
-	(wire
-		(pts
-			(xy 189.23 118.11) (xy 189.23 139.7)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "4f1d9229-7bfd-4fbc-8cb4-1c3834288e40")
-	)
-	(wire
-		(pts
-			(xy 107.95 182.88) (xy 107.95 204.47)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "54628f6c-d7f8-418d-8a53-b46d4eb0eb79")
-	)
-	(wire
-		(pts
-			(xy 214.63 182.88) (xy 214.63 204.47)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "58293bdf-dcc1-477d-9d80-4a006497065a")
-	)
-	(wire
-		(pts
-			(xy 209.55 269.24) (xy 209.55 283.21)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "5ac3ae64-5eab-4ca2-8de9-38a7ac5ce7b8")
-	)
-	(wire
-		(pts
-			(xy 107.95 247.65) (xy 107.95 269.24)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "5cc809e2-d3b5-439f-a399-8000ccf24881")
-	)
-	(wire
-		(pts
-			(xy 184.15 118.11) (xy 184.15 139.7)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "5eb033ec-7bc4-42cd-a00e-d05109a457aa")
+		(uuid "4dd85fb2-575d-48a9-b01e-c0ebbde4f5e3")
 	)
 	(wire
 		(pts
@@ -2678,71 +2648,121 @@
 			(width 0)
 			(type default)
 		)
-		(uuid "5fa2c265-20db-4226-ad28-2b3c86a02db6")
+		(uuid "50ac34fa-0793-4e66-b516-dc3d01b033ba")
 	)
 	(wire
 		(pts
-			(xy 138.43 139.7) (xy 138.43 161.29)
+			(xy 113.03 269.24) (xy 113.03 283.21)
 		)
 		(stroke
 			(width 0)
 			(type default)
 		)
-		(uuid "61bf2973-5862-445b-a062-fdb2c7ceb66c")
+		(uuid "54612106-3f51-48da-8551-014476923b4f")
 	)
 	(wire
 		(pts
-			(xy 163.83 226.06) (xy 163.83 247.65)
+			(xy 189.23 204.47) (xy 189.23 226.06)
 		)
 		(stroke
 			(width 0)
 			(type default)
 		)
-		(uuid "662d090e-241c-45c8-b293-312f3cc3ed94")
+		(uuid "5bafa415-dcfb-4303-8571-747f6d69e52b")
 	)
 	(wire
 		(pts
-			(xy 158.75 139.7) (xy 158.75 161.29)
+			(xy 87.63 247.65) (xy 87.63 269.24)
 		)
 		(stroke
 			(width 0)
 			(type default)
 		)
-		(uuid "66ac3775-9820-4262-be18-3d9619e7d088")
+		(uuid "5f0cf669-2931-4fab-bf8c-15a5de70e4f6")
 	)
 	(wire
 		(pts
-			(xy 234.95 204.47) (xy 234.95 226.06)
+			(xy 285.75 269.24) (xy 285.75 283.21)
 		)
 		(stroke
 			(width 0)
 			(type default)
 		)
-		(uuid "677b182c-1a1f-4bf5-bf8b-b9e4c2c2642e")
+		(uuid "5f565e5b-7628-48f1-81a3-800f2949bcd6")
 	)
 	(wire
 		(pts
-			(xy 285.75 204.47) (xy 285.75 226.06)
+			(xy 209.55 182.88) (xy 209.55 204.47)
 		)
 		(stroke
 			(width 0)
 			(type default)
 		)
-		(uuid "68d41693-6856-46a0-adb5-e33699d90246")
+		(uuid "61dd24ea-8134-4ba1-91c4-500794322ce5")
 	)
 	(wire
 		(pts
-			(xy 240.03 139.7) (xy 240.03 161.29)
+			(xy 209.55 226.06) (xy 209.55 247.65)
 		)
 		(stroke
 			(width 0)
 			(type default)
 		)
-		(uuid "6bc62b9f-49f4-4132-b0c0-b3b501f35a50")
+		(uuid "623b7c94-8d89-4869-8932-872ddc80d705")
 	)
 	(wire
 		(pts
-			(xy 158.75 204.47) (xy 158.75 226.06)
+			(xy 209.55 139.7) (xy 209.55 161.29)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "62c968ff-7caf-4a5b-8687-319ab0ab7eb2")
+	)
+	(wire
+		(pts
+			(xy 265.43 247.65) (xy 265.43 269.24)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "62fda612-ae5f-4065-aae7-7f3d748dff7e")
+	)
+	(wire
+		(pts
+			(xy 184.15 269.24) (xy 184.15 283.21)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "67584b16-5c1e-4ba4-bbc9-149c245bd714")
+	)
+	(wire
+		(pts
+			(xy 87.63 139.7) (xy 87.63 161.29)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "6ab2433c-8069-4950-a5df-b9cded0253ed")
+	)
+	(wire
+		(pts
+			(xy 163.83 204.47) (xy 163.83 226.06)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "6ad99a35-cdb5-4222-b2aa-d8842a92baa6")
+	)
+	(wire
+		(pts
+			(xy 158.75 118.11) (xy 158.75 139.7)
 		)
 		(stroke
 			(width 0)
@@ -2762,123 +2782,103 @@
 	)
 	(wire
 		(pts
-			(xy 138.43 226.06) (xy 138.43 247.65)
+			(xy 260.35 182.88) (xy 260.35 204.47)
 		)
 		(stroke
 			(width 0)
 			(type default)
 		)
-		(uuid "6d1a8a66-57bd-4fe9-b54f-735b12ca5927")
+		(uuid "6cf4d6c5-ddd1-4e03-82d0-6de76afe3cf0")
 	)
 	(wire
 		(pts
-			(xy 214.63 269.24) (xy 214.63 283.21)
+			(xy 87.63 269.24) (xy 87.63 283.21)
 		)
 		(stroke
 			(width 0)
 			(type default)
 		)
-		(uuid "6e8257f2-2c20-4c08-ab3b-5bcae213320d")
+		(uuid "6d58dc8f-3f36-4464-8810-455be920297c")
 	)
 	(wire
 		(pts
-			(xy 214.63 204.47) (xy 214.63 226.06)
+			(xy 214.63 161.29) (xy 214.63 182.88)
 		)
 		(stroke
 			(width 0)
 			(type default)
 		)
-		(uuid "7080e58d-8f25-4f11-85c5-23e54ce16daf")
+		(uuid "7131a65d-3e4e-4fe3-a6a1-5b33db8273e5")
 	)
 	(wire
 		(pts
-			(xy 113.03 161.29) (xy 113.03 182.88)
+			(xy 133.35 139.7) (xy 133.35 161.29)
 		)
 		(stroke
 			(width 0)
 			(type default)
 		)
-		(uuid "70e53996-7c64-481a-a4d5-576265fd3052")
+		(uuid "7330a694-db38-430d-94ae-27eec1237f62")
 	)
 	(wire
 		(pts
-			(xy 209.55 204.47) (xy 209.55 226.06)
+			(xy 234.95 204.47) (xy 234.95 226.06)
 		)
 		(stroke
 			(width 0)
 			(type default)
 		)
-		(uuid "712ca535-e948-46f1-b186-e7dde904cdb9")
+		(uuid "761c7bdc-cf70-4be1-93f5-2710122cde52")
 	)
 	(wire
 		(pts
-			(xy 113.03 118.11) (xy 113.03 139.7)
+			(xy 87.63 226.06) (xy 87.63 247.65)
 		)
 		(stroke
 			(width 0)
 			(type default)
 		)
-		(uuid "71a7197c-29fd-42c2-917b-be22f5704e0a")
+		(uuid "7b79c166-c64b-4069-b253-16537b4feae9")
 	)
 	(wire
 		(pts
-			(xy 234.95 269.24) (xy 234.95 283.21)
+			(xy 113.03 139.7) (xy 113.03 161.29)
 		)
 		(stroke
 			(width 0)
 			(type default)
 		)
-		(uuid "76323fda-277e-444f-9f65-84824c082877")
+		(uuid "7e5de22f-6e82-4f96-b52b-7d8a58f3e309")
 	)
 	(wire
 		(pts
-			(xy 214.63 118.11) (xy 214.63 139.7)
+			(xy 107.95 139.7) (xy 107.95 161.29)
 		)
 		(stroke
 			(width 0)
 			(type default)
 		)
-		(uuid "7761906e-f4fe-4690-bab0-4847e8f284f1")
+		(uuid "7fbfda6d-3d2b-4ce8-ae8c-cdd12538178f")
 	)
 	(wire
 		(pts
-			(xy 260.35 247.65) (xy 260.35 269.24)
+			(xy 285.75 226.06) (xy 285.75 247.65)
 		)
 		(stroke
 			(width 0)
 			(type default)
 		)
-		(uuid "7d17cda7-5c52-4526-a870-4c480fc1377e")
+		(uuid "8148fddc-5800-47c7-bc44-70153bcd7dab")
 	)
 	(wire
 		(pts
-			(xy 209.55 247.65) (xy 209.55 269.24)
+			(xy 133.35 161.29) (xy 133.35 182.88)
 		)
 		(stroke
 			(width 0)
 			(type default)
 		)
-		(uuid "7fc723a0-07b2-4c15-9fb4-c1c72dab35ef")
-	)
-	(wire
-		(pts
-			(xy 285.75 247.65) (xy 285.75 269.24)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "809c4ff3-31b5-4b0e-9498-8a8cdd98580a")
-	)
-	(wire
-		(pts
-			(xy 163.83 247.65) (xy 163.83 269.24)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "885383cb-5476-4d75-8558-6ffccd225973")
+		(uuid "8843d80f-2566-44d7-a0d2-edfd25c9b087")
 	)
 	(wire
 		(pts
@@ -2892,27 +2892,7 @@
 	)
 	(wire
 		(pts
-			(xy 234.95 139.7) (xy 234.95 161.29)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "8942cabf-d4d3-4227-8664-543e62b38d92")
-	)
-	(wire
-		(pts
-			(xy 113.03 247.65) (xy 113.03 269.24)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "8b5bdde0-b503-46f1-941c-86688afeb53c")
-	)
-	(wire
-		(pts
-			(xy 214.63 139.7) (xy 214.63 161.29)
+			(xy 214.63 118.11) (xy 214.63 139.7)
 		)
 		(stroke
 			(width 0)
@@ -2922,33 +2902,13 @@
 	)
 	(wire
 		(pts
-			(xy 163.83 182.88) (xy 163.83 204.47)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "8bb3d8d7-a009-4ec1-a371-86995096be60")
-	)
-	(wire
-		(pts
-			(xy 240.03 161.29) (xy 240.03 182.88)
+			(xy 240.03 118.11) (xy 240.03 139.7)
 		)
 		(stroke
 			(width 0)
 			(type default)
 		)
 		(uuid "8db45fc4-7c26-4748-860a-ccc616dcf048")
-	)
-	(wire
-		(pts
-			(xy 189.23 182.88) (xy 189.23 204.47)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "8e1bdccc-e129-4ac7-b1fa-7e411eb93f51")
 	)
 	(wire
 		(pts
@@ -2962,93 +2922,103 @@
 	)
 	(wire
 		(pts
-			(xy 107.95 139.7) (xy 107.95 161.29)
+			(xy 133.35 226.06) (xy 133.35 247.65)
 		)
 		(stroke
 			(width 0)
 			(type default)
 		)
-		(uuid "8f82e2cc-651c-4602-b032-8588d02ac1d0")
+		(uuid "8fc57659-a728-40ca-b515-5d3d41b30237")
 	)
 	(wire
 		(pts
-			(xy 113.03 204.47) (xy 113.03 226.06)
+			(xy 234.95 226.06) (xy 234.95 247.65)
 		)
 		(stroke
 			(width 0)
 			(type default)
 		)
-		(uuid "93cbb6c9-b927-4bfd-82ac-e74bb34f9c0f")
+		(uuid "90f42f4e-b2f2-46ae-88a7-9b48c9853a45")
 	)
 	(wire
 		(pts
-			(xy 133.35 182.88) (xy 133.35 204.47)
+			(xy 209.55 204.47) (xy 209.55 226.06)
 		)
 		(stroke
 			(width 0)
 			(type default)
 		)
-		(uuid "93da06e5-e3c8-48d4-b775-a386a8ef31da")
+		(uuid "9123da34-1a92-4075-9afb-240ed8b68a77")
 	)
 	(wire
 		(pts
-			(xy 234.95 118.11) (xy 234.95 139.7)
+			(xy 240.03 182.88) (xy 240.03 204.47)
 		)
 		(stroke
 			(width 0)
 			(type default)
 		)
-		(uuid "945155e8-846a-449d-91b6-06eacc4de13c")
+		(uuid "92c2afda-f23e-4525-ba7a-21e68072a4de")
 	)
 	(wire
 		(pts
-			(xy 265.43 182.88) (xy 265.43 204.47)
+			(xy 107.95 247.65) (xy 107.95 269.24)
 		)
 		(stroke
 			(width 0)
 			(type default)
 		)
-		(uuid "94692556-99f4-49a9-a2ef-17a2c1668398")
+		(uuid "95de5d27-7db9-4f2e-886c-f7a230e81cae")
 	)
 	(wire
 		(pts
-			(xy 240.03 204.47) (xy 240.03 226.06)
+			(xy 163.83 182.88) (xy 163.83 204.47)
 		)
 		(stroke
 			(width 0)
 			(type default)
 		)
-		(uuid "9bbc25f2-2aa0-4c43-b34b-a2d4a9e946e1")
+		(uuid "95f93efc-a952-4340-b0cd-cda36901ae8d")
 	)
 	(wire
 		(pts
-			(xy 158.75 247.65) (xy 158.75 269.24)
+			(xy 138.43 269.24) (xy 138.43 283.21)
 		)
 		(stroke
 			(width 0)
 			(type default)
 		)
-		(uuid "9c130c07-f627-4c9c-85f2-946ac1d1e104")
+		(uuid "9724b89a-e776-4ca2-9889-7b9ab9e713eb")
 	)
 	(wire
 		(pts
-			(xy 158.75 269.24) (xy 158.75 283.21)
+			(xy 184.15 247.65) (xy 184.15 269.24)
 		)
 		(stroke
 			(width 0)
 			(type default)
 		)
-		(uuid "9c91fdc1-fb9d-4d0c-abce-87358a0d4224")
+		(uuid "9875dd98-13d5-4e66-bc3d-f82471304ec1")
 	)
 	(wire
 		(pts
-			(xy 260.35 204.47) (xy 260.35 226.06)
+			(xy 214.63 247.65) (xy 214.63 269.24)
 		)
 		(stroke
 			(width 0)
 			(type default)
 		)
-		(uuid "9d9d4b8f-b894-4779-b9f3-bee9897193b0")
+		(uuid "9b6262f6-cae1-4417-b820-5714ef10933b")
+	)
+	(wire
+		(pts
+			(xy 138.43 182.88) (xy 138.43 204.47)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "9d532033-cc20-4c13-8c0a-fb2e6d9d7678")
 	)
 	(wire
 		(pts
@@ -3062,13 +3032,13 @@
 	)
 	(wire
 		(pts
-			(xy 163.83 161.29) (xy 163.83 182.88)
+			(xy 189.23 247.65) (xy 189.23 269.24)
 		)
 		(stroke
 			(width 0)
 			(type default)
 		)
-		(uuid "9ee2e531-f453-4843-8a63-23f167d541c2")
+		(uuid "9eae91f8-f4d6-46ea-b319-d0bcac950ff1")
 	)
 	(wire
 		(pts
@@ -3082,13 +3052,23 @@
 	)
 	(wire
 		(pts
-			(xy 138.43 118.11) (xy 138.43 139.7)
+			(xy 214.63 269.24) (xy 214.63 283.21)
 		)
 		(stroke
 			(width 0)
 			(type default)
 		)
-		(uuid "a0d610fd-d9d5-4559-b1f6-d3cadd14a617")
+		(uuid "a0583f63-6357-4c6f-bd82-f439f24c2417")
+	)
+	(wire
+		(pts
+			(xy 158.75 247.65) (xy 158.75 269.24)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "a1b8ad69-9f5d-46df-9dd0-7bc177bba91c")
 	)
 	(wire
 		(pts
@@ -3102,13 +3082,13 @@
 	)
 	(wire
 		(pts
-			(xy 265.43 269.24) (xy 265.43 283.21)
+			(xy 87.63 161.29) (xy 87.63 182.88)
 		)
 		(stroke
 			(width 0)
 			(type default)
 		)
-		(uuid "a51fdb92-b73b-4b2b-8ad9-75b2ffbc2c8b")
+		(uuid "a3a03a90-359e-4df3-95be-dd69eb45cd8f")
 	)
 	(wire
 		(pts
@@ -3122,23 +3102,33 @@
 	)
 	(wire
 		(pts
-			(xy 285.75 139.7) (xy 285.75 161.29)
+			(xy 113.03 182.88) (xy 113.03 204.47)
 		)
 		(stroke
 			(width 0)
 			(type default)
 		)
-		(uuid "a72f840b-6edf-453b-966e-d76fb69a2442")
+		(uuid "a68db89e-b5e7-4a37-ab59-3ad90bbef43b")
 	)
 	(wire
 		(pts
-			(xy 184.15 226.06) (xy 184.15 247.65)
+			(xy 260.35 247.65) (xy 260.35 269.24)
 		)
 		(stroke
 			(width 0)
 			(type default)
 		)
-		(uuid "aa9798cc-a8d7-401f-b7db-5b0b7bbf6b0a")
+		(uuid "a740a390-2440-4f8c-b7e9-3465d8f80ca2")
+	)
+	(wire
+		(pts
+			(xy 240.03 247.65) (xy 240.03 269.24)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "a84d5028-27dd-4e09-9a4b-c7f149c178f8")
 	)
 	(wire
 		(pts
@@ -3152,6 +3142,16 @@
 	)
 	(wire
 		(pts
+			(xy 260.35 139.7) (xy 260.35 161.29)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "aecd7e60-8c9a-4771-94f3-37e99f8fba62")
+	)
+	(wire
+		(pts
 			(xy 107.95 118.11) (xy 107.95 139.7)
 		)
 		(stroke
@@ -3162,37 +3162,57 @@
 	)
 	(wire
 		(pts
-			(xy 184.15 139.7) (xy 184.15 161.29)
+			(xy 265.43 204.47) (xy 265.43 226.06)
 		)
 		(stroke
 			(width 0)
 			(type default)
 		)
-		(uuid "b03bd321-2ef4-4a9f-8efe-2f253b92aba1")
+		(uuid "b1698fd4-a643-4d50-a9f7-b101ec7b140e")
 	)
 	(wire
 		(pts
-			(xy 234.95 182.88) (xy 234.95 204.47)
+			(xy 265.43 139.7) (xy 265.43 161.29)
 		)
 		(stroke
 			(width 0)
 			(type default)
 		)
-		(uuid "b110d5dc-3fdd-4e8d-8092-540500b8ce2e")
+		(uuid "b2465a87-632a-4110-bcc5-90bc95521c47")
 	)
 	(wire
 		(pts
-			(xy 133.35 139.7) (xy 133.35 161.29)
+			(xy 133.35 269.24) (xy 133.35 283.21)
 		)
 		(stroke
 			(width 0)
 			(type default)
 		)
-		(uuid "b41bb171-a9fe-4ba2-823f-921bce1304c1")
+		(uuid "b44335e7-e85e-4c25-87a9-e2fc811e92a1")
 	)
 	(wire
 		(pts
-			(xy 138.43 161.29) (xy 138.43 182.88)
+			(xy 138.43 139.7) (xy 138.43 161.29)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "b541fb1e-d0aa-4450-93cf-8db8b1b6f628")
+	)
+	(wire
+		(pts
+			(xy 133.35 247.65) (xy 133.35 269.24)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "b6ce684c-302a-407c-937b-b60d59e327a1")
+	)
+	(wire
+		(pts
+			(xy 138.43 118.11) (xy 138.43 139.7)
 		)
 		(stroke
 			(width 0)
@@ -3202,7 +3222,7 @@
 	)
 	(wire
 		(pts
-			(xy 113.03 139.7) (xy 113.03 161.29)
+			(xy 113.03 118.11) (xy 113.03 139.7)
 		)
 		(stroke
 			(width 0)
@@ -3212,47 +3232,57 @@
 	)
 	(wire
 		(pts
-			(xy 138.43 204.47) (xy 138.43 226.06)
+			(xy 214.63 226.06) (xy 214.63 247.65)
 		)
 		(stroke
 			(width 0)
 			(type default)
 		)
-		(uuid "bce5f7c5-8c34-43a2-bf64-f591ea781546")
+		(uuid "bc04a2bd-eda5-47e8-9107-6381fb0f17ae")
 	)
 	(wire
 		(pts
-			(xy 113.03 269.24) (xy 113.03 283.21)
+			(xy 138.43 247.65) (xy 138.43 269.24)
 		)
 		(stroke
 			(width 0)
 			(type default)
 		)
-		(uuid "bf58cc6e-9c33-43de-8570-a3ca24b843be")
+		(uuid "be997d87-4481-4558-933d-0945a5d2ac8a")
 	)
 	(wire
 		(pts
-			(xy 189.23 139.7) (xy 189.23 161.29)
+			(xy 158.75 204.47) (xy 158.75 226.06)
 		)
 		(stroke
 			(width 0)
 			(type default)
 		)
-		(uuid "bf5f58e8-c457-444b-b909-45281c668c5a")
+		(uuid "bf70b8c2-3e10-412f-854a-5cf17855e99f")
 	)
 	(wire
 		(pts
-			(xy 87.63 269.24) (xy 87.63 283.21)
+			(xy 163.83 226.06) (xy 163.83 247.65)
 		)
 		(stroke
 			(width 0)
 			(type default)
 		)
-		(uuid "c212432e-73ac-4d05-b16e-e448d3755ebb")
+		(uuid "bf771fa6-c6f4-4498-bb13-2f67b5d3808a")
 	)
 	(wire
 		(pts
-			(xy 184.15 269.24) (xy 184.15 283.21)
+			(xy 240.03 139.7) (xy 240.03 161.29)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "c2908eec-ed72-4278-8885-45ff2994c1f2")
+	)
+	(wire
+		(pts
+			(xy 184.15 118.11) (xy 184.15 139.7)
 		)
 		(stroke
 			(width 0)
@@ -3262,23 +3292,13 @@
 	)
 	(wire
 		(pts
-			(xy 163.83 139.7) (xy 163.83 161.29)
+			(xy 163.83 161.29) (xy 163.83 182.88)
 		)
 		(stroke
 			(width 0)
 			(type default)
 		)
-		(uuid "c82d5f41-5f20-4fb4-b528-ac42d27831af")
-	)
-	(wire
-		(pts
-			(xy 87.63 139.7) (xy 87.63 161.29)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "c92ea5ef-f987-4c49-a74f-3528bee049fa")
+		(uuid "ca136c67-4128-4ac7-925d-335a46aee2f8")
 	)
 	(wire
 		(pts
@@ -3292,103 +3312,123 @@
 	)
 	(wire
 		(pts
-			(xy 158.75 161.29) (xy 158.75 182.88)
+			(xy 260.35 269.24) (xy 260.35 283.21)
 		)
 		(stroke
 			(width 0)
 			(type default)
 		)
-		(uuid "ca5b7f5b-4c4b-4c61-9508-ce86f798196c")
+		(uuid "cae654ca-ed0d-4acf-9918-13addc15e9da")
 	)
 	(wire
 		(pts
-			(xy 265.43 226.06) (xy 265.43 247.65)
+			(xy 209.55 269.24) (xy 209.55 283.21)
 		)
 		(stroke
 			(width 0)
 			(type default)
 		)
-		(uuid "cb0d9a48-a576-4a04-91da-e81f956029a6")
+		(uuid "cbebaa9e-cbb9-4964-a2c6-03d38d1bc111")
 	)
 	(wire
 		(pts
-			(xy 265.43 139.7) (xy 265.43 161.29)
+			(xy 265.43 269.24) (xy 265.43 283.21)
 		)
 		(stroke
 			(width 0)
 			(type default)
 		)
-		(uuid "cf2894e1-605d-4ee4-89ae-98fd8b0378a7")
+		(uuid "ccccef7b-0686-4e12-bcd6-1d8acbe2b57d")
 	)
 	(wire
 		(pts
-			(xy 285.75 269.24) (xy 285.75 283.21)
+			(xy 184.15 204.47) (xy 184.15 226.06)
 		)
 		(stroke
 			(width 0)
 			(type default)
 		)
-		(uuid "cf328a32-e8d7-42ea-9bc4-dad544e553b9")
+		(uuid "cecd3715-ebeb-4c2a-9823-b062a4f89da8")
 	)
 	(wire
 		(pts
-			(xy 184.15 182.88) (xy 184.15 204.47)
+			(xy 189.23 269.24) (xy 189.23 283.21)
 		)
 		(stroke
 			(width 0)
 			(type default)
 		)
-		(uuid "cfe3d7e4-19a2-40bf-aa32-82a74a93a357")
+		(uuid "d0026f40-bd67-4542-9d4b-51ceca7c4134")
 	)
 	(wire
 		(pts
-			(xy 209.55 118.11) (xy 209.55 139.7)
+			(xy 209.55 161.29) (xy 209.55 182.88)
 		)
 		(stroke
 			(width 0)
 			(type default)
 		)
-		(uuid "d631706b-c256-4f31-9af4-fe48ba7cf9e8")
+		(uuid "d0176c62-103a-4196-b864-69fef2fb1471")
 	)
 	(wire
 		(pts
-			(xy 265.43 247.65) (xy 265.43 269.24)
+			(xy 240.03 161.29) (xy 240.03 182.88)
 		)
 		(stroke
 			(width 0)
 			(type default)
 		)
-		(uuid "d7137a3e-0fbc-4643-b47c-f2b408698de1")
+		(uuid "d122f806-ff85-4ba4-85d9-14afd80fbf98")
 	)
 	(wire
 		(pts
-			(xy 133.35 247.65) (xy 133.35 269.24)
+			(xy 265.43 161.29) (xy 265.43 182.88)
 		)
 		(stroke
 			(width 0)
 			(type default)
 		)
-		(uuid "da7822e1-7ddf-4549-8eb6-bf66dccd5a22")
+		(uuid "d3359de6-3908-4531-8ebe-9fcdefbc6e36")
 	)
 	(wire
 		(pts
-			(xy 87.63 226.06) (xy 87.63 247.65)
+			(xy 285.75 204.47) (xy 285.75 226.06)
 		)
 		(stroke
 			(width 0)
 			(type default)
 		)
-		(uuid "daec5582-e528-4156-b087-0836e9c777db")
+		(uuid "d3a53169-163e-448b-8dfd-c9b292c20f2e")
 	)
 	(wire
 		(pts
-			(xy 260.35 161.29) (xy 260.35 182.88)
+			(xy 240.03 226.06) (xy 240.03 247.65)
 		)
 		(stroke
 			(width 0)
 			(type default)
 		)
-		(uuid "db873d46-efe9-45ea-878c-635343e113bf")
+		(uuid "d75221da-0a07-42a3-9933-2fb774d3e42f")
+	)
+	(wire
+		(pts
+			(xy 240.03 204.47) (xy 240.03 226.06)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "d9c17dbf-067e-4884-803d-9f8fa093636c")
+	)
+	(wire
+		(pts
+			(xy 158.75 269.24) (xy 158.75 283.21)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "dbb2b007-3974-4825-b227-ffe621cd54db")
 	)
 	(wire
 		(pts
@@ -3412,13 +3452,33 @@
 	)
 	(wire
 		(pts
-			(xy 87.63 247.65) (xy 87.63 269.24)
+			(xy 265.43 226.06) (xy 265.43 247.65)
 		)
 		(stroke
 			(width 0)
 			(type default)
 		)
-		(uuid "e0e13bdc-e13f-4afa-8ad5-4af59aa5d256")
+		(uuid "e0332d63-3584-4b9d-80cc-935b2d3294ee")
+	)
+	(wire
+		(pts
+			(xy 214.63 182.88) (xy 214.63 204.47)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "e2d4b2e6-a458-4f06-aec7-6e78bf0f7264")
+	)
+	(wire
+		(pts
+			(xy 107.95 204.47) (xy 107.95 226.06)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "e2e847b1-7c82-497a-be76-7c14ed48280b")
 	)
 	(wire
 		(pts
@@ -3432,13 +3492,13 @@
 	)
 	(wire
 		(pts
-			(xy 209.55 139.7) (xy 209.55 161.29)
+			(xy 87.63 182.88) (xy 87.63 204.47)
 		)
 		(stroke
 			(width 0)
 			(type default)
 		)
-		(uuid "e4262f86-d32f-44f8-b93b-920724d1bc17")
+		(uuid "e52f4044-8bde-4295-a3db-d3c6a46cf527")
 	)
 	(wire
 		(pts
@@ -3452,13 +3512,13 @@
 	)
 	(wire
 		(pts
-			(xy 260.35 226.06) (xy 260.35 247.65)
+			(xy 265.43 182.88) (xy 265.43 204.47)
 		)
 		(stroke
 			(width 0)
 			(type default)
 		)
-		(uuid "e73bbdec-d35d-4d4d-842e-b97d8d001579")
+		(uuid "e5b573bd-fd3f-4043-b122-c377fcbf51db")
 	)
 	(wire
 		(pts
@@ -3468,17 +3528,7 @@
 			(width 0)
 			(type default)
 		)
-		(uuid "e9701336-ef7c-4905-8f62-740f602cfa0b")
-	)
-	(wire
-		(pts
-			(xy 189.23 226.06) (xy 189.23 247.65)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "ea56f7f7-27de-434a-896a-259702d3b6f4")
+		(uuid "e9439356-ee44-44dc-be06-a3094345aaa4")
 	)
 	(wire
 		(pts
@@ -3492,53 +3542,43 @@
 	)
 	(wire
 		(pts
-			(xy 158.75 118.11) (xy 158.75 139.7)
+			(xy 260.35 161.29) (xy 260.35 182.88)
 		)
 		(stroke
 			(width 0)
 			(type default)
 		)
-		(uuid "ed3a8020-4291-4d5c-b77c-cfc88155c8d1")
+		(uuid "ee1b390d-550f-48e6-b22d-8fb4636c4503")
 	)
 	(wire
 		(pts
-			(xy 265.43 204.47) (xy 265.43 226.06)
+			(xy 285.75 247.65) (xy 285.75 269.24)
 		)
 		(stroke
 			(width 0)
 			(type default)
 		)
-		(uuid "f6d4e46d-5181-4921-bf5b-1f95a5ce53cb")
+		(uuid "f2bbe675-964c-4c99-8289-5f96195f6b3a")
 	)
 	(wire
 		(pts
-			(xy 240.03 269.24) (xy 240.03 283.21)
+			(xy 184.15 182.88) (xy 184.15 204.47)
 		)
 		(stroke
 			(width 0)
 			(type default)
 		)
-		(uuid "f8ac9456-039d-4287-948d-4abbe64601b5")
+		(uuid "f4ccc801-6b5c-40cc-a199-dc341de8c22c")
 	)
 	(wire
 		(pts
-			(xy 285.75 161.29) (xy 285.75 182.88)
+			(xy 163.83 269.24) (xy 163.83 283.21)
 		)
 		(stroke
 			(width 0)
 			(type default)
 		)
-		(uuid "f8d418d0-e5b8-4b42-8b84-721a72e2e46c")
-	)
-	(wire
-		(pts
-			(xy 133.35 161.29) (xy 133.35 182.88)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "f9d2c594-4495-47ff-8251-d94e086627c7")
+		(uuid "f775379f-d1bf-498e-8d80-30282b1d9bc5")
 	)
 	(wire
 		(pts
@@ -3549,46 +3589,6 @@
 			(type default)
 		)
 		(uuid "fa5d4024-9bc4-4e9e-93c8-7660854e98e4")
-	)
-	(wire
-		(pts
-			(xy 184.15 247.65) (xy 184.15 269.24)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "fb41a4f2-aa15-459a-b3bc-c53590e86cd0")
-	)
-	(wire
-		(pts
-			(xy 234.95 226.06) (xy 234.95 247.65)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "fba7ee2d-458a-4de2-8ad0-c96d579a48f8")
-	)
-	(wire
-		(pts
-			(xy 189.23 204.47) (xy 189.23 226.06)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "fc080388-048b-42d9-8164-b297dd557168")
-	)
-	(wire
-		(pts
-			(xy 113.03 182.88) (xy 113.03 204.47)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "fc897290-ccb5-495d-8db7-173eb180f8b3")
 	)
 	(label "ADDR → GND (for address 0x48)"
 		(at 403.86 194.31 0)
@@ -3778,7 +3778,7 @@
 	)
 	(global_label "MB11"
 		(shape input)
-		(at 123.19 193.04 0)
+		(at 123.19 194.31 0)
 		(fields_autoplaced yes)
 		(effects
 			(font
@@ -3788,7 +3788,7 @@
 		)
 		(uuid "11888713-fa3f-4069-b905-dc23afb67506")
 		(property "Intersheetrefs" "${INTERSHEET_REFS}"
-			(at 131.1342 193.04 0)
+			(at 131.1342 194.31 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -3822,7 +3822,7 @@
 	)
 	(global_label "MB6"
 		(shape input)
-		(at 123.19 128.27 0)
+		(at 123.19 129.54 0)
 		(fields_autoplaced yes)
 		(effects
 			(font
@@ -3832,7 +3832,7 @@
 		)
 		(uuid "155e1fa9-eee1-4df3-beb8-e59e6c40131b")
 		(property "Intersheetrefs" "${INTERSHEET_REFS}"
-			(at 129.9247 128.27 0)
+			(at 129.9247 129.54 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -3866,7 +3866,7 @@
 	)
 	(global_label "MA1"
 		(shape input)
-		(at 250.19 149.86 0)
+		(at 250.19 151.13 0)
 		(fields_autoplaced yes)
 		(effects
 			(font
@@ -3876,7 +3876,7 @@
 		)
 		(uuid "1634dcd5-ed97-41c2-81ab-6cb4cfc4557d")
 		(property "Intersheetrefs" "${INTERSHEET_REFS}"
-			(at 256.9247 149.86 0)
+			(at 256.9247 151.13 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -3910,7 +3910,7 @@
 	)
 	(global_label "MB13"
 		(shape input)
-		(at 173.99 193.04 0)
+		(at 173.99 194.31 0)
 		(fields_autoplaced yes)
 		(effects
 			(font
@@ -3920,7 +3920,7 @@
 		)
 		(uuid "187bd3da-15c1-4008-b855-d1bedd66d08a")
 		(property "Intersheetrefs" "${INTERSHEET_REFS}"
-			(at 181.9342 193.04 0)
+			(at 181.9342 194.31 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -4064,7 +4064,7 @@
 	)
 	(global_label "MC13"
 		(shape input)
-		(at 173.99 279.4 0)
+		(at 173.99 280.67 0)
 		(fields_autoplaced yes)
 		(effects
 			(font
@@ -4074,7 +4074,7 @@
 		)
 		(uuid "28996f75-0a13-405f-95b3-bcff12e8329b")
 		(property "Intersheetrefs" "${INTERSHEET_REFS}"
-			(at 181.9342 279.4 0)
+			(at 181.9342 280.67 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -4130,7 +4130,7 @@
 	)
 	(global_label "MA6"
 		(shape input)
-		(at 250.19 128.27 0)
+		(at 250.19 129.54 0)
 		(fields_autoplaced yes)
 		(effects
 			(font
@@ -4140,7 +4140,7 @@
 		)
 		(uuid "2a5faead-c1b3-49cf-a1b2-75752cd675b0")
 		(property "Intersheetrefs" "${INTERSHEET_REFS}"
-			(at 256.9247 128.27 0)
+			(at 256.9247 129.54 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -4152,7 +4152,7 @@
 	)
 	(global_label "MA8"
 		(shape input)
-		(at 275.59 149.86 0)
+		(at 275.59 151.13 0)
 		(fields_autoplaced yes)
 		(effects
 			(font
@@ -4162,7 +4162,7 @@
 		)
 		(uuid "2cb912b7-0cbd-4a9d-bda3-161d7fa6d485")
 		(property "Intersheetrefs" "${INTERSHEET_REFS}"
-			(at 282.3247 149.86 0)
+			(at 282.3247 151.13 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -4174,7 +4174,7 @@
 	)
 	(global_label "MA3"
 		(shape input)
-		(at 199.39 149.86 0)
+		(at 199.39 151.13 0)
 		(fields_autoplaced yes)
 		(effects
 			(font
@@ -4184,7 +4184,7 @@
 		)
 		(uuid "2d87bbb1-2269-412c-a0c0-d5881ba15ab0")
 		(property "Intersheetrefs" "${INTERSHEET_REFS}"
-			(at 206.1247 149.86 0)
+			(at 206.1247 151.13 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -4262,7 +4262,7 @@
 	)
 	(global_label "MC8"
 		(shape input)
-		(at 97.79 236.22 0)
+		(at 97.79 237.49 0)
 		(fields_autoplaced yes)
 		(effects
 			(font
@@ -4272,7 +4272,7 @@
 		)
 		(uuid "39187a1d-9acf-4083-a351-eacb487cf4fb")
 		(property "Intersheetrefs" "${INTERSHEET_REFS}"
-			(at 104.5247 236.22 0)
+			(at 104.5247 237.49 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -4372,7 +4372,7 @@
 	)
 	(global_label "MD8"
 		(shape input)
-		(at 275.59 236.22 0)
+		(at 275.59 237.49 0)
 		(fields_autoplaced yes)
 		(effects
 			(font
@@ -4382,7 +4382,7 @@
 		)
 		(uuid "40bed42d-f56f-4d94-bf2f-2fa1b28cd7e1")
 		(property "Intersheetrefs" "${INTERSHEET_REFS}"
-			(at 282.5061 236.22 0)
+			(at 282.5061 237.49 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -4482,7 +4482,7 @@
 	)
 	(global_label "MA14"
 		(shape input)
-		(at 199.39 171.45 0)
+		(at 199.39 172.72 0)
 		(fields_autoplaced yes)
 		(effects
 			(font
@@ -4492,7 +4492,7 @@
 		)
 		(uuid "4d154947-3797-44df-a382-f0bf2a8c6ee9")
 		(property "Intersheetrefs" "${INTERSHEET_REFS}"
-			(at 207.3342 171.45 0)
+			(at 207.3342 172.72 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -4504,7 +4504,7 @@
 	)
 	(global_label "MD4"
 		(shape input)
-		(at 199.39 214.63 0)
+		(at 199.39 215.9 0)
 		(fields_autoplaced yes)
 		(effects
 			(font
@@ -4514,7 +4514,7 @@
 		)
 		(uuid "4e12a69c-5efa-4e3b-912e-3999091ed6a6")
 		(property "Intersheetrefs" "${INTERSHEET_REFS}"
-			(at 206.3061 214.63 0)
+			(at 206.3061 215.9 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -4614,7 +4614,7 @@
 	)
 	(global_label "MA10"
 		(shape input)
-		(at 275.59 193.04 0)
+		(at 275.59 194.31 0)
 		(fields_autoplaced yes)
 		(effects
 			(font
@@ -4624,7 +4624,7 @@
 		)
 		(uuid "52e49c13-5fc0-439b-8cff-46a5cdb1de9b")
 		(property "Intersheetrefs" "${INTERSHEET_REFS}"
-			(at 283.5342 193.04 0)
+			(at 283.5342 194.31 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -4636,7 +4636,7 @@
 	)
 	(global_label "MB1"
 		(shape input)
-		(at 123.19 149.86 0)
+		(at 123.19 151.13 0)
 		(fields_autoplaced yes)
 		(effects
 			(font
@@ -4646,7 +4646,7 @@
 		)
 		(uuid "52edfa1d-efad-44f0-bb49-64ff42b4698f")
 		(property "Intersheetrefs" "${INTERSHEET_REFS}"
-			(at 129.9247 149.86 0)
+			(at 129.9247 151.13 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -4768,7 +4768,7 @@
 	)
 	(global_label "MB15"
 		(shape input)
-		(at 148.59 171.45 0)
+		(at 148.59 172.72 0)
 		(fields_autoplaced yes)
 		(effects
 			(font
@@ -4778,7 +4778,7 @@
 		)
 		(uuid "5b77c4c5-f4a0-4082-93d8-180975d4099e")
 		(property "Intersheetrefs" "${INTERSHEET_REFS}"
-			(at 156.5342 171.45 0)
+			(at 156.5342 172.72 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -4790,7 +4790,7 @@
 	)
 	(global_label "MA15"
 		(shape input)
-		(at 224.79 171.45 0)
+		(at 224.79 172.72 0)
 		(fields_autoplaced yes)
 		(effects
 			(font
@@ -4800,7 +4800,7 @@
 		)
 		(uuid "5eff2ff9-0640-4788-ae4e-ed6c7f2a2e75")
 		(property "Intersheetrefs" "${INTERSHEET_REFS}"
-			(at 232.7342 171.45 0)
+			(at 232.7342 172.72 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -4812,7 +4812,7 @@
 	)
 	(global_label "MD13"
 		(shape input)
-		(at 199.39 279.4 0)
+		(at 199.39 280.67 0)
 		(fields_autoplaced yes)
 		(effects
 			(font
@@ -4822,7 +4822,7 @@
 		)
 		(uuid "5f1ce96a-e33f-43c3-a85a-6d5826b2eb6a")
 		(property "Intersheetrefs" "${INTERSHEET_REFS}"
-			(at 207.5156 279.4 0)
+			(at 207.5156 280.67 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -4900,7 +4900,7 @@
 	)
 	(global_label "MB14"
 		(shape input)
-		(at 173.99 171.45 0)
+		(at 173.99 172.72 0)
 		(fields_autoplaced yes)
 		(effects
 			(font
@@ -4910,7 +4910,7 @@
 		)
 		(uuid "647eded4-e713-4cb1-8fb3-dc7ec0b60240")
 		(property "Intersheetrefs" "${INTERSHEET_REFS}"
-			(at 181.9342 171.45 0)
+			(at 181.9342 172.72 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -5010,7 +5010,7 @@
 	)
 	(global_label "MC16"
 		(shape input)
-		(at 123.19 257.81 0)
+		(at 123.19 259.08 0)
 		(fields_autoplaced yes)
 		(effects
 			(font
@@ -5020,7 +5020,7 @@
 		)
 		(uuid "6736c416-a906-494c-a5ef-52cca09b4e44")
 		(property "Intersheetrefs" "${INTERSHEET_REFS}"
-			(at 131.1342 257.81 0)
+			(at 131.1342 259.08 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -5076,7 +5076,7 @@
 	)
 	(global_label "MD3"
 		(shape input)
-		(at 199.39 236.22 0)
+		(at 199.39 237.49 0)
 		(fields_autoplaced yes)
 		(effects
 			(font
@@ -5086,7 +5086,7 @@
 		)
 		(uuid "6e078b3d-a375-412c-9fb5-14fed8d4f691")
 		(property "Intersheetrefs" "${INTERSHEET_REFS}"
-			(at 206.3061 236.22 0)
+			(at 206.3061 237.49 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -5120,7 +5120,7 @@
 	)
 	(global_label "MB10"
 		(shape input)
-		(at 97.79 193.04 0)
+		(at 97.79 194.31 0)
 		(fields_autoplaced yes)
 		(effects
 			(font
@@ -5130,7 +5130,7 @@
 		)
 		(uuid "711a14aa-ebd5-4336-a504-1a5a9ab28671")
 		(property "Intersheetrefs" "${INTERSHEET_REFS}"
-			(at 105.7342 193.04 0)
+			(at 105.7342 194.31 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -5142,7 +5142,7 @@
 	)
 	(global_label "MC2"
 		(shape input)
-		(at 148.59 236.22 0)
+		(at 148.59 237.49 0)
 		(fields_autoplaced yes)
 		(effects
 			(font
@@ -5152,7 +5152,7 @@
 		)
 		(uuid "711fea95-e85f-42f5-949b-a3c66dd71eaa")
 		(property "Intersheetrefs" "${INTERSHEET_REFS}"
-			(at 155.3247 236.22 0)
+			(at 155.3247 237.49 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -5208,7 +5208,7 @@
 	)
 	(global_label "MC10"
 		(shape input)
-		(at 97.79 279.4 0)
+		(at 97.79 280.67 0)
 		(fields_autoplaced yes)
 		(effects
 			(font
@@ -5218,7 +5218,7 @@
 		)
 		(uuid "7457267f-c8ae-482c-819a-09259f9d1fd1")
 		(property "Intersheetrefs" "${INTERSHEET_REFS}"
-			(at 105.7342 279.4 0)
+			(at 105.7342 280.67 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -5252,7 +5252,7 @@
 	)
 	(global_label "MC4"
 		(shape input)
-		(at 173.99 214.63 0)
+		(at 173.99 215.9 0)
 		(fields_autoplaced yes)
 		(effects
 			(font
@@ -5262,7 +5262,7 @@
 		)
 		(uuid "773ad993-662b-4953-855a-d28d644269fa")
 		(property "Intersheetrefs" "${INTERSHEET_REFS}"
-			(at 180.7247 214.63 0)
+			(at 180.7247 215.9 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -5274,7 +5274,7 @@
 	)
 	(global_label "MB8"
 		(shape input)
-		(at 97.79 149.86 0)
+		(at 97.79 151.13 0)
 		(fields_autoplaced yes)
 		(effects
 			(font
@@ -5284,7 +5284,7 @@
 		)
 		(uuid "79e26cf1-d9a6-487e-8207-44a51d9fb9e4")
 		(property "Intersheetrefs" "${INTERSHEET_REFS}"
-			(at 104.5247 149.86 0)
+			(at 104.5247 151.13 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -5318,7 +5318,7 @@
 	)
 	(global_label "MB4"
 		(shape input)
-		(at 173.99 128.27 0)
+		(at 173.99 129.54 0)
 		(fields_autoplaced yes)
 		(effects
 			(font
@@ -5328,7 +5328,7 @@
 		)
 		(uuid "7d43dc3b-5b91-4129-8a18-4cb628ab05af")
 		(property "Intersheetrefs" "${INTERSHEET_REFS}"
-			(at 180.7247 128.27 0)
+			(at 180.7247 129.54 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -5450,7 +5450,7 @@
 	)
 	(global_label "MB9"
 		(shape input)
-		(at 97.79 171.45 0)
+		(at 97.79 172.72 0)
 		(fields_autoplaced yes)
 		(effects
 			(font
@@ -5460,7 +5460,7 @@
 		)
 		(uuid "84da11d5-62a7-4feb-b31e-d7806ffae257")
 		(property "Intersheetrefs" "${INTERSHEET_REFS}"
-			(at 104.5247 171.45 0)
+			(at 104.5247 172.72 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -5472,7 +5472,7 @@
 	)
 	(global_label "MD6"
 		(shape input)
-		(at 250.19 214.63 0)
+		(at 250.19 215.9 0)
 		(fields_autoplaced yes)
 		(effects
 			(font
@@ -5482,7 +5482,7 @@
 		)
 		(uuid "84df9763-1b35-4567-ae7a-96c651fd3e67")
 		(property "Intersheetrefs" "${INTERSHEET_REFS}"
-			(at 257.1061 214.63 0)
+			(at 257.1061 215.9 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -5538,7 +5538,7 @@
 	)
 	(global_label "MB2"
 		(shape input)
-		(at 148.59 149.86 0)
+		(at 148.59 151.13 0)
 		(fields_autoplaced yes)
 		(effects
 			(font
@@ -5548,7 +5548,7 @@
 		)
 		(uuid "8944fa4b-0e36-43f6-9048-860c7653760b")
 		(property "Intersheetrefs" "${INTERSHEET_REFS}"
-			(at 155.3247 149.86 0)
+			(at 155.3247 151.13 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -5670,7 +5670,7 @@
 	)
 	(global_label "MA5"
 		(shape input)
-		(at 224.79 128.27 0)
+		(at 224.79 129.54 0)
 		(fields_autoplaced yes)
 		(effects
 			(font
@@ -5680,7 +5680,7 @@
 		)
 		(uuid "936ad742-4599-4643-83d0-3235aa478115")
 		(property "Intersheetrefs" "${INTERSHEET_REFS}"
-			(at 231.5247 128.27 0)
+			(at 231.5247 129.54 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -5692,7 +5692,7 @@
 	)
 	(global_label "MD11"
 		(shape input)
-		(at 250.19 279.4 0)
+		(at 250.19 280.67 0)
 		(fields_autoplaced yes)
 		(effects
 			(font
@@ -5702,7 +5702,7 @@
 		)
 		(uuid "94aef3c3-ef43-4ea0-9800-9a6c092b7c1c")
 		(property "Intersheetrefs" "${INTERSHEET_REFS}"
-			(at 258.3156 279.4 0)
+			(at 258.3156 280.67 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -5846,7 +5846,7 @@
 	)
 	(global_label "MD15"
 		(shape input)
-		(at 224.79 257.81 0)
+		(at 224.79 259.08 0)
 		(fields_autoplaced yes)
 		(effects
 			(font
@@ -5856,7 +5856,7 @@
 		)
 		(uuid "9c0cb360-e9bb-42b5-a273-9bf126d7fe61")
 		(property "Intersheetrefs" "${INTERSHEET_REFS}"
-			(at 232.9156 257.81 0)
+			(at 232.9156 259.08 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -6022,7 +6022,7 @@
 	)
 	(global_label "MD12"
 		(shape input)
-		(at 224.79 279.4 0)
+		(at 224.79 280.67 0)
 		(fields_autoplaced yes)
 		(effects
 			(font
@@ -6032,7 +6032,7 @@
 		)
 		(uuid "a3ee0fbc-82e5-40ae-88f6-71683637d6f0")
 		(property "Intersheetrefs" "${INTERSHEET_REFS}"
-			(at 232.9156 279.4 0)
+			(at 232.9156 280.67 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -6154,7 +6154,7 @@
 	)
 	(global_label "MB12"
 		(shape input)
-		(at 148.59 193.04 0)
+		(at 148.59 194.31 0)
 		(fields_autoplaced yes)
 		(effects
 			(font
@@ -6164,7 +6164,7 @@
 		)
 		(uuid "a99baef5-da96-426c-bf51-1a3fbd129a18")
 		(property "Intersheetrefs" "${INTERSHEET_REFS}"
-			(at 156.5342 193.04 0)
+			(at 156.5342 194.31 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -6198,7 +6198,7 @@
 	)
 	(global_label "MC1"
 		(shape input)
-		(at 123.19 236.22 0)
+		(at 123.19 237.49 0)
 		(fields_autoplaced yes)
 		(effects
 			(font
@@ -6208,7 +6208,7 @@
 		)
 		(uuid "aa78354d-c08e-46b0-a1f7-108e7d5ba292")
 		(property "Intersheetrefs" "${INTERSHEET_REFS}"
-			(at 129.9247 236.22 0)
+			(at 129.9247 237.49 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -6242,7 +6242,7 @@
 	)
 	(global_label "MC15"
 		(shape input)
-		(at 148.59 257.81 0)
+		(at 148.59 259.08 0)
 		(fields_autoplaced yes)
 		(effects
 			(font
@@ -6252,7 +6252,7 @@
 		)
 		(uuid "ae8014ff-cd20-4a66-97e3-b2ca7fe3a1cc")
 		(property "Intersheetrefs" "${INTERSHEET_REFS}"
-			(at 156.5342 257.81 0)
+			(at 156.5342 259.08 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -6396,7 +6396,7 @@
 	)
 	(global_label "MD10"
 		(shape input)
-		(at 275.59 279.4 0)
+		(at 275.59 280.67 0)
 		(fields_autoplaced yes)
 		(effects
 			(font
@@ -6406,7 +6406,7 @@
 		)
 		(uuid "b5db0a7c-f70a-42cd-94cf-b51d9e1ac91b")
 		(property "Intersheetrefs" "${INTERSHEET_REFS}"
-			(at 283.7156 279.4 0)
+			(at 283.7156 280.67 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -6462,7 +6462,7 @@
 	)
 	(global_label "MD7"
 		(shape input)
-		(at 275.59 214.63 0)
+		(at 275.59 215.9 0)
 		(fields_autoplaced yes)
 		(effects
 			(font
@@ -6472,7 +6472,7 @@
 		)
 		(uuid "ba7f7389-2b18-4ed7-a31a-0474bd2ee08d")
 		(property "Intersheetrefs" "${INTERSHEET_REFS}"
-			(at 282.5061 214.63 0)
+			(at 282.5061 215.9 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -6484,7 +6484,7 @@
 	)
 	(global_label "MA7"
 		(shape input)
-		(at 275.59 128.27 0)
+		(at 275.59 129.54 0)
 		(fields_autoplaced yes)
 		(effects
 			(font
@@ -6494,7 +6494,7 @@
 		)
 		(uuid "bb52dd6a-5c51-4db3-82ba-6c28cdc22cfb")
 		(property "Intersheetrefs" "${INTERSHEET_REFS}"
-			(at 282.3247 128.27 0)
+			(at 282.3247 129.54 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -6506,7 +6506,7 @@
 	)
 	(global_label "MB16"
 		(shape input)
-		(at 123.19 171.45 0)
+		(at 123.19 172.72 0)
 		(fields_autoplaced yes)
 		(effects
 			(font
@@ -6516,7 +6516,7 @@
 		)
 		(uuid "bce30c1d-c0ce-4ad2-ac30-76e2955a2a67")
 		(property "Intersheetrefs" "${INTERSHEET_REFS}"
-			(at 131.1342 171.45 0)
+			(at 131.1342 172.72 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -6550,7 +6550,7 @@
 	)
 	(global_label "MC7"
 		(shape input)
-		(at 97.79 214.63 0)
+		(at 97.79 215.9 0)
 		(fields_autoplaced yes)
 		(effects
 			(font
@@ -6560,7 +6560,7 @@
 		)
 		(uuid "bdfc5bf8-3bc9-486a-ae2f-377573831428")
 		(property "Intersheetrefs" "${INTERSHEET_REFS}"
-			(at 104.5247 214.63 0)
+			(at 104.5247 215.9 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -6616,7 +6616,7 @@
 	)
 	(global_label "MC6"
 		(shape input)
-		(at 123.19 214.63 0)
+		(at 123.19 215.9 0)
 		(fields_autoplaced yes)
 		(effects
 			(font
@@ -6626,7 +6626,7 @@
 		)
 		(uuid "bf121740-f88e-408c-8d04-ff770df1f68d")
 		(property "Intersheetrefs" "${INTERSHEET_REFS}"
-			(at 129.9247 214.63 0)
+			(at 129.9247 215.9 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -6682,7 +6682,7 @@
 	)
 	(global_label "MD5"
 		(shape input)
-		(at 224.79 214.63 0)
+		(at 224.79 215.9 0)
 		(fields_autoplaced yes)
 		(effects
 			(font
@@ -6692,7 +6692,7 @@
 		)
 		(uuid "c53804e3-2af6-45e6-8747-b15163516c8e")
 		(property "Intersheetrefs" "${INTERSHEET_REFS}"
-			(at 231.7061 214.63 0)
+			(at 231.7061 215.9 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -6814,7 +6814,7 @@
 	)
 	(global_label "MB3"
 		(shape input)
-		(at 173.99 149.86 0)
+		(at 173.99 151.13 0)
 		(fields_autoplaced yes)
 		(effects
 			(font
@@ -6824,7 +6824,7 @@
 		)
 		(uuid "c814e45e-194b-4336-8cca-e509caf78742")
 		(property "Intersheetrefs" "${INTERSHEET_REFS}"
-			(at 180.7247 149.86 0)
+			(at 180.7247 151.13 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -6880,7 +6880,7 @@
 	)
 	(global_label "MC9"
 		(shape input)
-		(at 97.79 257.81 0)
+		(at 97.79 259.08 0)
 		(fields_autoplaced yes)
 		(effects
 			(font
@@ -6890,7 +6890,7 @@
 		)
 		(uuid "cbaf8e42-21e9-4ced-81da-b1dbd15c50cb")
 		(property "Intersheetrefs" "${INTERSHEET_REFS}"
-			(at 104.5247 257.81 0)
+			(at 104.5247 259.08 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -6902,7 +6902,7 @@
 	)
 	(global_label "MC11"
 		(shape input)
-		(at 123.19 279.4 0)
+		(at 123.19 280.67 0)
 		(fields_autoplaced yes)
 		(effects
 			(font
@@ -6912,7 +6912,7 @@
 		)
 		(uuid "cc337565-f982-483c-ad3e-b4f29c3ba8ff")
 		(property "Intersheetrefs" "${INTERSHEET_REFS}"
-			(at 131.1342 279.4 0)
+			(at 131.1342 280.67 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -6946,7 +6946,7 @@
 	)
 	(global_label "MA13"
 		(shape input)
-		(at 199.39 193.04 0)
+		(at 199.39 194.31 0)
 		(fields_autoplaced yes)
 		(effects
 			(font
@@ -6956,7 +6956,7 @@
 		)
 		(uuid "ce43d299-94f2-4388-a78c-6a7c702f9b28")
 		(property "Intersheetrefs" "${INTERSHEET_REFS}"
-			(at 207.3342 193.04 0)
+			(at 207.3342 194.31 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -6968,7 +6968,7 @@
 	)
 	(global_label "MD1"
 		(shape input)
-		(at 250.19 236.22 0)
+		(at 250.19 237.49 0)
 		(fields_autoplaced yes)
 		(effects
 			(font
@@ -6978,7 +6978,7 @@
 		)
 		(uuid "ce6b7318-f369-4e32-bc66-4379b878c1f1")
 		(property "Intersheetrefs" "${INTERSHEET_REFS}"
-			(at 257.1061 236.22 0)
+			(at 257.1061 237.49 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -6990,7 +6990,7 @@
 	)
 	(global_label "MA11"
 		(shape input)
-		(at 250.19 193.04 0)
+		(at 250.19 194.31 0)
 		(fields_autoplaced yes)
 		(effects
 			(font
@@ -7000,7 +7000,7 @@
 		)
 		(uuid "ced77154-f12b-497b-8ddb-a16c416f7985")
 		(property "Intersheetrefs" "${INTERSHEET_REFS}"
-			(at 258.1342 193.04 0)
+			(at 258.1342 194.31 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -7012,7 +7012,7 @@
 	)
 	(global_label "MC14"
 		(shape input)
-		(at 173.99 257.81 0)
+		(at 173.99 259.08 0)
 		(fields_autoplaced yes)
 		(effects
 			(font
@@ -7022,7 +7022,7 @@
 		)
 		(uuid "d0461ee0-eb1f-4806-b0bb-af6a2aa51e73")
 		(property "Intersheetrefs" "${INTERSHEET_REFS}"
-			(at 181.9342 257.81 0)
+			(at 181.9342 259.08 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -7034,7 +7034,7 @@
 	)
 	(global_label "MA2"
 		(shape input)
-		(at 224.79 149.86 0)
+		(at 224.79 151.13 0)
 		(fields_autoplaced yes)
 		(effects
 			(font
@@ -7044,7 +7044,7 @@
 		)
 		(uuid "d0985d37-7654-4294-9738-0a26953d0bbe")
 		(property "Intersheetrefs" "${INTERSHEET_REFS}"
-			(at 231.5247 149.86 0)
+			(at 231.5247 151.13 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -7056,7 +7056,7 @@
 	)
 	(global_label "MC3"
 		(shape input)
-		(at 173.99 236.22 0)
+		(at 173.99 237.49 0)
 		(fields_autoplaced yes)
 		(effects
 			(font
@@ -7066,7 +7066,7 @@
 		)
 		(uuid "d109dc8f-fd46-40ac-b350-fcadf4261dcd")
 		(property "Intersheetrefs" "${INTERSHEET_REFS}"
-			(at 180.7247 236.22 0)
+			(at 180.7247 237.49 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -7232,7 +7232,7 @@
 	)
 	(global_label "MD2"
 		(shape input)
-		(at 224.79 236.22 0)
+		(at 224.79 237.49 0)
 		(fields_autoplaced yes)
 		(effects
 			(font
@@ -7242,7 +7242,7 @@
 		)
 		(uuid "de06447d-9b12-42c8-b27e-29b46f855f24")
 		(property "Intersheetrefs" "${INTERSHEET_REFS}"
-			(at 231.7061 236.22 0)
+			(at 231.7061 237.49 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -7276,7 +7276,7 @@
 	)
 	(global_label "MA9"
 		(shape input)
-		(at 275.59 171.45 0)
+		(at 275.59 172.72 0)
 		(fields_autoplaced yes)
 		(effects
 			(font
@@ -7286,7 +7286,7 @@
 		)
 		(uuid "e14681a6-64b0-45be-9895-efedeb41b722")
 		(property "Intersheetrefs" "${INTERSHEET_REFS}"
-			(at 282.3247 171.45 0)
+			(at 282.3247 172.72 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -7298,7 +7298,7 @@
 	)
 	(global_label "MB7"
 		(shape input)
-		(at 97.79 128.27 0)
+		(at 97.79 129.54 0)
 		(fields_autoplaced yes)
 		(effects
 			(font
@@ -7308,7 +7308,7 @@
 		)
 		(uuid "e2aebb1d-1e3d-4117-9f11-c852d323fe37")
 		(property "Intersheetrefs" "${INTERSHEET_REFS}"
-			(at 104.5247 128.27 0)
+			(at 104.5247 129.54 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -7320,7 +7320,7 @@
 	)
 	(global_label "MB5"
 		(shape input)
-		(at 148.59 128.27 0)
+		(at 148.59 129.54 0)
 		(fields_autoplaced yes)
 		(effects
 			(font
@@ -7330,7 +7330,7 @@
 		)
 		(uuid "e5809076-c3b9-44ea-bf4a-58a8ce97cba7")
 		(property "Intersheetrefs" "${INTERSHEET_REFS}"
-			(at 155.3247 128.27 0)
+			(at 155.3247 129.54 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -7386,7 +7386,7 @@
 	)
 	(global_label "MD16"
 		(shape input)
-		(at 250.19 257.81 0)
+		(at 250.19 259.08 0)
 		(fields_autoplaced yes)
 		(effects
 			(font
@@ -7396,7 +7396,7 @@
 		)
 		(uuid "ed032062-2b30-4967-bf37-32a842b95c9c")
 		(property "Intersheetrefs" "${INTERSHEET_REFS}"
-			(at 258.3156 257.81 0)
+			(at 258.3156 259.08 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -7496,7 +7496,7 @@
 	)
 	(global_label "MC12"
 		(shape input)
-		(at 148.59 279.4 0)
+		(at 148.59 280.67 0)
 		(fields_autoplaced yes)
 		(effects
 			(font
@@ -7506,7 +7506,7 @@
 		)
 		(uuid "f3160f30-d926-49fc-a45a-7cddbecf2fcb")
 		(property "Intersheetrefs" "${INTERSHEET_REFS}"
-			(at 156.5342 279.4 0)
+			(at 156.5342 280.67 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -7540,7 +7540,7 @@
 	)
 	(global_label "MA12"
 		(shape input)
-		(at 224.79 193.04 0)
+		(at 224.79 194.31 0)
 		(fields_autoplaced yes)
 		(effects
 			(font
@@ -7550,7 +7550,7 @@
 		)
 		(uuid "f40cb6d1-9de2-4605-ad73-e124551f7794")
 		(property "Intersheetrefs" "${INTERSHEET_REFS}"
-			(at 232.7342 193.04 0)
+			(at 232.7342 194.31 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -7562,7 +7562,7 @@
 	)
 	(global_label "MA4"
 		(shape input)
-		(at 199.39 128.27 0)
+		(at 199.39 129.54 0)
 		(fields_autoplaced yes)
 		(effects
 			(font
@@ -7572,7 +7572,7 @@
 		)
 		(uuid "f4b755fe-daf1-496e-be36-e6f086fc8947")
 		(property "Intersheetrefs" "${INTERSHEET_REFS}"
-			(at 206.1247 128.27 0)
+			(at 206.1247 129.54 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -7606,7 +7606,7 @@
 	)
 	(global_label "MA16"
 		(shape input)
-		(at 250.19 171.45 0)
+		(at 250.19 172.72 0)
 		(fields_autoplaced yes)
 		(effects
 			(font
@@ -7616,7 +7616,7 @@
 		)
 		(uuid "f7565bd8-1cc0-4f97-aff1-3f15f6e49c51")
 		(property "Intersheetrefs" "${INTERSHEET_REFS}"
-			(at 258.1342 171.45 0)
+			(at 258.1342 172.72 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -7672,7 +7672,7 @@
 	)
 	(global_label "MD14"
 		(shape input)
-		(at 199.39 257.81 0)
+		(at 199.39 259.08 0)
 		(fields_autoplaced yes)
 		(effects
 			(font
@@ -7682,7 +7682,7 @@
 		)
 		(uuid "f8c13b6f-645d-4b1f-a46f-aa4aa7f5df1e")
 		(property "Intersheetrefs" "${INTERSHEET_REFS}"
-			(at 207.5156 257.81 0)
+			(at 207.5156 259.08 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -7694,7 +7694,7 @@
 	)
 	(global_label "MC5"
 		(shape input)
-		(at 148.59 214.63 0)
+		(at 148.59 215.9 0)
 		(fields_autoplaced yes)
 		(effects
 			(font
@@ -7704,7 +7704,7 @@
 		)
 		(uuid "f9ee7f2a-6023-484d-abeb-2c2e0cb2cbe9")
 		(property "Intersheetrefs" "${INTERSHEET_REFS}"
-			(at 155.3247 214.63 0)
+			(at 155.3247 215.9 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -7716,7 +7716,7 @@
 	)
 	(global_label "MD9"
 		(shape input)
-		(at 275.59 257.81 0)
+		(at 275.59 259.08 0)
 		(fields_autoplaced yes)
 		(effects
 			(font
@@ -7726,7 +7726,7 @@
 		)
 		(uuid "ff25c3a3-1311-486d-a8a2-16467e40106e")
 		(property "Intersheetrefs" "${INTERSHEET_REFS}"
-			(at 282.5061 257.81 0)
+			(at 282.5061 259.08 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -7760,7 +7760,7 @@
 	)
 	(symbol
 		(lib_id "MagChess:SS49E")
-		(at 199.39 270.51 0)
+		(at 199.39 271.78 0)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
@@ -7769,7 +7769,7 @@
 		(fields_autoplaced yes)
 		(uuid "0146aad6-6424-4d3f-b4e5-bc5553681b5a")
 		(property "Reference" "U50"
-			(at 199.39 260.35 0)
+			(at 199.39 261.62 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -7777,7 +7777,7 @@
 			)
 		)
 		(property "Value" "A1302xUA"
-			(at 199.39 262.89 0)
+			(at 199.39 264.16 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -7785,7 +7785,7 @@
 			)
 		)
 		(property "Footprint" "MagChess Footprints:SS49E"
-			(at 199.39 270.51 0)
+			(at 199.39 271.78 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -7795,7 +7795,7 @@
 			)
 		)
 		(property "Datasheet" "SS49E"
-			(at 199.39 270.51 0)
+			(at 199.39 271.78 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -7805,7 +7805,7 @@
 			)
 		)
 		(property "Description" "Linear Hall Effect Sensor, 1.3 mV/G, 4.5-6.0V supply, TO-92S (3-pin SIP)"
-			(at 199.39 270.51 0)
+			(at 199.39 271.78 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -7833,7 +7833,7 @@
 	)
 	(symbol
 		(lib_id "MagChess:SS49E")
-		(at 224.79 184.15 0)
+		(at 224.79 185.42 0)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
@@ -7842,7 +7842,7 @@
 		(fields_autoplaced yes)
 		(uuid "02d77c21-ffd1-4dc3-bd5d-d11123bf348c")
 		(property "Reference" "U37"
-			(at 224.79 173.99 0)
+			(at 224.79 175.26 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -7850,7 +7850,7 @@
 			)
 		)
 		(property "Value" "A1302xUA"
-			(at 224.79 176.53 0)
+			(at 224.79 177.8 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -7858,7 +7858,7 @@
 			)
 		)
 		(property "Footprint" "MagChess Footprints:SS49E"
-			(at 224.79 184.15 0)
+			(at 224.79 185.42 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -7868,7 +7868,7 @@
 			)
 		)
 		(property "Datasheet" "SS49E"
-			(at 224.79 184.15 0)
+			(at 224.79 185.42 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -7878,7 +7878,7 @@
 			)
 		)
 		(property "Description" "Linear Hall Effect Sensor, 1.3 mV/G, 4.5-6.0V supply, TO-92S (3-pin SIP)"
-			(at 224.79 184.15 0)
+			(at 224.79 185.42 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -7906,7 +7906,7 @@
 	)
 	(symbol
 		(lib_id "MagChess:SS49E")
-		(at 148.59 270.51 0)
+		(at 148.59 271.78 0)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
@@ -7915,7 +7915,7 @@
 		(fields_autoplaced yes)
 		(uuid "049c90d6-8edc-4f96-9b71-980657fb3547")
 		(property "Reference" "U73"
-			(at 148.59 260.35 0)
+			(at 148.59 261.62 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -7923,7 +7923,7 @@
 			)
 		)
 		(property "Value" "A1302xUA"
-			(at 148.59 262.89 0)
+			(at 148.59 264.16 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -7931,7 +7931,7 @@
 			)
 		)
 		(property "Footprint" "MagChess Footprints:SS49E"
-			(at 148.59 270.51 0)
+			(at 148.59 271.78 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -7941,7 +7941,7 @@
 			)
 		)
 		(property "Datasheet" "SS49E"
-			(at 148.59 270.51 0)
+			(at 148.59 271.78 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -7951,7 +7951,7 @@
 			)
 		)
 		(property "Description" "Linear Hall Effect Sensor, 1.3 mV/G, 4.5-6.0V supply, TO-92S (3-pin SIP)"
-			(at 148.59 270.51 0)
+			(at 148.59 271.78 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -7979,7 +7979,7 @@
 	)
 	(symbol
 		(lib_id "MagChess:SS49E")
-		(at 148.59 184.15 0)
+		(at 148.59 185.42 0)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
@@ -7988,7 +7988,7 @@
 		(fields_autoplaced yes)
 		(uuid "05e1343b-2c2c-4dd6-a423-83d18b856990")
 		(property "Reference" "U61"
-			(at 148.59 173.99 0)
+			(at 148.59 175.26 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -7996,7 +7996,7 @@
 			)
 		)
 		(property "Value" "A1302xUA"
-			(at 148.59 176.53 0)
+			(at 148.59 177.8 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -8004,7 +8004,7 @@
 			)
 		)
 		(property "Footprint" "MagChess Footprints:SS49E"
-			(at 148.59 184.15 0)
+			(at 148.59 185.42 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -8014,7 +8014,7 @@
 			)
 		)
 		(property "Datasheet" "SS49E"
-			(at 148.59 184.15 0)
+			(at 148.59 185.42 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -8024,7 +8024,7 @@
 			)
 		)
 		(property "Description" "Linear Hall Effect Sensor, 1.3 mV/G, 4.5-6.0V supply, TO-92S (3-pin SIP)"
-			(at 148.59 184.15 0)
+			(at 148.59 185.42 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -8283,7 +8283,7 @@
 	)
 	(symbol
 		(lib_id "MagChess:SS49E")
-		(at 148.59 248.92 0)
+		(at 148.59 250.19 0)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
@@ -8292,7 +8292,7 @@
 		(fields_autoplaced yes)
 		(uuid "1715accc-0a9e-4982-88ad-41d03165ccca")
 		(property "Reference" "U70"
-			(at 148.59 238.76 0)
+			(at 148.59 240.03 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -8300,7 +8300,7 @@
 			)
 		)
 		(property "Value" "A1302xUA"
-			(at 148.59 241.3 0)
+			(at 148.59 242.57 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -8308,7 +8308,7 @@
 			)
 		)
 		(property "Footprint" "MagChess Footprints:SS49E"
-			(at 148.59 248.92 0)
+			(at 148.59 250.19 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -8318,7 +8318,7 @@
 			)
 		)
 		(property "Datasheet" "SS49E"
-			(at 148.59 248.92 0)
+			(at 148.59 250.19 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -8328,7 +8328,7 @@
 			)
 		)
 		(property "Description" "Linear Hall Effect Sensor, 1.3 mV/G, 4.5-6.0V supply, TO-92S (3-pin SIP)"
-			(at 148.59 248.92 0)
+			(at 148.59 250.19 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -8356,7 +8356,7 @@
 	)
 	(symbol
 		(lib_id "MagChess:SS49E")
-		(at 275.59 270.51 0)
+		(at 275.59 271.78 0)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
@@ -8365,7 +8365,7 @@
 		(fields_autoplaced yes)
 		(uuid "1990a2ef-7041-4a1f-a92c-1afca666d016")
 		(property "Reference" "U19"
-			(at 275.59 260.35 0)
+			(at 275.59 261.62 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -8373,7 +8373,7 @@
 			)
 		)
 		(property "Value" "A1302xUA"
-			(at 275.59 262.89 0)
+			(at 275.59 264.16 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -8381,7 +8381,7 @@
 			)
 		)
 		(property "Footprint" "MagChess Footprints:SS49E"
-			(at 275.59 270.51 0)
+			(at 275.59 271.78 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -8391,7 +8391,7 @@
 			)
 		)
 		(property "Datasheet" "SS49E"
-			(at 275.59 270.51 0)
+			(at 275.59 271.78 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -8401,7 +8401,7 @@
 			)
 		)
 		(property "Description" "Linear Hall Effect Sensor, 1.3 mV/G, 4.5-6.0V supply, TO-92S (3-pin SIP)"
-			(at 275.59 270.51 0)
+			(at 275.59 271.78 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -8429,7 +8429,7 @@
 	)
 	(symbol
 		(lib_id "MagChess:SS49E")
-		(at 275.59 140.97 0)
+		(at 275.59 142.24 0)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
@@ -8438,7 +8438,7 @@
 		(fields_autoplaced yes)
 		(uuid "1c46ebb1-238c-47cc-b1f7-56760e48b48b")
 		(property "Reference" "U13"
-			(at 275.59 130.81 0)
+			(at 275.59 132.08 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -8446,7 +8446,7 @@
 			)
 		)
 		(property "Value" "A1302xUA"
-			(at 275.59 133.35 0)
+			(at 275.59 134.62 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -8454,7 +8454,7 @@
 			)
 		)
 		(property "Footprint" "MagChess Footprints:SS49E"
-			(at 275.59 140.97 0)
+			(at 275.59 142.24 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -8464,7 +8464,7 @@
 			)
 		)
 		(property "Datasheet" "SS49E"
-			(at 275.59 140.97 0)
+			(at 275.59 142.24 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -8474,7 +8474,7 @@
 			)
 		)
 		(property "Description" "Linear Hall Effect Sensor, 1.3 mV/G, 4.5-6.0V supply, TO-92S (3-pin SIP)"
-			(at 275.59 140.97 0)
+			(at 275.59 142.24 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -8502,7 +8502,7 @@
 	)
 	(symbol
 		(lib_id "MagChess:SS49E")
-		(at 224.79 248.92 0)
+		(at 224.79 250.19 0)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
@@ -8511,7 +8511,7 @@
 		(fields_autoplaced yes)
 		(uuid "1cfe3e42-f3b6-4436-ba79-f3a8979fe20c")
 		(property "Reference" "U46"
-			(at 224.79 238.76 0)
+			(at 224.79 240.03 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -8519,7 +8519,7 @@
 			)
 		)
 		(property "Value" "A1302xUA"
-			(at 224.79 241.3 0)
+			(at 224.79 242.57 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -8527,7 +8527,7 @@
 			)
 		)
 		(property "Footprint" "MagChess Footprints:SS49E"
-			(at 224.79 248.92 0)
+			(at 224.79 250.19 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -8537,7 +8537,7 @@
 			)
 		)
 		(property "Datasheet" "SS49E"
-			(at 224.79 248.92 0)
+			(at 224.79 250.19 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -8547,7 +8547,7 @@
 			)
 		)
 		(property "Description" "Linear Hall Effect Sensor, 1.3 mV/G, 4.5-6.0V supply, TO-92S (3-pin SIP)"
-			(at 224.79 248.92 0)
+			(at 224.79 250.19 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -8575,7 +8575,7 @@
 	)
 	(symbol
 		(lib_id "MagChess:SS49E")
-		(at 148.59 227.33 0)
+		(at 148.59 228.6 0)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
@@ -8584,7 +8584,7 @@
 		(fields_autoplaced yes)
 		(uuid "1e134f15-0e92-4d82-8090-189548ddd458")
 		(property "Reference" "U67"
-			(at 148.59 217.17 0)
+			(at 148.59 218.44 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -8592,7 +8592,7 @@
 			)
 		)
 		(property "Value" "A1302xUA"
-			(at 148.59 219.71 0)
+			(at 148.59 220.98 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -8600,7 +8600,7 @@
 			)
 		)
 		(property "Footprint" "MagChess Footprints:SS49E"
-			(at 148.59 227.33 0)
+			(at 148.59 228.6 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -8610,7 +8610,7 @@
 			)
 		)
 		(property "Datasheet" "SS49E"
-			(at 148.59 227.33 0)
+			(at 148.59 228.6 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -8620,7 +8620,7 @@
 			)
 		)
 		(property "Description" "Linear Hall Effect Sensor, 1.3 mV/G, 4.5-6.0V supply, TO-92S (3-pin SIP)"
-			(at 148.59 227.33 0)
+			(at 148.59 228.6 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -8648,7 +8648,7 @@
 	)
 	(symbol
 		(lib_id "MagChess:SS49E")
-		(at 250.19 270.51 0)
+		(at 250.19 271.78 0)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
@@ -8657,7 +8657,7 @@
 		(fields_autoplaced yes)
 		(uuid "1e96b476-4064-42ce-b8b0-7ea7d85fccb6")
 		(property "Reference" "U27"
-			(at 250.19 260.35 0)
+			(at 250.19 261.62 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -8665,7 +8665,7 @@
 			)
 		)
 		(property "Value" "A1302xUA"
-			(at 250.19 262.89 0)
+			(at 250.19 264.16 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -8673,7 +8673,7 @@
 			)
 		)
 		(property "Footprint" "MagChess Footprints:SS49E"
-			(at 250.19 270.51 0)
+			(at 250.19 271.78 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -8683,7 +8683,7 @@
 			)
 		)
 		(property "Datasheet" "SS49E"
-			(at 250.19 270.51 0)
+			(at 250.19 271.78 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -8693,7 +8693,7 @@
 			)
 		)
 		(property "Description" "Linear Hall Effect Sensor, 1.3 mV/G, 4.5-6.0V supply, TO-92S (3-pin SIP)"
-			(at 250.19 270.51 0)
+			(at 250.19 271.78 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -8721,7 +8721,7 @@
 	)
 	(symbol
 		(lib_id "MagChess:SS49E")
-		(at 224.79 119.38 0)
+		(at 224.79 120.65 0)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
@@ -8730,7 +8730,7 @@
 		(fields_autoplaced yes)
 		(uuid "2559db17-6481-4b82-a7be-942ed7089bfd")
 		(property "Reference" "U28"
-			(at 224.79 109.22 0)
+			(at 224.79 110.49 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -8738,7 +8738,7 @@
 			)
 		)
 		(property "Value" "A1302xUA"
-			(at 224.79 111.76 0)
+			(at 224.79 113.03 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -8746,7 +8746,7 @@
 			)
 		)
 		(property "Footprint" "MagChess Footprints:SS49E"
-			(at 224.79 119.38 0)
+			(at 224.79 120.65 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -8756,7 +8756,7 @@
 			)
 		)
 		(property "Datasheet" "SS49E"
-			(at 224.79 119.38 0)
+			(at 224.79 120.65 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -8766,7 +8766,7 @@
 			)
 		)
 		(property "Description" "Linear Hall Effect Sensor, 1.3 mV/G, 4.5-6.0V supply, TO-92S (3-pin SIP)"
-			(at 224.79 119.38 0)
+			(at 224.79 120.65 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -8794,7 +8794,7 @@
 	)
 	(symbol
 		(lib_id "MagChess:SS49E")
-		(at 148.59 140.97 0)
+		(at 148.59 142.24 0)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
@@ -8803,7 +8803,7 @@
 		(fields_autoplaced yes)
 		(uuid "279d62df-38f4-4160-add0-56d243cf62c8")
 		(property "Reference" "U55"
-			(at 148.59 130.81 0)
+			(at 148.59 132.08 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -8811,7 +8811,7 @@
 			)
 		)
 		(property "Value" "A1302xUA"
-			(at 148.59 133.35 0)
+			(at 148.59 134.62 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -8819,7 +8819,7 @@
 			)
 		)
 		(property "Footprint" "MagChess Footprints:SS49E"
-			(at 148.59 140.97 0)
+			(at 148.59 142.24 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -8829,7 +8829,7 @@
 			)
 		)
 		(property "Datasheet" "SS49E"
-			(at 148.59 140.97 0)
+			(at 148.59 142.24 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -8839,7 +8839,7 @@
 			)
 		)
 		(property "Description" "Linear Hall Effect Sensor, 1.3 mV/G, 4.5-6.0V supply, TO-92S (3-pin SIP)"
-			(at 148.59 140.97 0)
+			(at 148.59 142.24 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -8867,7 +8867,7 @@
 	)
 	(symbol
 		(lib_id "MagChess:SS49E")
-		(at 250.19 184.15 0)
+		(at 250.19 185.42 0)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
@@ -8876,7 +8876,7 @@
 		(fields_autoplaced yes)
 		(uuid "27b6742b-448b-46c0-ad10-6f32da650cbf")
 		(property "Reference" "U23"
-			(at 250.19 173.99 0)
+			(at 250.19 175.26 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -8884,7 +8884,7 @@
 			)
 		)
 		(property "Value" "A1302xUA"
-			(at 250.19 176.53 0)
+			(at 250.19 177.8 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -8892,7 +8892,7 @@
 			)
 		)
 		(property "Footprint" "MagChess Footprints:SS49E"
-			(at 250.19 184.15 0)
+			(at 250.19 185.42 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -8902,7 +8902,7 @@
 			)
 		)
 		(property "Datasheet" "SS49E"
-			(at 250.19 184.15 0)
+			(at 250.19 185.42 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -8912,7 +8912,7 @@
 			)
 		)
 		(property "Description" "Linear Hall Effect Sensor, 1.3 mV/G, 4.5-6.0V supply, TO-92S (3-pin SIP)"
-			(at 250.19 184.15 0)
+			(at 250.19 185.42 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -8940,7 +8940,7 @@
 	)
 	(symbol
 		(lib_id "MagChess:SS49E")
-		(at 275.59 248.92 0)
+		(at 275.59 250.19 0)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
@@ -8949,7 +8949,7 @@
 		(fields_autoplaced yes)
 		(uuid "2839a53c-fa90-4a1d-a887-044746760be7")
 		(property "Reference" "U18"
-			(at 275.59 238.76 0)
+			(at 275.59 240.03 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -8957,7 +8957,7 @@
 			)
 		)
 		(property "Value" "A1302xUA"
-			(at 275.59 241.3 0)
+			(at 275.59 242.57 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -8965,7 +8965,7 @@
 			)
 		)
 		(property "Footprint" "MagChess Footprints:SS49E"
-			(at 275.59 248.92 0)
+			(at 275.59 250.19 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -8975,7 +8975,7 @@
 			)
 		)
 		(property "Datasheet" "SS49E"
-			(at 275.59 248.92 0)
+			(at 275.59 250.19 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -8985,7 +8985,7 @@
 			)
 		)
 		(property "Description" "Linear Hall Effect Sensor, 1.3 mV/G, 4.5-6.0V supply, TO-92S (3-pin SIP)"
-			(at 275.59 248.92 0)
+			(at 275.59 250.19 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -9013,7 +9013,7 @@
 	)
 	(symbol
 		(lib_id "MagChess:SS49E")
-		(at 97.79 119.38 0)
+		(at 97.79 120.65 0)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
@@ -9022,7 +9022,7 @@
 		(fields_autoplaced yes)
 		(uuid "3e73f48a-e39c-4c36-aa80-e4f87b9c2a4d")
 		(property "Reference" "U54"
-			(at 97.79 109.22 0)
+			(at 97.79 110.49 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -9030,7 +9030,7 @@
 			)
 		)
 		(property "Value" "A1302xUA"
-			(at 97.79 111.76 0)
+			(at 97.79 113.03 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -9038,7 +9038,7 @@
 			)
 		)
 		(property "Footprint" "MagChess Footprints:SS49E"
-			(at 97.79 119.38 0)
+			(at 97.79 120.65 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -9048,7 +9048,7 @@
 			)
 		)
 		(property "Datasheet" "SS49E"
-			(at 97.79 119.38 0)
+			(at 97.79 120.65 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -9058,7 +9058,7 @@
 			)
 		)
 		(property "Description" "Linear Hall Effect Sensor, 1.3 mV/G, 4.5-6.0V supply, TO-92S (3-pin SIP)"
-			(at 97.79 119.38 0)
+			(at 97.79 120.65 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -9086,7 +9086,7 @@
 	)
 	(symbol
 		(lib_id "MagChess:SS49E")
-		(at 123.19 140.97 0)
+		(at 123.19 142.24 0)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
@@ -9095,7 +9095,7 @@
 		(fields_autoplaced yes)
 		(uuid "3f06a71b-dff0-46f9-a815-185255e18da4")
 		(property "Reference" "U56"
-			(at 123.19 130.81 0)
+			(at 123.19 132.08 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -9103,7 +9103,7 @@
 			)
 		)
 		(property "Value" "A1302xUA"
-			(at 123.19 133.35 0)
+			(at 123.19 134.62 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -9111,7 +9111,7 @@
 			)
 		)
 		(property "Footprint" "MagChess Footprints:SS49E"
-			(at 123.19 140.97 0)
+			(at 123.19 142.24 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -9121,7 +9121,7 @@
 			)
 		)
 		(property "Datasheet" "SS49E"
-			(at 123.19 140.97 0)
+			(at 123.19 142.24 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -9131,7 +9131,7 @@
 			)
 		)
 		(property "Description" "Linear Hall Effect Sensor, 1.3 mV/G, 4.5-6.0V supply, TO-92S (3-pin SIP)"
-			(at 123.19 140.97 0)
+			(at 123.19 142.24 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -9159,7 +9159,7 @@
 	)
 	(symbol
 		(lib_id "MagChess:SS49E")
-		(at 123.19 248.92 0)
+		(at 123.19 250.19 0)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
@@ -9168,7 +9168,7 @@
 		(fields_autoplaced yes)
 		(uuid "431a5f55-6764-4a00-a4aa-de83eaddcf0d")
 		(property "Reference" "U71"
-			(at 123.19 238.76 0)
+			(at 123.19 240.03 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -9176,7 +9176,7 @@
 			)
 		)
 		(property "Value" "A1302xUA"
-			(at 123.19 241.3 0)
+			(at 123.19 242.57 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -9184,7 +9184,7 @@
 			)
 		)
 		(property "Footprint" "MagChess Footprints:SS49E"
-			(at 123.19 248.92 0)
+			(at 123.19 250.19 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -9194,7 +9194,7 @@
 			)
 		)
 		(property "Datasheet" "SS49E"
-			(at 123.19 248.92 0)
+			(at 123.19 250.19 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -9204,7 +9204,7 @@
 			)
 		)
 		(property "Description" "Linear Hall Effect Sensor, 1.3 mV/G, 4.5-6.0V supply, TO-92S (3-pin SIP)"
-			(at 123.19 248.92 0)
+			(at 123.19 250.19 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -9232,7 +9232,7 @@
 	)
 	(symbol
 		(lib_id "MagChess:SS49E")
-		(at 123.19 227.33 0)
+		(at 123.19 228.6 0)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
@@ -9241,7 +9241,7 @@
 		(fields_autoplaced yes)
 		(uuid "449d9436-c444-483b-8f0a-4b7b428af3a6")
 		(property "Reference" "U68"
-			(at 123.19 217.17 0)
+			(at 123.19 218.44 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -9249,7 +9249,7 @@
 			)
 		)
 		(property "Value" "A1302xUA"
-			(at 123.19 219.71 0)
+			(at 123.19 220.98 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -9257,7 +9257,7 @@
 			)
 		)
 		(property "Footprint" "MagChess Footprints:SS49E"
-			(at 123.19 227.33 0)
+			(at 123.19 228.6 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -9267,7 +9267,7 @@
 			)
 		)
 		(property "Datasheet" "SS49E"
-			(at 123.19 227.33 0)
+			(at 123.19 228.6 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -9277,7 +9277,7 @@
 			)
 		)
 		(property "Description" "Linear Hall Effect Sensor, 1.3 mV/G, 4.5-6.0V supply, TO-92S (3-pin SIP)"
-			(at 123.19 227.33 0)
+			(at 123.19 228.6 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -9305,7 +9305,7 @@
 	)
 	(symbol
 		(lib_id "MagChess:SS49E")
-		(at 97.79 140.97 0)
+		(at 97.79 142.24 0)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
@@ -9314,7 +9314,7 @@
 		(fields_autoplaced yes)
 		(uuid "4b9efdad-cef6-49c9-aec3-24ec7c096956")
 		(property "Reference" "U57"
-			(at 97.79 130.81 0)
+			(at 97.79 132.08 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -9322,7 +9322,7 @@
 			)
 		)
 		(property "Value" "A1302xUA"
-			(at 97.79 133.35 0)
+			(at 97.79 134.62 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -9330,7 +9330,7 @@
 			)
 		)
 		(property "Footprint" "MagChess Footprints:SS49E"
-			(at 97.79 140.97 0)
+			(at 97.79 142.24 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -9340,7 +9340,7 @@
 			)
 		)
 		(property "Datasheet" "SS49E"
-			(at 97.79 140.97 0)
+			(at 97.79 142.24 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -9350,7 +9350,7 @@
 			)
 		)
 		(property "Description" "Linear Hall Effect Sensor, 1.3 mV/G, 4.5-6.0V supply, TO-92S (3-pin SIP)"
-			(at 97.79 140.97 0)
+			(at 97.79 142.24 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -9378,7 +9378,7 @@
 	)
 	(symbol
 		(lib_id "MagChess:SS49E")
-		(at 173.99 270.51 0)
+		(at 173.99 271.78 0)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
@@ -9387,7 +9387,7 @@
 		(fields_autoplaced yes)
 		(uuid "4c2929f5-2e2f-4ee4-8343-229b41c18716")
 		(property "Reference" "U51"
-			(at 173.99 260.35 0)
+			(at 173.99 261.62 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -9395,7 +9395,7 @@
 			)
 		)
 		(property "Value" "A1302xUA"
-			(at 173.99 262.89 0)
+			(at 173.99 264.16 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -9403,7 +9403,7 @@
 			)
 		)
 		(property "Footprint" "MagChess Footprints:SS49E"
-			(at 173.99 270.51 0)
+			(at 173.99 271.78 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -9413,7 +9413,7 @@
 			)
 		)
 		(property "Datasheet" "SS49E"
-			(at 173.99 270.51 0)
+			(at 173.99 271.78 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -9423,7 +9423,7 @@
 			)
 		)
 		(property "Description" "Linear Hall Effect Sensor, 1.3 mV/G, 4.5-6.0V supply, TO-92S (3-pin SIP)"
-			(at 173.99 270.51 0)
+			(at 173.99 271.78 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -9451,7 +9451,7 @@
 	)
 	(symbol
 		(lib_id "MagChess:SS49E")
-		(at 97.79 227.33 0)
+		(at 97.79 228.6 0)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
@@ -9460,7 +9460,7 @@
 		(fields_autoplaced yes)
 		(uuid "4f4cced7-4cfc-4578-b32b-c4c55d1d6acd")
 		(property "Reference" "U69"
-			(at 97.79 217.17 0)
+			(at 97.79 218.44 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -9468,7 +9468,7 @@
 			)
 		)
 		(property "Value" "A1302xUA"
-			(at 97.79 219.71 0)
+			(at 97.79 220.98 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -9476,7 +9476,7 @@
 			)
 		)
 		(property "Footprint" "MagChess Footprints:SS49E"
-			(at 97.79 227.33 0)
+			(at 97.79 228.6 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -9486,7 +9486,7 @@
 			)
 		)
 		(property "Datasheet" "SS49E"
-			(at 97.79 227.33 0)
+			(at 97.79 228.6 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -9496,7 +9496,7 @@
 			)
 		)
 		(property "Description" "Linear Hall Effect Sensor, 1.3 mV/G, 4.5-6.0V supply, TO-92S (3-pin SIP)"
-			(at 97.79 227.33 0)
+			(at 97.79 228.6 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -9524,7 +9524,7 @@
 	)
 	(symbol
 		(lib_id "MagChess:SS49E")
-		(at 97.79 184.15 0)
+		(at 97.79 185.42 0)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
@@ -9533,7 +9533,7 @@
 		(fields_autoplaced yes)
 		(uuid "51dfb972-6a59-4398-baaa-bf4c77556ecd")
 		(property "Reference" "U63"
-			(at 97.79 173.99 0)
+			(at 97.79 175.26 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -9541,7 +9541,7 @@
 			)
 		)
 		(property "Value" "A1302xUA"
-			(at 97.79 176.53 0)
+			(at 97.79 177.8 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -9549,7 +9549,7 @@
 			)
 		)
 		(property "Footprint" "MagChess Footprints:SS49E"
-			(at 97.79 184.15 0)
+			(at 97.79 185.42 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -9559,7 +9559,7 @@
 			)
 		)
 		(property "Datasheet" "SS49E"
-			(at 97.79 184.15 0)
+			(at 97.79 185.42 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -9569,7 +9569,7 @@
 			)
 		)
 		(property "Description" "Linear Hall Effect Sensor, 1.3 mV/G, 4.5-6.0V supply, TO-92S (3-pin SIP)"
-			(at 97.79 184.15 0)
+			(at 97.79 185.42 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -9734,7 +9734,7 @@
 	)
 	(symbol
 		(lib_id "MagChess:SS49E")
-		(at 173.99 119.38 0)
+		(at 173.99 120.65 0)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
@@ -9743,7 +9743,7 @@
 		(fields_autoplaced yes)
 		(uuid "5b7926ad-1536-44c3-bad4-9dfdc6f1d1ab")
 		(property "Reference" "U30"
-			(at 173.99 109.22 0)
+			(at 173.99 110.49 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -9751,7 +9751,7 @@
 			)
 		)
 		(property "Value" "A1302xUA"
-			(at 173.99 111.76 0)
+			(at 173.99 113.03 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -9759,7 +9759,7 @@
 			)
 		)
 		(property "Footprint" "MagChess Footprints:SS49E"
-			(at 173.99 119.38 0)
+			(at 173.99 120.65 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -9769,7 +9769,7 @@
 			)
 		)
 		(property "Datasheet" "SS49E"
-			(at 173.99 119.38 0)
+			(at 173.99 120.65 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -9779,7 +9779,7 @@
 			)
 		)
 		(property "Description" "Linear Hall Effect Sensor, 1.3 mV/G, 4.5-6.0V supply, TO-92S (3-pin SIP)"
-			(at 173.99 119.38 0)
+			(at 173.99 120.65 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -9807,7 +9807,7 @@
 	)
 	(symbol
 		(lib_id "MagChess:SS49E")
-		(at 97.79 162.56 0)
+		(at 97.79 163.83 0)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
@@ -9816,7 +9816,7 @@
 		(fields_autoplaced yes)
 		(uuid "6073e6ba-6052-4570-a942-069bf1f6647a")
 		(property "Reference" "U60"
-			(at 97.79 152.4 0)
+			(at 97.79 153.67 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -9824,7 +9824,7 @@
 			)
 		)
 		(property "Value" "A1302xUA"
-			(at 97.79 154.94 0)
+			(at 97.79 156.21 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -9832,7 +9832,7 @@
 			)
 		)
 		(property "Footprint" "MagChess Footprints:SS49E"
-			(at 97.79 162.56 0)
+			(at 97.79 163.83 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -9842,7 +9842,7 @@
 			)
 		)
 		(property "Datasheet" "SS49E"
-			(at 97.79 162.56 0)
+			(at 97.79 163.83 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -9852,7 +9852,7 @@
 			)
 		)
 		(property "Description" "Linear Hall Effect Sensor, 1.3 mV/G, 4.5-6.0V supply, TO-92S (3-pin SIP)"
-			(at 97.79 162.56 0)
+			(at 97.79 163.83 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -9880,7 +9880,7 @@
 	)
 	(symbol
 		(lib_id "MagChess:SS49E")
-		(at 275.59 227.33 0)
+		(at 275.59 228.6 0)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
@@ -9889,7 +9889,7 @@
 		(fields_autoplaced yes)
 		(uuid "63c99536-8b46-4dc0-92cf-20ab1c929e74")
 		(property "Reference" "U17"
-			(at 275.59 217.17 0)
+			(at 275.59 218.44 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -9897,7 +9897,7 @@
 			)
 		)
 		(property "Value" "A1302xUA"
-			(at 275.59 219.71 0)
+			(at 275.59 220.98 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -9905,7 +9905,7 @@
 			)
 		)
 		(property "Footprint" "MagChess Footprints:SS49E"
-			(at 275.59 227.33 0)
+			(at 275.59 228.6 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -9915,7 +9915,7 @@
 			)
 		)
 		(property "Datasheet" "SS49E"
-			(at 275.59 227.33 0)
+			(at 275.59 228.6 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -9925,7 +9925,7 @@
 			)
 		)
 		(property "Description" "Linear Hall Effect Sensor, 1.3 mV/G, 4.5-6.0V supply, TO-92S (3-pin SIP)"
-			(at 275.59 227.33 0)
+			(at 275.59 228.6 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -9953,7 +9953,7 @@
 	)
 	(symbol
 		(lib_id "MagChess:SS49E")
-		(at 224.79 162.56 0)
+		(at 224.79 163.83 0)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
@@ -9962,7 +9962,7 @@
 		(fields_autoplaced yes)
 		(uuid "652a3117-5fd2-4714-8ae2-604cad901d39")
 		(property "Reference" "U34"
-			(at 224.79 152.4 0)
+			(at 224.79 153.67 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -9970,7 +9970,7 @@
 			)
 		)
 		(property "Value" "A1302xUA"
-			(at 224.79 154.94 0)
+			(at 224.79 156.21 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -9978,7 +9978,7 @@
 			)
 		)
 		(property "Footprint" "MagChess Footprints:SS49E"
-			(at 224.79 162.56 0)
+			(at 224.79 163.83 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -9988,7 +9988,7 @@
 			)
 		)
 		(property "Datasheet" "SS49E"
-			(at 224.79 162.56 0)
+			(at 224.79 163.83 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -9998,7 +9998,7 @@
 			)
 		)
 		(property "Description" "Linear Hall Effect Sensor, 1.3 mV/G, 4.5-6.0V supply, TO-92S (3-pin SIP)"
-			(at 224.79 162.56 0)
+			(at 224.79 163.83 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -10026,7 +10026,7 @@
 	)
 	(symbol
 		(lib_id "MagChess:SS49E")
-		(at 250.19 248.92 0)
+		(at 250.19 250.19 0)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
@@ -10035,7 +10035,7 @@
 		(fields_autoplaced yes)
 		(uuid "66518334-5172-4665-b5d9-a99be7ba8cc8")
 		(property "Reference" "U26"
-			(at 250.19 238.76 0)
+			(at 250.19 240.03 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -10043,7 +10043,7 @@
 			)
 		)
 		(property "Value" "A1302xUA"
-			(at 250.19 241.3 0)
+			(at 250.19 242.57 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -10051,7 +10051,7 @@
 			)
 		)
 		(property "Footprint" "MagChess Footprints:SS49E"
-			(at 250.19 248.92 0)
+			(at 250.19 250.19 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -10061,7 +10061,7 @@
 			)
 		)
 		(property "Datasheet" "SS49E"
-			(at 250.19 248.92 0)
+			(at 250.19 250.19 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -10071,7 +10071,7 @@
 			)
 		)
 		(property "Description" "Linear Hall Effect Sensor, 1.3 mV/G, 4.5-6.0V supply, TO-92S (3-pin SIP)"
-			(at 250.19 248.92 0)
+			(at 250.19 250.19 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -10099,7 +10099,7 @@
 	)
 	(symbol
 		(lib_id "MagChess:SS49E")
-		(at 148.59 119.38 0)
+		(at 148.59 120.65 0)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
@@ -10108,7 +10108,7 @@
 		(fields_autoplaced yes)
 		(uuid "68bba2dd-cb78-4b52-a8a7-6dd8debc73ef")
 		(property "Reference" "U52"
-			(at 148.59 109.22 0)
+			(at 148.59 110.49 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -10116,7 +10116,7 @@
 			)
 		)
 		(property "Value" "A1302xUA"
-			(at 148.59 111.76 0)
+			(at 148.59 113.03 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -10124,7 +10124,7 @@
 			)
 		)
 		(property "Footprint" "MagChess Footprints:SS49E"
-			(at 148.59 119.38 0)
+			(at 148.59 120.65 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -10134,7 +10134,7 @@
 			)
 		)
 		(property "Datasheet" "SS49E"
-			(at 148.59 119.38 0)
+			(at 148.59 120.65 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -10144,7 +10144,7 @@
 			)
 		)
 		(property "Description" "Linear Hall Effect Sensor, 1.3 mV/G, 4.5-6.0V supply, TO-92S (3-pin SIP)"
-			(at 148.59 119.38 0)
+			(at 148.59 120.65 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -10172,7 +10172,7 @@
 	)
 	(symbol
 		(lib_id "MagChess:SS49E")
-		(at 148.59 162.56 0)
+		(at 148.59 163.83 0)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
@@ -10181,7 +10181,7 @@
 		(fields_autoplaced yes)
 		(uuid "6a4ccdd7-42e7-47e8-a9d1-25da3360ed99")
 		(property "Reference" "U58"
-			(at 148.59 152.4 0)
+			(at 148.59 153.67 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -10189,7 +10189,7 @@
 			)
 		)
 		(property "Value" "A1302xUA"
-			(at 148.59 154.94 0)
+			(at 148.59 156.21 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -10197,7 +10197,7 @@
 			)
 		)
 		(property "Footprint" "MagChess Footprints:SS49E"
-			(at 148.59 162.56 0)
+			(at 148.59 163.83 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -10207,7 +10207,7 @@
 			)
 		)
 		(property "Datasheet" "SS49E"
-			(at 148.59 162.56 0)
+			(at 148.59 163.83 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -10217,7 +10217,7 @@
 			)
 		)
 		(property "Description" "Linear Hall Effect Sensor, 1.3 mV/G, 4.5-6.0V supply, TO-92S (3-pin SIP)"
-			(at 148.59 162.56 0)
+			(at 148.59 163.83 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -10245,7 +10245,7 @@
 	)
 	(symbol
 		(lib_id "MagChess:SS49E")
-		(at 275.59 162.56 0)
+		(at 275.59 163.83 0)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
@@ -10254,7 +10254,7 @@
 		(fields_autoplaced yes)
 		(uuid "6f3214c9-adbf-4627-942e-bf71afa9874b")
 		(property "Reference" "U14"
-			(at 275.59 152.4 0)
+			(at 275.59 153.67 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -10262,7 +10262,7 @@
 			)
 		)
 		(property "Value" "A1302xUA"
-			(at 275.59 154.94 0)
+			(at 275.59 156.21 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -10270,7 +10270,7 @@
 			)
 		)
 		(property "Footprint" "MagChess Footprints:SS49E"
-			(at 275.59 162.56 0)
+			(at 275.59 163.83 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -10280,7 +10280,7 @@
 			)
 		)
 		(property "Datasheet" "SS49E"
-			(at 275.59 162.56 0)
+			(at 275.59 163.83 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -10290,7 +10290,7 @@
 			)
 		)
 		(property "Description" "Linear Hall Effect Sensor, 1.3 mV/G, 4.5-6.0V supply, TO-92S (3-pin SIP)"
-			(at 275.59 162.56 0)
+			(at 275.59 163.83 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -10318,7 +10318,7 @@
 	)
 	(symbol
 		(lib_id "MagChess:SS49E")
-		(at 199.39 248.92 0)
+		(at 199.39 250.19 0)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
@@ -10327,7 +10327,7 @@
 		(fields_autoplaced yes)
 		(uuid "71002b1e-5e12-4bff-a3c4-928111125b5f")
 		(property "Reference" "U47"
-			(at 199.39 238.76 0)
+			(at 199.39 240.03 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -10335,7 +10335,7 @@
 			)
 		)
 		(property "Value" "A1302xUA"
-			(at 199.39 241.3 0)
+			(at 199.39 242.57 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -10343,7 +10343,7 @@
 			)
 		)
 		(property "Footprint" "MagChess Footprints:SS49E"
-			(at 199.39 248.92 0)
+			(at 199.39 250.19 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -10353,7 +10353,7 @@
 			)
 		)
 		(property "Datasheet" "SS49E"
-			(at 199.39 248.92 0)
+			(at 199.39 250.19 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -10363,7 +10363,7 @@
 			)
 		)
 		(property "Description" "Linear Hall Effect Sensor, 1.3 mV/G, 4.5-6.0V supply, TO-92S (3-pin SIP)"
-			(at 199.39 248.92 0)
+			(at 199.39 250.19 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -10477,7 +10477,7 @@
 	)
 	(symbol
 		(lib_id "MagChess:SS49E")
-		(at 123.19 119.38 0)
+		(at 123.19 120.65 0)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
@@ -10486,7 +10486,7 @@
 		(fields_autoplaced yes)
 		(uuid "7c31a5af-f4b7-4b76-98d4-e2a169cfdfd5")
 		(property "Reference" "U53"
-			(at 123.19 109.22 0)
+			(at 123.19 110.49 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -10494,7 +10494,7 @@
 			)
 		)
 		(property "Value" "A1302xUA"
-			(at 123.19 111.76 0)
+			(at 123.19 113.03 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -10502,7 +10502,7 @@
 			)
 		)
 		(property "Footprint" "MagChess Footprints:SS49E"
-			(at 123.19 119.38 0)
+			(at 123.19 120.65 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -10512,7 +10512,7 @@
 			)
 		)
 		(property "Datasheet" "SS49E"
-			(at 123.19 119.38 0)
+			(at 123.19 120.65 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -10522,7 +10522,7 @@
 			)
 		)
 		(property "Description" "Linear Hall Effect Sensor, 1.3 mV/G, 4.5-6.0V supply, TO-92S (3-pin SIP)"
-			(at 123.19 119.38 0)
+			(at 123.19 120.65 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -10550,7 +10550,7 @@
 	)
 	(symbol
 		(lib_id "MagChess:SS49E")
-		(at 275.59 184.15 0)
+		(at 275.59 185.42 0)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
@@ -10559,7 +10559,7 @@
 		(fields_autoplaced yes)
 		(uuid "7c5e8ecf-4ddc-4fdb-bcda-a18d4136bc23")
 		(property "Reference" "U15"
-			(at 275.59 173.99 0)
+			(at 275.59 175.26 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -10567,7 +10567,7 @@
 			)
 		)
 		(property "Value" "A1302xUA"
-			(at 275.59 176.53 0)
+			(at 275.59 177.8 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -10575,7 +10575,7 @@
 			)
 		)
 		(property "Footprint" "MagChess Footprints:SS49E"
-			(at 275.59 184.15 0)
+			(at 275.59 185.42 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -10585,7 +10585,7 @@
 			)
 		)
 		(property "Datasheet" "SS49E"
-			(at 275.59 184.15 0)
+			(at 275.59 185.42 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -10595,7 +10595,7 @@
 			)
 		)
 		(property "Description" "Linear Hall Effect Sensor, 1.3 mV/G, 4.5-6.0V supply, TO-92S (3-pin SIP)"
-			(at 275.59 184.15 0)
+			(at 275.59 185.42 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -10623,7 +10623,7 @@
 	)
 	(symbol
 		(lib_id "MagChess:SS49E")
-		(at 199.39 140.97 0)
+		(at 199.39 142.24 0)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
@@ -10632,7 +10632,7 @@
 		(fields_autoplaced yes)
 		(uuid "7c716149-a71b-4f94-8205-d6b9399d0839")
 		(property "Reference" "U32"
-			(at 199.39 130.81 0)
+			(at 199.39 132.08 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -10640,7 +10640,7 @@
 			)
 		)
 		(property "Value" "A1302xUA"
-			(at 199.39 133.35 0)
+			(at 199.39 134.62 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -10648,7 +10648,7 @@
 			)
 		)
 		(property "Footprint" "MagChess Footprints:SS49E"
-			(at 199.39 140.97 0)
+			(at 199.39 142.24 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -10658,7 +10658,7 @@
 			)
 		)
 		(property "Datasheet" "SS49E"
-			(at 199.39 140.97 0)
+			(at 199.39 142.24 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -10668,7 +10668,7 @@
 			)
 		)
 		(property "Description" "Linear Hall Effect Sensor, 1.3 mV/G, 4.5-6.0V supply, TO-92S (3-pin SIP)"
-			(at 199.39 140.97 0)
+			(at 199.39 142.24 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -10696,7 +10696,7 @@
 	)
 	(symbol
 		(lib_id "MagChess:SS49E")
-		(at 199.39 227.33 0)
+		(at 199.39 228.6 0)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
@@ -10705,7 +10705,7 @@
 		(fields_autoplaced yes)
 		(uuid "80ac002f-d030-47c7-8819-e871e948b2f8")
 		(property "Reference" "U44"
-			(at 199.39 217.17 0)
+			(at 199.39 218.44 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -10713,7 +10713,7 @@
 			)
 		)
 		(property "Value" "A1302xUA"
-			(at 199.39 219.71 0)
+			(at 199.39 220.98 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -10721,7 +10721,7 @@
 			)
 		)
 		(property "Footprint" "MagChess Footprints:SS49E"
-			(at 199.39 227.33 0)
+			(at 199.39 228.6 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -10731,7 +10731,7 @@
 			)
 		)
 		(property "Datasheet" "SS49E"
-			(at 199.39 227.33 0)
+			(at 199.39 228.6 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -10741,7 +10741,7 @@
 			)
 		)
 		(property "Description" "Linear Hall Effect Sensor, 1.3 mV/G, 4.5-6.0V supply, TO-92S (3-pin SIP)"
-			(at 199.39 227.33 0)
+			(at 199.39 228.6 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -10769,7 +10769,7 @@
 	)
 	(symbol
 		(lib_id "MagChess:SS49E")
-		(at 123.19 162.56 0)
+		(at 123.19 163.83 0)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
@@ -10778,7 +10778,7 @@
 		(fields_autoplaced yes)
 		(uuid "840ed3e6-c733-46e1-8b0f-a85b0d8815f8")
 		(property "Reference" "U59"
-			(at 123.19 152.4 0)
+			(at 123.19 153.67 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -10786,7 +10786,7 @@
 			)
 		)
 		(property "Value" "A1302xUA"
-			(at 123.19 154.94 0)
+			(at 123.19 156.21 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -10794,7 +10794,7 @@
 			)
 		)
 		(property "Footprint" "MagChess Footprints:SS49E"
-			(at 123.19 162.56 0)
+			(at 123.19 163.83 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -10804,7 +10804,7 @@
 			)
 		)
 		(property "Datasheet" "SS49E"
-			(at 123.19 162.56 0)
+			(at 123.19 163.83 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -10814,7 +10814,7 @@
 			)
 		)
 		(property "Description" "Linear Hall Effect Sensor, 1.3 mV/G, 4.5-6.0V supply, TO-92S (3-pin SIP)"
-			(at 123.19 162.56 0)
+			(at 123.19 163.83 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -10842,7 +10842,7 @@
 	)
 	(symbol
 		(lib_id "MagChess:SS49E")
-		(at 173.99 205.74 0)
+		(at 173.99 207.01 0)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
@@ -10851,7 +10851,7 @@
 		(fields_autoplaced yes)
 		(uuid "842a6ce8-2e53-4c1e-a88f-483cc8e3fd95")
 		(property "Reference" "U42"
-			(at 173.99 195.58 0)
+			(at 173.99 196.85 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -10859,7 +10859,7 @@
 			)
 		)
 		(property "Value" "A1302xUA"
-			(at 173.99 198.12 0)
+			(at 173.99 199.39 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -10867,7 +10867,7 @@
 			)
 		)
 		(property "Footprint" "MagChess Footprints:SS49E"
-			(at 173.99 205.74 0)
+			(at 173.99 207.01 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -10877,7 +10877,7 @@
 			)
 		)
 		(property "Datasheet" "SS49E"
-			(at 173.99 205.74 0)
+			(at 173.99 207.01 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -10887,7 +10887,7 @@
 			)
 		)
 		(property "Description" "Linear Hall Effect Sensor, 1.3 mV/G, 4.5-6.0V supply, TO-92S (3-pin SIP)"
-			(at 173.99 205.74 0)
+			(at 173.99 207.01 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -10915,7 +10915,7 @@
 	)
 	(symbol
 		(lib_id "MagChess:SS49E")
-		(at 97.79 248.92 0)
+		(at 97.79 250.19 0)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
@@ -10924,7 +10924,7 @@
 		(fields_autoplaced yes)
 		(uuid "84a87366-f956-49e5-b979-5ff90e29ec56")
 		(property "Reference" "U72"
-			(at 97.79 238.76 0)
+			(at 97.79 240.03 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -10932,7 +10932,7 @@
 			)
 		)
 		(property "Value" "A1302xUA"
-			(at 97.79 241.3 0)
+			(at 97.79 242.57 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -10940,7 +10940,7 @@
 			)
 		)
 		(property "Footprint" "MagChess Footprints:SS49E"
-			(at 97.79 248.92 0)
+			(at 97.79 250.19 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -10950,7 +10950,7 @@
 			)
 		)
 		(property "Datasheet" "SS49E"
-			(at 97.79 248.92 0)
+			(at 97.79 250.19 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -10960,7 +10960,7 @@
 			)
 		)
 		(property "Description" "Linear Hall Effect Sensor, 1.3 mV/G, 4.5-6.0V supply, TO-92S (3-pin SIP)"
-			(at 97.79 248.92 0)
+			(at 97.79 250.19 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -10988,7 +10988,7 @@
 	)
 	(symbol
 		(lib_id "MagChess:SS49E")
-		(at 123.19 270.51 0)
+		(at 123.19 271.78 0)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
@@ -10997,7 +10997,7 @@
 		(fields_autoplaced yes)
 		(uuid "85f46222-dda8-4864-a901-eff311164169")
 		(property "Reference" "U74"
-			(at 123.19 260.35 0)
+			(at 123.19 261.62 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -11005,7 +11005,7 @@
 			)
 		)
 		(property "Value" "A1302xUA"
-			(at 123.19 262.89 0)
+			(at 123.19 264.16 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -11013,7 +11013,7 @@
 			)
 		)
 		(property "Footprint" "MagChess Footprints:SS49E"
-			(at 123.19 270.51 0)
+			(at 123.19 271.78 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -11023,7 +11023,7 @@
 			)
 		)
 		(property "Datasheet" "SS49E"
-			(at 123.19 270.51 0)
+			(at 123.19 271.78 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -11033,7 +11033,7 @@
 			)
 		)
 		(property "Description" "Linear Hall Effect Sensor, 1.3 mV/G, 4.5-6.0V supply, TO-92S (3-pin SIP)"
-			(at 123.19 270.51 0)
+			(at 123.19 271.78 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -11061,7 +11061,7 @@
 	)
 	(symbol
 		(lib_id "MagChess:SS49E")
-		(at 250.19 119.38 0)
+		(at 250.19 120.65 0)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
@@ -11070,7 +11070,7 @@
 		(fields_autoplaced yes)
 		(uuid "8869d1cc-7d25-4645-82e2-45c8fa103953")
 		(property "Reference" "U20"
-			(at 250.19 109.22 0)
+			(at 250.19 110.49 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -11078,7 +11078,7 @@
 			)
 		)
 		(property "Value" "A1302xUA"
-			(at 250.19 111.76 0)
+			(at 250.19 113.03 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -11086,7 +11086,7 @@
 			)
 		)
 		(property "Footprint" "MagChess Footprints:SS49E"
-			(at 250.19 119.38 0)
+			(at 250.19 120.65 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -11096,7 +11096,7 @@
 			)
 		)
 		(property "Datasheet" "SS49E"
-			(at 250.19 119.38 0)
+			(at 250.19 120.65 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -11106,7 +11106,7 @@
 			)
 		)
 		(property "Description" "Linear Hall Effect Sensor, 1.3 mV/G, 4.5-6.0V supply, TO-92S (3-pin SIP)"
-			(at 250.19 119.38 0)
+			(at 250.19 120.65 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -11134,7 +11134,7 @@
 	)
 	(symbol
 		(lib_id "MagChess:SS49E")
-		(at 199.39 205.74 0)
+		(at 199.39 207.01 0)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
@@ -11143,7 +11143,7 @@
 		(fields_autoplaced yes)
 		(uuid "8fd4d284-717c-4601-8b7d-f2ea62b17241")
 		(property "Reference" "U41"
-			(at 199.39 195.58 0)
+			(at 199.39 196.85 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -11151,7 +11151,7 @@
 			)
 		)
 		(property "Value" "A1302xUA"
-			(at 199.39 198.12 0)
+			(at 199.39 199.39 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -11159,7 +11159,7 @@
 			)
 		)
 		(property "Footprint" "MagChess Footprints:SS49E"
-			(at 199.39 205.74 0)
+			(at 199.39 207.01 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -11169,7 +11169,7 @@
 			)
 		)
 		(property "Datasheet" "SS49E"
-			(at 199.39 205.74 0)
+			(at 199.39 207.01 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -11179,7 +11179,7 @@
 			)
 		)
 		(property "Description" "Linear Hall Effect Sensor, 1.3 mV/G, 4.5-6.0V supply, TO-92S (3-pin SIP)"
-			(at 199.39 205.74 0)
+			(at 199.39 207.01 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -11207,7 +11207,7 @@
 	)
 	(symbol
 		(lib_id "MagChess:SS49E")
-		(at 224.79 270.51 0)
+		(at 224.79 271.78 0)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
@@ -11216,7 +11216,7 @@
 		(fields_autoplaced yes)
 		(uuid "91ad7a5d-2eac-46ab-be5d-4ddea83a95f5")
 		(property "Reference" "U49"
-			(at 224.79 260.35 0)
+			(at 224.79 261.62 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -11224,7 +11224,7 @@
 			)
 		)
 		(property "Value" "A1302xUA"
-			(at 224.79 262.89 0)
+			(at 224.79 264.16 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -11232,7 +11232,7 @@
 			)
 		)
 		(property "Footprint" "MagChess Footprints:SS49E"
-			(at 224.79 270.51 0)
+			(at 224.79 271.78 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -11242,7 +11242,7 @@
 			)
 		)
 		(property "Datasheet" "SS49E"
-			(at 224.79 270.51 0)
+			(at 224.79 271.78 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -11252,7 +11252,7 @@
 			)
 		)
 		(property "Description" "Linear Hall Effect Sensor, 1.3 mV/G, 4.5-6.0V supply, TO-92S (3-pin SIP)"
-			(at 224.79 270.51 0)
+			(at 224.79 271.78 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -11280,7 +11280,7 @@
 	)
 	(symbol
 		(lib_id "MagChess:SS49E")
-		(at 97.79 205.74 0)
+		(at 97.79 207.01 0)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
@@ -11289,7 +11289,7 @@
 		(fields_autoplaced yes)
 		(uuid "94136c4c-e4e3-46b8-86c9-0afa62e272f9")
 		(property "Reference" "U66"
-			(at 97.79 195.58 0)
+			(at 97.79 196.85 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -11297,7 +11297,7 @@
 			)
 		)
 		(property "Value" "A1302xUA"
-			(at 97.79 198.12 0)
+			(at 97.79 199.39 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -11305,7 +11305,7 @@
 			)
 		)
 		(property "Footprint" "MagChess Footprints:SS49E"
-			(at 97.79 205.74 0)
+			(at 97.79 207.01 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -11315,7 +11315,7 @@
 			)
 		)
 		(property "Datasheet" "SS49E"
-			(at 97.79 205.74 0)
+			(at 97.79 207.01 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -11325,7 +11325,7 @@
 			)
 		)
 		(property "Description" "Linear Hall Effect Sensor, 1.3 mV/G, 4.5-6.0V supply, TO-92S (3-pin SIP)"
-			(at 97.79 205.74 0)
+			(at 97.79 207.01 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -11353,7 +11353,7 @@
 	)
 	(symbol
 		(lib_id "MagChess:SS49E")
-		(at 250.19 205.74 0)
+		(at 250.19 207.01 0)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
@@ -11362,7 +11362,7 @@
 		(fields_autoplaced yes)
 		(uuid "9c69fe59-810f-4fc9-8bad-3c0fa43353a5")
 		(property "Reference" "U24"
-			(at 250.19 195.58 0)
+			(at 250.19 196.85 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -11370,7 +11370,7 @@
 			)
 		)
 		(property "Value" "A1302xUA"
-			(at 250.19 198.12 0)
+			(at 250.19 199.39 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -11378,7 +11378,7 @@
 			)
 		)
 		(property "Footprint" "MagChess Footprints:SS49E"
-			(at 250.19 205.74 0)
+			(at 250.19 207.01 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -11388,7 +11388,7 @@
 			)
 		)
 		(property "Datasheet" "SS49E"
-			(at 250.19 205.74 0)
+			(at 250.19 207.01 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -11398,7 +11398,7 @@
 			)
 		)
 		(property "Description" "Linear Hall Effect Sensor, 1.3 mV/G, 4.5-6.0V supply, TO-92S (3-pin SIP)"
-			(at 250.19 205.74 0)
+			(at 250.19 207.01 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -11426,7 +11426,7 @@
 	)
 	(symbol
 		(lib_id "MagChess:SS49E")
-		(at 250.19 140.97 0)
+		(at 250.19 142.24 0)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
@@ -11435,7 +11435,7 @@
 		(fields_autoplaced yes)
 		(uuid "aae6f137-d38e-4db0-9275-30ee3b67abf2")
 		(property "Reference" "U21"
-			(at 250.19 130.81 0)
+			(at 250.19 132.08 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -11443,7 +11443,7 @@
 			)
 		)
 		(property "Value" "A1302xUA"
-			(at 250.19 133.35 0)
+			(at 250.19 134.62 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -11451,7 +11451,7 @@
 			)
 		)
 		(property "Footprint" "MagChess Footprints:SS49E"
-			(at 250.19 140.97 0)
+			(at 250.19 142.24 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -11461,7 +11461,7 @@
 			)
 		)
 		(property "Datasheet" "SS49E"
-			(at 250.19 140.97 0)
+			(at 250.19 142.24 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -11471,7 +11471,7 @@
 			)
 		)
 		(property "Description" "Linear Hall Effect Sensor, 1.3 mV/G, 4.5-6.0V supply, TO-92S (3-pin SIP)"
-			(at 250.19 140.97 0)
+			(at 250.19 142.24 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -11499,7 +11499,7 @@
 	)
 	(symbol
 		(lib_id "MagChess:SS49E")
-		(at 173.99 248.92 0)
+		(at 173.99 250.19 0)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
@@ -11508,7 +11508,7 @@
 		(fields_autoplaced yes)
 		(uuid "af5c10e9-671f-4798-9191-b5d6da887bc5")
 		(property "Reference" "U48"
-			(at 173.99 238.76 0)
+			(at 173.99 240.03 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -11516,7 +11516,7 @@
 			)
 		)
 		(property "Value" "A1302xUA"
-			(at 173.99 241.3 0)
+			(at 173.99 242.57 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -11524,7 +11524,7 @@
 			)
 		)
 		(property "Footprint" "MagChess Footprints:SS49E"
-			(at 173.99 248.92 0)
+			(at 173.99 250.19 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -11534,7 +11534,7 @@
 			)
 		)
 		(property "Datasheet" "SS49E"
-			(at 173.99 248.92 0)
+			(at 173.99 250.19 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -11544,7 +11544,7 @@
 			)
 		)
 		(property "Description" "Linear Hall Effect Sensor, 1.3 mV/G, 4.5-6.0V supply, TO-92S (3-pin SIP)"
-			(at 173.99 248.92 0)
+			(at 173.99 250.19 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -11572,7 +11572,7 @@
 	)
 	(symbol
 		(lib_id "MagChess:SS49E")
-		(at 173.99 162.56 0)
+		(at 173.99 163.83 0)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
@@ -11581,7 +11581,7 @@
 		(fields_autoplaced yes)
 		(uuid "b4e5526c-fd4e-4664-a41b-a44af36cdd9e")
 		(property "Reference" "U36"
-			(at 173.99 152.4 0)
+			(at 173.99 153.67 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -11589,7 +11589,7 @@
 			)
 		)
 		(property "Value" "A1302xUA"
-			(at 173.99 154.94 0)
+			(at 173.99 156.21 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -11597,7 +11597,7 @@
 			)
 		)
 		(property "Footprint" "MagChess Footprints:SS49E"
-			(at 173.99 162.56 0)
+			(at 173.99 163.83 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -11607,7 +11607,7 @@
 			)
 		)
 		(property "Datasheet" "SS49E"
-			(at 173.99 162.56 0)
+			(at 173.99 163.83 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -11617,7 +11617,7 @@
 			)
 		)
 		(property "Description" "Linear Hall Effect Sensor, 1.3 mV/G, 4.5-6.0V supply, TO-92S (3-pin SIP)"
-			(at 173.99 162.56 0)
+			(at 173.99 163.83 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -11645,7 +11645,7 @@
 	)
 	(symbol
 		(lib_id "MagChess:SS49E")
-		(at 123.19 205.74 0)
+		(at 123.19 207.01 0)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
@@ -11654,7 +11654,7 @@
 		(fields_autoplaced yes)
 		(uuid "b77044e5-745e-4d38-9a86-695e12fbd524")
 		(property "Reference" "U65"
-			(at 123.19 195.58 0)
+			(at 123.19 196.85 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -11662,7 +11662,7 @@
 			)
 		)
 		(property "Value" "A1302xUA"
-			(at 123.19 198.12 0)
+			(at 123.19 199.39 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -11670,7 +11670,7 @@
 			)
 		)
 		(property "Footprint" "MagChess Footprints:SS49E"
-			(at 123.19 205.74 0)
+			(at 123.19 207.01 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -11680,7 +11680,7 @@
 			)
 		)
 		(property "Datasheet" "SS49E"
-			(at 123.19 205.74 0)
+			(at 123.19 207.01 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -11690,7 +11690,7 @@
 			)
 		)
 		(property "Description" "Linear Hall Effect Sensor, 1.3 mV/G, 4.5-6.0V supply, TO-92S (3-pin SIP)"
-			(at 123.19 205.74 0)
+			(at 123.19 207.01 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -11718,7 +11718,7 @@
 	)
 	(symbol
 		(lib_id "MagChess:SS49E")
-		(at 173.99 227.33 0)
+		(at 173.99 228.6 0)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
@@ -11727,7 +11727,7 @@
 		(fields_autoplaced yes)
 		(uuid "bb05a965-d2d8-423f-9630-cd1e0eb65cd5")
 		(property "Reference" "U45"
-			(at 173.99 217.17 0)
+			(at 173.99 218.44 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -11735,7 +11735,7 @@
 			)
 		)
 		(property "Value" "A1302xUA"
-			(at 173.99 219.71 0)
+			(at 173.99 220.98 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -11743,7 +11743,7 @@
 			)
 		)
 		(property "Footprint" "MagChess Footprints:SS49E"
-			(at 173.99 227.33 0)
+			(at 173.99 228.6 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -11753,7 +11753,7 @@
 			)
 		)
 		(property "Datasheet" "SS49E"
-			(at 173.99 227.33 0)
+			(at 173.99 228.6 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -11763,7 +11763,7 @@
 			)
 		)
 		(property "Description" "Linear Hall Effect Sensor, 1.3 mV/G, 4.5-6.0V supply, TO-92S (3-pin SIP)"
-			(at 173.99 227.33 0)
+			(at 173.99 228.6 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -11791,7 +11791,7 @@
 	)
 	(symbol
 		(lib_id "MagChess:SS49E")
-		(at 224.79 205.74 0)
+		(at 224.79 207.01 0)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
@@ -11800,7 +11800,7 @@
 		(fields_autoplaced yes)
 		(uuid "bdfe6afb-5c11-4e66-bbff-6e480b27f869")
 		(property "Reference" "U40"
-			(at 224.79 195.58 0)
+			(at 224.79 196.85 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -11808,7 +11808,7 @@
 			)
 		)
 		(property "Value" "A1302xUA"
-			(at 224.79 198.12 0)
+			(at 224.79 199.39 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -11816,7 +11816,7 @@
 			)
 		)
 		(property "Footprint" "MagChess Footprints:SS49E"
-			(at 224.79 205.74 0)
+			(at 224.79 207.01 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -11826,7 +11826,7 @@
 			)
 		)
 		(property "Datasheet" "SS49E"
-			(at 224.79 205.74 0)
+			(at 224.79 207.01 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -11836,7 +11836,7 @@
 			)
 		)
 		(property "Description" "Linear Hall Effect Sensor, 1.3 mV/G, 4.5-6.0V supply, TO-92S (3-pin SIP)"
-			(at 224.79 205.74 0)
+			(at 224.79 207.01 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -11864,7 +11864,7 @@
 	)
 	(symbol
 		(lib_id "MagChess:SS49E")
-		(at 148.59 205.74 0)
+		(at 148.59 207.01 0)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
@@ -11873,7 +11873,7 @@
 		(fields_autoplaced yes)
 		(uuid "be2159fe-dad6-410f-943e-c9eca4c1e1a3")
 		(property "Reference" "U64"
-			(at 148.59 195.58 0)
+			(at 148.59 196.85 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -11881,7 +11881,7 @@
 			)
 		)
 		(property "Value" "A1302xUA"
-			(at 148.59 198.12 0)
+			(at 148.59 199.39 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -11889,7 +11889,7 @@
 			)
 		)
 		(property "Footprint" "MagChess Footprints:SS49E"
-			(at 148.59 205.74 0)
+			(at 148.59 207.01 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -11899,7 +11899,7 @@
 			)
 		)
 		(property "Datasheet" "SS49E"
-			(at 148.59 205.74 0)
+			(at 148.59 207.01 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -11909,7 +11909,7 @@
 			)
 		)
 		(property "Description" "Linear Hall Effect Sensor, 1.3 mV/G, 4.5-6.0V supply, TO-92S (3-pin SIP)"
-			(at 148.59 205.74 0)
+			(at 148.59 207.01 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -11937,7 +11937,7 @@
 	)
 	(symbol
 		(lib_id "MagChess:SS49E")
-		(at 173.99 140.97 0)
+		(at 173.99 142.24 0)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
@@ -11946,7 +11946,7 @@
 		(fields_autoplaced yes)
 		(uuid "bec00b72-70d0-42d6-a7a9-4e0555fc0baf")
 		(property "Reference" "U33"
-			(at 173.99 130.81 0)
+			(at 173.99 132.08 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -11954,7 +11954,7 @@
 			)
 		)
 		(property "Value" "A1302xUA"
-			(at 173.99 133.35 0)
+			(at 173.99 134.62 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -11962,7 +11962,7 @@
 			)
 		)
 		(property "Footprint" "MagChess Footprints:SS49E"
-			(at 173.99 140.97 0)
+			(at 173.99 142.24 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -11972,7 +11972,7 @@
 			)
 		)
 		(property "Datasheet" "SS49E"
-			(at 173.99 140.97 0)
+			(at 173.99 142.24 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -11982,7 +11982,7 @@
 			)
 		)
 		(property "Description" "Linear Hall Effect Sensor, 1.3 mV/G, 4.5-6.0V supply, TO-92S (3-pin SIP)"
-			(at 173.99 140.97 0)
+			(at 173.99 142.24 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -12010,7 +12010,7 @@
 	)
 	(symbol
 		(lib_id "MagChess:SS49E")
-		(at 250.19 227.33 0)
+		(at 250.19 228.6 0)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
@@ -12019,7 +12019,7 @@
 		(fields_autoplaced yes)
 		(uuid "c55621c9-e425-4778-9805-284365d363ab")
 		(property "Reference" "U25"
-			(at 250.19 217.17 0)
+			(at 250.19 218.44 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -12027,7 +12027,7 @@
 			)
 		)
 		(property "Value" "A1302xUA"
-			(at 250.19 219.71 0)
+			(at 250.19 220.98 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -12035,7 +12035,7 @@
 			)
 		)
 		(property "Footprint" "MagChess Footprints:SS49E"
-			(at 250.19 227.33 0)
+			(at 250.19 228.6 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -12045,7 +12045,7 @@
 			)
 		)
 		(property "Datasheet" "SS49E"
-			(at 250.19 227.33 0)
+			(at 250.19 228.6 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -12055,7 +12055,7 @@
 			)
 		)
 		(property "Description" "Linear Hall Effect Sensor, 1.3 mV/G, 4.5-6.0V supply, TO-92S (3-pin SIP)"
-			(at 250.19 227.33 0)
+			(at 250.19 228.6 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -12083,7 +12083,7 @@
 	)
 	(symbol
 		(lib_id "MagChess:SS49E")
-		(at 97.79 270.51 0)
+		(at 97.79 271.78 0)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
@@ -12092,7 +12092,7 @@
 		(fields_autoplaced yes)
 		(uuid "c9678906-aa19-485c-85c8-6c46e34b0da5")
 		(property "Reference" "U75"
-			(at 97.79 260.35 0)
+			(at 97.79 261.62 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -12100,7 +12100,7 @@
 			)
 		)
 		(property "Value" "A1302xUA"
-			(at 97.79 262.89 0)
+			(at 97.79 264.16 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -12108,7 +12108,7 @@
 			)
 		)
 		(property "Footprint" "MagChess Footprints:SS49E"
-			(at 97.79 270.51 0)
+			(at 97.79 271.78 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -12118,7 +12118,7 @@
 			)
 		)
 		(property "Datasheet" "SS49E"
-			(at 97.79 270.51 0)
+			(at 97.79 271.78 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -12128,7 +12128,7 @@
 			)
 		)
 		(property "Description" "Linear Hall Effect Sensor, 1.3 mV/G, 4.5-6.0V supply, TO-92S (3-pin SIP)"
-			(at 97.79 270.51 0)
+			(at 97.79 271.78 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -12156,7 +12156,7 @@
 	)
 	(symbol
 		(lib_id "MagChess:SS49E")
-		(at 173.99 184.15 0)
+		(at 173.99 185.42 0)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
@@ -12165,7 +12165,7 @@
 		(fields_autoplaced yes)
 		(uuid "cb62f943-a84c-4602-97c4-1af076ca1a06")
 		(property "Reference" "U39"
-			(at 173.99 173.99 0)
+			(at 173.99 175.26 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -12173,7 +12173,7 @@
 			)
 		)
 		(property "Value" "A1302xUA"
-			(at 173.99 176.53 0)
+			(at 173.99 177.8 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -12181,7 +12181,7 @@
 			)
 		)
 		(property "Footprint" "MagChess Footprints:SS49E"
-			(at 173.99 184.15 0)
+			(at 173.99 185.42 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -12191,7 +12191,7 @@
 			)
 		)
 		(property "Datasheet" "SS49E"
-			(at 173.99 184.15 0)
+			(at 173.99 185.42 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -12201,7 +12201,7 @@
 			)
 		)
 		(property "Description" "Linear Hall Effect Sensor, 1.3 mV/G, 4.5-6.0V supply, TO-92S (3-pin SIP)"
-			(at 173.99 184.15 0)
+			(at 173.99 185.42 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -12229,7 +12229,7 @@
 	)
 	(symbol
 		(lib_id "MagChess:SS49E")
-		(at 224.79 227.33 0)
+		(at 224.79 228.6 0)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
@@ -12238,7 +12238,7 @@
 		(fields_autoplaced yes)
 		(uuid "da8f8d32-d86d-4b9b-b5e4-5cc6830fb712")
 		(property "Reference" "U43"
-			(at 224.79 217.17 0)
+			(at 224.79 218.44 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -12246,7 +12246,7 @@
 			)
 		)
 		(property "Value" "A1302xUA"
-			(at 224.79 219.71 0)
+			(at 224.79 220.98 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -12254,7 +12254,7 @@
 			)
 		)
 		(property "Footprint" "MagChess Footprints:SS49E"
-			(at 224.79 227.33 0)
+			(at 224.79 228.6 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -12264,7 +12264,7 @@
 			)
 		)
 		(property "Datasheet" "SS49E"
-			(at 224.79 227.33 0)
+			(at 224.79 228.6 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -12274,7 +12274,7 @@
 			)
 		)
 		(property "Description" "Linear Hall Effect Sensor, 1.3 mV/G, 4.5-6.0V supply, TO-92S (3-pin SIP)"
-			(at 224.79 227.33 0)
+			(at 224.79 228.6 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -12302,7 +12302,7 @@
 	)
 	(symbol
 		(lib_id "MagChess:SS49E")
-		(at 199.39 184.15 0)
+		(at 199.39 185.42 0)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
@@ -12311,7 +12311,7 @@
 		(fields_autoplaced yes)
 		(uuid "daa1ba97-21cb-411b-b026-ed102d7cba91")
 		(property "Reference" "U38"
-			(at 199.39 173.99 0)
+			(at 199.39 175.26 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -12319,7 +12319,7 @@
 			)
 		)
 		(property "Value" "A1302xUA"
-			(at 199.39 176.53 0)
+			(at 199.39 177.8 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -12327,7 +12327,7 @@
 			)
 		)
 		(property "Footprint" "MagChess Footprints:SS49E"
-			(at 199.39 184.15 0)
+			(at 199.39 185.42 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -12337,7 +12337,7 @@
 			)
 		)
 		(property "Datasheet" "SS49E"
-			(at 199.39 184.15 0)
+			(at 199.39 185.42 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -12347,7 +12347,7 @@
 			)
 		)
 		(property "Description" "Linear Hall Effect Sensor, 1.3 mV/G, 4.5-6.0V supply, TO-92S (3-pin SIP)"
-			(at 199.39 184.15 0)
+			(at 199.39 185.42 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -12512,7 +12512,7 @@
 	)
 	(symbol
 		(lib_id "MagChess:SS49E")
-		(at 123.19 184.15 0)
+		(at 123.19 185.42 0)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
@@ -12521,7 +12521,7 @@
 		(fields_autoplaced yes)
 		(uuid "dd9c5cf7-428f-4a2b-8852-d20c4a9ca01e")
 		(property "Reference" "U62"
-			(at 123.19 173.99 0)
+			(at 123.19 175.26 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -12529,7 +12529,7 @@
 			)
 		)
 		(property "Value" "A1302xUA"
-			(at 123.19 176.53 0)
+			(at 123.19 177.8 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -12537,7 +12537,7 @@
 			)
 		)
 		(property "Footprint" "MagChess Footprints:SS49E"
-			(at 123.19 184.15 0)
+			(at 123.19 185.42 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -12547,7 +12547,7 @@
 			)
 		)
 		(property "Datasheet" "SS49E"
-			(at 123.19 184.15 0)
+			(at 123.19 185.42 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -12557,7 +12557,7 @@
 			)
 		)
 		(property "Description" "Linear Hall Effect Sensor, 1.3 mV/G, 4.5-6.0V supply, TO-92S (3-pin SIP)"
-			(at 123.19 184.15 0)
+			(at 123.19 185.42 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -12722,7 +12722,7 @@
 	)
 	(symbol
 		(lib_id "MagChess:SS49E")
-		(at 199.39 162.56 0)
+		(at 199.39 163.83 0)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
@@ -12731,7 +12731,7 @@
 		(fields_autoplaced yes)
 		(uuid "e5225d26-0911-40c7-a4a8-fe33e84ddab8")
 		(property "Reference" "U35"
-			(at 199.39 152.4 0)
+			(at 199.39 153.67 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -12739,7 +12739,7 @@
 			)
 		)
 		(property "Value" "A1302xUA"
-			(at 199.39 154.94 0)
+			(at 199.39 156.21 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -12747,7 +12747,7 @@
 			)
 		)
 		(property "Footprint" "MagChess Footprints:SS49E"
-			(at 199.39 162.56 0)
+			(at 199.39 163.83 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -12757,7 +12757,7 @@
 			)
 		)
 		(property "Datasheet" "SS49E"
-			(at 199.39 162.56 0)
+			(at 199.39 163.83 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -12767,7 +12767,7 @@
 			)
 		)
 		(property "Description" "Linear Hall Effect Sensor, 1.3 mV/G, 4.5-6.0V supply, TO-92S (3-pin SIP)"
-			(at 199.39 162.56 0)
+			(at 199.39 163.83 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -12795,7 +12795,7 @@
 	)
 	(symbol
 		(lib_id "MagChess:SS49E")
-		(at 275.59 119.38 0)
+		(at 275.59 120.65 0)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
@@ -12804,7 +12804,7 @@
 		(fields_autoplaced yes)
 		(uuid "e9a49c94-1b1c-4f8a-a5d9-a7f22296f07c")
 		(property "Reference" "U12"
-			(at 275.59 109.22 0)
+			(at 275.59 110.49 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -12812,7 +12812,7 @@
 			)
 		)
 		(property "Value" "A1302xUA"
-			(at 275.59 111.76 0)
+			(at 275.59 113.03 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -12820,7 +12820,7 @@
 			)
 		)
 		(property "Footprint" "MagChess Footprints:SS49E"
-			(at 275.59 119.38 0)
+			(at 275.59 120.65 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -12830,7 +12830,7 @@
 			)
 		)
 		(property "Datasheet" "SS49E"
-			(at 275.59 119.38 0)
+			(at 275.59 120.65 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -12840,7 +12840,7 @@
 			)
 		)
 		(property "Description" "Linear Hall Effect Sensor, 1.3 mV/G, 4.5-6.0V supply, TO-92S (3-pin SIP)"
-			(at 275.59 119.38 0)
+			(at 275.59 120.65 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -12868,7 +12868,7 @@
 	)
 	(symbol
 		(lib_id "MagChess:SS49E")
-		(at 199.39 119.38 0)
+		(at 199.39 120.65 0)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
@@ -12877,7 +12877,7 @@
 		(fields_autoplaced yes)
 		(uuid "ea8ffafd-725f-48ae-aac5-ca7f20726d48")
 		(property "Reference" "U29"
-			(at 199.39 109.22 0)
+			(at 199.39 110.49 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -12885,7 +12885,7 @@
 			)
 		)
 		(property "Value" "A1302xUA"
-			(at 199.39 111.76 0)
+			(at 199.39 113.03 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -12893,7 +12893,7 @@
 			)
 		)
 		(property "Footprint" "MagChess Footprints:SS49E"
-			(at 199.39 119.38 0)
+			(at 199.39 120.65 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -12903,7 +12903,7 @@
 			)
 		)
 		(property "Datasheet" "SS49E"
-			(at 199.39 119.38 0)
+			(at 199.39 120.65 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -12913,7 +12913,7 @@
 			)
 		)
 		(property "Description" "Linear Hall Effect Sensor, 1.3 mV/G, 4.5-6.0V supply, TO-92S (3-pin SIP)"
-			(at 199.39 119.38 0)
+			(at 199.39 120.65 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -12941,7 +12941,7 @@
 	)
 	(symbol
 		(lib_id "MagChess:SS49E")
-		(at 250.19 162.56 0)
+		(at 250.19 163.83 0)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
@@ -12950,7 +12950,7 @@
 		(fields_autoplaced yes)
 		(uuid "ec5d3655-ae39-420c-9dd6-dec41eef7a6c")
 		(property "Reference" "U22"
-			(at 250.19 152.4 0)
+			(at 250.19 153.67 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -12958,7 +12958,7 @@
 			)
 		)
 		(property "Value" "A1302xUA"
-			(at 250.19 154.94 0)
+			(at 250.19 156.21 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -12966,7 +12966,7 @@
 			)
 		)
 		(property "Footprint" "MagChess Footprints:SS49E"
-			(at 250.19 162.56 0)
+			(at 250.19 163.83 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -12976,7 +12976,7 @@
 			)
 		)
 		(property "Datasheet" "SS49E"
-			(at 250.19 162.56 0)
+			(at 250.19 163.83 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -12986,7 +12986,7 @@
 			)
 		)
 		(property "Description" "Linear Hall Effect Sensor, 1.3 mV/G, 4.5-6.0V supply, TO-92S (3-pin SIP)"
-			(at 250.19 162.56 0)
+			(at 250.19 163.83 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -13014,7 +13014,7 @@
 	)
 	(symbol
 		(lib_id "MagChess:SS49E")
-		(at 275.59 205.74 0)
+		(at 275.59 207.01 0)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
@@ -13023,7 +13023,7 @@
 		(fields_autoplaced yes)
 		(uuid "ed9af7b6-4031-4d4a-99a4-a8b949aa8431")
 		(property "Reference" "U16"
-			(at 275.59 195.58 0)
+			(at 275.59 196.85 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -13031,7 +13031,7 @@
 			)
 		)
 		(property "Value" "A1302xUA"
-			(at 275.59 198.12 0)
+			(at 275.59 199.39 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -13039,7 +13039,7 @@
 			)
 		)
 		(property "Footprint" "MagChess Footprints:SS49E"
-			(at 275.59 205.74 0)
+			(at 275.59 207.01 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -13049,7 +13049,7 @@
 			)
 		)
 		(property "Datasheet" "SS49E"
-			(at 275.59 205.74 0)
+			(at 275.59 207.01 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -13059,7 +13059,7 @@
 			)
 		)
 		(property "Description" "Linear Hall Effect Sensor, 1.3 mV/G, 4.5-6.0V supply, TO-92S (3-pin SIP)"
-			(at 275.59 205.74 0)
+			(at 275.59 207.01 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -13162,7 +13162,7 @@
 	)
 	(symbol
 		(lib_id "MagChess:SS49E")
-		(at 224.79 140.97 0)
+		(at 224.79 142.24 0)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
@@ -13171,7 +13171,7 @@
 		(fields_autoplaced yes)
 		(uuid "fd16221b-af2e-4a42-9e0c-1d90eb10ad11")
 		(property "Reference" "U31"
-			(at 224.79 130.81 0)
+			(at 224.79 132.08 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -13179,7 +13179,7 @@
 			)
 		)
 		(property "Value" "A1302xUA"
-			(at 224.79 133.35 0)
+			(at 224.79 134.62 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -13187,7 +13187,7 @@
 			)
 		)
 		(property "Footprint" "MagChess Footprints:SS49E"
-			(at 224.79 140.97 0)
+			(at 224.79 142.24 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -13197,7 +13197,7 @@
 			)
 		)
 		(property "Datasheet" "SS49E"
-			(at 224.79 140.97 0)
+			(at 224.79 142.24 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -13207,7 +13207,7 @@
 			)
 		)
 		(property "Description" "Linear Hall Effect Sensor, 1.3 mV/G, 4.5-6.0V supply, TO-92S (3-pin SIP)"
-			(at 224.79 140.97 0)
+			(at 224.79 142.24 0)
 			(effects
 				(font
 					(size 1.27 1.27)

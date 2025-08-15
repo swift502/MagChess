@@ -231,7 +231,7 @@
 		)
 		(symbol "SS49E_0_1"
 			(pin power_in line
-				(at -10.16 1.27 0)
+				(at -10.16 2.54 0)
 				(length 5.08)
 				(name "VCC"
 					(effects
@@ -248,26 +248,8 @@
 					)
 				)
 			)
-			(pin power_in line
-				(at 0 -8.89 90)
-				(length 5.08)
-				(name "GND"
-					(effects
-						(font
-							(size 1.27 1.27)
-						)
-					)
-				)
-				(number "2"
-					(effects
-						(font
-							(size 1.27 1.27)
-						)
-					)
-				)
-			)
 			(pin output line
-				(at 10.16 1.27 180)
+				(at 0 -8.89 90)
 				(length 5.08)
 				(name "OUT"
 					(effects
@@ -284,12 +266,30 @@
 					)
 				)
 			)
+			(pin power_in line
+				(at 10.16 2.54 180)
+				(length 5.08)
+				(name "GND"
+					(effects
+						(font
+							(size 1.27 1.27)
+						)
+					)
+				)
+				(number "2"
+					(effects
+						(font
+							(size 1.27 1.27)
+						)
+					)
+				)
+			)
 		)
 		(symbol "SS49E_1_1"
 			(polyline
 				(pts
-					(xy 5.08 -3.81) (xy 5.08 2.54) (xy 2.54 5.08) (xy -2.54 5.08) (xy -5.08 2.54) (xy -5.08 -3.81)
-					(xy 5.08 -3.81)
+					(xy 2.54 -3.81) (xy 5.08 -1.27) (xy 5.08 5.08) (xy -5.08 5.08) (xy -5.08 -1.27) (xy -2.54 -3.81)
+					(xy 2.54 -3.81)
 				)
 				(stroke
 					(width 0)
