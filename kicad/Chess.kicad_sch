@@ -1597,7 +1597,7 @@
 			)
 			(embedded_fonts no)
 		)
-		(symbol "New_Library:MP1584EN"
+		(symbol "MagChess:MP1584EN"
 			(exclude_from_sim no)
 			(in_bom yes)
 			(on_board yes)
@@ -1753,7 +1753,7 @@
 			)
 			(embedded_fonts no)
 		)
-		(symbol "SS49E:SS49E"
+		(symbol "MagChess:SS49E"
 			(pin_names
 				(offset 0.254)
 			)
@@ -8171,7 +8171,7 @@
 		)
 	)
 	(symbol
-		(lib_id "SS49E:SS49E")
+		(lib_id "MagChess:SS49E")
 		(at 203.2 237.49 0)
 		(unit 1)
 		(exclude_from_sim no)
@@ -8244,7 +8244,7 @@
 		)
 	)
 	(symbol
-		(lib_id "SS49E:SS49E")
+		(lib_id "MagChess:SS49E")
 		(at 228.6 151.13 0)
 		(unit 1)
 		(exclude_from_sim no)
@@ -8317,7 +8317,7 @@
 		)
 	)
 	(symbol
-		(lib_id "SS49E:SS49E")
+		(lib_id "MagChess:SS49E")
 		(at 152.4 237.49 0)
 		(unit 1)
 		(exclude_from_sim no)
@@ -8390,7 +8390,7 @@
 		)
 	)
 	(symbol
-		(lib_id "SS49E:SS49E")
+		(lib_id "MagChess:SS49E")
 		(at 152.4 151.13 0)
 		(unit 1)
 		(exclude_from_sim no)
@@ -8694,7 +8694,7 @@
 		)
 	)
 	(symbol
-		(lib_id "SS49E:SS49E")
+		(lib_id "MagChess:SS49E")
 		(at 152.4 215.9 0)
 		(unit 1)
 		(exclude_from_sim no)
@@ -8767,7 +8767,7 @@
 		)
 	)
 	(symbol
-		(lib_id "SS49E:SS49E")
+		(lib_id "MagChess:SS49E")
 		(at 279.4 237.49 0)
 		(unit 1)
 		(exclude_from_sim no)
@@ -8840,7 +8840,7 @@
 		)
 	)
 	(symbol
-		(lib_id "SS49E:SS49E")
+		(lib_id "MagChess:SS49E")
 		(at 279.4 107.95 0)
 		(unit 1)
 		(exclude_from_sim no)
@@ -8913,7 +8913,7 @@
 		)
 	)
 	(symbol
-		(lib_id "SS49E:SS49E")
+		(lib_id "MagChess:SS49E")
 		(at 228.6 215.9 0)
 		(unit 1)
 		(exclude_from_sim no)
@@ -8986,7 +8986,7 @@
 		)
 	)
 	(symbol
-		(lib_id "SS49E:SS49E")
+		(lib_id "MagChess:SS49E")
 		(at 152.4 194.31 0)
 		(unit 1)
 		(exclude_from_sim no)
@@ -9059,7 +9059,7 @@
 		)
 	)
 	(symbol
-		(lib_id "SS49E:SS49E")
+		(lib_id "MagChess:SS49E")
 		(at 254 237.49 0)
 		(unit 1)
 		(exclude_from_sim no)
@@ -9132,7 +9132,7 @@
 		)
 	)
 	(symbol
-		(lib_id "SS49E:SS49E")
+		(lib_id "MagChess:SS49E")
 		(at 228.6 86.36 0)
 		(unit 1)
 		(exclude_from_sim no)
@@ -9205,7 +9205,7 @@
 		)
 	)
 	(symbol
-		(lib_id "SS49E:SS49E")
+		(lib_id "MagChess:SS49E")
 		(at 152.4 107.95 0)
 		(unit 1)
 		(exclude_from_sim no)
@@ -9278,7 +9278,7 @@
 		)
 	)
 	(symbol
-		(lib_id "SS49E:SS49E")
+		(lib_id "MagChess:SS49E")
 		(at 254 151.13 0)
 		(unit 1)
 		(exclude_from_sim no)
@@ -9351,7 +9351,7 @@
 		)
 	)
 	(symbol
-		(lib_id "SS49E:SS49E")
+		(lib_id "MagChess:SS49E")
 		(at 279.4 215.9 0)
 		(unit 1)
 		(exclude_from_sim no)
@@ -9424,7 +9424,7 @@
 		)
 	)
 	(symbol
-		(lib_id "SS49E:SS49E")
+		(lib_id "MagChess:SS49E")
 		(at 101.6 86.36 0)
 		(unit 1)
 		(exclude_from_sim no)
@@ -9497,7 +9497,7 @@
 		)
 	)
 	(symbol
-		(lib_id "SS49E:SS49E")
+		(lib_id "MagChess:SS49E")
 		(at 127 107.95 0)
 		(unit 1)
 		(exclude_from_sim no)
@@ -9570,7 +9570,7 @@
 		)
 	)
 	(symbol
-		(lib_id "SS49E:SS49E")
+		(lib_id "MagChess:SS49E")
 		(at 127 215.9 0)
 		(unit 1)
 		(exclude_from_sim no)
@@ -9643,7 +9643,7 @@
 		)
 	)
 	(symbol
-		(lib_id "SS49E:SS49E")
+		(lib_id "MagChess:SS49E")
 		(at 127 194.31 0)
 		(unit 1)
 		(exclude_from_sim no)
@@ -9716,7 +9716,7 @@
 		)
 	)
 	(symbol
-		(lib_id "SS49E:SS49E")
+		(lib_id "MagChess:SS49E")
 		(at 101.6 107.95 0)
 		(unit 1)
 		(exclude_from_sim no)
@@ -9789,7 +9789,7 @@
 		)
 	)
 	(symbol
-		(lib_id "SS49E:SS49E")
+		(lib_id "MagChess:SS49E")
 		(at 177.8 237.49 0)
 		(unit 1)
 		(exclude_from_sim no)
@@ -9862,7 +9862,7 @@
 		)
 	)
 	(symbol
-		(lib_id "SS49E:SS49E")
+		(lib_id "MagChess:SS49E")
 		(at 101.6 194.31 0)
 		(unit 1)
 		(exclude_from_sim no)
@@ -9935,7 +9935,7 @@
 		)
 	)
 	(symbol
-		(lib_id "SS49E:SS49E")
+		(lib_id "MagChess:SS49E")
 		(at 101.6 151.13 0)
 		(unit 1)
 		(exclude_from_sim no)
@@ -10145,7 +10145,7 @@
 		)
 	)
 	(symbol
-		(lib_id "SS49E:SS49E")
+		(lib_id "MagChess:SS49E")
 		(at 177.8 86.36 0)
 		(unit 1)
 		(exclude_from_sim no)
@@ -10218,7 +10218,7 @@
 		)
 	)
 	(symbol
-		(lib_id "SS49E:SS49E")
+		(lib_id "MagChess:SS49E")
 		(at 101.6 129.54 0)
 		(unit 1)
 		(exclude_from_sim no)
@@ -10291,7 +10291,7 @@
 		)
 	)
 	(symbol
-		(lib_id "SS49E:SS49E")
+		(lib_id "MagChess:SS49E")
 		(at 279.4 194.31 0)
 		(unit 1)
 		(exclude_from_sim no)
@@ -10364,7 +10364,7 @@
 		)
 	)
 	(symbol
-		(lib_id "SS49E:SS49E")
+		(lib_id "MagChess:SS49E")
 		(at 228.6 129.54 0)
 		(unit 1)
 		(exclude_from_sim no)
@@ -10437,7 +10437,7 @@
 		)
 	)
 	(symbol
-		(lib_id "SS49E:SS49E")
+		(lib_id "MagChess:SS49E")
 		(at 254 215.9 0)
 		(unit 1)
 		(exclude_from_sim no)
@@ -10510,7 +10510,7 @@
 		)
 	)
 	(symbol
-		(lib_id "SS49E:SS49E")
+		(lib_id "MagChess:SS49E")
 		(at 152.4 86.36 0)
 		(unit 1)
 		(exclude_from_sim no)
@@ -10583,7 +10583,7 @@
 		)
 	)
 	(symbol
-		(lib_id "SS49E:SS49E")
+		(lib_id "MagChess:SS49E")
 		(at 152.4 129.54 0)
 		(unit 1)
 		(exclude_from_sim no)
@@ -10656,7 +10656,7 @@
 		)
 	)
 	(symbol
-		(lib_id "SS49E:SS49E")
+		(lib_id "MagChess:SS49E")
 		(at 279.4 129.54 0)
 		(unit 1)
 		(exclude_from_sim no)
@@ -10729,7 +10729,7 @@
 		)
 	)
 	(symbol
-		(lib_id "SS49E:SS49E")
+		(lib_id "MagChess:SS49E")
 		(at 203.2 215.9 0)
 		(unit 1)
 		(exclude_from_sim no)
@@ -10802,7 +10802,7 @@
 		)
 	)
 	(symbol
-		(lib_id "SS49E:SS49E")
+		(lib_id "MagChess:SS49E")
 		(at 127 86.36 0)
 		(unit 1)
 		(exclude_from_sim no)
@@ -10875,7 +10875,7 @@
 		)
 	)
 	(symbol
-		(lib_id "SS49E:SS49E")
+		(lib_id "MagChess:SS49E")
 		(at 279.4 151.13 0)
 		(unit 1)
 		(exclude_from_sim no)
@@ -10948,7 +10948,7 @@
 		)
 	)
 	(symbol
-		(lib_id "SS49E:SS49E")
+		(lib_id "MagChess:SS49E")
 		(at 203.2 107.95 0)
 		(unit 1)
 		(exclude_from_sim no)
@@ -11021,7 +11021,7 @@
 		)
 	)
 	(symbol
-		(lib_id "SS49E:SS49E")
+		(lib_id "MagChess:SS49E")
 		(at 203.2 194.31 0)
 		(unit 1)
 		(exclude_from_sim no)
@@ -11094,7 +11094,7 @@
 		)
 	)
 	(symbol
-		(lib_id "SS49E:SS49E")
+		(lib_id "MagChess:SS49E")
 		(at 127 129.54 0)
 		(unit 1)
 		(exclude_from_sim no)
@@ -11167,7 +11167,7 @@
 		)
 	)
 	(symbol
-		(lib_id "SS49E:SS49E")
+		(lib_id "MagChess:SS49E")
 		(at 177.8 172.72 0)
 		(unit 1)
 		(exclude_from_sim no)
@@ -11240,7 +11240,7 @@
 		)
 	)
 	(symbol
-		(lib_id "SS49E:SS49E")
+		(lib_id "MagChess:SS49E")
 		(at 101.6 215.9 0)
 		(unit 1)
 		(exclude_from_sim no)
@@ -11313,7 +11313,7 @@
 		)
 	)
 	(symbol
-		(lib_id "SS49E:SS49E")
+		(lib_id "MagChess:SS49E")
 		(at 127 237.49 0)
 		(unit 1)
 		(exclude_from_sim no)
@@ -11568,7 +11568,7 @@
 		)
 	)
 	(symbol
-		(lib_id "SS49E:SS49E")
+		(lib_id "MagChess:SS49E")
 		(at 254 86.36 0)
 		(unit 1)
 		(exclude_from_sim no)
@@ -11641,7 +11641,7 @@
 		)
 	)
 	(symbol
-		(lib_id "SS49E:SS49E")
+		(lib_id "MagChess:SS49E")
 		(at 203.2 172.72 0)
 		(unit 1)
 		(exclude_from_sim no)
@@ -11714,7 +11714,7 @@
 		)
 	)
 	(symbol
-		(lib_id "SS49E:SS49E")
+		(lib_id "MagChess:SS49E")
 		(at 228.6 237.49 0)
 		(unit 1)
 		(exclude_from_sim no)
@@ -11787,7 +11787,7 @@
 		)
 	)
 	(symbol
-		(lib_id "SS49E:SS49E")
+		(lib_id "MagChess:SS49E")
 		(at 101.6 172.72 0)
 		(unit 1)
 		(exclude_from_sim no)
@@ -11860,7 +11860,7 @@
 		)
 	)
 	(symbol
-		(lib_id "SS49E:SS49E")
+		(lib_id "MagChess:SS49E")
 		(at 254 172.72 0)
 		(unit 1)
 		(exclude_from_sim no)
@@ -11933,7 +11933,7 @@
 		)
 	)
 	(symbol
-		(lib_id "SS49E:SS49E")
+		(lib_id "MagChess:SS49E")
 		(at 254 107.95 0)
 		(unit 1)
 		(exclude_from_sim no)
@@ -12006,7 +12006,7 @@
 		)
 	)
 	(symbol
-		(lib_id "SS49E:SS49E")
+		(lib_id "MagChess:SS49E")
 		(at 177.8 215.9 0)
 		(unit 1)
 		(exclude_from_sim no)
@@ -12079,7 +12079,7 @@
 		)
 	)
 	(symbol
-		(lib_id "SS49E:SS49E")
+		(lib_id "MagChess:SS49E")
 		(at 177.8 129.54 0)
 		(unit 1)
 		(exclude_from_sim no)
@@ -12152,7 +12152,7 @@
 		)
 	)
 	(symbol
-		(lib_id "SS49E:SS49E")
+		(lib_id "MagChess:SS49E")
 		(at 127 172.72 0)
 		(unit 1)
 		(exclude_from_sim no)
@@ -12225,7 +12225,7 @@
 		)
 	)
 	(symbol
-		(lib_id "SS49E:SS49E")
+		(lib_id "MagChess:SS49E")
 		(at 177.8 194.31 0)
 		(unit 1)
 		(exclude_from_sim no)
@@ -12298,7 +12298,7 @@
 		)
 	)
 	(symbol
-		(lib_id "SS49E:SS49E")
+		(lib_id "MagChess:SS49E")
 		(at 228.6 172.72 0)
 		(unit 1)
 		(exclude_from_sim no)
@@ -12371,7 +12371,7 @@
 		)
 	)
 	(symbol
-		(lib_id "SS49E:SS49E")
+		(lib_id "MagChess:SS49E")
 		(at 152.4 172.72 0)
 		(unit 1)
 		(exclude_from_sim no)
@@ -12444,7 +12444,7 @@
 		)
 	)
 	(symbol
-		(lib_id "SS49E:SS49E")
+		(lib_id "MagChess:SS49E")
 		(at 177.8 107.95 0)
 		(unit 1)
 		(exclude_from_sim no)
@@ -12517,7 +12517,7 @@
 		)
 	)
 	(symbol
-		(lib_id "SS49E:SS49E")
+		(lib_id "MagChess:SS49E")
 		(at 254 194.31 0)
 		(unit 1)
 		(exclude_from_sim no)
@@ -12590,7 +12590,7 @@
 		)
 	)
 	(symbol
-		(lib_id "SS49E:SS49E")
+		(lib_id "MagChess:SS49E")
 		(at 101.6 237.49 0)
 		(unit 1)
 		(exclude_from_sim no)
@@ -12663,7 +12663,7 @@
 		)
 	)
 	(symbol
-		(lib_id "SS49E:SS49E")
+		(lib_id "MagChess:SS49E")
 		(at 177.8 151.13 0)
 		(unit 1)
 		(exclude_from_sim no)
@@ -12736,7 +12736,7 @@
 		)
 	)
 	(symbol
-		(lib_id "SS49E:SS49E")
+		(lib_id "MagChess:SS49E")
 		(at 228.6 194.31 0)
 		(unit 1)
 		(exclude_from_sim no)
@@ -12809,7 +12809,7 @@
 		)
 	)
 	(symbol
-		(lib_id "SS49E:SS49E")
+		(lib_id "MagChess:SS49E")
 		(at 203.2 151.13 0)
 		(unit 1)
 		(exclude_from_sim no)
@@ -13019,7 +13019,7 @@
 		)
 	)
 	(symbol
-		(lib_id "SS49E:SS49E")
+		(lib_id "MagChess:SS49E")
 		(at 127 151.13 0)
 		(unit 1)
 		(exclude_from_sim no)
@@ -13229,7 +13229,7 @@
 		)
 	)
 	(symbol
-		(lib_id "SS49E:SS49E")
+		(lib_id "MagChess:SS49E")
 		(at 203.2 129.54 0)
 		(unit 1)
 		(exclude_from_sim no)
@@ -13302,7 +13302,7 @@
 		)
 	)
 	(symbol
-		(lib_id "SS49E:SS49E")
+		(lib_id "MagChess:SS49E")
 		(at 279.4 86.36 0)
 		(unit 1)
 		(exclude_from_sim no)
@@ -13375,7 +13375,7 @@
 		)
 	)
 	(symbol
-		(lib_id "SS49E:SS49E")
+		(lib_id "MagChess:SS49E")
 		(at 203.2 86.36 0)
 		(unit 1)
 		(exclude_from_sim no)
@@ -13448,7 +13448,7 @@
 		)
 	)
 	(symbol
-		(lib_id "SS49E:SS49E")
+		(lib_id "MagChess:SS49E")
 		(at 254 129.54 0)
 		(unit 1)
 		(exclude_from_sim no)
@@ -13521,7 +13521,7 @@
 		)
 	)
 	(symbol
-		(lib_id "SS49E:SS49E")
+		(lib_id "MagChess:SS49E")
 		(at 279.4 172.72 0)
 		(unit 1)
 		(exclude_from_sim no)
@@ -13594,7 +13594,7 @@
 		)
 	)
 	(symbol
-		(lib_id "New_Library:MP1584EN")
+		(lib_id "MagChess:MP1584EN")
 		(at 398.78 231.14 0)
 		(unit 1)
 		(exclude_from_sim no)
@@ -13669,7 +13669,7 @@
 		)
 	)
 	(symbol
-		(lib_id "SS49E:SS49E")
+		(lib_id "MagChess:SS49E")
 		(at 228.6 107.95 0)
 		(unit 1)
 		(exclude_from_sim no)

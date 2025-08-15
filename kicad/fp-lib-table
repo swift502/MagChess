@@ -1,4 +1,4 @@
 (fp_lib_table
   (version 7)
-  (lib (name "footprints")(type "KiCad")(uri "${KIPRJMOD}/libraries/SS49E/footprints.pretty")(options "")(descr ""))
+  (lib (name "MagChess")(type "KiCad")(uri "${KIPRJMOD}/libraries/MagChess")(options "")(descr ""))
 )
