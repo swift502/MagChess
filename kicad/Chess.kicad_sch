@@ -8078,7 +8078,7 @@
 				(justify right)
 			)
 		)
-		(property "Footprint" "Package_SO:SOIC-24W_7.5x15.4mm_P1.27mm"
+		(property "Footprint" "MagChess Footprints:CD74HC4067"
 			(at 317.5 204.47 0)
 			(effects
 				(font
@@ -8215,7 +8215,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" "Package_SO:TSSOP-10_3x3mm_P0.5mm"
+		(property "Footprint" "MagChess Footprints:ADS1015"
 			(at 400.05 195.58 0)
 			(effects
 				(font
@@ -9623,7 +9623,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" "Package_SO:SOIC-24W_7.5x15.4mm_P1.27mm"
+		(property "Footprint" "MagChess Footprints:CD74HC4067"
 			(at 477.52 172.72 0)
 			(effects
 				(font
@@ -12401,7 +12401,7 @@
 				(justify right)
 			)
 		)
-		(property "Footprint" "Package_SO:SOIC-24W_7.5x15.4mm_P1.27mm"
+		(property "Footprint" "MagChess Footprints:CD74HC4067"
 			(at 317.5 124.46 0)
 			(effects
 				(font
@@ -12611,7 +12611,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" "Package_SO:SOIC-24W_7.5x15.4mm_P1.27mm"
+		(property "Footprint" "MagChess Footprints:CD74HC4067"
 			(at 476.25 252.73 0)
 			(effects
 				(font
