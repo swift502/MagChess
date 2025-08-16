@@ -2,3 +2,5 @@
 *.bak
 ~*.lck
 fp-info-cache
+fabrication-toolkit-options.json
+kicad/production/
