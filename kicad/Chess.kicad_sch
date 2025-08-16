@@ -2472,7 +2472,7 @@
 	)
 	(wire
 		(pts
-			(xy 378.46 242.57) (xy 353.06 242.57)
+			(xy 353.06 242.57) (xy 379.73 242.57)
 		)
 		(stroke
 			(width 0)
@@ -2922,7 +2922,7 @@
 	)
 	(wire
 		(pts
-			(xy 379.73 245.11) (xy 379.73 187.96)
+			(xy 379.73 242.57) (xy 379.73 187.96)
 		)
 		(stroke
 			(width 0)
@@ -3109,16 +3109,6 @@
 			(type default)
 		)
 		(uuid "a5be3281-fd26-4128-a7aa-3d67fb9e1131")
-	)
-	(wire
-		(pts
-			(xy 378.46 245.11) (xy 378.46 242.57)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "a688fb00-5b22-4eda-b21b-4d8a53a66a3f")
 	)
 	(wire
 		(pts
@@ -3600,16 +3590,6 @@
 		)
 		(uuid "f775379f-d1bf-498e-8d80-30282b1d9bc5")
 	)
-	(wire
-		(pts
-			(xy 378.46 245.11) (xy 379.73 245.11)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "fa5d4024-9bc4-4e9e-93c8-7660854e98e4")
-	)
 	(label "ADDR → GND (for address 0x48)"
 		(at 403.86 194.31 0)
 		(effects
@@ -3952,7 +3932,7 @@
 	)
 	(global_label "S2"
 		(shape input)
-		(at 394.97 269.24 90)
+		(at 400.05 269.24 90)
 		(fields_autoplaced yes)
 		(effects
 			(font
@@ -3962,7 +3942,7 @@
 		)
 		(uuid "1cee34ef-fdac-4812-951e-30ec399e1af5")
 		(property "Intersheetrefs" "${INTERSHEET_REFS}"
-			(at 394.97 263.8358 90)
+			(at 400.05 263.8358 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -4040,7 +4020,7 @@
 	)
 	(global_label "S0"
 		(shape input)
-		(at 389.89 269.24 90)
+		(at 394.97 269.24 90)
 		(fields_autoplaced yes)
 		(effects
 			(font
@@ -4050,7 +4030,7 @@
 		)
 		(uuid "260c5efd-3b2f-42ed-8366-e6a0b70e3b65")
 		(property "Intersheetrefs" "${INTERSHEET_REFS}"
-			(at 389.89 263.8358 90)
+			(at 394.97 263.8358 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -4062,7 +4042,7 @@
 	)
 	(global_label "5V"
 		(shape input)
-		(at 398.78 234.95 180)
+		(at 398.78 238.76 180)
 		(fields_autoplaced yes)
 		(effects
 			(font
@@ -4072,7 +4052,7 @@
 		)
 		(uuid "27b73785-6f1d-4d1d-97c2-8fd086415e97")
 		(property "Intersheetrefs" "${INTERSHEET_REFS}"
-			(at 393.4967 234.95 0)
+			(at 393.4967 238.76 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -4722,7 +4702,7 @@
 	)
 	(global_label "SCL"
 		(shape input)
-		(at 402.59 269.24 90)
+		(at 389.89 269.24 90)
 		(fields_autoplaced yes)
 		(effects
 			(font
@@ -4732,7 +4712,7 @@
 		)
 		(uuid "58d874c2-82e2-47e8-a045-eb0e706befa3")
 		(property "Intersheetrefs" "${INTERSHEET_REFS}"
-			(at 402.59 262.7472 90)
+			(at 389.89 262.7472 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -4986,7 +4966,7 @@
 	)
 	(global_label "S1"
 		(shape input)
-		(at 392.43 269.24 90)
+		(at 397.51 269.24 90)
 		(fields_autoplaced yes)
 		(effects
 			(font
@@ -4996,7 +4976,7 @@
 		)
 		(uuid "653bd2e7-d606-4dee-9418-00f5942791c3")
 		(property "Intersheetrefs" "${INTERSHEET_REFS}"
-			(at 392.43 263.8358 90)
+			(at 397.51 263.8358 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -5998,7 +5978,7 @@
 	)
 	(global_label "GND"
 		(shape input)
-		(at 416.56 238.76 0)
+		(at 416.56 234.95 0)
 		(fields_autoplaced yes)
 		(effects
 			(font
@@ -6008,7 +5988,7 @@
 		)
 		(uuid "a2acbf38-c191-49e1-beb5-9256b6fa44d7")
 		(property "Intersheetrefs" "${INTERSHEET_REFS}"
-			(at 423.4157 238.76 0)
+			(at 423.4157 234.95 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -6306,7 +6286,7 @@
 	)
 	(global_label "S3"
 		(shape input)
-		(at 397.51 269.24 90)
+		(at 402.59 269.24 90)
 		(fields_autoplaced yes)
 		(effects
 			(font
@@ -6316,7 +6296,7 @@
 		)
 		(uuid "b1a1146e-3bfc-40cd-88db-a860760eb8b4")
 		(property "Intersheetrefs" "${INTERSHEET_REFS}"
-			(at 397.51 263.8358 90)
+			(at 402.59 263.8358 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -6724,7 +6704,7 @@
 	)
 	(global_label "GND"
 		(shape input)
-		(at 398.78 238.76 180)
+		(at 398.78 234.95 180)
 		(fields_autoplaced yes)
 		(effects
 			(font
@@ -6734,7 +6714,7 @@
 		)
 		(uuid "c621fa71-c156-427d-8a35-993b296cac42")
 		(property "Intersheetrefs" "${INTERSHEET_REFS}"
-			(at 391.9243 238.76 0)
+			(at 391.9243 234.95 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -7274,7 +7254,7 @@
 	)
 	(global_label "3.3V"
 		(shape input)
-		(at 416.56 234.95 0)
+		(at 416.56 238.76 0)
 		(fields_autoplaced yes)
 		(effects
 			(font
@@ -7284,7 +7264,7 @@
 		)
 		(uuid "df380aa1-7786-47cd-85f3-4f96fbc5ee82")
 		(property "Intersheetrefs" "${INTERSHEET_REFS}"
-			(at 423.6576 234.95 0)
+			(at 423.6576 238.76 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -7648,7 +7628,7 @@
 	)
 	(global_label "SDA"
 		(shape input)
-		(at 400.05 269.24 90)
+		(at 392.43 269.24 90)
 		(fields_autoplaced yes)
 		(effects
 			(font
@@ -7658,7 +7638,7 @@
 		)
 		(uuid "f7e4c73a-f1e1-4a1f-837f-c85b60c963ac")
 		(property "Intersheetrefs" "${INTERSHEET_REFS}"
-			(at 400.05 262.6867 90)
+			(at 392.43 262.6867 90)
 			(effects
 				(font
 					(size 1.27 1.27)
