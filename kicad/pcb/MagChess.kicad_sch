@@ -7769,18 +7769,19 @@
 		(fields_autoplaced yes)
 		(uuid "0146aad6-6424-4d3f-b4e5-bc5553681b5a")
 		(property "Reference" "U50"
-			(at 199.39 261.62 0)
+			(at 199.39 259.08 0)
 			(effects
 				(font
-					(size 1.27 1.27)
+					(size 1.524 1.524)
 				)
+				(hide yes)
 			)
 		)
-		(property "Value" "A1302xUA"
+		(property "Value" "SS49E"
 			(at 199.39 264.16 0)
 			(effects
 				(font
-					(size 1.27 1.27)
+					(size 1.524 1.524)
 				)
 			)
 		)
@@ -7804,7 +7805,7 @@
 				(hide yes)
 			)
 		)
-		(property "Description" "Linear Hall Effect Sensor, 1.3 mV/G, 4.5-6.0V supply, TO-92S (3-pin SIP)"
+		(property "Description" ""
 			(at 199.39 271.78 0)
 			(effects
 				(font
@@ -7842,18 +7843,19 @@
 		(fields_autoplaced yes)
 		(uuid "02d77c21-ffd1-4dc3-bd5d-d11123bf348c")
 		(property "Reference" "U37"
-			(at 224.79 175.26 0)
+			(at 224.79 172.72 0)
 			(effects
 				(font
-					(size 1.27 1.27)
+					(size 1.524 1.524)
 				)
+				(hide yes)
 			)
 		)
-		(property "Value" "A1302xUA"
+		(property "Value" "SS49E"
 			(at 224.79 177.8 0)
 			(effects
 				(font
-					(size 1.27 1.27)
+					(size 1.524 1.524)
 				)
 			)
 		)
@@ -7877,7 +7879,7 @@
 				(hide yes)
 			)
 		)
-		(property "Description" "Linear Hall Effect Sensor, 1.3 mV/G, 4.5-6.0V supply, TO-92S (3-pin SIP)"
+		(property "Description" ""
 			(at 224.79 185.42 0)
 			(effects
 				(font
@@ -7915,18 +7917,19 @@
 		(fields_autoplaced yes)
 		(uuid "049c90d6-8edc-4f96-9b71-980657fb3547")
 		(property "Reference" "U73"
-			(at 148.59 261.62 0)
+			(at 148.59 259.08 0)
 			(effects
 				(font
-					(size 1.27 1.27)
+					(size 1.524 1.524)
 				)
+				(hide yes)
 			)
 		)
-		(property "Value" "A1302xUA"
+		(property "Value" "SS49E"
 			(at 148.59 264.16 0)
 			(effects
 				(font
-					(size 1.27 1.27)
+					(size 1.524 1.524)
 				)
 			)
 		)
@@ -7950,7 +7953,7 @@
 				(hide yes)
 			)
 		)
-		(property "Description" "Linear Hall Effect Sensor, 1.3 mV/G, 4.5-6.0V supply, TO-92S (3-pin SIP)"
+		(property "Description" ""
 			(at 148.59 271.78 0)
 			(effects
 				(font
@@ -7988,18 +7991,19 @@
 		(fields_autoplaced yes)
 		(uuid "05e1343b-2c2c-4dd6-a423-83d18b856990")
 		(property "Reference" "U61"
-			(at 148.59 175.26 0)
+			(at 148.59 172.72 0)
 			(effects
 				(font
-					(size 1.27 1.27)
+					(size 1.524 1.524)
 				)
+				(hide yes)
 			)
 		)
-		(property "Value" "A1302xUA"
+		(property "Value" "SS49E"
 			(at 148.59 177.8 0)
 			(effects
 				(font
-					(size 1.27 1.27)
+					(size 1.524 1.524)
 				)
 			)
 		)
@@ -8023,7 +8027,7 @@
 				(hide yes)
 			)
 		)
-		(property "Description" "Linear Hall Effect Sensor, 1.3 mV/G, 4.5-6.0V supply, TO-92S (3-pin SIP)"
+		(property "Description" ""
 			(at 148.59 185.42 0)
 			(effects
 				(font
@@ -8292,18 +8296,19 @@
 		(fields_autoplaced yes)
 		(uuid "1715accc-0a9e-4982-88ad-41d03165ccca")
 		(property "Reference" "U70"
-			(at 148.59 240.03 0)
+			(at 148.59 237.49 0)
 			(effects
 				(font
-					(size 1.27 1.27)
+					(size 1.524 1.524)
 				)
+				(hide yes)
 			)
 		)
-		(property "Value" "A1302xUA"
+		(property "Value" "SS49E"
 			(at 148.59 242.57 0)
 			(effects
 				(font
-					(size 1.27 1.27)
+					(size 1.524 1.524)
 				)
 			)
 		)
@@ -8327,7 +8332,7 @@
 				(hide yes)
 			)
 		)
-		(property "Description" "Linear Hall Effect Sensor, 1.3 mV/G, 4.5-6.0V supply, TO-92S (3-pin SIP)"
+		(property "Description" ""
 			(at 148.59 250.19 0)
 			(effects
 				(font
@@ -8365,18 +8370,19 @@
 		(fields_autoplaced yes)
 		(uuid "1990a2ef-7041-4a1f-a92c-1afca666d016")
 		(property "Reference" "U19"
-			(at 275.59 261.62 0)
+			(at 275.59 259.08 0)
 			(effects
 				(font
-					(size 1.27 1.27)
+					(size 1.524 1.524)
 				)
+				(hide yes)
 			)
 		)
-		(property "Value" "A1302xUA"
+		(property "Value" "SS49E"
 			(at 275.59 264.16 0)
 			(effects
 				(font
-					(size 1.27 1.27)
+					(size 1.524 1.524)
 				)
 			)
 		)
@@ -8400,7 +8406,7 @@
 				(hide yes)
 			)
 		)
-		(property "Description" "Linear Hall Effect Sensor, 1.3 mV/G, 4.5-6.0V supply, TO-92S (3-pin SIP)"
+		(property "Description" ""
 			(at 275.59 271.78 0)
 			(effects
 				(font
@@ -8438,18 +8444,19 @@
 		(fields_autoplaced yes)
 		(uuid "1c46ebb1-238c-47cc-b1f7-56760e48b48b")
 		(property "Reference" "U13"
-			(at 275.59 132.08 0)
+			(at 275.59 129.54 0)
 			(effects
 				(font
-					(size 1.27 1.27)
+					(size 1.524 1.524)
 				)
+				(hide yes)
 			)
 		)
-		(property "Value" "A1302xUA"
+		(property "Value" "SS49E"
 			(at 275.59 134.62 0)
 			(effects
 				(font
-					(size 1.27 1.27)
+					(size 1.524 1.524)
 				)
 			)
 		)
@@ -8473,7 +8480,7 @@
 				(hide yes)
 			)
 		)
-		(property "Description" "Linear Hall Effect Sensor, 1.3 mV/G, 4.5-6.0V supply, TO-92S (3-pin SIP)"
+		(property "Description" ""
 			(at 275.59 142.24 0)
 			(effects
 				(font
@@ -8511,18 +8518,19 @@
 		(fields_autoplaced yes)
 		(uuid "1cfe3e42-f3b6-4436-ba79-f3a8979fe20c")
 		(property "Reference" "U46"
-			(at 224.79 240.03 0)
+			(at 224.79 237.49 0)
 			(effects
 				(font
-					(size 1.27 1.27)
+					(size 1.524 1.524)
 				)
+				(hide yes)
 			)
 		)
-		(property "Value" "A1302xUA"
+		(property "Value" "SS49E"
 			(at 224.79 242.57 0)
 			(effects
 				(font
-					(size 1.27 1.27)
+					(size 1.524 1.524)
 				)
 			)
 		)
@@ -8546,7 +8554,7 @@
 				(hide yes)
 			)
 		)
-		(property "Description" "Linear Hall Effect Sensor, 1.3 mV/G, 4.5-6.0V supply, TO-92S (3-pin SIP)"
+		(property "Description" ""
 			(at 224.79 250.19 0)
 			(effects
 				(font
@@ -8584,18 +8592,19 @@
 		(fields_autoplaced yes)
 		(uuid "1e134f15-0e92-4d82-8090-189548ddd458")
 		(property "Reference" "U67"
-			(at 148.59 218.44 0)
+			(at 148.59 215.9 0)
 			(effects
 				(font
-					(size 1.27 1.27)
+					(size 1.524 1.524)
 				)
+				(hide yes)
 			)
 		)
-		(property "Value" "A1302xUA"
+		(property "Value" "SS49E"
 			(at 148.59 220.98 0)
 			(effects
 				(font
-					(size 1.27 1.27)
+					(size 1.524 1.524)
 				)
 			)
 		)
@@ -8619,7 +8628,7 @@
 				(hide yes)
 			)
 		)
-		(property "Description" "Linear Hall Effect Sensor, 1.3 mV/G, 4.5-6.0V supply, TO-92S (3-pin SIP)"
+		(property "Description" ""
 			(at 148.59 228.6 0)
 			(effects
 				(font
@@ -8657,18 +8666,19 @@
 		(fields_autoplaced yes)
 		(uuid "1e96b476-4064-42ce-b8b0-7ea7d85fccb6")
 		(property "Reference" "U27"
-			(at 250.19 261.62 0)
+			(at 250.19 259.08 0)
 			(effects
 				(font
-					(size 1.27 1.27)
+					(size 1.524 1.524)
 				)
+				(hide yes)
 			)
 		)
-		(property "Value" "A1302xUA"
+		(property "Value" "SS49E"
 			(at 250.19 264.16 0)
 			(effects
 				(font
-					(size 1.27 1.27)
+					(size 1.524 1.524)
 				)
 			)
 		)
@@ -8692,7 +8702,7 @@
 				(hide yes)
 			)
 		)
-		(property "Description" "Linear Hall Effect Sensor, 1.3 mV/G, 4.5-6.0V supply, TO-92S (3-pin SIP)"
+		(property "Description" ""
 			(at 250.19 271.78 0)
 			(effects
 				(font
@@ -8730,18 +8740,19 @@
 		(fields_autoplaced yes)
 		(uuid "2559db17-6481-4b82-a7be-942ed7089bfd")
 		(property "Reference" "U28"
-			(at 224.79 110.49 0)
+			(at 224.79 107.95 0)
 			(effects
 				(font
-					(size 1.27 1.27)
+					(size 1.524 1.524)
 				)
+				(hide yes)
 			)
 		)
-		(property "Value" "A1302xUA"
+		(property "Value" "SS49E"
 			(at 224.79 113.03 0)
 			(effects
 				(font
-					(size 1.27 1.27)
+					(size 1.524 1.524)
 				)
 			)
 		)
@@ -8765,7 +8776,7 @@
 				(hide yes)
 			)
 		)
-		(property "Description" "Linear Hall Effect Sensor, 1.3 mV/G, 4.5-6.0V supply, TO-92S (3-pin SIP)"
+		(property "Description" ""
 			(at 224.79 120.65 0)
 			(effects
 				(font
@@ -8803,18 +8814,19 @@
 		(fields_autoplaced yes)
 		(uuid "279d62df-38f4-4160-add0-56d243cf62c8")
 		(property "Reference" "U55"
-			(at 148.59 132.08 0)
+			(at 148.59 129.54 0)
 			(effects
 				(font
-					(size 1.27 1.27)
+					(size 1.524 1.524)
 				)
+				(hide yes)
 			)
 		)
-		(property "Value" "A1302xUA"
+		(property "Value" "SS49E"
 			(at 148.59 134.62 0)
 			(effects
 				(font
-					(size 1.27 1.27)
+					(size 1.524 1.524)
 				)
 			)
 		)
@@ -8838,7 +8850,7 @@
 				(hide yes)
 			)
 		)
-		(property "Description" "Linear Hall Effect Sensor, 1.3 mV/G, 4.5-6.0V supply, TO-92S (3-pin SIP)"
+		(property "Description" ""
 			(at 148.59 142.24 0)
 			(effects
 				(font
@@ -8876,18 +8888,19 @@
 		(fields_autoplaced yes)
 		(uuid "27b6742b-448b-46c0-ad10-6f32da650cbf")
 		(property "Reference" "U23"
-			(at 250.19 175.26 0)
+			(at 250.19 172.72 0)
 			(effects
 				(font
-					(size 1.27 1.27)
+					(size 1.524 1.524)
 				)
+				(hide yes)
 			)
 		)
-		(property "Value" "A1302xUA"
+		(property "Value" "SS49E"
 			(at 250.19 177.8 0)
 			(effects
 				(font
-					(size 1.27 1.27)
+					(size 1.524 1.524)
 				)
 			)
 		)
@@ -8911,7 +8924,7 @@
 				(hide yes)
 			)
 		)
-		(property "Description" "Linear Hall Effect Sensor, 1.3 mV/G, 4.5-6.0V supply, TO-92S (3-pin SIP)"
+		(property "Description" ""
 			(at 250.19 185.42 0)
 			(effects
 				(font
@@ -8949,18 +8962,19 @@
 		(fields_autoplaced yes)
 		(uuid "2839a53c-fa90-4a1d-a887-044746760be7")
 		(property "Reference" "U18"
-			(at 275.59 240.03 0)
+			(at 275.59 237.49 0)
 			(effects
 				(font
-					(size 1.27 1.27)
+					(size 1.524 1.524)
 				)
+				(hide yes)
 			)
 		)
-		(property "Value" "A1302xUA"
+		(property "Value" "SS49E"
 			(at 275.59 242.57 0)
 			(effects
 				(font
-					(size 1.27 1.27)
+					(size 1.524 1.524)
 				)
 			)
 		)
@@ -8984,7 +8998,7 @@
 				(hide yes)
 			)
 		)
-		(property "Description" "Linear Hall Effect Sensor, 1.3 mV/G, 4.5-6.0V supply, TO-92S (3-pin SIP)"
+		(property "Description" ""
 			(at 275.59 250.19 0)
 			(effects
 				(font
@@ -9022,18 +9036,19 @@
 		(fields_autoplaced yes)
 		(uuid "3e73f48a-e39c-4c36-aa80-e4f87b9c2a4d")
 		(property "Reference" "U54"
-			(at 97.79 110.49 0)
+			(at 97.79 107.95 0)
 			(effects
 				(font
-					(size 1.27 1.27)
+					(size 1.524 1.524)
 				)
+				(hide yes)
 			)
 		)
-		(property "Value" "A1302xUA"
+		(property "Value" "SS49E"
 			(at 97.79 113.03 0)
 			(effects
 				(font
-					(size 1.27 1.27)
+					(size 1.524 1.524)
 				)
 			)
 		)
@@ -9057,7 +9072,7 @@
 				(hide yes)
 			)
 		)
-		(property "Description" "Linear Hall Effect Sensor, 1.3 mV/G, 4.5-6.0V supply, TO-92S (3-pin SIP)"
+		(property "Description" ""
 			(at 97.79 120.65 0)
 			(effects
 				(font
@@ -9095,18 +9110,19 @@
 		(fields_autoplaced yes)
 		(uuid "3f06a71b-dff0-46f9-a815-185255e18da4")
 		(property "Reference" "U56"
-			(at 123.19 132.08 0)
+			(at 123.19 129.54 0)
 			(effects
 				(font
-					(size 1.27 1.27)
+					(size 1.524 1.524)
 				)
+				(hide yes)
 			)
 		)
-		(property "Value" "A1302xUA"
+		(property "Value" "SS49E"
 			(at 123.19 134.62 0)
 			(effects
 				(font
-					(size 1.27 1.27)
+					(size 1.524 1.524)
 				)
 			)
 		)
@@ -9130,7 +9146,7 @@
 				(hide yes)
 			)
 		)
-		(property "Description" "Linear Hall Effect Sensor, 1.3 mV/G, 4.5-6.0V supply, TO-92S (3-pin SIP)"
+		(property "Description" ""
 			(at 123.19 142.24 0)
 			(effects
 				(font
@@ -9168,18 +9184,19 @@
 		(fields_autoplaced yes)
 		(uuid "431a5f55-6764-4a00-a4aa-de83eaddcf0d")
 		(property "Reference" "U71"
-			(at 123.19 240.03 0)
+			(at 123.19 237.49 0)
 			(effects
 				(font
-					(size 1.27 1.27)
+					(size 1.524 1.524)
 				)
+				(hide yes)
 			)
 		)
-		(property "Value" "A1302xUA"
+		(property "Value" "SS49E"
 			(at 123.19 242.57 0)
 			(effects
 				(font
-					(size 1.27 1.27)
+					(size 1.524 1.524)
 				)
 			)
 		)
@@ -9203,7 +9220,7 @@
 				(hide yes)
 			)
 		)
-		(property "Description" "Linear Hall Effect Sensor, 1.3 mV/G, 4.5-6.0V supply, TO-92S (3-pin SIP)"
+		(property "Description" ""
 			(at 123.19 250.19 0)
 			(effects
 				(font
@@ -9241,18 +9258,19 @@
 		(fields_autoplaced yes)
 		(uuid "449d9436-c444-483b-8f0a-4b7b428af3a6")
 		(property "Reference" "U68"
-			(at 123.19 218.44 0)
+			(at 123.19 215.9 0)
 			(effects
 				(font
-					(size 1.27 1.27)
+					(size 1.524 1.524)
 				)
+				(hide yes)
 			)
 		)
-		(property "Value" "A1302xUA"
+		(property "Value" "SS49E"
 			(at 123.19 220.98 0)
 			(effects
 				(font
-					(size 1.27 1.27)
+					(size 1.524 1.524)
 				)
 			)
 		)
@@ -9276,7 +9294,7 @@
 				(hide yes)
 			)
 		)
-		(property "Description" "Linear Hall Effect Sensor, 1.3 mV/G, 4.5-6.0V supply, TO-92S (3-pin SIP)"
+		(property "Description" ""
 			(at 123.19 228.6 0)
 			(effects
 				(font
@@ -9314,18 +9332,19 @@
 		(fields_autoplaced yes)
 		(uuid "4b9efdad-cef6-49c9-aec3-24ec7c096956")
 		(property "Reference" "U57"
-			(at 97.79 132.08 0)
+			(at 97.79 129.54 0)
 			(effects
 				(font
-					(size 1.27 1.27)
+					(size 1.524 1.524)
 				)
+				(hide yes)
 			)
 		)
-		(property "Value" "A1302xUA"
+		(property "Value" "SS49E"
 			(at 97.79 134.62 0)
 			(effects
 				(font
-					(size 1.27 1.27)
+					(size 1.524 1.524)
 				)
 			)
 		)
@@ -9349,7 +9368,7 @@
 				(hide yes)
 			)
 		)
-		(property "Description" "Linear Hall Effect Sensor, 1.3 mV/G, 4.5-6.0V supply, TO-92S (3-pin SIP)"
+		(property "Description" ""
 			(at 97.79 142.24 0)
 			(effects
 				(font
@@ -9387,18 +9406,19 @@
 		(fields_autoplaced yes)
 		(uuid "4c2929f5-2e2f-4ee4-8343-229b41c18716")
 		(property "Reference" "U51"
-			(at 173.99 261.62 0)
+			(at 173.99 259.08 0)
 			(effects
 				(font
-					(size 1.27 1.27)
+					(size 1.524 1.524)
 				)
+				(hide yes)
 			)
 		)
-		(property "Value" "A1302xUA"
+		(property "Value" "SS49E"
 			(at 173.99 264.16 0)
 			(effects
 				(font
-					(size 1.27 1.27)
+					(size 1.524 1.524)
 				)
 			)
 		)
@@ -9422,7 +9442,7 @@
 				(hide yes)
 			)
 		)
-		(property "Description" "Linear Hall Effect Sensor, 1.3 mV/G, 4.5-6.0V supply, TO-92S (3-pin SIP)"
+		(property "Description" ""
 			(at 173.99 271.78 0)
 			(effects
 				(font
@@ -9460,18 +9480,19 @@
 		(fields_autoplaced yes)
 		(uuid "4f4cced7-4cfc-4578-b32b-c4c55d1d6acd")
 		(property "Reference" "U69"
-			(at 97.79 218.44 0)
+			(at 97.79 215.9 0)
 			(effects
 				(font
-					(size 1.27 1.27)
+					(size 1.524 1.524)
 				)
+				(hide yes)
 			)
 		)
-		(property "Value" "A1302xUA"
+		(property "Value" "SS49E"
 			(at 97.79 220.98 0)
 			(effects
 				(font
-					(size 1.27 1.27)
+					(size 1.524 1.524)
 				)
 			)
 		)
@@ -9495,7 +9516,7 @@
 				(hide yes)
 			)
 		)
-		(property "Description" "Linear Hall Effect Sensor, 1.3 mV/G, 4.5-6.0V supply, TO-92S (3-pin SIP)"
+		(property "Description" ""
 			(at 97.79 228.6 0)
 			(effects
 				(font
@@ -9533,18 +9554,19 @@
 		(fields_autoplaced yes)
 		(uuid "51dfb972-6a59-4398-baaa-bf4c77556ecd")
 		(property "Reference" "U63"
-			(at 97.79 175.26 0)
+			(at 97.79 172.72 0)
 			(effects
 				(font
-					(size 1.27 1.27)
+					(size 1.524 1.524)
 				)
+				(hide yes)
 			)
 		)
-		(property "Value" "A1302xUA"
+		(property "Value" "SS49E"
 			(at 97.79 177.8 0)
 			(effects
 				(font
-					(size 1.27 1.27)
+					(size 1.524 1.524)
 				)
 			)
 		)
@@ -9568,7 +9590,7 @@
 				(hide yes)
 			)
 		)
-		(property "Description" "Linear Hall Effect Sensor, 1.3 mV/G, 4.5-6.0V supply, TO-92S (3-pin SIP)"
+		(property "Description" ""
 			(at 97.79 185.42 0)
 			(effects
 				(font
@@ -9743,18 +9765,19 @@
 		(fields_autoplaced yes)
 		(uuid "5b7926ad-1536-44c3-bad4-9dfdc6f1d1ab")
 		(property "Reference" "U30"
-			(at 173.99 110.49 0)
+			(at 173.99 107.95 0)
 			(effects
 				(font
-					(size 1.27 1.27)
+					(size 1.524 1.524)
 				)
+				(hide yes)
 			)
 		)
-		(property "Value" "A1302xUA"
+		(property "Value" "SS49E"
 			(at 173.99 113.03 0)
 			(effects
 				(font
-					(size 1.27 1.27)
+					(size 1.524 1.524)
 				)
 			)
 		)
@@ -9778,7 +9801,7 @@
 				(hide yes)
 			)
 		)
-		(property "Description" "Linear Hall Effect Sensor, 1.3 mV/G, 4.5-6.0V supply, TO-92S (3-pin SIP)"
+		(property "Description" ""
 			(at 173.99 120.65 0)
 			(effects
 				(font
@@ -9816,18 +9839,19 @@
 		(fields_autoplaced yes)
 		(uuid "6073e6ba-6052-4570-a942-069bf1f6647a")
 		(property "Reference" "U60"
-			(at 97.79 153.67 0)
+			(at 97.79 151.13 0)
 			(effects
 				(font
-					(size 1.27 1.27)
+					(size 1.524 1.524)
 				)
+				(hide yes)
 			)
 		)
-		(property "Value" "A1302xUA"
+		(property "Value" "SS49E"
 			(at 97.79 156.21 0)
 			(effects
 				(font
-					(size 1.27 1.27)
+					(size 1.524 1.524)
 				)
 			)
 		)
@@ -9851,7 +9875,7 @@
 				(hide yes)
 			)
 		)
-		(property "Description" "Linear Hall Effect Sensor, 1.3 mV/G, 4.5-6.0V supply, TO-92S (3-pin SIP)"
+		(property "Description" ""
 			(at 97.79 163.83 0)
 			(effects
 				(font
@@ -9889,18 +9913,19 @@
 		(fields_autoplaced yes)
 		(uuid "63c99536-8b46-4dc0-92cf-20ab1c929e74")
 		(property "Reference" "U17"
-			(at 275.59 218.44 0)
+			(at 275.59 215.9 0)
 			(effects
 				(font
-					(size 1.27 1.27)
+					(size 1.524 1.524)
 				)
+				(hide yes)
 			)
 		)
-		(property "Value" "A1302xUA"
+		(property "Value" "SS49E"
 			(at 275.59 220.98 0)
 			(effects
 				(font
-					(size 1.27 1.27)
+					(size 1.524 1.524)
 				)
 			)
 		)
@@ -9924,7 +9949,7 @@
 				(hide yes)
 			)
 		)
-		(property "Description" "Linear Hall Effect Sensor, 1.3 mV/G, 4.5-6.0V supply, TO-92S (3-pin SIP)"
+		(property "Description" ""
 			(at 275.59 228.6 0)
 			(effects
 				(font
@@ -9962,18 +9987,19 @@
 		(fields_autoplaced yes)
 		(uuid "652a3117-5fd2-4714-8ae2-604cad901d39")
 		(property "Reference" "U34"
-			(at 224.79 153.67 0)
+			(at 224.79 151.13 0)
 			(effects
 				(font
-					(size 1.27 1.27)
+					(size 1.524 1.524)
 				)
+				(hide yes)
 			)
 		)
-		(property "Value" "A1302xUA"
+		(property "Value" "SS49E"
 			(at 224.79 156.21 0)
 			(effects
 				(font
-					(size 1.27 1.27)
+					(size 1.524 1.524)
 				)
 			)
 		)
@@ -9997,7 +10023,7 @@
 				(hide yes)
 			)
 		)
-		(property "Description" "Linear Hall Effect Sensor, 1.3 mV/G, 4.5-6.0V supply, TO-92S (3-pin SIP)"
+		(property "Description" ""
 			(at 224.79 163.83 0)
 			(effects
 				(font
@@ -10035,18 +10061,19 @@
 		(fields_autoplaced yes)
 		(uuid "66518334-5172-4665-b5d9-a99be7ba8cc8")
 		(property "Reference" "U26"
-			(at 250.19 240.03 0)
+			(at 250.19 237.49 0)
 			(effects
 				(font
-					(size 1.27 1.27)
+					(size 1.524 1.524)
 				)
+				(hide yes)
 			)
 		)
-		(property "Value" "A1302xUA"
+		(property "Value" "SS49E"
 			(at 250.19 242.57 0)
 			(effects
 				(font
-					(size 1.27 1.27)
+					(size 1.524 1.524)
 				)
 			)
 		)
@@ -10070,7 +10097,7 @@
 				(hide yes)
 			)
 		)
-		(property "Description" "Linear Hall Effect Sensor, 1.3 mV/G, 4.5-6.0V supply, TO-92S (3-pin SIP)"
+		(property "Description" ""
 			(at 250.19 250.19 0)
 			(effects
 				(font
@@ -10108,18 +10135,19 @@
 		(fields_autoplaced yes)
 		(uuid "68bba2dd-cb78-4b52-a8a7-6dd8debc73ef")
 		(property "Reference" "U52"
-			(at 148.59 110.49 0)
+			(at 148.59 107.95 0)
 			(effects
 				(font
-					(size 1.27 1.27)
+					(size 1.524 1.524)
 				)
+				(hide yes)
 			)
 		)
-		(property "Value" "A1302xUA"
+		(property "Value" "SS49E"
 			(at 148.59 113.03 0)
 			(effects
 				(font
-					(size 1.27 1.27)
+					(size 1.524 1.524)
 				)
 			)
 		)
@@ -10143,7 +10171,7 @@
 				(hide yes)
 			)
 		)
-		(property "Description" "Linear Hall Effect Sensor, 1.3 mV/G, 4.5-6.0V supply, TO-92S (3-pin SIP)"
+		(property "Description" ""
 			(at 148.59 120.65 0)
 			(effects
 				(font
@@ -10181,18 +10209,19 @@
 		(fields_autoplaced yes)
 		(uuid "6a4ccdd7-42e7-47e8-a9d1-25da3360ed99")
 		(property "Reference" "U58"
-			(at 148.59 153.67 0)
+			(at 148.59 151.13 0)
 			(effects
 				(font
-					(size 1.27 1.27)
+					(size 1.524 1.524)
 				)
+				(hide yes)
 			)
 		)
-		(property "Value" "A1302xUA"
+		(property "Value" "SS49E"
 			(at 148.59 156.21 0)
 			(effects
 				(font
-					(size 1.27 1.27)
+					(size 1.524 1.524)
 				)
 			)
 		)
@@ -10216,7 +10245,7 @@
 				(hide yes)
 			)
 		)
-		(property "Description" "Linear Hall Effect Sensor, 1.3 mV/G, 4.5-6.0V supply, TO-92S (3-pin SIP)"
+		(property "Description" ""
 			(at 148.59 163.83 0)
 			(effects
 				(font
@@ -10254,18 +10283,19 @@
 		(fields_autoplaced yes)
 		(uuid "6f3214c9-adbf-4627-942e-bf71afa9874b")
 		(property "Reference" "U14"
-			(at 275.59 153.67 0)
+			(at 275.59 151.13 0)
 			(effects
 				(font
-					(size 1.27 1.27)
+					(size 1.524 1.524)
 				)
+				(hide yes)
 			)
 		)
-		(property "Value" "A1302xUA"
+		(property "Value" "SS49E"
 			(at 275.59 156.21 0)
 			(effects
 				(font
-					(size 1.27 1.27)
+					(size 1.524 1.524)
 				)
 			)
 		)
@@ -10289,7 +10319,7 @@
 				(hide yes)
 			)
 		)
-		(property "Description" "Linear Hall Effect Sensor, 1.3 mV/G, 4.5-6.0V supply, TO-92S (3-pin SIP)"
+		(property "Description" ""
 			(at 275.59 163.83 0)
 			(effects
 				(font
@@ -10327,18 +10357,19 @@
 		(fields_autoplaced yes)
 		(uuid "71002b1e-5e12-4bff-a3c4-928111125b5f")
 		(property "Reference" "U47"
-			(at 199.39 240.03 0)
+			(at 199.39 237.49 0)
 			(effects
 				(font
-					(size 1.27 1.27)
+					(size 1.524 1.524)
 				)
+				(hide yes)
 			)
 		)
-		(property "Value" "A1302xUA"
+		(property "Value" "SS49E"
 			(at 199.39 242.57 0)
 			(effects
 				(font
-					(size 1.27 1.27)
+					(size 1.524 1.524)
 				)
 			)
 		)
@@ -10362,7 +10393,7 @@
 				(hide yes)
 			)
 		)
-		(property "Description" "Linear Hall Effect Sensor, 1.3 mV/G, 4.5-6.0V supply, TO-92S (3-pin SIP)"
+		(property "Description" ""
 			(at 199.39 250.19 0)
 			(effects
 				(font
@@ -10486,18 +10517,19 @@
 		(fields_autoplaced yes)
 		(uuid "7c31a5af-f4b7-4b76-98d4-e2a169cfdfd5")
 		(property "Reference" "U53"
-			(at 123.19 110.49 0)
+			(at 123.19 107.95 0)
 			(effects
 				(font
-					(size 1.27 1.27)
+					(size 1.524 1.524)
 				)
+				(hide yes)
 			)
 		)
-		(property "Value" "A1302xUA"
+		(property "Value" "SS49E"
 			(at 123.19 113.03 0)
 			(effects
 				(font
-					(size 1.27 1.27)
+					(size 1.524 1.524)
 				)
 			)
 		)
@@ -10521,7 +10553,7 @@
 				(hide yes)
 			)
 		)
-		(property "Description" "Linear Hall Effect Sensor, 1.3 mV/G, 4.5-6.0V supply, TO-92S (3-pin SIP)"
+		(property "Description" ""
 			(at 123.19 120.65 0)
 			(effects
 				(font
@@ -10559,18 +10591,19 @@
 		(fields_autoplaced yes)
 		(uuid "7c5e8ecf-4ddc-4fdb-bcda-a18d4136bc23")
 		(property "Reference" "U15"
-			(at 275.59 175.26 0)
+			(at 275.59 172.72 0)
 			(effects
 				(font
-					(size 1.27 1.27)
+					(size 1.524 1.524)
 				)
+				(hide yes)
 			)
 		)
-		(property "Value" "A1302xUA"
+		(property "Value" "SS49E"
 			(at 275.59 177.8 0)
 			(effects
 				(font
-					(size 1.27 1.27)
+					(size 1.524 1.524)
 				)
 			)
 		)
@@ -10594,7 +10627,7 @@
 				(hide yes)
 			)
 		)
-		(property "Description" "Linear Hall Effect Sensor, 1.3 mV/G, 4.5-6.0V supply, TO-92S (3-pin SIP)"
+		(property "Description" ""
 			(at 275.59 185.42 0)
 			(effects
 				(font
@@ -10632,18 +10665,19 @@
 		(fields_autoplaced yes)
 		(uuid "7c716149-a71b-4f94-8205-d6b9399d0839")
 		(property "Reference" "U32"
-			(at 199.39 132.08 0)
+			(at 199.39 129.54 0)
 			(effects
 				(font
-					(size 1.27 1.27)
+					(size 1.524 1.524)
 				)
+				(hide yes)
 			)
 		)
-		(property "Value" "A1302xUA"
+		(property "Value" "SS49E"
 			(at 199.39 134.62 0)
 			(effects
 				(font
-					(size 1.27 1.27)
+					(size 1.524 1.524)
 				)
 			)
 		)
@@ -10667,7 +10701,7 @@
 				(hide yes)
 			)
 		)
-		(property "Description" "Linear Hall Effect Sensor, 1.3 mV/G, 4.5-6.0V supply, TO-92S (3-pin SIP)"
+		(property "Description" ""
 			(at 199.39 142.24 0)
 			(effects
 				(font
@@ -10705,18 +10739,19 @@
 		(fields_autoplaced yes)
 		(uuid "80ac002f-d030-47c7-8819-e871e948b2f8")
 		(property "Reference" "U44"
-			(at 199.39 218.44 0)
+			(at 199.39 215.9 0)
 			(effects
 				(font
-					(size 1.27 1.27)
+					(size 1.524 1.524)
 				)
+				(hide yes)
 			)
 		)
-		(property "Value" "A1302xUA"
+		(property "Value" "SS49E"
 			(at 199.39 220.98 0)
 			(effects
 				(font
-					(size 1.27 1.27)
+					(size 1.524 1.524)
 				)
 			)
 		)
@@ -10740,7 +10775,7 @@
 				(hide yes)
 			)
 		)
-		(property "Description" "Linear Hall Effect Sensor, 1.3 mV/G, 4.5-6.0V supply, TO-92S (3-pin SIP)"
+		(property "Description" ""
 			(at 199.39 228.6 0)
 			(effects
 				(font
@@ -10778,18 +10813,19 @@
 		(fields_autoplaced yes)
 		(uuid "840ed3e6-c733-46e1-8b0f-a85b0d8815f8")
 		(property "Reference" "U59"
-			(at 123.19 153.67 0)
+			(at 123.19 151.13 0)
 			(effects
 				(font
-					(size 1.27 1.27)
+					(size 1.524 1.524)
 				)
+				(hide yes)
 			)
 		)
-		(property "Value" "A1302xUA"
+		(property "Value" "SS49E"
 			(at 123.19 156.21 0)
 			(effects
 				(font
-					(size 1.27 1.27)
+					(size 1.524 1.524)
 				)
 			)
 		)
@@ -10813,7 +10849,7 @@
 				(hide yes)
 			)
 		)
-		(property "Description" "Linear Hall Effect Sensor, 1.3 mV/G, 4.5-6.0V supply, TO-92S (3-pin SIP)"
+		(property "Description" ""
 			(at 123.19 163.83 0)
 			(effects
 				(font
@@ -10851,18 +10887,19 @@
 		(fields_autoplaced yes)
 		(uuid "842a6ce8-2e53-4c1e-a88f-483cc8e3fd95")
 		(property "Reference" "U42"
-			(at 173.99 196.85 0)
+			(at 173.99 194.31 0)
 			(effects
 				(font
-					(size 1.27 1.27)
+					(size 1.524 1.524)
 				)
+				(hide yes)
 			)
 		)
-		(property "Value" "A1302xUA"
+		(property "Value" "SS49E"
 			(at 173.99 199.39 0)
 			(effects
 				(font
-					(size 1.27 1.27)
+					(size 1.524 1.524)
 				)
 			)
 		)
@@ -10886,7 +10923,7 @@
 				(hide yes)
 			)
 		)
-		(property "Description" "Linear Hall Effect Sensor, 1.3 mV/G, 4.5-6.0V supply, TO-92S (3-pin SIP)"
+		(property "Description" ""
 			(at 173.99 207.01 0)
 			(effects
 				(font
@@ -10924,18 +10961,19 @@
 		(fields_autoplaced yes)
 		(uuid "84a87366-f956-49e5-b979-5ff90e29ec56")
 		(property "Reference" "U72"
-			(at 97.79 240.03 0)
+			(at 97.79 237.49 0)
 			(effects
 				(font
-					(size 1.27 1.27)
+					(size 1.524 1.524)
 				)
+				(hide yes)
 			)
 		)
-		(property "Value" "A1302xUA"
+		(property "Value" "SS49E"
 			(at 97.79 242.57 0)
 			(effects
 				(font
-					(size 1.27 1.27)
+					(size 1.524 1.524)
 				)
 			)
 		)
@@ -10959,7 +10997,7 @@
 				(hide yes)
 			)
 		)
-		(property "Description" "Linear Hall Effect Sensor, 1.3 mV/G, 4.5-6.0V supply, TO-92S (3-pin SIP)"
+		(property "Description" ""
 			(at 97.79 250.19 0)
 			(effects
 				(font
@@ -10997,18 +11035,19 @@
 		(fields_autoplaced yes)
 		(uuid "85f46222-dda8-4864-a901-eff311164169")
 		(property "Reference" "U74"
-			(at 123.19 261.62 0)
+			(at 123.19 259.08 0)
 			(effects
 				(font
-					(size 1.27 1.27)
+					(size 1.524 1.524)
 				)
+				(hide yes)
 			)
 		)
-		(property "Value" "A1302xUA"
+		(property "Value" "SS49E"
 			(at 123.19 264.16 0)
 			(effects
 				(font
-					(size 1.27 1.27)
+					(size 1.524 1.524)
 				)
 			)
 		)
@@ -11032,7 +11071,7 @@
 				(hide yes)
 			)
 		)
-		(property "Description" "Linear Hall Effect Sensor, 1.3 mV/G, 4.5-6.0V supply, TO-92S (3-pin SIP)"
+		(property "Description" ""
 			(at 123.19 271.78 0)
 			(effects
 				(font
@@ -11070,18 +11109,19 @@
 		(fields_autoplaced yes)
 		(uuid "8869d1cc-7d25-4645-82e2-45c8fa103953")
 		(property "Reference" "U20"
-			(at 250.19 110.49 0)
+			(at 250.19 107.95 0)
 			(effects
 				(font
-					(size 1.27 1.27)
+					(size 1.524 1.524)
 				)
+				(hide yes)
 			)
 		)
-		(property "Value" "A1302xUA"
+		(property "Value" "SS49E"
 			(at 250.19 113.03 0)
 			(effects
 				(font
-					(size 1.27 1.27)
+					(size 1.524 1.524)
 				)
 			)
 		)
@@ -11105,7 +11145,7 @@
 				(hide yes)
 			)
 		)
-		(property "Description" "Linear Hall Effect Sensor, 1.3 mV/G, 4.5-6.0V supply, TO-92S (3-pin SIP)"
+		(property "Description" ""
 			(at 250.19 120.65 0)
 			(effects
 				(font
@@ -11143,18 +11183,19 @@
 		(fields_autoplaced yes)
 		(uuid "8fd4d284-717c-4601-8b7d-f2ea62b17241")
 		(property "Reference" "U41"
-			(at 199.39 196.85 0)
+			(at 199.39 194.31 0)
 			(effects
 				(font
-					(size 1.27 1.27)
+					(size 1.524 1.524)
 				)
+				(hide yes)
 			)
 		)
-		(property "Value" "A1302xUA"
+		(property "Value" "SS49E"
 			(at 199.39 199.39 0)
 			(effects
 				(font
-					(size 1.27 1.27)
+					(size 1.524 1.524)
 				)
 			)
 		)
@@ -11178,7 +11219,7 @@
 				(hide yes)
 			)
 		)
-		(property "Description" "Linear Hall Effect Sensor, 1.3 mV/G, 4.5-6.0V supply, TO-92S (3-pin SIP)"
+		(property "Description" ""
 			(at 199.39 207.01 0)
 			(effects
 				(font
@@ -11216,18 +11257,19 @@
 		(fields_autoplaced yes)
 		(uuid "91ad7a5d-2eac-46ab-be5d-4ddea83a95f5")
 		(property "Reference" "U49"
-			(at 224.79 261.62 0)
+			(at 224.79 259.08 0)
 			(effects
 				(font
-					(size 1.27 1.27)
+					(size 1.524 1.524)
 				)
+				(hide yes)
 			)
 		)
-		(property "Value" "A1302xUA"
+		(property "Value" "SS49E"
 			(at 224.79 264.16 0)
 			(effects
 				(font
-					(size 1.27 1.27)
+					(size 1.524 1.524)
 				)
 			)
 		)
@@ -11251,7 +11293,7 @@
 				(hide yes)
 			)
 		)
-		(property "Description" "Linear Hall Effect Sensor, 1.3 mV/G, 4.5-6.0V supply, TO-92S (3-pin SIP)"
+		(property "Description" ""
 			(at 224.79 271.78 0)
 			(effects
 				(font
@@ -11289,18 +11331,19 @@
 		(fields_autoplaced yes)
 		(uuid "94136c4c-e4e3-46b8-86c9-0afa62e272f9")
 		(property "Reference" "U66"
-			(at 97.79 196.85 0)
+			(at 97.79 194.31 0)
 			(effects
 				(font
-					(size 1.27 1.27)
+					(size 1.524 1.524)
 				)
+				(hide yes)
 			)
 		)
-		(property "Value" "A1302xUA"
+		(property "Value" "SS49E"
 			(at 97.79 199.39 0)
 			(effects
 				(font
-					(size 1.27 1.27)
+					(size 1.524 1.524)
 				)
 			)
 		)
@@ -11324,7 +11367,7 @@
 				(hide yes)
 			)
 		)
-		(property "Description" "Linear Hall Effect Sensor, 1.3 mV/G, 4.5-6.0V supply, TO-92S (3-pin SIP)"
+		(property "Description" ""
 			(at 97.79 207.01 0)
 			(effects
 				(font
@@ -11362,18 +11405,19 @@
 		(fields_autoplaced yes)
 		(uuid "9c69fe59-810f-4fc9-8bad-3c0fa43353a5")
 		(property "Reference" "U24"
-			(at 250.19 196.85 0)
+			(at 250.19 194.31 0)
 			(effects
 				(font
-					(size 1.27 1.27)
+					(size 1.524 1.524)
 				)
+				(hide yes)
 			)
 		)
-		(property "Value" "A1302xUA"
+		(property "Value" "SS49E"
 			(at 250.19 199.39 0)
 			(effects
 				(font
-					(size 1.27 1.27)
+					(size 1.524 1.524)
 				)
 			)
 		)
@@ -11397,7 +11441,7 @@
 				(hide yes)
 			)
 		)
-		(property "Description" "Linear Hall Effect Sensor, 1.3 mV/G, 4.5-6.0V supply, TO-92S (3-pin SIP)"
+		(property "Description" ""
 			(at 250.19 207.01 0)
 			(effects
 				(font
@@ -11435,18 +11479,19 @@
 		(fields_autoplaced yes)
 		(uuid "aae6f137-d38e-4db0-9275-30ee3b67abf2")
 		(property "Reference" "U21"
-			(at 250.19 132.08 0)
+			(at 250.19 129.54 0)
 			(effects
 				(font
-					(size 1.27 1.27)
+					(size 1.524 1.524)
 				)
+				(hide yes)
 			)
 		)
-		(property "Value" "A1302xUA"
+		(property "Value" "SS49E"
 			(at 250.19 134.62 0)
 			(effects
 				(font
-					(size 1.27 1.27)
+					(size 1.524 1.524)
 				)
 			)
 		)
@@ -11470,7 +11515,7 @@
 				(hide yes)
 			)
 		)
-		(property "Description" "Linear Hall Effect Sensor, 1.3 mV/G, 4.5-6.0V supply, TO-92S (3-pin SIP)"
+		(property "Description" ""
 			(at 250.19 142.24 0)
 			(effects
 				(font
@@ -11508,18 +11553,19 @@
 		(fields_autoplaced yes)
 		(uuid "af5c10e9-671f-4798-9191-b5d6da887bc5")
 		(property "Reference" "U48"
-			(at 173.99 240.03 0)
+			(at 173.99 237.49 0)
 			(effects
 				(font
-					(size 1.27 1.27)
+					(size 1.524 1.524)
 				)
+				(hide yes)
 			)
 		)
-		(property "Value" "A1302xUA"
+		(property "Value" "SS49E"
 			(at 173.99 242.57 0)
 			(effects
 				(font
-					(size 1.27 1.27)
+					(size 1.524 1.524)
 				)
 			)
 		)
@@ -11543,7 +11589,7 @@
 				(hide yes)
 			)
 		)
-		(property "Description" "Linear Hall Effect Sensor, 1.3 mV/G, 4.5-6.0V supply, TO-92S (3-pin SIP)"
+		(property "Description" ""
 			(at 173.99 250.19 0)
 			(effects
 				(font
@@ -11581,18 +11627,19 @@
 		(fields_autoplaced yes)
 		(uuid "b4e5526c-fd4e-4664-a41b-a44af36cdd9e")
 		(property "Reference" "U36"
-			(at 173.99 153.67 0)
+			(at 173.99 151.13 0)
 			(effects
 				(font
-					(size 1.27 1.27)
+					(size 1.524 1.524)
 				)
+				(hide yes)
 			)
 		)
-		(property "Value" "A1302xUA"
+		(property "Value" "SS49E"
 			(at 173.99 156.21 0)
 			(effects
 				(font
-					(size 1.27 1.27)
+					(size 1.524 1.524)
 				)
 			)
 		)
@@ -11616,7 +11663,7 @@
 				(hide yes)
 			)
 		)
-		(property "Description" "Linear Hall Effect Sensor, 1.3 mV/G, 4.5-6.0V supply, TO-92S (3-pin SIP)"
+		(property "Description" ""
 			(at 173.99 163.83 0)
 			(effects
 				(font
@@ -11654,18 +11701,19 @@
 		(fields_autoplaced yes)
 		(uuid "b77044e5-745e-4d38-9a86-695e12fbd524")
 		(property "Reference" "U65"
-			(at 123.19 196.85 0)
+			(at 123.19 194.31 0)
 			(effects
 				(font
-					(size 1.27 1.27)
+					(size 1.524 1.524)
 				)
+				(hide yes)
 			)
 		)
-		(property "Value" "A1302xUA"
+		(property "Value" "SS49E"
 			(at 123.19 199.39 0)
 			(effects
 				(font
-					(size 1.27 1.27)
+					(size 1.524 1.524)
 				)
 			)
 		)
@@ -11689,7 +11737,7 @@
 				(hide yes)
 			)
 		)
-		(property "Description" "Linear Hall Effect Sensor, 1.3 mV/G, 4.5-6.0V supply, TO-92S (3-pin SIP)"
+		(property "Description" ""
 			(at 123.19 207.01 0)
 			(effects
 				(font
@@ -11727,18 +11775,19 @@
 		(fields_autoplaced yes)
 		(uuid "bb05a965-d2d8-423f-9630-cd1e0eb65cd5")
 		(property "Reference" "U45"
-			(at 173.99 218.44 0)
+			(at 173.99 215.9 0)
 			(effects
 				(font
-					(size 1.27 1.27)
+					(size 1.524 1.524)
 				)
+				(hide yes)
 			)
 		)
-		(property "Value" "A1302xUA"
+		(property "Value" "SS49E"
 			(at 173.99 220.98 0)
 			(effects
 				(font
-					(size 1.27 1.27)
+					(size 1.524 1.524)
 				)
 			)
 		)
@@ -11762,7 +11811,7 @@
 				(hide yes)
 			)
 		)
-		(property "Description" "Linear Hall Effect Sensor, 1.3 mV/G, 4.5-6.0V supply, TO-92S (3-pin SIP)"
+		(property "Description" ""
 			(at 173.99 228.6 0)
 			(effects
 				(font
@@ -11800,18 +11849,19 @@
 		(fields_autoplaced yes)
 		(uuid "bdfe6afb-5c11-4e66-bbff-6e480b27f869")
 		(property "Reference" "U40"
-			(at 224.79 196.85 0)
+			(at 224.79 194.31 0)
 			(effects
 				(font
-					(size 1.27 1.27)
+					(size 1.524 1.524)
 				)
+				(hide yes)
 			)
 		)
-		(property "Value" "A1302xUA"
+		(property "Value" "SS49E"
 			(at 224.79 199.39 0)
 			(effects
 				(font
-					(size 1.27 1.27)
+					(size 1.524 1.524)
 				)
 			)
 		)
@@ -11835,7 +11885,7 @@
 				(hide yes)
 			)
 		)
-		(property "Description" "Linear Hall Effect Sensor, 1.3 mV/G, 4.5-6.0V supply, TO-92S (3-pin SIP)"
+		(property "Description" ""
 			(at 224.79 207.01 0)
 			(effects
 				(font
@@ -11873,18 +11923,19 @@
 		(fields_autoplaced yes)
 		(uuid "be2159fe-dad6-410f-943e-c9eca4c1e1a3")
 		(property "Reference" "U64"
-			(at 148.59 196.85 0)
+			(at 148.59 194.31 0)
 			(effects
 				(font
-					(size 1.27 1.27)
+					(size 1.524 1.524)
 				)
+				(hide yes)
 			)
 		)
-		(property "Value" "A1302xUA"
+		(property "Value" "SS49E"
 			(at 148.59 199.39 0)
 			(effects
 				(font
-					(size 1.27 1.27)
+					(size 1.524 1.524)
 				)
 			)
 		)
@@ -11908,7 +11959,7 @@
 				(hide yes)
 			)
 		)
-		(property "Description" "Linear Hall Effect Sensor, 1.3 mV/G, 4.5-6.0V supply, TO-92S (3-pin SIP)"
+		(property "Description" ""
 			(at 148.59 207.01 0)
 			(effects
 				(font
@@ -11946,18 +11997,19 @@
 		(fields_autoplaced yes)
 		(uuid "bec00b72-70d0-42d6-a7a9-4e0555fc0baf")
 		(property "Reference" "U33"
-			(at 173.99 132.08 0)
+			(at 173.99 129.54 0)
 			(effects
 				(font
-					(size 1.27 1.27)
+					(size 1.524 1.524)
 				)
+				(hide yes)
 			)
 		)
-		(property "Value" "A1302xUA"
+		(property "Value" "SS49E"
 			(at 173.99 134.62 0)
 			(effects
 				(font
-					(size 1.27 1.27)
+					(size 1.524 1.524)
 				)
 			)
 		)
@@ -11981,7 +12033,7 @@
 				(hide yes)
 			)
 		)
-		(property "Description" "Linear Hall Effect Sensor, 1.3 mV/G, 4.5-6.0V supply, TO-92S (3-pin SIP)"
+		(property "Description" ""
 			(at 173.99 142.24 0)
 			(effects
 				(font
@@ -12019,18 +12071,19 @@
 		(fields_autoplaced yes)
 		(uuid "c55621c9-e425-4778-9805-284365d363ab")
 		(property "Reference" "U25"
-			(at 250.19 218.44 0)
+			(at 250.19 215.9 0)
 			(effects
 				(font
-					(size 1.27 1.27)
+					(size 1.524 1.524)
 				)
+				(hide yes)
 			)
 		)
-		(property "Value" "A1302xUA"
+		(property "Value" "SS49E"
 			(at 250.19 220.98 0)
 			(effects
 				(font
-					(size 1.27 1.27)
+					(size 1.524 1.524)
 				)
 			)
 		)
@@ -12054,7 +12107,7 @@
 				(hide yes)
 			)
 		)
-		(property "Description" "Linear Hall Effect Sensor, 1.3 mV/G, 4.5-6.0V supply, TO-92S (3-pin SIP)"
+		(property "Description" ""
 			(at 250.19 228.6 0)
 			(effects
 				(font
@@ -12092,18 +12145,19 @@
 		(fields_autoplaced yes)
 		(uuid "c9678906-aa19-485c-85c8-6c46e34b0da5")
 		(property "Reference" "U75"
-			(at 97.79 261.62 0)
+			(at 97.79 259.08 0)
 			(effects
 				(font
-					(size 1.27 1.27)
+					(size 1.524 1.524)
 				)
+				(hide yes)
 			)
 		)
-		(property "Value" "A1302xUA"
+		(property "Value" "SS49E"
 			(at 97.79 264.16 0)
 			(effects
 				(font
-					(size 1.27 1.27)
+					(size 1.524 1.524)
 				)
 			)
 		)
@@ -12127,7 +12181,7 @@
 				(hide yes)
 			)
 		)
-		(property "Description" "Linear Hall Effect Sensor, 1.3 mV/G, 4.5-6.0V supply, TO-92S (3-pin SIP)"
+		(property "Description" ""
 			(at 97.79 271.78 0)
 			(effects
 				(font
@@ -12165,18 +12219,19 @@
 		(fields_autoplaced yes)
 		(uuid "cb62f943-a84c-4602-97c4-1af076ca1a06")
 		(property "Reference" "U39"
-			(at 173.99 175.26 0)
+			(at 173.99 172.72 0)
 			(effects
 				(font
-					(size 1.27 1.27)
+					(size 1.524 1.524)
 				)
+				(hide yes)
 			)
 		)
-		(property "Value" "A1302xUA"
+		(property "Value" "SS49E"
 			(at 173.99 177.8 0)
 			(effects
 				(font
-					(size 1.27 1.27)
+					(size 1.524 1.524)
 				)
 			)
 		)
@@ -12200,7 +12255,7 @@
 				(hide yes)
 			)
 		)
-		(property "Description" "Linear Hall Effect Sensor, 1.3 mV/G, 4.5-6.0V supply, TO-92S (3-pin SIP)"
+		(property "Description" ""
 			(at 173.99 185.42 0)
 			(effects
 				(font
@@ -12238,18 +12293,19 @@
 		(fields_autoplaced yes)
 		(uuid "da8f8d32-d86d-4b9b-b5e4-5cc6830fb712")
 		(property "Reference" "U43"
-			(at 224.79 218.44 0)
+			(at 224.79 215.9 0)
 			(effects
 				(font
-					(size 1.27 1.27)
+					(size 1.524 1.524)
 				)
+				(hide yes)
 			)
 		)
-		(property "Value" "A1302xUA"
+		(property "Value" "SS49E"
 			(at 224.79 220.98 0)
 			(effects
 				(font
-					(size 1.27 1.27)
+					(size 1.524 1.524)
 				)
 			)
 		)
@@ -12273,7 +12329,7 @@
 				(hide yes)
 			)
 		)
-		(property "Description" "Linear Hall Effect Sensor, 1.3 mV/G, 4.5-6.0V supply, TO-92S (3-pin SIP)"
+		(property "Description" ""
 			(at 224.79 228.6 0)
 			(effects
 				(font
@@ -12311,18 +12367,19 @@
 		(fields_autoplaced yes)
 		(uuid "daa1ba97-21cb-411b-b026-ed102d7cba91")
 		(property "Reference" "U38"
-			(at 199.39 175.26 0)
+			(at 199.39 172.72 0)
 			(effects
 				(font
-					(size 1.27 1.27)
+					(size 1.524 1.524)
 				)
+				(hide yes)
 			)
 		)
-		(property "Value" "A1302xUA"
+		(property "Value" "SS49E"
 			(at 199.39 177.8 0)
 			(effects
 				(font
-					(size 1.27 1.27)
+					(size 1.524 1.524)
 				)
 			)
 		)
@@ -12346,7 +12403,7 @@
 				(hide yes)
 			)
 		)
-		(property "Description" "Linear Hall Effect Sensor, 1.3 mV/G, 4.5-6.0V supply, TO-92S (3-pin SIP)"
+		(property "Description" ""
 			(at 199.39 185.42 0)
 			(effects
 				(font
@@ -12521,18 +12578,19 @@
 		(fields_autoplaced yes)
 		(uuid "dd9c5cf7-428f-4a2b-8852-d20c4a9ca01e")
 		(property "Reference" "U62"
-			(at 123.19 175.26 0)
+			(at 123.19 172.72 0)
 			(effects
 				(font
-					(size 1.27 1.27)
+					(size 1.524 1.524)
 				)
+				(hide yes)
 			)
 		)
-		(property "Value" "A1302xUA"
+		(property "Value" "SS49E"
 			(at 123.19 177.8 0)
 			(effects
 				(font
-					(size 1.27 1.27)
+					(size 1.524 1.524)
 				)
 			)
 		)
@@ -12556,7 +12614,7 @@
 				(hide yes)
 			)
 		)
-		(property "Description" "Linear Hall Effect Sensor, 1.3 mV/G, 4.5-6.0V supply, TO-92S (3-pin SIP)"
+		(property "Description" ""
 			(at 123.19 185.42 0)
 			(effects
 				(font
@@ -12731,18 +12789,19 @@
 		(fields_autoplaced yes)
 		(uuid "e5225d26-0911-40c7-a4a8-fe33e84ddab8")
 		(property "Reference" "U35"
-			(at 199.39 153.67 0)
+			(at 199.39 151.13 0)
 			(effects
 				(font
-					(size 1.27 1.27)
+					(size 1.524 1.524)
 				)
+				(hide yes)
 			)
 		)
-		(property "Value" "A1302xUA"
+		(property "Value" "SS49E"
 			(at 199.39 156.21 0)
 			(effects
 				(font
-					(size 1.27 1.27)
+					(size 1.524 1.524)
 				)
 			)
 		)
@@ -12766,7 +12825,7 @@
 				(hide yes)
 			)
 		)
-		(property "Description" "Linear Hall Effect Sensor, 1.3 mV/G, 4.5-6.0V supply, TO-92S (3-pin SIP)"
+		(property "Description" ""
 			(at 199.39 163.83 0)
 			(effects
 				(font
@@ -12804,18 +12863,19 @@
 		(fields_autoplaced yes)
 		(uuid "e9a49c94-1b1c-4f8a-a5d9-a7f22296f07c")
 		(property "Reference" "U12"
-			(at 275.59 110.49 0)
+			(at 275.59 107.95 0)
 			(effects
 				(font
-					(size 1.27 1.27)
+					(size 1.524 1.524)
 				)
+				(hide yes)
 			)
 		)
-		(property "Value" "A1302xUA"
+		(property "Value" "SS49E"
 			(at 275.59 113.03 0)
 			(effects
 				(font
-					(size 1.27 1.27)
+					(size 1.524 1.524)
 				)
 			)
 		)
@@ -12839,7 +12899,7 @@
 				(hide yes)
 			)
 		)
-		(property "Description" "Linear Hall Effect Sensor, 1.3 mV/G, 4.5-6.0V supply, TO-92S (3-pin SIP)"
+		(property "Description" ""
 			(at 275.59 120.65 0)
 			(effects
 				(font
@@ -12877,18 +12937,19 @@
 		(fields_autoplaced yes)
 		(uuid "ea8ffafd-725f-48ae-aac5-ca7f20726d48")
 		(property "Reference" "U29"
-			(at 199.39 110.49 0)
+			(at 199.39 107.95 0)
 			(effects
 				(font
-					(size 1.27 1.27)
+					(size 1.524 1.524)
 				)
+				(hide yes)
 			)
 		)
-		(property "Value" "A1302xUA"
+		(property "Value" "SS49E"
 			(at 199.39 113.03 0)
 			(effects
 				(font
-					(size 1.27 1.27)
+					(size 1.524 1.524)
 				)
 			)
 		)
@@ -12912,7 +12973,7 @@
 				(hide yes)
 			)
 		)
-		(property "Description" "Linear Hall Effect Sensor, 1.3 mV/G, 4.5-6.0V supply, TO-92S (3-pin SIP)"
+		(property "Description" ""
 			(at 199.39 120.65 0)
 			(effects
 				(font
@@ -12950,18 +13011,19 @@
 		(fields_autoplaced yes)
 		(uuid "ec5d3655-ae39-420c-9dd6-dec41eef7a6c")
 		(property "Reference" "U22"
-			(at 250.19 153.67 0)
+			(at 250.19 151.13 0)
 			(effects
 				(font
-					(size 1.27 1.27)
+					(size 1.524 1.524)
 				)
+				(hide yes)
 			)
 		)
-		(property "Value" "A1302xUA"
+		(property "Value" "SS49E"
 			(at 250.19 156.21 0)
 			(effects
 				(font
-					(size 1.27 1.27)
+					(size 1.524 1.524)
 				)
 			)
 		)
@@ -12985,7 +13047,7 @@
 				(hide yes)
 			)
 		)
-		(property "Description" "Linear Hall Effect Sensor, 1.3 mV/G, 4.5-6.0V supply, TO-92S (3-pin SIP)"
+		(property "Description" ""
 			(at 250.19 163.83 0)
 			(effects
 				(font
@@ -13023,18 +13085,19 @@
 		(fields_autoplaced yes)
 		(uuid "ed9af7b6-4031-4d4a-99a4-a8b949aa8431")
 		(property "Reference" "U16"
-			(at 275.59 196.85 0)
+			(at 275.59 194.31 0)
 			(effects
 				(font
-					(size 1.27 1.27)
+					(size 1.524 1.524)
 				)
+				(hide yes)
 			)
 		)
-		(property "Value" "A1302xUA"
+		(property "Value" "SS49E"
 			(at 275.59 199.39 0)
 			(effects
 				(font
-					(size 1.27 1.27)
+					(size 1.524 1.524)
 				)
 			)
 		)
@@ -13058,7 +13121,7 @@
 				(hide yes)
 			)
 		)
-		(property "Description" "Linear Hall Effect Sensor, 1.3 mV/G, 4.5-6.0V supply, TO-92S (3-pin SIP)"
+		(property "Description" ""
 			(at 275.59 207.01 0)
 			(effects
 				(font
@@ -13105,7 +13168,7 @@
 			)
 		)
 		(property "Value" "MP1584EN"
-			(at 407.67 231.14 0)
+			(at 407.67 229.87 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -13171,18 +13234,19 @@
 		(fields_autoplaced yes)
 		(uuid "fd16221b-af2e-4a42-9e0c-1d90eb10ad11")
 		(property "Reference" "U31"
-			(at 224.79 132.08 0)
+			(at 224.79 129.54 0)
 			(effects
 				(font
-					(size 1.27 1.27)
+					(size 1.524 1.524)
 				)
+				(hide yes)
 			)
 		)
-		(property "Value" "A1302xUA"
+		(property "Value" "SS49E"
 			(at 224.79 134.62 0)
 			(effects
 				(font
-					(size 1.27 1.27)
+					(size 1.524 1.524)
 				)
 			)
 		)
@@ -13206,7 +13270,7 @@
 				(hide yes)
 			)
 		)
-		(property "Description" "Linear Hall Effect Sensor, 1.3 mV/G, 4.5-6.0V supply, TO-92S (3-pin SIP)"
+		(property "Description" ""
 			(at 224.79 142.24 0)
 			(effects
 				(font
