@@ -4,4 +4,4 @@
 *.tmp
 fp-info-cache
 fabrication-toolkit-options.json
-kicad/*/production
+kicad/**/production/
