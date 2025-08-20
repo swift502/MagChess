@@ -1215,7 +1215,7 @@
 					(justify left)
 				)
 			)
-			(property "Footprint" "MagChess Footprints:MP1584"
+			(property "Footprint" "MagChess:MP1584"
 				(at 0 5.08 0)
 				(effects
 					(font
@@ -1373,7 +1373,7 @@
 					)
 				)
 			)
-			(property "Footprint" "MagChess Footprints:SS49E"
+			(property "Footprint" "MagChess:SS49E"
 				(at 0 0 0)
 				(effects
 					(font
@@ -7784,7 +7784,7 @@
 				)
 			)
 		)
-		(property "Footprint" "MagChess Footprints:SS49E"
+		(property "Footprint" "MagChess:SS49E"
 			(at 199.39 271.78 0)
 			(effects
 				(font
@@ -7823,7 +7823,7 @@
 			(uuid "b8b7273a-dca2-4c7c-9cfb-23d2e00d3740")
 		)
 		(instances
-			(project "Chess"
+			(project "MagChess"
 				(path "/13990d19-eefd-4b7d-85c6-301fca518e81"
 					(reference "U50")
 					(unit 1)
@@ -7857,7 +7857,7 @@
 				)
 			)
 		)
-		(property "Footprint" "MagChess Footprints:SS49E"
+		(property "Footprint" "MagChess:SS49E"
 			(at 224.79 185.42 0)
 			(effects
 				(font
@@ -7896,7 +7896,7 @@
 			(uuid "02123b9d-65e7-47cc-b554-4e93489b4472")
 		)
 		(instances
-			(project "Chess"
+			(project "MagChess"
 				(path "/13990d19-eefd-4b7d-85c6-301fca518e81"
 					(reference "U37")
 					(unit 1)
@@ -7930,7 +7930,7 @@
 				)
 			)
 		)
-		(property "Footprint" "MagChess Footprints:SS49E"
+		(property "Footprint" "MagChess:SS49E"
 			(at 148.59 271.78 0)
 			(effects
 				(font
@@ -7969,7 +7969,7 @@
 			(uuid "34f000ed-1818-43e4-a2f0-2c09f52ae715")
 		)
 		(instances
-			(project "Chess"
+			(project "MagChess"
 				(path "/13990d19-eefd-4b7d-85c6-301fca518e81"
 					(reference "U73")
 					(unit 1)
@@ -8003,7 +8003,7 @@
 				)
 			)
 		)
-		(property "Footprint" "MagChess Footprints:SS49E"
+		(property "Footprint" "MagChess:SS49E"
 			(at 148.59 185.42 0)
 			(effects
 				(font
@@ -8042,7 +8042,7 @@
 			(uuid "cd4543a8-723d-47d4-93c9-238fb6accb32")
 		)
 		(instances
-			(project "Chess"
+			(project "MagChess"
 				(path "/13990d19-eefd-4b7d-85c6-301fca518e81"
 					(reference "U61")
 					(unit 1)
@@ -8078,7 +8078,7 @@
 				(justify right)
 			)
 		)
-		(property "Footprint" "MagChess Footprints:CD74HC4067"
+		(property "Footprint" "MagChess:CD74HC4067"
 			(at 317.5 204.47 0)
 			(effects
 				(font
@@ -8179,7 +8179,7 @@
 			(uuid "844dfb76-e5d7-42aa-8aab-6a08713c563f")
 		)
 		(instances
-			(project "Chess"
+			(project "MagChess"
 				(path "/13990d19-eefd-4b7d-85c6-301fca518e81"
 					(reference "U4")
 					(unit 1)
@@ -8215,7 +8215,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" "MagChess Footprints:ADS1015"
+		(property "Footprint" "MagChess:ADS1015"
 			(at 400.05 195.58 0)
 			(effects
 				(font
@@ -8307,7 +8307,7 @@
 				)
 			)
 		)
-		(property "Footprint" "MagChess Footprints:SS49E"
+		(property "Footprint" "MagChess:SS49E"
 			(at 148.59 250.19 0)
 			(effects
 				(font
@@ -8346,7 +8346,7 @@
 			(uuid "f9657331-4a6c-42f7-a402-cfa9750c3612")
 		)
 		(instances
-			(project "Chess"
+			(project "MagChess"
 				(path "/13990d19-eefd-4b7d-85c6-301fca518e81"
 					(reference "U70")
 					(unit 1)
@@ -8380,7 +8380,7 @@
 				)
 			)
 		)
-		(property "Footprint" "MagChess Footprints:SS49E"
+		(property "Footprint" "MagChess:SS49E"
 			(at 275.59 271.78 0)
 			(effects
 				(font
@@ -8419,7 +8419,7 @@
 			(uuid "aa7a62a1-8463-40c3-a935-046a2a07dfdd")
 		)
 		(instances
-			(project "Chess"
+			(project "MagChess"
 				(path "/13990d19-eefd-4b7d-85c6-301fca518e81"
 					(reference "U19")
 					(unit 1)
@@ -8453,7 +8453,7 @@
 				)
 			)
 		)
-		(property "Footprint" "MagChess Footprints:SS49E"
+		(property "Footprint" "MagChess:SS49E"
 			(at 275.59 142.24 0)
 			(effects
 				(font
@@ -8492,7 +8492,7 @@
 			(uuid "45568d72-48af-4451-abed-54d038477ae4")
 		)
 		(instances
-			(project "Chess"
+			(project "MagChess"
 				(path "/13990d19-eefd-4b7d-85c6-301fca518e81"
 					(reference "U13")
 					(unit 1)
@@ -8526,7 +8526,7 @@
 				)
 			)
 		)
-		(property "Footprint" "MagChess Footprints:SS49E"
+		(property "Footprint" "MagChess:SS49E"
 			(at 224.79 250.19 0)
 			(effects
 				(font
@@ -8565,7 +8565,7 @@
 			(uuid "d31ad2bf-63a0-4316-9315-b7dcdf3a457f")
 		)
 		(instances
-			(project "Chess"
+			(project "MagChess"
 				(path "/13990d19-eefd-4b7d-85c6-301fca518e81"
 					(reference "U46")
 					(unit 1)
@@ -8599,7 +8599,7 @@
 				)
 			)
 		)
-		(property "Footprint" "MagChess Footprints:SS49E"
+		(property "Footprint" "MagChess:SS49E"
 			(at 148.59 228.6 0)
 			(effects
 				(font
@@ -8638,7 +8638,7 @@
 			(uuid "109c2ae4-b38a-4a9b-b200-15226fc47400")
 		)
 		(instances
-			(project "Chess"
+			(project "MagChess"
 				(path "/13990d19-eefd-4b7d-85c6-301fca518e81"
 					(reference "U67")
 					(unit 1)
@@ -8672,7 +8672,7 @@
 				)
 			)
 		)
-		(property "Footprint" "MagChess Footprints:SS49E"
+		(property "Footprint" "MagChess:SS49E"
 			(at 250.19 271.78 0)
 			(effects
 				(font
@@ -8711,7 +8711,7 @@
 			(uuid "7f67fe76-7c64-4667-8ec6-34274e99d0c0")
 		)
 		(instances
-			(project "Chess"
+			(project "MagChess"
 				(path "/13990d19-eefd-4b7d-85c6-301fca518e81"
 					(reference "U27")
 					(unit 1)
@@ -8745,7 +8745,7 @@
 				)
 			)
 		)
-		(property "Footprint" "MagChess Footprints:SS49E"
+		(property "Footprint" "MagChess:SS49E"
 			(at 224.79 120.65 0)
 			(effects
 				(font
@@ -8784,7 +8784,7 @@
 			(uuid "06a54366-8f72-4052-ae01-ceb16fe4642e")
 		)
 		(instances
-			(project "Chess"
+			(project "MagChess"
 				(path "/13990d19-eefd-4b7d-85c6-301fca518e81"
 					(reference "U28")
 					(unit 1)
@@ -8818,7 +8818,7 @@
 				)
 			)
 		)
-		(property "Footprint" "MagChess Footprints:SS49E"
+		(property "Footprint" "MagChess:SS49E"
 			(at 148.59 142.24 0)
 			(effects
 				(font
@@ -8857,7 +8857,7 @@
 			(uuid "bafe4658-9ac5-4489-a162-1248ea59fc28")
 		)
 		(instances
-			(project "Chess"
+			(project "MagChess"
 				(path "/13990d19-eefd-4b7d-85c6-301fca518e81"
 					(reference "U55")
 					(unit 1)
@@ -8891,7 +8891,7 @@
 				)
 			)
 		)
-		(property "Footprint" "MagChess Footprints:SS49E"
+		(property "Footprint" "MagChess:SS49E"
 			(at 250.19 185.42 0)
 			(effects
 				(font
@@ -8930,7 +8930,7 @@
 			(uuid "0c31c933-22c7-40e9-912a-7ffb94e33146")
 		)
 		(instances
-			(project "Chess"
+			(project "MagChess"
 				(path "/13990d19-eefd-4b7d-85c6-301fca518e81"
 					(reference "U23")
 					(unit 1)
@@ -8964,7 +8964,7 @@
 				)
 			)
 		)
-		(property "Footprint" "MagChess Footprints:SS49E"
+		(property "Footprint" "MagChess:SS49E"
 			(at 275.59 250.19 0)
 			(effects
 				(font
@@ -9003,7 +9003,7 @@
 			(uuid "be906cda-c5aa-4344-9fd5-d876bea8af40")
 		)
 		(instances
-			(project "Chess"
+			(project "MagChess"
 				(path "/13990d19-eefd-4b7d-85c6-301fca518e81"
 					(reference "U18")
 					(unit 1)
@@ -9037,7 +9037,7 @@
 				)
 			)
 		)
-		(property "Footprint" "MagChess Footprints:SS49E"
+		(property "Footprint" "MagChess:SS49E"
 			(at 97.79 120.65 0)
 			(effects
 				(font
@@ -9076,7 +9076,7 @@
 			(uuid "defbb0ea-0438-464e-bb31-30a9a18035fc")
 		)
 		(instances
-			(project "Chess"
+			(project "MagChess"
 				(path "/13990d19-eefd-4b7d-85c6-301fca518e81"
 					(reference "U54")
 					(unit 1)
@@ -9110,7 +9110,7 @@
 				)
 			)
 		)
-		(property "Footprint" "MagChess Footprints:SS49E"
+		(property "Footprint" "MagChess:SS49E"
 			(at 123.19 142.24 0)
 			(effects
 				(font
@@ -9149,7 +9149,7 @@
 			(uuid "feded873-3557-4d67-952c-7ed7a81fc5b8")
 		)
 		(instances
-			(project "Chess"
+			(project "MagChess"
 				(path "/13990d19-eefd-4b7d-85c6-301fca518e81"
 					(reference "U56")
 					(unit 1)
@@ -9183,7 +9183,7 @@
 				)
 			)
 		)
-		(property "Footprint" "MagChess Footprints:SS49E"
+		(property "Footprint" "MagChess:SS49E"
 			(at 123.19 250.19 0)
 			(effects
 				(font
@@ -9222,7 +9222,7 @@
 			(uuid "82538584-b917-4eeb-bd86-b38d6eb73469")
 		)
 		(instances
-			(project "Chess"
+			(project "MagChess"
 				(path "/13990d19-eefd-4b7d-85c6-301fca518e81"
 					(reference "U71")
 					(unit 1)
@@ -9256,7 +9256,7 @@
 				)
 			)
 		)
-		(property "Footprint" "MagChess Footprints:SS49E"
+		(property "Footprint" "MagChess:SS49E"
 			(at 123.19 228.6 0)
 			(effects
 				(font
@@ -9295,7 +9295,7 @@
 			(uuid "87a38377-5b40-4dd0-aa86-911734a2cc7e")
 		)
 		(instances
-			(project "Chess"
+			(project "MagChess"
 				(path "/13990d19-eefd-4b7d-85c6-301fca518e81"
 					(reference "U68")
 					(unit 1)
@@ -9329,7 +9329,7 @@
 				)
 			)
 		)
-		(property "Footprint" "MagChess Footprints:SS49E"
+		(property "Footprint" "MagChess:SS49E"
 			(at 97.79 142.24 0)
 			(effects
 				(font
@@ -9368,7 +9368,7 @@
 			(uuid "265f5be0-5369-4e1f-a56a-ff91f7c0400f")
 		)
 		(instances
-			(project "Chess"
+			(project "MagChess"
 				(path "/13990d19-eefd-4b7d-85c6-301fca518e81"
 					(reference "U57")
 					(unit 1)
@@ -9402,7 +9402,7 @@
 				)
 			)
 		)
-		(property "Footprint" "MagChess Footprints:SS49E"
+		(property "Footprint" "MagChess:SS49E"
 			(at 173.99 271.78 0)
 			(effects
 				(font
@@ -9441,7 +9441,7 @@
 			(uuid "52e2fa03-8258-4974-950c-083e30bced98")
 		)
 		(instances
-			(project "Chess"
+			(project "MagChess"
 				(path "/13990d19-eefd-4b7d-85c6-301fca518e81"
 					(reference "U51")
 					(unit 1)
@@ -9475,7 +9475,7 @@
 				)
 			)
 		)
-		(property "Footprint" "MagChess Footprints:SS49E"
+		(property "Footprint" "MagChess:SS49E"
 			(at 97.79 228.6 0)
 			(effects
 				(font
@@ -9514,7 +9514,7 @@
 			(uuid "1972c387-849a-4b20-86e4-b5e4e7a0db9d")
 		)
 		(instances
-			(project "Chess"
+			(project "MagChess"
 				(path "/13990d19-eefd-4b7d-85c6-301fca518e81"
 					(reference "U69")
 					(unit 1)
@@ -9548,7 +9548,7 @@
 				)
 			)
 		)
-		(property "Footprint" "MagChess Footprints:SS49E"
+		(property "Footprint" "MagChess:SS49E"
 			(at 97.79 185.42 0)
 			(effects
 				(font
@@ -9587,7 +9587,7 @@
 			(uuid "dde2fefc-85ed-43a3-921d-ed55d25dda07")
 		)
 		(instances
-			(project "Chess"
+			(project "MagChess"
 				(path "/13990d19-eefd-4b7d-85c6-301fca518e81"
 					(reference "U63")
 					(unit 1)
@@ -9623,7 +9623,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" "MagChess Footprints:CD74HC4067"
+		(property "Footprint" "MagChess:CD74HC4067"
 			(at 477.52 172.72 0)
 			(effects
 				(font
@@ -9724,7 +9724,7 @@
 			(uuid "e9827591-d460-4767-b203-413ed425d25b")
 		)
 		(instances
-			(project "Chess"
+			(project "MagChess"
 				(path "/13990d19-eefd-4b7d-85c6-301fca518e81"
 					(reference "U6")
 					(unit 1)
@@ -9758,7 +9758,7 @@
 				)
 			)
 		)
-		(property "Footprint" "MagChess Footprints:SS49E"
+		(property "Footprint" "MagChess:SS49E"
 			(at 173.99 120.65 0)
 			(effects
 				(font
@@ -9797,7 +9797,7 @@
 			(uuid "e57ec628-338c-4ca6-b2c8-16bc9d809c76")
 		)
 		(instances
-			(project "Chess"
+			(project "MagChess"
 				(path "/13990d19-eefd-4b7d-85c6-301fca518e81"
 					(reference "U30")
 					(unit 1)
@@ -9831,7 +9831,7 @@
 				)
 			)
 		)
-		(property "Footprint" "MagChess Footprints:SS49E"
+		(property "Footprint" "MagChess:SS49E"
 			(at 97.79 163.83 0)
 			(effects
 				(font
@@ -9870,7 +9870,7 @@
 			(uuid "5d1b38bc-bd18-4128-b5fd-200f2d54d567")
 		)
 		(instances
-			(project "Chess"
+			(project "MagChess"
 				(path "/13990d19-eefd-4b7d-85c6-301fca518e81"
 					(reference "U60")
 					(unit 1)
@@ -9904,7 +9904,7 @@
 				)
 			)
 		)
-		(property "Footprint" "MagChess Footprints:SS49E"
+		(property "Footprint" "MagChess:SS49E"
 			(at 275.59 228.6 0)
 			(effects
 				(font
@@ -9943,7 +9943,7 @@
 			(uuid "59a8f125-c2cf-4bea-8fe4-82dba1c19101")
 		)
 		(instances
-			(project "Chess"
+			(project "MagChess"
 				(path "/13990d19-eefd-4b7d-85c6-301fca518e81"
 					(reference "U17")
 					(unit 1)
@@ -9977,7 +9977,7 @@
 				)
 			)
 		)
-		(property "Footprint" "MagChess Footprints:SS49E"
+		(property "Footprint" "MagChess:SS49E"
 			(at 224.79 163.83 0)
 			(effects
 				(font
@@ -10016,7 +10016,7 @@
 			(uuid "9bf0100e-ee43-4ce7-8368-bba226408662")
 		)
 		(instances
-			(project "Chess"
+			(project "MagChess"
 				(path "/13990d19-eefd-4b7d-85c6-301fca518e81"
 					(reference "U34")
 					(unit 1)
@@ -10050,7 +10050,7 @@
 				)
 			)
 		)
-		(property "Footprint" "MagChess Footprints:SS49E"
+		(property "Footprint" "MagChess:SS49E"
 			(at 250.19 250.19 0)
 			(effects
 				(font
@@ -10089,7 +10089,7 @@
 			(uuid "19c6f886-5499-4447-b250-73ab4f888ed4")
 		)
 		(instances
-			(project "Chess"
+			(project "MagChess"
 				(path "/13990d19-eefd-4b7d-85c6-301fca518e81"
 					(reference "U26")
 					(unit 1)
@@ -10123,7 +10123,7 @@
 				)
 			)
 		)
-		(property "Footprint" "MagChess Footprints:SS49E"
+		(property "Footprint" "MagChess:SS49E"
 			(at 148.59 120.65 0)
 			(effects
 				(font
@@ -10162,7 +10162,7 @@
 			(uuid "b2cfae56-ccf9-4439-ac3d-bf4031756417")
 		)
 		(instances
-			(project "Chess"
+			(project "MagChess"
 				(path "/13990d19-eefd-4b7d-85c6-301fca518e81"
 					(reference "U52")
 					(unit 1)
@@ -10196,7 +10196,7 @@
 				)
 			)
 		)
-		(property "Footprint" "MagChess Footprints:SS49E"
+		(property "Footprint" "MagChess:SS49E"
 			(at 148.59 163.83 0)
 			(effects
 				(font
@@ -10235,7 +10235,7 @@
 			(uuid "039e6046-ecf4-4552-9c16-7c5124e3c873")
 		)
 		(instances
-			(project "Chess"
+			(project "MagChess"
 				(path "/13990d19-eefd-4b7d-85c6-301fca518e81"
 					(reference "U58")
 					(unit 1)
@@ -10269,7 +10269,7 @@
 				)
 			)
 		)
-		(property "Footprint" "MagChess Footprints:SS49E"
+		(property "Footprint" "MagChess:SS49E"
 			(at 275.59 163.83 0)
 			(effects
 				(font
@@ -10308,7 +10308,7 @@
 			(uuid "97461472-de56-41d2-9baf-ff8265944c95")
 		)
 		(instances
-			(project "Chess"
+			(project "MagChess"
 				(path "/13990d19-eefd-4b7d-85c6-301fca518e81"
 					(reference "U14")
 					(unit 1)
@@ -10342,7 +10342,7 @@
 				)
 			)
 		)
-		(property "Footprint" "MagChess Footprints:SS49E"
+		(property "Footprint" "MagChess:SS49E"
 			(at 199.39 250.19 0)
 			(effects
 				(font
@@ -10381,7 +10381,7 @@
 			(uuid "471082e1-015e-49a2-bae0-3d13835476fa")
 		)
 		(instances
-			(project "Chess"
+			(project "MagChess"
 				(path "/13990d19-eefd-4b7d-85c6-301fca518e81"
 					(reference "U47")
 					(unit 1)
@@ -10501,7 +10501,7 @@
 				)
 			)
 		)
-		(property "Footprint" "MagChess Footprints:SS49E"
+		(property "Footprint" "MagChess:SS49E"
 			(at 123.19 120.65 0)
 			(effects
 				(font
@@ -10540,7 +10540,7 @@
 			(uuid "48c4f1ac-39af-4b0d-a1e8-e19005e635c6")
 		)
 		(instances
-			(project "Chess"
+			(project "MagChess"
 				(path "/13990d19-eefd-4b7d-85c6-301fca518e81"
 					(reference "U53")
 					(unit 1)
@@ -10574,7 +10574,7 @@
 				)
 			)
 		)
-		(property "Footprint" "MagChess Footprints:SS49E"
+		(property "Footprint" "MagChess:SS49E"
 			(at 275.59 185.42 0)
 			(effects
 				(font
@@ -10613,7 +10613,7 @@
 			(uuid "9825e03e-7ff6-442e-ba95-3e4a1163c3f4")
 		)
 		(instances
-			(project "Chess"
+			(project "MagChess"
 				(path "/13990d19-eefd-4b7d-85c6-301fca518e81"
 					(reference "U15")
 					(unit 1)
@@ -10647,7 +10647,7 @@
 				)
 			)
 		)
-		(property "Footprint" "MagChess Footprints:SS49E"
+		(property "Footprint" "MagChess:SS49E"
 			(at 199.39 142.24 0)
 			(effects
 				(font
@@ -10686,7 +10686,7 @@
 			(uuid "8db71236-42bf-45ff-b002-d0c66e5e1699")
 		)
 		(instances
-			(project "Chess"
+			(project "MagChess"
 				(path "/13990d19-eefd-4b7d-85c6-301fca518e81"
 					(reference "U32")
 					(unit 1)
@@ -10720,7 +10720,7 @@
 				)
 			)
 		)
-		(property "Footprint" "MagChess Footprints:SS49E"
+		(property "Footprint" "MagChess:SS49E"
 			(at 199.39 228.6 0)
 			(effects
 				(font
@@ -10759,7 +10759,7 @@
 			(uuid "d368f66a-d0f8-4ef3-a076-f4ec7648b387")
 		)
 		(instances
-			(project "Chess"
+			(project "MagChess"
 				(path "/13990d19-eefd-4b7d-85c6-301fca518e81"
 					(reference "U44")
 					(unit 1)
@@ -10793,7 +10793,7 @@
 				)
 			)
 		)
-		(property "Footprint" "MagChess Footprints:SS49E"
+		(property "Footprint" "MagChess:SS49E"
 			(at 123.19 163.83 0)
 			(effects
 				(font
@@ -10832,7 +10832,7 @@
 			(uuid "0bcc0790-a637-498f-be09-547db09a58a0")
 		)
 		(instances
-			(project "Chess"
+			(project "MagChess"
 				(path "/13990d19-eefd-4b7d-85c6-301fca518e81"
 					(reference "U59")
 					(unit 1)
@@ -10866,7 +10866,7 @@
 				)
 			)
 		)
-		(property "Footprint" "MagChess Footprints:SS49E"
+		(property "Footprint" "MagChess:SS49E"
 			(at 173.99 207.01 0)
 			(effects
 				(font
@@ -10905,7 +10905,7 @@
 			(uuid "3946ba83-7ba0-46c1-a4eb-6d5ac9a9c5a4")
 		)
 		(instances
-			(project "Chess"
+			(project "MagChess"
 				(path "/13990d19-eefd-4b7d-85c6-301fca518e81"
 					(reference "U42")
 					(unit 1)
@@ -10939,7 +10939,7 @@
 				)
 			)
 		)
-		(property "Footprint" "MagChess Footprints:SS49E"
+		(property "Footprint" "MagChess:SS49E"
 			(at 97.79 250.19 0)
 			(effects
 				(font
@@ -10978,7 +10978,7 @@
 			(uuid "a7b1ed16-3337-4b83-adc2-f1ffc1cd5ad2")
 		)
 		(instances
-			(project "Chess"
+			(project "MagChess"
 				(path "/13990d19-eefd-4b7d-85c6-301fca518e81"
 					(reference "U72")
 					(unit 1)
@@ -11012,7 +11012,7 @@
 				)
 			)
 		)
-		(property "Footprint" "MagChess Footprints:SS49E"
+		(property "Footprint" "MagChess:SS49E"
 			(at 123.19 271.78 0)
 			(effects
 				(font
@@ -11051,7 +11051,7 @@
 			(uuid "b9fb81c6-1511-4b47-9435-6c4967f1c324")
 		)
 		(instances
-			(project "Chess"
+			(project "MagChess"
 				(path "/13990d19-eefd-4b7d-85c6-301fca518e81"
 					(reference "U74")
 					(unit 1)
@@ -11085,7 +11085,7 @@
 				)
 			)
 		)
-		(property "Footprint" "MagChess Footprints:SS49E"
+		(property "Footprint" "MagChess:SS49E"
 			(at 250.19 120.65 0)
 			(effects
 				(font
@@ -11124,7 +11124,7 @@
 			(uuid "7e9f182f-95b0-4e93-96b3-856559582ddf")
 		)
 		(instances
-			(project "Chess"
+			(project "MagChess"
 				(path "/13990d19-eefd-4b7d-85c6-301fca518e81"
 					(reference "U20")
 					(unit 1)
@@ -11158,7 +11158,7 @@
 				)
 			)
 		)
-		(property "Footprint" "MagChess Footprints:SS49E"
+		(property "Footprint" "MagChess:SS49E"
 			(at 199.39 207.01 0)
 			(effects
 				(font
@@ -11197,7 +11197,7 @@
 			(uuid "574a53fc-028c-4f44-8e04-123f8baae4ee")
 		)
 		(instances
-			(project "Chess"
+			(project "MagChess"
 				(path "/13990d19-eefd-4b7d-85c6-301fca518e81"
 					(reference "U41")
 					(unit 1)
@@ -11231,7 +11231,7 @@
 				)
 			)
 		)
-		(property "Footprint" "MagChess Footprints:SS49E"
+		(property "Footprint" "MagChess:SS49E"
 			(at 224.79 271.78 0)
 			(effects
 				(font
@@ -11270,7 +11270,7 @@
 			(uuid "c05d2b20-69de-4bec-837f-3cd428a23842")
 		)
 		(instances
-			(project "Chess"
+			(project "MagChess"
 				(path "/13990d19-eefd-4b7d-85c6-301fca518e81"
 					(reference "U49")
 					(unit 1)
@@ -11304,7 +11304,7 @@
 				)
 			)
 		)
-		(property "Footprint" "MagChess Footprints:SS49E"
+		(property "Footprint" "MagChess:SS49E"
 			(at 97.79 207.01 0)
 			(effects
 				(font
@@ -11343,7 +11343,7 @@
 			(uuid "ef7e4bdf-ac9d-4e88-b7e1-4da552f61e45")
 		)
 		(instances
-			(project "Chess"
+			(project "MagChess"
 				(path "/13990d19-eefd-4b7d-85c6-301fca518e81"
 					(reference "U66")
 					(unit 1)
@@ -11377,7 +11377,7 @@
 				)
 			)
 		)
-		(property "Footprint" "MagChess Footprints:SS49E"
+		(property "Footprint" "MagChess:SS49E"
 			(at 250.19 207.01 0)
 			(effects
 				(font
@@ -11416,7 +11416,7 @@
 			(uuid "02893f77-48c3-4c94-9ea2-dea9a389a709")
 		)
 		(instances
-			(project "Chess"
+			(project "MagChess"
 				(path "/13990d19-eefd-4b7d-85c6-301fca518e81"
 					(reference "U24")
 					(unit 1)
@@ -11450,7 +11450,7 @@
 				)
 			)
 		)
-		(property "Footprint" "MagChess Footprints:SS49E"
+		(property "Footprint" "MagChess:SS49E"
 			(at 250.19 142.24 0)
 			(effects
 				(font
@@ -11489,7 +11489,7 @@
 			(uuid "b38b36e5-06f1-4900-8f9d-8d2b744c6afb")
 		)
 		(instances
-			(project "Chess"
+			(project "MagChess"
 				(path "/13990d19-eefd-4b7d-85c6-301fca518e81"
 					(reference "U21")
 					(unit 1)
@@ -11523,7 +11523,7 @@
 				)
 			)
 		)
-		(property "Footprint" "MagChess Footprints:SS49E"
+		(property "Footprint" "MagChess:SS49E"
 			(at 173.99 250.19 0)
 			(effects
 				(font
@@ -11562,7 +11562,7 @@
 			(uuid "32c2c376-9b9f-49f1-a43a-37b832414bde")
 		)
 		(instances
-			(project "Chess"
+			(project "MagChess"
 				(path "/13990d19-eefd-4b7d-85c6-301fca518e81"
 					(reference "U48")
 					(unit 1)
@@ -11596,7 +11596,7 @@
 				)
 			)
 		)
-		(property "Footprint" "MagChess Footprints:SS49E"
+		(property "Footprint" "MagChess:SS49E"
 			(at 173.99 163.83 0)
 			(effects
 				(font
@@ -11635,7 +11635,7 @@
 			(uuid "cd29358c-39a5-42f7-aa74-56af8ec24ae0")
 		)
 		(instances
-			(project "Chess"
+			(project "MagChess"
 				(path "/13990d19-eefd-4b7d-85c6-301fca518e81"
 					(reference "U36")
 					(unit 1)
@@ -11669,7 +11669,7 @@
 				)
 			)
 		)
-		(property "Footprint" "MagChess Footprints:SS49E"
+		(property "Footprint" "MagChess:SS49E"
 			(at 123.19 207.01 0)
 			(effects
 				(font
@@ -11708,7 +11708,7 @@
 			(uuid "c951309c-aa37-43a7-98a5-61266a622702")
 		)
 		(instances
-			(project "Chess"
+			(project "MagChess"
 				(path "/13990d19-eefd-4b7d-85c6-301fca518e81"
 					(reference "U65")
 					(unit 1)
@@ -11742,7 +11742,7 @@
 				)
 			)
 		)
-		(property "Footprint" "MagChess Footprints:SS49E"
+		(property "Footprint" "MagChess:SS49E"
 			(at 173.99 228.6 0)
 			(effects
 				(font
@@ -11781,7 +11781,7 @@
 			(uuid "e3534c5d-219f-4058-86ea-38530d4cd7d9")
 		)
 		(instances
-			(project "Chess"
+			(project "MagChess"
 				(path "/13990d19-eefd-4b7d-85c6-301fca518e81"
 					(reference "U45")
 					(unit 1)
@@ -11815,7 +11815,7 @@
 				)
 			)
 		)
-		(property "Footprint" "MagChess Footprints:SS49E"
+		(property "Footprint" "MagChess:SS49E"
 			(at 224.79 207.01 0)
 			(effects
 				(font
@@ -11854,7 +11854,7 @@
 			(uuid "d3c0d415-b034-4be8-aefb-3b81f761e9a7")
 		)
 		(instances
-			(project "Chess"
+			(project "MagChess"
 				(path "/13990d19-eefd-4b7d-85c6-301fca518e81"
 					(reference "U40")
 					(unit 1)
@@ -11888,7 +11888,7 @@
 				)
 			)
 		)
-		(property "Footprint" "MagChess Footprints:SS49E"
+		(property "Footprint" "MagChess:SS49E"
 			(at 148.59 207.01 0)
 			(effects
 				(font
@@ -11927,7 +11927,7 @@
 			(uuid "06da6e7e-a5f1-43dd-afe8-d0eac7193cd3")
 		)
 		(instances
-			(project "Chess"
+			(project "MagChess"
 				(path "/13990d19-eefd-4b7d-85c6-301fca518e81"
 					(reference "U64")
 					(unit 1)
@@ -11961,7 +11961,7 @@
 				)
 			)
 		)
-		(property "Footprint" "MagChess Footprints:SS49E"
+		(property "Footprint" "MagChess:SS49E"
 			(at 173.99 142.24 0)
 			(effects
 				(font
@@ -12000,7 +12000,7 @@
 			(uuid "972388c2-68d3-4c03-b41f-de4f1834fdfe")
 		)
 		(instances
-			(project "Chess"
+			(project "MagChess"
 				(path "/13990d19-eefd-4b7d-85c6-301fca518e81"
 					(reference "U33")
 					(unit 1)
@@ -12034,7 +12034,7 @@
 				)
 			)
 		)
-		(property "Footprint" "MagChess Footprints:SS49E"
+		(property "Footprint" "MagChess:SS49E"
 			(at 250.19 228.6 0)
 			(effects
 				(font
@@ -12073,7 +12073,7 @@
 			(uuid "26ab84d5-fc26-4fd4-8695-5504f1814d43")
 		)
 		(instances
-			(project "Chess"
+			(project "MagChess"
 				(path "/13990d19-eefd-4b7d-85c6-301fca518e81"
 					(reference "U25")
 					(unit 1)
@@ -12107,7 +12107,7 @@
 				)
 			)
 		)
-		(property "Footprint" "MagChess Footprints:SS49E"
+		(property "Footprint" "MagChess:SS49E"
 			(at 97.79 271.78 0)
 			(effects
 				(font
@@ -12146,7 +12146,7 @@
 			(uuid "5d9feab1-6bd7-4372-b106-45f32ad9250f")
 		)
 		(instances
-			(project "Chess"
+			(project "MagChess"
 				(path "/13990d19-eefd-4b7d-85c6-301fca518e81"
 					(reference "U75")
 					(unit 1)
@@ -12180,7 +12180,7 @@
 				)
 			)
 		)
-		(property "Footprint" "MagChess Footprints:SS49E"
+		(property "Footprint" "MagChess:SS49E"
 			(at 173.99 185.42 0)
 			(effects
 				(font
@@ -12219,7 +12219,7 @@
 			(uuid "84aed2ce-d4c2-4454-9ade-a22c1c1446ca")
 		)
 		(instances
-			(project "Chess"
+			(project "MagChess"
 				(path "/13990d19-eefd-4b7d-85c6-301fca518e81"
 					(reference "U39")
 					(unit 1)
@@ -12253,7 +12253,7 @@
 				)
 			)
 		)
-		(property "Footprint" "MagChess Footprints:SS49E"
+		(property "Footprint" "MagChess:SS49E"
 			(at 224.79 228.6 0)
 			(effects
 				(font
@@ -12292,7 +12292,7 @@
 			(uuid "bd7d4e04-a37d-4999-a085-84dd3246f025")
 		)
 		(instances
-			(project "Chess"
+			(project "MagChess"
 				(path "/13990d19-eefd-4b7d-85c6-301fca518e81"
 					(reference "U43")
 					(unit 1)
@@ -12326,7 +12326,7 @@
 				)
 			)
 		)
-		(property "Footprint" "MagChess Footprints:SS49E"
+		(property "Footprint" "MagChess:SS49E"
 			(at 199.39 185.42 0)
 			(effects
 				(font
@@ -12365,7 +12365,7 @@
 			(uuid "8393932f-455f-436a-9ace-c4a926114345")
 		)
 		(instances
-			(project "Chess"
+			(project "MagChess"
 				(path "/13990d19-eefd-4b7d-85c6-301fca518e81"
 					(reference "U38")
 					(unit 1)
@@ -12401,7 +12401,7 @@
 				(justify right)
 			)
 		)
-		(property "Footprint" "MagChess Footprints:CD74HC4067"
+		(property "Footprint" "MagChess:CD74HC4067"
 			(at 317.5 124.46 0)
 			(effects
 				(font
@@ -12536,7 +12536,7 @@
 				)
 			)
 		)
-		(property "Footprint" "MagChess Footprints:SS49E"
+		(property "Footprint" "MagChess:SS49E"
 			(at 123.19 185.42 0)
 			(effects
 				(font
@@ -12575,7 +12575,7 @@
 			(uuid "a5e39ce2-c6ac-4b50-beff-d587c9e4666f")
 		)
 		(instances
-			(project "Chess"
+			(project "MagChess"
 				(path "/13990d19-eefd-4b7d-85c6-301fca518e81"
 					(reference "U62")
 					(unit 1)
@@ -12611,7 +12611,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" "MagChess Footprints:CD74HC4067"
+		(property "Footprint" "MagChess:CD74HC4067"
 			(at 476.25 252.73 0)
 			(effects
 				(font
@@ -12712,7 +12712,7 @@
 			(uuid "abc2b30a-780f-4c7f-ade2-1abfc2b6cf98")
 		)
 		(instances
-			(project "Chess"
+			(project "MagChess"
 				(path "/13990d19-eefd-4b7d-85c6-301fca518e81"
 					(reference "U5")
 					(unit 1)
@@ -12746,7 +12746,7 @@
 				)
 			)
 		)
-		(property "Footprint" "MagChess Footprints:SS49E"
+		(property "Footprint" "MagChess:SS49E"
 			(at 199.39 163.83 0)
 			(effects
 				(font
@@ -12785,7 +12785,7 @@
 			(uuid "0b91f600-0456-47e2-9dfb-1e8630e03497")
 		)
 		(instances
-			(project "Chess"
+			(project "MagChess"
 				(path "/13990d19-eefd-4b7d-85c6-301fca518e81"
 					(reference "U35")
 					(unit 1)
@@ -12819,7 +12819,7 @@
 				)
 			)
 		)
-		(property "Footprint" "MagChess Footprints:SS49E"
+		(property "Footprint" "MagChess:SS49E"
 			(at 275.59 120.65 0)
 			(effects
 				(font
@@ -12858,7 +12858,7 @@
 			(uuid "6c0d554d-8272-45cd-bdd0-49bc3ace9c8f")
 		)
 		(instances
-			(project "Chess"
+			(project "MagChess"
 				(path "/13990d19-eefd-4b7d-85c6-301fca518e81"
 					(reference "U12")
 					(unit 1)
@@ -12892,7 +12892,7 @@
 				)
 			)
 		)
-		(property "Footprint" "MagChess Footprints:SS49E"
+		(property "Footprint" "MagChess:SS49E"
 			(at 199.39 120.65 0)
 			(effects
 				(font
@@ -12931,7 +12931,7 @@
 			(uuid "b74e57b9-7979-4117-9020-11539d825590")
 		)
 		(instances
-			(project "Chess"
+			(project "MagChess"
 				(path "/13990d19-eefd-4b7d-85c6-301fca518e81"
 					(reference "U29")
 					(unit 1)
@@ -12965,7 +12965,7 @@
 				)
 			)
 		)
-		(property "Footprint" "MagChess Footprints:SS49E"
+		(property "Footprint" "MagChess:SS49E"
 			(at 250.19 163.83 0)
 			(effects
 				(font
@@ -13004,7 +13004,7 @@
 			(uuid "1863ea8f-4ca0-431a-95e2-972f62a78c98")
 		)
 		(instances
-			(project "Chess"
+			(project "MagChess"
 				(path "/13990d19-eefd-4b7d-85c6-301fca518e81"
 					(reference "U22")
 					(unit 1)
@@ -13038,7 +13038,7 @@
 				)
 			)
 		)
-		(property "Footprint" "MagChess Footprints:SS49E"
+		(property "Footprint" "MagChess:SS49E"
 			(at 275.59 207.01 0)
 			(effects
 				(font
@@ -13077,7 +13077,7 @@
 			(uuid "cda59555-c01c-47dc-865a-56a68e0239ad")
 		)
 		(instances
-			(project "Chess"
+			(project "MagChess"
 				(path "/13990d19-eefd-4b7d-85c6-301fca518e81"
 					(reference "U16")
 					(unit 1)
@@ -13112,7 +13112,7 @@
 				)
 			)
 		)
-		(property "Footprint" "MagChess Footprints:MP1584"
+		(property "Footprint" "MagChess:MP1584"
 			(at 407.67 229.87 0)
 			(effects
 				(font
@@ -13186,7 +13186,7 @@
 				)
 			)
 		)
-		(property "Footprint" "MagChess Footprints:SS49E"
+		(property "Footprint" "MagChess:SS49E"
 			(at 224.79 142.24 0)
 			(effects
 				(font
@@ -13225,7 +13225,7 @@
 			(uuid "32ceb82e-13b3-4aa6-a187-beb000f463c2")
 		)
 		(instances
-			(project "Chess"
+			(project "MagChess"
 				(path "/13990d19-eefd-4b7d-85c6-301fca518e81"
 					(reference "U31")
 					(unit 1)

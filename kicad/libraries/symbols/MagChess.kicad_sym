@@ -24,7 +24,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" "MagChess Footprints:MP1584"
+		(property "Footprint" "MagChess:MP1584"
 			(at 0 5.08 0)
 			(effects
 				(font
@@ -182,7 +182,7 @@
 				)
 			)
 		)
-		(property "Footprint" "MagChess Footprints:SS49E"
+		(property "Footprint" "MagChess:SS49E"
 			(at 0 0 0)
 			(effects
 				(font

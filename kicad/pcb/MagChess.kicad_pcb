@@ -157,7 +157,7 @@
 	(net 76 "MA5")
 	(net 77 "MA8")
 	(net 78 "MA13")
-	(footprint "MagChess Footprints:SS49E"
+	(footprint "MagChess:SS49E"
 		(layer "F.Cu")
 		(uuid "0453efd5-536e-4df5-b665-34b88a8dfe61")
 		(at 76 167 45)
@@ -213,7 +213,7 @@
 		(property ki_fp_filters "SEN3_SS49E_HNW")
 		(path "/85f46222-dda8-4864-a901-eff311164169")
 		(sheetname "/")
-		(sheetfile "Chess.kicad_sch")
+		(sheetfile "MagChess.kicad_sch")
 		(attr through_hole)
 		(fp_line
 			(start -0.8 -2)
@@ -372,7 +372,7 @@
 		)
 		(embedded_fonts no)
 	)
-	(footprint "MagChess Footprints:SS49E"
+	(footprint "MagChess:SS49E"
 		(layer "F.Cu")
 		(uuid "0b857ad9-7ad2-48c2-b8d6-2c1bd0eacf2f")
 		(at 172 103 45)
@@ -428,7 +428,7 @@
 		(property ki_fp_filters "SEN3_SS49E_HNW")
 		(path "/7c716149-a71b-4f94-8205-d6b9399d0839")
 		(sheetname "/")
-		(sheetfile "Chess.kicad_sch")
+		(sheetfile "MagChess.kicad_sch")
 		(attr through_hole)
 		(fp_line
 			(start -0.8 -2)
@@ -587,7 +587,7 @@
 		)
 		(embedded_fonts no)
 	)
-	(footprint "MagChess Footprints:SS49E"
+	(footprint "MagChess:SS49E"
 		(layer "F.Cu")
 		(uuid "0bb7e22b-ad1c-4e8b-bedf-833ac34cd771")
 		(at 76 39 45)
@@ -643,7 +643,7 @@
 		(property ki_fp_filters "SEN3_SS49E_HNW")
 		(path "/dd9c5cf7-428f-4a2b-8852-d20c4a9ca01e")
 		(sheetname "/")
-		(sheetfile "Chess.kicad_sch")
+		(sheetfile "MagChess.kicad_sch")
 		(attr through_hole)
 		(fp_line
 			(start -0.8 -2)
@@ -802,7 +802,7 @@
 		)
 		(embedded_fonts no)
 	)
-	(footprint "MagChess Footprints:SS49E"
+	(footprint "MagChess:SS49E"
 		(layer "F.Cu")
 		(uuid "103b7b30-119d-46df-a546-5a8eae261a52")
 		(at 204 167 45)
@@ -858,7 +858,7 @@
 		(property ki_fp_filters "SEN3_SS49E_HNW")
 		(path "/91ad7a5d-2eac-46ab-be5d-4ddea83a95f5")
 		(sheetname "/")
-		(sheetfile "Chess.kicad_sch")
+		(sheetfile "MagChess.kicad_sch")
 		(attr through_hole)
 		(fp_line
 			(start -0.8 -2)
@@ -1017,7 +1017,7 @@
 		)
 		(embedded_fonts no)
 	)
-	(footprint "MagChess Footprints:SS49E"
+	(footprint "MagChess:SS49E"
 		(layer "F.Cu")
 		(uuid "1443037e-8939-4421-82af-0f6ec16d285c")
 		(at 204 263 45)
@@ -1073,7 +1073,7 @@
 		(property ki_fp_filters "SEN3_SS49E_HNW")
 		(path "/bdfe6afb-5c11-4e66-bbff-6e480b27f869")
 		(sheetname "/")
-		(sheetfile "Chess.kicad_sch")
+		(sheetfile "MagChess.kicad_sch")
 		(attr through_hole)
 		(fp_line
 			(start -0.8 -2)
@@ -1232,7 +1232,7 @@
 		)
 		(embedded_fonts no)
 	)
-	(footprint "MagChess Footprints:SS49E"
+	(footprint "MagChess:SS49E"
 		(layer "F.Cu")
 		(uuid "1a9286e8-5df8-4dff-8b0e-d11b72ba5dfe")
 		(at 172 199 45)
@@ -1288,7 +1288,7 @@
 		(property ki_fp_filters "SEN3_SS49E_HNW")
 		(path "/71002b1e-5e12-4bff-a3c4-928111125b5f")
 		(sheetname "/")
-		(sheetfile "Chess.kicad_sch")
+		(sheetfile "MagChess.kicad_sch")
 		(attr through_hole)
 		(fp_line
 			(start -0.8 -2)
@@ -1447,7 +1447,7 @@
 		)
 		(embedded_fonts no)
 	)
-	(footprint "MagChess Footprints:SS49E"
+	(footprint "MagChess:SS49E"
 		(layer "F.Cu")
 		(uuid "1e33e5bb-ed6c-43b9-a179-f8eb762e6d5f")
 		(at 236 103 45)
@@ -1503,7 +1503,7 @@
 		(property ki_fp_filters "SEN3_SS49E_HNW")
 		(path "/aae6f137-d38e-4db0-9275-30ee3b67abf2")
 		(sheetname "/")
-		(sheetfile "Chess.kicad_sch")
+		(sheetfile "MagChess.kicad_sch")
 		(attr through_hole)
 		(fp_line
 			(start -0.8 -2)
@@ -1662,7 +1662,7 @@
 		)
 		(embedded_fonts no)
 	)
-	(footprint "MagChess Footprints:SS49E"
+	(footprint "MagChess:SS49E"
 		(layer "F.Cu")
 		(uuid "2640f279-7700-4700-9452-a58abcbd3767")
 		(at 76 103 45)
@@ -1718,7 +1718,7 @@
 		(property ki_fp_filters "SEN3_SS49E_HNW")
 		(path "/3f06a71b-dff0-46f9-a815-185255e18da4")
 		(sheetname "/")
-		(sheetfile "Chess.kicad_sch")
+		(sheetfile "MagChess.kicad_sch")
 		(attr through_hole)
 		(fp_line
 			(start -0.8 -2)
@@ -1877,7 +1877,7 @@
 		)
 		(embedded_fonts no)
 	)
-	(footprint "MagChess Footprints:SS49E"
+	(footprint "MagChess:SS49E"
 		(layer "F.Cu")
 		(uuid "272db26c-b976-4597-9629-a7fb7e1ca7bf")
 		(at 108 231 45)
@@ -1933,7 +1933,7 @@
 		(property ki_fp_filters "SEN3_SS49E_HNW")
 		(path "/1e134f15-0e92-4d82-8090-189548ddd458")
 		(sheetname "/")
-		(sheetfile "Chess.kicad_sch")
+		(sheetfile "MagChess.kicad_sch")
 		(attr through_hole)
 		(fp_line
 			(start -0.8 -2)
@@ -2092,7 +2092,7 @@
 		)
 		(embedded_fonts no)
 	)
-	(footprint "MagChess Footprints:SS49E"
+	(footprint "MagChess:SS49E"
 		(layer "F.Cu")
 		(uuid "28b7d009-bbe9-486b-943f-f7f38529f9ec")
 		(at 108 135 45)
@@ -2148,7 +2148,7 @@
 		(property ki_fp_filters "SEN3_SS49E_HNW")
 		(path "/68bba2dd-cb78-4b52-a8a7-6dd8debc73ef")
 		(sheetname "/")
-		(sheetfile "Chess.kicad_sch")
+		(sheetfile "MagChess.kicad_sch")
 		(attr through_hole)
 		(fp_line
 			(start -0.8 -2)
@@ -2307,7 +2307,7 @@
 		)
 		(embedded_fonts no)
 	)
-	(footprint "MagChess Footprints:SS49E"
+	(footprint "MagChess:SS49E"
 		(layer "F.Cu")
 		(uuid "2ab0398f-5c4b-445d-b0fe-08ad8ca9680a")
 		(at 172 231 45)
@@ -2363,7 +2363,7 @@
 		(property ki_fp_filters "SEN3_SS49E_HNW")
 		(path "/80ac002f-d030-47c7-8819-e871e948b2f8")
 		(sheetname "/")
-		(sheetfile "Chess.kicad_sch")
+		(sheetfile "MagChess.kicad_sch")
 		(attr through_hole)
 		(fp_line
 			(start -0.8 -2)
@@ -2522,7 +2522,7 @@
 		)
 		(embedded_fonts no)
 	)
-	(footprint "MagChess Footprints:SS49E"
+	(footprint "MagChess:SS49E"
 		(layer "F.Cu")
 		(uuid "2b215c61-828a-43e0-b756-048c1486e5d1")
 		(at 44 71 45)
@@ -2578,7 +2578,7 @@
 		(property ki_fp_filters "SEN3_SS49E_HNW")
 		(path "/6073e6ba-6052-4570-a942-069bf1f6647a")
 		(sheetname "/")
-		(sheetfile "Chess.kicad_sch")
+		(sheetfile "MagChess.kicad_sch")
 		(attr through_hole)
 		(fp_line
 			(start -0.8 -2)
@@ -2737,7 +2737,7 @@
 		)
 		(embedded_fonts no)
 	)
-	(footprint "MagChess Footprints:SS49E"
+	(footprint "MagChess:SS49E"
 		(layer "F.Cu")
 		(uuid "30915866-ea70-4644-ba97-1494f7ea012d")
 		(at 172 135 45)
@@ -2793,7 +2793,7 @@
 		(property ki_fp_filters "SEN3_SS49E_HNW")
 		(path "/ea8ffafd-725f-48ae-aac5-ca7f20726d48")
 		(sheetname "/")
-		(sheetfile "Chess.kicad_sch")
+		(sheetfile "MagChess.kicad_sch")
 		(attr through_hole)
 		(fp_line
 			(start -0.8 -2)
@@ -2952,7 +2952,7 @@
 		)
 		(embedded_fonts no)
 	)
-	(footprint "MagChess Footprints:SS49E"
+	(footprint "MagChess:SS49E"
 		(layer "F.Cu")
 		(uuid "30d819f2-857d-4337-9541-c0a4a238cd20")
 		(at 140 231 45)
@@ -3008,7 +3008,7 @@
 		(property ki_fp_filters "SEN3_SS49E_HNW")
 		(path "/bb05a965-d2d8-423f-9630-cd1e0eb65cd5")
 		(sheetname "/")
-		(sheetfile "Chess.kicad_sch")
+		(sheetfile "MagChess.kicad_sch")
 		(attr through_hole)
 		(fp_line
 			(start -0.8 -2)
@@ -3167,7 +3167,7 @@
 		)
 		(embedded_fonts no)
 	)
-	(footprint "MagChess Footprints:SS49E"
+	(footprint "MagChess:SS49E"
 		(layer "F.Cu")
 		(uuid "40b73e86-1243-467a-8560-ef9d9776b86e")
 		(at 76 71 45)
@@ -3223,7 +3223,7 @@
 		(property ki_fp_filters "SEN3_SS49E_HNW")
 		(path "/840ed3e6-c733-46e1-8b0f-a85b0d8815f8")
 		(sheetname "/")
-		(sheetfile "Chess.kicad_sch")
+		(sheetfile "MagChess.kicad_sch")
 		(attr through_hole)
 		(fp_line
 			(start -0.8 -2)
@@ -3382,7 +3382,7 @@
 		)
 		(embedded_fonts no)
 	)
-	(footprint "MagChess Footprints:SS49E"
+	(footprint "MagChess:SS49E"
 		(layer "F.Cu")
 		(uuid "44b5dce5-9eda-419e-8a4e-06929485b945")
 		(at 140 199 45)
@@ -3438,7 +3438,7 @@
 		(property ki_fp_filters "SEN3_SS49E_HNW")
 		(path "/af5c10e9-671f-4798-9191-b5d6da887bc5")
 		(sheetname "/")
-		(sheetfile "Chess.kicad_sch")
+		(sheetfile "MagChess.kicad_sch")
 		(attr through_hole)
 		(fp_line
 			(start -0.8 -2)
@@ -3597,7 +3597,7 @@
 		)
 		(embedded_fonts no)
 	)
-	(footprint "MagChess Footprints:SS49E"
+	(footprint "MagChess:SS49E"
 		(layer "F.Cu")
 		(uuid "4bc52eb5-8e94-4bfe-8763-04b011749c5a")
 		(at 236 231 45)
@@ -3653,7 +3653,7 @@
 		(property ki_fp_filters "SEN3_SS49E_HNW")
 		(path "/c55621c9-e425-4778-9805-284365d363ab")
 		(sheetname "/")
-		(sheetfile "Chess.kicad_sch")
+		(sheetfile "MagChess.kicad_sch")
 		(attr through_hole)
 		(fp_line
 			(start -0.8 -2)
@@ -3812,7 +3812,7 @@
 		)
 		(embedded_fonts no)
 	)
-	(footprint "MagChess Footprints:SS49E"
+	(footprint "MagChess:SS49E"
 		(layer "F.Cu")
 		(uuid "4df59d26-1fee-4662-a500-517446714ca5")
 		(at 140 135 45)
@@ -3868,7 +3868,7 @@
 		(property ki_fp_filters "SEN3_SS49E_HNW")
 		(path "/5b7926ad-1536-44c3-bad4-9dfdc6f1d1ab")
 		(sheetname "/")
-		(sheetfile "Chess.kicad_sch")
+		(sheetfile "MagChess.kicad_sch")
 		(attr through_hole)
 		(fp_line
 			(start -0.8 -2)
@@ -4027,7 +4027,7 @@
 		)
 		(embedded_fonts no)
 	)
-	(footprint "MagChess Footprints:SS49E"
+	(footprint "MagChess:SS49E"
 		(layer "F.Cu")
 		(uuid "4e660b5e-9431-458a-8884-43be652bc7a7")
 		(at 108 39 45)
@@ -4083,7 +4083,7 @@
 		(property ki_fp_filters "SEN3_SS49E_HNW")
 		(path "/05e1343b-2c2c-4dd6-a423-83d18b856990")
 		(sheetname "/")
-		(sheetfile "Chess.kicad_sch")
+		(sheetfile "MagChess.kicad_sch")
 		(attr through_hole)
 		(fp_line
 			(start -0.8 -2)
@@ -4242,7 +4242,7 @@
 		)
 		(embedded_fonts no)
 	)
-	(footprint "MagChess Footprints:SS49E"
+	(footprint "MagChess:SS49E"
 		(layer "F.Cu")
 		(uuid "4eec9f1e-df20-4ffd-a73a-11cc1c5832f8")
 		(at 140 263 45)
@@ -4298,7 +4298,7 @@
 		(property ki_fp_filters "SEN3_SS49E_HNW")
 		(path "/842a6ce8-2e53-4c1e-a88f-483cc8e3fd95")
 		(sheetname "/")
-		(sheetfile "Chess.kicad_sch")
+		(sheetfile "MagChess.kicad_sch")
 		(attr through_hole)
 		(fp_line
 			(start -0.8 -2)
@@ -4457,7 +4457,7 @@
 		)
 		(embedded_fonts no)
 	)
-	(footprint "MagChess Footprints:SS49E"
+	(footprint "MagChess:SS49E"
 		(layer "F.Cu")
 		(uuid "54b38ba7-dd68-46d3-a76e-e8ddaf1aba04")
 		(at 236 199 45)
@@ -4513,7 +4513,7 @@
 		(property ki_fp_filters "SEN3_SS49E_HNW")
 		(path "/66518334-5172-4665-b5d9-a99be7ba8cc8")
 		(sheetname "/")
-		(sheetfile "Chess.kicad_sch")
+		(sheetfile "MagChess.kicad_sch")
 		(attr through_hole)
 		(fp_line
 			(start -0.8 -2)
@@ -4672,7 +4672,7 @@
 		)
 		(embedded_fonts no)
 	)
-	(footprint "MagChess Footprints:SS49E"
+	(footprint "MagChess:SS49E"
 		(layer "F.Cu")
 		(uuid "5786bd1f-4237-463b-a104-4945887bb535")
 		(at 140 103 45)
@@ -4728,7 +4728,7 @@
 		(property ki_fp_filters "SEN3_SS49E_HNW")
 		(path "/bec00b72-70d0-42d6-a7a9-4e0555fc0baf")
 		(sheetname "/")
-		(sheetfile "Chess.kicad_sch")
+		(sheetfile "MagChess.kicad_sch")
 		(attr through_hole)
 		(fp_line
 			(start -0.8 -2)
@@ -4887,7 +4887,7 @@
 		)
 		(embedded_fonts no)
 	)
-	(footprint "MagChess Footprints:SS49E"
+	(footprint "MagChess:SS49E"
 		(layer "F.Cu")
 		(uuid "5812e6f8-07ae-4d25-8b02-a232202e1bc3")
 		(at 236 167 45)
@@ -4943,7 +4943,7 @@
 		(property ki_fp_filters "SEN3_SS49E_HNW")
 		(path "/1e96b476-4064-42ce-b8b0-7ea7d85fccb6")
 		(sheetname "/")
-		(sheetfile "Chess.kicad_sch")
+		(sheetfile "MagChess.kicad_sch")
 		(attr through_hole)
 		(fp_line
 			(start -0.8 -2)
@@ -5102,7 +5102,7 @@
 		)
 		(embedded_fonts no)
 	)
-	(footprint "MagChess Footprints:SS49E"
+	(footprint "MagChess:SS49E"
 		(layer "F.Cu")
 		(uuid "5fe43082-23b5-439c-9671-3d7b77d05bb9")
 		(at 108 103 45)
@@ -5158,7 +5158,7 @@
 		(property ki_fp_filters "SEN3_SS49E_HNW")
 		(path "/279d62df-38f4-4160-add0-56d243cf62c8")
 		(sheetname "/")
-		(sheetfile "Chess.kicad_sch")
+		(sheetfile "MagChess.kicad_sch")
 		(attr through_hole)
 		(fp_line
 			(start -0.8 -2)
@@ -5317,7 +5317,7 @@
 		)
 		(embedded_fonts no)
 	)
-	(footprint "MagChess Footprints:SS49E"
+	(footprint "MagChess:SS49E"
 		(layer "F.Cu")
 		(uuid "627fe752-64de-4bfb-9b6c-901510ea186e")
 		(at 172 167 45)
@@ -5373,7 +5373,7 @@
 		(property ki_fp_filters "SEN3_SS49E_HNW")
 		(path "/0146aad6-6424-4d3f-b4e5-bc5553681b5a")
 		(sheetname "/")
-		(sheetfile "Chess.kicad_sch")
+		(sheetfile "MagChess.kicad_sch")
 		(attr through_hole)
 		(fp_line
 			(start -0.8 -2)
@@ -5532,7 +5532,7 @@
 		)
 		(embedded_fonts no)
 	)
-	(footprint "MagChess Footprints:SS49E"
+	(footprint "MagChess:SS49E"
 		(layer "F.Cu")
 		(uuid "62975b76-4b55-4825-9e7d-b750247dc06f")
 		(at 108 167 45)
@@ -5588,7 +5588,7 @@
 		(property ki_fp_filters "SEN3_SS49E_HNW")
 		(path "/049c90d6-8edc-4f96-9b71-980657fb3547")
 		(sheetname "/")
-		(sheetfile "Chess.kicad_sch")
+		(sheetfile "MagChess.kicad_sch")
 		(attr through_hole)
 		(fp_line
 			(start -0.8 -2)
@@ -5747,7 +5747,7 @@
 		)
 		(embedded_fonts no)
 	)
-	(footprint "MagChess Footprints:SS49E"
+	(footprint "MagChess:SS49E"
 		(layer "F.Cu")
 		(uuid "642e8498-63c5-4949-aaee-9dc884d23a96")
 		(at 236 39 45)
@@ -5803,7 +5803,7 @@
 		(property ki_fp_filters "SEN3_SS49E_HNW")
 		(path "/27b6742b-448b-46c0-ad10-6f32da650cbf")
 		(sheetname "/")
-		(sheetfile "Chess.kicad_sch")
+		(sheetfile "MagChess.kicad_sch")
 		(attr through_hole)
 		(fp_line
 			(start -0.8 -2)
@@ -5962,7 +5962,7 @@
 		)
 		(embedded_fonts no)
 	)
-	(footprint "MagChess Footprints:SS49E"
+	(footprint "MagChess:SS49E"
 		(layer "F.Cu")
 		(uuid "7935a551-4d1b-47a4-a9df-bff286a44533")
 		(at 268 135 45)
@@ -6018,7 +6018,7 @@
 		(property ki_fp_filters "SEN3_SS49E_HNW")
 		(path "/e9a49c94-1b1c-4f8a-a5d9-a7f22296f07c")
 		(sheetname "/")
-		(sheetfile "Chess.kicad_sch")
+		(sheetfile "MagChess.kicad_sch")
 		(attr through_hole)
 		(fp_line
 			(start -0.8 -2)
@@ -6177,7 +6177,7 @@
 		)
 		(embedded_fonts no)
 	)
-	(footprint "MagChess Footprints:SS49E"
+	(footprint "MagChess:SS49E"
 		(layer "F.Cu")
 		(uuid "793f1f21-2e7b-4ea5-8791-9c5f52954e3d")
 		(at 268 199 45)
@@ -6233,7 +6233,7 @@
 		(property ki_fp_filters "SEN3_SS49E_HNW")
 		(path "/2839a53c-fa90-4a1d-a887-044746760be7")
 		(sheetname "/")
-		(sheetfile "Chess.kicad_sch")
+		(sheetfile "MagChess.kicad_sch")
 		(attr through_hole)
 		(fp_line
 			(start -0.8 -2)
@@ -6392,7 +6392,7 @@
 		)
 		(embedded_fonts no)
 	)
-	(footprint "MagChess Footprints:SS49E"
+	(footprint "MagChess:SS49E"
 		(layer "F.Cu")
 		(uuid "89a8dfc8-d30d-4998-8594-f74bb89e92e9")
 		(at 44 167 45)
@@ -6448,7 +6448,7 @@
 		(property ki_fp_filters "SEN3_SS49E_HNW")
 		(path "/c9678906-aa19-485c-85c8-6c46e34b0da5")
 		(sheetname "/")
-		(sheetfile "Chess.kicad_sch")
+		(sheetfile "MagChess.kicad_sch")
 		(attr through_hole)
 		(fp_line
 			(start -0.8 -2)
@@ -6607,7 +6607,7 @@
 		)
 		(embedded_fonts no)
 	)
-	(footprint "MagChess Footprints:SS49E"
+	(footprint "MagChess:SS49E"
 		(layer "F.Cu")
 		(uuid "8cb1ee10-6167-475e-841d-edfa53f58081")
 		(at 172 39 45)
@@ -6663,7 +6663,7 @@
 		(property ki_fp_filters "SEN3_SS49E_HNW")
 		(path "/daa1ba97-21cb-411b-b026-ed102d7cba91")
 		(sheetname "/")
-		(sheetfile "Chess.kicad_sch")
+		(sheetfile "MagChess.kicad_sch")
 		(attr through_hole)
 		(fp_line
 			(start -0.8 -2)
@@ -6822,7 +6822,7 @@
 		)
 		(embedded_fonts no)
 	)
-	(footprint "MagChess Footprints:SS49E"
+	(footprint "MagChess:SS49E"
 		(layer "F.Cu")
 		(uuid "8cc2f2d4-b395-417d-a852-9980cc08a150")
 		(at 204 39 45)
@@ -6878,7 +6878,7 @@
 		(property ki_fp_filters "SEN3_SS49E_HNW")
 		(path "/02d77c21-ffd1-4dc3-bd5d-d11123bf348c")
 		(sheetname "/")
-		(sheetfile "Chess.kicad_sch")
+		(sheetfile "MagChess.kicad_sch")
 		(attr through_hole)
 		(fp_line
 			(start -0.8 -2)
@@ -7037,7 +7037,7 @@
 		)
 		(embedded_fonts no)
 	)
-	(footprint "MagChess Footprints:SS49E"
+	(footprint "MagChess:SS49E"
 		(layer "F.Cu")
 		(uuid "8cfc71a1-f917-4b21-b9dc-fdd1cf96381d")
 		(at 44 39 45)
@@ -7093,7 +7093,7 @@
 		(property ki_fp_filters "SEN3_SS49E_HNW")
 		(path "/51dfb972-6a59-4398-baaa-bf4c77556ecd")
 		(sheetname "/")
-		(sheetfile "Chess.kicad_sch")
+		(sheetfile "MagChess.kicad_sch")
 		(attr through_hole)
 		(fp_line
 			(start -0.8 -2)
@@ -7252,7 +7252,7 @@
 		)
 		(embedded_fonts no)
 	)
-	(footprint "MagChess Footprints:SS49E"
+	(footprint "MagChess:SS49E"
 		(layer "F.Cu")
 		(uuid "9499ed4d-6db1-4b3c-82e7-bfb2cc07e556")
 		(at 172 263 45)
@@ -7308,7 +7308,7 @@
 		(property ki_fp_filters "SEN3_SS49E_HNW")
 		(path "/8fd4d284-717c-4601-8b7d-f2ea62b17241")
 		(sheetname "/")
-		(sheetfile "Chess.kicad_sch")
+		(sheetfile "MagChess.kicad_sch")
 		(attr through_hole)
 		(fp_line
 			(start -0.8 -2)
@@ -7467,7 +7467,7 @@
 		)
 		(embedded_fonts no)
 	)
-	(footprint "MagChess Footprints:SS49E"
+	(footprint "MagChess:SS49E"
 		(layer "F.Cu")
 		(uuid "9ed0221b-11e5-4c3d-a3f0-f23502a46a50")
 		(at 76 263 45)
@@ -7523,7 +7523,7 @@
 		(property ki_fp_filters "SEN3_SS49E_HNW")
 		(path "/b77044e5-745e-4d38-9a86-695e12fbd524")
 		(sheetname "/")
-		(sheetfile "Chess.kicad_sch")
+		(sheetfile "MagChess.kicad_sch")
 		(attr through_hole)
 		(fp_line
 			(start -0.8 -2)
@@ -7682,7 +7682,7 @@
 		)
 		(embedded_fonts no)
 	)
-	(footprint "MagChess Footprints:SS49E"
+	(footprint "MagChess:SS49E"
 		(layer "F.Cu")
 		(uuid "a0f69806-6c37-4b28-a80a-0f0dd7b4692e")
 		(at 76 231 45)
@@ -7738,7 +7738,7 @@
 		(property ki_fp_filters "SEN3_SS49E_HNW")
 		(path "/449d9436-c444-483b-8f0a-4b7b428af3a6")
 		(sheetname "/")
-		(sheetfile "Chess.kicad_sch")
+		(sheetfile "MagChess.kicad_sch")
 		(attr through_hole)
 		(fp_line
 			(start -0.8 -2)
@@ -7897,7 +7897,7 @@
 		)
 		(embedded_fonts no)
 	)
-	(footprint "MagChess Footprints:SS49E"
+	(footprint "MagChess:SS49E"
 		(layer "F.Cu")
 		(uuid "a56a5921-9d04-4a5f-b6ab-aecb4bb843dd")
 		(at 204 71 45)
@@ -7953,7 +7953,7 @@
 		(property ki_fp_filters "SEN3_SS49E_HNW")
 		(path "/652a3117-5fd2-4714-8ae2-604cad901d39")
 		(sheetname "/")
-		(sheetfile "Chess.kicad_sch")
+		(sheetfile "MagChess.kicad_sch")
 		(attr through_hole)
 		(fp_line
 			(start -0.8 -2)
@@ -8112,7 +8112,7 @@
 		)
 		(embedded_fonts no)
 	)
-	(footprint "MagChess Footprints:SS49E"
+	(footprint "MagChess:SS49E"
 		(layer "F.Cu")
 		(uuid "a5ab5a41-2ee7-4b97-b610-f264478becd4")
 		(at 204 103 45)
@@ -8168,7 +8168,7 @@
 		(property ki_fp_filters "SEN3_SS49E_HNW")
 		(path "/fd16221b-af2e-4a42-9e0c-1d90eb10ad11")
 		(sheetname "/")
-		(sheetfile "Chess.kicad_sch")
+		(sheetfile "MagChess.kicad_sch")
 		(attr through_hole)
 		(fp_line
 			(start -0.8 -2)
@@ -8327,7 +8327,7 @@
 		)
 		(embedded_fonts no)
 	)
-	(footprint "MagChess Footprints:SS49E"
+	(footprint "MagChess:SS49E"
 		(layer "F.Cu")
 		(uuid "a8bf7add-69e7-488c-a3b1-d9157be12790")
 		(at 268 103 45)
@@ -8383,7 +8383,7 @@
 		(property ki_fp_filters "SEN3_SS49E_HNW")
 		(path "/1c46ebb1-238c-47cc-b1f7-56760e48b48b")
 		(sheetname "/")
-		(sheetfile "Chess.kicad_sch")
+		(sheetfile "MagChess.kicad_sch")
 		(attr through_hole)
 		(fp_line
 			(start -0.8 -2)
@@ -8542,7 +8542,7 @@
 		)
 		(embedded_fonts no)
 	)
-	(footprint "MagChess Footprints:SS49E"
+	(footprint "MagChess:SS49E"
 		(layer "F.Cu")
 		(uuid "aa9023d4-c6ae-4d5b-9ea8-5cdfa2bbfcc7")
 		(at 108 71 45)
@@ -8598,7 +8598,7 @@
 		(property ki_fp_filters "SEN3_SS49E_HNW")
 		(path "/6a4ccdd7-42e7-47e8-a9d1-25da3360ed99")
 		(sheetname "/")
-		(sheetfile "Chess.kicad_sch")
+		(sheetfile "MagChess.kicad_sch")
 		(attr through_hole)
 		(fp_line
 			(start -0.8 -2)
@@ -8757,7 +8757,7 @@
 		)
 		(embedded_fonts no)
 	)
-	(footprint "MagChess Footprints:SS49E"
+	(footprint "MagChess:SS49E"
 		(layer "F.Cu")
 		(uuid "ae57790e-434f-4927-af9a-4d73be12103c")
 		(at 44 199 45)
@@ -8813,7 +8813,7 @@
 		(property ki_fp_filters "SEN3_SS49E_HNW")
 		(path "/84a87366-f956-49e5-b979-5ff90e29ec56")
 		(sheetname "/")
-		(sheetfile "Chess.kicad_sch")
+		(sheetfile "MagChess.kicad_sch")
 		(attr through_hole)
 		(fp_line
 			(start -0.8 -2)
@@ -8972,7 +8972,7 @@
 		)
 		(embedded_fonts no)
 	)
-	(footprint "MagChess Footprints:SS49E"
+	(footprint "MagChess:SS49E"
 		(layer "F.Cu")
 		(uuid "b5561d3f-c27f-433e-b1ee-4ab248582ca0")
 		(at 108 263 45)
@@ -9028,7 +9028,7 @@
 		(property ki_fp_filters "SEN3_SS49E_HNW")
 		(path "/be2159fe-dad6-410f-943e-c9eca4c1e1a3")
 		(sheetname "/")
-		(sheetfile "Chess.kicad_sch")
+		(sheetfile "MagChess.kicad_sch")
 		(attr through_hole)
 		(fp_line
 			(start -0.8 -2)
@@ -9187,7 +9187,7 @@
 		)
 		(embedded_fonts no)
 	)
-	(footprint "MagChess Footprints:SS49E"
+	(footprint "MagChess:SS49E"
 		(layer "F.Cu")
 		(uuid "b69d367d-fbc2-4bda-8dae-987ef6cb41e6")
 		(at 204 135 45)
@@ -9243,7 +9243,7 @@
 		(property ki_fp_filters "SEN3_SS49E_HNW")
 		(path "/2559db17-6481-4b82-a7be-942ed7089bfd")
 		(sheetname "/")
-		(sheetfile "Chess.kicad_sch")
+		(sheetfile "MagChess.kicad_sch")
 		(attr through_hole)
 		(fp_line
 			(start -0.8 -2)
@@ -9402,7 +9402,7 @@
 		)
 		(embedded_fonts no)
 	)
-	(footprint "MagChess Footprints:SS49E"
+	(footprint "MagChess:SS49E"
 		(layer "F.Cu")
 		(uuid "b9ff5441-db0a-4355-9711-ced4e8e49102")
 		(at 268 167 45)
@@ -9458,7 +9458,7 @@
 		(property ki_fp_filters "SEN3_SS49E_HNW")
 		(path "/1990a2ef-7041-4a1f-a92c-1afca666d016")
 		(sheetname "/")
-		(sheetfile "Chess.kicad_sch")
+		(sheetfile "MagChess.kicad_sch")
 		(attr through_hole)
 		(fp_line
 			(start -0.8 -2)
@@ -9617,7 +9617,7 @@
 		)
 		(embedded_fonts no)
 	)
-	(footprint "MagChess Footprints:SS49E"
+	(footprint "MagChess:SS49E"
 		(layer "F.Cu")
 		(uuid "bd70df94-8e13-4e9c-98f0-ea53cf26a884")
 		(at 268 39 45)
@@ -9673,7 +9673,7 @@
 		(property ki_fp_filters "SEN3_SS49E_HNW")
 		(path "/7c5e8ecf-4ddc-4fdb-bcda-a18d4136bc23")
 		(sheetname "/")
-		(sheetfile "Chess.kicad_sch")
+		(sheetfile "MagChess.kicad_sch")
 		(attr through_hole)
 		(fp_line
 			(start -0.8 -2)
@@ -9832,7 +9832,7 @@
 		)
 		(embedded_fonts no)
 	)
-	(footprint "MagChess Footprints:SS49E"
+	(footprint "MagChess:SS49E"
 		(layer "F.Cu")
 		(uuid "c248a284-0058-4911-b91e-7ee0e240cc06")
 		(at 44 103 45)
@@ -9888,7 +9888,7 @@
 		(property ki_fp_filters "SEN3_SS49E_HNW")
 		(path "/4b9efdad-cef6-49c9-aec3-24ec7c096956")
 		(sheetname "/")
-		(sheetfile "Chess.kicad_sch")
+		(sheetfile "MagChess.kicad_sch")
 		(attr through_hole)
 		(fp_line
 			(start -0.8 -2)
@@ -10047,7 +10047,7 @@
 		)
 		(embedded_fonts no)
 	)
-	(footprint "MagChess Footprints:SS49E"
+	(footprint "MagChess:SS49E"
 		(layer "F.Cu")
 		(uuid "c4c3343d-26f2-4e44-b4c3-07f925e7eb30")
 		(at 204 199 45)
@@ -10103,7 +10103,7 @@
 		(property ki_fp_filters "SEN3_SS49E_HNW")
 		(path "/1cfe3e42-f3b6-4436-ba79-f3a8979fe20c")
 		(sheetname "/")
-		(sheetfile "Chess.kicad_sch")
+		(sheetfile "MagChess.kicad_sch")
 		(attr through_hole)
 		(fp_line
 			(start -0.8 -2)
@@ -10262,7 +10262,7 @@
 		)
 		(embedded_fonts no)
 	)
-	(footprint "MagChess Footprints:SS49E"
+	(footprint "MagChess:SS49E"
 		(layer "F.Cu")
 		(uuid "ca5ba4c9-9fd5-402e-b0ea-a54a6fa738fa")
 		(at 76 135 45)
@@ -10318,7 +10318,7 @@
 		(property ki_fp_filters "SEN3_SS49E_HNW")
 		(path "/7c31a5af-f4b7-4b76-98d4-e2a169cfdfd5")
 		(sheetname "/")
-		(sheetfile "Chess.kicad_sch")
+		(sheetfile "MagChess.kicad_sch")
 		(attr through_hole)
 		(fp_line
 			(start -0.8 -2)
@@ -10477,7 +10477,7 @@
 		)
 		(embedded_fonts no)
 	)
-	(footprint "MagChess Footprints:SS49E"
+	(footprint "MagChess:SS49E"
 		(layer "F.Cu")
 		(uuid "cb17f7f5-fe90-452e-8781-f122c3ccebd3")
 		(at 140 71 45)
@@ -10533,7 +10533,7 @@
 		(property ki_fp_filters "SEN3_SS49E_HNW")
 		(path "/b4e5526c-fd4e-4664-a41b-a44af36cdd9e")
 		(sheetname "/")
-		(sheetfile "Chess.kicad_sch")
+		(sheetfile "MagChess.kicad_sch")
 		(attr through_hole)
 		(fp_line
 			(start -0.8 -2)
@@ -10692,7 +10692,7 @@
 		)
 		(embedded_fonts no)
 	)
-	(footprint "MagChess Footprints:SS49E"
+	(footprint "MagChess:SS49E"
 		(layer "F.Cu")
 		(uuid "cf1080b2-05d2-43c7-b49b-792cc7bf051d")
 		(at 236 263 45)
@@ -10748,7 +10748,7 @@
 		(property ki_fp_filters "SEN3_SS49E_HNW")
 		(path "/9c69fe59-810f-4fc9-8bad-3c0fa43353a5")
 		(sheetname "/")
-		(sheetfile "Chess.kicad_sch")
+		(sheetfile "MagChess.kicad_sch")
 		(attr through_hole)
 		(fp_line
 			(start -0.8 -2)
@@ -10907,7 +10907,7 @@
 		)
 		(embedded_fonts no)
 	)
-	(footprint "MagChess Footprints:SS49E"
+	(footprint "MagChess:SS49E"
 		(layer "F.Cu")
 		(uuid "d017601e-f4a0-41fa-9986-6e8d14a908d5")
 		(at 172 71 45)
@@ -10963,7 +10963,7 @@
 		(property ki_fp_filters "SEN3_SS49E_HNW")
 		(path "/e5225d26-0911-40c7-a4a8-fe33e84ddab8")
 		(sheetname "/")
-		(sheetfile "Chess.kicad_sch")
+		(sheetfile "MagChess.kicad_sch")
 		(attr through_hole)
 		(fp_line
 			(start -0.8 -2)
@@ -11122,7 +11122,7 @@
 		)
 		(embedded_fonts no)
 	)
-	(footprint "MagChess Footprints:SS49E"
+	(footprint "MagChess:SS49E"
 		(layer "F.Cu")
 		(uuid "d162182c-4c60-4ca4-8cf4-6adf3e33721b")
 		(at 268 231 45)
@@ -11178,7 +11178,7 @@
 		(property ki_fp_filters "SEN3_SS49E_HNW")
 		(path "/63c99536-8b46-4dc0-92cf-20ab1c929e74")
 		(sheetname "/")
-		(sheetfile "Chess.kicad_sch")
+		(sheetfile "MagChess.kicad_sch")
 		(attr through_hole)
 		(fp_line
 			(start -0.8 -2)
@@ -11337,7 +11337,7 @@
 		)
 		(embedded_fonts no)
 	)
-	(footprint "MagChess Footprints:SS49E"
+	(footprint "MagChess:SS49E"
 		(layer "F.Cu")
 		(uuid "d46dcb1f-44db-4415-bb78-f5144f9049f1")
 		(at 236 71 45)
@@ -11393,7 +11393,7 @@
 		(property ki_fp_filters "SEN3_SS49E_HNW")
 		(path "/ec5d3655-ae39-420c-9dd6-dec41eef7a6c")
 		(sheetname "/")
-		(sheetfile "Chess.kicad_sch")
+		(sheetfile "MagChess.kicad_sch")
 		(attr through_hole)
 		(fp_line
 			(start -0.8 -2)
@@ -11552,7 +11552,7 @@
 		)
 		(embedded_fonts no)
 	)
-	(footprint "MagChess Footprints:SS49E"
+	(footprint "MagChess:SS49E"
 		(layer "F.Cu")
 		(uuid "df9b09a1-eff8-4267-b705-fae508a8344d")
 		(at 140 39 45)
@@ -11608,7 +11608,7 @@
 		(property ki_fp_filters "SEN3_SS49E_HNW")
 		(path "/cb62f943-a84c-4602-97c4-1af076ca1a06")
 		(sheetname "/")
-		(sheetfile "Chess.kicad_sch")
+		(sheetfile "MagChess.kicad_sch")
 		(attr through_hole)
 		(fp_line
 			(start -0.8 -2)
@@ -11767,7 +11767,7 @@
 		)
 		(embedded_fonts no)
 	)
-	(footprint "MagChess Footprints:SS49E"
+	(footprint "MagChess:SS49E"
 		(layer "F.Cu")
 		(uuid "e1fcf14f-bdb0-4a5f-8ec6-c71f03fa731c")
 		(at 44 263 45)
@@ -11823,7 +11823,7 @@
 		(property ki_fp_filters "SEN3_SS49E_HNW")
 		(path "/94136c4c-e4e3-46b8-86c9-0afa62e272f9")
 		(sheetname "/")
-		(sheetfile "Chess.kicad_sch")
+		(sheetfile "MagChess.kicad_sch")
 		(attr through_hole)
 		(fp_line
 			(start -0.8 -2)
@@ -11982,7 +11982,7 @@
 		)
 		(embedded_fonts no)
 	)
-	(footprint "MagChess Footprints:SS49E"
+	(footprint "MagChess:SS49E"
 		(layer "F.Cu")
 		(uuid "e44c57f8-dfe2-422c-8398-ed716fc464df")
 		(at 108 199 45)
@@ -12038,7 +12038,7 @@
 		(property ki_fp_filters "SEN3_SS49E_HNW")
 		(path "/1715accc-0a9e-4982-88ad-41d03165ccca")
 		(sheetname "/")
-		(sheetfile "Chess.kicad_sch")
+		(sheetfile "MagChess.kicad_sch")
 		(attr through_hole)
 		(fp_line
 			(start -0.8 -2)
@@ -12197,7 +12197,7 @@
 		)
 		(embedded_fonts no)
 	)
-	(footprint "MagChess Footprints:SS49E"
+	(footprint "MagChess:SS49E"
 		(layer "F.Cu")
 		(uuid "e4ec6aa0-d94f-4b5b-8c8a-700d1d8f5db4")
 		(at 76 199 45)
@@ -12253,7 +12253,7 @@
 		(property ki_fp_filters "SEN3_SS49E_HNW")
 		(path "/431a5f55-6764-4a00-a4aa-de83eaddcf0d")
 		(sheetname "/")
-		(sheetfile "Chess.kicad_sch")
+		(sheetfile "MagChess.kicad_sch")
 		(attr through_hole)
 		(fp_line
 			(start -0.8 -2)
@@ -12412,7 +12412,7 @@
 		)
 		(embedded_fonts no)
 	)
-	(footprint "MagChess Footprints:SS49E"
+	(footprint "MagChess:SS49E"
 		(layer "F.Cu")
 		(uuid "e718e627-dbdc-4da0-9f22-4fa8dcfd3acf")
 		(at 236 135 45)
@@ -12468,7 +12468,7 @@
 		(property ki_fp_filters "SEN3_SS49E_HNW")
 		(path "/8869d1cc-7d25-4645-82e2-45c8fa103953")
 		(sheetname "/")
-		(sheetfile "Chess.kicad_sch")
+		(sheetfile "MagChess.kicad_sch")
 		(attr through_hole)
 		(fp_line
 			(start -0.8 -2)
@@ -12627,7 +12627,7 @@
 		)
 		(embedded_fonts no)
 	)
-	(footprint "MagChess Footprints:SS49E"
+	(footprint "MagChess:SS49E"
 		(layer "F.Cu")
 		(uuid "e7c2b027-199d-401b-a62b-a86d6684eb32")
 		(at 44 135 45)
@@ -12683,7 +12683,7 @@
 		(property ki_fp_filters "SEN3_SS49E_HNW")
 		(path "/3e73f48a-e39c-4c36-aa80-e4f87b9c2a4d")
 		(sheetname "/")
-		(sheetfile "Chess.kicad_sch")
+		(sheetfile "MagChess.kicad_sch")
 		(attr through_hole)
 		(fp_line
 			(start -0.8 -2)
@@ -12842,7 +12842,7 @@
 		)
 		(embedded_fonts no)
 	)
-	(footprint "MagChess Footprints:SS49E"
+	(footprint "MagChess:SS49E"
 		(layer "F.Cu")
 		(uuid "e8e39bb1-f529-4ee5-82fc-d4894d35b9f0")
 		(at 44 231 45)
@@ -12898,7 +12898,7 @@
 		(property ki_fp_filters "SEN3_SS49E_HNW")
 		(path "/4f4cced7-4cfc-4578-b32b-c4c55d1d6acd")
 		(sheetname "/")
-		(sheetfile "Chess.kicad_sch")
+		(sheetfile "MagChess.kicad_sch")
 		(attr through_hole)
 		(fp_line
 			(start -0.8 -2)
@@ -13057,7 +13057,7 @@
 		)
 		(embedded_fonts no)
 	)
-	(footprint "MagChess Footprints:SS49E"
+	(footprint "MagChess:SS49E"
 		(layer "F.Cu")
 		(uuid "f443b41b-1a08-4f6e-93a9-a024eb7017bc")
 		(at 268 263 45)
@@ -13113,7 +13113,7 @@
 		(property ki_fp_filters "SEN3_SS49E_HNW")
 		(path "/ed9af7b6-4031-4d4a-99a4-a8b949aa8431")
 		(sheetname "/")
-		(sheetfile "Chess.kicad_sch")
+		(sheetfile "MagChess.kicad_sch")
 		(attr through_hole)
 		(fp_line
 			(start -0.8 -2)
@@ -13272,7 +13272,7 @@
 		)
 		(embedded_fonts no)
 	)
-	(footprint "MagChess Footprints:SS49E"
+	(footprint "MagChess:SS49E"
 		(layer "F.Cu")
 		(uuid "f560033b-8d2e-4754-bf14-9d899ffa3cc8")
 		(at 140 167 45)
@@ -13328,7 +13328,7 @@
 		(property ki_fp_filters "SEN3_SS49E_HNW")
 		(path "/4c2929f5-2e2f-4ee4-8343-229b41c18716")
 		(sheetname "/")
-		(sheetfile "Chess.kicad_sch")
+		(sheetfile "MagChess.kicad_sch")
 		(attr through_hole)
 		(fp_line
 			(start -0.8 -2)
@@ -13487,7 +13487,7 @@
 		)
 		(embedded_fonts no)
 	)
-	(footprint "MagChess Footprints:SS49E"
+	(footprint "MagChess:SS49E"
 		(layer "F.Cu")
 		(uuid "f7e4f78d-29db-4ad6-ad11-97a992b29af1")
 		(at 268 71 45)
@@ -13543,7 +13543,7 @@
 		(property ki_fp_filters "SEN3_SS49E_HNW")
 		(path "/6f3214c9-adbf-4627-942e-bf71afa9874b")
 		(sheetname "/")
-		(sheetfile "Chess.kicad_sch")
+		(sheetfile "MagChess.kicad_sch")
 		(attr through_hole)
 		(fp_line
 			(start -0.8 -2)
@@ -13702,7 +13702,7 @@
 		)
 		(embedded_fonts no)
 	)
-	(footprint "MagChess Footprints:SS49E"
+	(footprint "MagChess:SS49E"
 		(layer "F.Cu")
 		(uuid "fa0ec4c9-374e-4fa9-a5d7-e3258a12465b")
 		(at 204 231 45)
@@ -13758,7 +13758,7 @@
 		(property ki_fp_filters "SEN3_SS49E_HNW")
 		(path "/da8f8d32-d86d-4b9b-b5e4-5cc6830fb712")
 		(sheetname "/")
-		(sheetfile "Chess.kicad_sch")
+		(sheetfile "MagChess.kicad_sch")
 		(attr through_hole)
 		(fp_line
 			(start -0.8 -2)
@@ -13917,7 +13917,7 @@
 		)
 		(embedded_fonts no)
 	)
-	(footprint "MagChess Footprints:ADS1015"
+	(footprint "MagChess:ADS1015"
 		(layer "B.Cu")
 		(uuid "0f565021-4f55-45f6-938a-986003bc23d1")
 		(at 156 118.19 180)
@@ -13974,7 +13974,7 @@
 		(property ki_fp_filters "TSSOP*3x3mm*P0.5mm*")
 		(path "/158bfac9-ca4b-4038-b71c-be106cc44ea6")
 		(sheetname "/")
-		(sheetfile "Chess.kicad_sch")
+		(sheetfile "MagChess.kicad_sch")
 		(attr through_hole)
 		(fp_line
 			(start 12.83 5.159999)
@@ -14208,7 +14208,7 @@
 		)
 		(embedded_fonts no)
 	)
-	(footprint "MagChess Footprints:CD74HC4067"
+	(footprint "MagChess:CD74HC4067"
 		(layer "B.Cu")
 		(uuid "1e7734ed-bc70-4797-82cc-ea6be30135d5")
 		(at 250 215 90)
@@ -14265,7 +14265,7 @@
 		(property ki_fp_filters "SOIC*W*7.5x15.4mm*P1.27mm*")
 		(path "/e070acbb-b165-407d-9e97-7c057bc9181c")
 		(sheetname "/")
-		(sheetfile "Chess.kicad_sch")
+		(sheetfile "MagChess.kicad_sch")
 		(attr through_hole)
 		(fp_line
 			(start 20.45 -9)
@@ -14653,7 +14653,7 @@
 		)
 		(embedded_fonts no)
 	)
-	(footprint "MagChess Footprints:MP1584"
+	(footprint "MagChess:MP1584"
 		(layer "B.Cu")
 		(uuid "3a4c953c-3726-4e69-85a9-9cbd9ba94459")
 		(at 155 182 180)
@@ -14714,7 +14714,7 @@
 		(property ki_fp_filters "SOT?223*TabPin2*")
 		(path "/f5210b5a-47ad-476c-94b2-6ef27f667075")
 		(sheetname "/")
-		(sheetfile "Chess.kicad_sch")
+		(sheetfile "MagChess.kicad_sch")
 		(attr smd)
 		(fp_rect
 			(start -11.25 8.6)
@@ -14838,7 +14838,7 @@
 		)
 		(embedded_fonts no)
 	)
-	(footprint "MagChess Footprints:CD74HC4067"
+	(footprint "MagChess:CD74HC4067"
 		(layer "B.Cu")
 		(uuid "3f2a47eb-4409-4652-bbc2-13bcbbb9c0f7")
 		(at 60 87 -90)
@@ -14895,7 +14895,7 @@
 		(property ki_fp_filters "SOIC*W*7.5x15.4mm*P1.27mm*")
 		(path "/dc286a26-1302-44df-8c67-470b939f4d4f")
 		(sheetname "/")
-		(sheetfile "Chess.kicad_sch")
+		(sheetfile "MagChess.kicad_sch")
 		(attr through_hole)
 		(fp_line
 			(start -20.45 9)
@@ -15342,7 +15342,7 @@
 		(property ki_fp_filters "Connector*:*_1x??_*")
 		(path "/7ac4b6d6-330b-4fbe-a928-9ab9eb57ac16")
 		(sheetname "/")
-		(sheetfile "Chess.kicad_sch")
+		(sheetfile "MagChess.kicad_sch")
 		(attr through_hole)
 		(fp_line
 			(start -1.38 -19.16)
@@ -15607,7 +15607,7 @@
 			)
 		)
 	)
-	(footprint "MagChess Footprints:CD74HC4067"
+	(footprint "MagChess:CD74HC4067"
 		(layer "B.Cu")
 		(uuid "948f61e9-0704-4796-a44a-1a3d42015d62")
 		(at 60 215 -90)
@@ -15664,7 +15664,7 @@
 		(property ki_fp_filters "SOIC*W*7.5x15.4mm*P1.27mm*")
 		(path "/0abb0c10-d81c-405e-9678-5028b63a7f68")
 		(sheetname "/")
-		(sheetfile "Chess.kicad_sch")
+		(sheetfile "MagChess.kicad_sch")
 		(attr through_hole)
 		(fp_line
 			(start -20.45 9)
@@ -16052,7 +16052,7 @@
 		)
 		(embedded_fonts no)
 	)
-	(footprint "MagChess Footprints:CD74HC4067"
+	(footprint "MagChess:CD74HC4067"
 		(layer "B.Cu")
 		(uuid "cd83b1b2-8555-42c4-8c41-2d51e4b784aa")
 		(at 250 87 90)
@@ -16109,7 +16109,7 @@
 		(property ki_fp_filters "SOIC*W*7.5x15.4mm*P1.27mm*")
 		(path "/587f7019-092b-49bf-a027-8254b27a7195")
 		(sheetname "/")
-		(sheetfile "Chess.kicad_sch")
+		(sheetfile "MagChess.kicad_sch")
 		(attr through_hole)
 		(fp_line
 			(start 20.45 -9)

@@ -59,7 +59,7 @@
     "ssh_key": ""
   },
   "meta": {
-    "filename": "Chess.kicad_prl",
+    "filename": "MagChess.kicad_prl",
     "version": 5
   },
   "net_inspector_panel": {
