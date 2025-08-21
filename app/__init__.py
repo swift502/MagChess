@@ -29,8 +29,6 @@ def tab_1() -> ft.Control:
         bgcolor=ft.Colors.with_opacity(0.8, "#96bc4b"),
     )
 
-
-
 def tab_2() -> ft.Control:
     rows = []
 
@@ -136,10 +134,10 @@ def tab_2() -> ft.Control:
         col = int(pos[1]) - 1  # Convert to 0-indexed row
         stack.append(ft.Image(
             src=piece_path,
-            width=70,
-            height=70,
-            left=col * 90 + 10,  # 90px per square, 15px margin
-            top=row * 90 + 10,   # 90px per square,
+            width=80,
+            height=80,
+            left=col * 90 + 5,  # 90px per square, 15px margin
+            top=row * 90 + 5,   # 90px per square,
         ))
 
     # Center the board
