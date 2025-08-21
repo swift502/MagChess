@@ -147,7 +147,7 @@ def tab_2() -> ft.Control:
 
 def tab_3():
     chess_games = {
-        "2025-08-21 12:13:11": "a",
+        "Latest game": "a",
         "2025-08-21 12:13:12": "b",
         "2025-08-21 12:13:13": "c",
         "2025-08-21 12:13:14": "1.e4c62.d4d53.Nc3dxe4",
@@ -203,10 +203,26 @@ def tab_3():
             font_family="Noto Sans",
             size=24,
             color="#333333",
-        )
+        ),
+        label_style=ft.TextStyle(
+            font_family="Noto Sans Light",
+            size=32,
+            color="#333333",
+        ),
     )
 
-    output_snack = ft.SnackBar(content=ft.Text("Copied to clipboard!"), open=False)
+    output_snack = ft.SnackBar(
+        content=ft.Text(
+            "Copied to clipboard!",
+            style=ft.TextStyle(
+                font_family="Noto Sans",
+                size=24,
+                color="#fafafa",
+            )
+        ),
+        bgcolor="#333333",
+        # open=False
+    )
 
     def copy_to_clipboard(e):
         page.set_clipboard(log_view.value or "")
@@ -239,6 +255,17 @@ def tab_3():
     def make_click_handler(ts: str):
         def handler(e):
             log_view.value = chess_games.get(ts, "")
+            # log_view.label = ts
+
+            for item in list_items:
+                item.bgcolor = None
+                item.text_color = "#333333"
+
+            #     page.update()
+
+            e.control.bgcolor = "#7d945d"
+            e.control.text_color = "#ffffff"
+
             page.update()
         return handler
 
@@ -251,11 +278,11 @@ def tab_3():
                 size=24,
                 color="#333333",
             ),
-            hover_color="#7d945d",
-            bgcolor_activated="#7d945d",
+            # hover_color="#7d945d",
+            # bgcolor_activated="#7d945d",
             content_padding=ft.padding.all(20),
         )
-        for ts in sorted(chess_games.keys())
+        for ts in chess_games.keys()
     ]
 
     list_view = ft.ListView(
@@ -271,7 +298,7 @@ def tab_3():
 
     right_pane = ft.Container(
         expand=1,
-        padding=10,
+        padding=ft.padding.only(left=10, right=10, top=10, bottom=10),
         content=ft.Column(
             [
                 log_view,
@@ -317,7 +344,8 @@ def main(ft_page: ft.Page):
     page.spacing = 0
     page.theme_mode = ft.ThemeMode.DARK
     page.fonts = {
-        "Noto Sans": str(Path(__file__).parent / "assets/fonts/NotoSans-Bold.ttf")
+        "Noto Sans": str(Path(__file__).parent / "assets/fonts/NotoSans-Bold.ttf"),
+        "Noto Sans Light": str(Path(__file__).parent / "assets/fonts/NotoSans-Regular.ttf")
     }
 
     page.bgcolor = ft.Colors.RED
