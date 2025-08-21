@@ -78,9 +78,9 @@ def tab_2() -> ft.Control:
                 i + 1,
                 size=30,
                 font_family="Noto Sans",
-                color= i % 2 == 0 and dark or light,
-                left= 90 * i + 58,
-                top= 0,  # Below the board
+                color= i % 2 == 0 and light or dark,
+                left= 90 * i + 66,
+                bottom= -3,  # Below the board
             )
         )
 
@@ -91,8 +91,8 @@ def tab_2() -> ft.Control:
                 size=30,
                 font_family="Noto Sans",
                 color= i % 2 == 0 and dark or light,
-                left= 10,  # Left of the board
-                top= 90 * i + 40,
+                left= 4,  # Left of the board
+                top= 90 * i - 4,
             )
         )
 
@@ -131,27 +131,15 @@ def tab_2() -> ft.Control:
         "h7": Path(__file__).parent / "assets/pieces/pawn_black.svg",
     }
 
-    # 90x90 squares
-    # 60x60 pieces
-    # Each piece has 15px margin from the edge of the square
-    # Algo is i*90 + 15
-    # pawn = ft.Image(
-    #     src="",
-    #     width=60,
-    #     height=60,
-    #     left=90 * 4 + 15,  # 4th column (0-indexed)
-    #     top= 90 * 4 + 15,  # 4th row (0-indexed)
-    # )
-
     for pos, piece_path in pieces.items():
         row = ord(pos[0]) - ord('a')
         col = int(pos[1]) - 1  # Convert to 0-indexed row
         stack.append(ft.Image(
             src=piece_path,
-            width=60,
-            height=60,
-            left=col * 90 + 15,  # 90px per square, 15px margin
-            top=row * 90 + 15,   # 90px per square,
+            width=70,
+            height=70,
+            left=col * 90 + 10,  # 90px per square, 15px margin
+            top=row * 90 + 10,   # 90px per square,
         ))
 
     # Center the board
