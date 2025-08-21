@@ -202,6 +202,7 @@ def tab_3():
         text_style=ft.TextStyle(
             font_family="Noto Sans",
             size=24,
+            color="#333333",
         )
     )
 
@@ -219,12 +220,14 @@ def tab_3():
         height=270,
         width=360,
         bgcolor="#7d945d",
+        color="#ffffff",
         style=ft.ButtonStyle(
             shape=ft.RoundedRectangleBorder(20),
+            # color="eeeed5",
             text_style=ft.TextStyle(
                 size=44,
                 font_family="Noto Sans",
-                color="eeeed5",
+                # color="#eeeed5",
             ),
             icon_size=44
             # color="#eeeed5"
@@ -247,13 +250,17 @@ def tab_3():
                 font_family="Noto Sans",
                 size=24,
                 color="#333333",
-            )
+            ),
+            hover_color="#7d945d",
+            bgcolor_activated="#7d945d",
+            content_padding=ft.padding.all(20),
         )
         for ts in sorted(chess_games.keys())
     ]
 
     list_view = ft.ListView(
         controls=list_items,
+        padding=ft.padding.all(0),
     )
 
     if chess_games:
@@ -305,10 +312,10 @@ def main(ft_page: ft.Page):
     page.window.width = 720
     page.window.height = 720
     # page.window.full_screen = True
-    # page.window.frameless = True
+    page.window.frameless = True
     page.padding = 0
     page.spacing = 0
-    page.theme_mode = ft.ThemeMode.LIGHT
+    page.theme_mode = ft.ThemeMode.DARK
     page.fonts = {
         "Noto Sans": str(Path(__file__).parent / "assets/fonts/NotoSans-Bold.ttf")
     }
@@ -331,7 +338,7 @@ def main(ft_page: ft.Page):
         user_activity()
 
     nav = ft.NavigationBar(
-        selected_index=0,
+        selected_index=1,
         on_change=on_tab_change,
         destinations=[
             ft.NavigationBarDestination(icon=ft.Icons.FORK_RIGHT, label="Moves"),
