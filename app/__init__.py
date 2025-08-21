@@ -12,9 +12,9 @@ def tab_1() -> ft.Control:
             controls=[ft.Container(content=img, expand=True)],
             alignment=ft.MainAxisAlignment.CENTER,
             vertical_alignment=ft.CrossAxisAlignment.CENTER,
-            expand=True,
+            # expand=True,
         ),
-        expand=True,
+        # expand=True,
     )
 
 
@@ -103,51 +103,108 @@ def tab_3():
     )
 
 
+import asyncio
+import flet as ft
+
+import asyncio
+import flet as ft
+
 def main(ft_page: ft.Page):
 
     global page
     page = ft_page
 
-    page.title = "Three-tab Flet Demo"
-    # page.window.full_screen = True  # fullscreen for desktop
+    page.title = "MagChess"
     page.window.width = 720
     page.window.height = 720
     page.padding = 0
     page.spacing = 0
     page.theme_mode = ft.ThemeMode.LIGHT
 
+    # Your tabs (leave your existing implementations)
     tab1 = tab_1()
     tab2 = tab_2()
     tab3 = tab_3()
-
     screens = [tab1, tab2, tab3]
-    content_host = ft.Container(content=screens[0], expand=True)
+
+    content_host = ft.Container(
+        content=screens[0],
+        expand=True,
+        bgcolor=ft.Colors.ORANGE,
+    )
 
     def on_tab_change(e: ft.ControlEvent):
         idx = e.control.selected_index
         content_host.content = screens[idx]
         page.update()
+        user_activity()  # keep visible while interacting
 
-    page.navigation_bar = ft.NavigationBar(
+    nav = ft.NavigationBar(
         selected_index=0,
         on_change=on_tab_change,
         destinations=[
-            ft.NavigationBarDestination(icon=ft.Icons.IMAGE, label="Image"),
-            ft.NavigationBarDestination(icon=ft.Icons.GRID_ON, label="Chess"),
-            ft.NavigationBarDestination(icon=ft.Icons.TEXT_SNIPPET, label="Text"),
+            ft.NavigationBarDestination(icon=ft.Icons.FORK_RIGHT, label="Moves"),
+            ft.NavigationBarDestination(icon=ft.Icons.CROP_FREE, label="Board"),
+            ft.NavigationBarDestination(icon=ft.Icons.TEXT_SNIPPET_OUTLINED, label="Game"),
         ],
     )
 
-    # Root layout: content + nav bar pinned at bottom
-    page.add(
-        ft.Column(
-            [
-                ft.Container(content=content_host, expand=True),
-            ],
-            expand=True,
-            spacing=0,
-        )
+    nav_wrap = ft.Container(
+        content=nav,
+        bgcolor=ft.Colors.with_opacity(0.85, ft.Colors.BLUE),
+        border_radius=ft.border_radius.all(20),
+        margin=ft.margin.only(left=16, right=16, bottom=16),
+        animate_opacity=300,
+        opacity=0.0,           # start hidden
+        left=0, right=0, bottom=0,  # <-- absolute positioning inside Stack
     )
+
+    # Inactivity timer state
+    hide_task: asyncio.Task | None = None
+
+    async def hide_after(seconds: float):
+        try:
+            await asyncio.sleep(seconds)
+            hide_nav()
+        except asyncio.CancelledError:
+            pass
+
+    def show_nav():
+        if not nav_wrap.visible or nav_wrap.opacity < 1:
+            nav_wrap.opacity = 1.0
+            page.update()
+
+    def hide_nav():
+        nav_wrap.opacity = 0.0
+        page.update()
+
+    def schedule_hide():
+        nonlocal hide_task
+        if hide_task is not None:
+            hide_task.cancel()
+        hide_task = page.run_task(hide_after, 1.0)
+
+    def user_activity(_=None):
+        show_nav()
+        schedule_hide()
+
+    surface = ft.GestureDetector(
+        on_hover=user_activity,
+        hover_interval=150,
+        on_tap=user_activity,
+        on_pan_update=user_activity,
+        content=ft.Stack(
+            expand=True,
+            controls=[
+                content_host,  # main app content
+                nav_wrap,      # overlayed nav (positioned via left/right/bottom)
+            ],
+        ),
+        expand=True,
+    )
+
+    page.add(surface)
+
 
 if __name__ == "__main__":
     ft.app(target=main)
