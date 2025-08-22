@@ -2,9 +2,14 @@ import flet as ft
 from pathlib import Path
 from ui import MagChessUI
 
+debug = False
+debug = True
+
 def main(page: ft.Page):
     page.title = "MagChess"
     page.window.width = 720
+    if debug:
+        page.window.width = 720 * 3
     page.window.height = 720
     # page.window.full_screen = True
     page.window.frameless = True
@@ -20,7 +25,7 @@ def main(page: ft.Page):
             page.window.close()
     page.on_keyboard_event = on_key
 
-    ui = MagChessUI(page)
+    ui = MagChessUI(page, debug)
     page.add(ui.root)
 
 if __name__ == "__main__":

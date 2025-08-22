@@ -25,7 +25,7 @@ class MagChessUI:
     # col_light = "#f0d9b5"
     # col_dark = "#b58863"
 
-    def __init__(self, page: ft.Page):
+    def __init__(self, page: ft.Page, debug: bool):
         self.page = page
 
         # tabs
@@ -33,6 +33,17 @@ class MagChessUI:
         tab2 = self.tab_2()
         tab3 = self.tab_3()
         self.screens = [tab1, tab2, tab3]
+
+        if debug:
+            self.root = ft.Row(
+                controls=[
+                    ft.Container(content=self.screens[0], width=720, height=720),
+                    ft.Container(content=self.screens[1], width=720, height=720),
+                    ft.Container(content=self.screens[2], width=720, height=720),
+                ],
+                spacing=0,
+            )
+            return
 
         # content host
         self.content_host = ft.Container(content=self.screens[1])
@@ -240,7 +251,7 @@ class MagChessUI:
                     i + 1,
                     size=30,
                     font_family="Noto Sans",
-                    color= i % 2 == 0 and light or dark,
+                    color= i % 2 == 1 and light or dark,
                     left= 90 * i + 66,
                     bottom= -3,
                 )
@@ -252,7 +263,7 @@ class MagChessUI:
                     chr(ord('A') + i),
                     size=30,
                     font_family="Noto Sans",
-                    color= i % 2 == 0 and dark or light,
+                    color= i % 2 == 1 and dark or light,
                     left= 4,
                     top= 90 * i - 4,
                 )
