@@ -7,7 +7,7 @@ import asyncio
 import flet as ft
 
 from constants import SENSOR_THRESHOLD_HIGH, SENSOR_THRESHOLD_LOW
-from utilities import inverse_lerp, lerp, lerp_three
+from utilities import inverse_lerp, lerp, lerp_hex
 from sensors import SWSensors
 from ui_instance import MagChessUI
 
@@ -25,15 +25,18 @@ class Square:
     def update(self, raw):
         self.smooth_value = lerp(self.smooth_value, raw, 0.1)
 
+        assert self.sensor_indicator.border is not None
+        assert self.sensor_indicator.border.top is not None
+
         if self.smooth_value < SENSOR_THRESHOLD_LOW:
-            self.sensor_indicator.border.top.color = "#ff0000"
-        elif self.smooth_value > SENSOR_THRESHOLD_HIGH:
-            self.sensor_indicator.border.top.color = "#00ffff"
-        else:
             self.sensor_indicator.border.top.color = "#000000"
+        elif self.smooth_value > SENSOR_THRESHOLD_HIGH:
+            self.sensor_indicator.border.top.color = "#ffffff"
+        else:
+            self.sensor_indicator.border.top.color = "#888888"
 
         factor = inverse_lerp(raw, SENSOR_THRESHOLD_LOW, SENSOR_THRESHOLD_HIGH)
-        self.sensor_indicator.bgcolor = lerp_three("#ff0000", "#000000", "#00ffff", factor)
+        self.sensor_indicator.bgcolor = lerp_hex("#000000", "#ffffff", factor)
 
 class Chessboard:
 

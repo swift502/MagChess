@@ -99,8 +99,8 @@ class UIBuilder:
     @staticmethod
     def build_tab_3(instance: MagChessUI):
 
-        light = "#cccccc"
-        dark = "#aaaaaa"
+        light = "#999999"
+        dark = "#777777"
 
         stack: list = UIBuilder.build_board(instance, light, dark)
 

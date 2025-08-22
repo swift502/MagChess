@@ -11,7 +11,14 @@ def lerp_color(c1, c2, t):
     """Linear interpolate between two RGB colors."""
     return tuple(int(a + (b - a) * t) for a, b in zip(c1, c2))
 
-def lerp_three(a, b, c, factor):
+def lerp_hex(hex1, hex2, t):
+    """Linear interpolate between two hex colors."""
+    rgb1 = hex_to_rgb(hex1)
+    rgb2 = hex_to_rgb(hex2)
+    lerped_rgb = lerp_color(rgb1, rgb2, t)
+    return rgb_to_hex(lerped_rgb)
+
+def lerp_hex_three(a, b, c, factor):
     """
     Lerp between three hex colors.
     a at factor 0.0

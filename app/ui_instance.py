@@ -4,7 +4,7 @@ import asyncio
 import concurrent.futures
 
 from ui_builder import UIBuilder
-from utilities import inverse_lerp, lerp_three
+from utilities import inverse_lerp, lerp_hex_three
 from constants import SENSOR_THRESHOLD_LOW, SENSOR_THRESHOLD_HIGH
 
 class MagChessUI:
@@ -15,7 +15,7 @@ class MagChessUI:
     overlay: ft.Stack
     replay_button: ft.ElevatedButton
     screens: list[ft.Control]
-    _hide_task: concurrent.futures.Future
+    _hide_task: concurrent.futures.Future | None = None
 
     # Colors
     # Green
