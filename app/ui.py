@@ -4,6 +4,8 @@ import asyncio
 from pathlib import Path
 from typing import Optional
 
+from data import DataLib
+
 class MagChessUI:
 
     page: ft.Page
@@ -82,45 +84,45 @@ class MagChessUI:
         stack = self.board(self.col_light, self.col_dark)
 
         pieces = {
-            "a1": Path(__file__).parent / "assets/pieces/castle_white.svg",
-            "b1": Path(__file__).parent / "assets/pieces/knight_white.svg",
-            "c1": Path(__file__).parent / "assets/pieces/bishop_white.svg",
-            "d1": Path(__file__).parent / "assets/pieces/queen_white.svg",
-            "e1": Path(__file__).parent / "assets/pieces/king_white.svg",
-            "f1": Path(__file__).parent / "assets/pieces/bishop_white.svg",
-            "g1": Path(__file__).parent / "assets/pieces/knight_white.svg",
-            "h1": Path(__file__).parent / "assets/pieces/castle_white.svg",
-            "a2": Path(__file__).parent / "assets/pieces/pawn_white.svg",
-            "b2": Path(__file__).parent / "assets/pieces/pawn_white.svg",
-            "c2": Path(__file__).parent / "assets/pieces/pawn_white.svg",
-            "d2": Path(__file__).parent / "assets/pieces/pawn_white.svg",
-            "e2": Path(__file__).parent / "assets/pieces/pawn_white.svg",
-            "f2": Path(__file__).parent / "assets/pieces/pawn_white.svg",
-            "g2": Path(__file__).parent / "assets/pieces/pawn_white.svg",
-            "h2": Path(__file__).parent / "assets/pieces/pawn_white.svg",
-            "a8": Path(__file__).parent / "assets/pieces/castle_black.svg",
-            "b8": Path(__file__).parent / "assets/pieces/knight_black.svg",
-            "c8": Path(__file__).parent / "assets/pieces/bishop_black.svg",
-            "d8": Path(__file__).parent / "assets/pieces/queen_black.svg",
-            "e8": Path(__file__).parent / "assets/pieces/king_black.svg",
-            "f8": Path(__file__).parent / "assets/pieces/bishop_black.svg",
-            "g8": Path(__file__).parent / "assets/pieces/knight_black.svg",
-            "h8": Path(__file__).parent / "assets/pieces/castle_black.svg",
-            "a7": Path(__file__).parent / "assets/pieces/pawn_black.svg",
-            "b7": Path(__file__).parent / "assets/pieces/pawn_black.svg",
-            "c7": Path(__file__).parent / "assets/pieces/pawn_black.svg",
-            "d7": Path(__file__).parent / "assets/pieces/pawn_black.svg",
-            "e7": Path(__file__).parent / "assets/pieces/pawn_black.svg",
-            "f7": Path(__file__).parent / "assets/pieces/pawn_black.svg",
-            "g7": Path(__file__).parent / "assets/pieces/pawn_black.svg",
-            "h7": Path(__file__).parent / "assets/pieces/pawn_black.svg",
+            "a1": DataLib.pieces.white_rook,
+            "b1": DataLib.pieces.white_knight,
+            "c1": DataLib.pieces.white_bishop,
+            "d1": DataLib.pieces.white_queen,
+            "e1": DataLib.pieces.white_king,
+            "f1": DataLib.pieces.white_bishop,
+            "g1": DataLib.pieces.white_knight,
+            "h1": DataLib.pieces.white_rook,
+            "a2": DataLib.pieces.white_pawn,
+            "b2": DataLib.pieces.white_pawn,
+            "c2": DataLib.pieces.white_pawn,
+            "d2": DataLib.pieces.white_pawn,
+            "e2": DataLib.pieces.white_pawn,
+            "f2": DataLib.pieces.white_pawn,
+            "g2": DataLib.pieces.white_pawn,
+            "h2": DataLib.pieces.white_pawn,
+            "a8": DataLib.pieces.black_rook,
+            "b8": DataLib.pieces.black_knight,
+            "c8": DataLib.pieces.black_bishop,
+            "d8": DataLib.pieces.black_queen,
+            "e8": DataLib.pieces.black_king,
+            "f8": DataLib.pieces.black_bishop,
+            "g8": DataLib.pieces.black_knight,
+            "h8": DataLib.pieces.black_rook,
+            "a7": DataLib.pieces.black_pawn,
+            "b7": DataLib.pieces.black_pawn,
+            "c7": DataLib.pieces.black_pawn,
+            "d7": DataLib.pieces.black_pawn,
+            "e7": DataLib.pieces.black_pawn,
+            "f7": DataLib.pieces.black_pawn,
+            "g7": DataLib.pieces.black_pawn,
+            "h7": DataLib.pieces.black_pawn,
         }
 
-        for pos, piece_path in pieces.items():
+        for pos, piece in pieces.items():
             row = ord(pos[0]) - ord('a')
             col = int(pos[1]) - 1
             stack.append(ft.Image(
-                src=piece_path,
+                src=piece.get_path(),
                 width=80,
                 height=80,
                 left=col * 90 + 5,
@@ -209,7 +211,7 @@ class MagChessUI:
         for r in range(8):
             row_cells = []
             for c in range(8):
-                is_dark = (r + c) % 2 == 1
+                is_dark = (r + c) % 2 == 0
                 cell = ft.Container(
                     expand=True,
                     bgcolor=dark if is_dark else light,
