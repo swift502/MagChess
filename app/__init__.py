@@ -1,9 +1,10 @@
 import flet as ft
 from pathlib import Path
+from chessboard import Chessboard
 from ui import MagChessUI
 
 debug = False
-debug = True
+# debug = True
 
 def main(page: ft.Page):
     page.title = "MagChess"
@@ -20,13 +21,18 @@ def main(page: ft.Page):
         "Noto Sans": str(Path(__file__).parent / "assets/fonts/NotoSans-Bold.ttf"),
     }
 
+    # Exit event
     def on_key(e: ft.KeyboardEvent):
         if e.key == "Escape":
             page.window.close()
     page.on_keyboard_event = on_key
 
+    # Build UI
     ui = MagChessUI(page, debug)
     page.add(ui.root)
+
+    # Start chessboard
+    Chessboard(page)
 
 if __name__ == "__main__":
     ft.app(target=main)
