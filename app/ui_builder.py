@@ -108,12 +108,12 @@ class UIBuilder:
         for i in range(8):
             for j in range(8):
                 el = ft.Container(
-                    width=30,
-                    height=30,
-                    border=ft.border.all(6, ft.Colors.BLACK),
-                    border_radius=ft.border_radius.all(15),
-                    left=j * 90 + 30,
-                    top=i * 90 + 30,
+                    width=40,
+                    height=40,
+                    border=ft.border.all(8, ft.Colors.BLACK),
+                    border_radius=ft.border_radius.all(20),
+                    left=j * 90 + 25,
+                    top=i * 90 + 25,
                 )
                 instance.sensor_indicators[(j, i)] = el
                 stack.append(el)
