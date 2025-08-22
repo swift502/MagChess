@@ -245,11 +245,12 @@ def main(ft_page: ft.Page):
         icon=ft.Icons.HISTORY,
         style=ft.ButtonStyle(
             text_style=ft.TextStyle(
-                size=32,
+                size=30,
                 font_family="Noto Sans"
             ),
             icon_size=36,
-            padding=ft.padding.symmetric(horizontal=30, vertical=20),
+            padding=ft.padding.symmetric(horizontal=34, vertical=26),
+            shape=ft.ContinuousRectangleBorder(50),
         ),
     )
 
