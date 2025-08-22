@@ -1,5 +1,7 @@
 from random import randint
 
+from constants import SENSOR_THRESHOLD_HIGH, SENSOR_THRESHOLD_LOW
+
 class SensorProvider:
     def get_value_array(self) -> dict[tuple[int, int], float]:
         raise NotImplementedError()
@@ -12,21 +14,19 @@ class HWSensors(SensorProvider):
         raise NotImplementedError()
 
 class SWSensorObject:
-    low_border = 32500
-    high_border = 33000
     signal_strength = 500
-    noise = 200
+    noise = 100
 
     def __init__(self, state: int):
         self.state = state
 
     def get_value(self):
-        if self.state == -1:
-            return randint(self.low_border - self.signal_strength, self.low_border + self.noise)
-        elif self.state == 0:
-            return randint(self.low_border - self.noise, self.high_border + self.noise)
-        elif self.state == 1:
-            return randint(self.high_border - self.noise, self.high_border + self.signal_strength)
+        if self.state == 1:
+            return randint(SENSOR_THRESHOLD_HIGH - self.noise, SENSOR_THRESHOLD_HIGH + self.signal_strength)
+        elif self.state == -1:
+            return randint(SENSOR_THRESHOLD_LOW - self.signal_strength, SENSOR_THRESHOLD_LOW + self.noise)
+        else: # if self.state == 0:
+            return randint(SENSOR_THRESHOLD_LOW - self.noise, SENSOR_THRESHOLD_HIGH + self.noise)
 
     def set_state(self, state):
         self.state = state
@@ -47,7 +47,7 @@ class SWSensors (SensorProvider):
                 self.sensors[(letter, number)] = SWSensorObject(state)
 
     def get_value_array(self):
-        values = {}
+        values: dict[tuple[int, int], float] = {}
         for key, sensor in self.sensors.items():
-            values[key] = sensor.get_value()
+            values[key] = float(sensor.get_value())
         return values

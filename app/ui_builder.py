@@ -102,22 +102,21 @@ class UIBuilder:
         light = "#cccccc"
         dark = "#aaaaaa"
 
-        sensor_positive = "#0000ff"
-        sensor_negative = "#ff0000"
-        sensor_neutral = "#000000"
-
         stack: list = UIBuilder.build_board(instance, light, dark)
 
+        instance.sensor_indicators = {}
         for i in range(8):
             for j in range(8):
-                stack.append(ft.Container(
-                    bgcolor=(i + j) % 2 == 1 and sensor_positive or sensor_negative,
-                    width=20,
-                    height=20,
-                    border_radius=10,
-                    left=j * 90 + 35,
-                    top=i * 90 + 35,
-                ))
+                el = ft.Container(
+                    width=30,
+                    height=30,
+                    border=ft.border.all(6, ft.Colors.BLACK),
+                    border_radius=ft.border_radius.all(15),
+                    left=j * 90 + 30,
+                    top=i * 90 + 30,
+                )
+                instance.sensor_indicators[(j, i)] = el
+                stack.append(el)
 
         return ft.Stack(
             controls=stack,

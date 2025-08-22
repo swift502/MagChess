@@ -1,11 +1,11 @@
 
 import flet as ft
 import asyncio
-from pathlib import Path
 import concurrent.futures
 
 from ui_builder import UIBuilder
-from data import DataLib
+from utilities import inverse_lerp, lerp_three
+from constants import SENSOR_THRESHOLD_LOW, SENSOR_THRESHOLD_HIGH
 
 class MagChessUI:
 
@@ -25,6 +25,8 @@ class MagChessUI:
     # Brown
     # col_light = "#f0d9b5"
     # col_dark = "#b58863"
+
+    sensor_indicators: dict[tuple[int, int], ft.Container]
 
     def __init__(self, page: ft.Page, debug: bool):
         self.page = page
