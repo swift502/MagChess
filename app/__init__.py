@@ -4,46 +4,9 @@ import asyncio
 
 page: ft.Page
 
-def tab_1() -> ft.Control:
-    img = ft.Image(
-        src= Path(__file__).parent / "assets/icons/correct.svg",
-        width=360,
-        height=360,
-    )
+def board(light, dark) -> list:
 
-    text = ft.Text(
-        "Correct",
-        size=72,
-        text_align=ft.TextAlign.CENTER,
-        font_family="Noto Sans",
-        color=ft.Colors.WHITE,
-    )
-
-    foreground = ft.Container(
-        content=ft.Column(
-            controls=[img, text],
-            alignment=ft.MainAxisAlignment.CENTER,   # vertical centering
-            horizontal_alignment=ft.CrossAxisAlignment.CENTER,  # horizontal centering
-        ),
-        alignment=ft.alignment.center,  # centers the whole Column in parent
-        bgcolor=ft.Colors.with_opacity(0.8, "#96bc4b"),
-    )
-
-    return ft.Container(
-        content=foreground,
-        bgcolor=ft.Colors.BLACK,
-    )
-
-def tab_2() -> ft.Control:
     rows = []
-
-    # Green theme
-    light = "#7d945d"
-    dark = "#eeeed5"
-
-    # Brown theme
-    # light = "#f0d9b5"
-    # dark = "#b58863"
 
     for r in range(8):
         row_cells = []
@@ -95,6 +58,49 @@ def tab_2() -> ft.Control:
             )
         )
 
+    return stack
+
+def tab_1() -> ft.Control:
+    img = ft.Image(
+        src= Path(__file__).parent / "assets/icons/correct.svg",
+        width=360,
+        height=360,
+    )
+
+    text = ft.Text(
+        "Correct",
+        size=72,
+        text_align=ft.TextAlign.CENTER,
+        font_family="Noto Sans",
+        color=ft.Colors.WHITE,
+    )
+
+    foreground = ft.Container(
+        content=ft.Column(
+            controls=[img, text],
+            alignment=ft.MainAxisAlignment.CENTER,   # vertical centering
+            horizontal_alignment=ft.CrossAxisAlignment.CENTER,  # horizontal centering
+        ),
+        alignment=ft.alignment.center,  # centers the whole Column in parent
+        bgcolor=ft.Colors.with_opacity(0.8, "#96bc4b"),
+    )
+
+    return ft.Container(
+        content=foreground,
+        bgcolor=ft.Colors.BLACK,
+    )
+
+def tab_2() -> ft.Control:
+    # Green theme
+    light = "#7d945d"
+    dark = "#eeeed5"
+
+    # Brown theme
+    # light = "#f0d9b5"
+    # dark = "#b58863"
+
+    stack = board(light, dark)
+
     pieces = {
         "a1": Path(__file__).parent / "assets/pieces/castle_white.svg",
         "b1": Path(__file__).parent / "assets/pieces/knight_white.svg",
@@ -145,190 +151,31 @@ def tab_2() -> ft.Control:
         controls=stack,
     )
 
-def tab_3():
-    chess_games = {
-        "Latest game": "a",
-        "2025-08-21 12:13:12": "b",
-        "2025-08-21 12:13:13": "c",
-        "2025-08-21 12:13:14": "1.e4c62.d4d53.Nc3dxe4",
-        "2025-08-21 12:13:15": "1.e4c62.d4d53.Nc3dxe4",
-        "2025-08-21 12:13:16": "1.e4c62.d4d53.Nc3dxe4",
-        "2025-08-21 12:13:17": "1.e4c62.d4d53.Nc3dxe4",
-        "2025-08-21 12:13:18": "1.e4c62.d4d53.Nc3dxe4",
-        "2025-08-21 12:13:19": "1.e4c62.d4d53.Nc3dxe4",
-        "2025-08-21 12:13:21": "1.e4c62.d4d53.Nc3dxe4",
-        "2025-08-21 12:13:22": "1.e4c62.d4d53.Nc3dxe4",
-        "2025-08-21 12:13:23": "1.e4c62.d4d53.Nc3dxe4",
-        "2025-08-21 12:13:24": "1.e4c62.d4d53.Nc3dxe4",
-        "2025-08-21 12:13:25": "1.e4c62.d4d53.Nc3dxe4",
-        "2025-08-21 12:13:26": "1.e4c62.d4d53.Nc3dxe4",
-        "2025-08-21 12:13:27": "1.e4c62.d4d53.Nc3dxe4",
-        "2025-08-21 12:13:28": "1.e4c62.d4d53.Nc3dxe4",
-        "2025-08-21 12:13:29": "1.e4c62.d4d53.Nc3dxe4",
-        "2025-08-21 12:13:31": "1.e4c62.d4d53.Nc3dxe4",
-        "2025-08-21 12:13:32": "1.e4c62.d4d53.Nc3dxe4",
-        "2025-08-21 12:13:33": "1.e4c62.d4d53.Nc3dxe4",
-        "2025-08-21 12:13:34": "1.e4c62.d4d53.Nc3dxe4",
-        "2025-08-21 12:13:35": "1.e4c62.d4d53.Nc3dxe4",
-        "2025-08-21 12:13:36": "1.e4c62.d4d53.Nc3dxe4",
-        "2025-08-21 12:13:37": "1.e4c62.d4d53.Nc3dxe4",
-        "2025-08-21 12:13:38": "1.e4c62.d4d53.Nc3dxe4",
-        "2025-08-21 12:13:39": "1.e4c62.d4d53.Nc3dxe4",
-        "2025-08-21 12:13:41": "1.e4c62.d4d53.Nc3dxe4",
-        "2025-08-21 12:13:42": "1.e4c62.d4d53.Nc3dxe4",
-        "2025-08-21 12:13:43": "1.e4c62.d4d53.Nc3dxe4",
-        "2025-08-21 12:13:44": "1.e4c62.d4d53.Nc3dxe4",
-        "2025-08-21 12:13:45": "1.e4c62.d4d53.Nc3dxe4",
-        "2025-08-21 12:13:46": "1.e4c62.d4d53.Nc3dxe4",
-        "2025-08-21 12:13:47": "1.e4c62.d4d53.Nc3dxe4",
-        "2025-08-21 12:13:48": "1.e4c62.d4d53.Nc3dxe4",
-        "2025-08-21 12:13:49": "1.e4c62.d4d53.Nc3dxe4",
-        "2025-08-21 12:13:51": "1.e4c62.d4d53.Nc3dxe4",
-        "2025-08-21 12:13:52": "1.e4c62.d4d53.Nc3dxe4",
-        "2025-08-21 12:13:53": "1.e4c62.d4d53.Nc3dxe4",
-        "2025-08-21 12:13:54": "1.e4c62.d4d53.Nc3dxe4",
-        "2025-08-21 12:13:55": "1.e4c62.d4d53.Nc3dxe4",
-        "2025-08-21 12:13:56": "1.e4c62.d4d53.Nc3dxe4",
-        "2025-08-21 12:13:57": "1.e4c62.d4d53.Nc3dxe4",
-        "2025-08-21 12:13:58": "1.e4c62.d4d53.Nc3dxe4",
-        "2025-08-21 12:13:59": "1.e4c62.d4d53.Nc3dxe4",
-    }
+def tab_3() -> ft.Container:
 
-    log_view = ft.TextField(
-        read_only=True,
-        multiline=True,
-        min_lines=8,
-        border_radius=12,
-        text_style=ft.TextStyle(
-            font_family="Noto Sans",
-            size=24,
-            color="#333333",
-        ),
-        label_style=ft.TextStyle(
-            font_family="Noto Sans Light",
-            size=32,
-            color="#333333",
-        ),
+    light = "#cccccc"
+    dark = "#aaaaaa"
+
+    sensor_positive = "#0000ff"
+    sensor_negative = "#ff0000"
+    sensor_neutral = "#000000"
+
+    stack = board(light, dark)
+
+    for i in range(8):
+        for j in range(8):
+            stack.append(ft.Container(
+                bgcolor=(i + j) % 2 == 1 and sensor_positive or sensor_negative,
+                width=20,
+                height=20,
+                border_radius=10,
+                left=j * 90 + 35,
+                top=i * 90 + 35,
+            ))
+
+    return ft.Stack(
+        controls=stack,
     )
-
-    output_snack = ft.SnackBar(
-        content=ft.Text(
-            "Copied to clipboard!",
-            style=ft.TextStyle(
-                font_family="Noto Sans",
-                size=24,
-                color="#fafafa",
-            )
-        ),
-        bgcolor="#333333",
-        # open=False
-    )
-
-    def copy_to_clipboard(e):
-        page.set_clipboard(log_view.value or "")
-        output_snack.open = True
-        page.update()
-
-    copy_btn = ft.FilledButton(
-        "Copy",
-        icon=ft.Icons.CONTENT_COPY,
-        on_click=copy_to_clipboard,
-        height=270,
-        width=360,
-        bgcolor="#7d945d",
-        color="#ffffff",
-        style=ft.ButtonStyle(
-            shape=ft.RoundedRectangleBorder(20),
-            # color="eeeed5",
-            text_style=ft.TextStyle(
-                size=44,
-                font_family="Noto Sans",
-                # color="#eeeed5",
-            ),
-            icon_size=44
-            # color="#eeeed5"
-            # light = "#7d945d"
-            # dark = "#eeeed5"
-        ),
-    )
-
-    def make_click_handler(ts: str):
-        def handler(e):
-            log_view.value = chess_games.get(ts, "")
-            # log_view.label = ts
-
-            for item in list_items:
-                item.bgcolor = None
-                item.text_color = "#333333"
-
-            #     page.update()
-
-            e.control.bgcolor = "#7d945d"
-            e.control.text_color = "#ffffff"
-
-            page.update()
-        return handler
-
-    list_items = [
-        ft.ListTile(
-            title=ft.Text(ts),
-            on_click=make_click_handler(ts),
-            title_text_style=ft.TextStyle(
-                font_family="Noto Sans",
-                size=24,
-                color="#333333",
-            ),
-            # hover_color="#7d945d",
-            # bgcolor_activated="#7d945d",
-            content_padding=ft.padding.all(20),
-        )
-        for ts in chess_games.keys()
-    ]
-
-    list_view = ft.ListView(
-        controls=list_items,
-        padding=ft.padding.all(0),
-    )
-
-    if chess_games:
-        latest_ts = sorted(chess_games.keys())[0]
-        log_view.value = chess_games[latest_ts]
-
-    left_pane = ft.Container(content=list_view, expand=1, padding=10)
-
-    right_pane = ft.Container(
-        expand=1,
-        padding=ft.padding.only(left=10, right=10, top=10, bottom=10),
-        content=ft.Column(
-            [
-                log_view,
-                copy_btn
-            ],
-        ),
-    )
-
-    split = ft.Container(
-        content=ft.Row(
-            [
-                left_pane,
-                right_pane
-            ],
-            height=500
-        ),
-        height=610,
-    )
-
-    # Ensure SnackBar is available on the page
-    page.add(output_snack)
-
-    return ft.Container(
-        content=split,
-        bgcolor="#eeeed5",
-        width=720,
-        height=720,
-        alignment=ft.alignment.top_center,
-    )
-
 
 def main(ft_page: ft.Page):
 
@@ -362,31 +209,57 @@ def main(ft_page: ft.Page):
     def on_tab_change(e: ft.ControlEvent):
         idx = e.control.selected_index
         content_host.content = screens[idx]
+        replay_button.visible = (idx == 1)
         page.update()
         user_activity()
 
-    nav = ft.NavigationBar(
-        selected_index=1,
-        on_change=on_tab_change,
-        destinations=[
-            ft.NavigationBarDestination(icon=ft.Icons.FORK_RIGHT, label="Moves"),
-            ft.NavigationBarDestination(icon=ft.Icons.CROP_FREE, label="Board", ),
-            ft.NavigationBarDestination(icon=ft.Icons.TEXT_SNIPPET_OUTLINED, label="Logs"),
-        ],
-    )
-
-    nav_wrap = ft.Container(
-        content=nav,
+    nav = ft.Container(
+        content=ft.NavigationBar(
+            selected_index=1,
+            on_change=on_tab_change,
+            destinations=[
+                ft.NavigationBarDestination(icon=ft.Icons.FORK_RIGHT, label="Moves"),
+                ft.NavigationBarDestination(icon=ft.Icons.CROP_FREE, label="Board"),
+                ft.NavigationBarDestination(icon=ft.Icons.SENSORS, label="Sensors"),
+            ],
+        ),
         border_radius=ft.border_radius.all(20),
         margin=ft.margin.only(left=16, right=16, bottom=16),
-        animate_opacity=300,
-        opacity=0.0,
+        # animate_opacity=300,
+        # opacity=0.0,
         left=0, right=0, bottom=0,
         shadow=ft.BoxShadow(
             color=ft.Colors.with_opacity(0.4, ft.Colors.BLACK),
             blur_radius=8,
             offset=ft.Offset(0, 4)
         )
+    )
+
+    replay_button = ft.ElevatedButton(
+        text=" Review game",
+        on_click=lambda e: print("Replay"),
+        top=26,
+        left=22,
+        bgcolor="#6d10a3",
+        color=ft.Colors.WHITE,
+        icon=ft.Icons.HISTORY,
+        style=ft.ButtonStyle(
+            text_style=ft.TextStyle(
+                size=32,
+                font_family="Noto Sans"
+            ),
+            icon_size=36,
+            padding=ft.padding.symmetric(horizontal=30, vertical=20),
+        ),
+    )
+
+    overlay = ft.Stack(
+        controls=[
+            nav,
+            replay_button,
+        ],
+        animate_opacity=300,
+        opacity=0.0,
     )
 
     hide_task: asyncio.Task | None = None
@@ -399,12 +272,11 @@ def main(ft_page: ft.Page):
             pass
 
     def show_nav():
-        if not nav_wrap.visible or nav_wrap.opacity < 1:
-            nav_wrap.opacity = 1.0
-            page.update()
+        overlay.opacity = 1.0
+        page.update()
 
     def hide_nav():
-        nav_wrap.opacity = 0.0
+        overlay.opacity = 0.0
         page.update()
 
     def schedule_hide():
@@ -425,7 +297,7 @@ def main(ft_page: ft.Page):
         content=ft.Stack(
             controls=[
                 content_host,
-                nav_wrap,
+                overlay,
             ],
         ),
         height=720,
