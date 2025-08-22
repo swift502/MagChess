@@ -225,8 +225,6 @@ def main(ft_page: ft.Page):
         ),
         border_radius=ft.border_radius.all(20),
         margin=ft.margin.only(left=16, right=16, bottom=16),
-        # animate_opacity=300,
-        # opacity=0.0,
         left=0, right=0, bottom=0,
         shadow=ft.BoxShadow(
             color=ft.Colors.with_opacity(0.4, ft.Colors.BLACK),
@@ -236,10 +234,10 @@ def main(ft_page: ft.Page):
     )
 
     replay_button = ft.ElevatedButton(
-        text=" Review game",
+        text=" Review 5 moves",
         on_click=lambda e: print("Replay"),
         top=26,
-        left=22,
+        # left=22,
         bgcolor="#6d10a3",
         color=ft.Colors.WHITE,
         icon=ft.Icons.HISTORY,
@@ -261,6 +259,7 @@ def main(ft_page: ft.Page):
         ],
         animate_opacity=300,
         opacity=0.0,
+        alignment=ft.alignment.center
     )
 
     hide_task: asyncio.Task | None = None
