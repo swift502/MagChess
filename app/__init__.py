@@ -15,6 +15,11 @@ def main(page: ft.Page):
         "Noto Sans": str(Path(__file__).parent / "assets/fonts/NotoSans-Bold.ttf"),
     }
 
+    def on_key(e: ft.KeyboardEvent):
+        if e.key == "Escape":
+            page.window.close()
+    page.on_keyboard_event = on_key
+
     ui = MagChessUI(page)
     page.add(ui.root)
 
