@@ -1,66 +1,18 @@
+from __future__ import annotations
 
 import flet as ft
-import asyncio
-from pathlib import Path
-import concurrent.futures
-
 from data import DataLib
+from pathlib import Path
 
-class MagChessUI:
+from typing import TYPE_CHECKING
 
-    page: ft.Page
-    root: ft.Control
-    content_host: ft.Container
-    overlay: ft.Stack
-    replay_button: ft.ElevatedButton
-    screens: list[ft.Control]
-    _hide_task: concurrent.futures.Future
+if TYPE_CHECKING:
+    from ui_instance import MagChessUI
 
-    # Colors
-    # Green
-    col_light = "#eeeed5"
-    col_dark = "#7d945d"
 
-    # Brown
-    # col_light = "#f0d9b5"
-    # col_dark = "#b58863"
-
-    def __init__(self, page: ft.Page, debug: bool):
-        self.page = page
-
-        # tabs
-        tab1 = self.tab_1()
-        tab2 = self.tab_2()
-        tab3 = self.tab_3()
-        self.screens = [tab1, tab2, tab3]
-
-        if debug:
-            self.root = ft.Row(
-                controls=[
-                    ft.Container(content=self.screens[0], width=720, height=720),
-                    ft.Container(content=self.screens[1], width=720, height=720),
-                    ft.Container(content=self.screens[2], width=720, height=720),
-                ],
-                spacing=0,
-            )
-            return
-
-        # content host
-        self.content_host = ft.Container(content=self.screens[1])
-
-        self.overlay = self.get_overlay()
-
-        self.root = ft.GestureDetector(
-            on_hover=self.user_activity,
-            hover_interval=150,
-            on_tap=self.user_activity,
-            on_pan_update=self.user_activity,
-            content=ft.Stack(controls=[self.content_host, self.overlay]),
-            height=720,
-            width=720,
-        )
-
-    def tab_1(self):
+class UIBuilder:
+    @staticmethod
+    def build_tab_1(instance: MagChessUI):
         img = ft.Image(
             src= str(Path(__file__).parent / "assets/icons/correct.svg"),
             width=360,
@@ -90,9 +42,9 @@ class MagChessUI:
             bgcolor=ft.Colors.BLACK,
         )
 
-    def tab_2(self):
-
-        stack: list = self.board(self.col_light, self.col_dark)
+    @staticmethod
+    def build_tab_2(instance: MagChessUI):
+        stack: list = UIBuilder.build_board(instance, instance.col_light, instance.col_dark)
 
         pieces = {
             "a1": DataLib.pieces.white_rook,
@@ -144,7 +96,8 @@ class MagChessUI:
             controls=stack,
         )
 
-    def tab_3(self):
+    @staticmethod
+    def build_tab_3(instance: MagChessUI):
 
         light = "#cccccc"
         dark = "#aaaaaa"
@@ -153,7 +106,7 @@ class MagChessUI:
         sensor_negative = "#ff0000"
         sensor_neutral = "#000000"
 
-        stack: list = self.board(light, dark)
+        stack: list = UIBuilder.build_board(instance, light, dark)
 
         for i in range(8):
             for j in range(8):
@@ -169,12 +122,13 @@ class MagChessUI:
         return ft.Stack(
             controls=stack,
         )
-    
-    def get_overlay(self):
+
+    @staticmethod
+    def build_overlay(instance: MagChessUI):
         nav = ft.Container(
             content=ft.NavigationBar(
                 selected_index=1,
-                on_change=self.on_tab_change,
+                on_change=instance.on_tab_change,
                 destinations=[
                     ft.NavigationBarDestination(icon=ft.Icons.FORK_RIGHT, label="Moves"),
                     ft.NavigationBarDestination(icon=ft.Icons.CROP_FREE, label="Board"),
@@ -193,7 +147,7 @@ class MagChessUI:
             ),
         )
 
-        self.replay_button = ft.ElevatedButton(
+        instance.replay_button = ft.ElevatedButton(
             text=" " + "Review 5 moves",
             on_click=lambda e: print("Replay"),
             top=26,
@@ -209,16 +163,15 @@ class MagChessUI:
         )
 
         return ft.Stack(
-            controls=[nav, self.replay_button],
+            controls=[nav, instance.replay_button],
             animate_opacity=300,
             opacity=0.0,
             alignment=ft.alignment.center,
         )
 
-    def board(self, light, dark):
-
+    @staticmethod
+    def build_board(instance: MagChessUI, light, dark):
         rows = []
-
         for r in range(8):
             row_cells = []
             for c in range(8):
@@ -270,33 +223,3 @@ class MagChessUI:
             )
 
         return stack
-
-    def on_tab_change(self, e: ft.ControlEvent):
-        idx = e.control.selected_index
-
-        self.content_host.content = self.screens[idx]
-        self.replay_button.visible = idx == 1
-        
-        self.page.update()
-        self.user_activity()
-
-    async def hide_after(self, seconds: float):
-        try:
-            # Wait
-            await asyncio.sleep(seconds)
-
-            # Hide
-            self.overlay.opacity = 0.0
-            self.page.update()
-        except asyncio.CancelledError:
-            pass
-
-    def user_activity(self, _=None):
-        # Show
-        self.overlay.opacity = 1.0
-        self.page.update()
-        
-        # Schedule hide
-        if self._hide_task is not None:
-            self._hide_task.cancel()
-        self._hide_task = self.page.run_task(self.hide_after, 1.0)

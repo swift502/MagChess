@@ -34,18 +34,17 @@ class SWSensorObject:
 class SWSensors (SensorProvider):
     sensors: dict[tuple[int, int], SWSensorObject]
 
-    def __init__(self, emulator: bool):
+    def __init__(self):
         self.sensors = {}
 
-        if emulator:
-            for letter in range(8):
-                for number in range(8):
-                    state = 0
-                    if letter == 0 or letter == 1:
-                        state = 1
-                    if letter == 6 or letter == 7:
-                        state = -1
-                    self.sensors[(letter, number)] = SWSensorObject(state)
+        for letter in range(8):
+            for number in range(8):
+                state = 0
+                if letter == 0 or letter == 1:
+                    state = 1
+                if letter == 6 or letter == 7:
+                    state = -1
+                self.sensors[(letter, number)] = SWSensorObject(state)
 
     def get_value_array(self):
         values = {}

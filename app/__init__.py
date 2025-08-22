@@ -1,7 +1,8 @@
 import flet as ft
 from pathlib import Path
+from sensors import SWSensors
 from chessboard import Chessboard
-from ui import MagChessUI
+from ui_instance import MagChessUI
 
 debug = False
 debug = True
@@ -27,12 +28,10 @@ def main(page: ft.Page):
             page.window.close()
     page.on_keyboard_event = on_key
 
-    # Build UI
+    # Start
     ui = MagChessUI(page, debug)
-    page.add(ui.root)
-
-    # Start chessboard
-    Chessboard(page)
+    sensors = SWSensors()
+    Chessboard(page, ui, sensors)
 
 if __name__ == "__main__":
     ft.app(target=main)
