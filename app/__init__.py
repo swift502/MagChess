@@ -4,7 +4,7 @@ from chessboard import Chessboard
 from ui import MagChessUI
 
 debug = False
-# debug = True
+debug = True
 
 def main(page: ft.Page):
     page.title = "MagChess"

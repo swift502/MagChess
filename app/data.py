@@ -9,7 +9,7 @@ class Icon:
         self.color = color
 
     def get_path(self):
-        return Path(__file__).parent / "assets" / self.path
+        return str(Path(__file__).parent / "assets" / self.path)
 
 class IconLibrary:
     pass

@@ -2,19 +2,19 @@
 import flet as ft
 import asyncio
 from pathlib import Path
-from typing import Optional
+import concurrent.futures
 
 from data import DataLib
 
 class MagChessUI:
 
     page: ft.Page
-    root: any
+    root: ft.Control
     content_host: ft.Container
     overlay: ft.Stack
     replay_button: ft.ElevatedButton
     screens: list[ft.Control]
-    _hide_task: Optional[asyncio.Task] = None
+    _hide_task: concurrent.futures.Future
 
     # Colors
     # Green
@@ -60,9 +60,9 @@ class MagChessUI:
             width=720,
         )
 
-    def tab_1(self) -> ft.Control:
+    def tab_1(self):
         img = ft.Image(
-            src= Path(__file__).parent / "assets/icons/correct.svg",
+            src= str(Path(__file__).parent / "assets/icons/correct.svg"),
             width=360,
             height=360,
         )
@@ -90,9 +90,9 @@ class MagChessUI:
             bgcolor=ft.Colors.BLACK,
         )
 
-    def tab_2(self) -> ft.Control:
+    def tab_2(self):
 
-        stack = self.board(self.col_light, self.col_dark)
+        stack: list = self.board(self.col_light, self.col_dark)
 
         pieces = {
             "a1": DataLib.pieces.white_rook,
@@ -144,7 +144,7 @@ class MagChessUI:
             controls=stack,
         )
 
-    def tab_3(self) -> ft.Container:
+    def tab_3(self):
 
         light = "#cccccc"
         dark = "#aaaaaa"
@@ -153,7 +153,7 @@ class MagChessUI:
         sensor_negative = "#ff0000"
         sensor_neutral = "#000000"
 
-        stack = self.board(light, dark)
+        stack: list = self.board(light, dark)
 
         for i in range(8):
             for j in range(8):
@@ -215,7 +215,7 @@ class MagChessUI:
             alignment=ft.alignment.center,
         )
 
-    def board(self, light, dark) -> list:
+    def board(self, light, dark):
 
         rows = []
 
@@ -243,12 +243,12 @@ class MagChessUI:
             aspect_ratio=1.0,
         )
 
-        stack = [board]
+        stack: list = [board]
 
         for i in range(8):
             stack.append(
                 ft.Text(
-                    i + 1,
+                    str(i + 1),
                     size=30,
                     font_family="Noto Sans",
                     color= i % 2 == 1 and light or dark,
