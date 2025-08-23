@@ -37,14 +37,14 @@ class SWSensors (SensorProvider):
     def __init__(self):
         self.sensors = {}
 
-        for letter in range(8):
-            for number in range(8):
+        for co_letter in range(8):
+            for co_number in range(8):
                 state = 0
-                if number == 0 or number == 1:
+                if co_number == 0 or co_number == 1:
                     state = 1
-                if number == 6 or number == 7:
+                if co_number == 6 or co_number == 7:
                     state = -1
-                self.sensors[(letter, number)] = SWSensorObject(state)
+                self.sensors[(co_letter, co_number)] = SWSensorObject(state)
 
     def get_value_array(self):
         values: dict[tuple[int, int], float] = {}
@@ -52,12 +52,12 @@ class SWSensors (SensorProvider):
             values[key] = float(sensor.get_value())
         return values
 
-    def cycle_sensor_state(self, letter: int, number: int):
-        current_state = self.sensors[(letter, number)].state
+    def cycle_sensor_state(self, co_letter: int, co_number: int):
+        current_state = self.sensors[(co_letter, co_number)].state
         if current_state == 1:
             new_state = -1
         elif current_state == -1:
             new_state = 0
         else:  # current_state == 0
             new_state = 1
-        self.sensors[(letter, number)].set_state(new_state)
+        self.sensors[(co_letter, co_number)].set_state(new_state)

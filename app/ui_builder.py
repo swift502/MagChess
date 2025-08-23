@@ -84,14 +84,14 @@ class UIBuilder:
         }
 
         for pos, piece in pieces.items():
-            row = ord(pos[0]) - ord('a')
-            col = int(pos[1]) - 1
+            co_letter = ord(pos[0]) - ord('a')
+            co_number = int(pos[1]) - 1
             stack.append(ft.Image(
                 src=piece.get_path(),
                 width=80,
                 height=80,
-                left=col * 90 + 5,
-                top=row * 90 + 5,
+                left=co_number * 90 + 5,
+                top=co_letter * 90 + 5,
             ))
 
         return ft.Stack(
@@ -107,18 +107,18 @@ class UIBuilder:
         stack: list = UIBuilder.build_board(light, dark)
 
         instance.sensor_indicators = {}
-        for id_letter in range(8):
-            for id_number in range(8):
+        for co_letter in range(8):
+            for co_number in range(8):
                 el = ft.Container(
                     width=40,
                     height=40,
                     border=ft.border.all(15, ft.Colors.BLACK),
                     border_radius=ft.border_radius.all(20),
-                    left=id_number * 90 + 25,
-                    top=id_letter * 90 + 25,
-                    on_click=lambda e, x=id_letter, y=id_number: sensors.cycle_sensor_state(x, y),
+                    left=co_number * 90 + 25,
+                    top=co_letter * 90 + 25,
+                    on_click=lambda e, x=co_letter, y=co_number: sensors.cycle_sensor_state(x, y),
                 )
-                instance.sensor_indicators[(id_letter, id_number)] = el
+                instance.sensor_indicators[(co_letter, co_number)] = el
                 stack.append(el)
 
         return ft.Stack(
@@ -174,10 +174,10 @@ class UIBuilder:
     @staticmethod
     def build_board(color_light, color_dark):
         rows = []
-        for id_letter in range(8):
+        for co_letter in range(8):
             row_cells = []
-            for id_number in range(8):
-                is_dark = (id_letter + id_number) % 2 == 0
+            for co_number in range(8):
+                is_dark = (co_letter + co_number) % 2 == 0
                 cell = ft.Container(
                     expand=True,
                     bgcolor=color_dark if is_dark else color_light,
@@ -200,27 +200,27 @@ class UIBuilder:
 
         stack: list = [board]
 
-        for id_number in range(8):
+        for co_number in range(8):
             stack.append(
                 ft.Text(
-                    str(id_number + 1),
+                    str(co_number + 1),
                     size=30,
                     font_family="Noto Sans",
-                    color= id_number % 2 == 1 and color_light or color_dark,
-                    left= 90 * id_number + 66,
+                    color= co_number % 2 == 1 and color_light or color_dark,
+                    left= 90 * co_number + 66,
                     bottom= -3,
                 )
             )
 
-        for id_letter in range(8):
+        for co_letter in range(8):
             stack.append(
                 ft.Text(
-                    chr(ord('A') + id_letter),
+                    chr(ord('A') + co_letter),
                     size=30,
                     font_family="Noto Sans",
-                    color= id_letter % 2 == 1 and color_dark or color_light,
+                    color= co_letter % 2 == 1 and color_dark or color_light,
                     left= 4,
-                    top= 90 * id_letter - 4,
+                    top= 90 * co_letter - 4,
                 )
             )
 

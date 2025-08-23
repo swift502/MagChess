@@ -4,15 +4,15 @@ from ui_instance import MagChessUI
 from constants import SENSOR_THRESHOLD_HIGH, SENSOR_THRESHOLD_LOW
 from utilities import inverse_lerp, lerp, lerp_hex
 
-class Square:
+class Cell:
 
     sensor_indicator: ft.Container
     smooth_value: float
 
-    def __init__(self, letter: int, number: int, ui: MagChessUI):
-        self.letter = letter
-        self.number = number
-        self.sensor_indicator = ui.sensor_indicators[(letter, number)]
+    def __init__(self, co_letter: int, co_number: int, ui: MagChessUI):
+        self.co_letter = co_letter
+        self.co_number = co_number
+        self.sensor_indicator = ui.sensor_indicators[(co_letter, co_number)]
         self.smooth_value = 0.0
     
     def update(self, raw):

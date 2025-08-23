@@ -8,21 +8,21 @@ import flet as ft
 
 from sensors import SWSensors
 from ui_instance import MagChessUI
-from square import Square
+from cell import Cell
 
 class Chessboard:
 
-    squares: dict[tuple[int, int], Square]
+    cells: dict[tuple[int, int], Cell]
 
     def __init__(self, page: ft.Page, ui: MagChessUI, sensors: SWSensors):
         self.page = page
         self.ui = ui
         self.sensors = sensors
 
-        self.squares = {}
-        for letter in range(8):
-            for number in range(8):
-                self.squares[(letter, number)] = Square(letter, number, ui)
+        self.cells = {}
+        for co_letter in range(8):
+            for co_number in range(8):
+                self.cells[(co_letter, co_number)] = Cell(co_letter, co_number, ui)
         
         page.run_task(self.update)
 
@@ -30,8 +30,8 @@ class Chessboard:
         while True:
 
             raw = self.sensors.get_value_array()
-            for pos, square in self.squares.items():
-                square.update(raw[pos])
+            for pos, cell in self.cells.items():
+                cell.update(raw[pos])
 
                 
             self.page.update()
