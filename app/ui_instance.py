@@ -3,6 +3,8 @@ import flet as ft
 import asyncio
 import concurrent.futures
 
+from data import IconData, PieceData
+
 from sensors import SWSensors
 from ui_builder import UIBuilder
 
@@ -20,11 +22,15 @@ class MagChessUI:
     pieces: dict[tuple[int, int], ft.Image]
     sensor_indicators: dict[tuple[int, int], ft.Container]
 
+    move_icon: ft.Image
+    move_text: ft.Text
+    move_background: ft.Container
+
     def __init__(self, page: ft.Page, debug: bool, sensors: SWSensors):
         self.page = page
 
         # tabs
-        tab1 = UIBuilder.build_tab_1()
+        tab1 = UIBuilder.build_tab_1(self)
         tab2 = UIBuilder.build_tab_2(self)
         tab3 = UIBuilder.build_tab_3(self, sensors)
         self.screens = [tab1, tab2, tab3]
@@ -67,6 +73,12 @@ class MagChessUI:
         
         self.page.update()
         self.user_activity()
+
+    def update_move_screen(self, icon: IconData, text: str):
+        self.move_icon.src = icon.get_full_image_path()
+        self.move_text.value = text
+        self.move_background.bgcolor = ft.Colors.with_opacity(0.8, icon.color)
+        self.page.update()
 
     async def hide_after(self, seconds: float):
         try:

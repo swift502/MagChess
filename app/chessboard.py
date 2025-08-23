@@ -1,8 +1,3 @@
-# Chessboard is the game state detector and primary app manager
-# Based on sensor values, this class has to infer where all the pieces are, and call ui updates accordingly
-# It also communicates with stockfish and hands analysis information over to ui
-# Basically it's a three way bridge between sensors, stockfish and the ui
-
 import asyncio
 import flet as ft
 
@@ -19,6 +14,7 @@ class Chessboard:
 
     cells: dict[tuple[int, int], Cell]
     spawned_pieces: list[Piece]
+    current_player_color: ChessColor
 
     last_analyzed_sensor_state: str
 
@@ -38,6 +34,7 @@ class Chessboard:
                 self.cells[(co_letter, co_number)] = Cell(co_letter, co_number, ui)
         
         self.pieces = []
+        self.current_player_color = ChessColor.WHITE
 
         page.run_task(self.update)
 
@@ -96,6 +93,8 @@ class Chessboard:
             piece.destroy()
         self.pieces = []
 
+        self.current_player_color = ChessColor.WHITE
+
         # State
         self.state_stack = []
         self.staging_state = {}
@@ -136,7 +135,6 @@ class Chessboard:
         # Changes found, start new analysis
         self.last_analyzed_sensor_state = sensor_state
         self.staging_state = self.state_stack[-1].copy()
-        print("Analyzing new sensor state")
 
         new: list[NewPiece] = []
         missing: list[MissingPiece] = []
@@ -167,21 +165,33 @@ class Chessboard:
                 # Found swap
                 elif old_color != new_color:
                     swaps.append(ColorSwap(piece, new_color, (co_letter, co_number)))
-                    # new.append(NewPiece(new_color, (co_letter, co_number)))
-                    # missing.append(MissingPiece(piece, (co_letter, co_number)))
+
+        # Results
+        missing_new_swaps = (len(missing), len(new), len(swaps))
+        print(f"Missing {len(missing)}, New {len(new)}, Swaps {len(swaps)}")
 
         # Analyze changes
-        if len(missing) == 1 and len(new) == 1:
+        if missing_new_swaps == (1, 1, 0):
 
             # Move
             if missing[0].piece.color == new[0].color:
                 self.staging_move_piece(missing[0], new[0].coords)
-                
-        elif len(missing) == 1 and len(swaps) == 1:
-            
+
+            self.ui.update_move_screen(DataLib.icons.correct, f"Correct")
+
+        elif missing_new_swaps == (1, 0, 1):
+
             # Capture
             self.staging_remove_piece(swaps[0].coords) # Remove captured piece
             self.staging_move_piece(missing[0], swaps[0].coords) # Move missing piece to capture position
+
+            self.ui.update_move_screen(DataLib.icons.best, f"Best")
+
+        else:
+            if self.current_player_color == ChessColor.WHITE:
+                self.ui.update_move_screen(DataLib.icons.alternative, "White to move")
+            else:
+                self.ui.update_move_screen(DataLib.icons.alternative, "Black to move")
 
         # Finally display the presumed new state
         self.show_state(self.staging_state)

@@ -8,38 +8,46 @@ from typing import TYPE_CHECKING
 
 if TYPE_CHECKING:
     from ui_instance import MagChessUI
+from data import DataLib
 
 import constants as Constants
 
 class UIBuilder:
     @staticmethod
-    def build_tab_1():
-        img = ft.Image(
-            src= str(Path(__file__).parent / "assets/icons/correct.svg"),
+    def build_tab_1(instance: MagChessUI):
+        instance.move_icon = ft.Image(
+            src= DataLib.icons.blank.get_full_image_path(),
             width=360,
             height=360,
         )
 
-        text = ft.Text(
-            "Correct",
+        instance.move_text = ft.Text(
+            "Waiting for initial configuration",
             size=72,
             text_align=ft.TextAlign.CENTER,
             font_family="Noto Sans",
             color=ft.Colors.WHITE,
+            style=ft.TextStyle(
+                shadow=ft.BoxShadow(
+                    blur_radius=5,
+                    color=ft.Colors.with_opacity(0.5, ft.Colors.BLACK),
+                    offset=ft.Offset(0, 3),
+                )
+            )
         )
 
-        foreground = ft.Container(
+        instance.move_background = ft.Container(
             content=ft.Column(
-                controls=[img, text],
+                controls=[instance.move_icon, instance.move_text],
                 alignment=ft.MainAxisAlignment.CENTER,   # vertical centering
                 horizontal_alignment=ft.CrossAxisAlignment.CENTER,  # horizontal centering
             ),
             alignment=ft.alignment.center,  # centers the whole Column in parent
-            bgcolor=ft.Colors.with_opacity(0.8, "#96bc4b"),
+            bgcolor=ft.Colors.with_opacity(0.8, DataLib.icons.blank.color),
         )
 
         return ft.Container(
-            content=foreground,
+            content=instance.move_background,
             bgcolor=ft.Colors.BLACK,
         )
 

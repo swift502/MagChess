@@ -1,7 +1,11 @@
+from __future__ import annotations
 from pathlib import Path
+from typing import TYPE_CHECKING
 
 from enums import ChessColor
-from piece import Piece
+
+if TYPE_CHECKING:
+    from piece import Piece
 
 class IconData:
     def __init__(self, path: str, color: str):
@@ -15,6 +19,7 @@ class IconLibrary:
     def __init__(self):
         self.alternative = IconData(path="icons/alternative.svg", color="#96af8b")
         self.best = IconData(path="icons/best.svg", color="#96bc4b")
+        self.blank = IconData(path="icons/blank.svg", color="#ffffff")
         self.blunder = IconData(path="icons/blunder.svg", color="#ca3431")
         self.book = IconData(path="icons/book.svg", color="#a88865")
         self.brilliant = IconData(path="icons/brilliant.svg", color="#1bada6")
