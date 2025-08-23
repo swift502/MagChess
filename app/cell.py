@@ -28,5 +28,5 @@ class Cell:
         else:
             self.sensor_indicator.border.top.color = "#888888"
 
-        factor = inverse_lerp(raw, SENSOR_THRESHOLD_LOW, SENSOR_THRESHOLD_HIGH)
+        factor = inverse_lerp(SENSOR_THRESHOLD_LOW, SENSOR_THRESHOLD_HIGH, raw)
         self.sensor_indicator.bgcolor = lerp_hex("#000000", "#ffffff", factor)
