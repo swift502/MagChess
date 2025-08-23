@@ -1,60 +1,84 @@
 from pathlib import Path
 
-class Icon:
-    path: str
-    color: str
+from enums import ChessColor
+from piece import Piece
 
+class IconData:
     def __init__(self, path: str, color: str):
-        self.path = path
+        self.image_path = path
         self.color = color
 
-    def get_path(self):
-        return str(Path(__file__).parent / "assets" / self.path)
+    def get_full_image_path(self):
+        return str(Path(__file__).parent / "assets" / self.image_path)
 
 class IconLibrary:
     def __init__(self):
-        self.alternative = Icon(path="icons/alternative.svg", color="#96af8b")
-        self.best = Icon(path="icons/best.svg", color="#96bc4b")
-        self.blunder = Icon(path="icons/blunder.svg", color="#ca3431")
-        self.book = Icon(path="icons/book.svg", color="#a88865")
-        self.brilliant = Icon(path="icons/brilliant.svg", color="#1bada6")
-        self.checkmate_black = Icon(path="icons/checkmate_black.svg", color="#312e2b")
-        self.checkmate_white = Icon(path="icons/checkmate_white.svg", color="#f8f8f8")
-        self.correct = Icon(path="icons/correct.svg", color="#96bc4b")
-        self.critical = Icon(path="icons/critical.svg", color="#ad5b8c")
-        self.draw_black = Icon(path="icons/draw_black.svg", color="#312e2b")
-        self.draw_white = Icon(path="icons/draw_white.svg", color="#f8f8f8")
-        self.excellent = Icon(path="icons/excellent.svg", color="#96bc4b")
-        self.fast_win = Icon(path="icons/fast_win.svg", color="#96af8b")
-        self.forced = Icon(path="icons/forced.svg", color="#96af8b")
-        self.free_piece = Icon(path="icons/free_piece.svg", color="#ec6250")
-        self.good = Icon(path="icons/good.svg", color="#96af8b")
-        self.great_find = Icon(path="icons/great_find.svg", color="#96af8b")
-        self.inaccuracy = Icon(path="icons/inaccuracy.svg", color="#f7c045")
-        self.incorrect = Icon(path="icons/incorrect.svg", color="#ca3431")
-        self.mate = Icon(path="icons/mate.svg", color="#ec6250")
-        self.missed_win = Icon(path="icons/missed_win.svg", color="#dbac16")
-        self.mistake = Icon(path="icons/mistake.svg", color="#e58f2a")
-        self.sharp = Icon(path="icons/sharp.svg", color="#ad5b8c")
-        self.take_back = Icon(path="icons/take_back.svg", color="#96af8b")
-        self.threat = Icon(path="icons/threat.svg", color="#96af8b")
-        self.winner = Icon(path="icons/winner.svg", color="#dbac16")
+        self.alternative = IconData(path="icons/alternative.svg", color="#96af8b")
+        self.best = IconData(path="icons/best.svg", color="#96bc4b")
+        self.blunder = IconData(path="icons/blunder.svg", color="#ca3431")
+        self.book = IconData(path="icons/book.svg", color="#a88865")
+        self.brilliant = IconData(path="icons/brilliant.svg", color="#1bada6")
+        self.checkmate_black = IconData(path="icons/checkmate_black.svg", color="#312e2b")
+        self.checkmate_white = IconData(path="icons/checkmate_white.svg", color="#f8f8f8")
+        self.correct = IconData(path="icons/correct.svg", color="#96bc4b")
+        self.critical = IconData(path="icons/critical.svg", color="#ad5b8c")
+        self.draw_black = IconData(path="icons/draw_black.svg", color="#312e2b")
+        self.draw_white = IconData(path="icons/draw_white.svg", color="#f8f8f8")
+        self.excellent = IconData(path="icons/excellent.svg", color="#96bc4b")
+        self.fast_win = IconData(path="icons/fast_win.svg", color="#96af8b")
+        self.forced = IconData(path="icons/forced.svg", color="#96af8b")
+        self.free_piece = IconData(path="icons/free_piece.svg", color="#ec6250")
+        self.good = IconData(path="icons/good.svg", color="#96af8b")
+        self.great_find = IconData(path="icons/great_find.svg", color="#96af8b")
+        self.inaccuracy = IconData(path="icons/inaccuracy.svg", color="#f7c045")
+        self.incorrect = IconData(path="icons/incorrect.svg", color="#ca3431")
+        self.mate = IconData(path="icons/mate.svg", color="#ec6250")
+        self.missed_win = IconData(path="icons/missed_win.svg", color="#dbac16")
+        self.mistake = IconData(path="icons/mistake.svg", color="#e58f2a")
+        self.sharp = IconData(path="icons/sharp.svg", color="#ad5b8c")
+        self.take_back = IconData(path="icons/take_back.svg", color="#96af8b")
+        self.threat = IconData(path="icons/threat.svg", color="#96af8b")
+        self.winner = IconData(path="icons/winner.svg", color="#dbac16")
+
+class PieceData:
+    def __init__(self, path: str, color: ChessColor):
+        self.image_path = path
+        self.color = color
+
+    def get_full_image_path(self):
+        return str(Path(__file__).parent / "assets" / self.image_path)
+
+class NewPiece:
+    def __init__(self, color: ChessColor, coords: tuple[int, int]):
+        self.color = color
+        self.coords = coords
+
+class MissingPiece:
+    def __init__(self, piece: Piece, coords: tuple[int, int]):
+        self.piece = piece
+        self.coords = coords
+
+class ColorSwap:
+    def __init__(self, old_piece: Piece, new_color: ChessColor, coords: tuple[int, int]):
+        self.old_piece = old_piece
+        self.new_color = new_color
+        self.coords = coords
 
 class PieceLibrary:
     def __init__(self):
-        self.white_pawn = Icon(path="pieces/pawn_white.svg", color="#f8f8f8")
-        self.white_rook = Icon(path="pieces/rook_white.svg", color="#f8f8f8")
-        self.white_knight = Icon(path="pieces/knight_white.svg", color="#f8f8f8")
-        self.white_bishop = Icon(path="pieces/bishop_white.svg", color="#f8f8f8")
-        self.white_queen = Icon(path="pieces/queen_white.svg", color="#f8f8f8")
-        self.white_king = Icon(path="pieces/king_white.svg", color="#f8f8f8")
+        self.white_pawn = PieceData(path="pieces/pawn_white.svg", color=ChessColor.WHITE)
+        self.white_rook = PieceData(path="pieces/rook_white.svg", color=ChessColor.WHITE)
+        self.white_knight = PieceData(path="pieces/knight_white.svg", color=ChessColor.WHITE)
+        self.white_bishop = PieceData(path="pieces/bishop_white.svg", color=ChessColor.WHITE)
+        self.white_queen = PieceData(path="pieces/queen_white.svg", color=ChessColor.WHITE)
+        self.white_king = PieceData(path="pieces/king_white.svg", color=ChessColor.WHITE)
 
-        self.black_pawn = Icon(path="pieces/pawn_black.svg", color="#565352")
-        self.black_rook = Icon(path="pieces/rook_black.svg", color="#565352")
-        self.black_knight = Icon(path="pieces/knight_black.svg", color="#565352")
-        self.black_bishop = Icon(path="pieces/bishop_black.svg", color="#565352")
-        self.black_queen = Icon(path="pieces/queen_black.svg", color="#565352")
-        self.black_king = Icon(path="pieces/king_black.svg", color="#565352")
+        self.black_pawn = PieceData(path="pieces/pawn_black.svg", color=ChessColor.BLACK)
+        self.black_rook = PieceData(path="pieces/rook_black.svg", color=ChessColor.BLACK)
+        self.black_knight = PieceData(path="pieces/knight_black.svg", color=ChessColor.BLACK)
+        self.black_bishop = PieceData(path="pieces/bishop_black.svg", color=ChessColor.BLACK)
+        self.black_queen = PieceData(path="pieces/queen_black.svg", color=ChessColor.BLACK)
+        self.black_king = PieceData(path="pieces/king_black.svg", color=ChessColor.BLACK)
 
 class DataLib:
     icons = IconLibrary()

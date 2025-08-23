@@ -6,30 +6,34 @@ from typing import TYPE_CHECKING
 
 if TYPE_CHECKING:
     from chessboard import Chessboard
+    from data import PieceData
 from ui_instance import MagChessUI
 from utilities import lerp
     
 class Piece:
-    def __init__(self, board: Chessboard, ui: MagChessUI, control: ft.Image):
+    def __init__(self, board: Chessboard, ui: MagChessUI, data: PieceData):
         self.board = board
         self.ui = ui
-        self.control = control
+        self.color = data.color
+        self.control = ft.Image(
+            src=data.get_full_image_path(),
+            width=80,
+            height=80,
+        )
 
         self.target_cell: tuple[int, int] = (0, 0)
-
-        ui.board_stack.controls.append(control)
 
     def update(self):
         target_pos = self.get_top_left(self.target_cell)
 
         assert self.control.top
-        self.control.top = lerp(self.control.top, target_pos[0], 0.2)
+        self.control.top = lerp(self.control.top, target_pos[0], 0.3)
 
         assert self.control.left
-        self.control.left = lerp(self.control.left, target_pos[1], 0.2)
+        self.control.left = lerp(self.control.left, target_pos[1], 0.3)
 
-    def go_to(self, co_letter: int, co_number: int):
-        self.target_cell = (co_letter, co_number)
+    def go_to(self, coords: tuple[int, int]):
+        self.target_cell = coords
 
     def get_top_left(self, coords: tuple[int, int]):
         return (coords[0] * 90.0 + 5, coords[1] * 90.0 + 5)

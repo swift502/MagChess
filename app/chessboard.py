@@ -6,34 +6,27 @@
 import asyncio
 import flet as ft
 
-from data import DataLib
+from enums import ChessColor
+from data import ColorSwap, DataLib, NewPiece, MissingPiece
 from sensors import SWSensors
 from ui_instance import MagChessUI
 from cell import Cell
 from piece import Piece
 
 class Chessboard:
+    state_stack: list[dict[tuple[int, int], Piece]]
+    staging_state: dict[tuple[int, int], Piece]
 
     cells: dict[tuple[int, int], Cell]
     spawned_pieces: list[Piece]
 
-    # Committed board states
-    # Last is current state
-    # Game review should use this list
-    state_stack: list[dict[tuple[int, int], Piece]]
-
-    @property
-    def current_state(self):
-        return self.state_stack[-1]
-
-    # Next state
-    # Subject to change before commit, can be discarded at any time
-    staging_state: dict[tuple[int, int], Piece]
+    last_analyzed_sensor_state: str
 
     def __init__(self, page: ft.Page, ui: MagChessUI, sensors: SWSensors):
         self.page = page
         self.ui = ui
         self.sensors = sensors
+        self.last_analyzed_sensor_state = ""
 
         self.state_stack = []
         self.staging_state = {}
@@ -58,9 +51,11 @@ class Chessboard:
             for pos, cell in self.cells.items():
                 cell.update(raw[pos])
 
-            # Game start
+            # Board logic
             if self.match_state(["WW....BB"] * 8) and len(self.state_stack) != 1:
                 self.init_game()
+            else:
+                self.update_staging_state()
                 
             # Pieces
             for piece in self.pieces:
@@ -82,19 +77,16 @@ class Chessboard:
     def init_game(self):
         self.clean_up()
 
-        for locator, piece in DataLib.start_configuration().items():
-            coords = self.locator_to_coords(locator)
-            image = ft.Image(
-                src=piece.get_path(),
-                width=80,
-                height=80,
-            )
-            piece = Piece(self, self.ui, image)
-            self.pieces.append(piece)
-            self.staging_state[coords] = piece
+        init_state: dict[tuple[int, int], Piece] = {}
 
-        self.commit_state()
-        self.show_state(self.staging_state)
+        for locator, pieceData in DataLib.start_configuration().items():
+            coords = self.locator_to_coords(locator)
+            piece = Piece(self, self.ui, pieceData)
+            self.pieces.append(piece)
+            init_state[coords] = piece
+
+        self.state_stack.append(init_state)
+        self.show_state(init_state)
 
         print("New game detected")
 
@@ -115,14 +107,14 @@ class Chessboard:
         )
     
     def commit_state(self):
-        self.state_stack.append(self.staging_state)
+        self.state_stack.append(self.staging_state.copy())
 
     def show_state(self, state: dict[tuple[int, int], Piece]):
         # Iterate state
         for coords, piece in state.items():
             if piece in self.spawned_pieces:
                 # Move existing
-                piece.go_to(coords[0], coords[1])
+                piece.go_to(coords)
             else:
                 # Spawn new
                 piece.spawn(coords)
@@ -131,3 +123,78 @@ class Chessboard:
         for piece in self.spawned_pieces:
             if piece not in state.values():
                 piece.destroy()
+
+    def update_staging_state(self):
+        if len(self.state_stack) == 0:
+            return
+
+        # Check for changes
+        sensor_state = self.get_sensor_state_string()
+        if self.last_analyzed_sensor_state == sensor_state:
+            return
+
+        # Changes found, start new analysis
+        self.last_analyzed_sensor_state = sensor_state
+        self.staging_state = self.state_stack[-1].copy()
+        print("Analyzing new sensor state")
+
+        new: list[NewPiece] = []
+        missing: list[MissingPiece] = []
+        swaps: list[ColorSwap] = []
+
+        # Find changes
+        for (co_letter, co_number), cell in self.cells.items():
+            # Get new color from sensor data
+            new_color = cell.color
+
+            # Get old color from last committed state
+            piece = self.state_stack[-1].get((co_letter, co_number))
+
+            if piece is None:
+                old_color = ChessColor.NONE
+
+                # Found new
+                if new_color != ChessColor.NONE:
+                    new.append(NewPiece(new_color, (co_letter, co_number)))
+
+            else:
+                old_color = piece.color
+
+                # Found missing
+                if new_color == ChessColor.NONE:
+                    missing.append(MissingPiece(piece, (co_letter, co_number)))
+
+                # Found swap
+                elif old_color != new_color:
+                    swaps.append(ColorSwap(piece, new_color, (co_letter, co_number)))
+                    # new.append(NewPiece(new_color, (co_letter, co_number)))
+                    # missing.append(MissingPiece(piece, (co_letter, co_number)))
+
+        # Analyze changes
+        if len(missing) == 1 and len(new) == 1:
+
+            # Move
+            if missing[0].piece.color == new[0].color:
+                self.staging_move_piece(missing[0], new[0].coords)
+                
+        elif len(missing) == 1 and len(swaps) == 1:
+            
+            # Capture
+            self.staging_remove_piece(swaps[0].coords) # Remove captured piece
+            self.staging_move_piece(missing[0], swaps[0].coords) # Move missing piece to capture position
+
+        # Finally display the presumed new state
+        self.show_state(self.staging_state)
+
+    def staging_move_piece(self, missing: MissingPiece, new_coords: tuple[int, int]):
+        self.staging_state[new_coords] = missing.piece
+        self.staging_state.pop(missing.coords)
+
+    def staging_remove_piece(self, coords: tuple[int, int]):
+        self.staging_state.pop(coords)
+
+    def get_sensor_state_string(self):
+        string = ""
+        for cell in self.cells.values():
+            string += cell.state_format
+        return string

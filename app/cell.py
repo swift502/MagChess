@@ -1,5 +1,6 @@
 import flet as ft
 
+from enums import ChessColor
 from ui_instance import MagChessUI
 from constants import SENSOR_THRESHOLD_HIGH, SENSOR_THRESHOLD_LOW
 from utilities import inverse_lerp, lerp, lerp_hex
@@ -11,8 +12,6 @@ class Cell:
     state: int
 
     def __init__(self, co_letter: int, co_number: int, ui: MagChessUI):
-        self.co_letter = co_letter
-        self.co_number = co_number
         self.sensor_indicator = ui.sensor_indicators[(co_letter, co_number)]
         self.smooth_value = 0.0
     
@@ -43,3 +42,12 @@ class Cell:
             return 'W'
         else:
             return '.'
+    
+    @property
+    def color(self):
+        if self.state == -1:
+            return ChessColor.BLACK
+        elif self.state == 1:
+            return ChessColor.WHITE
+        else:
+            return ChessColor.NONE

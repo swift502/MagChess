@@ -2,7 +2,6 @@ from __future__ import annotations
 
 import flet as ft
 from sensors import SWSensors
-from data import DataLib
 from pathlib import Path
 
 from typing import TYPE_CHECKING
