@@ -46,17 +46,6 @@ class UIBuilder:
 
     @staticmethod
     def build_tab_2(instance: MagChessUI):
-        # stack: list = UIBuilder.build_board(Constants.THEME_BRIGHT, Constants.THEME_DARK)
-
-        # for piece in DataLib.get_all_pieces():
-        #     el = ft.Image(
-        #         src=piece.get_path(),
-        #         width=80,
-        #         height=80,
-        #     )
-        #     instance.pieces[pos] = el
-        #     stack.append(el)
-
         stack = ft.Stack(
             controls=UIBuilder.build_board(Constants.THEME_BRIGHT, Constants.THEME_DARK),
         )
