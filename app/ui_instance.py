@@ -16,6 +16,8 @@ class MagChessUI:
     screens: list[ft.Control]
     _hide_task: concurrent.futures.Future | None = None
 
+    board_stack: ft.Stack
+    pieces: dict[tuple[int, int], ft.Image]
     sensor_indicators: dict[tuple[int, int], ft.Container]
 
     def __init__(self, page: ft.Page, debug: bool, sensors: SWSensors):
@@ -23,7 +25,7 @@ class MagChessUI:
 
         # tabs
         tab1 = UIBuilder.build_tab_1()
-        tab2 = UIBuilder.build_tab_2()
+        tab2 = UIBuilder.build_tab_2(self)
         tab3 = UIBuilder.build_tab_3(self, sensors)
         self.screens = [tab1, tab2, tab3]
 

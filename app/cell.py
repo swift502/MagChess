@@ -8,6 +8,7 @@ class Cell:
 
     sensor_indicator: ft.Container
     smooth_value: float
+    state: int
 
     def __init__(self, co_letter: int, co_number: int, ui: MagChessUI):
         self.co_letter = co_letter
@@ -16,17 +17,29 @@ class Cell:
         self.smooth_value = 0.0
     
     def update(self, raw):
+        # Value
         self.smooth_value = lerp(self.smooth_value, raw, 0.1)
 
-        assert self.sensor_indicator.border is not None
-        assert self.sensor_indicator.border.top is not None
-
+        # State
         if self.smooth_value < SENSOR_THRESHOLD_LOW:
+            self.state = -1
             self.sensor_indicator.border.top.color = "#000000"
         elif self.smooth_value > SENSOR_THRESHOLD_HIGH:
+            self.state = 1
             self.sensor_indicator.border.top.color = "#ffffff"
         else:
+            self.state = 0
             self.sensor_indicator.border.top.color = "#888888"
 
+        # Raw sensor value
         factor = inverse_lerp(SENSOR_THRESHOLD_LOW, SENSOR_THRESHOLD_HIGH, raw)
         self.sensor_indicator.bgcolor = lerp_hex("#000000", "#ffffff", factor)
+
+    @property
+    def state_format(self):
+        if self.state == -1:
+            return 'B'
+        elif self.state == 1:
+            return 'W'
+        else:
+            return '.'

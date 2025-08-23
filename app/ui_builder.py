@@ -45,58 +45,23 @@ class UIBuilder:
         )
 
     @staticmethod
-    def build_tab_2():
-        stack: list = UIBuilder.build_board(Constants.THEME_BRIGHT, Constants.THEME_DARK)
+    def build_tab_2(instance: MagChessUI):
+        # stack: list = UIBuilder.build_board(Constants.THEME_BRIGHT, Constants.THEME_DARK)
 
-        pieces = {
-            "a1": DataLib.pieces.white_rook,
-            "b1": DataLib.pieces.white_knight,
-            "c1": DataLib.pieces.white_bishop,
-            "d1": DataLib.pieces.white_queen,
-            "e1": DataLib.pieces.white_king,
-            "f1": DataLib.pieces.white_bishop,
-            "g1": DataLib.pieces.white_knight,
-            "h1": DataLib.pieces.white_rook,
-            "a2": DataLib.pieces.white_pawn,
-            "b2": DataLib.pieces.white_pawn,
-            "c2": DataLib.pieces.white_pawn,
-            "d2": DataLib.pieces.white_pawn,
-            "e2": DataLib.pieces.white_pawn,
-            "f2": DataLib.pieces.white_pawn,
-            "g2": DataLib.pieces.white_pawn,
-            "h2": DataLib.pieces.white_pawn,
-            "a8": DataLib.pieces.black_rook,
-            "b8": DataLib.pieces.black_knight,
-            "c8": DataLib.pieces.black_bishop,
-            "d8": DataLib.pieces.black_queen,
-            "e8": DataLib.pieces.black_king,
-            "f8": DataLib.pieces.black_bishop,
-            "g8": DataLib.pieces.black_knight,
-            "h8": DataLib.pieces.black_rook,
-            "a7": DataLib.pieces.black_pawn,
-            "b7": DataLib.pieces.black_pawn,
-            "c7": DataLib.pieces.black_pawn,
-            "d7": DataLib.pieces.black_pawn,
-            "e7": DataLib.pieces.black_pawn,
-            "f7": DataLib.pieces.black_pawn,
-            "g7": DataLib.pieces.black_pawn,
-            "h7": DataLib.pieces.black_pawn,
-        }
+        # for piece in DataLib.get_all_pieces():
+        #     el = ft.Image(
+        #         src=piece.get_path(),
+        #         width=80,
+        #         height=80,
+        #     )
+        #     instance.pieces[pos] = el
+        #     stack.append(el)
 
-        for pos, piece in pieces.items():
-            co_letter = ord(pos[0]) - ord('a')
-            co_number = int(pos[1]) - 1
-            stack.append(ft.Image(
-                src=piece.get_path(),
-                width=80,
-                height=80,
-                left=co_number * 90 + 5,
-                top=co_letter * 90 + 5,
-            ))
-
-        return ft.Stack(
-            controls=stack,
+        stack = ft.Stack(
+            controls=UIBuilder.build_board(Constants.THEME_BRIGHT, Constants.THEME_DARK),
         )
+        instance.board_stack = stack
+        return stack
 
     @staticmethod
     def build_tab_3(instance: MagChessUI, sensors: SWSensors):

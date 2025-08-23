@@ -59,3 +59,40 @@ class PieceLibrary:
 class DataLib:
     icons = IconLibrary()
     pieces = PieceLibrary()
+
+    @staticmethod
+    def get_all_pieces():
+        return [
+            DataLib.pieces.white_rook,
+            DataLib.pieces.white_knight,
+            DataLib.pieces.white_bishop,
+            DataLib.pieces.white_queen,
+            DataLib.pieces.white_king,
+            DataLib.pieces.white_bishop,
+            DataLib.pieces.white_knight,
+            DataLib.pieces.white_rook,
+            DataLib.pieces.white_pawn,
+            DataLib.pieces.white_pawn,
+            DataLib.pieces.white_pawn,
+            DataLib.pieces.white_pawn,
+            DataLib.pieces.white_pawn,
+            DataLib.pieces.white_pawn,
+            DataLib.pieces.white_pawn,
+            DataLib.pieces.white_pawn,
+            DataLib.pieces.black_rook,
+            DataLib.pieces.black_knight,
+            DataLib.pieces.black_bishop,
+            DataLib.pieces.black_queen,
+            DataLib.pieces.black_king,
+            DataLib.pieces.black_bishop,
+            DataLib.pieces.black_knight,
+            DataLib.pieces.black_rook,
+            DataLib.pieces.black_pawn,
+            DataLib.pieces.black_pawn,
+            DataLib.pieces.black_pawn,
+            DataLib.pieces.black_pawn,
+            DataLib.pieces.black_pawn,
+            DataLib.pieces.black_pawn,
+            DataLib.pieces.black_pawn,
+            DataLib.pieces.black_pawn,
+        ]

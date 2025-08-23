@@ -1,9 +1,11 @@
 import flet as ft
 
+from ui_instance import MagChessUI
 from utilities import lerp
     
 class Piece:
-    def __init__(self, control: ft.Image):
+    def __init__(self, ui: MagChessUI, control: ft.Image):
+        self.ui = ui
         self.control = control
 
         self.top = 0.0
@@ -29,3 +31,6 @@ class Piece:
 
     def hide(self):
         self.control.visible = False
+
+    def destroy(self):
+        self.ui.board_stack.controls.remove(self.control)
