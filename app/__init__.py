@@ -29,8 +29,8 @@ def main(page: ft.Page):
     page.on_keyboard_event = on_key
 
     # Start
-    ui = MagChessUI(page, debug)
     sensors = SWSensors()
+    ui = MagChessUI(page, debug, sensors)
     Chessboard(page, ui, sensors)
 
 if __name__ == "__main__":

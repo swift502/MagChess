@@ -3,9 +3,8 @@ import flet as ft
 import asyncio
 import concurrent.futures
 
+from sensors import SWSensors
 from ui_builder import UIBuilder
-from utilities import inverse_lerp, lerp_hex_three
-from constants import SENSOR_THRESHOLD_LOW, SENSOR_THRESHOLD_HIGH
 
 class MagChessUI:
 
@@ -17,24 +16,15 @@ class MagChessUI:
     screens: list[ft.Control]
     _hide_task: concurrent.futures.Future | None = None
 
-    # Colors
-    # Green
-    col_light = "#eeeed5"
-    col_dark = "#7d945d"
-
-    # Brown
-    # col_light = "#f0d9b5"
-    # col_dark = "#b58863"
-
     sensor_indicators: dict[tuple[int, int], ft.Container]
 
-    def __init__(self, page: ft.Page, debug: bool):
+    def __init__(self, page: ft.Page, debug: bool, sensors: SWSensors):
         self.page = page
 
         # tabs
-        tab1 = UIBuilder.build_tab_1(self)
-        tab2 = UIBuilder.build_tab_2(self)
-        tab3 = UIBuilder.build_tab_3(self)
+        tab1 = UIBuilder.build_tab_1()
+        tab2 = UIBuilder.build_tab_2()
+        tab3 = UIBuilder.build_tab_3(self, sensors)
         self.screens = [tab1, tab2, tab3]
 
         if debug:

@@ -1,6 +1,7 @@
 from __future__ import annotations
 
 import flet as ft
+from sensors import SWSensors
 from data import DataLib
 from pathlib import Path
 
@@ -9,10 +10,11 @@ from typing import TYPE_CHECKING
 if TYPE_CHECKING:
     from ui_instance import MagChessUI
 
+import constants as Constants
 
 class UIBuilder:
     @staticmethod
-    def build_tab_1(instance: MagChessUI):
+    def build_tab_1():
         img = ft.Image(
             src= str(Path(__file__).parent / "assets/icons/correct.svg"),
             width=360,
@@ -43,8 +45,8 @@ class UIBuilder:
         )
 
     @staticmethod
-    def build_tab_2(instance: MagChessUI):
-        stack: list = UIBuilder.build_board(instance, instance.col_light, instance.col_dark)
+    def build_tab_2():
+        stack: list = UIBuilder.build_board(Constants.THEME_BRIGHT, Constants.THEME_DARK)
 
         pieces = {
             "a1": DataLib.pieces.white_rook,
@@ -97,25 +99,26 @@ class UIBuilder:
         )
 
     @staticmethod
-    def build_tab_3(instance: MagChessUI):
+    def build_tab_3(instance: MagChessUI, sensors: SWSensors):
 
         light = "#999999"
         dark = "#777777"
 
-        stack: list = UIBuilder.build_board(instance, light, dark)
+        stack: list = UIBuilder.build_board(light, dark)
 
         instance.sensor_indicators = {}
-        for i in range(8):
-            for j in range(8):
+        for id_letter in range(8):
+            for id_number in range(8):
                 el = ft.Container(
                     width=40,
                     height=40,
-                    border=ft.border.all(8, ft.Colors.BLACK),
+                    border=ft.border.all(15, ft.Colors.BLACK),
                     border_radius=ft.border_radius.all(20),
-                    left=j * 90 + 25,
-                    top=i * 90 + 25,
+                    left=id_number * 90 + 25,
+                    top=id_letter * 90 + 25,
+                    on_click=lambda e, x=id_letter, y=id_number: sensors.cycle_sensor_state(x, y),
                 )
-                instance.sensor_indicators[(j, i)] = el
+                instance.sensor_indicators[(id_letter, id_number)] = el
                 stack.append(el)
 
         return ft.Stack(
@@ -169,15 +172,15 @@ class UIBuilder:
         )
 
     @staticmethod
-    def build_board(instance: MagChessUI, light, dark):
+    def build_board(color_light, color_dark):
         rows = []
-        for r in range(8):
+        for id_letter in range(8):
             row_cells = []
-            for c in range(8):
-                is_dark = (r + c) % 2 == 0
+            for id_number in range(8):
+                is_dark = (id_letter + id_number) % 2 == 0
                 cell = ft.Container(
                     expand=True,
-                    bgcolor=dark if is_dark else light,
+                    bgcolor=color_dark if is_dark else color_light,
                 )
                 row_cells.append(cell)
             rows.append(
@@ -197,27 +200,27 @@ class UIBuilder:
 
         stack: list = [board]
 
-        for i in range(8):
+        for id_number in range(8):
             stack.append(
                 ft.Text(
-                    str(i + 1),
+                    str(id_number + 1),
                     size=30,
                     font_family="Noto Sans",
-                    color= i % 2 == 1 and light or dark,
-                    left= 90 * i + 66,
+                    color= id_number % 2 == 1 and color_light or color_dark,
+                    left= 90 * id_number + 66,
                     bottom= -3,
                 )
             )
 
-        for i in range(8):
+        for id_letter in range(8):
             stack.append(
                 ft.Text(
-                    chr(ord('A') + i),
+                    chr(ord('A') + id_letter),
                     size=30,
                     font_family="Noto Sans",
-                    color= i % 2 == 1 and dark or light,
+                    color= id_letter % 2 == 1 and color_dark or color_light,
                     left= 4,
-                    top= 90 * i - 4,
+                    top= 90 * id_letter - 4,
                 )
             )
 

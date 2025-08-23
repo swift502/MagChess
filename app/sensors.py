@@ -40,9 +40,9 @@ class SWSensors (SensorProvider):
         for letter in range(8):
             for number in range(8):
                 state = 0
-                if letter == 0 or letter == 1:
+                if number == 0 or number == 1:
                     state = 1
-                if letter == 6 or letter == 7:
+                if number == 6 or number == 7:
                     state = -1
                 self.sensors[(letter, number)] = SWSensorObject(state)
 
@@ -51,3 +51,13 @@ class SWSensors (SensorProvider):
         for key, sensor in self.sensors.items():
             values[key] = float(sensor.get_value())
         return values
+
+    def cycle_sensor_state(self, letter: int, number: int):
+        current_state = self.sensors[(letter, number)].state
+        if current_state == 1:
+            new_state = -1
+        elif current_state == -1:
+            new_state = 0
+        else:  # current_state == 0
+            new_state = 1
+        self.sensors[(letter, number)].set_state(new_state)
