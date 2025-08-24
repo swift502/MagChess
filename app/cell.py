@@ -1,7 +1,7 @@
+import chess
 import flet as ft
 
 from constants import SENSOR_THRESHOLD_HIGH, SENSOR_THRESHOLD_LOW
-from enums import ChessColor
 from ui_instance import MagChessUI
 from utilities import inverse_lerp, lerp, lerp_hex
 
@@ -45,8 +45,8 @@ class Cell:
     @property
     def color(self):
         if self.state == -1:
-            return ChessColor.BLACK
+            return chess.BLACK
         elif self.state == 1:
-            return ChessColor.WHITE
+            return chess.WHITE
         else:
-            return ChessColor.NONE
+            return None

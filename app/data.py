@@ -2,7 +2,7 @@ from __future__ import annotations
 from pathlib import Path
 from typing import TYPE_CHECKING
 
-from enums import ChessColor
+import chess
 
 if TYPE_CHECKING:
     from piece import Piece
@@ -47,12 +47,12 @@ class IconLibrary:
         self.winner = IconData(path="icons/winner.svg", color="#dbac16")
 
 class PieceData:
-    def __init__(self, path: str, color: ChessColor):
+    def __init__(self, path: str, color: chess.Color):
         self.image_path = path
         self.color = color
 
 class NewPiece:
-    def __init__(self, color: ChessColor, coords: tuple[int, int]):
+    def __init__(self, color: chess.Color, coords: tuple[int, int]):
         self.color = color
         self.coords = coords
 
@@ -62,26 +62,26 @@ class MissingPiece:
         self.coords = coords
 
 class ColorSwap:
-    def __init__(self, old_piece: Piece, new_color: ChessColor, coords: tuple[int, int]):
+    def __init__(self, old_piece: Piece, new_color: chess.Color, coords: tuple[int, int]):
         self.old_piece = old_piece
         self.new_color = new_color
         self.coords = coords
 
 class PieceLibrary:
     def __init__(self):
-        self.white_pawn = PieceData(path="pieces/pawn_white.svg", color=ChessColor.WHITE)
-        self.white_rook = PieceData(path="pieces/rook_white.svg", color=ChessColor.WHITE)
-        self.white_knight = PieceData(path="pieces/knight_white.svg", color=ChessColor.WHITE)
-        self.white_bishop = PieceData(path="pieces/bishop_white.svg", color=ChessColor.WHITE)
-        self.white_queen = PieceData(path="pieces/queen_white.svg", color=ChessColor.WHITE)
-        self.white_king = PieceData(path="pieces/king_white.svg", color=ChessColor.WHITE)
+        self.white_pawn = PieceData(path="pieces/pawn_white.svg", color=chess.WHITE)
+        self.white_rook = PieceData(path="pieces/rook_white.svg", color=chess.WHITE)
+        self.white_knight = PieceData(path="pieces/knight_white.svg", color=chess.WHITE)
+        self.white_bishop = PieceData(path="pieces/bishop_white.svg", color=chess.WHITE)
+        self.white_queen = PieceData(path="pieces/queen_white.svg", color=chess.WHITE)
+        self.white_king = PieceData(path="pieces/king_white.svg", color=chess.WHITE)
 
-        self.black_pawn = PieceData(path="pieces/pawn_black.svg", color=ChessColor.BLACK)
-        self.black_rook = PieceData(path="pieces/rook_black.svg", color=ChessColor.BLACK)
-        self.black_knight = PieceData(path="pieces/knight_black.svg", color=ChessColor.BLACK)
-        self.black_bishop = PieceData(path="pieces/bishop_black.svg", color=ChessColor.BLACK)
-        self.black_queen = PieceData(path="pieces/queen_black.svg", color=ChessColor.BLACK)
-        self.black_king = PieceData(path="pieces/king_black.svg", color=ChessColor.BLACK)
+        self.black_pawn = PieceData(path="pieces/pawn_black.svg", color=chess.BLACK)
+        self.black_rook = PieceData(path="pieces/rook_black.svg", color=chess.BLACK)
+        self.black_knight = PieceData(path="pieces/knight_black.svg", color=chess.BLACK)
+        self.black_bishop = PieceData(path="pieces/bishop_black.svg", color=chess.BLACK)
+        self.black_queen = PieceData(path="pieces/queen_black.svg", color=chess.BLACK)
+        self.black_king = PieceData(path="pieces/king_black.svg", color=chess.BLACK)
 
 class DataLib:
     icons = IconLibrary()

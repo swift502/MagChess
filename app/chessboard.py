@@ -4,7 +4,6 @@ import flet as ft
 from cell import Cell
 import chess
 from data import ColorSwap, DataLib, MissingPiece, NewPiece, SensorProvider
-from enums import ChessColor
 from piece import Piece
 from ui_instance import MagChessUI
 
@@ -15,7 +14,7 @@ class Chessboard:
 
     cells: dict[tuple[int, int], Cell]
     spawned_pieces: list[Piece]
-    current_player_color: ChessColor
+    current_player_color: chess.Color
 
     last_analyzed_sensor_state: str
 
@@ -24,7 +23,7 @@ class Chessboard:
         self.ui = ui
         self.sensors = sensors
         self.last_analyzed_sensor_state = ""
-
+        
         self.state_stack = []
         self.staging_state = {}
         self.spawned_pieces = []
@@ -35,7 +34,6 @@ class Chessboard:
                 self.cells[(co_letter, co_number)] = Cell(co_letter, co_number, ui)
         
         self.pieces = []
-        self.current_player_color = ChessColor.WHITE
 
         page.run_task(self.update)
 
@@ -97,7 +95,7 @@ class Chessboard:
             piece.destroy()
         self.pieces = []
 
-        self.current_player_color = ChessColor.WHITE
+        self.current_player_color = chess.WHITE
 
         # State
         self.state_stack = []
@@ -172,17 +170,17 @@ class Chessboard:
             piece = self.state_stack[-1].get((co_letter, co_number))
 
             if piece is None:
-                old_color = ChessColor.NONE
+                old_color = None
 
                 # Found new
-                if new_color != ChessColor.NONE:
+                if new_color != None:
                     new.append(NewPiece(new_color, (co_letter, co_number)))
 
             else:
                 old_color = piece.color
 
                 # Found missing
-                if new_color == ChessColor.NONE:
+                if new_color == None:
                     missing.append(MissingPiece(piece, (co_letter, co_number)))
 
                 # Found swap
@@ -217,7 +215,7 @@ class Chessboard:
 
         else:
             # No changes
-            if self.current_player_color == ChessColor.WHITE:
+            if self.current_player_color == chess.WHITE:
                 self.ui.update_move_screen(DataLib.icons.player_white, "White to move")
             else:
                 self.ui.update_move_screen(DataLib.icons.player_black, "Black to move")
