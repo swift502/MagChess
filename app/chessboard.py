@@ -266,9 +266,9 @@ class Chessboard:
         else:
             # No changes
             if self.current_player == chess.WHITE:
-                self.ui.update_move_screen(DataLib.icons.player_white, "White to move")
+                self.ui.update_move_screen(DataLib.icons.player_white, "White moves")
             else:
-                self.ui.update_move_screen(DataLib.icons.player_black, "Black to move")
+                self.ui.update_move_screen(DataLib.icons.player_black, "Black moves")
         
         return None
 
