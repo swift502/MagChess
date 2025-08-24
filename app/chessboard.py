@@ -2,12 +2,14 @@ import asyncio
 import flet as ft
 
 from cell import Cell
+import chess
 from data import ColorSwap, DataLib, MissingPiece, NewPiece, SensorProvider
 from enums import ChessColor
 from piece import Piece
 from ui_instance import MagChessUI
 
 class Chessboard:
+    board: chess.Board
     state_stack: list[dict[tuple[int, int], Piece]]
     staging_state: dict[tuple[int, int], Piece]
 
@@ -50,7 +52,7 @@ class Chessboard:
             if self.match_sensor_state("WW....BB" * 8) and len(self.state_stack) != 1:
                 self.init_game()
             else:
-                self.update_staging_state()
+                self.board_state_update()
                 
             # Pieces
             for piece in self.pieces:
@@ -73,6 +75,8 @@ class Chessboard:
 
     def init_game(self):
         self.clean_up()
+
+        self.board = chess.Board()
 
         init_state: dict[tuple[int, int], Piece] = {}
 
@@ -104,6 +108,9 @@ class Chessboard:
             ord(locator[0]) - ord("a"),
             int(locator[1]) - 1
         )
+
+    def coords_to_locator(self, coords: tuple[int, int]):
+        return chr(coords[0] + ord("a")) + str(coords[1] + 1)
     
     def commit_state(self):
         self.state_stack.append(self.staging_state.copy())
@@ -123,7 +130,7 @@ class Chessboard:
             if piece not in state.values():
                 piece.destroy()
 
-    def update_staging_state(self):
+    def board_state_update(self):
         if len(self.state_stack) == 0:
             return
 
@@ -136,8 +143,24 @@ class Chessboard:
         self.last_analyzed_sensor_state = sensor_state
         self.staging_state = self.state_stack[-1].copy()
 
-        new: list[NewPiece] = []
+        # Analyze changes
+        missing, new, swaps = self.analyze_changes()
+        print(f"Missing {len(missing)}, New {len(new)}, Swaps {len(swaps)}")
+
+        # Update staging state
+        uci = self.update_staging_state(missing, new, swaps)
+        self.show_state(self.staging_state)
+
+        if uci is not None:
+            move = chess.Move.from_uci(uci)
+            if move in self.board.legal_moves:
+                self.ui.update_move_screen(DataLib.icons.good, f"Legal move")
+            else:
+                self.ui.update_move_screen(DataLib.icons.invalid, f"Illegal move")
+
+    def analyze_changes(self):
         missing: list[MissingPiece] = []
+        new: list[NewPiece] = []
         swaps: list[ColorSwap] = []
 
         # Find changes
@@ -165,41 +188,48 @@ class Chessboard:
                 # Found swap
                 elif old_color != new_color:
                     swaps.append(ColorSwap(piece, new_color, (co_letter, co_number)))
+        
+        return missing, new, swaps
 
-        # Results
+    def update_staging_state(self, missing, new, swaps) -> str | None:
         missing_new_swaps = (len(missing), len(new), len(swaps))
-        print(f"Missing {len(missing)}, New {len(new)}, Swaps {len(swaps)}")
 
-        # Analyze changes
         if missing_new_swaps == (1, 1, 0):
-
             # Move
             if missing[0].piece.color == new[0].color:
-                self.staging_move_piece(missing[0], new[0].coords)
-                self.ui.update_move_screen(DataLib.icons.correct, f"Correct")
+                return self.staging_move_piece(missing[0], new[0].coords)
             else:
                 # A piece changed color while moving, doesn't make sense
                 self.ui.update_move_screen(DataLib.icons.question, f"Unexpected\nboard state")
 
         elif missing_new_swaps == (1, 0, 1):
-
             # Capture
             self.staging_remove_piece(swaps[0].coords) # Remove captured piece
-            self.staging_move_piece(missing[0], swaps[0].coords) # Move missing piece to capture position
-            self.ui.update_move_screen(DataLib.icons.best, f"Best")
+            return self.staging_move_piece(missing[0], swaps[0].coords) # Move missing piece to capture position
+
+        elif missing_new_swaps in {(0, 1, 0), (0, 0, 1), (0, 1, 1), (1, 1, 1)}:
+            # Unexpected states
+            self.ui.update_move_screen(DataLib.icons.question, f"Unexpected\nboard state")
+
+        elif len(missing) > 1 or len(new) > 1 or len(swaps) > 1:
+            # We don't expect more than one of any category
+            self.ui.update_move_screen(DataLib.icons.question, f"Unexpected\nboard state")
 
         else:
+            # No changes
             if self.current_player_color == ChessColor.WHITE:
                 self.ui.update_move_screen(DataLib.icons.player_white, "White to move")
             else:
                 self.ui.update_move_screen(DataLib.icons.player_black, "Black to move")
-
-        # Finally display the presumed new state
-        self.show_state(self.staging_state)
+        
+        return None
 
     def staging_move_piece(self, missing: MissingPiece, new_coords: tuple[int, int]):
         self.staging_state[new_coords] = missing.piece
         self.staging_state.pop(missing.coords)
+
+        # Return UCI
+        return self.coords_to_locator(missing.coords) + self.coords_to_locator(new_coords)
 
     def staging_remove_piece(self, coords: tuple[int, int]):
         self.staging_state.pop(coords)

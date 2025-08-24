@@ -76,7 +76,7 @@ class MagChessUI:
     def update_move_screen(self, icon: IconData, text: str):
         self.move_icon.src = asset_path(icon.image_path)
         self.move_text.value = text
-        self.move_background.bgcolor = ft.Colors.with_opacity(0.8, icon.color)
+        self.move_background.bgcolor = ft.Colors.with_opacity(0.9, icon.color)
         self.page.update()
 
     async def hide_after(self, seconds: float):

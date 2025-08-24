@@ -15,13 +15,11 @@ class UIBuilder:
     @staticmethod
     def build_tab_1(instance: MagChessUI):
         instance.move_icon = ft.Image(
-            src=asset_path(DataLib.icons.search.image_path),
             width=360,
             height=360,
         )
 
         instance.move_text = ft.Text(
-            "Scanning for\na new game",
             size=72,
             text_align=ft.TextAlign.CENTER,
             font_family="Noto Sans",
@@ -42,8 +40,9 @@ class UIBuilder:
                 horizontal_alignment=ft.CrossAxisAlignment.CENTER,  # horizontal centering
             ),
             alignment=ft.alignment.center,  # centers the whole Column in parent
-            bgcolor=ft.Colors.with_opacity(0.9, DataLib.icons.search.color),
         )
+
+        instance.update_move_screen(DataLib.icons.search, "Scanning for\na new game")
 
         return ft.Container(
             content=instance.move_background,

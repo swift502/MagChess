@@ -38,7 +38,7 @@ class IconLibrary:
         self.missed_win = IconData(path="icons/missed_win.svg", color="#dbac16")
         self.mistake = IconData(path="icons/mistake.svg", color="#e58f2a")
         self.player_black = IconData(path="icons/player_black.svg", color="#383838")
-        self.player_white = IconData(path="icons/player_white.svg", color="#ffffff")
+        self.player_white = IconData(path="icons/player_white.svg", color="#ebebeb")
         self.question = IconData(path="icons/question.svg", color="#7979a1")
         self.search = IconData(path="icons/search.svg", color="#7979a1")
         self.sharp = IconData(path="icons/sharp.svg", color="#ad5b8c")
