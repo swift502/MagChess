@@ -176,15 +176,16 @@ class Chessboard:
             # Move
             if missing[0].piece.color == new[0].color:
                 self.staging_move_piece(missing[0], new[0].coords)
-
-            self.ui.update_move_screen(DataLib.icons.correct, f"Correct")
+                self.ui.update_move_screen(DataLib.icons.correct, f"Correct")
+            else:
+                # A piece changed color while moving, doesn't make sense
+                self.ui.update_move_screen(DataLib.icons.question, f"Unexpected\nboard state")
 
         elif missing_new_swaps == (1, 0, 1):
 
             # Capture
             self.staging_remove_piece(swaps[0].coords) # Remove captured piece
             self.staging_move_piece(missing[0], swaps[0].coords) # Move missing piece to capture position
-
             self.ui.update_move_screen(DataLib.icons.best, f"Best")
 
         else:

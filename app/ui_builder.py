@@ -42,7 +42,7 @@ class UIBuilder:
                 horizontal_alignment=ft.CrossAxisAlignment.CENTER,  # horizontal centering
             ),
             alignment=ft.alignment.center,  # centers the whole Column in parent
-            bgcolor=ft.Colors.with_opacity(0.8, DataLib.icons.search.color),
+            bgcolor=ft.Colors.with_opacity(0.9, DataLib.icons.search.color),
         )
 
         return ft.Container(

@@ -22,9 +22,9 @@
      inkscape:pageopacity="0.0"
      inkscape:pagecheckerboard="0"
      inkscape:deskcolor="#d1d1d1"
-     inkscape:zoom="128"
-     inkscape:cx="13.058594"
-     inkscape:cy="15.230469"
+     inkscape:zoom="32"
+     inkscape:cx="10.171875"
+     inkscape:cy="10.390625"
      inkscape:window-width="2560"
      inkscape:window-height="1369"
      inkscape:window-x="1912"
@@ -43,7 +43,7 @@
          fill="#dbac16"
          d="M 9,0 A 9,9 0 1 0 18,9 9,9 0 0 0 9,0 Z"
          id="path2"
-         style="fill:#333333;fill-opacity:1" /></g><g
+         style="fill:#383838;fill-opacity:1" /></g><g
        id="g4"
        style="display:inline"><g
          class="icon-component-shadow"
