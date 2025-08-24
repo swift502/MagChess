@@ -49,7 +49,7 @@ class Chessboard:
                 cell.update(raw[pos])
 
             # Board logic
-            if self.match_state(["WW....BB"] * 8) and len(self.state_stack) != 1:
+            if self.match_sensor_state("WW....BB" * 8) and len(self.state_stack) != 1:
                 self.init_game()
             else:
                 self.update_staging_state()
@@ -62,14 +62,15 @@ class Chessboard:
 
             await asyncio.sleep(1/30)
 
-    def match_state(self, state: list):
+    def match_sensor_state(self, state_string: str):
+        return self.get_sensor_state_format() == state_string
+
+    def get_sensor_state_format(self):
+        string = ""
         for co_letter in range(8):
             for co_number in range(8):
-                actual = self.cells[(co_letter, co_number)].state_format
-                desired = state[co_letter][co_number]
-                if actual == desired: continue
-                else: return False
-        return True
+                string += self.cells[(co_letter, co_number)].state_format
+        return string
 
     def init_game(self):
         self.clean_up()
@@ -128,7 +129,7 @@ class Chessboard:
             return
 
         # Check for changes
-        sensor_state = self.get_sensor_state_string()
+        sensor_state = self.get_sensor_state_format()
         if self.last_analyzed_sensor_state == sensor_state:
             return
 
@@ -202,9 +203,3 @@ class Chessboard:
 
     def staging_remove_piece(self, coords: tuple[int, int]):
         self.staging_state.pop(coords)
-
-    def get_sensor_state_string(self):
-        string = ""
-        for cell in self.cells.values():
-            string += cell.state_format
-        return string
