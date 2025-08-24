@@ -161,6 +161,7 @@ class Chessboard:
 
         # Staging state may have been committed now, we can safely discard it
         self.staging_state = self.state_stack[-1].copy()
+        self.last_legal_move = None
 
         # Analyse changes against latest committed state
         missing, new, swaps = self.analyse_sensor_changes(against=self.state_stack[-1])
@@ -182,12 +183,24 @@ class Chessboard:
         if self.last_legal_move is None:
             return
 
-        missing, _, _ = self.analyse_sensor_changes(against=self.staging_state)
+        # If last analysis concluded a legal move, and now we find
+        # the other player is moving pieces, we need to commit
+        missing, new, swaps = self.analyse_sensor_changes(against=self.staging_state)
 
-        if len(missing) == 1:
-            if missing[0].piece.color == self.next_player:
-                # Other player raised a piece, we have to commit
+        for piece in missing:
+            if piece.piece.color == self.next_player:
                 self.commit_staging_state(self.last_legal_move)
+                return
+
+        for piece in new:
+            if piece.color == self.next_player:
+                self.commit_staging_state(self.last_legal_move)
+                return
+
+        for swap in swaps:
+            if swap.new_color == self.next_player:
+                self.commit_staging_state(self.last_legal_move)
+                return
 
     def analyse_sensor_changes(self, against: BoardState):
         missing: list[MissingPiece] = []
@@ -222,22 +235,7 @@ class Chessboard:
 
         return missing, new, swaps
 
-    # def compare_states(self, a: BoardState, b: BoardState):
-    #     missing: list[MissingPiece] = []
-    #     new: list[NewPiece] = []
-    
-    #     for coords, a_piece in a.items():
-    #         b_piece = b.get(coords)
-    #         if a_piece is b_piece:
-    #             continue
-    #         elif a_piece is not None and b_piece is None:
-    #             missing.append(MissingPiece(a_piece, coords))
-    #         elif a_piece is None and b_piece is not None:
-    #             new.append(NewPiece(b_piece.color, coords))
-
-    #     return missing, new
-
-    def update_staging_state(self, missing, new, swaps) -> str | None:
+    def update_staging_state(self, missing : list[MissingPiece], new: list[NewPiece], swaps: list[ColorSwap]) -> str | None:
         missing_new_swaps = (len(missing), len(new), len(swaps))
 
         if missing_new_swaps == (1, 1, 0):
@@ -249,9 +247,13 @@ class Chessboard:
                 self.ui.update_move_screen(DataLib.icons.question, f"Unexpected\nboard state")
 
         elif missing_new_swaps == (1, 0, 1):
-            # Capture
-            self.staging_remove_piece(swaps[0].coords) # Remove captured piece
-            return self.staging_move_piece(missing[0], swaps[0].coords) # Move missing piece to capture position
+            if missing[0].piece.color == self.current_player and swaps[0].new_color == self.current_player:
+                # Capture
+                self.staging_remove_piece(swaps[0].coords) # Remove captured piece
+                return self.staging_move_piece(missing[0], swaps[0].coords) # Move missing piece to capture position
+            else:
+                # Current player didn't perform a capture, the swap doesn't make sense
+                self.ui.update_move_screen(DataLib.icons.question, f"Unexpected\nboard state")
 
         elif missing_new_swaps in {(0, 1, 0), (0, 0, 1), (0, 1, 1), (1, 1, 1)}:
             # Unexpected states
