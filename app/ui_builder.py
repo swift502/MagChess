@@ -21,7 +21,7 @@ class UIBuilder:
         )
 
         instance.move_text = ft.Text(
-            "Scanning for a new game",
+            "Scanning for\na new game",
             size=72,
             text_align=ft.TextAlign.CENTER,
             font_family="Noto Sans",
