@@ -11,9 +11,9 @@ class SWSensorObject:
         self.state = state
 
     def get_value(self):
-        if self.state == -1:
+        if self.state == 0:
             return randint(SENSOR_THRESHOLD_LOW - self.signal_strength, SENSOR_THRESHOLD_LOW + self.noise)
-        elif self.state == 1:
+        elif self.state == 2:
             return randint(SENSOR_THRESHOLD_HIGH - self.noise, SENSOR_THRESHOLD_HIGH + self.signal_strength)
         else:
             return randint(SENSOR_THRESHOLD_LOW - self.noise, SENSOR_THRESHOLD_HIGH + self.noise)
@@ -29,11 +29,11 @@ class SWSensors(SensorProvider):
 
         for co_letter in range(8):
             for co_number in range(8):
-                state = 0
+                state = 1
                 if co_number == 0 or co_number == 1:
-                    state = 1
+                    state = 2
                 if co_number == 6 or co_number == 7:
-                    state = -1
+                    state = 0
                 self.sensors[(co_letter, co_number)] = SWSensorObject(state)
 
     def get_value_array(self):
@@ -43,11 +43,8 @@ class SWSensors(SensorProvider):
         return values
 
     def cycle_sensor_state(self, co_letter: int, co_number: int):
-        current_state = self.sensors[(co_letter, co_number)].state
-        if current_state == -1:
-            new_state = 0
-        elif current_state == 1:
-            new_state = -1
-        else:
-            new_state = 1
-        self.sensors[(co_letter, co_number)].set_state(new_state)
+        state = self.sensors[(co_letter, co_number)].state
+        state += 1
+        if state == 4:
+            state = 0
+        self.sensors[(co_letter, co_number)].set_state(state)
