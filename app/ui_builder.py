@@ -60,10 +60,8 @@ class UIBuilder:
 
     @staticmethod
     def build_tab_3(instance: MagChessUI, sensors: SensorProvider):
-
         light = "#999999"
         dark = "#777777"
-
         stack: list = UIBuilder.build_board(light, dark)
 
         instance.sensor_indicators = {}

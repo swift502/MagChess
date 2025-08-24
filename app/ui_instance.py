@@ -9,7 +9,6 @@ from ui_builder import UIBuilder
 from utilities import asset_path
 
 class MagChessUI:
-
     page: ft.Page
     root: ft.Control
     content_host: ft.Container

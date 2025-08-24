@@ -39,7 +39,6 @@ class Chessboard:
 
     async def update(self):
         while True:
-            
             # Sensors
             raw = self.sensors.get_value_array()
 
@@ -57,6 +56,7 @@ class Chessboard:
             for piece in self.pieces:
                 piece.update()
 
+            # Update
             self.page.update()
 
             await asyncio.sleep(1/30)

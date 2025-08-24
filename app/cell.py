@@ -6,7 +6,6 @@ from ui_instance import MagChessUI
 from utilities import inverse_lerp, lerp, lerp_hex
 
 class Cell:
-
     sensor_indicator: ft.Container
     smooth_value: float
     state: int
