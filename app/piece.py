@@ -8,7 +8,7 @@ if TYPE_CHECKING:
     from chessboard import Chessboard
     from data import PieceData
 from ui_instance import MagChessUI
-from utilities import lerp
+from utilities import asset_path, lerp
     
 class Piece:
     def __init__(self, board: Chessboard, ui: MagChessUI, data: PieceData):
@@ -16,7 +16,7 @@ class Piece:
         self.ui = ui
         self.color = data.color
         self.control = ft.Image(
-            src=data.get_full_image_path(),
+            src=asset_path(data.image_path),
             width=80,
             height=80,
         )

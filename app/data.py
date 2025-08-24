@@ -12,14 +12,10 @@ class IconData:
         self.image_path = path
         self.color = color
 
-    def get_full_image_path(self):
-        return str(Path(__file__).parent / "assets" / self.image_path)
-
 class IconLibrary:
     def __init__(self):
         self.alternative = IconData(path="icons/alternative.svg", color="#96af8b")
         self.best = IconData(path="icons/best.svg", color="#96bc4b")
-        self.blank = IconData(path="icons/blank.svg", color="#ffffff")
         self.blunder = IconData(path="icons/blunder.svg", color="#ca3431")
         self.book = IconData(path="icons/book.svg", color="#a88865")
         self.brilliant = IconData(path="icons/brilliant.svg", color="#1bada6")
@@ -40,6 +36,9 @@ class IconLibrary:
         self.mate = IconData(path="icons/mate.svg", color="#ec6250")
         self.missed_win = IconData(path="icons/missed_win.svg", color="#dbac16")
         self.mistake = IconData(path="icons/mistake.svg", color="#e58f2a")
+        self.player_black = IconData(path="icons/player_black.svg", color="#333333")
+        self.player_white = IconData(path="icons/player_white.svg", color="#e5e5e5")
+        self.search = IconData(path="icons/search.svg", color="#7979a1")
         self.sharp = IconData(path="icons/sharp.svg", color="#ad5b8c")
         self.take_back = IconData(path="icons/take_back.svg", color="#96af8b")
         self.threat = IconData(path="icons/threat.svg", color="#96af8b")
@@ -49,9 +48,6 @@ class PieceData:
     def __init__(self, path: str, color: ChessColor):
         self.image_path = path
         self.color = color
-
-    def get_full_image_path(self):
-        return str(Path(__file__).parent / "assets" / self.image_path)
 
 class NewPiece:
     def __init__(self, color: ChessColor, coords: tuple[int, int]):

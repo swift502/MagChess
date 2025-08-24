@@ -1,3 +1,5 @@
+from pathlib import Path
+
 def hex_to_rgb(hex_color):
     hex_color = hex_color.lstrip("#")
     return tuple(int(hex_color[i:i+2], 16) for i in (0, 2, 4))
@@ -33,3 +35,6 @@ def inverse_lerp(a: float, b: float, value: float):
         return 0.0
     t = (value - a) / (b - a)
     return max(0.0, min(1.0, t))
+
+def asset_path(path: str) -> str:
+    return str(Path(__file__).parent / "assets" / path)

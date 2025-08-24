@@ -7,6 +7,7 @@ from typing import TYPE_CHECKING
 if TYPE_CHECKING:
     from ui_instance import MagChessUI
 
+from utilities import asset_path
 from data import DataLib, SensorProvider
 
 import constants as Constants
@@ -15,22 +16,22 @@ class UIBuilder:
     @staticmethod
     def build_tab_1(instance: MagChessUI):
         instance.move_icon = ft.Image(
-            src= DataLib.icons.blank.get_full_image_path(),
+            src=asset_path(DataLib.icons.search.image_path),
             width=360,
             height=360,
         )
 
         instance.move_text = ft.Text(
-            "Waiting for initial configuration",
+            "Scanning for a new game",
             size=72,
             text_align=ft.TextAlign.CENTER,
             font_family="Noto Sans",
             color=ft.Colors.WHITE,
             style=ft.TextStyle(
                 shadow=ft.BoxShadow(
-                    blur_radius=5,
-                    color=ft.Colors.with_opacity(0.5, ft.Colors.BLACK),
-                    offset=ft.Offset(0, 3),
+                    blur_radius=0,
+                    color=ft.Colors.with_opacity(0.3, ft.Colors.BLACK),
+                    offset=ft.Offset(0, 8),
                 )
             )
         )
@@ -42,7 +43,7 @@ class UIBuilder:
                 horizontal_alignment=ft.CrossAxisAlignment.CENTER,  # horizontal centering
             ),
             alignment=ft.alignment.center,  # centers the whole Column in parent
-            bgcolor=ft.Colors.with_opacity(0.8, DataLib.icons.blank.color),
+            bgcolor=ft.Colors.with_opacity(0.8, DataLib.icons.search.color),
         )
 
         return ft.Container(

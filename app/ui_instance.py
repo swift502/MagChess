@@ -3,6 +3,7 @@ import flet as ft
 import asyncio
 import concurrent.futures
 
+from utilities import asset_path
 from data import IconData, SensorProvider
 from constants import DEBUG
 
@@ -75,7 +76,7 @@ class MagChessUI:
         self.user_activity()
 
     def update_move_screen(self, icon: IconData, text: str):
-        self.move_icon.src = icon.get_full_image_path()
+        self.move_icon.src = asset_path(icon.image_path)
         self.move_text.value = text
         self.move_background.bgcolor = ft.Colors.with_opacity(0.8, icon.color)
         self.page.update()

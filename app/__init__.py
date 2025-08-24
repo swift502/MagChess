@@ -1,6 +1,6 @@
 import flet as ft
-from pathlib import Path
 
+from utilities import asset_path
 from chessboard import Chessboard
 from ui_instance import MagChessUI
 from constants import DEBUG, SENSOR_EMU
@@ -17,7 +17,7 @@ def main(page: ft.Page):
     page.spacing = 0
     page.theme_mode = ft.ThemeMode.DARK
     page.fonts = {
-        "Noto Sans": str(Path(__file__).parent / "assets/fonts/NotoSans-Bold.ttf"),
+        "Noto Sans": asset_path("fonts/NotoSans-Bold.ttf"),
     }
 
     # Exit event

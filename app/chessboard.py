@@ -189,9 +189,9 @@ class Chessboard:
 
         else:
             if self.current_player_color == ChessColor.WHITE:
-                self.ui.update_move_screen(DataLib.icons.alternative, "White to move")
+                self.ui.update_move_screen(DataLib.icons.player_white, "White to move")
             else:
-                self.ui.update_move_screen(DataLib.icons.alternative, "Black to move")
+                self.ui.update_move_screen(DataLib.icons.player_black, "Black to move")
 
         # Finally display the presumed new state
         self.show_state(self.staging_state)
