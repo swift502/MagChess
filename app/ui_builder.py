@@ -1,14 +1,13 @@
 from __future__ import annotations
 
 import flet as ft
-from sensors import SWSensors
-from pathlib import Path
 
 from typing import TYPE_CHECKING
 
 if TYPE_CHECKING:
     from ui_instance import MagChessUI
-from data import DataLib
+
+from data import DataLib, SensorProvider
 
 import constants as Constants
 
@@ -60,7 +59,7 @@ class UIBuilder:
         return stack
 
     @staticmethod
-    def build_tab_3(instance: MagChessUI, sensors: SWSensors):
+    def build_tab_3(instance: MagChessUI, sensors: SensorProvider):
 
         light = "#999999"
         dark = "#777777"

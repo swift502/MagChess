@@ -1,17 +1,7 @@
 from random import randint
 
+from data import SensorProvider
 from constants import SENSOR_THRESHOLD_HIGH, SENSOR_THRESHOLD_LOW
-
-class SensorProvider:
-    def get_value_array(self) -> dict[tuple[int, int], float]:
-        raise NotImplementedError()
-    
-class HWSensors(SensorProvider):
-    def __init__(self):
-        raise NotImplementedError()
-
-    def get_value_array(self):
-        raise NotImplementedError()
 
 class SWSensorObject:
     signal_strength = 500
@@ -31,7 +21,7 @@ class SWSensorObject:
     def set_state(self, state):
         self.state = state
 
-class SWSensors (SensorProvider):
+class SWSensors(SensorProvider):
     sensors: dict[tuple[int, int], SWSensorObject]
 
     def __init__(self):

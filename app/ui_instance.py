@@ -3,9 +3,9 @@ import flet as ft
 import asyncio
 import concurrent.futures
 
-from data import IconData, PieceData
+from data import IconData, SensorProvider
+from constants import DEBUG
 
-from sensors import SWSensors
 from ui_builder import UIBuilder
 
 class MagChessUI:
@@ -26,7 +26,7 @@ class MagChessUI:
     move_text: ft.Text
     move_background: ft.Container
 
-    def __init__(self, page: ft.Page, debug: bool, sensors: SWSensors):
+    def __init__(self, page: ft.Page, sensors: SensorProvider):
         self.page = page
 
         # tabs
@@ -35,7 +35,7 @@ class MagChessUI:
         tab3 = UIBuilder.build_tab_3(self, sensors)
         self.screens = [tab1, tab2, tab3]
 
-        if debug:
+        if DEBUG:
             self.root = ft.Row(
                 controls=[
                     ft.Container(content=self.screens[0], width=720, height=720),

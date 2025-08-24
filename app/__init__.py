@@ -1,16 +1,14 @@
 import flet as ft
 from pathlib import Path
-from sensors import SWSensors
+
 from chessboard import Chessboard
 from ui_instance import MagChessUI
-
-debug = False
-debug = True
+from constants import DEBUG, SENSOR_EMU
 
 def main(page: ft.Page):
     page.title = "MagChess"
     page.window.width = 720
-    if debug:
+    if DEBUG:
         page.window.width = 720 * 3
     page.window.height = 720
     # page.window.full_screen = True
@@ -28,9 +26,16 @@ def main(page: ft.Page):
             page.window.close()
     page.on_keyboard_event = on_key
 
+    # Sensors
+    if SENSOR_EMU:
+        from sensors_sw import SWSensors
+        sensors = SWSensors()
+    else:
+        from sensors_hw import HWSensors
+        sensors = HWSensors()
+
     # Start
-    sensors = SWSensors()
-    ui = MagChessUI(page, debug, sensors)
+    ui = MagChessUI(page, sensors)
     Chessboard(page, ui, sensors)
 
 if __name__ == "__main__":

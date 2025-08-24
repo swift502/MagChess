@@ -2,8 +2,8 @@ import asyncio
 import flet as ft
 
 from enums import ChessColor
-from data import ColorSwap, DataLib, NewPiece, MissingPiece
-from sensors import SWSensors
+from data import ColorSwap, DataLib, NewPiece, MissingPiece, SensorProvider
+from sensors_sw import SWSensors
 from ui_instance import MagChessUI
 from cell import Cell
 from piece import Piece
@@ -18,7 +18,7 @@ class Chessboard:
 
     last_analyzed_sensor_state: str
 
-    def __init__(self, page: ft.Page, ui: MagChessUI, sensors: SWSensors):
+    def __init__(self, page: ft.Page, ui: MagChessUI, sensors: SensorProvider):
         self.page = page
         self.ui = ui
         self.sensors = sensors

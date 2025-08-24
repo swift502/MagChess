@@ -125,3 +125,13 @@ class DataLib:
             "g8": DataLib.pieces.black_knight,
             "h8": DataLib.pieces.black_rook,
         }
+
+class SensorProvider:
+    def __init__(self) -> None:
+        raise NotImplementedError()
+
+    def get_value_array(self) -> dict[tuple[int, int], float]:
+        raise NotImplementedError()
+
+    def cycle_sensor_state(self, co_letter: int, co_number: int) -> None:
+        raise NotImplementedError()
