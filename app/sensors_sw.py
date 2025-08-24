@@ -1,7 +1,7 @@
 from random import randint
 
-from data import SensorProvider
 from constants import SENSOR_THRESHOLD_HIGH, SENSOR_THRESHOLD_LOW
+from data import SensorProvider
 
 class SWSensorObject:
     signal_strength = 500

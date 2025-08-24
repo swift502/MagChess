@@ -1,8 +1,8 @@
 import flet as ft
 
+from constants import SENSOR_THRESHOLD_HIGH, SENSOR_THRESHOLD_LOW
 from enums import ChessColor
 from ui_instance import MagChessUI
-from constants import SENSOR_THRESHOLD_HIGH, SENSOR_THRESHOLD_LOW
 from utilities import inverse_lerp, lerp, lerp_hex
 
 class Cell:

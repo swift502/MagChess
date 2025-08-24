@@ -1,13 +1,12 @@
 
-import flet as ft
 import asyncio
 import concurrent.futures
+import flet as ft
 
-from utilities import asset_path
-from data import IconData, SensorProvider
 from constants import DEBUG
-
+from data import IconData, SensorProvider
 from ui_builder import UIBuilder
+from utilities import asset_path
 
 class MagChessUI:
 

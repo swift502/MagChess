@@ -1,12 +1,11 @@
 import asyncio
 import flet as ft
 
-from enums import ChessColor
-from data import ColorSwap, DataLib, NewPiece, MissingPiece, SensorProvider
-from sensors_sw import SWSensors
-from ui_instance import MagChessUI
 from cell import Cell
+from data import ColorSwap, DataLib, MissingPiece, NewPiece, SensorProvider
+from enums import ChessColor
 from piece import Piece
+from ui_instance import MagChessUI
 
 class Chessboard:
     state_stack: list[dict[tuple[int, int], Piece]]

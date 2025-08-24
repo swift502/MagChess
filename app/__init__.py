@@ -1,9 +1,9 @@
 import flet as ft
 
-from utilities import asset_path
 from chessboard import Chessboard
-from ui_instance import MagChessUI
 from constants import DEBUG, SENSOR_EMU
+from ui_instance import MagChessUI
+from utilities import asset_path
 
 def main(page: ft.Page):
     page.title = "MagChess"
