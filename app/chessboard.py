@@ -44,8 +44,6 @@ class Chessboard:
             for co_number in range(8):
                 self.cells[(co_letter, co_number)] = Cell(co_letter, co_number, ui)
         
-        # self.pieces: chess.AmbiguousMoveError = []
-
         page.run_task(self.update)
 
     async def update(self):
@@ -169,6 +167,7 @@ class Chessboard:
         self.show_state(self.staging_state)
 
         if move is not None:
+            move = chess.Move.from_uci(move)
             if move in self.board.legal_moves:
                 self.last_legal_move = move
                 self.ui.update_move_screen(DataLib.icons.good, f"Legal move")
@@ -231,13 +230,17 @@ class Chessboard:
 
         return missing, new, swaps
 
-    def update_staging_state(self, missing : list[MissingPiece], new: list[NewPiece], swaps: list[ColorSwap]) -> chess.Move | None:
+    def update_staging_state(self, missing : list[MissingPiece], new: list[NewPiece], swaps: list[ColorSwap]) -> str | None:
         missing_new_swaps = (len(missing), len(new), len(swaps))
 
         if missing_new_swaps == (1, 1, 0):
+            move = chess.Move.from_uci(self.coords_to_locator(missing[0].coords) + self.coords_to_locator(new[0].coords))
             if missing[0].piece.pieceType == chess.KING and missing[0].coords[0] == 4 and new[0].coords[0] in (2, 6):
                 # Can't castle with just the king
                 self.ui.update_move_screen(DataLib.icons.question, f"Unexpected\nboard state")
+            elif self.board.is_en_passant(move):
+                # Can't en passant without a capture
+                self.ui.update_move_screen(DataLib.icons.question, f"En passant?")
             elif missing[0].piece.color == new[0].color:
                 # Move
                 return self.staging_move_piece(missing[0], new[0].coords)
@@ -253,6 +256,23 @@ class Chessboard:
             else:
                 # Current player didn't perform a capture, the swap doesn't make sense
                 self.ui.update_move_screen(DataLib.icons.question, f"Unexpected\nboard state")
+
+        elif missing_new_swaps == (2, 1, 0):
+            if missing[0].piece.pieceType == chess.PAWN and missing[1].piece.pieceType == chess.PAWN and missing[0].piece.color != missing[1].piece.color:
+                moving_pawn = None
+                captured_pawn = None
+
+                # En passant
+                for piece in missing:
+                    if piece.piece.color == self.current_player:
+                        moving_pawn = piece
+                    else:
+                        captured_pawn = piece
+
+                if moving_pawn and captured_pawn:
+                    # En passant capture
+                    self.staging_remove_piece(captured_pawn.coords)
+                    return self.staging_move_piece(moving_pawn, new[0].coords)
 
         elif missing_new_swaps == (2, 2, 0):
             king = None
@@ -295,10 +315,10 @@ class Chessboard:
         else:
             # No changes
             if self.current_player == chess.WHITE:
-                self.ui.update_move_screen(DataLib.icons.player_white, "White moves")
+                self.ui.update_move_screen(DataLib.icons.player_white, "White plays")
             else:
-                self.ui.update_move_screen(DataLib.icons.player_black, "Black moves")
-        
+                self.ui.update_move_screen(DataLib.icons.player_black, "Black plays")
+
         return None
 
     def staging_move_piece(self, missing: MissingPiece, new_coords: tuple[int, int]):
@@ -319,16 +339,7 @@ class Chessboard:
         # UCI
         uci = self.coords_to_locator(missing.coords) + self.coords_to_locator(new_coords)
         if promotion: uci += "q"
-
-        # Move
-        move = chess.Move.from_uci(uci)
-
-        # Removals
-        # if self.board.is_en_passant(move):
-        #     dir = new_coords[1] - missing.coords[1]
-        #     self.staging_remove_piece((new_coords[0], new_coords[1] - dir))
-
-        return move
+        return uci
 
     def staging_remove_piece(self, coords: tuple[int, int]):
         self.staging_state.pop(coords)
