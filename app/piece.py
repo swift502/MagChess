@@ -15,6 +15,7 @@ class Piece:
         self.board = board
         self.ui = ui
         self.color = data.color
+        self.pieceType = data.pieceType
         self.control = ft.Image(
             src=asset_path(data.image_path),
             width=80,

@@ -44,7 +44,7 @@ class Chessboard:
             for co_number in range(8):
                 self.cells[(co_letter, co_number)] = Cell(co_letter, co_number, ui)
         
-        self.pieces = []
+        # self.pieces: chess.AmbiguousMoveError = []
 
         page.run_task(self.update)
 
@@ -64,7 +64,7 @@ class Chessboard:
                 self.board_state_update()
                 
             # Pieces
-            for piece in self.pieces:
+            for piece in self.spawned_pieces:
                 piece.update()
 
             # Update
@@ -94,7 +94,6 @@ class Chessboard:
         for locator, pieceData in DataLib.start_configuration().items():
             coords = self.locator_to_coords(locator)
             piece = Piece(self, self.ui, pieceData)
-            self.pieces.append(piece)
             init_state[coords] = piece
 
         self.state_stack.append(init_state)
@@ -103,16 +102,14 @@ class Chessboard:
         print("New game detected")
 
     def clean_up(self):
-        # Pieces
-        for piece in self.pieces:
-            piece.destroy()
-        self.pieces = []
-
         self.current_player = chess.WHITE
 
         # State
         self.state_stack = []
         self.staging_state = {}
+
+        # Clean up entities
+        self.show_state(self.staging_state)
 
     def locator_to_coords(self, locator: str):
         return (
@@ -168,11 +165,10 @@ class Chessboard:
         print(f"Missing {len(missing)}, New {len(new)}, Swaps {len(swaps)}")
 
         # Update staging state
-        uci = self.update_staging_state(missing, new, swaps)
+        move = self.update_staging_state(missing, new, swaps)
         self.show_state(self.staging_state)
 
-        if uci is not None:
-            move = chess.Move.from_uci(uci)
+        if move is not None:
             if move in self.board.legal_moves:
                 self.last_legal_move = move
                 self.ui.update_move_screen(DataLib.icons.good, f"Legal move")
@@ -235,11 +231,14 @@ class Chessboard:
 
         return missing, new, swaps
 
-    def update_staging_state(self, missing : list[MissingPiece], new: list[NewPiece], swaps: list[ColorSwap]) -> str | None:
+    def update_staging_state(self, missing : list[MissingPiece], new: list[NewPiece], swaps: list[ColorSwap]) -> chess.Move | None:
         missing_new_swaps = (len(missing), len(new), len(swaps))
 
         if missing_new_swaps == (1, 1, 0):
-            if missing[0].piece.color == new[0].color:
+            if missing[0].piece.pieceType == chess.KING and missing[0].coords[0] == 4 and new[0].coords[0] in (2, 6):
+                # Can't castle with just the king
+                self.ui.update_move_screen(DataLib.icons.question, f"Unexpected\nboard state")
+            elif missing[0].piece.color == new[0].color:
                 # Move
                 return self.staging_move_piece(missing[0], new[0].coords)
             else:
@@ -255,12 +254,42 @@ class Chessboard:
                 # Current player didn't perform a capture, the swap doesn't make sense
                 self.ui.update_move_screen(DataLib.icons.question, f"Unexpected\nboard state")
 
-        elif missing_new_swaps in {(0, 1, 0), (0, 0, 1), (0, 1, 1), (1, 1, 1)}:
-            # Unexpected states
-            self.ui.update_move_screen(DataLib.icons.question, f"Unexpected\nboard state")
+        elif missing_new_swaps == (2, 2, 0):
+            king = None
+            rook = None
 
-        elif len(missing) > 1 or len(new) > 1 or len(swaps) > 1:
-            # We don't expect more than one of any category
+            # Are missing king and rook?
+            for miss in missing:
+                if miss.piece.pieceType == chess.KING:
+                    king = miss
+                elif miss.piece.pieceType == chess.ROOK:
+                    rook = miss
+
+            if king is not None and rook is not None:
+                color_check = king.piece.color == rook.piece.color == new[0].color == new[1].color
+                king_check = king.coords[0] == 4 and king.coords[1] in (0, 7)
+                rook_check = rook.coords[0] in (0, 7) and rook.coords[1] in (0, 7)
+                king_dest = None
+                rook_dest = None
+
+                # Are new positions valid for castling?
+                for new_pos in new:
+                    if new_pos.coords[0] in (2, 6) and new_pos.coords[1] in (0, 7):
+                        king_dest = new_pos
+                    elif new_pos.coords[0] in (3, 5) and new_pos.coords[1] in (0, 7):
+                        rook_dest = new_pos
+
+                if color_check and king_check and rook_check and king_dest and rook_dest:
+                    # Castling
+                    self.staging_move_piece(rook, rook_dest.coords)
+                    return self.staging_move_piece(king, king_dest.coords)
+                else:
+                    self.ui.update_move_screen(DataLib.icons.question, f"Unexpected\nboard state")
+            else:
+                self.ui.update_move_screen(DataLib.icons.question, f"Unexpected\nboard state")
+
+        elif len(missing) > 1 or len(new) > 0 or len(swaps) > 0:
+            # Generic fail
             self.ui.update_move_screen(DataLib.icons.question, f"Unexpected\nboard state")
 
         else:
@@ -273,11 +302,33 @@ class Chessboard:
         return None
 
     def staging_move_piece(self, missing: MissingPiece, new_coords: tuple[int, int]):
-        self.staging_state[new_coords] = missing.piece
+
+        promotion = False
+        if missing.piece.pieceType == chess.PAWN and new_coords[1] in (0, 7):
+            promotion = True
+
         self.staging_state.pop(missing.coords)
 
-        # Return UCI
-        return self.coords_to_locator(missing.coords) + self.coords_to_locator(new_coords)
+        if promotion:
+            # Remove pawn, add queen
+            data = DataLib.pieces.white_queen if missing.piece.color == chess.WHITE else DataLib.pieces.black_queen
+            self.staging_state[new_coords] = Piece(self, self.ui, data)
+        else:
+            self.staging_state[new_coords] = missing.piece
+
+        # UCI
+        uci = self.coords_to_locator(missing.coords) + self.coords_to_locator(new_coords)
+        if promotion: uci += "q"
+
+        # Move
+        move = chess.Move.from_uci(uci)
+
+        # Removals
+        # if self.board.is_en_passant(move):
+        #     dir = new_coords[1] - missing.coords[1]
+        #     self.staging_remove_piece((new_coords[0], new_coords[1] - dir))
+
+        return move
 
     def staging_remove_piece(self, coords: tuple[int, int]):
         self.staging_state.pop(coords)
