@@ -247,7 +247,7 @@ class Chessboard:
                 self.ui.update_move_screen(DataLib.icons.question, f"Unexpected\nboard state")
 
         elif missing_new_swaps == (1, 0, 1):
-            if missing[0].piece.color == self.current_player and swaps[0].new_color == self.current_player:
+            if missing[0].piece.color == swaps[0].new_color:
                 # Capture
                 self.staging_remove_piece(swaps[0].coords) # Remove captured piece
                 return self.staging_move_piece(missing[0], swaps[0].coords) # Move missing piece to capture position
