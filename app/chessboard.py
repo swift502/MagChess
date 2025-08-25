@@ -258,7 +258,10 @@ class Chessboard:
                 self.ui.update_move_screen(DataLib.icons.question, f"Unexpected\nboard state")
 
         elif missing_new_swaps == (2, 1, 0):
-            if missing[0].piece.pieceType == chess.PAWN and missing[1].piece.pieceType == chess.PAWN and missing[0].piece.color != missing[1].piece.color:
+            pawns = missing[0].piece.pieceType == chess.PAWN and missing[1].piece.pieceType == chess.PAWN
+            different_colors = missing[0].piece.color != missing[1].piece.color
+            correct_new_color = new[0].color == self.current_player
+            if pawns and different_colors and correct_new_color:
                 moving_pawn = None
                 captured_pawn = None
 
@@ -273,6 +276,8 @@ class Chessboard:
                     # En passant capture
                     self.staging_remove_piece(captured_pawn.coords)
                     return self.staging_move_piece(moving_pawn, new[0].coords)
+            else:
+                self.ui.update_move_screen(DataLib.icons.question, f"Unexpected\nboard state")
 
         elif missing_new_swaps == (2, 2, 0):
             king = None
