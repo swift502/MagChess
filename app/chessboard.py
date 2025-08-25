@@ -38,6 +38,7 @@ class Chessboard:
         self.state_stack = []
         self.staging_state = {}
         self.spawned_pieces = []
+        self.game_over: bool = False
 
         self.cells = {}
         for co_letter in range(8):
@@ -100,6 +101,7 @@ class Chessboard:
         print("New game detected")
 
     def clean_up(self):
+        self.game_over = False
         self.current_player = chess.WHITE
 
         # State
@@ -168,8 +170,17 @@ class Chessboard:
 
         if move is not None:
             move = chess.Move.from_uci(move)
+
             if move in self.board.legal_moves:
                 self.last_legal_move = move
+
+                outcome_board = self.board.copy()
+                outcome_board.push(move)
+                outcome = outcome_board.outcome()
+                if outcome is not None:
+                    self.game_over = True
+                    self.ui.update_move_screen(DataLib.icons.winner, f"Game over!\nWinner: {str(outcome.winner)}")
+
                 self.ui.update_move_screen(DataLib.icons.good, f"Legal move")
             else:
                 self.ui.update_move_screen(DataLib.icons.invalid, f"Illegal move")
