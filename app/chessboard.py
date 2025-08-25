@@ -59,7 +59,7 @@ class Chessboard:
             # Board logic
             if self.match_sensor_state("WW....BB" * 8) and len(self.state_stack) != 1:
                 self.init_game()
-            else:
+            elif not self.game_over:
                 self.board_state_update()
                 
             # Pieces
