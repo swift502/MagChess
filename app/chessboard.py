@@ -177,11 +177,11 @@ class Chessboard:
                 outcome_board = self.board.copy()
                 outcome_board.push(move)
                 outcome = outcome_board.outcome()
-                if outcome is not None:
+                if outcome is None:
+                    self.ui.update_move_screen(DataLib.icons.good, f"Legal move")
+                else:
                     self.game_over = True
-                    self.ui.update_move_screen(DataLib.icons.winner, f"Game over!\nWinner: {str(outcome.winner)}")
-
-                self.ui.update_move_screen(DataLib.icons.good, f"Legal move")
+                    self.ui.update_move_screen(DataLib.icons.winner, f"Game over!\nWinner: {self.get_winner_string(outcome.winner)}")
             else:
                 self.ui.update_move_screen(DataLib.icons.invalid, f"Illegal move")
 
@@ -359,3 +359,12 @@ class Chessboard:
 
     def staging_remove_piece(self, coords: tuple[int, int]):
         self.staging_state.pop(coords)
+
+    def get_winner_string(self, winner: chess.Color | None):
+        match winner:
+            case chess.WHITE:
+                return "White"
+            case chess.BLACK:
+                return "Black"
+            case None:
+                return "Draw"
