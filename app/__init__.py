@@ -1,7 +1,7 @@
 import flet as ft
 
 from chessboard import Chessboard
-from constants import DEBUG, SENSOR_EMU
+from constants import DEBUG, HW_SENSORS
 from ui_instance import MagChessUI
 from utilities import asset_path
 
@@ -27,12 +27,12 @@ def main(page: ft.Page):
     page.on_keyboard_event = on_key
 
     # Sensors
-    if SENSOR_EMU:
-        from sensors_sw import SWSensors
-        sensors = SWSensors()
-    else:
+    if HW_SENSORS:
         from sensors_hw import HWSensors
         sensors = HWSensors()
+    else:
+        from sensors_sw import SWSensors
+        sensors = SWSensors()
 
     # Start
     ui = MagChessUI(page, sensors)

@@ -52,7 +52,7 @@ class UIBuilder:
     @staticmethod
     def build_tab_2(instance: MagChessUI):
         stack = ft.Stack(
-            controls=UIBuilder.build_board(Constants.THEME_BRIGHT, Constants.THEME_DARK),
+            controls=UIBuilder.build_board(Constants.THEME_WHITE, Constants.THEME_BLACK),
         )
         instance.board_stack = stack
         return stack
