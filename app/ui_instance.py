@@ -10,16 +10,17 @@ from utilities import asset_path
 
 class MagChessUI:
     page: ft.Page
+
     root: ft.Control
     content_host: ft.Container
-    overlay: ft.Stack
-    replay_button: ft.ElevatedButton
     screens: list[ft.Control]
-    _hide_task: concurrent.futures.Future | None = None
+    overlay: ft.Stack
 
+    replay_button: ft.ElevatedButton
     board_stack: ft.Stack
     pieces: dict[tuple[int, int], ft.Image]
     sensor_indicators: dict[tuple[int, int], ft.Container]
+    _hide_task: concurrent.futures.Future | None = None
 
     move_icon: ft.Image
     move_text: ft.Text

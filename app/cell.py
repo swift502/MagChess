@@ -13,6 +13,7 @@ class Cell:
     def __init__(self, co_letter: int, co_number: int, ui: MagChessUI):
         self.sensor_indicator = ui.sensor_indicators[(co_letter, co_number)]
         self.smooth_value = 0.0
+        self.state = 0
     
     def update(self, raw):
         # Value

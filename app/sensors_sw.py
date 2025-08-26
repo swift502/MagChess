@@ -1,3 +1,4 @@
+import asyncio
 from random import randint
 from typing import Callable
 
@@ -38,13 +39,14 @@ class SWSensors(SensorProvider):
                     state = 0
                 self.sensors[(co_letter, co_number)] = SWSensorObject(state)
 
-    def sensor_reading(self):
-        values: SensorReading  = {}
-        for key, sensor in self.sensors.items():
-            values[key] = float(sensor.get_value())
+    async def sensor_reading_loop(self):
+        while True:
+            values: SensorReading  = {}
+            for key, sensor in self.sensors.items():
+                values[key] = float(sensor.get_value())
 
-        self.on_sensor_reading(values)
-        # return values
+            self.on_sensor_reading(values)
+            await asyncio.sleep(1/30)
 
     def on_sensor_click(self, co_letter: int, co_number: int):
         state = self.sensors[(co_letter, co_number)].state

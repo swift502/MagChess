@@ -127,7 +127,7 @@ class DataLib:
 class SensorProvider:
     on_sensor_reading: Callable[[SensorReading], None]
 
-    def sensor_reading(self):
+    async def sensor_reading_loop(self):
         pass
 
     def on_sensor_click(self, co_letter: int, co_number: int):

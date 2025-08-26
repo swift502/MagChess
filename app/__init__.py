@@ -29,7 +29,7 @@ def main(page: ft.Page):
 
     # Sensors
     def on_sensor_reading(reading: SensorReading):
-        pass
+        chessboard.update_sensor_values(reading)
     
     if HW_SENSORS:
         from sensors_hw import HWSensors
@@ -40,7 +40,10 @@ def main(page: ft.Page):
 
     # Start
     ui = MagChessUI(page, sensors)
-    Chessboard(page, ui, sensors)
+    chessboard = Chessboard(page, ui)
+
+    page.run_task(sensors.sensor_reading_loop)
+    page.run_task(chessboard.update)
 
 if __name__ == "__main__":
     ft.app(target=main)

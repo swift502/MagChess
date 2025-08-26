@@ -5,7 +5,7 @@ import flet as ft
 
 from cell import Cell
 import chess
-from data import ColorSwap, DataLib, MissingPiece, NewPiece, SensorProvider
+from data import ColorSwap, DataLib, MissingPiece, NewPiece, SensorReading
 from piece import Piece
 from ui_instance import MagChessUI
 
@@ -16,12 +16,14 @@ BoardState: TypeAlias = dict[tuple[int, int], Piece]
 
 class Chessboard:
     board: chess.Board
+    current_player: chess.Color
+
     state_stack: list[BoardState]
     staging_state: BoardState
-
-    cells: dict[tuple[int, int], Cell]
     spawned_pieces: list[Piece]
-    current_player: chess.Color
+
+    raw_sensor_data: SensorReading
+    cells: dict[tuple[int, int], Cell]
 
     last_analysed_sensor_state: str | None
     last_legal_move: chess.Move | None
@@ -30,31 +32,28 @@ class Chessboard:
     def next_player(self):
         return chess.WHITE if self.current_player == chess.BLACK else chess.BLACK
 
-    def __init__(self, page: ft.Page, ui: MagChessUI, sensors: SensorProvider):
+    def __init__(self, page: ft.Page, ui: MagChessUI):
         self.page = page
         self.ui = ui
-        self.sensors = sensors
         
         self.state_stack = []
         self.staging_state = {}
         self.spawned_pieces = []
-        self.game_over: bool = False
+        self.game_over = False
 
+        self.raw_sensor_data = {}
         self.cells = {}
         for co_letter in range(8):
             for co_number in range(8):
                 self.cells[(co_letter, co_number)] = Cell(co_letter, co_number, ui)
-        
-        page.run_task(self.update)
 
     async def update(self):
         while True:
-            # Sensors
-            raw = self.sensors.sensor_reading()
-
             # Cells
             for pos, cell in self.cells.items():
-                cell.update(raw[pos])
+                sensor_data = self.raw_sensor_data.get(pos)
+                if sensor_data:
+                    cell.update(sensor_data)
 
             # Board logic
             if self.match_sensor_state("WW....BB" * 8) and len(self.state_stack) != 1:
@@ -69,7 +68,10 @@ class Chessboard:
             # Update
             self.page.update()
 
-            await asyncio.sleep(1/30)
+            await asyncio.sleep(1/60)
+
+    def update_sensor_values(self, values: SensorReading):
+        self.raw_sensor_data = values
 
     def match_sensor_state(self, state_string: str):
         return self.get_sensor_state_format() == state_string
