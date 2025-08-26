@@ -183,7 +183,7 @@ class Chessboard:
                     self.ui.update_move_screen(DataLib.icons.good, f"Legal move")
                 else:
                     self.game_over = True
-                    self.ui.update_move_screen(DataLib.icons.winner, f"Game over!\nWinner: {self.get_winner_string(outcome.winner)}")
+                    self.ui.update_move_screen(DataLib.icons.winner, f"Game over!\nWinner: {self.get_winner(outcome)}")
             else:
                 self.ui.update_move_screen(DataLib.icons.invalid, f"Illegal move")
 
@@ -364,8 +364,8 @@ class Chessboard:
     def staging_remove_piece(self, coords: tuple[int, int]):
         self.staging_state.pop(coords)
 
-    def get_winner_string(self, winner: chess.Color | None):
-        match winner:
+    def get_winner(self, outcome: chess.Outcome):
+        match outcome.winner:
             case chess.WHITE:
                 return "White"
             case chess.BLACK:
