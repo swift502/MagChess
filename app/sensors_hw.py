@@ -1,6 +1,4 @@
 import asyncio
-import time
-from typing import Callable
 
 import board
 import busio
@@ -72,6 +70,3 @@ class HWSensors(SensorProvider):
     def set_mux_select(self, n: int) -> None:
         for bit, p in enumerate(self.sel_pins):
             p.value = bool((n >> bit) & 0x1)
-
-    def set_state(self, state):
-        pass
