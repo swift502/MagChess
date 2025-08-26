@@ -1,4 +1,4 @@
 flet
 python-chess
 adafruit-circuitpython-ads1x15
-lgpio
+lgpio; sys_platform == "linux"
