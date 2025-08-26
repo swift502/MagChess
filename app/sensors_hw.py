@@ -6,9 +6,10 @@ import digitalio
 import adafruit_ads1x15.ads1015 as ADS
 from adafruit_ads1x15.analog_in import AnalogIn
 
-from data import SensorProvider, SensorReading
+from chessboard import Chessboard
+from data import SensorReading
 
-class HWSensors(SensorProvider):
+class HWSensors():
     sensor_mapping = {
          "a0m0":(0,0),  "a1m0":(0,1),  "a2m0":(0,2),  "a3m0":(0,3),
          "a0m1":(0,4),  "a1m1":(0,5),  "a2m1":(0,6),  "a3m1":(0,7),
@@ -28,8 +29,8 @@ class HWSensors(SensorProvider):
         "a0m15":(7,4), "a1m15":(7,5), "a2m15":(7,6), "a3m15":(7,7),
     }
 
-    def __init__(self, on_sensor_reading):
-        self.on_sensor_reading = on_sensor_reading
+    def __init__(self, chessboard: Chessboard):
+        self.on_sensor_reading = chessboard.update_sensor_values
 
         # I2C
         i2c = busio.I2C(board.SCL, board.SDA)

@@ -124,13 +124,4 @@ class DataLib:
             "h8": DataLib.pieces.black_rook,
         }
 
-class SensorProvider:
-    on_sensor_reading: Callable[[SensorReading], None]
-
-    async def sensor_reading_loop(self):
-        pass
-
-    def on_sensor_click(self, co_letter: int, co_number: int):
-        pass
-
 SensorReading: TypeAlias = dict[tuple[int, int], float]

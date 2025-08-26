@@ -1,10 +1,11 @@
 
 import asyncio
 import concurrent.futures
+from typing import Callable
 import flet as ft
 
 from constants import DEVELOPMENT
-from data import IconData, SensorProvider
+from data import IconData
 from ui_builder import UIBuilder
 from utilities import asset_path
 
@@ -26,13 +27,13 @@ class MagChessUI:
     move_text: ft.Text
     move_background: ft.Container
 
-    def __init__(self, page: ft.Page, sensors: SensorProvider):
+    def __init__(self, page: ft.Page):
         self.page = page
 
         # tabs
         tab1 = UIBuilder.build_tab_1(self)
         tab2 = UIBuilder.build_tab_2(self)
-        tab3 = UIBuilder.build_tab_3(self, sensors)
+        tab3 = UIBuilder.build_tab_3(self)
         self.screens = [tab1, tab2, tab3]
 
         if DEVELOPMENT:
@@ -100,3 +101,7 @@ class MagChessUI:
         if self._hide_task is not None:
             self._hide_task.cancel()
         self._hide_task = self.page.run_task(self.hide_after, 1.0)
+
+    def sensor_interaction(self, on_click: Callable[[int, int], None]):
+        for (co_letter, co_number), el in self.sensor_indicators.items():
+            el.on_click = lambda e, x=co_letter, y=co_number: on_click(x, y)

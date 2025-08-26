@@ -1,10 +1,13 @@
 import flet as ft
 
-from data import SensorReading
 from chessboard import Chessboard
 from constants import DEVELOPMENT
 from ui_instance import MagChessUI
 from utilities import asset_path
+
+def on_key(e: ft.KeyboardEvent, page: ft.Page):
+    if e.key == "Escape":
+        page.window.close()
 
 def main(page: ft.Page):
     page.title = "MagChess"
@@ -23,25 +26,20 @@ def main(page: ft.Page):
     }
 
     # Exit event
-    def on_key(e: ft.KeyboardEvent):
-        if e.key == "Escape":
-            page.window.close()
-    page.on_keyboard_event = on_key
+    page.on_keyboard_event = lambda e: on_key(e, page)
+
+    # App
+    ui = MagChessUI(page)
+    chessboard = Chessboard(page, ui)
 
     # Sensors
-    def on_sensor_reading(reading: SensorReading):
-        chessboard.update_sensor_values(reading)
-    
     if DEVELOPMENT:
         from sensors_sw import SWSensors
-        sensors = SWSensors(on_sensor_reading)
+        sensors = SWSensors(chessboard)
+        ui.sensor_interaction(sensors.on_sensor_click)
     else:
         from sensors_hw import HWSensors
-        sensors = HWSensors(on_sensor_reading)
-
-    # Start
-    ui = MagChessUI(page, sensors)
-    chessboard = Chessboard(page, ui)
+        sensors = HWSensors(chessboard)
 
     page.run_task(sensors.sensor_reading_loop)
     page.run_task(chessboard.update)

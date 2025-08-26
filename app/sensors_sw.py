@@ -1,9 +1,9 @@
 import asyncio
 from random import randint
-from typing import Callable
 
+from chessboard import Chessboard
 from constants import SENSOR_THRESHOLD_HIGH, SENSOR_THRESHOLD_LOW
-from data import SensorProvider, SensorReading
+from data import SensorReading
 
 class SWSensorObject:
     signal_strength = 500
@@ -23,12 +23,12 @@ class SWSensorObject:
     def set_state(self, state):
         self.state = state
 
-class SWSensors(SensorProvider):
+class SWSensors():
     sensors: dict[tuple[int, int], SWSensorObject]
 
-    def __init__(self, on_sensor_reading: Callable[[SensorReading], None]):
+    def __init__(self, chessboard: Chessboard):
         self.sensors = {}
-        self.on_sensor_reading = on_sensor_reading
+        self.on_sensor_reading = chessboard.update_sensor_values
 
         for co_letter in range(8):
             for co_number in range(8):
