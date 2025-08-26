@@ -127,7 +127,7 @@ class UIBuilder:
         )
 
     @staticmethod
-    def build_board(color_light, color_dark):
+    def build_board(color_light: str, color_dark: str):
         rows = []
         for co_letter in range(8):
             row_cells = []

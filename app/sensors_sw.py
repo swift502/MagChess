@@ -20,7 +20,7 @@ class SWSensorObject:
         else:
             return randint(SENSOR_THRESHOLD_LOW - self.noise, SENSOR_THRESHOLD_HIGH + self.noise)
 
-    def set_state(self, state):
+    def set_state(self, state: int):
         self.state = state
 
 class SWSensors():

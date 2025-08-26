@@ -1,4 +1,5 @@
 {
   "typeCheckingMode": "standard",
-  "reportOptionalMemberAccess": "none"
+  "reportOptionalMemberAccess": "none",
+  "reportMissingParameterType": "warning"
 }

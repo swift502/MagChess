@@ -39,7 +39,7 @@ class Piece:
     def get_top_left(self, coords: tuple[int, int]):
         return (coords[0] * 90.0 + 5, coords[1] * 90.0 + 5)
 
-    def spawn(self, coords):
+    def spawn(self, coords: tuple[int, int]):
         self.ui.board_stack.controls.append(self.control)
         self.target_cell = coords
         self.control.top, self.control.left = self.get_top_left(coords)

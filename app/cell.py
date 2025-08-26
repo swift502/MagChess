@@ -15,7 +15,7 @@ class Cell:
         self.smooth_value = 0.0
         self.state = 0
     
-    def update(self, raw):
+    def update(self, raw: float):
         # Value
         self.smooth_value = lerp(self.smooth_value, raw, 0.1)
 
