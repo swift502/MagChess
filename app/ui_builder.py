@@ -4,9 +4,8 @@ import flet as ft
 from typing import TYPE_CHECKING
 
 from data import DataLib, SensorProvider
-from utilities import asset_path
 
-import constants as Constants
+from constants import THEME_WHITE, THEME_BLACK, HW_SENSORS
 
 if TYPE_CHECKING:
     from ui_instance import MagChessUI
@@ -52,7 +51,7 @@ class UIBuilder:
     @staticmethod
     def build_tab_2(instance: MagChessUI):
         stack = ft.Stack(
-            controls=UIBuilder.build_board(Constants.THEME_WHITE, Constants.THEME_BLACK),
+            controls=UIBuilder.build_board(THEME_WHITE, THEME_BLACK),
         )
         instance.board_stack = stack
         return stack
@@ -74,8 +73,8 @@ class UIBuilder:
                     left=co_number * 90 + 25,
                     top=co_letter * 90 + 25,
                 )
-                if not Constants.HW_SENSORS:
-                    el.on_click=lambda e, x=co_letter, y=co_number: sensors.cycle_sensor_state(x, y)
+                if not HW_SENSORS:
+                    el.on_click=lambda e, x=co_letter, y=co_number: sensors.on_sensor_click(x, y)
                 instance.sensor_indicators[(co_letter, co_number)] = el
                 stack.append(el)
 

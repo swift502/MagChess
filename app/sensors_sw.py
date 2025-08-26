@@ -1,7 +1,8 @@
 from random import randint
+from typing import Callable
 
 from constants import SENSOR_THRESHOLD_HIGH, SENSOR_THRESHOLD_LOW
-from data import SensorProvider
+from data import SensorProvider, SensorReading
 
 class SWSensorObject:
     signal_strength = 500
@@ -24,8 +25,9 @@ class SWSensorObject:
 class SWSensors(SensorProvider):
     sensors: dict[tuple[int, int], SWSensorObject]
 
-    def __init__(self):
+    def __init__(self, on_sensor_reading: Callable[[SensorReading], None]):
         self.sensors = {}
+        self.on_sensor_reading = on_sensor_reading
 
         for co_letter in range(8):
             for co_number in range(8):
@@ -36,13 +38,15 @@ class SWSensors(SensorProvider):
                     state = 0
                 self.sensors[(co_letter, co_number)] = SWSensorObject(state)
 
-    def get_value_array(self):
-        values: dict[tuple[int, int], float] = {}
+    def sensor_reading(self):
+        values: SensorReading  = {}
         for key, sensor in self.sensors.items():
             values[key] = float(sensor.get_value())
-        return values
 
-    def cycle_sensor_state(self, co_letter: int, co_number: int):
+        self.on_sensor_reading(values)
+        # return values
+
+    def on_sensor_click(self, co_letter: int, co_number: int):
         state = self.sensors[(co_letter, co_number)].state
         state += 1
         if state == 4:

@@ -1,6 +1,5 @@
 from __future__ import annotations
-from pathlib import Path
-from typing import TYPE_CHECKING
+from typing import TYPE_CHECKING, Callable, TypeAlias
 
 import chess
 
@@ -126,11 +125,12 @@ class DataLib:
         }
 
 class SensorProvider:
-    def __init__(self) -> None:
-        raise NotImplementedError()
+    on_sensor_reading: Callable[[SensorReading], None]
 
-    def get_value_array(self) -> dict[tuple[int, int], float]:
-        raise NotImplementedError()
+    def sensor_reading(self):
+        pass
 
-    def cycle_sensor_state(self, co_letter: int, co_number: int) -> None:
-        raise NotImplementedError()
+    def on_sensor_click(self, co_letter: int, co_number: int):
+        pass
+
+SensorReading: TypeAlias = dict[tuple[int, int], float]

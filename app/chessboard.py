@@ -50,7 +50,7 @@ class Chessboard:
     async def update(self):
         while True:
             # Sensors
-            raw = self.sensors.get_value_array()
+            raw = self.sensors.sensor_reading()
 
             # Cells
             for pos, cell in self.cells.items():

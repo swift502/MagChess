@@ -1,5 +1,6 @@
 import flet as ft
 
+from data import SensorReading
 from chessboard import Chessboard
 from constants import DEBUG, HW_SENSORS
 from ui_instance import MagChessUI
@@ -27,12 +28,15 @@ def main(page: ft.Page):
     page.on_keyboard_event = on_key
 
     # Sensors
+    def on_sensor_reading(reading: SensorReading):
+        pass
+    
     if HW_SENSORS:
         from sensors_hw import HWSensors
-        sensors = HWSensors()
+        sensors = HWSensors(on_sensor_reading)
     else:
         from sensors_sw import SWSensors
-        sensors = SWSensors()
+        sensors = SWSensors(on_sensor_reading)
 
     # Start
     ui = MagChessUI(page, sensors)
