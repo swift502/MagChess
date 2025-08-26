@@ -3,7 +3,7 @@ import asyncio
 import concurrent.futures
 import flet as ft
 
-from constants import DEBUG
+from constants import DEVELOPMENT
 from data import IconData, SensorProvider
 from ui_builder import UIBuilder
 from utilities import asset_path
@@ -35,7 +35,7 @@ class MagChessUI:
         tab3 = UIBuilder.build_tab_3(self, sensors)
         self.screens = [tab1, tab2, tab3]
 
-        if DEBUG:
+        if DEVELOPMENT:
             self.root = ft.Row(
                 controls=[
                     ft.Container(content=self.screens[0], width=720, height=720),

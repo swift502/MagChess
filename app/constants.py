@@ -1,6 +1,5 @@
 # Flags
-DEBUG = True
-HW_SENSORS = False
+DEVELOPMENT = True
 
 # Sensors
 SENSOR_THRESHOLD_LOW = 32500

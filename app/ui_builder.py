@@ -5,7 +5,7 @@ from typing import TYPE_CHECKING
 
 from data import DataLib, SensorProvider
 
-from constants import THEME_WHITE, THEME_BLACK, HW_SENSORS
+from constants import THEME_WHITE, THEME_BLACK, DEVELOPMENT
 
 if TYPE_CHECKING:
     from ui_instance import MagChessUI
@@ -73,7 +73,7 @@ class UIBuilder:
                     left=co_number * 90 + 25,
                     top=co_letter * 90 + 25,
                 )
-                if not HW_SENSORS:
+                if DEVELOPMENT:
                     el.on_click=lambda e, x=co_letter, y=co_number: sensors.on_sensor_click(x, y)
                 instance.sensor_indicators[(co_letter, co_number)] = el
                 stack.append(el)
