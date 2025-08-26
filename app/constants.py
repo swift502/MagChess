@@ -1,10 +1,5 @@
-# Debug mode
+# Flags
 DEBUG = True
-
-# Hardware preference
-# True - Use the ads1015 library
-# False - Emulate sensors
-# None - Auto detect platform
 HW_SENSORS = False
 
 # Sensors

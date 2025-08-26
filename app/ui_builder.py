@@ -73,8 +73,9 @@ class UIBuilder:
                     border_radius=ft.border_radius.all(20),
                     left=co_number * 90 + 25,
                     top=co_letter * 90 + 25,
-                    on_click=lambda e, x=co_letter, y=co_number: sensors.cycle_sensor_state(x, y),
                 )
+                if not Constants.HW_SENSORS:
+                    el.on_click=lambda e, x=co_letter, y=co_number: sensors.cycle_sensor_state(x, y)
                 instance.sensor_indicators[(co_letter, co_number)] = el
                 stack.append(el)
 
