@@ -20,13 +20,11 @@ def main(page: ft.Page):
         page.window.full_screen = True
     page.padding = 0
     page.spacing = 0
+    page.on_keyboard_event = lambda e: on_key(e, page)
     page.theme_mode = ft.ThemeMode.DARK
     page.fonts = {
         "Noto Sans": asset_path("fonts/NotoSans-Bold.ttf"),
     }
-
-    # Exit event
-    page.on_keyboard_event = lambda e: on_key(e, page)
 
     # App
     ui = MagChessUI(page)
