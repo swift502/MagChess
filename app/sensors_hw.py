@@ -9,6 +9,9 @@ from data import SensorProvider
 
 # https://github.com/adafruit/Adafruit_CircuitPython_ADS1x15?tab=readme-ov-file
 class HWSensors(SensorProvider):
+    def __init__(self) -> None:
+        pass
+
     def get_value_array(self):
         # Create the I2C bus
         i2c = busio.I2C(board.SCL, board.SDA)
