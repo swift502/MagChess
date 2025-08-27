@@ -5,7 +5,7 @@ import flet as ft
 
 from cell import Cell
 import chess
-from data import ColorSwap, DataLib, IconData, MissingPiece, NewPiece, SensorReading
+from data import ColorSwap, DataLib, IconData, MissingPiece, NewPiece, SensorReading, IChessboard
 from piece import Piece
 from ui_instance import MagChessUI
 
@@ -14,8 +14,9 @@ if typing.TYPE_CHECKING:
 
 BoardState: TypeAlias = dict[tuple[int, int], Piece]
 
-class Chessboard:
+class Chessboard(IChessboard):
     board: chess.Board | None = None
+    uncommitted_move_board: chess.Board | None = None
     fen: str | None = None
 
     current_player: chess.Color | None = None
@@ -180,6 +181,9 @@ class Chessboard:
             if move in self.board.legal_moves:
                 self.last_legal_move = move
 
+                self.uncommitted_move_board = self.board.copy()
+                self.uncommitted_move_board.push(move)
+
                 outcome_board = self.board.copy()
                 outcome_board.push(move)
                 outcome = outcome_board.outcome()
@@ -189,7 +193,10 @@ class Chessboard:
                     self.game_over = True
                     self.update_status(DataLib.icons.winner, f"Game over!\nWinner: {self.get_winner(outcome)}")
             else:
+                self.uncommitted_move_board = None
                 self.update_status(DataLib.icons.invalid, f"Illegal move")
+        else:
+            self.uncommitted_move_board = None
 
     def state_commit_processing(self):
         if self.last_legal_move is None:

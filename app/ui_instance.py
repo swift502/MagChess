@@ -5,20 +5,23 @@ from typing import Callable
 import chess
 import flet as ft
 
-from constants import DEVELOPMENT
-from data import IconData
+from constants import DEV_LAYOUT
+from data import IconData, IChessboard
 from ui_builder import UIBuilder
 from utilities import asset_path
 
 class MagChessUI:
     page: ft.Page
+    chessboard: IChessboard
 
     root: ft.Control
     content_host: ft.Container
     screens: list[ft.Control]
     overlay: ft.Stack
 
+    copy_pgn_button: ft.ElevatedButton
     replay_button: ft.ElevatedButton
+
     board_stack: ft.Stack
     pieces: dict[tuple[int, int], ft.Image]
     sensor_indicators: dict[tuple[int, int], ft.Container]
@@ -28,7 +31,7 @@ class MagChessUI:
     move_text: ft.Text
     move_background: ft.Container
 
-    def __init__(self, page: ft.Page):
+    def __init__(self, page: ft.Page, default_tab: int):
         self.page = page
 
         # tabs
@@ -37,7 +40,7 @@ class MagChessUI:
         tab3 = UIBuilder.build_tab_3(self)
         self.screens = [tab1, tab2, tab3]
 
-        if DEVELOPMENT:
+        if DEV_LAYOUT:
             self.root = ft.Row(
                 controls=[
                     ft.Container(content=self.screens[0], width=720, height=720),
@@ -51,10 +54,8 @@ class MagChessUI:
             return
 
         # content host
-        self.content_host = ft.Container(content=self.screens[1])
-
-        self.overlay = UIBuilder.build_overlay(self)
-
+        self.content_host = ft.Container(content=self.screens[default_tab])
+        self.overlay = UIBuilder.build_overlay(self, default_tab)
         self.root = ft.GestureDetector(
             on_hover=self.user_activity,
             hover_interval=150,
@@ -65,16 +66,21 @@ class MagChessUI:
             width=720,
         )
 
+        self.refresh_tab_ui(default_tab)
         page.add(self.root)
 
     def on_tab_change(self, e: ft.ControlEvent):
         idx = e.control.selected_index
 
         self.content_host.content = self.screens[idx]
-        self.replay_button.visible = idx == 1
+        self.refresh_tab_ui(idx)
         
         self.page.update()
         self.user_activity()
+
+    def refresh_tab_ui(self, tab: int):
+        self.copy_pgn_button.visible = tab == 0
+        self.replay_button.visible = tab == 1
 
     def update_move_screen(self, icon: IconData, text: str, player_color: chess.Color | None):
         self.move_icon.src = asset_path(icon.image_path)

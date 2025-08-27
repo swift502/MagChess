@@ -1,5 +1,6 @@
 # Flags
-DEVELOPMENT = True
+DEV_LAYOUT = False
+RPI = False
 
 # Sensors
 SENSOR_THRESHOLD_LOW = 32500

@@ -126,3 +126,7 @@ class DataLib:
         }
 
 SensorReading: TypeAlias = dict[tuple[int, int], float]
+
+class IChessboard:
+    board: chess.Board | None
+    uncommitted_move_board: chess.Board | None

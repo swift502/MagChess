@@ -1,5 +1,7 @@
 from __future__ import annotations
 
+import chess
+import chess.pgn
 import flet as ft
 from typing import TYPE_CHECKING
 
@@ -81,10 +83,10 @@ class UIBuilder:
         )
 
     @staticmethod
-    def build_overlay(instance: MagChessUI):
+    def build_overlay(instance: MagChessUI, default_tab: int):
         nav = ft.Container(
             content=ft.NavigationBar(
-                selected_index=1,
+                selected_index=default_tab,
                 on_change=instance.on_tab_change,
                 destinations=[
                     ft.NavigationBarDestination(icon=ft.Icons.FORK_RIGHT, label="Moves"),
@@ -105,22 +107,49 @@ class UIBuilder:
         )
 
         instance.replay_button = ft.ElevatedButton(
-            text=" " + "Review 5 moves",
+            text=" " + "Review game",
             on_click=lambda e: print("Replay"),
             top=26,
-            bgcolor="#6d10a3",
+            bgcolor="#7e27b1",
             color=ft.Colors.WHITE,
             icon=ft.Icons.HISTORY,
             style=ft.ButtonStyle(
-                text_style=ft.TextStyle(size=30, font_family="Noto Sans"),
+                text_style=ft.TextStyle(size=36, font_family="Noto Sans"),
                 icon_size=36,
-                padding=ft.padding.symmetric(horizontal=34, vertical=26),
-                shape=ft.ContinuousRectangleBorder(50),
+                padding=ft.padding.symmetric(horizontal=40, vertical=30),
+                shape=ft.RoundedRectangleBorder(20),
             ),
+            visible=False,
+        )
+
+        def on_pgn_copied(e: ft.ControlEvent):
+            board = instance.chessboard.uncommitted_move_board or instance.chessboard.board
+            if board is None:
+                instance.page.open(ft.SnackBar(ft.Text(f"No game found")))
+                return
+            
+            pgn = chess.pgn.Game().from_board(board)
+            instance.page.set_clipboard(str(pgn.mainline()))
+            instance.page.open(ft.SnackBar(ft.Text(f"PGN copied to clipboard")))
+
+        instance.copy_pgn_button = ft.ElevatedButton(
+            text=" " + "Copy PGN",
+            on_click=on_pgn_copied,
+            top=26,
+            bgcolor="#4BA000",
+            color=ft.Colors.WHITE,
+            icon=ft.Icons.COPY,
+            style=ft.ButtonStyle(
+                text_style=ft.TextStyle(size=36, font_family="Noto Sans"),
+                icon_size=36,
+                padding=ft.padding.symmetric(horizontal=40, vertical=30),
+                shape=ft.RoundedRectangleBorder(20),
+            ),
+            visible=False,
         )
 
         return ft.Stack(
-            controls=[nav, instance.replay_button],
+            controls=[nav, instance.replay_button, instance.copy_pgn_button],
             animate_opacity=300,
             opacity=0.0,
             alignment=ft.alignment.center,
