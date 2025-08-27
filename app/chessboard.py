@@ -50,8 +50,8 @@ class Chessboard:
     async def update(self):
         while True:
             # Cells
-            for pos, cell in self.cells.items():
-                sensor_data = self.raw_sensor_data.get(pos)
+            for coords, cell in self.cells.items():
+                sensor_data = self.raw_sensor_data.get(coords)
                 if sensor_data:
                     cell.update(sensor_data)
 
