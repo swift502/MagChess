@@ -10,23 +10,25 @@ from chessboard import Chessboard
 from data import SensorReading
 
 class HWSensors():
+    # ADC input + corresponding multiplexer input
+    # Mapped to a chessboard cell coordinate
     sensor_mapping = {
-        "mux_0_00": (0,0), "mux_1_00": (2,0), "mux_2_00": (4,0), "mux_3_00": (6,0),
-        "mux_0_01": (0,1), "mux_1_01": (2,1), "mux_2_01": (4,1), "mux_3_01": (6,1),
-        "mux_0_02": (0,2), "mux_1_02": (2,2), "mux_2_02": (4,2), "mux_3_02": (6,2),
-        "mux_0_03": (0,3), "mux_1_03": (2,3), "mux_2_03": (4,3), "mux_3_03": (6,3),
-        "mux_0_04": (0,4), "mux_1_04": (2,4), "mux_2_04": (4,4), "mux_3_04": (6,4),
-        "mux_0_05": (0,5), "mux_1_05": (2,5), "mux_2_05": (4,5), "mux_3_05": (6,5),
-        "mux_0_06": (0,6), "mux_1_06": (2,6), "mux_2_06": (4,6), "mux_3_06": (6,6),
-        "mux_0_07": (0,7), "mux_1_07": (2,7), "mux_2_07": (4,7), "mux_3_07": (6,7),
-        "mux_0_08": (1,0), "mux_1_08": (3,0), "mux_2_08": (5,0), "mux_3_08": (7,0),
-        "mux_0_09": (1,1), "mux_1_09": (3,1), "mux_2_09": (5,1), "mux_3_09": (7,1),
-        "mux_0_10": (1,2), "mux_1_10": (3,2), "mux_2_10": (5,2), "mux_3_10": (7,2),
-        "mux_0_11": (1,3), "mux_1_11": (3,3), "mux_2_11": (5,3), "mux_3_11": (7,3),
-        "mux_0_12": (1,4), "mux_1_12": (3,4), "mux_2_12": (5,4), "mux_3_12": (7,4),
-        "mux_0_13": (1,5), "mux_1_13": (3,5), "mux_2_13": (5,5), "mux_3_13": (7,5),
-        "mux_0_14": (1,6), "mux_1_14": (3,6), "mux_2_14": (5,6), "mux_3_14": (7,6),
-        "mux_0_15": (1,7), "mux_1_15": (3,7), "mux_2_15": (5,7), "mux_3_15": (7,7),
+        "a0m00": (0,0), "a1m00": (2,0), "a2m00": (4,0), "a3m00": (6,0),
+        "a0m01": (0,1), "a1m01": (2,1), "a2m01": (4,1), "a3m01": (6,1),
+        "a0m02": (0,2), "a1m02": (2,2), "a2m02": (4,2), "a3m02": (6,2),
+        "a0m03": (0,3), "a1m03": (2,3), "a2m03": (4,3), "a3m03": (6,3),
+        "a0m04": (0,4), "a1m04": (2,4), "a2m04": (4,4), "a3m04": (6,4),
+        "a0m05": (0,5), "a1m05": (2,5), "a2m05": (4,5), "a3m05": (6,5),
+        "a0m06": (0,6), "a1m06": (2,6), "a2m06": (4,6), "a3m06": (6,6),
+        "a0m07": (0,7), "a1m07": (2,7), "a2m07": (4,7), "a3m07": (6,7),
+        "a0m08": (1,0), "a1m08": (3,0), "a2m08": (5,0), "a3m08": (7,0),
+        "a0m09": (1,1), "a1m09": (3,1), "a2m09": (5,1), "a3m09": (7,1),
+        "a0m10": (1,2), "a1m10": (3,2), "a2m10": (5,2), "a3m10": (7,2),
+        "a0m11": (1,3), "a1m11": (3,3), "a2m11": (5,3), "a3m11": (7,3),
+        "a0m12": (1,4), "a1m12": (3,4), "a2m12": (5,4), "a3m12": (7,4),
+        "a0m13": (1,5), "a1m13": (3,5), "a2m13": (5,5), "a3m13": (7,5),
+        "a0m14": (1,6), "a1m14": (3,6), "a2m14": (5,6), "a3m14": (7,6),
+        "a0m15": (1,7), "a1m15": (3,7), "a2m15": (5,7), "a3m15": (7,7),
     }
 
     def __init__(self, chessboard: Chessboard):
@@ -58,16 +60,16 @@ class HWSensors():
         while True:
             values: SensorReading = {}
             for mul_id in range(16):
-                self.set_mux_select(mul_id)
+                self.set_aselect(mul_id)
                 await asyncio.sleep(0.002)
 
                 for adc_id in range(4):
-                    mapping = self.sensor_mapping[f"mux_{adc_id}_{mul_id:02}"]
+                    mapping = self.sensor_mapping[f"a{adc_id}m{mul_id:02}"]
                     values[mapping] = self.channels[adc_id].voltage
 
             self.on_sensor_reading(values)
             await asyncio.sleep(1/30)
 
-    def set_mux_select(self, n: int) -> None:
+    def set_aselect(self, n: int) -> None:
         for bit, p in enumerate(self.sel_pins):
             p.value = bool((n >> bit) & 0x1)
