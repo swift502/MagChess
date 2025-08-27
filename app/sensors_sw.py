@@ -40,8 +40,9 @@ class SWSensors():
                 self.sensors[(co_letter, co_number)] = SWSensorObject(state)
 
     async def sensor_reading_loop(self):
+        values: SensorReading  = {}
+        
         while True:
-            values: SensorReading  = {}
             for key, sensor in self.sensors.items():
                 values[key] = float(sensor.get_value())
 

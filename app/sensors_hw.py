@@ -57,8 +57,9 @@ class HWSensors():
             self.sel_pins.append(p)
 
     async def sensor_reading_loop(self):
+        values: SensorReading = {}
+        
         while True:
-            values: SensorReading = {}
             for mul_id in range(16):
                 self.set_aselect(mul_id)
                 await asyncio.sleep(0.002)

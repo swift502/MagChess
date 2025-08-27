@@ -16,6 +16,7 @@ BoardState: TypeAlias = dict[tuple[int, int], Piece]
 
 class Chessboard:
     board: chess.Board | None
+    fen: str | None
     current_player: chess.Color
 
     state_stack: list[BoardState]
@@ -37,6 +38,7 @@ class Chessboard:
         self.ui = ui
 
         self.board = None
+        self.fen = None
         
         self.state_stack = []
         self.staging_state = {}
@@ -54,16 +56,13 @@ class Chessboard:
         while True:
             # Cells
             for coords, cell in self.cells.items():
-                sensor_data = self.raw_sensor_data.get(coords)
-                if sensor_data:
-                    cell.update(sensor_data)
+                cell.update(self.raw_sensor_data[coords])
 
             # Board logic
-            start_conditions = self.board is None or self.board.fen() != chess.STARTING_FEN
-            if start_conditions and self.match_sensor_state("WW....BB" * 8):
+            if self.fen != chess.STARTING_FEN and self.match_sensor_state("WW....BB" * 8):
                 self.flipped = False
                 self.init_game()
-            elif start_conditions and self.match_sensor_state("BB....WW" * 8):
+            elif self.fen != chess.STARTING_FEN and self.match_sensor_state("BB....WW" * 8):
                 self.flipped = True
                 self.init_game()
             elif not self.game_over:
@@ -95,6 +94,7 @@ class Chessboard:
         self.clean_up()
 
         self.board = chess.Board()
+        self.fen = self.board.fen()
 
         init_state: BoardState = {}
         self.last_analysed_sensor_state = None
@@ -133,7 +133,9 @@ class Chessboard:
     def commit_staging_state(self, move: chess.Move):
         self.state_stack.append(self.staging_state.copy())
         self.board.push(move)
+        self.fen = self.board.fen()
         self.current_player = self.next_player
+
         print(f"Committed {move.uci()}")
 
     def show_state(self, state: BoardState):
