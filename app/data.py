@@ -1,5 +1,5 @@
 from __future__ import annotations
-from typing import TYPE_CHECKING, Callable, TypeAlias
+from typing import TYPE_CHECKING, TypeAlias
 
 import chess
 
@@ -32,6 +32,7 @@ class IconLibrary:
         self.great_find = IconData(path="icons/great_find.svg", color="#96af8b")
         self.inaccuracy = IconData(path="icons/inaccuracy.svg", color="#f7c045")
         self.incorrect = IconData(path="icons/incorrect.svg", color="#ca3431")
+        self.info = IconData(path="icons/info.svg", color="#7979a1")
         self.invalid = IconData(path="icons/invalid.svg", color="#7979a1")
         self.mate = IconData(path="icons/mate.svg", color="#ec6250")
         self.missed_win = IconData(path="icons/missed_win.svg", color="#dbac16")

@@ -2,6 +2,7 @@
 import asyncio
 import concurrent.futures
 from typing import Callable
+import chess
 import flet as ft
 
 from constants import DEVELOPMENT
@@ -75,9 +76,11 @@ class MagChessUI:
         self.page.update()
         self.user_activity()
 
-    def update_move_screen(self, icon: IconData, text: str):
+    def update_move_screen(self, icon: IconData, text: str, player_color: chess.Color | None):
         self.move_icon.src = asset_path(icon.image_path)
         self.move_text.value = text
+        if player_color is not None:
+            self.move_text.value += f"\n{"White" if player_color == chess.WHITE else "Black"} plays"
         self.move_background.bgcolor = ft.Colors.with_opacity(0.9, icon.color)
         self.page.update()
 
