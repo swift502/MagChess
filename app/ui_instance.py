@@ -18,7 +18,7 @@ class MagChessUI:
     content_host: ft.Container
     screens: list[ft.Control]
     tab: int
-    overlay: ft.Stack
+    overlay: ft.Container
     board_stack: ft.Stack
 
     copy_pgn_button: ft.ElevatedButton
@@ -116,6 +116,7 @@ class MagChessUI:
 
     def show_ui(self):
         self._ui_enabled = True
+        self.overlay.ignore_interactions = str(False)
 
         self.overlay.opacity = 1.0
         self.page.update()
@@ -127,6 +128,7 @@ class MagChessUI:
 
     def hide_ui(self):
         self._ui_enabled = False
+        self.overlay.ignore_interactions = str(True)
 
         self.overlay.opacity = 0.0
         self.page.update()

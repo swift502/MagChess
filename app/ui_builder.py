@@ -148,11 +148,14 @@ class UIBuilder:
             visible=False,
         )
 
-        return ft.Stack(
-            controls=[nav, instance.replay_button, instance.copy_pgn_button],
+        return ft.Container(
+            content=ft.Stack(
+                controls=[nav, instance.replay_button, instance.copy_pgn_button],
+                alignment=ft.alignment.center,
+            ),
             animate_opacity=300,
             opacity=0.0,
-            alignment=ft.alignment.center,
+            ignore_interactions=True,
         )
 
     @staticmethod
