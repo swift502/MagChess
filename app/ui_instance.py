@@ -17,6 +17,7 @@ class MagChessUI:
     root: ft.Control
     content_host: ft.Container
     screens: list[ft.Control]
+    tab: int
     overlay: ft.Stack
     board_stack: ft.Stack
 
@@ -79,8 +80,25 @@ class MagChessUI:
         self.show_ui()
 
     def refresh_tab_ui(self, tab: int):
+        self.tab = tab
+
         self.copy_pgn_button.visible = tab == 0
-        self.replay_button.visible = tab == 1
+
+        if tab == 1:
+            self.refresh_replay_button()
+        else:
+            self.replay_button.visible = False
+
+    def refresh_replay_button(self):
+        if self.tab != 1:
+            return
+        
+        board = self.chessboard.uncommitted_move_board or self.chessboard.board
+        if board is not None and len(board.move_stack) > 0:
+            self.replay_button.visible = True
+            self.replay_button.text = " " + f"Review {len(board.move_stack)} moves"
+        else:
+            self.replay_button.visible = False
 
     def update_move_screen(self, icon: IconData, text: str, player_color: chess.Color | None):
         self.move_icon.src = asset_path(icon.image_path)
@@ -118,7 +136,6 @@ class MagChessUI:
         
     async def schedule_hide_ui(self, seconds: float):
         try:
-            # Wait
             await asyncio.sleep(seconds)
             self.hide_ui()
         except asyncio.CancelledError:

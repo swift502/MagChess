@@ -166,6 +166,8 @@ class Chessboard(IChessboard):
         # Staging state may have been committed now, we can safely discard it
         self.staging_state = self.state_stack[-1].copy()
         self.last_legal_move = None
+        self.uncommitted_move_board = None
+        self.ui.replay_button.text = " " + f"Review {len(self.board.move_stack)} moves"
 
         # Analyse changes against latest committed state
         missing, new, swaps = self.analyse_sensor_changes(against=self.state_stack[-1])
@@ -184,6 +186,8 @@ class Chessboard(IChessboard):
                 self.uncommitted_move_board = self.board.copy()
                 self.uncommitted_move_board.push(move)
 
+                self.ui.refresh_replay_button()
+
                 outcome_board = self.board.copy()
                 outcome_board.push(move)
                 outcome = outcome_board.outcome()
@@ -193,10 +197,7 @@ class Chessboard(IChessboard):
                     self.game_over = True
                     self.update_status(DataLib.icons.winner, f"Game over!\nWinner: {self.get_winner(outcome)}")
             else:
-                self.uncommitted_move_board = None
                 self.update_status(DataLib.icons.invalid, f"Illegal move")
-        else:
-            self.uncommitted_move_board = None
 
     def state_commit_processing(self):
         if self.last_legal_move is None:
