@@ -41,19 +41,6 @@ class MagChessUI:
         tab3 = UIBuilder.build_tab_3(self)
         self.screens = [tab1, tab2, tab3]
 
-        if DEV_LAYOUT:
-            self.root = ft.Row(
-                controls=[
-                    ft.Container(content=self.screens[0], width=720, height=720),
-                    ft.Container(content=self.screens[1], width=720, height=720),
-                    ft.Container(content=self.screens[2], width=720, height=720),
-                ],
-                spacing=0,
-            )
-
-            page.add(self.root)
-            return
-
         # content host
         self.content_host = ft.Container(content=self.screens[default_tab])
         self.overlay = UIBuilder.build_overlay(self, default_tab)
@@ -68,6 +55,17 @@ class MagChessUI:
         )
 
         self.refresh_tab_ui(default_tab)
+
+        if DEV_LAYOUT:
+            self.root = ft.Row(
+                controls=[
+                    ft.Container(content=self.screens[0], width=720, height=720),
+                    ft.Container(content=self.screens[1], width=720, height=720),
+                    ft.Container(content=self.screens[2], width=720, height=720),
+                ],
+                spacing=0,
+            )
+            
         page.add(self.root)
 
     def on_tab_change(self, e: ft.ControlEvent):
