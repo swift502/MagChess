@@ -92,7 +92,13 @@ class UIBuilder:
                     ft.NavigationBarDestination(icon=ft.Icons.FORK_RIGHT, label="Moves"),
                     ft.NavigationBarDestination(icon=ft.Icons.CROP_FREE, label="Board"),
                     ft.NavigationBarDestination(icon=ft.Icons.SENSORS, label="Sensors"),
+                    # ft.NavigationBarDestination(icon=ft.Icons.SKIP_PREVIOUS, label="First"),
+                    # ft.NavigationBarDestination(icon=ft.Icons.NAVIGATE_BEFORE, label="Previous"),
+                    # ft.NavigationBarDestination(icon=ft.Icons.NAVIGATE_NEXT, label="Next"),
+                    # ft.NavigationBarDestination(icon=ft.Icons.SKIP_NEXT, label="Last"),
                 ],
+                # overlay_color=ft.Colors.TRANSPARENT,
+                # indicator_color=ft.Colors.TRANSPARENT,
             ),
             border_radius=ft.border_radius.all(20),
             margin=ft.margin.only(left=16, right=16, bottom=16),
@@ -107,7 +113,6 @@ class UIBuilder:
         )
 
         instance.replay_button = ft.ElevatedButton(
-            text=" " + "Review game",
             on_click=lambda e: print("Replay"),
             top=26,
             bgcolor="#7e27b1",
