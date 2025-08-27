@@ -33,7 +33,7 @@ def main(page: ft.Page):
     # Sensors
     if DEVELOPMENT:
         from sensors_sw import SWSensors
-        sensors = SWSensors(chessboard)
+        sensors = SWSensors(chessboard, flipped=False)
         ui.sensor_interaction(sensors.on_sensor_click)
     else:
         from sensors_hw import HWSensors

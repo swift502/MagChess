@@ -26,7 +26,7 @@ class SWSensorObject:
 class SWSensors():
     sensors: dict[tuple[int, int], SWSensorObject]
 
-    def __init__(self, chessboard: Chessboard):
+    def __init__(self, chessboard: Chessboard, flipped: bool):
         self.sensors = {}
         self.on_sensor_reading = chessboard.update_sensor_values
 
@@ -34,9 +34,9 @@ class SWSensors():
             for co_number in range(8):
                 state = 1
                 if co_number == 0 or co_number == 1:
-                    state = 2
+                    state = 0 if flipped else 2
                 if co_number == 6 or co_number == 7:
-                    state = 0
+                    state = 2 if flipped else 0
                 self.sensors[(co_letter, co_number)] = SWSensorObject(state)
 
     async def sensor_reading_loop(self):

@@ -15,7 +15,7 @@ if typing.TYPE_CHECKING:
 BoardState: TypeAlias = dict[tuple[int, int], Piece]
 
 class Chessboard:
-    board: chess.Board
+    board: chess.Board | None
     current_player: chess.Color
 
     state_stack: list[BoardState]
@@ -35,11 +35,14 @@ class Chessboard:
     def __init__(self, page: ft.Page, ui: MagChessUI):
         self.page = page
         self.ui = ui
+
+        self.board = None
         
         self.state_stack = []
         self.staging_state = {}
         self.spawned_pieces = []
         self.game_over = False
+        self.flipped = False
 
         self.raw_sensor_data = {}
         self.cells = {}
@@ -56,7 +59,12 @@ class Chessboard:
                     cell.update(sensor_data)
 
             # Board logic
-            if self.match_sensor_state("WW....BB" * 8) and len(self.state_stack) != 1:
+            start_conditions = self.board is None or self.board.fen() != chess.STARTING_FEN
+            if start_conditions and self.match_sensor_state("WW....BB" * 8):
+                self.flipped = False
+                self.init_game()
+            elif start_conditions and self.match_sensor_state("BB....WW" * 8):
+                self.flipped = True
                 self.init_game()
             elif not self.game_over:
                 self.board_state_update()
@@ -216,6 +224,10 @@ class Chessboard:
 
         # Find changes
         for coords, cell in self.cells.items():
+            # Flipping
+            if self.flipped:
+                coords = (7 - coords[0], 7 - coords[1])
+
             # Get new color from sensor data
             new_color = cell.color
 

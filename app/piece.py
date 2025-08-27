@@ -37,6 +37,9 @@ class Piece:
         self.target_cell = coords
 
     def get_top_left(self, coords: tuple[int, int]):
+        if self.board.flipped:
+            coords = (7 - coords[0], 7 - coords[1])
+
         return (coords[0] * 90.0 + 5, coords[1] * 90.0 + 5)
 
     def spawn(self, coords: tuple[int, int]):
