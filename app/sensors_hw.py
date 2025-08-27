@@ -68,7 +68,6 @@ class HWSensors():
                     values[mapping] = self.channels[adc_id].voltage
 
             self.on_sensor_reading(values)
-            await asyncio.sleep(1/30)
 
     def set_aselect(self, n: int) -> None:
         for bit, p in enumerate(self.sel_pins):
