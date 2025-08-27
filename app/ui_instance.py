@@ -18,18 +18,18 @@ class MagChessUI:
     content_host: ft.Container
     screens: list[ft.Control]
     overlay: ft.Stack
+    board_stack: ft.Stack
 
     copy_pgn_button: ft.ElevatedButton
     replay_button: ft.ElevatedButton
 
-    board_stack: ft.Stack
-    pieces: dict[tuple[int, int], ft.Image]
-    sensor_indicators: dict[tuple[int, int], ft.Container]
-    _hide_task: concurrent.futures.Future | None = None
-
     move_icon: ft.Image
     move_text: ft.Text
     move_background: ft.Container
+    sensor_indicators: dict[tuple[int, int], ft.Container]
+
+    _ui_enabled: bool = False
+    _hide_task: concurrent.futures.Future | None = None
 
     def __init__(self, page: ft.Page, default_tab: int):
         self.page = page
@@ -57,10 +57,10 @@ class MagChessUI:
         self.content_host = ft.Container(content=self.screens[default_tab])
         self.overlay = UIBuilder.build_overlay(self, default_tab)
         self.root = ft.GestureDetector(
-            on_hover=self.user_activity,
+            # on_hover=self.user_activity,
             hover_interval=150,
             on_tap=self.user_activity,
-            on_pan_update=self.user_activity,
+            # on_pan_update=self.user_activity,
             content=ft.Stack(controls=[self.content_host, self.overlay]),
             height=720,
             width=720,
@@ -76,7 +76,7 @@ class MagChessUI:
         self.refresh_tab_ui(idx)
         
         self.page.update()
-        self.user_activity()
+        self.show_ui()
 
     def refresh_tab_ui(self, tab: int):
         self.copy_pgn_button.visible = tab == 0
@@ -90,26 +90,39 @@ class MagChessUI:
         self.move_background.bgcolor = ft.Colors.with_opacity(0.9, icon.color)
         self.page.update()
 
-    async def hide_after(self, seconds: float):
+    def user_activity(self, e: ft.TapEvent | None = None):
+        if self._ui_enabled:
+            self.hide_ui()
+        else:
+            self.show_ui()
+
+    def show_ui(self):
+        self._ui_enabled = True
+
+        self.overlay.opacity = 1.0
+        self.page.update()
+
+        if self._hide_task is not None:
+            self._hide_task.cancel()
+
+        self._hide_task = self.page.run_task(self.schedule_hide_ui, 5.0)
+
+    def hide_ui(self):
+        self._ui_enabled = False
+
+        self.overlay.opacity = 0.0
+        self.page.update()
+
+        if self._hide_task is not None:
+            self._hide_task.cancel()
+        
+    async def schedule_hide_ui(self, seconds: float):
         try:
             # Wait
             await asyncio.sleep(seconds)
-
-            # Hide
-            self.overlay.opacity = 0.0
-            self.page.update()
+            self.hide_ui()
         except asyncio.CancelledError:
-            pass
-
-    def user_activity(self, _=None):
-        # Show
-        self.overlay.opacity = 1.0
-        self.page.update()
-        
-        # Schedule hide
-        if self._hide_task is not None:
-            self._hide_task.cancel()
-        self._hide_task = self.page.run_task(self.hide_after, 1.0)
+            return
 
     def sensor_interaction(self, on_click: Callable[[int, int], None]):
         for (co_letter, co_number), el in self.sensor_indicators.items():
