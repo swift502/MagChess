@@ -8,6 +8,8 @@ from utilities import asset_path
 def on_key(e: ft.KeyboardEvent, page: ft.Page):
     if e.key == "Escape":
         page.window.close()
+    if e.key == "F11":
+        page.window.full_screen = not page.window.full_screen
 
 def main(page: ft.Page):
     page.title = "MagChess"
