@@ -1,10 +1,8 @@
-from __future__ import annotations
-from typing import TYPE_CHECKING, TypeAlias
+from typing import TypeAlias
 
 import chess
 
-if TYPE_CHECKING:
-    from piece import Piece
+from piece import Piece
 
 class IconData:
     def __init__(self, path: str, color: str):
@@ -125,8 +123,19 @@ class DataLib:
             "h8": DataLib.pieces.black_rook,
         }
 
+BoardState: TypeAlias = dict[tuple[int, int], Piece]
+
 SensorReading: TypeAlias = dict[tuple[int, int], float]
 
 class IChessboard:
+    
+    staging_state: BoardState
+
     def get_latest_board(self) -> chess.Board | None:
+        pass
+
+    def get_latest_state_stack(self) -> list[BoardState] | None:
+        pass
+
+    def show_state(self, state: BoardState):
         pass

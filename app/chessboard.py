@@ -1,18 +1,12 @@
 from __future__ import annotations
 import asyncio
-import typing
 import flet as ft
 
 from cell import Cell
 import chess
-from data import ColorSwap, DataLib, IconData, MissingPiece, NewPiece, SensorReading, IChessboard
+from data import ColorSwap, DataLib, IconData, MissingPiece, NewPiece, SensorReading, IChessboard, BoardState
 from piece import Piece
 from ui_instance import MagChessUI
-
-if typing.TYPE_CHECKING:
-    from typing_extensions import TypeAlias
-
-BoardState: TypeAlias = dict[tuple[int, int], Piece]
 
 class Chessboard(IChessboard):
     board: chess.Board | None = None
@@ -24,6 +18,7 @@ class Chessboard(IChessboard):
     flipped: bool = False
 
     state_stack: list[BoardState] = []
+    uncommitted_state_stack: list[BoardState] | None = None
     staging_state: BoardState = {}
     spawned_pieces: list[Piece] = []
 
@@ -39,9 +34,13 @@ class Chessboard(IChessboard):
     
     def get_latest_board(self):
         if self.uncommitted_move_board is not None:
-            print("Uncommitted move board found")
             return self.uncommitted_move_board
         return self.board
+
+    def get_latest_state_stack(self):
+        if self.uncommitted_state_stack:
+            return self.uncommitted_state_stack
+        return self.state_stack
 
     def __init__(self, page: ft.Page, ui: MagChessUI):
         self.page = page
@@ -157,6 +156,9 @@ class Chessboard(IChessboard):
             if piece not in state.values():
                 piece.destroy()
 
+    def show_staging_state(self):
+        self.show_state(self.staging_state)
+
     def board_state_update(self):
         if len(self.state_stack) == 0:
             return
@@ -176,6 +178,7 @@ class Chessboard(IChessboard):
         self.staging_state = self.state_stack[-1].copy()
         self.last_legal_move = None
         self.uncommitted_move_board = None
+        self.uncommitted_state_stack = None
 
         # Analyse changes against latest committed state
         missing, new, swaps = self.analyse_sensor_changes(against=self.state_stack[-1])
@@ -193,6 +196,9 @@ class Chessboard(IChessboard):
 
                 self.uncommitted_move_board = self.board.copy()
                 self.uncommitted_move_board.push(move)
+
+                self.uncommitted_state_stack = self.state_stack.copy()
+                self.uncommitted_state_stack.append(self.staging_state.copy())
 
                 outcome_board = self.board.copy()
                 outcome_board.push(move)

@@ -3,10 +3,10 @@ from __future__ import annotations
 import flet as ft
 from typing import TYPE_CHECKING
 
-from ui_instance import MagChessUI
 from utilities import asset_path, lerp
 
 if TYPE_CHECKING:
+    from ui_instance import MagChessUI
     from chessboard import Chessboard
     from data import PieceData
     

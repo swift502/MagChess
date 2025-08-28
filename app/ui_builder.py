@@ -106,8 +106,13 @@ class UIBuilder:
         )
 
         def on_replay_click(e: ft.ControlEvent):
-            instance.show_ui()
-            print("Replay")
+            states = instance.chessboard.get_latest_state_stack()
+            if states is None or len(states) == 0:
+                instance.page.open(ft.SnackBar(ft.Text(f"No game found")))
+                return
+        
+            instance.show_tab(1)
+            instance.start_game_review(states)
 
         instance.replay_button = ft.ElevatedButton(
             content=ft.Icon(ft.Icons.HISTORY, size=50),
@@ -120,6 +125,43 @@ class UIBuilder:
                 padding=ft.padding.symmetric(36, 30),
                 shape=ft.RoundedRectangleBorder(20),
             ),
+        )
+
+        instance.game_review_text = ft.Text(
+            "0/0",
+            size=30,
+            font_family="Noto Sans",
+            text_align=ft.TextAlign.CENTER,
+            color=ft.Colors.WHITE,
+        )
+
+        instance.game_review_info = ft.ElevatedButton(
+            content=instance.game_review_text,
+            top=66,
+            bgcolor="#88000000",
+            style=ft.ButtonStyle(
+                padding=ft.padding.symmetric(20, 30),
+                shape=ft.ContinuousRectangleBorder(20),
+            ),
+            disabled=True,
+            visible=False,
+        )
+
+        def on_exit_click(e: ft.ControlEvent):
+            instance.exit_game_review()
+
+        instance.exit_button = ft.ElevatedButton(
+            content=ft.Icon(ft.Icons.CLOSE, size=50),
+            on_click=on_exit_click,
+            top=54,
+            right=26,
+            color=ft.Colors.WHITE,
+            bgcolor="#c01010",
+            style=ft.ButtonStyle(
+                padding=ft.padding.symmetric(36, 30),
+                shape=ft.RoundedRectangleBorder(20),
+            ),
+            visible=False
         )
 
         def on_pgn_copied(e: ft.ControlEvent):
@@ -148,7 +190,7 @@ class UIBuilder:
         )
 
         return ft.Stack(
-            controls=[advantage_display, instance.replay_button, instance.copy_pgn_button],
+            controls=[advantage_display, instance.replay_button, instance.copy_pgn_button, instance.game_review_info, instance.exit_button],
             alignment=ft.alignment.top_center,
             animate_offset=150,
             offset=ft.Offset(0, -0.3),

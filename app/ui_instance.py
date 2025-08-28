@@ -6,7 +6,7 @@ import chess
 import flet as ft
 
 from constants import DEV_LAYOUT
-from data import IconData, IChessboard
+from data import BoardState, IconData, IChessboard
 from ui_builder import UIBuilder
 from utilities import asset_path, spring
 
@@ -28,14 +28,22 @@ class MagChessUI:
 
     advantage_bar: ft.Container
     copy_pgn_button: ft.ElevatedButton
+    game_review_info: ft.ElevatedButton
+    game_review_text: ft.Text
     replay_button: ft.ElevatedButton
+    exit_button: ft.ElevatedButton
 
     move_icon: ft.Image
     move_text: ft.Text
     move_background: ft.Container
     sensor_indicators: dict[tuple[int, int], ft.Container]
 
+    game_review: bool = False
+    game_review_states: list[BoardState] | None = None
+    game_review_index: int = 0
+
     _ui_enabled: bool = False
+    _auto_hide: bool = True
     _hide_task: concurrent.futures.Future | None = None
 
     _adv_target: float = 0.5
@@ -82,14 +90,25 @@ class MagChessUI:
 
     def on_tab_change(self, e: ft.ControlEvent):
         idx = e.control.selected_index
-
-        self.content_host.content = self.screens[idx]
-        
-        self.page.update()
+        self.show_tab(idx)
         self.show_ui()
 
+    def show_tab(self, index: int):
+        self.nav.selected_index = index
+        self.content_host.content = self.screens[index]
+        self.page.update()
+
     def on_tab_change_replay(self, e: ft.ControlEvent):
-        pass
+        idx = e.control.selected_index
+
+        if idx == 0:
+            self.review_first()
+        elif idx == 1:
+            self.review_previous()
+        elif idx == 2:
+            self.review_next()
+        elif idx == 3:
+            self.review_last()
 
     def update_move_screen(self, icon: IconData, text: str, player_color: chess.Color | None):
         self.move_icon.src = asset_path(icon.image_path)
@@ -112,10 +131,10 @@ class MagChessUI:
         self.bottom_overlay.offset = ft.Offset(0, 0)
         self.page.update()
 
-        if self._hide_task is not None:
-            self._hide_task.cancel()
+        self.cancel_hide_task()
 
-        self._hide_task = self.page.run_task(self.schedule_hide_ui, 10.0)
+        if self._auto_hide:
+            self._hide_task = self.page.run_task(self.schedule_hide_ui, 5.0)
 
     def hide_ui(self):
         self._ui_enabled = False
@@ -124,9 +143,8 @@ class MagChessUI:
         self.bottom_overlay.offset = ft.Offset(0, 0.2)
         self.page.update()
 
-        if self._hide_task is not None:
-            self._hide_task.cancel()
-        
+        self.cancel_hide_task()
+
     async def schedule_hide_ui(self, seconds: float):
         try:
             await asyncio.sleep(seconds)
@@ -134,9 +152,91 @@ class MagChessUI:
         except asyncio.CancelledError:
             return
 
+    def cancel_hide_task(self):
+        if self._hide_task is not None:
+            self._hide_task.cancel()
+
     def sensor_interaction(self, on_click: Callable[[int, int], None]):
         for (co_letter, co_number), el in self.sensor_indicators.items():
             el.on_click = lambda e, x=co_letter, y=co_number: on_click(x, y)
 
     def set_advantage(self, value: float):
         self._adv_target = value
+    
+    def start_game_review(self, states: list[BoardState]):
+        if self.game_review:
+            return
+
+        self.copy_pgn_button.visible = False
+        self.replay_button.visible = False
+        self.exit_button.visible = True
+        self.game_review_info.visible = True
+        # self.page.update()
+
+        self.cancel_hide_task()
+        self._auto_hide = False
+        self.show_ui()
+        self.nav_container.content = self.replay_nav
+
+        self.game_review = True
+        self.game_review_states = states
+        self.game_review_index = len(states) - 1
+
+        self.show_review_state()
+
+    def exit_game_review(self):
+        if not self.game_review:
+            return
+
+        self.copy_pgn_button.visible = True
+        self.replay_button.visible = True
+        self.exit_button.visible = False
+        self.game_review_info.visible = False
+        # self.page.update()
+
+        self.nav_container.content = self.nav
+        self._auto_hide = True
+        self.show_ui()
+
+        self.game_review = False
+        self.game_review_states = None
+        self.game_review_index = 0
+
+        self.chessboard.show_state(self.chessboard.staging_state)
+    
+    def show_review_state(self):
+        if self.game_review_states is None:
+            return
+        
+        self.game_review_text.value = f"{self.game_review_index + 1}/{len(self.game_review_states)}"
+        self.chessboard.show_state(self.game_review_states[self.game_review_index])
+
+    def clamp_review_index(self):
+        if self.game_review_states is None:
+            return
+
+        if self.game_review_index < 0:
+            self.game_review_index = 0
+        elif self.game_review_index > len(self.game_review_states) - 1:
+            self.game_review_index = len(self.game_review_states) - 1
+
+    def review_next(self):
+        self.game_review_index += 1
+        self.clamp_review_index()
+        self.show_review_state()
+
+    def review_previous(self):
+        self.game_review_index -= 1
+        self.clamp_review_index()
+        self.show_review_state()
+
+    def review_first(self):
+        self.game_review_index = 0
+        self.show_review_state()
+
+    def review_last(self):
+        if self.game_review_states is None:
+            return
+        
+        self.game_review_index = len(self.game_review_states) - 1
+        self.show_review_state()
