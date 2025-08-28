@@ -156,6 +156,8 @@ class Chessboard(IChessboard):
             if piece not in state.values():
                 piece.destroy()
 
+        self.page.update()
+
     def show_staging_state(self):
         self.show_state(self.staging_state)
 
