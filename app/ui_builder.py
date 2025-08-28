@@ -84,20 +84,20 @@ class UIBuilder:
 
     @staticmethod
     def build_top_overlay(instance: MagChessUI):
-        advantage_bar = ft.Container(
+        instance.advantage_bar = ft.Container(
             bgcolor=ft.Colors.WHITE,
             width=360,
             expand=False
         )
 
         advantage_display = ft.Container(
-            content=ft.Row(controls=[advantage_bar]),
+            content=ft.Row(controls=[instance.advantage_bar]),
             expand=True,
             bgcolor=ft.Colors.BLACK,
             top=0,
             left=0,
             right=0,
-            height=32,
+            height=30,
             shadow=ft.BoxShadow(
                 color=ft.Colors.with_opacity(0.4, ft.Colors.BLACK),
                 blur_radius=8,
@@ -112,10 +112,10 @@ class UIBuilder:
         instance.replay_button = ft.ElevatedButton(
             content=ft.Icon(ft.Icons.HISTORY, size=50),
             on_click=on_replay_click,
-            top=58,
+            top=54,
             right=26,
             color=ft.Colors.WHITE,
-            bgcolor="#7e27b1",
+            bgcolor="#8311c0",
             style=ft.ButtonStyle(
                 padding=ft.padding.symmetric(36, 30),
                 shape=ft.RoundedRectangleBorder(20),
@@ -123,7 +123,7 @@ class UIBuilder:
         )
 
         def on_pgn_copied(e: ft.ControlEvent):
-            board = instance.chessboard.uncommitted_move_board or instance.chessboard.board
+            board = instance.chessboard.get_latest_board()
             if board is None:
                 instance.page.open(ft.SnackBar(ft.Text(f"No game found")))
                 return
@@ -137,10 +137,10 @@ class UIBuilder:
         instance.copy_pgn_button = ft.ElevatedButton(
             content=ft.Icon(ft.Icons.COPY, size=50),
             on_click=on_pgn_copied,
-            top=58,
+            top=54,
             left=26,
             color=ft.Colors.WHITE,
-            bgcolor="#4BA000",
+            bgcolor="#54A800",
             style=ft.ButtonStyle(
                 padding=ft.padding.symmetric(36, 30),
                 shape=ft.RoundedRectangleBorder(20),

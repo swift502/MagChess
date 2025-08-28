@@ -2,6 +2,7 @@ from __future__ import annotations
 import asyncio
 import typing
 import flet as ft
+import random
 
 from cell import Cell
 import chess
@@ -36,6 +37,12 @@ class Chessboard(IChessboard):
     @property
     def next_player(self):
         return chess.WHITE if self.current_player == chess.BLACK else chess.BLACK
+    
+    def get_latest_board(self):
+        if self.uncommitted_move_board is not None:
+            print("Uncommitted move board found")
+            return self.uncommitted_move_board
+        return self.board
 
     def __init__(self, page: ft.Page, ui: MagChessUI):
         self.page = page
@@ -44,6 +51,8 @@ class Chessboard(IChessboard):
         for co_letter in range(8):
             for co_number in range(8):
                 self.cells[(co_letter, co_number)] = Cell(co_letter, co_number, ui)
+
+    counter = 0
 
     async def update(self):
         while True:
@@ -65,8 +74,13 @@ class Chessboard(IChessboard):
             for piece in self.spawned_pieces:
                 piece.update()
 
+            self.counter += 1
+            if self.counter % 60 == 0:
+                self.ui.set_advantage(random.random())
+                self.counter = 0
+
             # Update
-            self.page.update()
+            self.ui.update()
 
             await asyncio.sleep(1/60)
 
@@ -108,6 +122,7 @@ class Chessboard(IChessboard):
     def clean_up(self):
         self.game_over = False
         self.current_player = chess.WHITE
+        self.ui.set_advantage(0.5)
 
         # State
         self.state_stack = []

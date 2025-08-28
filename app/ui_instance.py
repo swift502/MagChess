@@ -8,7 +8,7 @@ import flet as ft
 from constants import DEV_LAYOUT
 from data import IconData, IChessboard
 from ui_builder import UIBuilder
-from utilities import asset_path
+from utilities import asset_path, spring
 
 class MagChessUI:
     page: ft.Page
@@ -26,6 +26,7 @@ class MagChessUI:
     nav: ft.NavigationBar
     replay_nav: ft.NavigationBar
 
+    advantage_bar: ft.Container
     copy_pgn_button: ft.ElevatedButton
     replay_button: ft.ElevatedButton
 
@@ -36,6 +37,10 @@ class MagChessUI:
 
     _ui_enabled: bool = False
     _hide_task: concurrent.futures.Future | None = None
+
+    _adv_target: float = 0.5
+    _adv_value: float = 0.5
+    _adv_velocity: float = 0.0
 
     def __init__(self, page: ft.Page, default_tab: int):
         self.page = page
@@ -51,10 +56,8 @@ class MagChessUI:
         self.top_overlay = UIBuilder.build_top_overlay(self)
         self.bottom_overlay = UIBuilder.build_bottom_overlay(self, default_tab)
         self.root = ft.GestureDetector(
-            # on_hover=self.user_activity,
             hover_interval=150,
             on_tap=self.user_activity,
-            # on_pan_update=self.user_activity,
             content=ft.Stack(controls=[self.content_host, self.top_overlay, self.bottom_overlay]),
             height=720,
             width=720,
@@ -71,6 +74,11 @@ class MagChessUI:
             )
             
         page.add(self.root)
+
+    def update(self):
+        self._adv_value, self._adv_velocity = spring(self._adv_value, self._adv_velocity, self._adv_target, 100, 0.85)
+        self.advantage_bar.width = self._adv_value * 720
+        self.page.update()
 
     def on_tab_change(self, e: ft.ControlEvent):
         idx = e.control.selected_index
@@ -107,7 +115,7 @@ class MagChessUI:
         if self._hide_task is not None:
             self._hide_task.cancel()
 
-        self._hide_task = self.page.run_task(self.schedule_hide_ui, 5.0)
+        self._hide_task = self.page.run_task(self.schedule_hide_ui, 10.0)
 
     def hide_ui(self):
         self._ui_enabled = False
@@ -129,3 +137,6 @@ class MagChessUI:
     def sensor_interaction(self, on_click: Callable[[int, int], None]):
         for (co_letter, co_number), el in self.sensor_indicators.items():
             el.on_click = lambda e, x=co_letter, y=co_number: on_click(x, y)
+
+    def set_advantage(self, value: float):
+        self._adv_target = value

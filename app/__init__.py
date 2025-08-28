@@ -29,7 +29,7 @@ def main(page: ft.Page):
     }
 
     # App
-    ui = MagChessUI(page, default_tab=0)
+    ui = MagChessUI(page, default_tab=1)
     chessboard = Chessboard(page, ui)
     ui.chessboard = chessboard
 
