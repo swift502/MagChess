@@ -13,6 +13,7 @@ def on_key(e: ft.KeyboardEvent, page: ft.Page):
 
 def main(page: ft.Page):
     page.title = "MagChess"
+    page.window.icon = asset_path("icon.ico")
     page.window.width = 720
     page.window.height = 720
     if DEV_LAYOUT:
