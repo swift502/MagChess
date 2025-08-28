@@ -1,6 +1,5 @@
-from typing import TypeAlias
-
 import chess
+from typing import TypeAlias
 
 from piece import Piece
 

@@ -1,12 +1,10 @@
 from __future__ import annotations
-
 import chess
 import chess.pgn
 import flet as ft
 from typing import TYPE_CHECKING
 
 from data import DataLib
-
 from constants import THEME_WHITE, THEME_BLACK
 
 if TYPE_CHECKING:

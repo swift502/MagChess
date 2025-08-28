@@ -1,9 +1,9 @@
 from __future__ import annotations
 import asyncio
+import chess
 import flet as ft
 
 from cell import Cell
-import chess
 from data import ColorSwap, DataLib, IconData, MissingPiece, NewPiece, SensorReading, IChessboard, BoardState
 from piece import Piece
 from ui_instance import MagChessUI
