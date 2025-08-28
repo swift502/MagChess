@@ -134,7 +134,7 @@ class MagChessUI:
         self.cancel_hide_task()
 
         if self._auto_hide:
-            self._hide_task = self.page.run_task(self.schedule_hide_ui, 5.0)
+            self._hide_task = self.page.run_task(self.schedule_hide_ui, 10.0)
 
     def hide_ui(self):
         self._ui_enabled = False
@@ -171,7 +171,6 @@ class MagChessUI:
         self.replay_button.visible = False
         self.exit_button.visible = True
         self.game_review_info.visible = True
-        # self.page.update()
 
         self.cancel_hide_task()
         self._auto_hide = False
@@ -192,7 +191,6 @@ class MagChessUI:
         self.replay_button.visible = True
         self.exit_button.visible = False
         self.game_review_info.visible = False
-        # self.page.update()
 
         self.nav_container.content = self.nav
         self._auto_hide = True
