@@ -2,7 +2,6 @@ from __future__ import annotations
 import asyncio
 import typing
 import flet as ft
-import random
 
 from cell import Cell
 import chess
@@ -73,11 +72,6 @@ class Chessboard(IChessboard):
             # Pieces
             for piece in self.spawned_pieces:
                 piece.update()
-
-            self.counter += 1
-            if self.counter % 60 == 0:
-                self.ui.set_advantage(random.random())
-                self.counter = 0
 
             # Update
             self.ui.update()
@@ -204,7 +198,7 @@ class Chessboard(IChessboard):
                 outcome_board.push(move)
                 outcome = outcome_board.outcome()
                 if outcome is None:
-                    self.update_status_player(DataLib.icons.good, f"Legal move")
+                    self.update_status_move_rating()
                 else:
                     self.game_over = True
                     self.update_status(DataLib.icons.winner, f"Game over!\nWinner: {self.get_winner(outcome)}")
@@ -273,14 +267,16 @@ class Chessboard(IChessboard):
     def update_staging_state(self, missing : list[MissingPiece], new: list[NewPiece], swaps: list[ColorSwap]) -> str | None:
         missing_new_swaps = (len(missing), len(new), len(swaps))
 
-        if missing_new_swaps == (1, 0, 0):
+        if missing_new_swaps == (0, 0, 0):
+            self.update_status_move_rating()
 
+        if missing_new_swaps == (1, 0, 0):
             if missing[0].piece.color == self.current_player:
                 self.update_status(DataLib.icons.info, f"{'White' if self.current_player else 'Black'} is moving")
             else:
                 self.update_status(DataLib.icons.question, f"Unexpected\nboard state")
 
-        if missing_new_swaps == (1, 1, 0):
+        elif missing_new_swaps == (1, 1, 0):
             move = chess.Move.from_uci(self.coords_to_locator(missing[0].coords) + self.coords_to_locator(new[0].coords))
             if missing[0].piece.pieceType == chess.KING and missing[0].coords[0] == 4 and new[0].coords[0] in (2, 6):
                 # Can't castle with just the king
@@ -362,7 +358,7 @@ class Chessboard(IChessboard):
             else:
                 self.update_status(DataLib.icons.question, f"Unexpected\nboard state")
 
-        elif len(missing) > 1 or len(new) > 0 or len(swaps) > 0:
+        elif len(missing) > 0 or len(new) > 0 or len(swaps) > 0:
             # Generic fail
             self.update_status(DataLib.icons.question, f"Unexpected\nboard state")
 
@@ -376,6 +372,9 @@ class Chessboard(IChessboard):
         if self.last_legal_move is not None:
             player = self.next_player
         self.ui.update_move_screen(icon, text, player)
+
+    def update_status_move_rating(self):
+        self.update_status_player(DataLib.icons.good, f"Legal move")
 
     def staging_move_piece(self, missing: MissingPiece, new_coords: tuple[int, int]):
         promotion = False
