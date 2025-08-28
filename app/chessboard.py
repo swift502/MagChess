@@ -167,7 +167,6 @@ class Chessboard(IChessboard):
         self.staging_state = self.state_stack[-1].copy()
         self.last_legal_move = None
         self.uncommitted_move_board = None
-        self.ui.replay_button.text = " " + f"Review {len(self.board.move_stack)} moves"
 
         # Analyse changes against latest committed state
         missing, new, swaps = self.analyse_sensor_changes(against=self.state_stack[-1])
@@ -185,8 +184,6 @@ class Chessboard(IChessboard):
 
                 self.uncommitted_move_board = self.board.copy()
                 self.uncommitted_move_board.push(move)
-
-                self.ui.refresh_replay_button()
 
                 outcome_board = self.board.copy()
                 outcome_board.push(move)

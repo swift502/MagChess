@@ -18,8 +18,13 @@ class MagChessUI:
     content_host: ft.Container
     screens: list[ft.Control]
     tab: int
-    overlay: ft.Container
+    top_overlay: ft.Stack
+    bottom_overlay: ft.Stack
     board_stack: ft.Stack
+
+    nav_container: ft.Container
+    nav: ft.NavigationBar
+    replay_nav: ft.NavigationBar
 
     copy_pgn_button: ft.ElevatedButton
     replay_button: ft.ElevatedButton
@@ -43,18 +48,17 @@ class MagChessUI:
 
         # content host
         self.content_host = ft.Container(content=self.screens[default_tab])
-        self.overlay = UIBuilder.build_overlay(self, default_tab)
+        self.top_overlay = UIBuilder.build_top_overlay(self)
+        self.bottom_overlay = UIBuilder.build_bottom_overlay(self, default_tab)
         self.root = ft.GestureDetector(
             # on_hover=self.user_activity,
             hover_interval=150,
             on_tap=self.user_activity,
             # on_pan_update=self.user_activity,
-            content=ft.Stack(controls=[self.content_host, self.overlay]),
+            content=ft.Stack(controls=[self.content_host, self.top_overlay, self.bottom_overlay]),
             height=720,
             width=720,
         )
-
-        self.refresh_tab_ui(default_tab)
 
         if DEV_LAYOUT:
             self.root = ft.Row(
@@ -72,31 +76,12 @@ class MagChessUI:
         idx = e.control.selected_index
 
         self.content_host.content = self.screens[idx]
-        self.refresh_tab_ui(idx)
         
         self.page.update()
         self.show_ui()
 
-    def refresh_tab_ui(self, tab: int):
-        self.tab = tab
-
-        self.copy_pgn_button.visible = tab == 0
-
-        if tab == 1:
-            self.refresh_replay_button()
-        else:
-            self.replay_button.visible = False
-
-    def refresh_replay_button(self):
-        if self.tab != 1:
-            return
-        
-        board = self.chessboard.uncommitted_move_board or self.chessboard.board
-        if board is not None and len(board.move_stack) > 0:
-            self.replay_button.visible = True
-            self.replay_button.text = " " + f"Review {len(board.move_stack)} moves"
-        else:
-            self.replay_button.visible = False
+    def on_tab_change_replay(self, e: ft.ControlEvent):
+        pass
 
     def update_move_screen(self, icon: IconData, text: str, player_color: chess.Color | None):
         self.move_icon.src = asset_path(icon.image_path)
@@ -114,9 +99,9 @@ class MagChessUI:
 
     def show_ui(self):
         self._ui_enabled = True
-        self.overlay.ignore_interactions = str(False)
 
-        self.overlay.opacity = 1.0
+        self.top_overlay.offset = ft.Offset(0, 0)
+        self.bottom_overlay.offset = ft.Offset(0, 0)
         self.page.update()
 
         if self._hide_task is not None:
@@ -126,9 +111,9 @@ class MagChessUI:
 
     def hide_ui(self):
         self._ui_enabled = False
-        self.overlay.ignore_interactions = str(True)
 
-        self.overlay.opacity = 0.0
+        self.top_overlay.offset = ft.Offset(0, -0.3)
+        self.bottom_overlay.offset = ft.Offset(0, 0.2)
         self.page.update()
 
         if self._hide_task is not None:

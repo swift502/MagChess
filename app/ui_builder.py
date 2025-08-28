@@ -83,28 +83,21 @@ class UIBuilder:
         )
 
     @staticmethod
-    def build_overlay(instance: MagChessUI, default_tab: int):
-        nav = ft.Container(
-            content=ft.NavigationBar(
-                selected_index=default_tab,
-                on_change=instance.on_tab_change,
-                destinations=[
-                    ft.NavigationBarDestination(icon=ft.Icons.FORK_RIGHT, label="Moves"),
-                    ft.NavigationBarDestination(icon=ft.Icons.CROP_FREE, label="Board"),
-                    ft.NavigationBarDestination(icon=ft.Icons.SENSORS, label="Sensors"),
-                    # ft.NavigationBarDestination(icon=ft.Icons.SKIP_PREVIOUS, label="First"),
-                    # ft.NavigationBarDestination(icon=ft.Icons.NAVIGATE_BEFORE, label="Previous"),
-                    # ft.NavigationBarDestination(icon=ft.Icons.NAVIGATE_NEXT, label="Next"),
-                    # ft.NavigationBarDestination(icon=ft.Icons.SKIP_NEXT, label="Last"),
-                ],
-                # overlay_color=ft.Colors.TRANSPARENT,
-                # indicator_color=ft.Colors.TRANSPARENT,
-            ),
-            border_radius=ft.border_radius.all(20),
-            margin=ft.margin.only(left=16, right=16, bottom=16),
+    def build_top_overlay(instance: MagChessUI):
+        advantage_bar = ft.Container(
+            bgcolor=ft.Colors.WHITE,
+            width=360,
+            expand=False
+        )
+
+        advantage_display = ft.Container(
+            content=ft.Row(controls=[advantage_bar]),
+            expand=True,
+            bgcolor=ft.Colors.BLACK,
+            top=0,
             left=0,
             right=0,
-            bottom=0,
+            height=32,
             shadow=ft.BoxShadow(
                 color=ft.Colors.with_opacity(0.4, ft.Colors.BLACK),
                 blur_radius=8,
@@ -112,19 +105,21 @@ class UIBuilder:
             ),
         )
 
+        def on_replay_click(e: ft.ControlEvent):
+            instance.show_ui()
+            print("Replay")
+
         instance.replay_button = ft.ElevatedButton(
-            on_click=lambda e: print("Replay"),
-            top=26,
-            bgcolor="#7e27b1",
+            content=ft.Icon(ft.Icons.HISTORY, size=50),
+            on_click=on_replay_click,
+            top=58,
+            right=26,
             color=ft.Colors.WHITE,
-            icon=ft.Icons.HISTORY,
+            bgcolor="#7e27b1",
             style=ft.ButtonStyle(
-                text_style=ft.TextStyle(size=36, font_family="Noto Sans"),
-                icon_size=36,
-                padding=ft.padding.symmetric(horizontal=40, vertical=30),
+                padding=ft.padding.symmetric(36, 30),
                 shape=ft.RoundedRectangleBorder(20),
             ),
-            visible=False,
         )
 
         def on_pgn_copied(e: ft.ControlEvent):
@@ -137,30 +132,72 @@ class UIBuilder:
             instance.page.set_clipboard(str(pgn.mainline()))
             instance.page.open(ft.SnackBar(ft.Text(f"PGN copied to clipboard")))
 
+            instance.show_ui()
+
         instance.copy_pgn_button = ft.ElevatedButton(
-            text=" " + "Copy PGN",
+            content=ft.Icon(ft.Icons.COPY, size=50),
             on_click=on_pgn_copied,
-            top=26,
-            bgcolor="#4BA000",
+            top=58,
+            left=26,
             color=ft.Colors.WHITE,
-            icon=ft.Icons.COPY,
+            bgcolor="#4BA000",
             style=ft.ButtonStyle(
-                text_style=ft.TextStyle(size=36, font_family="Noto Sans"),
-                icon_size=36,
-                padding=ft.padding.symmetric(horizontal=40, vertical=30),
+                padding=ft.padding.symmetric(36, 30),
                 shape=ft.RoundedRectangleBorder(20),
             ),
-            visible=False,
         )
 
-        return ft.Container(
-            content=ft.Stack(
-                controls=[nav, instance.replay_button, instance.copy_pgn_button],
-                alignment=ft.alignment.center,
+        return ft.Stack(
+            controls=[advantage_display, instance.replay_button, instance.copy_pgn_button],
+            alignment=ft.alignment.top_center,
+            animate_offset=150,
+            offset=ft.Offset(0, -0.3),
+        )
+
+    @staticmethod
+    def build_bottom_overlay(instance: MagChessUI, default_tab: int):
+        instance.nav = ft.NavigationBar(
+            selected_index=default_tab,
+            on_change=instance.on_tab_change,
+            destinations=[
+                ft.NavigationBarDestination(icon=ft.Icons.FORK_RIGHT, label="Moves"),
+                ft.NavigationBarDestination(icon=ft.Icons.CROP_FREE, label="Board"),
+                ft.NavigationBarDestination(icon=ft.Icons.SENSORS, label="Sensors"),
+            ],
+        )
+
+        instance.replay_nav = ft.NavigationBar(
+            selected_index=default_tab,
+            on_change=instance.on_tab_change_replay,
+            destinations=[
+                ft.NavigationBarDestination(icon=ft.Icons.SKIP_PREVIOUS, label="First"),
+                ft.NavigationBarDestination(icon=ft.Icons.NAVIGATE_BEFORE, label="Previous"),
+                ft.NavigationBarDestination(icon=ft.Icons.NAVIGATE_NEXT, label="Next"),
+                ft.NavigationBarDestination(icon=ft.Icons.SKIP_NEXT, label="Last"),
+            ],
+            overlay_color=ft.Colors.TRANSPARENT,
+            indicator_color=ft.Colors.TRANSPARENT,
+        )
+
+        instance.nav_container = ft.Container(
+            content=instance.nav,
+            border_radius=ft.border_radius.all(20),
+            margin=ft.margin.only(left=16, right=16, bottom=16),
+            left=0,
+            right=0,
+            bottom=0,
+            shadow=ft.BoxShadow(
+                color=ft.Colors.with_opacity(0.4, ft.Colors.BLACK),
+                blur_radius=8,
+                offset=ft.Offset(0, 4),
             ),
-            animate_opacity=300,
-            opacity=0.0,
-            ignore_interactions=True,
+        )
+
+        return ft.Stack(
+            controls=[instance.nav_container],
+            alignment=ft.alignment.bottom_center,
+            animate_offset=150,
+            offset=ft.Offset(0, 0.2),
         )
 
     @staticmethod
