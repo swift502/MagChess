@@ -264,7 +264,7 @@ class Chessboard(IChessboard):
         if missing_new_swaps == (1, 0, 0):
 
             if missing[0].piece.color == self.current_player:
-                self.update_status(DataLib.icons.info, f"{"White" if self.current_player else "Black"} is moving")
+                self.update_status(DataLib.icons.info, f"{'White' if self.current_player else 'Black'} is moving")
             else:
                 self.update_status(DataLib.icons.question, f"Unexpected\nboard state")
 

@@ -102,7 +102,7 @@ class MagChessUI:
         self.move_icon.src = asset_path(icon.image_path)
         self.move_text.value = text
         if player_color is not None:
-            self.move_text.value += f"\n{"White" if player_color == chess.WHITE else "Black"} plays"
+            self.move_text.value += f"\n{'White' if player_color == chess.WHITE else 'Black'} plays"
         self.move_background.bgcolor = ft.Colors.with_opacity(0.9, icon.color)
         self.page.update()
 
