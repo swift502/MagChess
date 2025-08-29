@@ -239,9 +239,9 @@ class MagChessUI:
         self.game_review_index = len(self.game_review_states) - 1
         self.show_review_state()
 
-    def display_error(self, message: str, duration: int = 5):
+    def display_error(self, message: str):
         self.page.open(ft.SnackBar(
             ft.Text(message, color=ft.Colors.WHITE),
             bgcolor="#c01010",
-            duration=duration * 1000,
+            duration=10000,
         ))
