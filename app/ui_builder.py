@@ -170,7 +170,10 @@ class UIBuilder:
             
             pgn = chess.pgn.Game().from_board(board)
             instance.page.set_clipboard(str(pgn.mainline()))
-            instance.page.open(ft.SnackBar(ft.Text(f"PGN copied to clipboard")))
+            instance.page.open(ft.SnackBar(
+                ft.Text(f"PGN copied to clipboard", color=ft.Colors.WHITE),
+                bgcolor="#54A800",
+            ))
 
             instance.show_ui()
 

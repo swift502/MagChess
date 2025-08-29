@@ -22,7 +22,7 @@ class Chessboard(IChessboard):
     staging_state: BoardState = {}
     spawned_pieces: list[Piece] = []
 
-    raw_sensor_data: SensorReading = {}
+    raw_sensor_data: SensorReading | None = None
     cells: dict[tuple[int, int], Cell] = {}
 
     last_analysed_sensor_state: str | None
@@ -55,7 +55,7 @@ class Chessboard(IChessboard):
     async def update(self):
         while True:
             # Cells
-            if len(self.raw_sensor_data) > 0:
+            if self.raw_sensor_data is not None:
                 for coords, cell in self.cells.items():
                     cell.update(self.raw_sensor_data[coords])
 
