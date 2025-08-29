@@ -126,6 +126,8 @@ class Chessboard(IChessboard):
     def clean_up(self):
         self.game_over = False
         self.current_player = chess.WHITE
+
+        self.engine.cancel_analyze_task()
         self.ui.set_advantage(0.5)
 
         # State
@@ -206,8 +208,6 @@ class Chessboard(IChessboard):
                 self.uncommitted_state_stack = self.state_stack.copy()
                 self.uncommitted_state_stack.append(self.staging_state.copy())
 
-
-
                 self.engine.set_board(self.uncommitted_move_board)
 
                 outcome_board = self.board.copy()
@@ -284,7 +284,8 @@ class Chessboard(IChessboard):
         missing_new_swaps = (len(missing), len(new), len(swaps))
 
         if missing_new_swaps == (0, 0, 0):
-            self.update_status_move_rating()
+            if len(self.state_stack) > 1:
+                self.update_status_move_rating()
 
         if missing_new_swaps == (1, 0, 0):
             if missing[0].piece.color == self.current_player:
@@ -390,7 +391,7 @@ class Chessboard(IChessboard):
         self.ui.update_move_screen(icon, text, player)
 
     def update_status_move_rating(self):
-        self.update_status_player(DataLib.icons.good, f"Legal move")
+        self.ui.move_rating_screen = True
 
     def staging_move_piece(self, missing: MissingPiece, new_coords: tuple[int, int]):
         promotion = False

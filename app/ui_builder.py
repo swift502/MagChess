@@ -88,7 +88,7 @@ class UIBuilder:
             expand=False
         )
 
-        advantage_display = ft.Container(
+        instance.advantage_display = ft.Container(
             content=ft.Row(controls=[instance.advantage_bar]),
             expand=True,
             bgcolor=ft.Colors.BLACK,
@@ -191,7 +191,7 @@ class UIBuilder:
         )
 
         return ft.Stack(
-            controls=[advantage_display, instance.replay_button, instance.copy_pgn_button, instance.game_review_info, instance.exit_button],
+            controls=[instance.advantage_display, instance.replay_button, instance.copy_pgn_button, instance.game_review_info, instance.exit_button],
             alignment=ft.alignment.top_center,
             animate_offset=150,
             offset=ft.Offset(0, -0.3),

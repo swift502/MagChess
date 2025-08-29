@@ -28,12 +28,12 @@ class IconLibrary:
         self.good = IconData(path="icons/good.svg", color="#96af8b")
         self.great_find = IconData(path="icons/great_find.svg", color="#96af8b")
         self.inaccuracy = IconData(path="icons/inaccuracy.svg", color="#f7c045")
-        self.incorrect = IconData(path="icons/incorrect.svg", color="#ca3431")
+        self.incorrect = IconData(path="icons/incorrect.svg", color="#e58f2a")
         self.info = IconData(path="icons/info.svg", color="#7979a1")
         self.invalid = IconData(path="icons/invalid.svg", color="#7979a1")
         self.mate = IconData(path="icons/mate.svg", color="#ec6250")
         self.missed_win = IconData(path="icons/missed_win.svg", color="#dbac16")
-        self.mistake = IconData(path="icons/mistake.svg", color="#e58f2a")
+        self.mistake = IconData(path="icons/mistake.svg", color="#ca3431")
         self.player_black = IconData(path="icons/player_black.svg", color="#383838")
         self.player_white = IconData(path="icons/player_white.svg", color="#ebebeb")
         self.question = IconData(path="icons/question.svg", color="#7979a1")
@@ -140,6 +140,10 @@ SensorReading: TypeAlias = dict[tuple[int, int], float]
 
 class IChessboard:
     staging_state: BoardState
+    current_player: chess.Color | None
+    @property
+    def next_player(self) -> chess.Color:
+        raise NotImplementedError
 
     def get_latest_board(self) -> chess.Board | None:
         pass

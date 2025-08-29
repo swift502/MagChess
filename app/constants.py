@@ -1,5 +1,5 @@
 # Flags
-DEV_LAYOUT = False
+DEV_LAYOUT = True
 RPI = False
 
 # Sensors

@@ -5,7 +5,7 @@ import flet as ft
 
 from constants import RPI
 from data import IEngine
-from utilities import asset_path, inverse_lerp
+from utilities import asset_path, inverse_lerp, score_curve
 from ui_instance import MagChessUI
     
 class Engine(IEngine):
@@ -35,7 +35,8 @@ class Engine(IEngine):
                         score = score_data.white().score()
                         if score is not None:
                             normalized = inverse_lerp(-200, 200, float(score))
-                            self.ui.set_advantage(normalized)
+                            curved = score_curve(normalized)
+                            self.ui.set_advantage(curved)
                 if info.get("depth", 0) > 16:
                     break
 

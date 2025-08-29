@@ -6,9 +6,9 @@ import chess
 import flet as ft
 
 from constants import DEV_LAYOUT
-from data import BoardState, IEngine, IconData, IChessboard
+from data import BoardState, DataLib, IEngine, IconData, IChessboard, IconLibrary
 from ui_builder import UIBuilder
-from utilities import asset_path, spring
+from utilities import asset_path, score_curve, spring
 
 class MagChessUI:
     page: ft.Page
@@ -27,6 +27,7 @@ class MagChessUI:
     nav: ft.NavigationBar
     replay_nav: ft.NavigationBar
 
+    advantage_display: ft.Container
     advantage_bar: ft.Container
     copy_pgn_button: ft.ElevatedButton
     game_review_info: ft.ElevatedButton
@@ -73,21 +74,58 @@ class MagChessUI:
         )
 
         if DEV_LAYOUT:
-            self.root = ft.Row(
+            self.root = ft.Stack(controls=[ft.Row(
                 controls=[
                     ft.Container(content=self.screens[0], width=720, height=720),
                     ft.Container(content=self.screens[1], width=720, height=720),
                     ft.Container(content=self.screens[2], width=720, height=720),
                 ],
                 spacing=0,
-            )
+            ), self.advantage_display])
             
         page.add(self.root)
 
+    test: float = 0.0
+
     def update(self):
         self.adv_value, self.adv_velocity = spring(self.adv_value, self.adv_velocity, self.advantage, 10, 0.6)
-        self.advantage_bar.width = self.adv_value * 720
+        assert self.page.window.width
+        self.advantage_bar.width = self.adv_value * self.page.window.width
+
+        # self.test += 0.01
+        # self.test %= 1
+        # self.advantage_bar.width = score_curve(self.test) * self.page.window.width
+
+        if self.move_rating_screen:
+            states = self.chessboard.get_latest_state_stack()
+            if states is not None and len(states) > 0:
+                delta = self.advantage - states[-1].advantage
+                if self.chessboard.current_player == chess.BLACK:
+                    delta = -delta
+                rating_icon, rating_text = self.get_move_rating(delta)
+                self.update_move_screen(rating_icon, rating_text, self.chessboard.next_player, rating_screen=True)
+
         self.page.update()
+
+    def get_move_rating(self, delta: float):
+        if delta > 0.4:
+            return DataLib.icons.brilliant, "Brilliant!"
+        elif delta > 0.3:
+            return DataLib.icons.great_find, "Great find!"
+        elif delta > 0.2:
+            return DataLib.icons.excellent, "Excellent!"
+        elif delta > 0.1:
+            return DataLib.icons.correct, "Correct"
+        elif delta > -0.1:
+            return DataLib.icons.good, "Good"
+        elif delta > -0.2:
+            return DataLib.icons.inaccuracy, "Questionable"
+        elif delta > -0.3:
+            return DataLib.icons.incorrect, "Bad move!"
+        elif delta > -0.4:
+            return DataLib.icons.mistake, "Mistake!"
+        else:
+            return DataLib.icons.blunder, "Blunder!"
 
     def on_tab_change(self, e: ft.ControlEvent):
         idx = e.control.selected_index
@@ -111,12 +149,15 @@ class MagChessUI:
         elif idx == 3:
             self.review_last()
 
-    def update_move_screen(self, icon: IconData, text: str, player_color: chess.Color | None):
+    def update_move_screen(self, icon: IconData, text: str, player_color: chess.Color | None, rating_screen: bool = False):
         self.move_icon.src = asset_path(icon.image_path)
         self.move_text.value = text
         if player_color is not None:
             self.move_text.value += f"\n{'White' if player_color == chess.WHITE else 'Black'} plays"
         self.move_background.bgcolor = ft.Colors.with_opacity(0.9, icon.color)
+
+        if not rating_screen:
+            self.move_rating_screen = False
         self.page.update()
 
     def user_activity(self, e: ft.TapEvent | None = None):
@@ -163,6 +204,7 @@ class MagChessUI:
 
     def set_advantage(self, value: float):
         self.advantage = value
+        print(value)
     
     def start_game_review(self, states: list[BoardState]):
         if self.game_review:
