@@ -125,10 +125,12 @@ class DataLib:
 class BoardState:
     pieces: dict[tuple[int, int], Piece]
     advantage: float
+    player: chess.Color | None
 
     def __init__(self):
         self.pieces = {}
         self.advantage = 0.5
+        self.player = None
 
     def copy(self):
         new_state = BoardState()

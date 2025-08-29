@@ -140,6 +140,7 @@ class Chessboard(IChessboard):
     def commit_staging_state(self, move: chess.Move):
         com_state = self.staging_state.copy()
         com_state.advantage = self.ui.advantage
+        com_state.player = self.current_player
         self.state_stack.append(com_state)
         self.board.push(move)
         self.fen = self.board.fen()
@@ -285,7 +286,10 @@ class Chessboard(IChessboard):
 
         if missing_new_swaps == (0, 0, 0):
             if len(self.state_stack) > 1:
-                self.update_status_move_rating()
+                if self.get_latest_state_stack()[-1].player == self.current_player:
+                    self.update_status_move_rating()
+                else:
+                    self.update_status(DataLib.icons.info, f"{'White' if self.current_player else 'Black'} plays")
 
         if missing_new_swaps == (1, 0, 0):
             if missing[0].piece.color == self.current_player:

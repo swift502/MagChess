@@ -99,7 +99,7 @@ class MagChessUI:
         if self.move_rating_screen:
             states = self.chessboard.get_latest_state_stack()
             if states is not None and len(states) > 0:
-                delta = self.advantage - states[-1].advantage
+                delta = self.adv_value - states[-1].advantage
                 if self.chessboard.current_player == chess.BLACK:
                     delta = -delta
                 rating_icon, rating_text = self.get_move_rating(delta)
@@ -108,13 +108,13 @@ class MagChessUI:
         self.page.update()
 
     def get_move_rating(self, delta: float):
-        if delta > 0.4:
+        if delta > 0.15:
             return DataLib.icons.brilliant, "Brilliant!"
-        elif delta > 0.3:
-            return DataLib.icons.great_find, "Great find!"
-        elif delta > 0.2:
-            return DataLib.icons.excellent, "Excellent!"
         elif delta > 0.1:
+            return DataLib.icons.great_find, "Great find!"
+        elif delta > 0.05:
+            return DataLib.icons.excellent, "Excellent!"
+        elif delta > 0.0:
             return DataLib.icons.correct, "Correct"
         elif delta > -0.1:
             return DataLib.icons.good, "Good"
