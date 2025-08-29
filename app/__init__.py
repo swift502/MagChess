@@ -16,11 +16,11 @@ def main(page: ft.Page):
     page.window.icon = asset_path("icon.ico")
     page.window.width = 720
     page.window.height = 720
+    page.window.frameless = True
     if DEV_LAYOUT:
         page.window.width = page.window.width * 3
     if RPI:
         page.window.full_screen = True
-    page.window.frameless = True
     page.padding = 0
     page.spacing = 0
     page.on_keyboard_event = lambda e: on_key(e, page)
