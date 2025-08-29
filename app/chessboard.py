@@ -55,8 +55,9 @@ class Chessboard(IChessboard):
     async def update(self):
         while True:
             # Cells
-            for coords, cell in self.cells.items():
-                cell.update(self.raw_sensor_data[coords])
+            if len(self.raw_sensor_data) > 0:
+                for coords, cell in self.cells.items():
+                    cell.update(self.raw_sensor_data[coords])
 
             # Board logic
             if self.fen != chess.STARTING_FEN and self.match_sensor_state("WW....BB" * 8):

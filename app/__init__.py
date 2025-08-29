@@ -37,7 +37,7 @@ def main(page: ft.Page):
     # Sensors
     if RPI:
         from sensors_hw import HWSensors
-        sensors = HWSensors(chessboard)
+        sensors = HWSensors(chessboard, ui)
     else:
         from sensors_sw import SWSensors
         sensors = SWSensors(chessboard, flipped=False)

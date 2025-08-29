@@ -5,6 +5,7 @@ import digitalio
 import adafruit_ads1x15.ads1015 as ADS
 from adafruit_ads1x15.analog_in import AnalogIn
 
+from app.ui_instance import MagChessUI
 from chessboard import Chessboard
 from data import SensorReading
 
@@ -30,14 +31,21 @@ class HWSensors():
         "a0m15": (1,7), "a1m15": (3,7), "a2m15": (5,7), "a3m15": (7,7),
     }
 
-    def __init__(self, chessboard: Chessboard):
+    init_fail: bool = False
+
+    def __init__(self, chessboard: Chessboard, ui: MagChessUI):
         self.on_sensor_reading = chessboard.update_sensor_values
 
         # I2C
-        i2c = busio.I2C(board.SCL, board.SDA)
-        ads = ADS.ADS1015(i2c)
-        # ads.gain = 1
-        # ads.data_rate = 1600
+        try:
+            i2c = busio.I2C(board.SCL, board.SDA)
+            ads = ADS.ADS1015(i2c)
+            # ads.gain = 1
+            # ads.data_rate = 1600
+        except ValueError as e:
+            ui.display_error(f"Chessboard connection not found.", duration=60)
+            self.init_fail = True
+            return
 
         # Channels
         self.channels = [
@@ -56,6 +64,9 @@ class HWSensors():
             self.sel_pins.append(p)
 
     async def sensor_reading_loop(self):
+        if self.init_fail:
+            return
+
         values: SensorReading = {}
         
         while True:
