@@ -195,6 +195,7 @@ class UIBuilder:
             alignment=ft.alignment.top_center,
             animate_offset=150,
             offset=ft.Offset(0, -0.3),
+            opacity=0.8,
         )
 
     @staticmethod
@@ -241,6 +242,7 @@ class UIBuilder:
             alignment=ft.alignment.bottom_center,
             animate_offset=150,
             offset=ft.Offset(0, 0.2),
+            opacity=0.8,
         )
 
     @staticmethod
