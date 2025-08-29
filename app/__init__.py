@@ -1,5 +1,6 @@
 import flet as ft
 
+from engine import Engine
 from chessboard import Chessboard
 from constants import DEV_LAYOUT, RPI
 from ui_instance import MagChessUI
@@ -11,7 +12,7 @@ def on_key(e: ft.KeyboardEvent, page: ft.Page):
     if e.key == "F11":
         page.window.full_screen = not page.window.full_screen
 
-def main(page: ft.Page):
+async def main(page: ft.Page):
     page.title = "MagChess"
     page.window.icon = asset_path("icon.ico")
     page.window.width = 720
@@ -31,17 +32,22 @@ def main(page: ft.Page):
 
     # App
     ui = MagChessUI(page, default_tab=1)
-    chessboard = Chessboard(page, ui)
+    engine = Engine(page, ui)
+    chessboard = Chessboard(page, ui, engine)
+
     ui.chessboard = chessboard
+    ui.engine = engine
 
     # Sensors
     if RPI:
         from sensors_hw import HWSensors
         sensors = HWSensors(chessboard, ui)
+        await engine.init("engine/stockfish-android-armv8")
     else:
         from sensors_sw import SWSensors
         sensors = SWSensors(chessboard, flipped=False)
         ui.sensor_interaction(sensors.on_sensor_click)
+        await engine.init("engine/stockfish-windows-x86-64-avx2.exe")
 
     page.run_task(sensors.sensor_reading_loop)
     page.run_task(chessboard.update)

@@ -6,13 +6,14 @@ import chess
 import flet as ft
 
 from constants import DEV_LAYOUT
-from data import BoardState, IconData, IChessboard
+from data import BoardState, IEngine, IconData, IChessboard
 from ui_builder import UIBuilder
 from utilities import asset_path, spring
 
 class MagChessUI:
     page: ft.Page
     chessboard: IChessboard
+    engine: IEngine
 
     root: ft.Control
     content_host: ft.Container
@@ -42,13 +43,13 @@ class MagChessUI:
     game_review_states: list[BoardState] | None = None
     game_review_index: int = 0
 
-    _ui_enabled: bool = False
-    _auto_hide: bool = True
-    _hide_task: concurrent.futures.Future | None = None
+    ui_enabled: bool = False
+    auto_hide: bool = True
+    hide_task: concurrent.futures.Future | None = None
 
-    _adv_target: float = 0.5
-    _adv_value: float = 0.5
-    _adv_velocity: float = 0.0
+    advantage: float = 0.5
+    adv_value: float = 0.5
+    adv_velocity: float = 0.0
 
     def __init__(self, page: ft.Page, default_tab: int):
         self.page = page
@@ -84,8 +85,8 @@ class MagChessUI:
         page.add(self.root)
 
     def update(self):
-        self._adv_value, self._adv_velocity = spring(self._adv_value, self._adv_velocity, self._adv_target, 100, 0.85)
-        self.advantage_bar.width = self._adv_value * 720
+        self.adv_value, self.adv_velocity = spring(self.adv_value, self.adv_velocity, self.advantage, 10, 0.6)
+        self.advantage_bar.width = self.adv_value * 720
         self.page.update()
 
     def on_tab_change(self, e: ft.ControlEvent):
@@ -119,13 +120,13 @@ class MagChessUI:
         self.page.update()
 
     def user_activity(self, e: ft.TapEvent | None = None):
-        if self._ui_enabled:
+        if self.ui_enabled:
             self.hide_ui()
         else:
             self.show_ui()
 
     def show_ui(self):
-        self._ui_enabled = True
+        self.ui_enabled = True
 
         self.top_overlay.offset = ft.Offset(0, 0)
         self.bottom_overlay.offset = ft.Offset(0, 0)
@@ -133,11 +134,11 @@ class MagChessUI:
 
         self.cancel_hide_task()
 
-        if self._auto_hide:
-            self._hide_task = self.page.run_task(self.schedule_hide_ui, 10.0)
+        if self.auto_hide:
+            self.hide_task = self.page.run_task(self.schedule_hide_ui, 10.0)
 
     def hide_ui(self):
-        self._ui_enabled = False
+        self.ui_enabled = False
 
         self.top_overlay.offset = ft.Offset(0, -0.3)
         self.bottom_overlay.offset = ft.Offset(0, 0.2)
@@ -153,15 +154,15 @@ class MagChessUI:
             return
 
     def cancel_hide_task(self):
-        if self._hide_task is not None:
-            self._hide_task.cancel()
+        if self.hide_task is not None:
+            self.hide_task.cancel()
 
     def sensor_interaction(self, on_click: Callable[[int, int], None]):
         for (co_letter, co_number), el in self.sensor_indicators.items():
             el.on_click = lambda e, x=co_letter, y=co_number: on_click(x, y)
 
     def set_advantage(self, value: float):
-        self._adv_target = value
+        self.advantage = value
     
     def start_game_review(self, states: list[BoardState]):
         if self.game_review:
@@ -173,7 +174,7 @@ class MagChessUI:
         self.game_review_info.visible = True
 
         self.cancel_hide_task()
-        self._auto_hide = False
+        self.auto_hide = False
         self.show_ui()
         self.nav_container.content = self.replay_nav
 
@@ -181,6 +182,7 @@ class MagChessUI:
         self.game_review_states = states
         self.game_review_index = len(states) - 1
 
+        self.engine.cancel_analyze_task()
         self.show_review_state()
 
     def exit_game_review(self):
@@ -193,7 +195,7 @@ class MagChessUI:
         self.game_review_info.visible = False
 
         self.nav_container.content = self.nav
-        self._auto_hide = True
+        self.auto_hide = True
         self.show_ui()
 
         self.game_review = False
@@ -201,13 +203,18 @@ class MagChessUI:
         self.game_review_index = 0
 
         self.chessboard.show_state(self.chessboard.staging_state)
-    
+        latest_board = self.chessboard.get_latest_board()
+        if latest_board is not None:
+            self.engine.set_board(latest_board)
+
     def show_review_state(self):
         if self.game_review_states is None:
             return
         
         self.game_review_text.value = f"{self.game_review_index + 1}/{len(self.game_review_states)}"
-        self.chessboard.show_state(self.game_review_states[self.game_review_index])
+        state = self.game_review_states[self.game_review_index]
+        self.chessboard.show_state(state)
+        self.set_advantage(state.advantage)
 
     def clamp_review_index(self):
         if self.game_review_states is None:

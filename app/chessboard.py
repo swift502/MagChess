@@ -3,13 +3,14 @@ import asyncio
 import chess
 import flet as ft
 
+from engine import Engine
 from cell import Cell
 from data import ColorSwap, DataLib, IconData, MissingPiece, NewPiece, SensorReading, IChessboard, BoardState
 from piece import Piece
 from ui_instance import MagChessUI
 
 class Chessboard(IChessboard):
-    board: chess.Board | None = None
+    board: chess.Board
     uncommitted_move_board: chess.Board | None = None
     fen: str | None = None
 
@@ -19,7 +20,7 @@ class Chessboard(IChessboard):
 
     state_stack: list[BoardState] = []
     uncommitted_state_stack: list[BoardState] | None = None
-    staging_state: BoardState = {}
+    staging_state: BoardState
     spawned_pieces: list[Piece] = []
 
     raw_sensor_data: SensorReading | None = None
@@ -41,16 +42,24 @@ class Chessboard(IChessboard):
         if self.uncommitted_state_stack:
             return self.uncommitted_state_stack
         return self.state_stack
+    
+    def locator_to_coords(self, locator: str):
+        return (
+            ord(locator[0]) - ord("a"),
+            int(locator[1]) - 1
+        )
 
-    def __init__(self, page: ft.Page, ui: MagChessUI):
+    def coords_to_locator(self, coords: tuple[int, int]):
+        return chr(coords[0] + ord("a")) + str(coords[1] + 1)
+
+    def __init__(self, page: ft.Page, ui: MagChessUI, engine: Engine):
         self.page = page
         self.ui = ui
+        self.engine = engine
 
         for co_letter in range(8):
             for co_number in range(8):
                 self.cells[(co_letter, co_number)] = Cell(co_letter, co_number, ui)
-
-    counter = 0
 
     async def update(self):
         while True:
@@ -97,14 +106,15 @@ class Chessboard(IChessboard):
         self.board = chess.Board()
         self.fen = self.board.fen()
 
-        init_state: BoardState = {}
+        init_state: BoardState = BoardState()
+        init_state.advantage = 0.5
         self.last_analysed_sensor_state = None
         self.last_legal_move = None
 
         for locator, pieceData in DataLib.start_configuration().items():
             coords = self.locator_to_coords(locator)
             piece = Piece(self, self.ui, pieceData)
-            init_state[coords] = piece
+            init_state.pieces[coords] = piece
 
         self.state_stack.append(init_state)
         self.show_state(init_state)
@@ -120,22 +130,15 @@ class Chessboard(IChessboard):
 
         # State
         self.state_stack = []
-        self.staging_state = {}
+        self.staging_state = BoardState()
 
         # Clean up entities
         self.show_state(self.staging_state)
 
-    def locator_to_coords(self, locator: str):
-        return (
-            ord(locator[0]) - ord("a"),
-            int(locator[1]) - 1
-        )
-
-    def coords_to_locator(self, coords: tuple[int, int]):
-        return chr(coords[0] + ord("a")) + str(coords[1] + 1)
-    
     def commit_staging_state(self, move: chess.Move):
-        self.state_stack.append(self.staging_state.copy())
+        com_state = self.staging_state.copy()
+        com_state.advantage = self.ui.advantage
+        self.state_stack.append(com_state)
         self.board.push(move)
         self.fen = self.board.fen()
         self.current_player = self.next_player
@@ -144,7 +147,7 @@ class Chessboard(IChessboard):
 
     def show_state(self, state: BoardState):
         # Iterate state
-        for coords, piece in state.items():
+        for coords, piece in state.pieces.items():
             if piece in self.spawned_pieces:
                 # Move existing
                 piece.go_to(coords)
@@ -154,7 +157,7 @@ class Chessboard(IChessboard):
 
         # Remove obsolete
         for piece in self.spawned_pieces:
-            if piece not in state.values():
+            if piece not in state.pieces.values():
                 piece.destroy()
 
         self.page.update()
@@ -202,6 +205,10 @@ class Chessboard(IChessboard):
 
                 self.uncommitted_state_stack = self.state_stack.copy()
                 self.uncommitted_state_stack.append(self.staging_state.copy())
+
+
+
+                self.engine.set_board(self.uncommitted_move_board)
 
                 outcome_board = self.board.copy()
                 outcome_board.push(move)
@@ -251,7 +258,7 @@ class Chessboard(IChessboard):
             new_color = cell.color
 
             # Get old color from last committed state
-            piece = against.get(coords)
+            piece = against.pieces.get(coords)
 
             if piece is None:
                 old_color = None
@@ -390,14 +397,14 @@ class Chessboard(IChessboard):
         if missing.piece.pieceType == chess.PAWN and new_coords[1] in (0, 7):
             promotion = True
 
-        self.staging_state.pop(missing.coords)
+        self.staging_state.pieces.pop(missing.coords)
 
         if promotion:
             # Remove pawn, add queen
             data = DataLib.pieces.white_queen if missing.piece.color == chess.WHITE else DataLib.pieces.black_queen
-            self.staging_state[new_coords] = Piece(self, self.ui, data)
+            self.staging_state.pieces[new_coords] = Piece(self, self.ui, data)
         else:
-            self.staging_state[new_coords] = missing.piece
+            self.staging_state.pieces[new_coords] = missing.piece
 
         # UCI
         uci = self.coords_to_locator(missing.coords) + self.coords_to_locator(new_coords)
@@ -405,7 +412,7 @@ class Chessboard(IChessboard):
         return uci
 
     def staging_remove_piece(self, coords: tuple[int, int]):
-        self.staging_state.pop(coords)
+        self.staging_state.pieces.pop(coords)
 
     def get_winner(self, outcome: chess.Outcome):
         match outcome.winner:

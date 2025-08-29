@@ -122,12 +122,23 @@ class DataLib:
             "h8": DataLib.pieces.black_rook,
         }
 
-BoardState: TypeAlias = dict[tuple[int, int], Piece]
+class BoardState:
+    pieces: dict[tuple[int, int], Piece]
+    advantage: float
+
+    def __init__(self):
+        self.pieces = {}
+        self.advantage = 0.5
+
+    def copy(self):
+        new_state = BoardState()
+        new_state.pieces = self.pieces.copy()
+        new_state.advantage = self.advantage
+        return new_state
 
 SensorReading: TypeAlias = dict[tuple[int, int], float]
 
 class IChessboard:
-    
     staging_state: BoardState
 
     def get_latest_board(self) -> chess.Board | None:
@@ -137,4 +148,11 @@ class IChessboard:
         pass
 
     def show_state(self, state: BoardState):
+        pass
+
+class IEngine:
+    def set_board(self, board: chess.Board):
+        pass
+
+    def cancel_analyze_task(self):
         pass
