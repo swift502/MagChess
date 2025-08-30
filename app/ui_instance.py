@@ -1,6 +1,7 @@
 
 import asyncio
 import concurrent.futures
+import math
 from typing import Callable
 import chess
 import flet as ft
@@ -72,6 +73,7 @@ class MagChessUI:
             height=720,
             width=720,
         )
+        self.root.rotate = math.pi
 
         if DEV_LAYOUT:
             self.root = ft.Stack(controls=[ft.Row(
