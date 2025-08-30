@@ -6,8 +6,8 @@ from typing import Callable
 import chess
 import flet as ft
 
-from constants import DEV_LAYOUT
-from data import BoardState, DataLib, IEngine, IconData, IChessboard, IconLibrary
+from constants import DEV_LAYOUT, RPI
+from data import BoardState, DataLib, IEngine, IconData, IChessboard
 from ui_builder import UIBuilder
 from utilities import asset_path, score_curve, spring
 
@@ -56,6 +56,8 @@ class MagChessUI:
     def __init__(self, page: ft.Page, default_tab: int):
         self.page = page
 
+        self.tab = default_tab
+
         # tabs
         tab1 = UIBuilder.build_tab_1(self)
         tab2 = UIBuilder.build_tab_2(self)
@@ -73,7 +75,8 @@ class MagChessUI:
             height=720,
             width=720,
         )
-        self.root.rotate = math.pi
+        if RPI:
+            self.root.rotate = math.pi
 
         if DEV_LAYOUT:
             self.root = ft.Stack(controls=[ft.Row(
@@ -135,6 +138,7 @@ class MagChessUI:
         self.show_ui()
 
     def show_tab(self, index: int):
+        self.tab = index
         self.nav.selected_index = index
         self.content_host.content = self.screens[index]
         self.page.update()
@@ -160,6 +164,13 @@ class MagChessUI:
 
         if not rating_screen:
             self.move_rating_screen = False
+
+        if self.tab in (1, 2) and (icon == DataLib.icons.question or icon == DataLib.icons.invalid):
+            self.page.open(ft.SnackBar(
+                ft.Text(text.replace("\n", " "), color=ft.Colors.WHITE, size=20),
+                bgcolor="#54498f"
+            ))
+
         self.page.update()
 
     def user_activity(self, e: ft.TapEvent | None = None):
@@ -292,7 +303,7 @@ class MagChessUI:
 
     def display_error(self, message: str):
         self.page.open(ft.SnackBar(
-            ft.Text(message, color=ft.Colors.WHITE),
+            ft.Text(message, color=ft.Colors.WHITE, size=20),
             bgcolor="#c01010",
             duration=10000,
         ))
