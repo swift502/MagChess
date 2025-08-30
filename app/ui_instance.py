@@ -9,7 +9,7 @@ import flet as ft
 from constants import DEV_LAYOUT, RPI
 from data import BoardState, DataLib, IEngine, IconData, IChessboard
 from ui_builder import UIBuilder
-from utilities import asset_path, score_curve, spring
+from utilities import asset_path, spring
 
 class MagChessUI:
     page: ft.Page
@@ -97,10 +97,6 @@ class MagChessUI:
         assert self.page.window.width
         self.advantage_bar.width = self.adv_value * self.page.window.width
 
-        # self.test += 0.01
-        # self.test %= 1
-        # self.advantage_bar.width = score_curve(self.test) * self.page.window.width
-
         if self.move_rating_screen:
             states = self.chessboard.get_latest_state_stack()
             if states is not None and len(states) > 0:
@@ -124,7 +120,7 @@ class MagChessUI:
         elif delta > -0.1:
             return DataLib.icons.good, "Good"
         elif delta > -0.2:
-            return DataLib.icons.inaccuracy, "Questionable"
+            return DataLib.icons.inaccuracy, "Risky"
         elif delta > -0.3:
             return DataLib.icons.incorrect, "Bad move!"
         elif delta > -0.4:
@@ -167,8 +163,8 @@ class MagChessUI:
 
         if self.tab in (1, 2) and (icon == DataLib.icons.question or icon == DataLib.icons.invalid):
             self.page.open(ft.SnackBar(
-                ft.Text(text.replace("\n", " "), color=ft.Colors.WHITE, size=20),
-                bgcolor="#54498f"
+                ft.Text(text.replace("\n", " "), color=ft.Colors.WHITE, size=20, font_family="Noto Sans"),
+                bgcolor="#54498f",
             ))
 
         self.page.update()
@@ -303,7 +299,7 @@ class MagChessUI:
 
     def display_error(self, message: str):
         self.page.open(ft.SnackBar(
-            ft.Text(message, color=ft.Colors.WHITE, size=20),
+            ft.Text(message, color=ft.Colors.WHITE, size=20, font_family="Noto Sans"),
             bgcolor="#c01010",
             duration=10000,
         ))
