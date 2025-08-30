@@ -13,9 +13,9 @@ class SWSensorObject:
         self.state = state
 
     def get_value(self):
-        if self.state == 0:
+        if self.state == 2:
             return randint(SENSOR_THRESHOLD_LOW - self.signal_strength, SENSOR_THRESHOLD_LOW + self.noise)
-        elif self.state == 2:
+        elif self.state == 0:
             return randint(SENSOR_THRESHOLD_HIGH - self.noise, SENSOR_THRESHOLD_HIGH + self.signal_strength)
         else:
             return randint(SENSOR_THRESHOLD_LOW - self.noise, SENSOR_THRESHOLD_HIGH + self.noise)
