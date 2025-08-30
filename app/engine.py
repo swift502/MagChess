@@ -31,6 +31,7 @@ class Engine(IEngine):
                                 score = 1 if mate > 0 else 0
                             self.ui.set_advantage(score)
                         else:
+                            self.ui.move_rating_screen = False
                             self.ui.update_move_screen(DataLib.icons.question, "Unknown move\nscore", None)
                     else:
                         score = score_data.white().score()
@@ -39,6 +40,7 @@ class Engine(IEngine):
                             curved = score_curve(normalized)
                             self.ui.set_advantage(curved)
                         else:
+                            self.ui.move_rating_screen = False
                             self.ui.update_move_screen(DataLib.icons.question, "Unknown move\nscore", None)
                 if info.get("depth", 0) > 16:
                     break
