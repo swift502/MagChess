@@ -289,7 +289,7 @@ class Chessboard(IChessboard):
                 if self.get_latest_state_stack()[-1].player == self.current_player:
                     self.update_status_move_rating()
                 else:
-                    self.update_status(DataLib.icons.info, f"{'White' if self.current_player else 'Black'} plays")
+                    self.update_status_player(DataLib.icons.info, "Ready")
 
         if missing_new_swaps == (1, 0, 0):
             if missing[0].piece.color == self.current_player:

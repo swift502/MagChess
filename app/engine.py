@@ -3,8 +3,7 @@ import chess.engine
 from concurrent.futures import Future
 import flet as ft
 
-from constants import RPI
-from data import IEngine
+from data import DataLib, IEngine
 from utilities import asset_path, inverse_lerp, score_curve
 from ui_instance import MagChessUI
     
@@ -31,13 +30,17 @@ class Engine(IEngine):
                             else:
                                 score = 1 if mate > 0 else 0
                             self.ui.set_advantage(score)
+                        else:
+                            self.ui.update_move_screen(DataLib.icons.question, "Unknown move\nscore", None)
                     else:
                         score = score_data.white().score()
                         if score is not None:
                             normalized = inverse_lerp(-200, 200, float(score))
                             curved = score_curve(normalized)
                             self.ui.set_advantage(curved)
-                if info.get("depth", 0) > 20:
+                        else:
+                            self.ui.update_move_screen(DataLib.icons.question, "Unknown move\nscore", None)
+                if info.get("depth", 0) > 16:
                     break
 
         self.analyze_task = None
