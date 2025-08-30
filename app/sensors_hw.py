@@ -57,7 +57,7 @@ class HWSensors():
 
         # Selection
         self.sel_pins = []
-        for pin in (board.D5, board.D6, board.D13, board.D19):
+        for pin in (board.D21, board.D20, board.D16, board.D12):
             p = digitalio.DigitalInOut(pin)
             p.direction = digitalio.Direction.OUTPUT
             p.value = False
@@ -72,11 +72,11 @@ class HWSensors():
         while True:
             for mul_id in range(16):
                 self.set_aselect(mul_id)
-                await asyncio.sleep(0.002)
+                await asyncio.sleep(0.001)
 
                 for adc_id in range(4):
                     mapping = self.sensor_mapping[f"a{adc_id}m{mul_id:02}"]
-                    values[mapping] = self.channels[adc_id].voltage
+                    values[mapping] = self.channels[adc_id].value
 
             self.on_sensor_reading(values)
 

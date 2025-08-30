@@ -21,18 +21,18 @@ class Cell:
 
         # State
         if self.smooth_value < SENSOR_THRESHOLD_LOW:
-            self.state = -1
-            self.sensor_indicator.border.top.color = "#000000"
-        elif self.smooth_value > SENSOR_THRESHOLD_HIGH:
             self.state = 1
             self.sensor_indicator.border.top.color = "#ffffff"
+        elif self.smooth_value > SENSOR_THRESHOLD_HIGH:
+            self.state = -1
+            self.sensor_indicator.border.top.color = "#000000"
         else:
             self.state = 0
             self.sensor_indicator.border.top.color = "#888888"
 
         # Raw sensor value
         factor = inverse_lerp(SENSOR_THRESHOLD_LOW, SENSOR_THRESHOLD_HIGH, raw)
-        self.sensor_indicator.bgcolor = lerp_hex("#000000", "#ffffff", factor)
+        self.sensor_indicator.bgcolor = lerp_hex("#ffffff", "#000000", factor)
 
     @property
     def state_format(self):
