@@ -37,7 +37,7 @@ class Engine(IEngine):
                             normalized = inverse_lerp(-200, 200, float(score))
                             curved = score_curve(normalized)
                             self.ui.set_advantage(curved)
-                if info.get("depth", 0) > 16:
+                if info.get("depth", 0) > 20:
                     break
 
         self.analyze_task = None
