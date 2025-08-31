@@ -1,7 +1,7 @@
 import chess
 import flet as ft
 
-from constants import SENSOR_THRESHOLD_HIGH, SENSOR_THRESHOLD_LOW
+from constants import SENSOR_CALIBRATION_DATA, SENSOR_TRIGGER_DELTA
 from ui_instance import MagChessUI
 from utilities import inverse_lerp, lerp, lerp_hex
 
@@ -10,20 +10,25 @@ class Cell:
     smooth_value: float
     state: int
 
-    def __init__(self, co_letter: int, co_number: int, ui: MagChessUI):
-        self.sensor_indicator = ui.sensor_indicators[(co_letter, co_number)]
+    def __init__(self, coords: tuple[int, int], ui: MagChessUI):
+        self.coords = coords
         self.smooth_value = 0.0
         self.state = 0
-    
-    def update(self, raw: float):
+
+        self.ref_value = SENSOR_CALIBRATION_DATA[str(coords)]
+        self.threshold_low = self.ref_value - SENSOR_TRIGGER_DELTA
+        self.threshold_high = self.ref_value + SENSOR_TRIGGER_DELTA
+        self.sensor_indicator = ui.sensor_indicators[coords]
+
+    def update(self, sensor_value: float):
         # Value
-        self.smooth_value = lerp(self.smooth_value, raw, 0.1)
+        self.smooth_value = lerp(self.smooth_value, sensor_value, 0.1)
 
         # State
-        if self.smooth_value < SENSOR_THRESHOLD_LOW:
+        if self.smooth_value < self.threshold_low:
             self.state = 1
             self.sensor_indicator.border.top.color = "#ffffff"
-        elif self.smooth_value > SENSOR_THRESHOLD_HIGH:
+        elif self.smooth_value > self.threshold_high:
             self.state = -1
             self.sensor_indicator.border.top.color = "#000000"
         else:
@@ -31,7 +36,7 @@ class Cell:
             self.sensor_indicator.border.top.color = "#888888"
 
         # Raw sensor value
-        factor = inverse_lerp(SENSOR_THRESHOLD_LOW, SENSOR_THRESHOLD_HIGH, raw)
+        factor = inverse_lerp(self.threshold_low, self.threshold_high, sensor_value)
         self.sensor_indicator.bgcolor = lerp_hex("#ffffff", "#000000", factor)
 
     @property

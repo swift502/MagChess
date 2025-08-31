@@ -38,14 +38,19 @@ async def main(page: ft.Page):
     ui.chessboard = chessboard
     ui.engine = engine
 
-    # Sensors
     if RPI:
         from sensors_hw import HWSensors
-        sensors = HWSensors(chessboard, ui)
+        sensors = HWSensors(
+            on_sensor_reading=chessboard.update_sensor_values,
+            ui=ui,
+        )
         await engine.init("engine/stockfish-android-armv8")
     else:
         from sensors_sw import SWSensors
-        sensors = SWSensors(chessboard, flipped=False)
+        sensors = SWSensors(
+            on_sensor_reading=chessboard.update_sensor_values,
+            flipped=False,
+        )
         ui.sensor_interaction(sensors.on_sensor_click)
         await engine.init("engine/stockfish-windows-x86-64-avx2.exe")
 

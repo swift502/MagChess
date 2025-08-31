@@ -1,4 +1,5 @@
 import chess
+from enum import Enum
 from typing import TypeAlias
 
 from piece import Piece
@@ -138,7 +139,7 @@ class BoardState:
         new_state.advantage = self.advantage
         return new_state
 
-SensorReading: TypeAlias = dict[tuple[int, int], float]
+SensorReading: TypeAlias = dict[tuple[int, int], int]
 
 class IChessboard:
     staging_state: BoardState

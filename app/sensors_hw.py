@@ -1,4 +1,5 @@
 import asyncio
+from typing import Callable
 import board
 import busio
 import digitalio
@@ -6,7 +7,6 @@ import adafruit_ads1x15.ads1015 as ADS
 from adafruit_ads1x15.analog_in import AnalogIn
 
 from ui_instance import MagChessUI
-from chessboard import Chessboard
 from data import SensorReading
 
 class HWSensors():
@@ -33,8 +33,8 @@ class HWSensors():
 
     init_fail: bool = False
 
-    def __init__(self, chessboard: Chessboard, ui: MagChessUI):
-        self.on_sensor_reading = chessboard.update_sensor_values
+    def __init__(self, on_sensor_reading: Callable[[SensorReading], None], ui: MagChessUI | None = None):
+        self.on_sensor_reading = on_sensor_reading
 
         # I2C
         try:
@@ -43,7 +43,7 @@ class HWSensors():
             # ads.gain = 1
             # ads.data_rate = 1600
         except ValueError as e:
-            ui.display_error(f"Chessboard connection not found.")
+            if ui: ui.display_error(f"Chessboard connection not found.")
             self.init_fail = True
             return
 
@@ -67,9 +67,9 @@ class HWSensors():
         if self.init_fail:
             return
 
-        values: SensorReading = {}
-        
         while True:
+            values: SensorReading = {}
+            
             for mul_id in range(16):
                 self.set_aselect(mul_id)
                 await asyncio.sleep(0.001)

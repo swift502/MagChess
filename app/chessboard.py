@@ -63,7 +63,7 @@ class Chessboard(IChessboard):
 
         for co_letter in range(8):
             for co_number in range(8):
-                self.cells[(co_letter, co_number)] = Cell(co_letter, co_number, ui)
+                self.cells[(co_letter, co_number)] = Cell((co_letter, co_number), ui)
 
     async def update(self):
         while True:

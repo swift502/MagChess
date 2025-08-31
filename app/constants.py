@@ -1,11 +1,15 @@
+import json
+from utilities import data_path
+
 # Flags
 DEV_LAYOUT = False
 RPI = False
 ENGINE = True
 
 # Sensors
-SENSOR_THRESHOLD_LOW = 12200
-SENSOR_THRESHOLD_HIGH = 13600
+with open(data_path("sensor_calibration_data.json")) as f:
+    SENSOR_CALIBRATION_DATA = json.load(f)
+SENSOR_TRIGGER_DELTA = 500
 
 # Themes
 # Green

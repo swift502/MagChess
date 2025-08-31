@@ -1,24 +1,24 @@
 import asyncio
-from random import randint
+import random
+from typing import Callable
 
-from chessboard import Chessboard
-from constants import SENSOR_THRESHOLD_HIGH, SENSOR_THRESHOLD_LOW
+from constants import SENSOR_TRIGGER_DELTA
 from data import SensorReading
 
 class SWSensorObject:
-    signal_strength = 500
     noise = 100
 
-    def __init__(self, state: int):
+    def __init__(self, state: int, ref_value: int):
         self.state = state
+        self.ref_value = ref_value
 
     def get_value(self):
-        if self.state == 2:
-            return randint(SENSOR_THRESHOLD_LOW - self.signal_strength, SENSOR_THRESHOLD_LOW + self.noise)
-        elif self.state == 0:
-            return randint(SENSOR_THRESHOLD_HIGH - self.noise, SENSOR_THRESHOLD_HIGH + self.signal_strength)
+        if self.state == 3:
+            return self.ref_value - 2 * SENSOR_TRIGGER_DELTA + random.randint(-self.noise, self.noise)
+        elif self.state == 1:
+            return self.ref_value + 2 * SENSOR_TRIGGER_DELTA + random.randint(-self.noise, self.noise)
         else:
-            return randint(SENSOR_THRESHOLD_LOW - self.noise, SENSOR_THRESHOLD_HIGH + self.noise)
+            return self.ref_value + random.randint(-self.noise, self.noise)
 
     def set_state(self, state: int):
         self.state = state
@@ -26,25 +26,27 @@ class SWSensorObject:
 class SWSensors():
     sensors: dict[tuple[int, int], SWSensorObject]
 
-    def __init__(self, chessboard: Chessboard, flipped: bool):
+    def __init__(self, on_sensor_reading: Callable[[SensorReading], None], flipped: bool = False):
         self.sensors = {}
-        self.on_sensor_reading = chessboard.update_sensor_values
+        self.on_sensor_reading = on_sensor_reading
+
+        rnd = random.Random(0)
 
         for co_letter in range(8):
             for co_number in range(8):
-                state = 1
+                state = 0
                 if co_number == 0 or co_number == 1:
-                    state = 0 if flipped else 2
+                    state = 1 if flipped else 3
                 if co_number == 6 or co_number == 7:
-                    state = 2 if flipped else 0
-                self.sensors[(co_letter, co_number)] = SWSensorObject(state)
+                    state = 3 if flipped else 1
+                self.sensors[(co_letter, co_number)] = SWSensorObject(state, rnd.randint(12200, 13600))
 
     async def sensor_reading_loop(self):
-        values: SensorReading  = {}
-        
         while True:
+            values: SensorReading  = {}
+
             for key, sensor in self.sensors.items():
-                values[key] = float(sensor.get_value())
+                values[key] = sensor.get_value()
 
             self.on_sensor_reading(values)
             await asyncio.sleep(1/30)

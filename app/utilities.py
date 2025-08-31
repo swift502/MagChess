@@ -40,6 +40,9 @@ def inverse_lerp(a: float, b: float, value: float):
 def asset_path(path: str) -> str:
     return str(Path(__file__).parent / "assets" / path)
 
+def data_path(path: str) -> str:
+    return str(Path(__file__).parent / "data" / path)
+
 def spring(value: float, vel: float, target: float, mass: float, damping: float):
     acceleration = target - value
     acceleration /= mass
