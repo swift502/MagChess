@@ -2,23 +2,24 @@ import asyncio
 import random
 from typing import Callable
 
-from constants import SENSOR_TRIGGER_DELTA
+from constants import SENSOR_CALIBRATION_DATA, SENSOR_TRIGGER_DELTA, SENSOR_SIM_NOISE
 from data import SensorReading
 
 class SWSensorObject:
-    noise = 100
-
-    def __init__(self, state: int, ref_value: int):
+    def __init__(self, coords: tuple[int, int], state: int):
+        self.ref_value = SENSOR_CALIBRATION_DATA[str(coords)]
         self.state = state
-        self.ref_value = ref_value
 
     def get_value(self):
-        if self.state == 3:
-            return self.ref_value - 2 * SENSOR_TRIGGER_DELTA + random.randint(-self.noise, self.noise)
-        elif self.state == 1:
-            return self.ref_value + 2 * SENSOR_TRIGGER_DELTA + random.randint(-self.noise, self.noise)
+        if self.state == 1:
+            return self.ref_value - 2 * SENSOR_TRIGGER_DELTA + self.get_noise()
+        elif self.state == 3:
+            return self.ref_value + 2 * SENSOR_TRIGGER_DELTA + self.get_noise()
         else:
-            return self.ref_value + random.randint(-self.noise, self.noise)
+            return self.ref_value + self.get_noise()
+
+    def get_noise(self):
+        return random.randint(-SENSOR_SIM_NOISE, SENSOR_SIM_NOISE)
 
     def set_state(self, state: int):
         self.state = state
@@ -30,16 +31,15 @@ class SWSensors():
         self.sensors = {}
         self.on_sensor_reading = on_sensor_reading
 
-        rnd = random.Random(0)
-
         for co_letter in range(8):
             for co_number in range(8):
+                coords = (co_letter, co_number)
                 state = 0
                 if co_number == 0 or co_number == 1:
-                    state = 1 if flipped else 3
-                if co_number == 6 or co_number == 7:
                     state = 3 if flipped else 1
-                self.sensors[(co_letter, co_number)] = SWSensorObject(state, rnd.randint(12200, 13600))
+                if co_number == 6 or co_number == 7:
+                    state = 1 if flipped else 3
+                self.sensors[coords] = SWSensorObject(coords, state)
 
     async def sensor_reading_loop(self):
         while True:

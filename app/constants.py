@@ -8,8 +8,9 @@ ENGINE = True
 
 # Sensors
 with open(data_path("sensor_calibration_data.json")) as f:
-    SENSOR_CALIBRATION_DATA = json.load(f)
+    SENSOR_CALIBRATION_DATA: dict[str, int] = json.load(f)
 SENSOR_TRIGGER_DELTA = 500
+SENSOR_SIM_NOISE = 100
 
 # Themes
 # Green

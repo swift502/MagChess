@@ -1,5 +1,4 @@
 import chess
-from enum import Enum
 from typing import TypeAlias
 
 from piece import Piece
