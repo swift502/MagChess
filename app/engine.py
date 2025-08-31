@@ -16,7 +16,9 @@ class Engine(IEngine):
         self.ui = ui
 
     async def init(self, engine_path: str):
-        if not ENGINE: return
+        if not ENGINE:
+            return
+        
         _, self.engine = await chess.engine.popen_uci(asset_path(engine_path))
 
     async def analyze(self):
@@ -50,14 +52,16 @@ class Engine(IEngine):
         self.analyze_task = None
 
     def set_board(self, board: chess.Board):
-        if not ENGINE: return
+        if not ENGINE:
+            return
 
         self.board = board
         self.cancel_analyze_task()
         self.analyze_task = self.page.run_task(self.analyze)
 
     def cancel_analyze_task(self):
-        if not ENGINE: return
+        if not ENGINE:
+            return
 
         if self.analyze_task is not None:
             self.analyze_task.cancel()
