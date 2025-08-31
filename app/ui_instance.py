@@ -162,10 +162,11 @@ class MagChessUI:
             self.move_rating_screen = False
 
         if self.tab in (1, 2) and (icon == DataLib.icons.question or icon == DataLib.icons.invalid):
-            self.page.open(ft.SnackBar(
-                ft.Text(text.replace("\n", " "), color=ft.Colors.WHITE, size=20, font_family="Noto Sans"),
+            self.display_info(
+                text.replace("\n", " "),
+                color=ft.Colors.WHITE,
                 bgcolor="#54498f",
-            ))
+            )
 
         self.page.update()
 
@@ -213,7 +214,6 @@ class MagChessUI:
 
     def set_advantage(self, value: float):
         self.advantage = value
-        print(value)
     
     def start_game_review(self, states: list[BoardState]):
         if self.game_review:
@@ -254,9 +254,12 @@ class MagChessUI:
         self.game_review_index = 0
 
         self.chessboard.show_state(self.chessboard.staging_state)
-        latest_board = self.chessboard.get_latest_board()
-        if latest_board is not None:
-            self.engine.set_board(latest_board)
+
+        states = self.chessboard.get_latest_state_stack()
+        if states is not None and len(states) > 1:
+            latest_board = self.chessboard.get_latest_board()
+            if latest_board is not None:
+                self.engine.set_board(latest_board)
 
     def show_review_state(self):
         if self.game_review_states is None:
@@ -297,9 +300,18 @@ class MagChessUI:
         self.game_review_index = len(self.game_review_states) - 1
         self.show_review_state()
 
+    def display_info(self, message: str, color: str | None = None, bgcolor: str | None = None, duration: int | None = None):
+        text = ft.Text(message, size=20, font_family="Noto Sans")
+        if color is not None:
+            text.color = color
+
+        bar = ft.SnackBar(text)
+        if bgcolor is not None:
+            bar.bgcolor = bgcolor
+        if duration is not None:
+            bar.duration = duration * 1000
+
+        self.page.open(bar)
+
     def display_error(self, message: str):
-        self.page.open(ft.SnackBar(
-            ft.Text(message, color=ft.Colors.WHITE, size=20, font_family="Noto Sans"),
-            bgcolor="#c01010",
-            duration=10000,
-        ))
+        self.display_info(message, color=ft.Colors.WHITE, bgcolor="#c01010", duration=10)

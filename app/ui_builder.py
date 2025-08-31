@@ -106,7 +106,7 @@ class UIBuilder:
         def on_replay_click(e: ft.ControlEvent):
             states = instance.chessboard.get_latest_state_stack()
             if states is None or len(states) == 0:
-                instance.page.open(ft.SnackBar(ft.Text(f"No game found", size=20, font_family="Noto Sans")))
+                instance.display_info("No game found")
                 return
         
             instance.show_tab(1)
@@ -165,15 +165,16 @@ class UIBuilder:
         def on_pgn_copied(e: ft.ControlEvent):
             board = instance.chessboard.get_latest_board()
             if board is None:
-                instance.page.open(ft.SnackBar(ft.Text(f"No game found", size=20, font_family="Noto Sans")))
+                instance.display_info("No game found")
                 return
             
             pgn = chess.pgn.Game().from_board(board)
             instance.page.set_clipboard(str(pgn.mainline()))
-            instance.page.open(ft.SnackBar(
-                ft.Text(f"PGN copied to clipboard", color=ft.Colors.WHITE, size=20, font_family="Noto Sans"),
+            instance.display_info(
+                "PGN copied to clipboard",
+                color=ft.Colors.WHITE,
                 bgcolor="#54A800",
-            ))
+            )
 
             instance.show_ui()
 

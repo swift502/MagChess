@@ -10,7 +10,7 @@ from piece import Piece
 from ui_instance import MagChessUI
 
 class Chessboard(IChessboard):
-    board: chess.Board
+    board: chess.Board | None = None
     uncommitted_move_board: chess.Board | None = None
     fen: str | None = None
 
