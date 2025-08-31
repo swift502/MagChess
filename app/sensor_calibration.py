@@ -5,7 +5,6 @@ import time
 
 from data import SensorReading
 from sensors_hw import HWSensors
-# from sensors_sw import SWSensors
 from utilities import data_path
 
 sample_count = 10
@@ -41,7 +40,6 @@ def on_sensor_reading(values: SensorReading):
               
 if __name__ == "__main__":
     sensors = HWSensors(on_sensor_reading)
-    # sensors = SWSensors(on_sensor_reading)
 
     print()
     asyncio.run(sensors.sensor_reading_loop())
