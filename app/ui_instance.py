@@ -137,7 +137,6 @@ class MagChessUI:
         self.tab = index
         self.nav.selected_index = index
         self.content_host.content = self.screens[index]
-        self.page.update()
 
     def on_tab_change_replay(self, e: ft.ControlEvent):
         idx = e.control.selected_index
@@ -176,8 +175,6 @@ class MagChessUI:
                     duration=10,
                 )
 
-        self.page.update()
-
     def user_activity(self, e: ft.TapEvent | None = None):
         if self.ui_enabled:
             self.hide_ui()
@@ -189,7 +186,6 @@ class MagChessUI:
 
         self.top_overlay.offset = ft.Offset(0, 0)
         self.bottom_overlay.offset = ft.Offset(0, 0)
-        self.page.update()
 
         self.cancel_hide_task()
 
@@ -201,7 +197,6 @@ class MagChessUI:
 
         self.top_overlay.offset = ft.Offset(0, -0.3)
         self.bottom_overlay.offset = ft.Offset(0, 0.2)
-        self.page.update()
 
         self.cancel_hide_task()
 

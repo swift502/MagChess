@@ -163,11 +163,9 @@ class Chessboard(IChessboard):
                 piece.spawn(coords)
 
         # Remove obsolete
-        for piece in self.spawned_pieces:
+        for piece in self.spawned_pieces.copy():
             if piece not in state.pieces.values():
                 piece.destroy()
-
-        self.page.update()
 
     def show_staging_state(self):
         self.show_state(self.staging_state)

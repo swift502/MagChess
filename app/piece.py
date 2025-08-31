@@ -45,7 +45,6 @@ class Piece:
         self.ui.board_stack.controls.append(self.control)
         self.target_cell = coords
         self.control.top, self.control.left = self.get_top_left(coords)
-
         self.board.spawned_pieces.append(self)
 
     def destroy(self):
