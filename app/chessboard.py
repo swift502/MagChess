@@ -1,4 +1,3 @@
-from __future__ import annotations
 import asyncio
 import chess
 import flet as ft
