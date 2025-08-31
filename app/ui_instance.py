@@ -161,7 +161,7 @@ class MagChessUI:
         if not rating_screen:
             self.move_rating_screen = False
 
-        if self.tab in (1, 2) and (icon == DataLib.icons.question or icon == DataLib.icons.invalid):
+        if self.tab in (1, 2) and icon == DataLib.icons.invalid:
             self.display_info(
                 text.replace("\n", " "),
                 color=ft.Colors.WHITE,
