@@ -42,7 +42,11 @@ class Chessboard(IChessboard):
         if self.uncommitted_state_stack:
             return self.uncommitted_state_stack
         return self.state_stack
-    
+
+    def set_flipped(self, value: bool):
+        self.flipped = value
+        self.ui.advantage_display.scale = ft.Scale(-1 if value else 1, 1)
+
     def locator_to_coords(self, locator: str):
         return (
             ord(locator[0]) - ord("a"),
@@ -70,10 +74,10 @@ class Chessboard(IChessboard):
 
             # Board logic
             if self.fen != chess.STARTING_FEN and self.match_sensor_state("WW....BB" * 8):
-                self.flipped = False
+                self.set_flipped(False)
                 self.init_game()
             elif self.fen != chess.STARTING_FEN and self.match_sensor_state("BB....WW" * 8):
-                self.flipped = True
+                self.set_flipped(True)
                 self.init_game()
             elif not self.game_over:
                 self.board_state_update()
