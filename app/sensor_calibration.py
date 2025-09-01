@@ -25,18 +25,18 @@ def export_calibration_data():
     print(f"SPS: {1 / average_time:.2f}")
 
 def on_sensor_reading(values: SensorReading):
-        samples.append(values)
-        print(f"\rSampled {len(samples)}/{sample_count}", end="")
+    samples.append(values)
+    print(f"\rSampled {len(samples)}/{sample_count}", end="")
 
-        global time_samples, last_time
-        now = time.perf_counter()
-        if last_time is not None:
-            time_samples.append(now - last_time)
-        last_time = now
+    global time_samples, last_time
+    now = time.perf_counter()
+    if last_time is not None:
+        time_samples.append(now - last_time)
+    last_time = now
 
-        if len(samples) == sample_count:
-             export_calibration_data()
-             sys.exit(0)
+    if len(samples) == sample_count:
+        export_calibration_data()
+        sys.exit(0)
               
 if __name__ == "__main__":
     sensors = HWSensors(on_sensor_reading)

@@ -221,7 +221,7 @@ class Chessboard(IChessboard):
                     self.game_over = True
                     self.update_status(DataLib.icons.winner, f"Game over!\nWinner: {self.get_winner(outcome)}")
             else:
-                self.update_status(DataLib.icons.invalid, f"Illegal move")
+                self.update_status(DataLib.icons.invalid, "Illegal move")
 
     def state_commit_processing(self):
         if self.last_legal_move is None:
@@ -266,14 +266,14 @@ class Chessboard(IChessboard):
                 old_color = None
 
                 # Found new
-                if new_color != None:
+                if new_color is not None:
                     new.append(NewPiece(new_color, coords))
 
             else:
                 old_color = piece.color
 
                 # Found missing
-                if new_color == None:
+                if new_color is None:
                     missing.append(MissingPiece(piece, coords))
 
                 # Found swap
@@ -298,7 +298,7 @@ class Chessboard(IChessboard):
             if missing[0].piece.color == self.current_player:
                 self.update_status(DataLib.icons.info, f"{'White' if self.current_player else 'Black'} is moving")
             else:
-                self.update_status(DataLib.icons.question, f"Unexpected\nboard state")
+                self.update_status(DataLib.icons.question, "Unexpected\nboard state")
 
         elif missing_new_swaps == (1, 1, 0):
             move = chess.Move.from_uci(self.coords_to_locator(missing[0].coords) + self.coords_to_locator(new[0].coords))
@@ -313,7 +313,7 @@ class Chessboard(IChessboard):
                 return self.staging_move_piece(missing[0], new[0].coords)
             else:
                 # A piece changed color while moving, doesn't make sense
-                self.update_status(DataLib.icons.question, f"Unexpected\nboard state")
+                self.update_status(DataLib.icons.question, "Unexpected\nboard state")
 
         elif missing_new_swaps == (1, 0, 1):
             if missing[0].piece.color == swaps[0].new_color:
@@ -322,7 +322,7 @@ class Chessboard(IChessboard):
                 return self.staging_move_piece(missing[0], swaps[0].coords) # Move missing piece to capture position
             else:
                 # Current player didn't perform a capture, the swap doesn't make sense
-                self.update_status(DataLib.icons.question, f"Unexpected\nboard state")
+                self.update_status(DataLib.icons.question, "Unexpected\nboard state")
 
         elif missing_new_swaps == (2, 1, 0):
             pawns = missing[0].piece.pieceType == chess.PAWN and missing[1].piece.pieceType == chess.PAWN
@@ -344,9 +344,9 @@ class Chessboard(IChessboard):
                     self.staging_remove_piece(captured_pawn.coords)
                     return self.staging_move_piece(moving_pawn, new[0].coords)
                 else:
-                    self.update_status(DataLib.icons.question, f"Unexpected\nboard state")
+                    self.update_status(DataLib.icons.question, "Unexpected\nboard state")
             else:
-                self.update_status(DataLib.icons.question, f"Unexpected\nboard state")
+                self.update_status(DataLib.icons.question, "Unexpected\nboard state")
 
         elif missing_new_swaps == (2, 2, 0):
             king = None
@@ -378,13 +378,13 @@ class Chessboard(IChessboard):
                     self.staging_move_piece(rook, rook_dest.coords)
                     return self.staging_move_piece(king, king_dest.coords)
                 else:
-                    self.update_status(DataLib.icons.question, f"Unexpected\nboard state")
+                    self.update_status(DataLib.icons.question, "Unexpected\nboard state")
             else:
-                self.update_status(DataLib.icons.question, f"Unexpected\nboard state")
+                self.update_status(DataLib.icons.question, "Unexpected\nboard state")
 
         elif len(missing) > 0 or len(new) > 0 or len(swaps) > 0:
             # Generic fail
-            self.update_status(DataLib.icons.question, f"Unexpected\nboard state")
+            self.update_status(DataLib.icons.question, "Unexpected\nboard state")
 
         return None
 
@@ -416,7 +416,8 @@ class Chessboard(IChessboard):
 
         # UCI
         uci = self.coords_to_locator(missing.coords) + self.coords_to_locator(new_coords)
-        if promotion: uci += "q"
+        if promotion:
+            uci += "q"
         return uci
 
     def staging_remove_piece(self, coords: tuple[int, int]):
