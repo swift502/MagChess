@@ -1,6 +1,5 @@
 import flet as ft
 
-from engine import Engine
 from chessboard import Chessboard
 from constants import DEV_LAYOUT, RPI
 from ui_instance import MagChessUI
@@ -32,11 +31,9 @@ async def main(page: ft.Page):
 
     # App
     ui = MagChessUI(page, default_tab=1)
-    engine = Engine(page, ui)
-    chessboard = Chessboard(page, ui, engine)
+    chessboard = Chessboard(page, ui)
 
     ui.chessboard = chessboard
-    ui.engine = engine
 
     if RPI:
         from sensors_hw import HWSensors
@@ -44,7 +41,6 @@ async def main(page: ft.Page):
             on_sensor_reading=chessboard.update_sensor_values,
             ui=ui,
         )
-        await engine.init("engine/stockfish-rpi-5")
     else:
         from sensors_sw import SWSensors
         sensors = SWSensors(
@@ -52,7 +48,6 @@ async def main(page: ft.Page):
             flipped=False,
         )
         ui.sensor_interaction(sensors.on_sensor_click)
-        await engine.init("engine/stockfish-windows-x86-64-avx2.exe")
 
     page.run_task(sensors.sensor_reading_loop)
     page.run_task(chessboard.update)

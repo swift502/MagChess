@@ -155,10 +155,3 @@ class IChessboard:
 
     def show_state(self, state: BoardState):
         pass
-
-class IEngine:
-    def set_board(self, board: chess.Board):
-        pass
-
-    def cancel_analyze_task(self):
-        pass

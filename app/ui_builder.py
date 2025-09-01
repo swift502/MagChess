@@ -4,50 +4,12 @@ import chess.pgn
 import flet as ft
 from typing import TYPE_CHECKING
 
-from data import DataLib
 from constants import THEME_WHITE, THEME_BLACK
 
 if TYPE_CHECKING:
     from ui_instance import MagChessUI
 
 class UIBuilder:
-    @staticmethod
-    def build_tab_1(instance: MagChessUI):
-        instance.move_icon = ft.Image(
-            width=320,
-            height=320,
-        )
-
-        instance.move_text = ft.Text(
-            size=72,
-            text_align=ft.TextAlign.CENTER,
-            font_family="Noto Sans",
-            color=ft.Colors.WHITE,
-            style=ft.TextStyle(
-                shadow=ft.BoxShadow(
-                    blur_radius=0,
-                    color=ft.Colors.with_opacity(0.3, ft.Colors.BLACK),
-                    offset=ft.Offset(0, 8),
-                )
-            )
-        )
-
-        instance.move_background = ft.Container(
-            content=ft.Column(
-                controls=[instance.move_icon, instance.move_text],
-                alignment=ft.MainAxisAlignment.CENTER,
-                horizontal_alignment=ft.CrossAxisAlignment.CENTER,
-            ),
-            alignment=ft.alignment.center,
-        )
-
-        instance.update_move_screen(DataLib.icons.search, "Scanning for\na new game", None)
-
-        return ft.Container(
-            content=instance.move_background,
-            bgcolor=ft.Colors.BLACK,
-        )
-
     @staticmethod
     def build_tab_2(instance: MagChessUI):
         stack = ft.Stack(
@@ -82,85 +44,6 @@ class UIBuilder:
 
     @staticmethod
     def build_top_overlay(instance: MagChessUI):
-        instance.advantage_bar = ft.Container(
-            bgcolor=ft.Colors.WHITE,
-            width=360,
-            expand=False
-        )
-
-        instance.advantage_display = ft.Container(
-            content=ft.Row(controls=[instance.advantage_bar]),
-            expand=True,
-            bgcolor=ft.Colors.BLACK,
-            top=0,
-            left=0,
-            right=0,
-            height=30,
-            shadow=ft.BoxShadow(
-                color=ft.Colors.with_opacity(0.4, ft.Colors.BLACK),
-                blur_radius=8,
-                offset=ft.Offset(0, 4),
-            ),
-        )
-
-        def on_replay_click(e: ft.ControlEvent):
-            states = instance.chessboard.get_latest_state_stack()
-            if states is None or len(states) == 0:
-                instance.display_info("No game found")
-                return
-        
-            instance.show_tab(1)
-            instance.start_game_review(states)
-
-        instance.replay_button = ft.ElevatedButton(
-            content=ft.Icon(ft.Icons.HISTORY, size=50),
-            on_click=on_replay_click,
-            top=54,
-            right=26,
-            color=ft.Colors.WHITE,
-            bgcolor="#8311c0",
-            style=ft.ButtonStyle(
-                padding=ft.padding.symmetric(36, 30),
-                shape=ft.RoundedRectangleBorder(20),
-            ),
-        )
-
-        instance.game_review_text = ft.Text(
-            "0/0",
-            size=30,
-            font_family="Noto Sans",
-            text_align=ft.TextAlign.CENTER,
-            color=ft.Colors.WHITE,
-        )
-
-        instance.game_review_info = ft.ElevatedButton(
-            content=instance.game_review_text,
-            top=66,
-            bgcolor="#88000000",
-            style=ft.ButtonStyle(
-                padding=ft.padding.symmetric(20, 30),
-                shape=ft.ContinuousRectangleBorder(20),
-            ),
-            disabled=True,
-            visible=False,
-        )
-
-        def on_exit_click(e: ft.ControlEvent):
-            instance.exit_game_review()
-
-        instance.exit_button = ft.ElevatedButton(
-            content=ft.Icon(ft.Icons.CLOSE, size=50),
-            on_click=on_exit_click,
-            top=54,
-            right=26,
-            color=ft.Colors.WHITE,
-            bgcolor="#c01010",
-            style=ft.ButtonStyle(
-                padding=ft.padding.symmetric(36, 30),
-                shape=ft.RoundedRectangleBorder(20),
-            ),
-            visible=False
-        )
 
         def on_pgn_copied(e: ft.ControlEvent):
             board = instance.chessboard.get_latest_board()
@@ -181,7 +64,7 @@ class UIBuilder:
         instance.copy_pgn_button = ft.ElevatedButton(
             content=ft.Icon(ft.Icons.COPY, size=50),
             on_click=on_pgn_copied,
-            top=54,
+            top=26,
             left=26,
             color=ft.Colors.WHITE,
             bgcolor="#54A800",
@@ -192,7 +75,7 @@ class UIBuilder:
         )
 
         return ft.Stack(
-            controls=[instance.advantage_display, instance.replay_button, instance.copy_pgn_button, instance.game_review_info, instance.exit_button],
+            controls=[instance.copy_pgn_button],
             alignment=ft.alignment.top_center,
             animate_offset=150,
             offset=ft.Offset(0, -0.3),
@@ -205,23 +88,9 @@ class UIBuilder:
             selected_index=default_tab,
             on_change=instance.on_tab_change,
             destinations=[
-                ft.NavigationBarDestination(icon=ft.Icons.FORK_RIGHT, label="Moves"),
                 ft.NavigationBarDestination(icon=ft.Icons.CROP_FREE, label="Board"),
                 ft.NavigationBarDestination(icon=ft.Icons.SENSORS, label="Sensors"),
             ],
-        )
-
-        instance.replay_nav = ft.NavigationBar(
-            selected_index=default_tab,
-            on_change=instance.on_tab_change_replay,
-            destinations=[
-                ft.NavigationBarDestination(icon=ft.Icons.SKIP_PREVIOUS, label="First"),
-                ft.NavigationBarDestination(icon=ft.Icons.NAVIGATE_BEFORE, label="Previous"),
-                ft.NavigationBarDestination(icon=ft.Icons.NAVIGATE_NEXT, label="Next"),
-                ft.NavigationBarDestination(icon=ft.Icons.SKIP_NEXT, label="Last"),
-            ],
-            overlay_color=ft.Colors.TRANSPARENT,
-            indicator_color=ft.Colors.TRANSPARENT,
         )
 
         instance.nav_container = ft.Container(

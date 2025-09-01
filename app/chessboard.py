@@ -2,7 +2,6 @@ import asyncio
 import chess
 import flet as ft
 
-from engine import Engine
 from cell import Cell
 from data import ColorSwap, DataLib, IconData, MissingPiece, NewPiece, SensorReading, IChessboard, BoardState
 from piece import Piece
@@ -44,7 +43,6 @@ class Chessboard(IChessboard):
 
     def set_flipped(self, value: bool):
         self.flipped = value
-        self.ui.advantage_display.scale = ft.Scale(-1 if value else 1, 1)
 
     def locator_to_coords(self, locator: str):
         return (
@@ -55,10 +53,9 @@ class Chessboard(IChessboard):
     def coords_to_locator(self, coords: tuple[int, int]):
         return chr(coords[0] + ord("a")) + str(coords[1] + 1)
 
-    def __init__(self, page: ft.Page, ui: MagChessUI, engine: Engine):
+    def __init__(self, page: ft.Page, ui: MagChessUI):
         self.page = page
         self.ui = ui
-        self.engine = engine
 
         for co_letter in range(8):
             for co_number in range(8):
@@ -122,16 +119,12 @@ class Chessboard(IChessboard):
         self.state_stack.append(init_state)
         self.show_state(init_state)
 
-        self.update_status_player(DataLib.icons.info, "Ready")
-
         print("New game detected")
 
     def clean_up(self):
         self.game_over = False
         self.current_player = chess.WHITE
 
-        self.engine.cancel_analyze_task()
-        self.ui.set_advantage(0.5)
 
         # State
         self.state_stack = []
@@ -210,14 +203,10 @@ class Chessboard(IChessboard):
                 self.uncommitted_state_stack = self.state_stack.copy()
                 self.uncommitted_state_stack.append(self.staging_state.copy())
 
-                self.engine.set_board(self.uncommitted_move_board)
-
                 outcome_board = self.board.copy()
                 outcome_board.push(move)
                 outcome = outcome_board.outcome()
-                if outcome is None:
-                    self.update_status_move_rating()
-                else:
+                if outcome is not None:
                     self.game_over = True
                     self.update_status(DataLib.icons.winner, f"Game over!\nWinner: {self.get_winner(outcome)}")
             else:
@@ -288,15 +277,15 @@ class Chessboard(IChessboard):
         if missing_new_swaps == (0, 0, 0):
             if len(self.state_stack) > 1:
                 if self.get_latest_state_stack()[-1].player == self.current_player:
-                    self.update_status_move_rating()
+                    pass
                 else:
-                    self.update_status_player(DataLib.icons.info, "Ready")
+                    pass
             else:
-                self.update_status_player(DataLib.icons.info, "Ready")
+                pass
 
         if missing_new_swaps == (1, 0, 0):
             if missing[0].piece.color == self.current_player:
-                self.update_status(DataLib.icons.info, f"{'White' if self.current_player else 'Black'} is moving")
+                pass
             else:
                 self.update_status(DataLib.icons.question, "Unexpected\nboard state")
 
@@ -390,15 +379,6 @@ class Chessboard(IChessboard):
 
     def update_status(self, icon: IconData, text: str):
         self.ui.update_move_screen(icon, text, None)
-
-    def update_status_player(self, icon: IconData, text: str):
-        player = self.current_player
-        if self.last_legal_move is not None:
-            player = self.next_player
-        self.ui.update_move_screen(icon, text, player)
-
-    def update_status_move_rating(self):
-        self.ui.move_rating_screen = True
 
     def staging_move_piece(self, missing: MissingPiece, new_coords: tuple[int, int]):
         promotion = False
