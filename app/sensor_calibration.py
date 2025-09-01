@@ -21,7 +21,7 @@ def export_calibration_data():
     with open(path, "w") as f:
         json.dump(average, f, indent=4)
 
-    print(f'\nWritten "{path}"')
+    print(f'Written "{path}"')
 
 def on_sensor_reading(values: SensorReading, write: bool):
     samples.append(values)
@@ -34,6 +34,8 @@ def on_sensor_reading(values: SensorReading, write: bool):
     last_time = now
 
     if len(samples) == sample_count:
+        print()
+
         if write:
             export_calibration_data()
 
