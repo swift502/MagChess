@@ -3,16 +3,16 @@ import flet as ft
 
 from constants import SENSOR_CALIBRATION_DATA, SENSOR_TRIGGER_DELTA
 from ui_instance import MagChessUI
-from utilities import inverse_lerp, lerp, lerp_hex
+from utilities import inverse_lerp, lerp_hex
 
 class Cell:
     sensor_indicator: ft.Container
-    smooth_value: float
+    # smooth_value: float
     state: int
 
     def __init__(self, coords: tuple[int, int], ui: MagChessUI):
         self.coords = coords
-        self.smooth_value = 0.0
+        # self.smooth_value = 0.0
         self.state = 0
 
         self.ref_value = SENSOR_CALIBRATION_DATA[str(coords)]
@@ -22,13 +22,13 @@ class Cell:
 
     def update(self, sensor_value: float):
         # Value
-        self.smooth_value = lerp(self.smooth_value, sensor_value, 0.1)
+        # self.smooth_value = lerp(self.smooth_value, sensor_value, 0.1)
 
         # State
-        if self.smooth_value < self.threshold_low:
+        if sensor_value < self.threshold_low:
             self.state = 1
             self.sensor_indicator.border.top.color = "#ffffff"
-        elif self.smooth_value > self.threshold_high:
+        elif sensor_value > self.threshold_high:
             self.state = -1
             self.sensor_indicator.border.top.color = "#000000"
         else:

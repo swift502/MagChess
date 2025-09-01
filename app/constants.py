@@ -3,7 +3,7 @@ from utilities import data_path
 
 # Flags
 DEV_LAYOUT = False
-RPI = False
+RPI = True
 ENGINE = True
 
 # Sensors
