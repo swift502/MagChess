@@ -9,7 +9,7 @@ from ui_instance import MagChessUI
 
 class Chessboard(IChessboard):
     board: chess.Board | None = None
-    uncommitted_move_board: chess.Board | None = None
+    # uncommitted_move_board: chess.Board | None = None
     fen: str | None = None
 
     current_player: chess.Color | None = None
@@ -17,7 +17,7 @@ class Chessboard(IChessboard):
     flipped: bool = False
 
     state_stack: list[BoardState] = []
-    uncommitted_state_stack: list[BoardState] | None = None
+    # uncommitted_state_stack: list[BoardState] | None = None
     staging_state: BoardState
     spawned_pieces: list[Piece] = []
 
@@ -25,20 +25,20 @@ class Chessboard(IChessboard):
     cells: dict[tuple[int, int], Cell] = {}
 
     last_analysed_sensor_state: str | None
-    last_legal_move: chess.Move | None
+    # last_legal_move: chess.Move | None
 
     @property
     def next_player(self):
         return chess.WHITE if self.current_player == chess.BLACK else chess.BLACK
     
     def get_latest_board(self):
-        if self.uncommitted_move_board is not None:
-            return self.uncommitted_move_board
+        # if self.uncommitted_move_board is not None:
+            # return self.uncommitted_move_board
         return self.board
 
     def get_latest_state_stack(self):
-        if self.uncommitted_state_stack:
-            return self.uncommitted_state_stack
+        # if self.uncommitted_state_stack:
+            # return self.uncommitted_state_stack
         return self.state_stack
 
     def set_flipped(self, value: bool):
@@ -64,9 +64,9 @@ class Chessboard(IChessboard):
     async def update(self):
         while True:
             # Cells
-            if self.raw_sensor_data is not None:
-                for coords, cell in self.cells.items():
-                    cell.update(self.raw_sensor_data[coords])
+            # if self.raw_sensor_data is not None:
+            #     for coords, cell in self.cells.items():
+            #         cell.update(self.raw_sensor_data[coords])
 
             # Board logic
             if self.fen != chess.STARTING_FEN and self.match_sensor_state("WW....BB" * 8):
@@ -87,8 +87,8 @@ class Chessboard(IChessboard):
 
             await asyncio.sleep(1/60)
 
-    def update_sensor_values(self, values: SensorReading):
-        self.raw_sensor_data = values
+    def update_sensor_value(self, coords: tuple[int, int], value: int):
+        self.cells[coords].update(value)
 
     def match_sensor_state(self, state_string: str):
         return self.get_sensor_state_format() == state_string
@@ -109,7 +109,7 @@ class Chessboard(IChessboard):
         init_state: BoardState = BoardState()
         init_state.advantage = 0.5
         self.last_analysed_sensor_state = None
-        self.last_legal_move = None
+        # self.last_legal_move = None
 
         for locator, pieceData in DataLib.start_configuration().items():
             coords = self.locator_to_coords(locator)
@@ -175,13 +175,13 @@ class Chessboard(IChessboard):
         self.last_analysed_sensor_state = sensor_state
 
         # See if conditions are met to commit the last staging state
-        self.state_commit_processing()
+        # self.state_commit_processing()
 
         # Staging state may have been committed now, we can safely discard it
         self.staging_state = self.state_stack[-1].copy()
-        self.last_legal_move = None
-        self.uncommitted_move_board = None
-        self.uncommitted_state_stack = None
+        # self.last_legal_move = None
+        # self.uncommitted_move_board = None
+        # self.uncommitted_state_stack = None
 
         # Analyse changes against latest committed state
         missing, new, swaps = self.analyse_sensor_changes(against=self.state_stack[-1])
@@ -195,13 +195,13 @@ class Chessboard(IChessboard):
             move = chess.Move.from_uci(move)
 
             if move in self.board.legal_moves:
-                self.last_legal_move = move
+                # self.last_legal_move = move
 
-                self.uncommitted_move_board = self.board.copy()
-                self.uncommitted_move_board.push(move)
+                # self.uncommitted_move_board = self.board.copy()
+                # self.uncommitted_move_board.push(move)
 
-                self.uncommitted_state_stack = self.state_stack.copy()
-                self.uncommitted_state_stack.append(self.staging_state.copy())
+                # self.uncommitted_state_stack = self.state_stack.copy()
+                # self.uncommitted_state_stack.append(self.staging_state.copy())
 
                 outcome_board = self.board.copy()
                 outcome_board.push(move)
@@ -212,27 +212,27 @@ class Chessboard(IChessboard):
             else:
                 self.update_status(DataLib.icons.invalid, "Illegal move")
 
-    def state_commit_processing(self):
-        if self.last_legal_move is None:
-            return
+    # def state_commit_processing(self):
+    #     if self.last_legal_move is None:
+    #         return
 
-        # If last analysis concluded a legal move, and now we find
-        # the other player is moving pieces, we need to commit
-        missing, new, swaps = self.analyse_sensor_changes(against=self.staging_state)
+    #     # If last analysis concluded a legal move, and now we find
+    #     # the other player is moving pieces, we need to commit
+    #     missing, new, swaps = self.analyse_sensor_changes(against=self.staging_state)
 
-        for piece in missing:
-            if piece.piece.color == self.next_player:
-                self.commit_staging_state(self.last_legal_move)
-                return
+    #     for piece in missing:
+    #         if piece.piece.color == self.next_player:
+    #             self.commit_staging_state(self.last_legal_move)
+    #             return
 
-        for piece in new:
-            if piece.color == self.next_player:
-                self.commit_staging_state(self.last_legal_move)
-                return
+    #     for piece in new:
+    #         if piece.color == self.next_player:
+    #             self.commit_staging_state(self.last_legal_move)
+    #             return
 
-        if len(swaps) > 0:
-            self.commit_staging_state(self.last_legal_move)
-            return
+    #     if len(swaps) > 0:
+    #         self.commit_staging_state(self.last_legal_move)
+    #         return
 
     def analyse_sensor_changes(self, against: BoardState):
         missing: list[MissingPiece] = []

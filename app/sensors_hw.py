@@ -33,7 +33,7 @@ class HWSensors():
 
     init_fail: bool = False
 
-    def __init__(self, on_sensor_reading: Callable[[SensorReading], None], ui: MagChessUI | None = None):
+    def __init__(self, on_sensor_reading: Callable[[tuple[int, int], int], None], ui: MagChessUI | None = None):
         self.on_sensor_reading = on_sensor_reading
 
         # I2C
@@ -69,17 +69,13 @@ class HWSensors():
             return
 
         while True:
-            values: SensorReading = {}
-            
             for mul_id in range(16):
                 self.set_aselect(mul_id)
                 await asyncio.sleep(0.001)
 
                 for adc_id in range(4):
                     mapping = self.sensor_mapping[f"a{adc_id}m{mul_id:02}"]
-                    values[mapping] = self.channels[adc_id].value
-
-            self.on_sensor_reading(values)
+                    self.on_sensor_reading(mapping, self.channels[adc_id].value)
 
     def set_aselect(self, n: int) -> None:
         for bit, p in enumerate(self.sel_pins):

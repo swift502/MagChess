@@ -1,4 +1,9 @@
 from __future__ import annotations
+from datetime import datetime
+import os
+import subprocess
+import shutil
+import tempfile
 import chess
 import chess.pgn
 import flet as ft
@@ -45,23 +50,28 @@ class UIBuilder:
     @staticmethod
     def build_top_overlay(instance: MagChessUI):
 
-        def on_pgn_copied(e: ft.ControlEvent):
+        def get_pgn():
             board = instance.chessboard.get_latest_board()
             if board is None:
                 instance.display_info("No game found")
-                return
+                return None
             
             pgn = chess.pgn.Game().from_board(board)
-            instance.page.set_clipboard(str(pgn.mainline()))
-            instance.display_info(
-                "PGN copied to clipboard",
-                color=ft.Colors.WHITE,
-                bgcolor="#54A800",
-            )
+            return str(pgn.mainline())
+
+        def on_pgn_copied(e: ft.ControlEvent):
+            pgn = get_pgn()
+            if pgn is not None:
+                instance.page.set_clipboard(pgn)
+                instance.display_info(
+                    "PGN copied to clipboard",
+                    color=ft.Colors.WHITE,
+                    bgcolor="#54A800",
+                )
 
             instance.show_ui()
 
-        instance.copy_pgn_button = ft.ElevatedButton(
+        copy_pgn_button = ft.ElevatedButton(
             content=ft.Icon(ft.Icons.COPY, size=50),
             on_click=on_pgn_copied,
             top=26,
@@ -74,8 +84,56 @@ class UIBuilder:
             ),
         )
 
+        def gh_installed():
+            return shutil.which("gh") is not None
+
+        def create_gist_from_string(content: str):
+            with tempfile.NamedTemporaryFile(delete=False, suffix="txt") as tmp:
+                tmp.write(content.encode("utf-8"))
+                tmp.flush()
+                tmp_filename = tmp.name
+
+            try:
+                cmd = ["gh", "gist", "create", tmp_filename, "-d", f"pgn-{datetime.now().strftime('%Y-%m-%d-%H-%M-%S')}"]
+                return subprocess.run(cmd, check=True)
+            except Exception as e:
+                instance.display_error(f"Error creating gist")
+            finally:
+                os.remove(tmp_filename)
+
+        def on_gist_clicked(e: ft.ControlEvent):
+            if gh_installed():
+                pgn = get_pgn()
+                if pgn is not None and len(pgn) > 0:
+                    result = create_gist_from_string(pgn)
+                    if result is not None:
+                        instance.display_info(
+                            "Gist uploaded successfully",
+                            color=ft.Colors.WHITE,
+                            bgcolor="#54A800",
+                        )
+                else:
+                    instance.display_info(
+                        "No PGN to write",
+                    )
+            else:
+                instance.display_error("GitHub CLI is not installed")
+
+        gist_button = ft.ElevatedButton(
+            content=ft.Icon(ft.Icons.UPLOAD, size=50),
+            on_click=on_gist_clicked,
+            top=26,
+            right=26,
+            color=ft.Colors.WHITE,
+            bgcolor="#8311c0",
+            style=ft.ButtonStyle(
+                padding=ft.padding.symmetric(36, 30),
+                shape=ft.RoundedRectangleBorder(20),
+            ),
+        )
+
         return ft.Stack(
-            controls=[instance.copy_pgn_button],
+            controls=[copy_pgn_button, gist_button],
             alignment=ft.alignment.top_center,
             animate_offset=150,
             offset=ft.Offset(0, -0.3),

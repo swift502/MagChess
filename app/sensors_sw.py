@@ -27,7 +27,7 @@ class SWSensorObject:
 class SWSensors():
     sensors: dict[tuple[int, int], SWSensorObject]
 
-    def __init__(self, on_sensor_reading: Callable[[SensorReading], None], flipped: bool = False):
+    def __init__(self, on_sensor_reading: Callable[[tuple[int, int], int], None], flipped: bool = False):
         self.sensors = {}
         self.on_sensor_reading = on_sensor_reading
 
@@ -43,13 +43,10 @@ class SWSensors():
 
     async def sensor_reading_loop(self):
         while True:
-            values: SensorReading  = {}
-
             for key, sensor in self.sensors.items():
-                values[key] = sensor.get_value()
+                self.on_sensor_reading(key, sensor.get_value())
 
-            self.on_sensor_reading(values)
-            await asyncio.sleep(1/30)
+            await asyncio.sleep(1/6)
 
     def on_sensor_click(self, co_letter: int, co_number: int):
         state = self.sensors[(co_letter, co_number)].state

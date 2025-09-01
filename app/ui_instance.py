@@ -26,8 +26,6 @@ class MagChessUI:
     nav_container: ft.Container
     nav: ft.NavigationBar
 
-    copy_pgn_button: ft.ElevatedButton
-
     sensor_indicators: dict[tuple[int, int], ft.Container]
 
     ui_enabled: bool = False
