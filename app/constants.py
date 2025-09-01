@@ -3,8 +3,12 @@ from utilities import data_path
 
 # Flags
 DEV_LAYOUT = False
-RPI = False
-ENGINE = True
+
+try:
+    from RPi.GPIO import GPIO
+    RPI = True
+except ImportError:
+    RPI = False
 
 # Sensors
 with open(data_path("sensor_calibration_data.json")) as f:
