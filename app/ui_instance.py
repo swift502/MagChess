@@ -96,13 +96,13 @@ class MagChessUI:
             self.display_info(
                 text.replace("\n", " "),
                 color=ft.Colors.WHITE,
-                bgcolor=DataLib.icons.invalid.color,
-            )
+                bgcolor="#54498f",
+                )
         elif icon == DataLib.icons.winner:
             self.display_info(
                 text.replace("\n", " "),
                 color=ft.Colors.BLACK,
-                bgcolor=DataLib.icons.winner.color,
+                bgcolor="#dbac16",
                 duration=10,
             )
 
@@ -150,12 +150,17 @@ class MagChessUI:
         text = ft.Text(message, size=20, font_family="Noto Sans")
         if color is not None:
             text.color = color
+        if RPI:
+            text.rotate = math.pi
 
         bar = ft.SnackBar(text)
         if bgcolor is not None:
             bar.bgcolor = bgcolor
         if duration is not None:
             bar.duration = duration * 1000
+
+        if RPI:
+            self.page
 
         self.page.open(bar)
 
