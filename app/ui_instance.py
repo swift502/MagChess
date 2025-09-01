@@ -3,7 +3,6 @@ import asyncio
 import concurrent.futures
 import math
 from typing import Callable
-import chess
 import flet as ft
 
 from constants import DEV_LAYOUT, RPI
@@ -68,7 +67,7 @@ class MagChessUI:
                 ],
                 spacing=0,
             )
-            
+
         page.add(self.root)
 
     test: float = 0.0

@@ -3,7 +3,6 @@ import random
 from typing import Callable
 
 from constants import SENSOR_CALIBRATION_DATA, SENSOR_TRIGGER_DELTA, SENSOR_SIM_NOISE
-from data import SensorReading
 
 class SWSensorObject:
     def __init__(self, coords: tuple[int, int], state: int):

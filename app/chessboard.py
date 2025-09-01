@@ -3,7 +3,7 @@ import chess
 import flet as ft
 
 from cell import Cell
-from data import ColorSwap, DataLib, IconData, MissingPiece, NewPiece, SensorReading, IChessboard, BoardState
+from data import ColorSwap, DataLib, IconData, MissingPiece, NewPiece, IChessboard, BoardState
 from piece import Piece
 from ui_instance import MagChessUI
 
@@ -17,7 +17,6 @@ class Chessboard(IChessboard):
     staging_state: BoardState
     spawned_pieces: list[Piece] = []
 
-    raw_sensor_data: SensorReading | None = None
     cells: dict[tuple[int, int], Cell] = {}
 
     init_config: bool = False
@@ -27,6 +26,14 @@ class Chessboard(IChessboard):
     def next_player(self):
         return chess.WHITE if self.current_player == chess.BLACK else chess.BLACK
     
+    def get_latest_board(self):
+        if self.board_stack is None:
+            return None
+        elif len(self.board_stack) == 0:
+            return None
+        else:
+            return self.board_stack[-1]
+
     def set_flipped(self, value: bool):
         self.flipped = value
 
@@ -166,7 +173,7 @@ class Chessboard(IChessboard):
 
         # Compare against current
         missing, new, swaps = self.analyse_sensor_changes(against=self.state_stack[-1])
-        # print(f"Current: {len(missing)}, {len(new)}, {len(swaps)}")
+        print(f"Current: {len(missing)}, {len(new)}, {len(swaps)}")
         missing_new_swaps = (len(missing), len(new), len(swaps))
         if missing_new_swaps == (0, 0, 0):
             self.show_state(self.staging_state)
@@ -191,7 +198,7 @@ class Chessboard(IChessboard):
 
             # Compare against last
             missing, new, swaps = self.analyse_sensor_changes(against=self.state_stack[-2])
-            # print(f"Previous: {len(missing)}, {len(new)}, {len(swaps)}")
+            print(f"Previous: {len(missing)}, {len(new)}, {len(swaps)}")
             missing_new_swaps = (len(missing), len(new), len(swaps))
             if missing_new_swaps == (0, 0, 0):
                 self.pop_state()

@@ -4,18 +4,20 @@ import json
 import sys
 import time
 
-from data import SensorReading
 from sensors_hw import HWSensors
+# from sensors_sw import SWSensors
 from utilities import data_path
 
-sample_count = 10
-samples: list[SensorReading] = []
+sensor_count = 64
+sample_count = sensor_count * 10
+samples: dict[tuple[int, int], list[int]] = {}
 
 time_samples: list[float] = []
 last_time: float | None = None
+counter: int = 0
 
 def export_calibration_data():
-    average = {str(coords): sum(sample[coords] for sample in samples) // len(samples) for coords in samples[0]}
+    average = {str(coords): sum(samples[coords]) // len(samples[coords]) for coords in samples}
     average = dict(sorted(average.items()))
     path = data_path("sensor_calibration_data.json")
     with open(path, "w") as f:
@@ -23,17 +25,22 @@ def export_calibration_data():
 
     print(f'Written "{path}"')
 
-def on_sensor_reading(values: SensorReading, write: bool):
-    samples.append(values)
-    print(f"\rSampled {len(samples)}/{sample_count}", end="")
+def on_sensor_reading(coords: tuple[int, int], value: int, write: bool):
+    if coords not in samples:
+        samples[coords] = []
+    samples[coords].append(value)
 
-    global time_samples, last_time
-    now = time.perf_counter()
-    if last_time is not None:
-        time_samples.append(now - last_time)
-    last_time = now
+    global counter
+    counter += 1
+    if counter % sensor_count == 0:
+        global time_samples, last_time
+        print(f"\rSampled {counter}/{sample_count}", end="")
+        now = time.perf_counter()
+        if last_time is not None:
+            time_samples.append(now - last_time)
+        last_time = now
 
-    if len(samples) == sample_count:
+    if counter == sample_count:
         print()
 
         if write:
@@ -46,11 +53,10 @@ def on_sensor_reading(values: SensorReading, write: bool):
               
 if __name__ == "__main__":
     parser = argparse.ArgumentParser()
-    parser.add_argument("-w", "--write", action="store_true", help="Write calibration data to file")
+    parser.add_argument("-w", "--write", action="store_true")
     args = parser.parse_args()
 
-    # Pass write argument to HWSensors
-    sensors = HWSensors(lambda values: on_sensor_reading(values, write=args.write))
+    sensors = HWSensors(lambda coords, value: on_sensor_reading(coords, value, write=args.write))
 
     print()
     asyncio.run(sensors.sensor_reading_loop())

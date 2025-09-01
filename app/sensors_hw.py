@@ -7,7 +7,6 @@ import adafruit_ads1x15.ads1015 as ADS
 from adafruit_ads1x15.analog_in import AnalogIn
 
 from ui_instance import MagChessUI
-from data import SensorReading
 
 class HWSensors():
     # ADC input + corresponding multiplexer input

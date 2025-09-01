@@ -1,5 +1,4 @@
 import chess
-from typing import TypeAlias
 
 from piece import Piece
 
@@ -135,14 +134,15 @@ class BoardState:
         new_state.pieces = self.pieces.copy()
         return new_state
 
-SensorReading: TypeAlias = dict[tuple[int, int], int]
-
 class IChessboard:
     staging_state: BoardState
     current_player: chess.Color | None
     @property
     def next_player(self) -> chess.Color:
         raise NotImplementedError
+
+    def get_latest_board(self) -> chess.Board | None:
+        pass
 
     def show_state(self, state: BoardState):
         pass

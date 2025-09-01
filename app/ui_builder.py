@@ -55,9 +55,9 @@ class UIBuilder:
             if board is None:
                 instance.display_info("No game found")
                 return None
-            
-            pgn = chess.pgn.Game().from_board(board)
-            return str(pgn.mainline())
+            else:
+                pgn = chess.pgn.Game().from_board(board)
+                return str(pgn.mainline())
 
         def on_pgn_copied(e: ft.ControlEvent):
             pgn = get_pgn()
