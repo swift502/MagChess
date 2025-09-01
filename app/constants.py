@@ -5,7 +5,7 @@ from utilities import data_path
 DEV_LAYOUT = False
 
 try:
-    import RPi
+    import RPi # type: ignore
     RPI = True
 except ImportError:
     RPI = False
