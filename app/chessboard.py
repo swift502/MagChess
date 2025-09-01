@@ -35,9 +35,6 @@ class Chessboard(IChessboard):
         else:
             return self.stack[-1]
 
-    def set_flipped(self, value: bool):
-        self.flipped = value
-
     def locator_to_coords(self, locator: str):
         return (
             ord(locator[0]) - ord("a"),
@@ -59,10 +56,10 @@ class Chessboard(IChessboard):
         while True:
             # Board logic
             if not self.init_config and self.match_sensor_state("WW....BB" * 8):
-                self.set_flipped(False)
+                self.flipped = False
                 self.init_game()
             elif not self.init_config and self.match_sensor_state("BB....WW" * 8):
-                self.set_flipped(True)
+                self.flipped = True
                 self.init_game()
             elif not self.game_over:
                 self.board_state_update()
@@ -105,12 +102,9 @@ class Chessboard(IChessboard):
         init_state: BoardState = BoardState(board, pieces, chess.BLACK)
         self.last_analysed_sensor_state = None
 
-        # self.state_stack.append(init_state)
-        # self.board_stack.append(board)
         self.stack.append(init_state)
         self.show_state(init_state)
 
-        # self.current_player = chess.WHITE
         self.init_config = True
 
         print("New game detected")
@@ -119,8 +113,6 @@ class Chessboard(IChessboard):
         self.game_over = False
 
         # State
-        # self.state_stack = []
-        # self.board_stack = []
         self.stack = []
         self.staging_layout = {}
 
@@ -155,9 +147,6 @@ class Chessboard(IChessboard):
         for piece in self.spawned_pieces.copy():
             if piece not in layout.values():
                 piece.destroy()
-
-    # def show_staging_state(self):
-    #     self.show_state(self.staging_state)
 
     def board_state_update(self):
         if len(self.stack) == 0:
@@ -244,7 +233,6 @@ class Chessboard(IChessboard):
 
     def pop_state(self):
         self.stack.pop()
-        # self.current_player = self.next_player
         print("Pop")
 
     def analyse_sensor_changes(self, against: BoardState):
@@ -357,9 +345,6 @@ class Chessboard(IChessboard):
                     return self.staging_move_piece(king, king_dest.coords)
                 
         return None
-
-    # def update_status(self, icon: IconData, text: str):
-    #     self.ui.show_system_info(icon, text)
 
     def staging_move_piece(self, missing: MissingPiece, new_coords: tuple[int, int]):
         promotion = False
