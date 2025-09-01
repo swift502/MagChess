@@ -21,9 +21,6 @@ class Cell:
         self.sensor_indicator = ui.sensor_indicators[coords]
 
     def update(self, sensor_value: float):
-        # Value
-        # self.smooth_value = lerp(self.smooth_value, sensor_value, 0.1)
-
         # State
         if sensor_value < self.threshold_low:
             self.state = 1

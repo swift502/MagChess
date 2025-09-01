@@ -222,7 +222,7 @@ class Chessboard(IChessboard):
         # Discard previous state comparisons
         # Just show the best result as compared to current state
         if illegal:
-            self.update_status(DataLib.icons.invalid, "Illegal move")
+            self.ui.display_game("Illegal move")
         self.show_state(first_staging_state)
 
     def process_move(self, move: chess.Move):
@@ -231,9 +231,14 @@ class Chessboard(IChessboard):
             outcome = self.board_stack[-1].outcome()
             if outcome is not None:
                 self.game_over = True
-                self.update_status(DataLib.icons.winner, f"Game over!\nWinner: {self.get_winner(outcome)}")
+                self.ui.display_message(
+                    f"Game over! Winner: {self.get_winner(outcome)}",
+                    color=ft.Colors.BLACK,
+                    bgcolor="#dbac16",
+                    duration=10,
+                )
         else:
-            self.update_status(DataLib.icons.invalid, "Illegal move")
+            self.ui.display_game("Illegal move")
 
     def pop_state(self):
         self.state_stack.pop()
@@ -283,7 +288,7 @@ class Chessboard(IChessboard):
 
         if missing_new_swaps == (1, 0, 0):
             if missing[0].piece.color != self.current_player:
-                self.update_status(DataLib.icons.question, "Unexpected\nboard state")
+                self.ui.uncertain()
 
         elif missing_new_swaps == (1, 1, 0):
             move = chess.Move.from_uci(self.coords_to_locator(missing[0].coords) + self.coords_to_locator(new[0].coords))
@@ -298,7 +303,7 @@ class Chessboard(IChessboard):
                 return self.staging_move_piece(missing[0], new[0].coords)
             else:
                 # A piece changed color while moving, doesn't make sense
-                self.update_status(DataLib.icons.question, "Unexpected\nboard state")
+                self.ui.uncertain()
 
         elif missing_new_swaps == (1, 0, 1):
             if missing[0].piece.color == swaps[0].new_color:
@@ -307,7 +312,7 @@ class Chessboard(IChessboard):
                 return self.staging_move_piece(missing[0], swaps[0].coords) # Move missing piece to capture position
             else:
                 # Current player didn't perform a capture, the swap doesn't make sense
-                self.update_status(DataLib.icons.question, "Unexpected\nboard state")
+                self.ui.uncertain()
 
         elif missing_new_swaps == (2, 1, 0):
             pawns = missing[0].piece.pieceType == chess.PAWN and missing[1].piece.pieceType == chess.PAWN
@@ -329,9 +334,9 @@ class Chessboard(IChessboard):
                     self.staging_remove_piece(captured_pawn.coords)
                     return self.staging_move_piece(moving_pawn, new[0].coords)
                 else:
-                    self.update_status(DataLib.icons.question, "Unexpected\nboard state")
+                    self.ui.uncertain()
             else:
-                self.update_status(DataLib.icons.question, "Unexpected\nboard state")
+                self.ui.uncertain()
 
         elif missing_new_swaps == (2, 2, 0):
             king = None
@@ -363,18 +368,18 @@ class Chessboard(IChessboard):
                     self.staging_move_piece(rook, rook_dest.coords)
                     return self.staging_move_piece(king, king_dest.coords)
                 else:
-                    self.update_status(DataLib.icons.question, "Unexpected\nboard state")
+                    self.ui.uncertain()
             else:
-                self.update_status(DataLib.icons.question, "Unexpected\nboard state")
+                self.ui.uncertain()
 
         elif len(missing) > 0 or len(new) > 0 or len(swaps) > 0:
             # Generic fail
-            self.update_status(DataLib.icons.question, "Unexpected\nboard state")
+            self.ui.uncertain()
 
         return None
 
-    def update_status(self, icon: IconData, text: str):
-        self.ui.show_system_info(icon, text)
+    # def update_status(self, icon: IconData, text: str):
+    #     self.ui.show_system_info(icon, text)
 
     def staging_move_piece(self, missing: MissingPiece, new_coords: tuple[int, int]):
         promotion = False

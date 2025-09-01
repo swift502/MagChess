@@ -16,7 +16,7 @@ if TYPE_CHECKING:
 
 class UIBuilder:
     @staticmethod
-    def build_tab_2(instance: MagChessUI):
+    def build_tab_board(instance: MagChessUI):
         stack = ft.Stack(
             controls=UIBuilder.build_board(THEME_WHITE, THEME_BLACK),
         )
@@ -24,7 +24,7 @@ class UIBuilder:
         return stack
 
     @staticmethod
-    def build_tab_3(instance: MagChessUI):
+    def build_tab_sensors(instance: MagChessUI):
         light = "#999999"
         dark = "#777777"
         stack: list = UIBuilder.build_board(light, dark)
@@ -53,7 +53,7 @@ class UIBuilder:
         def get_pgn():
             board = instance.chessboard.get_latest_board()
             if board is None:
-                instance.display_info("No game found")
+                instance.display_message("No game found")
                 return None
             else:
                 pgn = chess.pgn.Game().from_board(board)
@@ -61,13 +61,11 @@ class UIBuilder:
 
         def on_pgn_copied(e: ft.ControlEvent):
             pgn = get_pgn()
-            if pgn is not None:
+            if pgn is not None and len(pgn) > 0:
                 instance.page.set_clipboard(pgn)
-                instance.display_info(
-                    "PGN copied to clipboard",
-                    color=ft.Colors.WHITE,
-                    bgcolor="#54A800",
-                )
+                instance.display_success("PGN copied to clipboard")
+            else:
+                instance.display_message("Game not found")
 
             instance.show_ui()
 
@@ -88,18 +86,18 @@ class UIBuilder:
             return shutil.which("gh") is not None
 
         def create_gist_from_string(content: str):
-            with tempfile.NamedTemporaryFile(delete=False, suffix="txt") as tmp:
-                tmp.write(content.encode("utf-8"))
-                tmp.flush()
-                tmp_filename = tmp.name
+            filename = f"chess-{datetime.now().strftime('%Y-%m-%d-%H-%M-%S')}.pgn"
+            tmp_path = os.path.join(tempfile.gettempdir(), filename)
+            with open(tmp_path, "w", encoding="utf-8") as tmp:
+                tmp.write(content)
 
             try:
-                cmd = ["gh", "gist", "create", tmp_filename, "-d", f"pgn-{datetime.now().strftime('%Y-%m-%d-%H-%M-%S')}"]
+                cmd = ["gh", "gist", "create", tmp_path]
                 return subprocess.run(cmd, check=True)
             except Exception as e:
-                instance.display_error(f"Error creating gist")
+                instance.display_error("Error creating gist")
             finally:
-                os.remove(tmp_filename)
+                os.remove(tmp_path)
 
         def on_gist_clicked(e: ft.ControlEvent):
             if gh_installed():
@@ -107,15 +105,9 @@ class UIBuilder:
                 if pgn is not None and len(pgn) > 0:
                     result = create_gist_from_string(pgn)
                     if result is not None:
-                        instance.display_info(
-                            "Gist uploaded successfully",
-                            color=ft.Colors.WHITE,
-                            bgcolor="#54A800",
-                        )
+                        instance.display_success("Gist uploaded successfully")
                 else:
-                    instance.display_info(
-                        "No PGN to write",
-                    )
+                    instance.display_message("Game not found")
             else:
                 instance.display_error("GitHub CLI is not installed")
 
@@ -141,9 +133,8 @@ class UIBuilder:
         )
 
     @staticmethod
-    def build_bottom_overlay(instance: MagChessUI, default_tab: int):
+    def build_bottom_overlay(instance: MagChessUI):
         instance.nav = ft.NavigationBar(
-            selected_index=default_tab,
             on_change=instance.on_tab_change,
             destinations=[
                 ft.NavigationBarDestination(icon=ft.Icons.CROP_FREE, label="Board"),
