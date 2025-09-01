@@ -1,6 +1,6 @@
 # MagChess
 
-Magnetic chess game detection for the [Traditional Chess Set](https://www.lego.com/en-cz/product/traditional-chess-set-40719), ADS1015 and Raspberry Pi.
+Magnetic chess game detection for the [Traditional Chess Lego Set](https://www.lego.com/en-cz/product/traditional-chess-set-40719), ADS1015 and Raspberry Pi.
 
 ## Run notes
 
