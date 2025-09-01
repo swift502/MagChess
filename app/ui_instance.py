@@ -89,7 +89,13 @@ class MagChessUI:
         self.nav.selected_index = index
         self.content_host.content = self.screens[index]
 
-    def update_move_screen(self, icon: IconData, text: str, player_color: chess.Color | None, rating_screen: bool = False):
+    def show_system_info(self, icon: IconData, text: str):
+        # if icon == DataLib.icons.question:
+        #     self.display_info(
+        #         text.replace("\n", " "),
+        #         color=ft.Colors.WHITE,
+        #         bgcolor="#54498f",
+        #         )
         if icon == DataLib.icons.invalid:
             self.display_info(
                 text.replace("\n", " "),
@@ -145,7 +151,7 @@ class MagChessUI:
             el.on_click = lambda e, x=co_letter, y=co_number: on_click(x, y)
 
     def display_info(self, message: str, color: str | None = None, bgcolor: str | None = None, duration: int | None = None):
-        text = ft.Text(message, size=20, font_family="Noto Sans")
+        text = ft.Text(message, size=26, font_family="Noto Sans")
         if color is not None:
             text.color = color
         if RPI:

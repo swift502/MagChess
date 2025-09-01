@@ -3,7 +3,7 @@ import platform
 from utilities import data_path
 
 # Flags
-DEV_LAYOUT = False
+DEV_LAYOUT = True
 RPI = platform.machine() == "aarch64"
 
 # Sensors

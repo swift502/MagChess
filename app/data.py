@@ -124,18 +124,15 @@ class DataLib:
 
 class BoardState:
     pieces: dict[tuple[int, int], Piece]
-    advantage: float
     player: chess.Color | None
 
     def __init__(self):
         self.pieces = {}
-        self.advantage = 0.5
         self.player = None
 
     def copy(self):
         new_state = BoardState()
         new_state.pieces = self.pieces.copy()
-        new_state.advantage = self.advantage
         return new_state
 
 SensorReading: TypeAlias = dict[tuple[int, int], int]
@@ -146,12 +143,6 @@ class IChessboard:
     @property
     def next_player(self) -> chess.Color:
         raise NotImplementedError
-
-    def get_latest_board(self) -> chess.Board | None:
-        pass
-
-    def get_latest_state_stack(self) -> list[BoardState] | None:
-        pass
 
     def show_state(self, state: BoardState):
         pass

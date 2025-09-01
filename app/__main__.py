@@ -18,7 +18,7 @@ async def main(page: ft.Page):
     page.window.height = 720
     page.window.frameless = True
     if DEV_LAYOUT:
-        page.window.width = page.window.width * 3
+        page.window.width = page.window.width * 2
     if RPI:
         page.window.full_screen = True
     page.padding = 0
