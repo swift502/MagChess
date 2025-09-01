@@ -44,7 +44,7 @@ async def main(page: ft.Page):
             on_sensor_reading=chessboard.update_sensor_values,
             ui=ui,
         )
-        await engine.init("engine/stockfish-android-armv8")
+        await engine.init("engine/stockfish-rpi-5")
     else:
         from sensors_sw import SWSensors
         sensors = SWSensors(
