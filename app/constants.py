@@ -1,14 +1,10 @@
 import json
+import platform
 from utilities import data_path
 
 # Flags
 DEV_LAYOUT = False
-
-try:
-    import RPi # type: ignore
-    RPI = True
-except ImportError:
-    RPI = False
+RPI = platform.machine() == "aarch64"
 
 # Sensors
 with open(data_path("sensor_calibration_data.json")) as f:
