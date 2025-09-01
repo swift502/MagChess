@@ -5,7 +5,7 @@ from utilities import data_path
 DEV_LAYOUT = False
 
 try:
-    from RPi.GPIO import GPIO
+    import RPi
     RPI = True
 except ImportError:
     RPI = False
