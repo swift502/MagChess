@@ -305,11 +305,8 @@ class Chessboard(IChessboard):
                     captured_pawn = miss
             
             if pawns and moving_pawn and captured_pawn:
-                pos1_check = new[0].coords[0] == captured_pawn.coords[0]
-                pos2_check = moving_pawn.coords[1] == captured_pawn.coords[1]
-                col_check = moving_pawn.piece.color == self.opposite(against.moved_color)
-
-                if pos1_check and pos2_check and col_check:
+                move = chess.Move.from_uci(self.coords_to_locator(moving_pawn.coords) + self.coords_to_locator(new[0].coords))
+                if against.board.is_en_passant(move):
                     # En passant
                     self.staging_remove_piece(captured_pawn.coords)
                     return self.staging_move_piece(moving_pawn, new[0].coords)
