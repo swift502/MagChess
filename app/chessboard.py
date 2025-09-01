@@ -3,18 +3,16 @@ import chess
 import flet as ft
 
 from cell import Cell
-from data import ColorSwap, DataLib, IconData, MissingPiece, NewPiece, IChessboard, BoardState
+from data import ColorSwap, DataLib, MissingPiece, NewPiece, IChessboard, BoardState, PieceLayout
 from piece import Piece
 from ui_instance import MagChessUI
 
 class Chessboard(IChessboard):
-    current_player: chess.Color | None = None
     game_over: bool = False
     flipped: bool = False
 
-    state_stack: list[BoardState] = []
-    board_stack: list[chess.Board] = []
-    staging_state: BoardState
+    stack: list[BoardState] = []
+    staging_layout: PieceLayout
     spawned_pieces: list[Piece] = []
 
     cells: dict[tuple[int, int], Cell] = {}
@@ -23,16 +21,19 @@ class Chessboard(IChessboard):
     last_analysed_sensor_state: str | None
 
     @property
-    def next_player(self):
-        return chess.WHITE if self.current_player == chess.BLACK else chess.BLACK
-    
-    def get_latest_board(self):
-        if self.board_stack is None:
+    def current_player(self):
+        return chess.WHITE if self.stack[-1].moved_color == chess.BLACK else chess.BLACK
+
+    def opposite(self, color: chess.Color):
+        return chess.WHITE if color == chess.BLACK else chess.BLACK
+
+    def get_latest_state(self):
+        if self.stack is None:
             return None
-        elif len(self.board_stack) == 0:
+        elif len(self.stack) == 0:
             return None
         else:
-            return self.board_stack[-1]
+            return self.stack[-1]
 
     def set_flipped(self, value: bool):
         self.flipped = value
@@ -91,54 +92,58 @@ class Chessboard(IChessboard):
     def init_game(self):
         self.clean_up()
 
+        # Board
         board = chess.Board()
 
-        init_state: BoardState = BoardState()
-        self.last_analysed_sensor_state = None
-
+        # Pieces
+        pieces = {}
         for locator, pieceData in DataLib.start_configuration().items():
             coords = self.locator_to_coords(locator)
             piece = Piece(self, self.ui, pieceData)
-            init_state.pieces[coords] = piece
+            pieces[coords] = piece
 
-        self.state_stack.append(init_state)
-        self.board_stack.append(board)
+        init_state: BoardState = BoardState(board, pieces, chess.BLACK)
+        self.last_analysed_sensor_state = None
+
+        # self.state_stack.append(init_state)
+        # self.board_stack.append(board)
+        self.stack.append(init_state)
         self.show_state(init_state)
 
+        # self.current_player = chess.WHITE
         self.init_config = True
 
         print("New game detected")
 
     def clean_up(self):
         self.game_over = False
-        self.current_player = chess.WHITE
 
         # State
-        self.state_stack = []
-        self.board_stack = []
-        self.staging_state = BoardState()
+        # self.state_stack = []
+        # self.board_stack = []
+        self.stack = []
+        self.staging_layout = {}
 
         # Clean up entities
-        self.show_state(self.staging_state)
+        self.show_layout(self.staging_layout)
 
-    def commit_staging_state(self, move: chess.Move):
-        com_state = self.staging_state.copy()
-        com_state.player = self.current_player
-
-        self.state_stack.append(com_state)
-
-        board = self.board_stack[-1].copy()
+    def commit_staging_layout(self, move: chess.Move):
+        board = self.stack[-1].board.copy()
         board.push(move)
-        self.board_stack.append(board)
+
+        state = BoardState(board, self.staging_layout.copy(), self.current_player)
+        self.stack.append(state)
 
         self.init_config = False
-        self.current_player = self.next_player
 
         print(f"Committed {move.uci()}")
 
     def show_state(self, state: BoardState):
+        self.show_layout(state.pieces)
+
+    def show_layout(self, layout: PieceLayout):
         # Iterate state
-        for coords, piece in state.pieces.items():
+        for coords, piece in layout.items():
             if piece in self.spawned_pieces:
                 # Move existing
                 piece.go_to(coords)
@@ -148,14 +153,14 @@ class Chessboard(IChessboard):
 
         # Remove obsolete
         for piece in self.spawned_pieces.copy():
-            if piece not in state.pieces.values():
+            if piece not in layout.values():
                 piece.destroy()
 
-    def show_staging_state(self):
-        self.show_state(self.staging_state)
+    # def show_staging_state(self):
+    #     self.show_state(self.staging_state)
 
     def board_state_update(self):
-        if len(self.state_stack) == 0:
+        if len(self.stack) == 0:
             return
 
         # Check for changes
@@ -165,54 +170,51 @@ class Chessboard(IChessboard):
 
         # Changes found, start new analysis
         self.last_analysed_sensor_state = sensor_state
-
-        # Staging state may have been committed now, we can safely discard it
-        self.staging_state = self.state_stack[-1].copy()
-
+        self.staging_layout = self.stack[-1].pieces.copy()
         illegal = False
 
         # Compare against current
-        missing, new, swaps = self.analyse_sensor_changes(against=self.state_stack[-1])
-        print(f"Current: {len(missing)}, {len(new)}, {len(swaps)}")
+        missing, new, swaps = self.analyse_sensor_changes(against=self.stack[-1])
+        # print(f"Current: {len(missing)}, {len(new)}, {len(swaps)}")
         missing_new_swaps = (len(missing), len(new), len(swaps))
         if missing_new_swaps == (0, 0, 0):
-            self.show_state(self.staging_state)
+            self.show_layout(self.staging_layout)
             # print("Reverted to current")
             return
         
-        uci_1 = self.update_staging_state(missing, new, swaps, against=self.board_stack[-1])
+        uci_1 = self.update_staging_state(missing, new, swaps, against=self.stack[-1])
         if uci_1 is not None:
             move = chess.Move.from_uci(uci_1)
-            if move in self.board_stack[-1].legal_moves:
+            if move in self.stack[-1].board.legal_moves:
                 self.process_move(move)
-                self.show_state(self.staging_state)
+                self.show_layout(self.staging_layout)
                 # print("Moved from current state")
                 return
             else:
                 illegal = True
             
-        first_staging_state = self.staging_state.copy()
+        first_staging_layout = self.staging_layout.copy()
         
-        if len(self.state_stack) > 1:
-            self.staging_state = self.state_stack[-2].copy()
+        if len(self.stack) > 1:
+            self.staging_layout = self.stack[-2].pieces.copy()
 
             # Compare against last
-            missing, new, swaps = self.analyse_sensor_changes(against=self.state_stack[-2])
-            print(f"Previous: {len(missing)}, {len(new)}, {len(swaps)}")
+            missing, new, swaps = self.analyse_sensor_changes(against=self.stack[-2])
+            # print(f"Previous: {len(missing)}, {len(new)}, {len(swaps)}")
             missing_new_swaps = (len(missing), len(new), len(swaps))
             if missing_new_swaps == (0, 0, 0):
                 self.pop_state()
-                self.show_state(self.staging_state)
+                self.show_layout(self.staging_layout)
                 # print("Reverted to previous")
                 return
             
-            uci_2 = self.update_staging_state(missing, new, swaps, against=self.board_stack[-2])
+            uci_2 = self.update_staging_state(missing, new, swaps, against=self.stack[-2])
             if uci_2 is not None:
                 move = chess.Move.from_uci(uci_2)
-                if move in self.board_stack[-2].legal_moves:
+                if move in self.stack[-2].board.legal_moves:
                     self.pop_state()
                     self.process_move(move)
-                    self.show_state(self.staging_state)
+                    self.show_layout(self.staging_layout)
                     # print("Moved from previous state")
                     return
                 else:
@@ -223,12 +225,12 @@ class Chessboard(IChessboard):
         # Just show the best result as compared to current state
         if illegal:
             self.ui.display_game("Illegal move")
-        self.show_state(first_staging_state)
+        self.show_layout(first_staging_layout)
 
     def process_move(self, move: chess.Move):
-        if move in self.board_stack[-1].legal_moves:
-            self.commit_staging_state(move)
-            outcome = self.board_stack[-1].outcome()
+        if move in self.stack[-1].board.legal_moves:
+            self.commit_staging_layout(move)
+            outcome = self.stack[-1].board.outcome()
             if outcome is not None:
                 self.game_over = True
                 self.ui.display_message(
@@ -241,9 +243,8 @@ class Chessboard(IChessboard):
             self.ui.display_game("Illegal move")
 
     def pop_state(self):
-        self.state_stack.pop()
-        self.board_stack.pop()
-        self.current_player = self.next_player
+        self.stack.pop()
+        # self.current_player = self.next_player
         print("Pop")
 
     def analyse_sensor_changes(self, against: BoardState):
@@ -283,60 +284,47 @@ class Chessboard(IChessboard):
 
         return missing, new, swaps
 
-    def update_staging_state(self, missing : list[MissingPiece], new: list[NewPiece], swaps: list[ColorSwap], against: chess.Board) -> str | None:
+    def update_staging_state(self, missing : list[MissingPiece], new: list[NewPiece], swaps: list[ColorSwap], against: BoardState) -> str | None:
         missing_new_swaps = (len(missing), len(new), len(swaps))
 
-        if missing_new_swaps == (1, 0, 0):
-            if missing[0].piece.color != self.current_player:
-                self.ui.uncertain()
-
-        elif missing_new_swaps == (1, 1, 0):
+        if missing_new_swaps == (1, 1, 0):
             move = chess.Move.from_uci(self.coords_to_locator(missing[0].coords) + self.coords_to_locator(new[0].coords))
             if missing[0].piece.pieceType == chess.KING and missing[0].coords[0] == 4 and new[0].coords[0] in (2, 6):
                 # Can't castle with just the king
                 pass
-            elif against.is_en_passant(move):
+            elif against.board.is_en_passant(move):
                 # Can't en passant without a detected capture
                 pass
             elif missing[0].piece.color == new[0].color:
                 # Move
                 return self.staging_move_piece(missing[0], new[0].coords)
-            else:
-                # A piece changed color while moving, doesn't make sense
-                self.ui.uncertain()
 
         elif missing_new_swaps == (1, 0, 1):
             if missing[0].piece.color == swaps[0].new_color:
                 # Capture
                 self.staging_remove_piece(swaps[0].coords) # Remove captured piece
                 return self.staging_move_piece(missing[0], swaps[0].coords) # Move missing piece to capture position
-            else:
-                # Current player didn't perform a capture, the swap doesn't make sense
-                self.ui.uncertain()
 
         elif missing_new_swaps == (2, 1, 0):
             pawns = missing[0].piece.pieceType == chess.PAWN and missing[1].piece.pieceType == chess.PAWN
-            different_colors = missing[0].piece.color != missing[1].piece.color
-            correct_new_color = new[0].color == self.current_player
-            if pawns and different_colors and correct_new_color:
-                moving_pawn = None
-                captured_pawn = None
+            moving_pawn = None
+            captured_pawn = None
 
-                # En passant
-                for piece in missing:
-                    if piece.piece.color == self.current_player:
-                        moving_pawn = piece
-                    else:
-                        captured_pawn = piece
+            for miss in missing:
+                if miss.piece.color == new[0].color:
+                    moving_pawn = miss
+                else:
+                    captured_pawn = miss
+            
+            if pawns and moving_pawn and captured_pawn:
+                pos1_check = new[0].coords[0] == captured_pawn.coords[0]
+                pos2_check = moving_pawn.coords[1] == captured_pawn.coords[1]
+                col_check = moving_pawn.piece.color == self.opposite(against.moved_color)
 
-                if moving_pawn and captured_pawn:
-                    # En passant capture
+                if pos1_check and pos2_check and col_check:
+                    # En passant
                     self.staging_remove_piece(captured_pawn.coords)
                     return self.staging_move_piece(moving_pawn, new[0].coords)
-                else:
-                    self.ui.uncertain()
-            else:
-                self.ui.uncertain()
 
         elif missing_new_swaps == (2, 2, 0):
             king = None
@@ -367,15 +355,7 @@ class Chessboard(IChessboard):
                     # Castling
                     self.staging_move_piece(rook, rook_dest.coords)
                     return self.staging_move_piece(king, king_dest.coords)
-                else:
-                    self.ui.uncertain()
-            else:
-                self.ui.uncertain()
-
-        elif len(missing) > 0 or len(new) > 0 or len(swaps) > 0:
-            # Generic fail
-            self.ui.uncertain()
-
+                
         return None
 
     # def update_status(self, icon: IconData, text: str):
@@ -386,14 +366,14 @@ class Chessboard(IChessboard):
         if missing.piece.pieceType == chess.PAWN and new_coords[1] in (0, 7):
             promotion = True
 
-        self.staging_state.pieces.pop(missing.coords)
+        self.staging_layout.pop(missing.coords)
 
         if promotion:
             # Remove pawn, add queen
             data = DataLib.pieces.white_queen if missing.piece.color == chess.WHITE else DataLib.pieces.black_queen
-            self.staging_state.pieces[new_coords] = Piece(self, self.ui, data)
+            self.staging_layout[new_coords] = Piece(self, self.ui, data)
         else:
-            self.staging_state.pieces[new_coords] = missing.piece
+            self.staging_layout[new_coords] = missing.piece
 
         # UCI
         uci = self.coords_to_locator(missing.coords) + self.coords_to_locator(new_coords)
@@ -402,7 +382,7 @@ class Chessboard(IChessboard):
         return uci
 
     def staging_remove_piece(self, coords: tuple[int, int]):
-        self.staging_state.pieces.pop(coords)
+        self.staging_layout.pop(coords)
 
     def get_winner(self, outcome: chess.Outcome):
         match outcome.winner:

@@ -1,3 +1,4 @@
+from typing import TypeAlias
 import chess
 
 from piece import Piece
@@ -121,28 +122,22 @@ class DataLib:
             "h8": DataLib.pieces.black_rook,
         }
 
-class BoardState:
-    pieces: dict[tuple[int, int], Piece]
-    player: chess.Color | None
+PieceLayout: TypeAlias = dict[tuple[int, int], Piece]
 
-    def __init__(self):
-        self.pieces = {}
-        self.player = None
+class BoardState:
+    pieces: PieceLayout
+    board: chess.Board
+    moved_color: chess.Color
+
+    def __init__(self, board: chess.Board, pieces: PieceLayout, player: chess.Color):
+        self.board = board
+        self.pieces = pieces
+        self.moved_color = player
 
     def copy(self):
-        new_state = BoardState()
-        new_state.pieces = self.pieces.copy()
+        new_state = BoardState(self.board.copy(), self.pieces.copy(), self.moved_color)
         return new_state
 
 class IChessboard:
-    staging_state: BoardState
-    current_player: chess.Color | None
-    @property
-    def next_player(self) -> chess.Color:
-        raise NotImplementedError
-
     def get_latest_board(self) -> chess.Board | None:
-        pass
-
-    def show_state(self, state: BoardState):
         pass
