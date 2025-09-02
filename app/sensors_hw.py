@@ -40,7 +40,7 @@ class HWSensors():
         try:
             i2c = busio.I2C(board.SCL, board.SDA)
             ads = ADS.ADS1015(i2c)
-            ads.mode = Mode.CONTINUOUS
+            #ads.mode = Mode.CONTINUOUS
             ads.data_rate = 3300
         except ValueError:
             if ui:
@@ -71,7 +71,7 @@ class HWSensors():
         while True:
             for mul_id in range(16):
                 self.set_aselect(mul_id)
-                await asyncio.sleep(0.001)
+                await asyncio.sleep(0.01)
 
                 for adc_id in range(4):
                     mapping = self.sensor_mapping[f"a{adc_id}m{mul_id:02}"]
