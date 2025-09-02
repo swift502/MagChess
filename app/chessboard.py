@@ -20,14 +20,6 @@ class Chessboard(IChessboard):
     init_config: bool = False
     last_analysed_sensor_state: str | None
 
-    @property
-    def current_player(self):
-        return self.state_stack[-1].player
-    
-    @property
-    def next_player(self):
-        return chess.WHITE if self.current_player == chess.BLACK else chess.BLACK
-
     def get_latest_board(self):
         if self.state_stack is None or len(self.state_stack) == 0:
             return None
@@ -99,7 +91,7 @@ class Chessboard(IChessboard):
             pieces[coords] = piece
 
         # State
-        init_state: BoardState = BoardState(board, pieces, chess.WHITE)
+        init_state: BoardState = BoardState(board, pieces)
         self.state_stack.append(init_state)
         self.show_layout(pieces)
 
@@ -119,7 +111,7 @@ class Chessboard(IChessboard):
         board = self.state_stack[-1].board.copy()
         board.push(move)
 
-        state = BoardState(board, self.staging_layout.copy(), self.next_player)
+        state = BoardState(board, self.staging_layout.copy())
         self.state_stack.append(state)
 
         self.init_config = False
@@ -140,8 +132,6 @@ class Chessboard(IChessboard):
         for piece in self.spawned_pieces.copy():
             if piece not in layout.values():
                 piece.destroy()
-
-        self.ui.update_current_player()
 
     def board_state_update(self):
         if len(self.state_stack) == 0:
@@ -206,7 +196,7 @@ class Chessboard(IChessboard):
         # Discard previous state comparisons
         # Just show the best result as compared to current state
         if illegal:
-            self.ui.display_game("Illegal move")
+            self.ui.display_info("Illegal move")
         self.show_layout(first_staging_layout)
 
     def process_move(self, move: chess.Move):
@@ -222,7 +212,7 @@ class Chessboard(IChessboard):
                     duration=10,
                 )
         else:
-            self.ui.display_game("Illegal move")
+            self.ui.display_info("Illegal move")
 
     def pop_state(self):
         self.state_stack.pop()
@@ -334,11 +324,11 @@ class Chessboard(IChessboard):
                     self.staging_move_piece(rook, rook_dest.coords)
                     return self.staging_move_piece(king, king_dest.coords)
         
-        elif missing_new_swaps in ((0, 1, 0), (0, 0, 1)):
-            self.ui.display_game("Unexpected board state")
+        elif missing_new_swaps == (0, 1, 0):
+            self.ui.display_info("Unexpected board state")
 
         elif len(missing) > 2 or len(new) > 1 or len(swaps) > 1:
-            self.ui.display_game("Unexpected board state")
+            self.ui.display_info("Unexpected board state")
 
         return None
 

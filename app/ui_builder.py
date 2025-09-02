@@ -52,7 +52,6 @@ class UIBuilder:
         def get_pgn():
             board = instance.chessboard.get_latest_board()
             if board is None:
-                instance.display_message("No game found")
                 return None
             else:
                 pgn = chess.pgn.Game().from_board(board)
@@ -64,7 +63,7 @@ class UIBuilder:
                 instance.page.set_clipboard(pgn)
                 instance.display_success("PGN copied to clipboard")
             else:
-                instance.display_message("Game not found")
+                instance.display_info("Game not found")
 
             instance.show_ui()
 
@@ -106,7 +105,7 @@ class UIBuilder:
                     if result is not None:
                         instance.display_success("Gist uploaded successfully")
                 else:
-                    instance.display_message("Game not found")
+                    instance.display_info("Game not found")
             else:
                 instance.display_error("GitHub CLI is not installed")
 
@@ -123,27 +122,8 @@ class UIBuilder:
             ),
         )
 
-        instance.current_player_text = ft.Text(
-            "Scanning for\na new game",
-            size=30,
-            font_family="Noto Sans",
-            text_align=ft.TextAlign.CENTER,
-            color=ft.Colors.WHITE,
-        )
-
-        current_player_box = ft.ElevatedButton(
-            content=instance.current_player_text,
-            top=46,
-            bgcolor="#cc1d2024",
-            style=ft.ButtonStyle(
-                padding=ft.padding.symmetric(20, 30),
-                shape=ft.RoundedRectangleBorder(20),
-            ),
-            disabled=True,
-        )
-
         return ft.Stack(
-            controls=[copy_pgn_button, gist_button, current_player_box],
+            controls=[copy_pgn_button, gist_button],
             alignment=ft.alignment.top_center,
             animate_offset=150,
             offset=ft.Offset(0, -0.3),

@@ -2,8 +2,8 @@
 import asyncio
 import concurrent.futures
 import math
+import time
 from typing import Callable
-import chess
 import flet as ft
 
 from constants import DEV_LAYOUT, RPI
@@ -21,11 +21,14 @@ class MagChessUI:
     bottom_overlay: ft.Stack
     board_stack: ft.Stack
     nav: ft.NavigationBar
-    current_player_text: ft.Text
     sensor_indicators: dict[tuple[int, int], ft.Container]
 
     ui_enabled: bool = False
     hide_task: concurrent.futures.Future | None = None
+
+    taps: list[float] = []
+    tap_exit_time: float = 2
+    tap_exit_count: int = 10
 
     def __init__(self, page: ft.Page):
         self.page = page
@@ -65,12 +68,6 @@ class MagChessUI:
     def update(self):
         self.page.update()
 
-    def update_current_player(self):
-        if self.chessboard.game_over:
-            self.current_player_text.value = f"{'Black' if self.chessboard.current_player ==  chess.WHITE else 'White'} won"
-        else:
-            self.current_player_text.value = f"{'White' if self.chessboard.current_player ==  chess.WHITE else 'Black'} plays"
-
     def on_tab_change(self, e: ft.ControlEvent):
         idx = e.control.selected_index
         self.show_tab(idx)
@@ -80,7 +77,7 @@ class MagChessUI:
         self.nav.selected_index = index
         self.content_host.content = self.screens[index]
 
-    def display_game(self, message: str):
+    def display_info(self, message: str):
         self.display_message(message, color=ft.Colors.WHITE, bgcolor="#54498f")
 
     def display_success(self, message: str):
@@ -110,6 +107,20 @@ class MagChessUI:
         else:
             self.show_ui()
 
+        self.exit_sequence()
+
+    def exit_sequence(self):
+        now = time.perf_counter()
+        self.taps.append(now)
+
+        self.taps = [t for t in self.taps if now - t <= self.tap_exit_time]
+
+        if len(self.taps) > self.tap_exit_count // 2:
+            self.display_info(f"Tap {self.tap_exit_count - len(self.taps)} more times to exit")
+
+        if len(self.taps) >= self.tap_exit_count:
+            self.page.window.close()
+    
     def show_ui(self):
         self.ui_enabled = True
 

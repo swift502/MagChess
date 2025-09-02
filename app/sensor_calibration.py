@@ -5,7 +5,6 @@ import sys
 import time
 
 from sensors_hw import HWSensors
-# from sensors_sw import SWSensors
 from utilities import data_path
 
 sensor_count = 64

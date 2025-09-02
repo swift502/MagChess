@@ -86,21 +86,16 @@ PieceLayout: TypeAlias = dict[tuple[int, int], Piece]
 class BoardState:
     pieces: PieceLayout
     board: chess.Board
-    player: chess.Color
 
-    def __init__(self, board: chess.Board, pieces: PieceLayout, player: chess.Color):
+    def __init__(self, board: chess.Board, pieces: PieceLayout):
         self.board = board
         self.pieces = pieces
-        self.player = player
 
     def copy(self):
-        new_state = BoardState(self.board.copy(), self.pieces.copy(), self.player)
+        new_state = BoardState(self.board.copy(), self.pieces.copy())
         return new_state
 
 class IChessboard:
-
-    game_over: bool
-
     @property
     def current_player(self) -> chess.Color:
         raise NotImplementedError()
