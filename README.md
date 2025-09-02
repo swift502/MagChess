@@ -2,18 +2,24 @@
 
 ![](images/preview.png)
 
-Magnetic chess game interpreter and recorder for the Lego [Traditional Chess Set](https://www.lego.com/en-cz/product/traditional-chess-set-40719), Raspberry Pi, ADS1015 and SS49E magnetic sensors.
+Magnetic chess game interpreter and recorder for the Lego [Traditional Chess Set](https://www.lego.com/en-cz/product/traditional-chess-set-40719). Game PGN can be copied to clipboard or uploaded as a Gist via Github CLI. 
 
-- Copy game PGN to clipboard
-- Upload game PGN as a Github Gist
+## App
 
-## Run
+Setup
 
-1. `pip install -r requirements.txt`
-2. Run `rpi_install.sh`
-3. Run `rpi_run.sh`
+```bash
+pip install -r requirements.txt
+rpi_install.sh
+```
 
-## Autostart
+Run
+
+```bash
+rpi_run.sh
+```
+
+### Autostart config
 
 ```bash
 mkdir -p ~/.config/autostart
@@ -27,3 +33,13 @@ Name=MagChess
 Icon=/home/pi/Documents/Github/MagChess/app/assets/icon.ico
 Exec=/home/pi/Documents/Github/MagChess/rpi_run.sh
 ```
+
+## Used components
+
+- Raspberry Pi 5
+- Waveshare 4inch HDMI LCD (C)
+- 64x SS49E hall sensor
+- 4x CD74HC4067 (mux)
+- ADS1015 (adc)
+- MP1584EN (step down)
+- Pin headers, wires
