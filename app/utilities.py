@@ -1,5 +1,4 @@
 from pathlib import Path
-import math
 
 def hex_to_rgb(hex_color: str):
     hex_color = hex_color.lstrip("#")
@@ -42,27 +41,3 @@ def asset_path(path: str) -> str:
 
 def data_path(path: str) -> str:
     return str(Path(__file__).parent / "data" / path)
-
-def spring(value: float, vel: float, target: float, mass: float, damping: float):
-    acceleration = target - value
-    acceleration /= mass
-    vel += acceleration
-    vel *= damping
-    value += vel
-    return value, vel
-
-def power_ease(factor: float, p: float = 1.0) -> float:
-    cos_val = math.cos(factor * math.pi)
-    result = math.sqrt((1 + p * p) / (1 + (p * p * cos_val * cos_val))) * cos_val
-    result *= 0.5
-    result += 0.5
-
-    return result
-
-def score_curve(score: float):
-    bell_curve = power_ease(score * 2 - 1, 2.0)
-    bell_curve *= 0.5
-    if score > 0.5:
-        bell_curve = 1-bell_curve
-
-    return bell_curve

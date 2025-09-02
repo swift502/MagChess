@@ -49,7 +49,6 @@ class UIBuilder:
 
     @staticmethod
     def build_top_overlay(instance: MagChessUI):
-
         def get_pgn():
             board = instance.chessboard.get_latest_board()
             if board is None:
@@ -124,8 +123,27 @@ class UIBuilder:
             ),
         )
 
+        instance.current_player_text = ft.Text(
+            "Scanning for\na new game",
+            size=30,
+            font_family="Noto Sans",
+            text_align=ft.TextAlign.CENTER,
+            color=ft.Colors.WHITE,
+        )
+
+        current_player_box = ft.ElevatedButton(
+            content=instance.current_player_text,
+            top=46,
+            bgcolor="#cc1d2024",
+            style=ft.ButtonStyle(
+                padding=ft.padding.symmetric(20, 30),
+                shape=ft.RoundedRectangleBorder(20),
+            ),
+            disabled=True,
+        )
+
         return ft.Stack(
-            controls=[copy_pgn_button, gist_button],
+            controls=[copy_pgn_button, gist_button, current_player_box],
             alignment=ft.alignment.top_center,
             animate_offset=150,
             offset=ft.Offset(0, -0.3),
@@ -142,7 +160,7 @@ class UIBuilder:
             ],
         )
 
-        instance.nav_container = ft.Container(
+        nav_container = ft.Container(
             content=instance.nav,
             border_radius=ft.border_radius.all(20),
             margin=ft.margin.only(left=16, right=16, bottom=16),
@@ -157,7 +175,7 @@ class UIBuilder:
         )
 
         return ft.Stack(
-            controls=[instance.nav_container],
+            controls=[nav_container],
             alignment=ft.alignment.bottom_center,
             animate_offset=150,
             offset=ft.Offset(0, 0.2),

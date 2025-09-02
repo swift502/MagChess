@@ -7,12 +7,10 @@ from utilities import inverse_lerp, lerp_hex
 
 class Cell:
     sensor_indicator: ft.Container
-    # smooth_value: float
     state: int
 
     def __init__(self, coords: tuple[int, int], ui: MagChessUI):
         self.coords = coords
-        # self.smooth_value = 0.0
         self.state = 0
 
         self.ref_value = SENSOR_CALIBRATION_DATA[str(coords)]
@@ -32,7 +30,7 @@ class Cell:
             self.state = 0
             self.sensor_indicator.border.top.color = "#888888"
 
-        # Raw sensor value
+        # Ui
         factor = inverse_lerp(self.threshold_low, self.threshold_high, sensor_value)
         self.sensor_indicator.bgcolor = lerp_hex("#ffffff", "#000000", factor)
 

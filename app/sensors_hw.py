@@ -4,6 +4,7 @@ import board
 import busio
 import digitalio
 import adafruit_ads1x15.ads1015 as ADS
+from adafruit_ads1x15.ads1x15 import Mode
 from adafruit_ads1x15.analog_in import AnalogIn
 
 from ui_instance import MagChessUI
@@ -39,6 +40,7 @@ class HWSensors():
         try:
             i2c = busio.I2C(board.SCL, board.SDA)
             ads = ADS.ADS1015(i2c)
+            # ads.mode = Mode.CONTINUOUS
             ads.data_rate = 3300
             # ads.gain = 1
         except ValueError:

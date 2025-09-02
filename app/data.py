@@ -3,46 +3,6 @@ import chess
 
 from piece import Piece
 
-class IconData:
-    def __init__(self, path: str, color: str):
-        self.image_path = path
-        self.color = color
-
-class IconLibrary:
-    def __init__(self):
-        self.alternative = IconData(path="icons/alternative.svg", color="#96af8b")
-        self.best = IconData(path="icons/best.svg", color="#96bc4b")
-        self.blunder = IconData(path="icons/blunder.svg", color="#ca3431")
-        self.book = IconData(path="icons/book.svg", color="#a88865")
-        self.brilliant = IconData(path="icons/brilliant.svg", color="#1bada6")
-        self.checkmate_black = IconData(path="icons/checkmate_black.svg", color="#312e2b")
-        self.checkmate_white = IconData(path="icons/checkmate_white.svg", color="#f8f8f8")
-        self.correct = IconData(path="icons/correct.svg", color="#96bc4b")
-        self.critical = IconData(path="icons/critical.svg", color="#ad5b8c")
-        self.draw_black = IconData(path="icons/draw_black.svg", color="#312e2b")
-        self.draw_white = IconData(path="icons/draw_white.svg", color="#f8f8f8")
-        self.excellent = IconData(path="icons/excellent.svg", color="#96bc4b")
-        self.fast_win = IconData(path="icons/fast_win.svg", color="#96af8b")
-        self.forced = IconData(path="icons/forced.svg", color="#96af8b")
-        self.free_piece = IconData(path="icons/free_piece.svg", color="#ec6250")
-        self.good = IconData(path="icons/good.svg", color="#96af8b")
-        self.great_find = IconData(path="icons/great_find.svg", color="#96af8b")
-        self.inaccuracy = IconData(path="icons/inaccuracy.svg", color="#f7c045")
-        self.incorrect = IconData(path="icons/incorrect.svg", color="#e58f2a")
-        self.info = IconData(path="icons/info.svg", color="#7979a1")
-        self.invalid = IconData(path="icons/invalid.svg", color="#7979a1")
-        self.mate = IconData(path="icons/mate.svg", color="#ec6250")
-        self.missed_win = IconData(path="icons/missed_win.svg", color="#dbac16")
-        self.mistake = IconData(path="icons/mistake.svg", color="#ca3431")
-        self.player_black = IconData(path="icons/player_black.svg", color="#383838")
-        self.player_white = IconData(path="icons/player_white.svg", color="#ebebeb")
-        self.question = IconData(path="icons/question.svg", color="#7979a1")
-        self.search = IconData(path="icons/search.svg", color="#7979a1")
-        self.sharp = IconData(path="icons/sharp.svg", color="#ad5b8c")
-        self.take_back = IconData(path="icons/take_back.svg", color="#96af8b")
-        self.threat = IconData(path="icons/threat.svg", color="#96af8b")
-        self.winner = IconData(path="icons/winner.svg", color="#dbac16")
-
 class PieceData:
     def __init__(self, path: str, color: chess.Color, pieceType: chess.PieceType):
         self.image_path = path
@@ -82,7 +42,6 @@ class PieceLibrary:
         self.black_king = PieceData(path="pieces/king_black.svg", color=chess.BLACK, pieceType=chess.KING)
 
 class DataLib:
-    icons = IconLibrary()
     pieces = PieceLibrary()
 
     @staticmethod
@@ -127,17 +86,22 @@ PieceLayout: TypeAlias = dict[tuple[int, int], Piece]
 class BoardState:
     pieces: PieceLayout
     board: chess.Board
-    moved_color: chess.Color
+    player: chess.Color
 
     def __init__(self, board: chess.Board, pieces: PieceLayout, player: chess.Color):
         self.board = board
         self.pieces = pieces
-        self.moved_color = player
+        self.player = player
 
     def copy(self):
-        new_state = BoardState(self.board.copy(), self.pieces.copy(), self.moved_color)
+        new_state = BoardState(self.board.copy(), self.pieces.copy(), self.player)
         return new_state
 
 class IChessboard:
+
+    @property
+    def current_player(self) -> chess.Color:
+        raise NotImplementedError()
+
     def get_latest_board(self) -> chess.Board | None:
-        pass
+        raise NotImplementedError()

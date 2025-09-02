@@ -1,6 +1,5 @@
 {
   "typeCheckingMode": "standard",
   "reportOptionalMemberAccess": "none",
-  "reportMissingParameterType": "warning",
   "pythonVersion": "3.11"
 }
