@@ -5,6 +5,18 @@ Magnetic chess game detection for the [Traditional Chess Lego Set](https://www.l
 ## Run notes
 
 1. Run rpi_install.sh
-2. Insert `dtoverlay=i2c1,pins_2_3,baudrate=400000` into `/boot/firmware/config.txt`
-3. Reboot
-4. Run rpi_run.sh
+2. Run rpi_run.sh
+
+## Autostart
+
+```bash
+mkdir -p ~/.config/autostart
+nano ~/.config/autostart/magchess.desktop
+```
+
+```ini
+[Desktop Entry]
+Type=Application
+Name=MagChess
+Exec=/home/pi/Documents/Github/MagChess/rpi_run.sh
+```
