@@ -9,8 +9,9 @@ Magnetic chess game interpreter and recorder for the Lego [Traditional Chess Set
 
 ## Run
 
-1. Run `rpi_install.sh`
-2. Run `rpi_run.sh`
+1. `pip install -r requirements.txt`
+2. Run `rpi_install.sh`
+3. Run `rpi_run.sh`
 
 ## Autostart
 
