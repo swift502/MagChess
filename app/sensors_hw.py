@@ -4,7 +4,7 @@ import board
 import busio
 import digitalio
 import adafruit_ads1x15.ads1015 as ADS
-from adafruit_ads1x15.ads1x15 import Mode
+# from adafruit_ads1x15.ads1x15 import Mode
 from adafruit_ads1x15.analog_in import AnalogIn
 
 from ui_instance import MagChessUI
@@ -71,7 +71,7 @@ class HWSensors():
         while True:
             for mul_id in range(16):
                 self.set_aselect(mul_id)
-                await asyncio.sleep(0.01)
+                await asyncio.sleep(0.001)
 
                 for adc_id in range(4):
                     mapping = self.sensor_mapping[f"a{adc_id}m{mul_id:02}"]
