@@ -40,9 +40,8 @@ class HWSensors():
         try:
             i2c = busio.I2C(board.SCL, board.SDA)
             ads = ADS.ADS1015(i2c)
-            # ads.mode = Mode.CONTINUOUS
+            ads.mode = Mode.CONTINUOUS
             ads.data_rate = 3300
-            # ads.gain = 1
         except ValueError:
             if ui:
                 ui.display_error("Chessboard connection not found.")
