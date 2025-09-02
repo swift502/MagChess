@@ -160,15 +160,14 @@ class Chessboard(IChessboard):
         # Compare against current
         missing, new, swaps = self.analyse_sensor_changes(against=self.state_stack[-1])
         # print(f"Current: {len(missing)}, {len(new)}, {len(swaps)}")
-        missing_new_swaps = (len(missing), len(new), len(swaps))
-        if missing_new_swaps == (0, 0, 0):
+        if (len(missing), len(new), len(swaps)) == (0, 0, 0):
             self.show_layout(self.staging_layout)
             # print("Reverted to current")
             return
         
-        uci_1 = self.update_staging_state(missing, new, swaps, against=self.state_stack[-1])
-        if uci_1 is not None:
-            move = chess.Move.from_uci(uci_1)
+        uci = self.update_staging_state(missing, new, swaps, against=self.state_stack[-1])
+        if uci is not None:
+            move = chess.Move.from_uci(uci)
             if move in self.state_stack[-1].board.legal_moves:
                 self.process_move(move)
                 self.show_layout(self.staging_layout)
@@ -182,19 +181,18 @@ class Chessboard(IChessboard):
         if len(self.state_stack) > 1:
             self.staging_layout = self.state_stack[-2].pieces.copy()
 
-            # Compare against last
+            # Compare against previous
             missing, new, swaps = self.analyse_sensor_changes(against=self.state_stack[-2])
             # print(f"Previous: {len(missing)}, {len(new)}, {len(swaps)}")
-            missing_new_swaps = (len(missing), len(new), len(swaps))
-            if missing_new_swaps == (0, 0, 0):
+            if (len(missing), len(new), len(swaps)) == (0, 0, 0):
                 self.pop_state()
                 self.show_layout(self.staging_layout)
                 # print("Reverted to previous")
                 return
             
-            uci_2 = self.update_staging_state(missing, new, swaps, against=self.state_stack[-2])
-            if uci_2 is not None:
-                move = chess.Move.from_uci(uci_2)
+            uci = self.update_staging_state(missing, new, swaps, against=self.state_stack[-2])
+            if uci is not None:
+                move = chess.Move.from_uci(uci)
                 if move in self.state_stack[-2].board.legal_moves:
                     self.pop_state()
                     self.process_move(move)
