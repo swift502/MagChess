@@ -87,7 +87,7 @@ class MagChessUI:
         self.display_message(message, color=ft.Colors.WHITE, bgcolor="#c01010")
         
     def display_message(self, message: str, color: str | None = None, bgcolor: str | None = None, duration: int | None = None):
-        text = ft.Text(message, size=24, font_family="Noto Sans")
+        text = ft.Text(message, size=24, font_family="Noto Sans Light")
         if color is not None:
             text.color = color
         if RPI:
