@@ -99,6 +99,8 @@ class BoardState:
 
 class IChessboard:
 
+    game_over: bool
+
     @property
     def current_player(self) -> chess.Color:
         raise NotImplementedError()

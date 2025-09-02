@@ -66,7 +66,12 @@ class MagChessUI:
         self.page.update()
 
     def update_current_player(self):
-        self.current_player_text.value = f"{'White' if self.chessboard.current_player ==  chess.WHITE else 'Black'} plays"
+        player = "White" if self.chessboard.current_player ==  chess.WHITE else "Black"
+
+        if self.chessboard.game_over:
+            self.current_player_text.value = f"{player} won"
+        else:
+            self.current_player_text.value = f"{player} plays"
 
     def on_tab_change(self, e: ft.ControlEvent):
         idx = e.control.selected_index

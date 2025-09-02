@@ -333,7 +333,13 @@ class Chessboard(IChessboard):
                     # Castling
                     self.staging_move_piece(rook, rook_dest.coords)
                     return self.staging_move_piece(king, king_dest.coords)
-                
+        
+        elif missing_new_swaps in ((0, 1, 0), (0, 0, 1)):
+            self.ui.display_game("Unexpected board state")
+
+        elif len(missing) > 2 or len(new) > 1 or len(swaps) > 1:
+            self.ui.display_game("Unexpected board state")
+
         return None
 
     def staging_move_piece(self, missing: MissingPiece, new_coords: tuple[int, int]):
