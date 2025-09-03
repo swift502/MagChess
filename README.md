@@ -4,7 +4,7 @@
 
 Magnetic chess game interpreter and recorder for the Lego [Traditional Chess Set](https://www.lego.com/en-cz/product/traditional-chess-set-40719). Game PGN can be copied to clipboard or uploaded as a Gist via Github CLI. 
 
-## App
+## Software
 
 Setup
 
@@ -34,13 +34,25 @@ Icon=/home/pi/Documents/Github/MagChess/app/assets/icon.ico
 Exec=/home/pi/Documents/Github/MagChess/rpi_run.sh
 ```
 
-## Used components
+## Hardware
 
-- Raspberry Pi 5
-- Waveshare 4inch HDMI LCD (C)
-- 32x 5x2mm neodymium magnets
+The `kicad/pcb` is designed to fit the modified underside of the lego chessboard construction found in `bricklink_studio/chessboard.io`.
+
+The PCB needs these components soldered onto it.
+
+Top side:
+
 - 64x SS49E hall sensor
+
+Bottom side:
+
 - 4x CD74HC4067 (mux)
 - ADS1015 (adc)
 - MP1584EN (step down)
-- Pin headers, wires
+
+Each lego chess piece has to be fitted with a magnet on the bottom. Round 5x2mm magnets happen to perfectly fit into the bottom of each piece. Magnet polarity is important, if white pieces output magnetic north, black pieces should be flipped and read south. The hall sensors will then read colors as positive/negative voltage, which gives the app enough information to interpret chess moves correctly.
+
+Finally the app should be installed onto a Raspberry Pi. The app was designed specifically to run on a 720x720 display.
+
+The chessboard draws 5V and GND from the pi. Data pins are the I2C SDA and SCL pins and four mux selection pins, by default D21, D20, D16 and D12.
+
