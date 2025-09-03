@@ -19,12 +19,7 @@ Run
 rpi_run.sh
 ```
 
-### Autostart config
-
-```bash
-mkdir -p ~/.config/autostart
-nano ~/.config/autostart/magchess.desktop
-```
+### Desktop shortcut
 
 ```ini
 [Desktop Entry]
@@ -32,6 +27,13 @@ Type=Application
 Name=MagChess
 Icon=/home/pi/Documents/Github/MagChess/app/assets/icon.ico
 Exec=/home/pi/Documents/Github/MagChess/rpi_run.sh
+```
+
+### Autostart config
+
+```bash
+mkdir -p ~/.config/autostart
+nano ~/.config/autostart/magchess.desktop
 ```
 
 ## Hardware
