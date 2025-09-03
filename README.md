@@ -43,7 +43,7 @@ nano ~/.config/autostart/magchess.desktop
 
 ![](images/hw.webp)
 
-The `kicad/pcb` is designed to fit the modified underside of the lego chessboard construction found in `bricklink_studio/chessboard.io`.
+The PCB in `kicad/pcb` is designed to fit a modified underside of the lego chessboard construction found in `bricklink_studio/chessboard.io`.
 
 The PCB needs the following components soldered onto it:
 
