@@ -206,22 +206,18 @@ class Chessboard(IChessboard):
         # Just show the best result as compared to current state
         if illegal:
             self.ui.display_info("Illegal move")
-            
         self.show_layout(first_staging_layout)
 
     def process_move(self, move: chess.Move):
-        if move in self.state_stack[-1].board.legal_moves:
-            self.commit_staging_layout(move)
-            outcome = self.state_stack[-1].board.outcome()
-            if outcome is not None:
-                self.game_over = True
-                self.ui.display_message(
-                    f"Game over! Winner: {self.get_winner(outcome)}",
-                    color=ft.Colors.BLACK,
-                    bgcolor="#dbac16",
-                )
-        else:
-            self.ui.display_info("Illegal move")
+        self.commit_staging_layout(move)
+        outcome = self.state_stack[-1].board.outcome()
+        if outcome is not None:
+            self.game_over = True
+            self.ui.display_message(
+                f"Game over! Winner: {self.get_winner(outcome)}",
+                color=ft.Colors.BLACK,
+                bgcolor="#dbac16",
+            )
 
     def pop_state(self):
         self.state_stack.pop()

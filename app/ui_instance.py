@@ -61,13 +61,13 @@ class MagChessUI:
             self.root.rotate = math.pi
 
         if DEV_LAYOUT:
-            self.root = ft.Row(
+            self.root = ft.Stack(controls=[ft.Row(
                 controls=[
                     ft.Container(content=self.screens[0], width=720, height=720),
                     ft.Container(content=self.screens[1], width=720, height=720),
                 ],
                 spacing=0,
-            )
+            ), self.info_box])
 
         page.add(self.root)
 
