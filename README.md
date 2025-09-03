@@ -1,10 +1,12 @@
-# MagChess
+![](images/thumb.webp)
 
-![](images/preview.png)
+# MagChess
 
 Magnetic chess game interpreter and recorder for the Lego [Traditional Chess Set](https://www.lego.com/en-cz/product/traditional-chess-set-40719). Game PGN can be copied to clipboard or uploaded as a Gist via Github CLI. 
 
 ## Software
+
+![](images/app.png)
 
 Setup
 
@@ -38,6 +40,8 @@ nano ~/.config/autostart/magchess.desktop
 ```
 
 ## Hardware
+
+![](images/hw.webp)
 
 The `kicad/pcb` is designed to fit the modified underside of the lego chessboard construction found in `bricklink_studio/chessboard.io`.
 
