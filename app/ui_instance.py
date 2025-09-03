@@ -110,6 +110,30 @@ class MagChessUI:
     def hide_message(self):
         self.info_box.visible = False
 
+    def notification_info(self, message: str):
+        self.notification_message(message, color=ft.Colors.WHITE, bgcolor="#54498f")
+
+    def notification_success(self, message: str):
+        self.notification_message(message, color=ft.Colors.WHITE, bgcolor="#54A800")
+        
+    def notification_error(self, message: str):
+        self.notification_message(message, color=ft.Colors.WHITE, bgcolor="#c01010")
+
+    def notification_message(self, message: str, color: str | None = None, bgcolor: str | None = None, duration: int | None = None):
+        text = ft.Text(message, size=24, font_family="Noto Sans Light")
+        if color is not None:
+            text.color = color
+        if RPI:
+            text.rotate = math.pi
+
+        bar = ft.SnackBar(text)
+        if bgcolor is not None:
+            bar.bgcolor = bgcolor
+        if duration is not None:
+            bar.duration = duration * 1000
+
+        self.page.open(bar)
+
     def user_activity(self, e: ft.TapEvent | None = None):
         if self.ui_enabled:
             self.hide_ui()
@@ -123,6 +147,9 @@ class MagChessUI:
         self.taps.append(now)
 
         self.taps = [t for t in self.taps if now - t <= self.tap_exit_time]
+
+        if len(self.taps) > self.tap_exit_count // 2:
+            self.notification_info(f"Tap {self.tap_exit_count - len(self.taps)} more times to exit")
 
         if len(self.taps) >= self.tap_exit_count:
             self.page.window.close()

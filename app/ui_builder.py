@@ -49,10 +49,10 @@ class UIBuilder:
 
     @staticmethod
     def build_info_box(instance: MagChessUI):
-        instance.info_text = ft.Text(size=28, color=ft.Colors.WHITE, font_family="Noto Sans Light")
+        instance.info_text = ft.Text(size=24, color=ft.Colors.WHITE, font_family="Noto Sans Light")
         info_box = ft.Container(
             content=instance.info_text,
-            padding=ft.padding.symmetric(10, 16),
+            padding=ft.padding.symmetric(14, 24),
             bottom=0,
             left=0,
             right=0,
@@ -76,9 +76,9 @@ class UIBuilder:
             pgn = get_pgn()
             if pgn is not None and len(pgn) > 0:
                 instance.page.set_clipboard(pgn)
-                instance.display_success("PGN copied to clipboard")
+                instance.notification_success("PGN copied to clipboard")
             else:
-                instance.display_info("Game not found")
+                instance.notification_info("Game not found")
 
             instance.show_ui()
 
@@ -108,7 +108,7 @@ class UIBuilder:
                 cmd = ["gh", "gist", "create", tmp_path]
                 return subprocess.run(cmd, check=True)
             except Exception as e:
-                instance.display_error("Error creating gist")
+                instance.notification_error("Error creating gist")
             finally:
                 os.remove(tmp_path)
 
@@ -118,11 +118,11 @@ class UIBuilder:
                 if pgn is not None and len(pgn) > 0:
                     result = create_gist_from_string(pgn)
                     if result is not None:
-                        instance.display_success("Gist uploaded successfully")
+                        instance.notification_success("Gist uploaded successfully")
                 else:
-                    instance.display_info("Game not found")
+                    instance.notification_info("Game not found")
             else:
-                instance.display_error("GitHub CLI is not installed")
+                instance.notification_error("GitHub CLI is not installed")
 
         gist_button = ft.ElevatedButton(
             content=ft.Icon(ft.Icons.UPLOAD, size=50),
