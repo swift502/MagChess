@@ -38,21 +38,14 @@ Exec=/home/pi/Documents/Github/MagChess/rpi_run.sh
 
 The `kicad/pcb` is designed to fit the modified underside of the lego chessboard construction found in `bricklink_studio/chessboard.io`.
 
-The PCB needs these components soldered onto it.
-
-Top side:
+The PCB needs the following components soldered onto it:
 
 - 64x SS49E hall sensor
-
-Bottom side:
-
 - 4x CD74HC4067 (mux)
 - ADS1015 (adc)
 - MP1584EN (step down)
 
 Each lego chess piece has to be fitted with a magnet on the bottom. Round 5x2mm magnets happen to perfectly fit into the bottom of each piece. Magnet polarity is important, if white pieces output magnetic north, black pieces should be flipped and read south. The hall sensors will then read colors as positive/negative voltage, which gives the app enough information to interpret chess moves correctly.
 
-Finally the app should be installed onto a Raspberry Pi. The app was designed specifically to run on a 720x720 display.
-
-The chessboard draws 5V and GND from the pi. Data pins are the I2C SDA and SCL pins and four mux selection pins, by default D21, D20, D16 and D12.
+Finally the app should be installed onto a Raspberry Pi. The chessboard draws 5V and GND from the pi. Data pins are the I2C SDA and SCL pins and four mux selection pins, by default D21, D20, D16 and D12.
 
