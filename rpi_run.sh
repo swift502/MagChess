@@ -1,14 +1,17 @@
 #!/bin/bash
 
-SCRIPT_DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
+cd "$(dirname "${BASH_SOURCE[0]}")" || exit 1
 
-source "$SCRIPT_DIR/.venv/bin/activate"
+# Update repository
+git reset --hard HEAD
+git clean -fd
+git pull --ff-only
 
-# detect the architecture (armhf, arm64, etc.)
+# Activate virtualenv
+source ".venv/bin/activate"
+
 ARCH=$(dpkg-architecture -qDEB_HOST_MULTIARCH)
-
-# prepend your ~/.local/lib to LD_LIBRARY_PATH
 export LD_LIBRARY_PATH="$HOME/.local/lib:/usr/lib/$ARCH:$LD_LIBRARY_PATH"
 
-# run your python app
-NO_AT_BRIDGE=1 python "$SCRIPT_DIR/app/__main__.py"
+# Launch app
+python "app/__main__.py"
