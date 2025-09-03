@@ -3,9 +3,8 @@
 cd "$(dirname "${BASH_SOURCE[0]}")" || exit 1
 
 # Update repository
-git reset --hard HEAD
-git clean -fd
-git pull --ff-only
+git restore .
+git pull
 
 # Activate virtualenv
 source ".venv/bin/activate"
