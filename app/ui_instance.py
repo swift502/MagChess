@@ -4,6 +4,7 @@ import concurrent.futures
 import math
 import time
 from typing import Callable
+import chess
 import flet as ft
 
 from constants import DEV_LAYOUT, RPI
@@ -23,6 +24,12 @@ class MagChessUI:
     nav: ft.NavigationBar
     sensor_indicators: dict[tuple[int, int], ft.Container]
 
+    current_player_box: ft.ElevatedButton
+    current_player_text: ft.Text
+
+    info_box: ft.Container
+    info_text: ft.Text
+
     ui_enabled: bool = False
     hide_task: concurrent.futures.Future | None = None
 
@@ -40,12 +47,13 @@ class MagChessUI:
 
         # content host
         self.content_host = ft.Container(content=tab_board)
+        self.info_box = UIBuilder.build_info_box(self)
         self.top_overlay = UIBuilder.build_top_overlay(self)
         self.bottom_overlay = UIBuilder.build_bottom_overlay(self)
         self.root = ft.GestureDetector(
             hover_interval=150,
             on_tap=self.user_activity,
-            content=ft.Stack(controls=[self.content_host, self.top_overlay, self.bottom_overlay]),
+            content=ft.Stack(controls=[self.content_host, self.info_box, self.top_overlay, self.bottom_overlay]),
             height=720,
             width=720,
         )
@@ -68,6 +76,13 @@ class MagChessUI:
     def update(self):
         self.page.update()
 
+    def update_current_player(self):
+        if self.chessboard.get_latest_board() is None or self.chessboard.game_over:
+            self.current_player_box.visible = False
+        else:
+            self.current_player_box.visible = True
+            self.current_player_text.value = f"{'White' if self.chessboard.current_player ==  chess.WHITE else 'Black'} plays"
+
     def on_tab_change(self, e: ft.ControlEvent):
         idx = e.control.selected_index
         self.show_tab(idx)
@@ -86,20 +101,14 @@ class MagChessUI:
     def display_error(self, message: str):
         self.display_message(message, color=ft.Colors.WHITE, bgcolor="#c01010")
         
-    def display_message(self, message: str, color: str | None = None, bgcolor: str | None = None, duration: int | None = None):
-        text = ft.Text(message, size=24, font_family="Noto Sans Light")
-        if color is not None:
-            text.color = color
-        if RPI:
-            text.rotate = math.pi
+    def display_message(self, message: str, color: str, bgcolor: str):
+        self.info_text.value = message
+        self.info_text.color = color
+        self.info_box.bgcolor = bgcolor
+        self.info_box.visible = True
 
-        bar = ft.SnackBar(text)
-        if bgcolor is not None:
-            bar.bgcolor = bgcolor
-        if duration is not None:
-            bar.duration = duration * 1000
-
-        self.page.open(bar)
+    def hide_message(self):
+        self.info_box.visible = False
 
     def user_activity(self, e: ft.TapEvent | None = None):
         if self.ui_enabled:
@@ -114,9 +123,6 @@ class MagChessUI:
         self.taps.append(now)
 
         self.taps = [t for t in self.taps if now - t <= self.tap_exit_time]
-
-        if len(self.taps) > self.tap_exit_count // 2:
-            self.display_info(f"Tap {self.tap_exit_count - len(self.taps)} more times to exit")
 
         if len(self.taps) >= self.tap_exit_count:
             self.page.window.close()

@@ -48,6 +48,21 @@ class UIBuilder:
         )
 
     @staticmethod
+    def build_info_box(instance: MagChessUI):
+        instance.info_text = ft.Text(size=28, color=ft.Colors.WHITE, font_family="Noto Sans Light")
+        info_box = ft.Container(
+            content=instance.info_text,
+            padding=ft.padding.symmetric(10, 16),
+            bottom=0,
+            left=0,
+            right=0,
+            height=62,
+            visible=False,
+        )
+
+        return info_box
+
+    @staticmethod
     def build_top_overlay(instance: MagChessUI):
         def get_pgn():
             board = instance.chessboard.get_latest_board()
@@ -122,8 +137,28 @@ class UIBuilder:
             ),
         )
 
+        instance.current_player_text = ft.Text(
+            "Scanning for\na new game",
+            size=30,
+            font_family="Noto Sans",
+            text_align=ft.TextAlign.CENTER,
+            color=ft.Colors.WHITE,
+        )
+
+        instance.current_player_box = ft.ElevatedButton(
+            content=instance.current_player_text,
+            top=46,
+            bgcolor="#cc1d2024",
+            style=ft.ButtonStyle(
+                padding=ft.padding.symmetric(20, 30),
+                shape=ft.RoundedRectangleBorder(20),
+            ),
+            disabled=True,
+            visible=False,
+        )
+
         return ft.Stack(
-            controls=[copy_pgn_button, gist_button],
+            controls=[copy_pgn_button, gist_button, instance.current_player_box],
             alignment=ft.alignment.top_center,
             animate_offset=150,
             offset=ft.Offset(0, -0.3),

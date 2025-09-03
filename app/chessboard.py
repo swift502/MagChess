@@ -20,6 +20,14 @@ class Chessboard(IChessboard):
     init_config: bool = False
     last_analysed_sensor_state: str | None
 
+    @property
+    def current_player(self):
+        return self.state_stack[-1].player
+    
+    @property
+    def next_player(self):
+        return chess.WHITE if self.current_player == chess.BLACK else chess.BLACK
+
     def get_latest_board(self):
         if self.state_stack is None or len(self.state_stack) == 0:
             return None
@@ -91,7 +99,7 @@ class Chessboard(IChessboard):
             pieces[coords] = piece
 
         # State
-        init_state: BoardState = BoardState(board, pieces)
+        init_state: BoardState = BoardState(board, pieces, chess.WHITE)
         self.state_stack.append(init_state)
         self.show_layout(pieces)
 
@@ -111,7 +119,7 @@ class Chessboard(IChessboard):
         board = self.state_stack[-1].board.copy()
         board.push(move)
 
-        state = BoardState(board, self.staging_layout.copy())
+        state = BoardState(board, self.staging_layout.copy(), self.next_player)
         self.state_stack.append(state)
 
         self.init_config = False
@@ -133,6 +141,8 @@ class Chessboard(IChessboard):
             if piece not in layout.values():
                 piece.destroy()
 
+        self.ui.update_current_player()
+
     def board_state_update(self):
         if len(self.state_stack) == 0:
             return
@@ -146,22 +156,22 @@ class Chessboard(IChessboard):
         self.last_analysed_sensor_state = sensor_state
         self.staging_layout = self.state_stack[-1].pieces.copy()
         illegal = False
+        self.ui.hide_message()
 
         # Compare against current
         missing, new, swaps = self.analyse_sensor_changes(against=self.state_stack[-1])
-        # print(f"Current: {len(missing)}, {len(new)}, {len(swaps)}")
         if (len(missing), len(new), len(swaps)) == (0, 0, 0):
+            # Return to current state
             self.show_layout(self.staging_layout)
-            # print("Reverted to current")
             return
         
         uci = self.update_staging_state(missing, new, swaps, against=self.state_stack[-1])
         if uci is not None:
             move = chess.Move.from_uci(uci)
             if move in self.state_stack[-1].board.legal_moves:
+                # Made a valid move from current state
                 self.process_move(move)
                 self.show_layout(self.staging_layout)
-                # print("Moved from current state")
                 return
             else:
                 illegal = True
@@ -173,21 +183,20 @@ class Chessboard(IChessboard):
 
             # Compare against previous
             missing, new, swaps = self.analyse_sensor_changes(against=self.state_stack[-2])
-            # print(f"Previous: {len(missing)}, {len(new)}, {len(swaps)}")
             if (len(missing), len(new), len(swaps)) == (0, 0, 0):
+                # Returned to previous state
                 self.pop_state()
                 self.show_layout(self.staging_layout)
-                # print("Reverted to previous")
                 return
             
             uci = self.update_staging_state(missing, new, swaps, against=self.state_stack[-2])
             if uci is not None:
                 move = chess.Move.from_uci(uci)
                 if move in self.state_stack[-2].board.legal_moves:
+                    # Made a valid move from the previous state
                     self.pop_state()
                     self.process_move(move)
                     self.show_layout(self.staging_layout)
-                    # print("Moved from previous state")
                     return
                 else:
                     illegal = True
@@ -197,6 +206,7 @@ class Chessboard(IChessboard):
         # Just show the best result as compared to current state
         if illegal:
             self.ui.display_info("Illegal move")
+            
         self.show_layout(first_staging_layout)
 
     def process_move(self, move: chess.Move):
@@ -209,7 +219,6 @@ class Chessboard(IChessboard):
                     f"Game over! Winner: {self.get_winner(outcome)}",
                     color=ft.Colors.BLACK,
                     bgcolor="#dbac16",
-                    duration=10,
                 )
         else:
             self.ui.display_info("Illegal move")
@@ -324,9 +333,6 @@ class Chessboard(IChessboard):
                     self.staging_move_piece(rook, rook_dest.coords)
                     return self.staging_move_piece(king, king_dest.coords)
         
-        elif missing_new_swaps == (0, 1, 0):
-            self.ui.display_info("Unexpected board state")
-
         elif len(missing) > 2 or len(new) > 1 or len(swaps) > 1:
             self.ui.display_info("Unexpected board state")
 
