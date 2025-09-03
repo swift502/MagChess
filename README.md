@@ -43,7 +43,7 @@ The `kicad/pcb` is designed to fit the modified underside of the lego chessboard
 
 The PCB needs the following components soldered onto it:
 
-- 64x SS49E hall sensor
+- 64x SS49E
 - 4x CD74HC4067
 - ADS1015
 - MP1584EN
