@@ -27,6 +27,7 @@ Type=Application
 Name=MagChess
 Icon=/home/pi/Documents/Github/MagChess/app/assets/icon.ico
 Exec=/home/pi/Documents/Github/MagChess/rpi_run.sh
+Category=Game
 ```
 
 ### Autostart config
