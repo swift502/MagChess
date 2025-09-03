@@ -38,6 +38,7 @@ Exec=/home/pi/Documents/Github/MagChess/rpi_run.sh
 
 - Raspberry Pi 5
 - Waveshare 4inch HDMI LCD (C)
+- 32x 5x2mm neodymium magnets
 - 64x SS49E hall sensor
 - 4x CD74HC4067 (mux)
 - ADS1015 (adc)
