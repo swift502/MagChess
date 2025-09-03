@@ -14,9 +14,9 @@ SENSOR_SIM_NOISE = 100
 
 # Themes
 # Green
-THEME_WHITE = "#eeeed5"
-THEME_BLACK = "#7d945d"
+# THEME_WHITE = "#eeeed5"
+# THEME_BLACK = "#7d945d"
 
 # Brown
-# THEME_WHITE = "#f0d9b5"
-# THEME_BLACK = "#b58863"
+THEME_WHITE = "#f0d9b5"
+THEME_BLACK = "#b58863"
