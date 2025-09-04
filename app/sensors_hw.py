@@ -55,7 +55,7 @@ class HWSensors():
         ]
 
         # Selection
-        self.sel_pins = []
+        self.sel_pins: list[digitalio.DigitalInOut] = []
         for pin in (board.D21, board.D20, board.D16, board.D12):
             p = digitalio.DigitalInOut(pin)
             p.direction = digitalio.Direction.OUTPUT
