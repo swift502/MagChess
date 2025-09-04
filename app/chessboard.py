@@ -158,16 +158,16 @@ class Chessboard(IChessboard):
         illegal = False
         self.ui.hide_message()
 
-        # Compare against current
-        missing, new, swaps = self.analyse_sensor_changes(against=self.state_stack[-1])
-        if (len(missing), len(new), len(swaps)) == (0, 0, 0):
+        # Compare against current state
+        missing_new_swaps_1 = missing_1, new_1, swaps_1 = self.analyse_sensor_changes(against=self.state_stack[-1])
+        if missing_new_swaps_1 == (0, 0, 0):
             # Return to current state
             self.show_layout(self.staging_layout)
             return
         
-        uci = self.update_staging_state(missing, new, swaps, against=self.state_stack[-1])
-        if uci is not None:
-            move = chess.Move.from_uci(uci)
+        uci_1 = self.update_staging_state(missing_1, new_1, swaps_1, against=self.state_stack[-1])
+        if uci_1 is not None:
+            move = chess.Move.from_uci(uci_1)
             if move in self.state_stack[-1].board.legal_moves:
                 # Made a valid move from current state
                 self.process_move(move)
@@ -181,31 +181,33 @@ class Chessboard(IChessboard):
         if len(self.state_stack) > 1:
             self.staging_layout = self.state_stack[-2].pieces.copy()
 
-            # Compare against previous
-            missing, new, swaps = self.analyse_sensor_changes(against=self.state_stack[-2])
-            if (len(missing), len(new), len(swaps)) == (0, 0, 0):
+            # Compare against previous state
+            missing_new_swaps_2 = missing_2, new_2, swaps_2 = self.analyse_sensor_changes(against=self.state_stack[-2])
+            if missing_new_swaps_2 == (0, 0, 0):
                 # Returned to previous state
                 self.pop_state()
                 self.show_layout(self.staging_layout)
                 return
             
-            uci = self.update_staging_state(missing, new, swaps, against=self.state_stack[-2])
-            if uci is not None:
-                move = chess.Move.from_uci(uci)
+            uci_2 = self.update_staging_state(missing_2, new_2, swaps_2, against=self.state_stack[-2])
+            if uci_2 is not None:
+                move = chess.Move.from_uci(uci_2)
                 if move in self.state_stack[-2].board.legal_moves:
                     # Made a valid move from the previous state
                     self.pop_state()
                     self.process_move(move)
                     self.show_layout(self.staging_layout)
                     return
-                else:
-                    illegal = True
 
         # Only found illegal or None
-        # Discard previous state comparisons
-        # Just show the best result as compared to current state
+        # Just give best interpretation from the current state analysis
         if illegal:
             self.ui.board_state_info("Illegal move")
+        elif len(missing_1) > 2 or len(new_1) > 1 or len(swaps_1) > 1:
+            self.ui.display_info("Unexpected board state")
+        elif missing_new_swaps_1 == (0, 0, 1):
+            self.ui.display_info("Unexpected board state")
+        
         self.show_layout(first_staging_layout)
 
     def process_move(self, move: chess.Move):
@@ -329,9 +331,6 @@ class Chessboard(IChessboard):
                     self.staging_move_piece(rook, rook_dest.coords)
                     return self.staging_move_piece(king, king_dest.coords)
         
-        elif len(missing) > 2 or len(new) > 1 or len(swaps) > 1:
-            self.ui.board_state_info("Unexpected board state")
-
         return None
 
     def staging_move_piece(self, missing: MissingPiece, new_coords: tuple[int, int]):
