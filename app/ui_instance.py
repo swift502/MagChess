@@ -110,14 +110,14 @@ class MagChessUI:
     def hide_message(self):
         self.info_box.visible = False
 
-    def notification_info(self, message: str):
-        self.send_notification(message, color=ft.Colors.WHITE, bgcolor="#54498f")
+    def notification_info(self, message: str, duration: int | None = None):
+        self.send_notification(message, color=ft.Colors.WHITE, bgcolor="#54498f", duration=duration)
 
     def notification_success(self, message: str, duration: int | None = None):
         self.send_notification(message, color=ft.Colors.WHITE, bgcolor="#54A800", duration=duration)
 
-    def notification_error(self, message: str):
-        self.send_notification(message, color=ft.Colors.WHITE, bgcolor="#c01010")
+    def notification_error(self, message: str, duration: int | None = None):
+        self.send_notification(message, color=ft.Colors.WHITE, bgcolor="#c01010", duration=duration)
 
     def send_notification(self, message: str, color: str | None = None, bgcolor: str | None = None, duration: int | None = None):
         text = ft.Text(message, size=24, font_family="Noto Sans Light")
