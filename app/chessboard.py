@@ -178,6 +178,9 @@ class Chessboard(IChessboard):
             
         first_staging_layout = self.staging_layout.copy()
         
+        # We didn't find valid moves from current state. Let's check if
+        # the player returned a piece to its previous position or changed
+        # their mind about what move they're making
         if len(self.state_stack) > 1:
             self.staging_layout = self.state_stack[-2].pieces.copy()
 
@@ -200,7 +203,7 @@ class Chessboard(IChessboard):
                     return
 
         # Only found illegal or None
-        # Just give best interpretation from the current state analysis
+        # Give the best interpretation from the current state analysis
         if illegal:
             self.ui.board_state_info("Illegal move")
         elif len(missing_1) > 2 or len(new_1) > 1 or len(swaps_1) > 1:
