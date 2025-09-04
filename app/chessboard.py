@@ -204,9 +204,9 @@ class Chessboard(IChessboard):
         if illegal:
             self.ui.board_state_info("Illegal move")
         elif len(missing_1) > 2 or len(new_1) > 1 or len(swaps_1) > 1:
-            self.ui.display_info("Unexpected board state")
+            self.ui.board_state_info("Unexpected board state")
         elif missing_new_swaps_1 == (0, 0, 1):
-            self.ui.display_info("Unexpected board state")
+            self.ui.board_state_info("Unexpected board state")
         
         self.show_layout(first_staging_layout)
 
