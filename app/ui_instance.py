@@ -92,16 +92,16 @@ class MagChessUI:
         self.nav.selected_index = index
         self.content_host.content = self.screens[index]
 
-    def display_info(self, message: str):
-        self.display_message(message, color=ft.Colors.WHITE, bgcolor="#54498f")
+    def board_state_info(self, message: str):
+        self.update_board_state(message, color=ft.Colors.WHITE, bgcolor="#54498f")
 
-    def display_success(self, message: str):
-        self.display_message(message, color=ft.Colors.WHITE, bgcolor="#54A800")
+    def board_state_success(self, message: str):
+        self.update_board_state(message, color=ft.Colors.WHITE, bgcolor="#54A800")
         
-    def display_error(self, message: str):
-        self.display_message(message, color=ft.Colors.WHITE, bgcolor="#c01010")
+    def board_state_error(self, message: str):
+        self.update_board_state(message, color=ft.Colors.WHITE, bgcolor="#c01010")
         
-    def display_message(self, message: str, color: str, bgcolor: str):
+    def update_board_state(self, message: str, color: str, bgcolor: str):
         self.info_text.value = message
         self.info_text.color = color
         self.info_box.bgcolor = bgcolor
@@ -111,15 +111,15 @@ class MagChessUI:
         self.info_box.visible = False
 
     def notification_info(self, message: str):
-        self.notification_message(message, color=ft.Colors.WHITE, bgcolor="#54498f")
+        self.send_notification(message, color=ft.Colors.WHITE, bgcolor="#54498f")
 
-    def notification_success(self, message: str):
-        self.notification_message(message, color=ft.Colors.WHITE, bgcolor="#54A800")
-        
+    def notification_success(self, message: str, duration: int | None = None):
+        self.send_notification(message, color=ft.Colors.WHITE, bgcolor="#54A800", duration=duration)
+
     def notification_error(self, message: str):
-        self.notification_message(message, color=ft.Colors.WHITE, bgcolor="#c01010")
+        self.send_notification(message, color=ft.Colors.WHITE, bgcolor="#c01010")
 
-    def notification_message(self, message: str, color: str | None = None, bgcolor: str | None = None, duration: int | None = None):
+    def send_notification(self, message: str, color: str | None = None, bgcolor: str | None = None, duration: int | None = None):
         text = ft.Text(message, size=24, font_family="Noto Sans Light")
         if color is not None:
             text.color = color

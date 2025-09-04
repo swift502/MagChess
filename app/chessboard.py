@@ -205,7 +205,7 @@ class Chessboard(IChessboard):
         # Discard previous state comparisons
         # Just show the best result as compared to current state
         if illegal:
-            self.ui.display_info("Illegal move")
+            self.ui.board_state_info("Illegal move")
         self.show_layout(first_staging_layout)
 
     def process_move(self, move: chess.Move):
@@ -213,7 +213,7 @@ class Chessboard(IChessboard):
         outcome = self.state_stack[-1].board.outcome()
         if outcome is not None:
             self.game_over = True
-            self.ui.display_message(
+            self.ui.update_board_state(
                 f"Game over! Winner: {self.get_winner(outcome)}",
                 color=ft.Colors.BLACK,
                 bgcolor="#dbac16",
@@ -330,7 +330,7 @@ class Chessboard(IChessboard):
                     return self.staging_move_piece(king, king_dest.coords)
         
         elif len(missing) > 2 or len(new) > 1 or len(swaps) > 1:
-            self.ui.display_info("Unexpected board state")
+            self.ui.board_state_info("Unexpected board state")
 
         return None
 

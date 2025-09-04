@@ -105,7 +105,7 @@ class UIBuilder:
                 tmp.write(content)
 
             try:
-                cmd = ["gh", "gist", "create", tmp_path]
+                cmd = ["gh", "gist", "create", tmp_path, "--public"]
                 return subprocess.run(cmd, check=True)
             except Exception as e:
                 instance.notification_error("Error creating gist")
@@ -118,7 +118,7 @@ class UIBuilder:
                 if pgn is not None and len(pgn) > 0:
                     result = create_gist_from_string(pgn)
                     if result is not None:
-                        instance.notification_success("Gist uploaded successfully")
+                        instance.notification_success("Gist available at gist.github.com/swift502", duration=10)
                 else:
                     instance.notification_info("Game not found")
             else:

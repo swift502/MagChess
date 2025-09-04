@@ -42,7 +42,7 @@ class HWSensors():
             ads.data_rate = 3300
         except ValueError:
             if ui:
-                ui.display_error("Chessboard connection not found.")
+                ui.board_state_error("Chessboard connection not found.")
             self.init_fail = True
             return
 
