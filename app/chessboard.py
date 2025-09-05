@@ -160,7 +160,8 @@ class Chessboard(IChessboard):
         self.ui.hide_message()
 
         # Compare against current state
-        missing_new_swaps_1 = missing_1, new_1, swaps_1 = self.analyse_sensor_changes(against=self.state_stack[-1])
+        missing_1, new_1, swaps_1 = self.analyse_sensor_changes(against=self.state_stack[-1])
+        missing_new_swaps_1 = (len(missing_1), len(new_1), len(swaps_1))
         if missing_new_swaps_1 == (0, 0, 0):
             # Return to current state
             self.show_layout(self.staging_layout)
@@ -186,7 +187,8 @@ class Chessboard(IChessboard):
             self.staging_layout = self.state_stack[-2].pieces.copy()
 
             # Compare against previous state
-            missing_new_swaps_2 = missing_2, new_2, swaps_2 = self.analyse_sensor_changes(against=self.state_stack[-2])
+            missing_2, new_2, swaps_2 = self.analyse_sensor_changes(against=self.state_stack[-2])
+            missing_new_swaps_2 = (len(missing_2), len(new_2), len(swaps_2))
             if missing_new_swaps_2 == (0, 0, 0):
                 # Returned to previous state
                 self.pop_state()
