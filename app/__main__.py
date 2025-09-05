@@ -37,16 +37,10 @@ async def main(page: ft.Page):
 
     if RPI:
         from sensors_hw import HWSensors
-        sensors = HWSensors(
-            on_sensor_reading=chessboard.update_sensor_value,
-            ui=ui,
-        )
+        sensors = HWSensors(chessboard.update_sensor_value, ui)
     else:
         from sensors_sw import SWSensors
-        sensors = SWSensors(
-            on_sensor_reading=chessboard.update_sensor_value,
-            flipped=False,
-        )
+        sensors = SWSensors(chessboard.update_sensor_value, flipped=False)
         ui.sensor_interaction(sensors.on_sensor_click)
 
     page.run_task(sensors.sensor_reading_loop)
