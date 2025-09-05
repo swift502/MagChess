@@ -1,5 +1,7 @@
 from pathlib import Path
 
+import chess
+
 def hex_to_rgb(hex_color: str):
     hex_color = hex_color.lstrip("#")
     return tuple(int(hex_color[i:i+2], 16) for i in (0, 2, 4))
@@ -41,3 +43,12 @@ def asset_path(path: str) -> str:
 
 def data_path(path: str) -> str:
     return str(Path(__file__).parent / "data" / path)
+
+def color_format(color: chess.Color | None):
+    match color:
+        case chess.WHITE:
+            return "White"
+        case chess.BLACK:
+            return "Black"
+        case None:
+            return "Draw"

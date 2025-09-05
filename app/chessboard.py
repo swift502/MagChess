@@ -6,6 +6,7 @@ from cell import Cell
 from data import ColorSwap, DataLib, MissingPiece, NewPiece, IChessboard, BoardState, PieceLayout
 from piece import Piece
 from ui_instance import MagChessUI
+from utilities import color_format
 
 class Chessboard(IChessboard):
     game_over: bool = False
@@ -219,7 +220,7 @@ class Chessboard(IChessboard):
         if outcome is not None:
             self.game_over = True
             self.ui.update_board_state(
-                f"Game over! Winner: {self.get_winner(outcome)}",
+                f"Game over! Winner: {color_format(outcome.winner)}",
                 color=ft.Colors.BLACK,
                 bgcolor="#dbac16",
             )
@@ -358,12 +359,3 @@ class Chessboard(IChessboard):
 
     def staging_remove_piece(self, coords: tuple[int, int]):
         self.staging_layout.pop(coords)
-
-    def get_winner(self, outcome: chess.Outcome):
-        match outcome.winner:
-            case chess.WHITE:
-                return "White"
-            case chess.BLACK:
-                return "Black"
-            case None:
-                return "Draw"

@@ -4,9 +4,9 @@ import concurrent.futures
 import math
 import time
 from typing import Callable
-import chess
 import flet as ft
 
+from utilities import color_format
 from constants import DEV_LAYOUT, RPI
 from data import IChessboard
 from ui_builder import UIBuilder
@@ -81,7 +81,7 @@ class MagChessUI:
             self.current_player_box.visible = False
         else:
             self.current_player_box.visible = True
-            self.current_player_text.value = f"{'White' if self.chessboard.current_player ==  chess.WHITE else 'Black'} plays"
+            self.current_player_text.value = f"{color_format(self.chessboard.current_player)} plays"
 
     def on_tab_change(self, e: ft.ControlEvent):
         idx = e.control.selected_index
