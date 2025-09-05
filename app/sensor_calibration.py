@@ -55,7 +55,7 @@ if __name__ == "__main__":
     parser.add_argument("-w", "--write", action="store_true")
     args = parser.parse_args()
 
-    sensors = HWSensors(lambda coords, value: on_sensor_reading(coords, value, write=args.write))
+    sensors = HWSensors(lambda coords, value: on_sensor_reading(coords, value, args.write))
 
     print()
     asyncio.run(sensors.sensor_reading_loop())
