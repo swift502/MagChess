@@ -181,6 +181,7 @@ class MagChessUI:
     def cancel_hide_task(self):
         if self.hide_task is not None:
             self.hide_task.cancel()
+            self.hide_task = None
 
     def sensor_interaction(self, on_click: Callable[[int, int], None]):
         for (co_letter, co_number), el in self.sensor_indicators.items():

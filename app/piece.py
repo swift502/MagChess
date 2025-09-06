@@ -26,10 +26,10 @@ class Piece:
     def update(self):
         target_pos = self.get_top_left(self.target_cell)
 
-        assert self.control.top
+        assert self.control.top is not None
         self.control.top = lerp(self.control.top, target_pos[0], 0.3)
 
-        assert self.control.left
+        assert self.control.left is not None
         self.control.left = lerp(self.control.left, target_pos[1], 0.3)
 
     def go_to(self, coords: tuple[int, int]):
