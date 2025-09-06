@@ -43,7 +43,8 @@ class MagChessUI:
         # tabs
         tab_board = UIBuilder.build_tab_board(self)
         tab_sensors = UIBuilder.build_tab_sensors(self)
-        self.screens = [tab_board, tab_sensors]
+        tab_players = UIBuilder.build_tab_players(self)
+        self.screens = [tab_board, tab_sensors, tab_players]
 
         # content host
         self.content_host = ft.Container(content=tab_board)

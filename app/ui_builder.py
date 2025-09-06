@@ -9,10 +9,14 @@ import chess.pgn
 import flet as ft
 from typing import TYPE_CHECKING
 
+from flet.core.types import MainAxisAlignment
+
+from app.utilities import data_path
 from constants import THEME_WHITE, THEME_BLACK
 
 if TYPE_CHECKING:
     from ui_instance import MagChessUI
+
 
 class UIBuilder:
     @staticmethod
@@ -61,6 +65,111 @@ class UIBuilder:
         )
 
         return info_box
+
+    @staticmethod
+    def build_tab_players(instance: MagChessUI):
+        file_path = data_path("players.txt")
+
+        def save_to_file():
+            names = []
+            for row in list_view.controls:
+                tf = row.controls[0]
+                if isinstance(tf, ft.TextField):
+                    name = (tf.value or "").strip()
+                    if name:
+                        names.append(name)
+            with open(file_path, "w", encoding="utf-8") as f:
+                f.write("\n".join(names))
+
+        def on_blur(e):
+            save_to_file()
+            instance.page.update()
+
+        def on_delete(e):
+            row = e.control.data
+            list_view.controls.remove(row)
+            save_to_file()
+            instance.page.update()
+
+        def on_add(e):
+            name = (new_player.value or "").strip()
+            if not name:
+                return
+
+            existing = [
+                (row.controls[0].value or "").strip().lower()
+                for row in list_view.controls
+                if isinstance(row.controls[0], ft.TextField)
+            ]
+            if name.lower() in existing:
+                instance.notification_error(f"'{name}' already exists!")
+                return
+
+            list_view.controls.append(create_row(name))
+            new_player.value = ""
+            save_to_file()
+            instance.page.update()
+
+        def create_row(text: str):
+            row = ft.Row(
+                [
+                    ft.TextField(
+                        value=text,
+                        expand=True,
+                        bgcolor=ft.Colors.with_opacity(0.4, ft.Colors.BLACK),
+                        on_blur=on_blur
+                    ),
+                    ft.IconButton(
+                        icon=ft.Icons.DELETE,
+                        icon_color="red",
+                        on_click=on_delete,
+                        data=None
+                    ),
+                ],
+                alignment=MainAxisAlignment.SPACE_BETWEEN
+            )
+
+            row.controls[1].data = row
+            return row
+
+        if os.path.exists(file_path):
+            with open(file_path, "r", encoding="utf-8") as f:
+                players = [line.strip() for line in f if line.strip()]
+        else:
+            players = []
+        list_view = ft.ListView(expand=True, spacing=10)
+
+        new_player = ft.TextField(
+            hint_text="New player name",
+            expand=True,
+            bgcolor=ft.Colors.with_opacity(0.4, ft.Colors.BLACK),
+            on_blur=on_add
+        )
+
+        new_player_row = ft.Row(
+            [
+                new_player,
+                ft.IconButton(
+                    icon=ft.Icons.ADD,
+                    icon_color="green",
+                    on_click=on_add
+                ),
+            ],
+            alignment=MainAxisAlignment.SPACE_BETWEEN
+        )
+
+        for player in players:
+            list_view.controls.append(create_row(player))
+
+        return ft.Stack([
+            ft.Container(
+                content=ft.Column(
+                    [new_player_row, list_view],
+                    spacing=10,
+                ),
+                padding=20,
+            )
+        ])
 
     @staticmethod
     def build_top_overlay(instance: MagChessUI):
@@ -172,6 +281,7 @@ class UIBuilder:
             destinations=[
                 ft.NavigationBarDestination(icon=ft.Icons.CROP_FREE, label="Board"),
                 ft.NavigationBarDestination(icon=ft.Icons.SENSORS, label="Sensors"),
+                ft.NavigationBarDestination(icon=ft.Icons.GROUP, label="Players"),
             ],
         )
 
@@ -232,9 +342,9 @@ class UIBuilder:
                     str(co_number + 1),
                     size=30,
                     font_family="Noto Sans",
-                    color= co_number % 2 == 1 and color_light or color_dark,
-                    left= 90 * co_number + 66,
-                    bottom= -3,
+                    color=co_number % 2 == 1 and color_light or color_dark,
+                    left=90 * co_number + 66,
+                    bottom=-3,
                 )
             )
 
@@ -244,9 +354,9 @@ class UIBuilder:
                     chr(ord('A') + co_letter),
                     size=30,
                     font_family="Noto Sans",
-                    color= co_letter % 2 == 1 and color_dark or color_light,
-                    left= 4,
-                    top= 90 * co_letter - 4,
+                    color=co_letter % 2 == 1 and color_dark or color_light,
+                    left=4,
+                    top=90 * co_letter - 4,
                 )
             )
 
