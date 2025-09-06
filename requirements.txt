@@ -1,3 +1,4 @@
+chess
 flet
 python-chess
 adafruit-circuitpython-ads1x15

@@ -7,3 +7,4 @@ fp-info-cache
 fabrication-toolkit-options.json
 kicad/**/production/
 __pycache__/
+app/data/players.txt

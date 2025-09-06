@@ -1,4 +1,6 @@
 from pathlib import Path
+import re
+import unicodedata
 
 import chess
 
@@ -52,3 +54,23 @@ def color_format(color: chess.Color | None):
             return "Black"
         case None:
             return "Draw"
+
+def sanitize_filename(name: str, replacement: str = "_") -> str:
+    # Normalize (so accented chars become ASCII equivalents where possible)
+    name = unicodedata.normalize("NFKD", name)
+    name = name.encode("ascii", "ignore").decode("ascii")
+
+    # Replace forbidden characters (including whitespace) with replacement
+    name = re.sub(r'[<>:"/\\|?*\s]', replacement, name)
+
+    # Remove control characters
+    name = re.sub(r"[\x00-\x1f]", replacement, name)
+
+    # Collapse multiple replacements into one
+    name = re.sub(rf"{re.escape(replacement)}+", replacement, name)
+
+    # Strip leading/trailing replacements, dots
+    name = name.strip(f"{replacement}.")
+
+    # Default if empty
+    return name or "untitled"
