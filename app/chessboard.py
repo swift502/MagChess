@@ -243,7 +243,7 @@ class Chessboard(IChessboard):
                 coords = (7 - coords[0], 7 - coords[1])
 
             # Get new color from sensor data
-            new_color = cell.color
+            new_color = cell.detected_color
 
             # Get old color from last committed state
             piece = against.pieces.get(coords)

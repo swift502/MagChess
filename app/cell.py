@@ -7,11 +7,11 @@ from utilities import inverse_lerp, lerp_hex
 
 class Cell:
     sensor_indicator: ft.Container
-    state: int
+    detected_color: chess.Color | None
 
     def __init__(self, coords: tuple[int, int], ui: MagChessUI):
         self.coords = coords
-        self.state = 0
+        self.detected_color = None
 
         self.ref_value = SENSOR_CALIBRATION_DATA[str(coords)]
         self.threshold_low = self.ref_value - SENSOR_TRIGGER_DELTA
@@ -21,13 +21,13 @@ class Cell:
     def update(self, sensor_value: float):
         # State
         if sensor_value < self.threshold_low:
-            self.state = 1
+            self.detected_color = chess.WHITE
             self.sensor_indicator.border.top.color = "#ffffff"
         elif sensor_value > self.threshold_high:
-            self.state = -1
+            self.detected_color = chess.BLACK
             self.sensor_indicator.border.top.color = "#000000"
         else:
-            self.state = 0
+            self.detected_color = None
             self.sensor_indicator.border.top.color = "#888888"
 
         # Ui
@@ -36,18 +36,10 @@ class Cell:
 
     @property
     def state_format(self):
-        if self.state == -1:
+        if self.detected_color == chess.BLACK:
             return 'B'
-        elif self.state == 1:
+        elif self.detected_color == chess.WHITE:
             return 'W'
         else:
             return '.'
     
-    @property
-    def color(self):
-        if self.state == -1:
-            return chess.BLACK
-        elif self.state == 1:
-            return chess.WHITE
-        else:
-            return None
