@@ -9,17 +9,6 @@ from ui_instance import MagChessUI
 from utilities import color_format
 
 class Chessboard(IChessboard):
-    game_over: bool = False
-    flipped: bool = False
-
-    state_stack: list[BoardState] = []
-    staging_layout: PieceLayout
-    spawned_pieces: list[Piece] = []
-
-    cells: dict[tuple[int, int], Cell] = {}
-
-    init_config: bool = False
-    last_analysed_sensor_state: str | None
 
     @property
     def current_player(self):
@@ -30,10 +19,10 @@ class Chessboard(IChessboard):
         return chess.WHITE if self.current_player == chess.BLACK else chess.BLACK
 
     def get_latest_board(self):
-        if self.state_stack is None or len(self.state_stack) == 0:
-            return None
-        else:
+        if len(self.state_stack) > 0:
             return self.state_stack[-1].board
+        else:
+            return None
 
     def locator_to_coords(self, locator: str):
         return (
@@ -47,6 +36,18 @@ class Chessboard(IChessboard):
     def __init__(self, page: ft.Page, ui: MagChessUI):
         self.page = page
         self.ui = ui
+
+        # Flags
+        self.game_over: bool = False
+        self.flipped: bool = False
+        self.init_config: bool = False
+        self.last_analysed_sensor_state: str | None = None
+
+        # State
+        self.state_stack: list[BoardState] = []
+        self.staging_layout: PieceLayout = {}
+        self.spawned_pieces: list[Piece] = []
+        self.cells: dict[tuple[int, int], Cell] = {}
 
         for co_letter in range(8):
             for co_number in range(8):
