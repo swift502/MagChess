@@ -167,7 +167,7 @@ class MagChessUI:
     def hide_ui(self):
         self.ui_enabled = False
 
-        self.top_overlay.offset = ft.Offset(0, -0.3)
+        self.top_overlay.offset = ft.Offset(0, -0.5)
         self.bottom_overlay.offset = ft.Offset(0, 0.2)
 
         self.cancel_hide_task()
