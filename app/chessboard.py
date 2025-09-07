@@ -1,9 +1,10 @@
 import asyncio
+from datetime import datetime
 import chess
 import flet as ft
 
 from cell import Cell
-from data import ColorSwap, DataLib, MissingPiece, NewPiece, IChessboard, BoardState, PieceLayout
+from data import ColorSwap, DataLib, MissingPiece, NewPiece, IChessboard, BoardState, PieceLayout, PgnHeaders
 from piece import Piece
 from ui_instance import MagChessUI
 from utilities import color_format
@@ -52,6 +53,9 @@ class Chessboard(IChessboard):
         for co_letter in range(8):
             for co_number in range(8):
                 self.cells[(co_letter, co_number)] = Cell((co_letter, co_number), ui)
+
+        # PGN
+        self.pgn_headers: PgnHeaders = PgnHeaders(datetime.now())
 
     async def update(self):
         while True:
@@ -107,7 +111,7 @@ class Chessboard(IChessboard):
 
         self.last_analysed_sensor_state = None
         self.init_config = True
-        
+
         print("New game detected")
 
     def clean_up(self):
@@ -125,6 +129,9 @@ class Chessboard(IChessboard):
         self.state_stack.append(state)
 
         self.init_config = False
+
+        if len(self.state_stack) == 2:
+            self.pgn_headers.set_start(datetime.now())
 
         print(f"Committed {move.uci()}")
 

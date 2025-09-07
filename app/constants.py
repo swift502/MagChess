@@ -15,3 +15,6 @@ SENSOR_SIM_NOISE = 100
 # Themes
 THEME_WHITE = "#eeeed5"
 THEME_BLACK = "#7d945d"
+
+# Other
+PLAYERS_FILE = data_path("players.txt")

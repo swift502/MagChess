@@ -1,5 +1,7 @@
+from datetime import datetime
 from typing import TypeAlias
 import chess
+from chess.pgn import Headers
 
 from piece import Piece
 
@@ -97,8 +99,36 @@ class BoardState:
         new_state = BoardState(self.board.copy(), self.pieces.copy(), self.player)
         return new_state
 
+class PgnHeaders:
+    Event: str = "MagChess Game"
+    Site: str = "Flyboys Den"
+    Date: str
+    Time: str
+    White: str = "White"
+    Black: str = "Black"
+
+    def __init__(self, dt: datetime):
+        self.set_start(dt)
+
+    def set_start(self, dt: datetime):
+        self.Date = dt.strftime("%Y.%m.%d")
+        self.Time = dt.strftime("%H:%M:%S")
+
+    def to_headers(self, result: str) -> Headers:
+        return Headers({
+            "Event": self.Event,
+            "Site": self.Site,
+            "Date": self.Date,
+            "Time": self.Time,
+            "White": self.White,
+            "Black": self.Black,
+            "Result": result,
+        })
+
+
 class IChessboard:
     game_over: bool
+    pgn_headers: PgnHeaders
 
     @property
     def current_player(self) -> chess.Color:
