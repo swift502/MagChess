@@ -57,8 +57,6 @@ class MagChessUI:
             height=720,
             width=720,
         )
-        if RPI:
-            self.root.rotate = math.pi
 
         if DEV_LAYOUT:
             self.root = ft.Stack(controls=[ft.Row(
@@ -123,8 +121,6 @@ class MagChessUI:
         text = ft.Text(message, size=24, font_family="Noto Sans Light")
         if color is not None:
             text.color = color
-        if RPI:
-            text.rotate = math.pi
 
         bar = ft.SnackBar(text)
         if bgcolor is not None:
