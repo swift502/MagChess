@@ -28,7 +28,7 @@ rpi_run.sh
 Type=Application
 Name=MagChess
 Icon=/home/pi/Documents/Github/MagChess/app/assets/icon.ico
-Exec=/home/pi/Documents/Github/MagChess/rpi_run.sh
+Exec=/home/pi/Documents/Github/MagChess/app/rpi_run.sh
 Category=Game
 ```
 
