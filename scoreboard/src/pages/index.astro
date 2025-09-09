@@ -1,0 +1,406 @@
+---
+import { isLocalService } from "astro/assets";
+
+// ------------------------------------
+// Sample data — edit or replace with your own
+// ------------------------------------
+const games: Array<{
+	timestamp: string;
+	winner: { name: string; color: 'White' | 'Black' };
+	loser: { name: string; color: 'White' | 'Black' };
+	pgn: string;
+}> = [
+	{
+		timestamp: '2025-08-28T19:32:00Z',
+		winner: { name: 'Alice', color: 'White' },
+		loser: { name: 'Bob', color: 'Black' },
+		pgn: '1. e4 e5 2. Nf3 Nc6 3. Bb5 a6 1-0',
+	},
+	{
+		timestamp: '2025-08-30T08:12:00Z',
+		winner: { name: 'Charlie', color: 'Black' },
+		loser: { name: 'Alice', color: 'White' },
+		pgn: '1. d4 Nf6 2. c4 g6 3. Nc3 d5 0-1',
+	},
+	{
+		timestamp: '2025-09-01T21:10:00Z',
+		winner: { name: 'Alice', color: 'Black' },
+		loser: { name: 'Dina', color: 'White' },
+		pgn: '1. e4 c5 2. Nf3 d6 3. d4 cxd4 0-1',
+	},
+	{
+		timestamp: '2025-09-03T14:05:00Z',
+		winner: { name: 'Bob', color: 'White' },
+		loser: { name: 'Charlie', color: 'Black' },
+		pgn: '1. c4 e5 2. Nc3 Nf6 3. Nf3 Nc6 1-0',
+	},
+];
+
+// ------------------------------------
+// Utilities
+// ------------------------------------
+const dtf = new Intl.DateTimeFormat('default', {
+	year: 'numeric',
+	month: 'short',
+	day: '2-digit',
+	hour: '2-digit',
+	minute: '2-digit',
+});
+
+function formatTimestamp(ts: string) {
+	const d = new Date(ts);
+	return dtf.format(d);
+}
+
+// Build leaderboard from games
+const statsMap = new Map<string, { wins: number; losses: number }>();
+for (const g of games) {
+	if (!statsMap.has(g.winner.name))
+		statsMap.set(g.winner.name, { wins: 0, losses: 0 });
+	if (!statsMap.has(g.loser.name)) statsMap.set(g.loser.name, { wins: 0, losses: 0 });
+	statsMap.get(g.winner.name)!.wins += 1;
+	statsMap.get(g.loser.name)!.losses += 1;
+}
+const leaderboard = Array.from(statsMap.entries())
+	.map(([name, { wins, losses }]) => ({ name, wins, losses }))
+	.sort(
+		(a, b) =>
+			b.wins - a.wins ||
+			a.losses - b.losses ||
+			a.name.localeCompare(b.name),
+	);
+---
+
+<!doctype html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
+		<title>Scoreboard</title>
+	</head>
+	<body>
+		<div class="container">
+			<header>
+				<div>
+					<div class="title">Scoreboard</div>
+				</div>
+				<div class="toolbar">
+					<button class="btn" onclick="window.location.href='https://chess.com/analysis'">
+						Chess.com
+					</button>
+					<button class="btn" onclick="window.location.href='https://lichess.org/analysis'">
+						Lichess
+					</button>
+					<button class="btn" onclick="window.location.href='https://wintrchess.com'">
+						WintrChess
+					</button>
+				</div>
+			</header>
+
+			<div class="stack">
+				<section>
+					<h2>Leaderboard</h2>
+					<div class="card">
+						<table role="table" aria-label="Leaderboard">
+							<thead>
+								<tr>
+									<th>Player</th>
+									<th>Wins</th>
+									<th>Losses</th>
+								</tr>
+							</thead>
+							<tbody>
+								{
+									leaderboard.map((p) => (
+										<tr>
+											<td>
+												<strong>{p.name}</strong>
+											</td>
+											<td>{p.wins}</td>
+											<td>{p.losses}</td>
+										</tr>
+									))
+								}
+							</tbody>
+						</table>
+					</div>
+				</section>
+				<section>
+					<h2>Game History</h2>
+					<div class="card">
+						<table role="table" aria-label="Game History">
+							<thead>
+								<tr>
+									<th>Timestamp</th>
+									<th style="width: 140px">Winner</th>
+									<th style="width: 140px">Loser</th>
+									<th style="width: 140px">PGN</th>
+								</tr>
+							</thead>
+							<tbody>
+								{
+									games.map((g, i) => (
+										<tr>
+											<td>
+												{formatTimestamp(g.timestamp)}
+											</td>
+											<td>
+												<span class={`dot ${g.winner.color === 'Black' ? ' black' : ' white'}`} aria-hidden="true"></span>{g.winner.name}
+											</td>
+											<td>
+												<span class={`dot ${g.loser.color === 'Black' ? ' black' : ' white'}`} aria-hidden="true"></span>{g.loser.name}
+											</td>
+											<td>
+												<button
+													class="btn copy"
+													data-pgn={g.pgn}
+													aria-label={`Copy PGN for game #${i + 1}`}
+													onclick="copyPGN(this)"
+												>
+													Copy
+												</button>
+											</td>
+										</tr>
+									))
+								}
+							</tbody>
+						</table>
+					</div>
+				</section>
+			</div>
+		</div>
+
+		<div id="toast" class="toast" role="status" aria-live="polite"></div>
+
+		<script is:inline>
+			const toast = document.getElementById('toast');
+
+			function showToast(msg) {
+				toast.textContent = msg;
+				toast.classList.add('show');
+				setTimeout(() => toast.classList.remove('show'), 1500);
+			}
+
+			async function copyPGN(button) {
+				const pgn = button.getAttribute('data-pgn') || '';
+				try {
+					await navigator.clipboard.writeText(pgn);
+					button.classList.add('success');
+					showToast('PGN copied');
+					setTimeout(() => button.classList.remove('success'), 350);
+				} catch (err) {
+					console.error(err);
+					showToast('Copy failed');
+				}
+			}
+		</script>
+	</body>
+</html>
+
+<style>
+	:root {
+		--bg: #181818;
+		--panel: #212121;
+		/* subtle alt */
+		--text: #ffffff;
+		/* near-white text */
+		--muted: #9aa0a6;
+		/* muted text */
+		--border: #4a4a4a;
+		/* hairline borders */
+		--accent: #10a37f;
+		/* ChatGPT green */
+		--accent-2: #25c19b;
+		/* hover */
+		--danger: #ef4444;
+		/* red for toasts, if needed */
+		--radius: 16px;
+		--shadow: 0 10px 25px rgba(0, 0, 0, 0.25);
+	}
+
+	* {
+		box-sizing: border-box;
+	}
+
+	html,
+	body {
+		height: 100%;
+	}
+
+	body {
+		margin: 0;
+		background: var(--bg);
+		color: var(--text);
+		font:
+			16px/1.5 system-ui,
+			-apple-system,
+			Segoe UI,
+			Roboto,
+			Ubuntu,
+			Cantarell,
+			Noto Sans,
+			sans-serif;
+		-webkit-font-smoothing: antialiased;
+		-moz-osx-font-smoothing: grayscale;
+	}
+
+	.container {
+		max-width: 1100px;
+		margin-inline: auto;
+		padding: 24px;
+	}
+
+	header {
+		display: flex;
+		align-items: center;
+		justify-content: space-between;
+		gap: 12px;
+		margin-bottom: 20px;
+	}
+
+	.title {
+		font-weight: 700;
+		font-size: 24px;
+		letter-spacing: 0.2px;
+	}
+
+	.sub {
+		color: var(--muted);
+		font-size: 14px;
+	}
+
+	.card {
+		background: var(--panel);
+		border: 1px solid var(--border);
+		border-radius: var(--radius);
+		box-shadow: var(--shadow);
+		padding: 16px;
+		height: 100%;
+	}
+
+	.stack {
+		display: grid;
+		grid-template-columns: 1fr 2fr; /* two equal columns */
+		gap: 16px;
+		height: calc(100vh - 200px);
+	}
+
+	h2 {
+		font-size: 16px;
+		font-weight: 600;
+		margin: 0 0 10px;
+	}
+
+	table {
+		width: 100%;
+		border-collapse: separate;
+		border-spacing: 0;
+	}
+
+	thead th {
+		position: sticky;
+		top: 0;
+		z-index: 1;
+		color: var(--muted);
+		text-align: left;
+		font-size: 12px;
+		font-weight: 600;
+		letter-spacing: 0.08em;
+		text-transform: uppercase;
+		border-bottom: 1px solid var(--border);
+		padding: 10px 12px;
+	}
+
+	tbody td {
+		padding: 12px;
+		border-bottom: 1px solid var(--border);
+	}
+
+	tbody tr:hover {
+		background: rgba(255, 255, 255, 0.03);
+	}
+
+	.btn {
+		border: 1px solid var(--border);
+		background: #1e1f24;
+		color: var(--text);
+		border-radius: 10px;
+		padding: 8px 12px;
+		cursor: pointer;
+		display: inline-flex;
+		align-items: center;
+		gap: 8px;
+		font-weight: 600;
+		transition:
+			transform 0.02s ease,
+			background 0.12s ease,
+			border-color 0.12s ease;
+	}
+
+	.btn:hover {
+		background: #23242a;
+		border-color: #4b4d57;
+	}
+
+	.btn:active {
+		transform: translateY(1px);
+	}
+
+	.dot {
+		width: 10px;
+		height: 10px;
+		/* background: var(--accent); */
+		margin-right: 8px;
+		border-radius: 999px;
+		display: inline-block;
+	}
+
+	.dot.black {
+		background: #000000;
+		border: 1px solid #888;
+	}
+
+	.dot.white {
+		background: #eee;
+	}
+
+	.btn.copy {
+		--btn-bg: #1e1f24;
+	}
+
+	.btn.copy.success {
+		outline: 1px solid var(--accent);
+		box-shadow: 0 0 0 3px rgba(16, 163, 127, 0.25) inset;
+	}
+
+	.toolbar {
+		display: flex;
+		gap: 8px;
+		align-items: center;
+	}
+
+	.toolbar .spacer {
+		flex: 1;
+	}
+
+	/* Toast */
+	.toast {
+		position: fixed;
+		bottom: 16px;
+		left: 50%;
+		transform: translateX(-50%);
+		background: #111214;
+		color: var(--text);
+		border: 1px solid var(--border);
+		border-radius: 12px;
+		padding: 10px 14px;
+		box-shadow: var(--shadow);
+		opacity: 0;
+		pointer-events: none;
+		transition: opacity 0.15s ease;
+	}
+
+	.toast.show {
+		opacity: 1;
+	}
+</style>
