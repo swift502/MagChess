@@ -104,20 +104,24 @@ const leaderboard = Array.from(statsMap.entries())
 						<table role="table" aria-label="Leaderboard">
 							<thead>
 								<tr>
+									<th align="center">Rank</th>
 									<th>Player</th>
-									<th>Wins</th>
-									<th>Losses</th>
+									<th align="center">Wins</th>
+									<th align="center">Losses</th>
 								</tr>
 							</thead>
 							<tbody>
 								{
-									leaderboard.map((p) => (
+									leaderboard.map((p, i) => (
 										<tr>
+											<td align="center">
+												<strong>{i + 1}.</strong>
+											</td>
 											<td>
 												<strong>{p.name}</strong>
 											</td>
-											<td>{p.wins}</td>
-											<td>{p.losses}</td>
+											<td align="center">{p.wins}</td>
+											<td align="center">{p.losses}</td>
 										</tr>
 									))
 								}
@@ -132,9 +136,9 @@ const leaderboard = Array.from(statsMap.entries())
 							<thead>
 								<tr>
 									<th>Timestamp</th>
-									<th style="width: 140px">Winner</th>
-									<th style="width: 140px">Loser</th>
-									<th style="width: 140px">PGN</th>
+									<th>Winner</th>
+									<th>Loser</th>
+									<th align="center">PGN</th>
 								</tr>
 							</thead>
 							<tbody>
@@ -150,7 +154,7 @@ const leaderboard = Array.from(statsMap.entries())
 											<td>
 												<span class={`dot ${g.loser.color === 'Black' ? ' black' : ' white'}`} aria-hidden="true"></span>{g.loser.name}
 											</td>
-											<td>
+											<td align="center">
 												<button
 													class="btn copy"
 													data-pgn={g.pgn}
@@ -266,15 +270,18 @@ const leaderboard = Array.from(statsMap.entries())
 		border: 1px solid var(--border);
 		border-radius: var(--radius);
 		box-shadow: var(--shadow);
-		padding: 16px;
+		padding: 20px;
+		padding-top: 0px;
 		height: 100%;
+		height: calc(100vh - 160px);
+		overflow: auto;
+		scrollbar-color: var(--border) transparent;
 	}
 
 	.stack {
 		display: grid;
-		grid-template-columns: 1fr 2fr; /* two equal columns */
+		grid-template-columns: 1fr 1.5fr;
 		gap: 16px;
-		height: calc(100vh - 200px);
 	}
 
 	h2 {
@@ -288,13 +295,16 @@ const leaderboard = Array.from(statsMap.entries())
 		width: 100%;
 		border-collapse: separate;
 		border-spacing: 0;
-		text-align: center;
+		text-align: left;
+		padding: 0px 10px;
 	}
 
 	thead th {
 		position: sticky;
-		top: 0;
+		top: 0px;
+		padding-top: 18px;
 		z-index: 1;
+		background: var(--panel);
 		color: var(--muted);
 		font-size: 12px;
 		font-weight: 600;
@@ -305,7 +315,7 @@ const leaderboard = Array.from(statsMap.entries())
 	}
 
 	tbody td {
-		line-height: 40px;
+		line-height: 50px;
 		border-top: 1px solid var(--border);
 	}
 

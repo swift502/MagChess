@@ -38,11 +38,11 @@ def inverse_lerp(a: float, b: float, value: float):
     t = (value - a) / (b - a)
     return max(0.0, min(1.0, t))
 
+def root_path(path: str) -> str:
+    return str(Path(__file__) / "../../" / path)
+
 def asset_path(path: str) -> str:
     return str(Path(__file__) / "../../assets" / path)
-
-def data_path(path: str) -> str:
-    return str(Path(__file__) / "../../data" / path)
 
 def color_format(color: chess.Color | None):
     match color:

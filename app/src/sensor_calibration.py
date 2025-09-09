@@ -5,7 +5,7 @@ import sys
 import time
 
 from sensors_hw import HWSensors
-from utilities import data_path
+from utilities import root_path
 
 sensor_count = 64
 sample_count = sensor_count * 10
@@ -18,7 +18,7 @@ counter: int = 0
 def export_calibration_data():
     average = {str(coords): sum(samples[coords]) // len(samples[coords]) for coords in samples}
     average = dict(sorted(average.items()))
-    path = data_path("sensor_calibration_data.json")
+    path = root_path("calibration_data.json")
     with open(path, "w") as f:
         json.dump(average, f, indent=4)
 
