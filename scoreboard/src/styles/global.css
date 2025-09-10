@@ -110,6 +110,7 @@ thead th {
 tbody td {
     line-height: 50px;
     border-top: 1px solid var(--border);
+    white-space: nowrap;
 }
 
 tbody tr:hover {
@@ -203,4 +204,16 @@ tbody td .player {
 
 .toast.show {
     opacity: 1;
+}
+
+@media (max-width: 900px) {
+    .stack {
+        grid-template-columns: 1fr;
+    }
+
+    /* Hide the first column of the games table on small screens */
+    table.games tbody td:nth-child(1),
+    table.games thead th:nth-child(1) {
+        display: none;
+    }
 }
