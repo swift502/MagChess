@@ -24,28 +24,6 @@ const moments: Array<{
 	timestamp: string;
 	pgn: string;
 }> = MomentData;
-
-// Build leaderboard from games
-const statsMap = new Map<string, { wins: number; draws: number; losses: number }>();
-for (const g of games) {
-	if (!statsMap.has(g.white)) statsMap.set(g.white, { wins: 0, draws: 0, losses: 0 });
-	if (!statsMap.has(g.black)) statsMap.set(g.black, { wins: 0, draws: 0, losses: 0 });
-	statsMap.get(g.white)!.wins += g.result === '1-0' ? 1 : 0;
-	statsMap.get(g.white)!.draws += g.result === '1/2-1/2' ? 1 : 0;
-	statsMap.get(g.white)!.losses += g.result === '0-1' ? 1 : 0;
-
-	statsMap.get(g.black)!.wins += g.result === '0-1' ? 1 : 0;
-	statsMap.get(g.black)!.draws += g.result === '1/2-1/2' ? 1 : 0;
-	statsMap.get(g.black)!.losses += g.result === '1-0' ? 1 : 0;
-}
-const leaderboard = Array.from(statsMap.entries())
-	.map(([name, { wins, draws, losses }]) => ({ name: players[name], wins, draws, losses }))
-	.sort(
-		(a, b) =>
-			b.wins - a.wins ||
-			a.losses - b.losses ||
-			a.name.localeCompare(b.name),
-	);
 ---
 
 <!doctype html>
@@ -74,9 +52,8 @@ const leaderboard = Array.from(statsMap.entries())
 					</button>
 				</div>
 			</header>
-
 			<div class="stack">
-				<Players leaderboard={leaderboard} />
+				<Players games={games} players={players} />
 				<Games games={games} players={players} />
 				<Moments moments={moments} />
 			</div>
