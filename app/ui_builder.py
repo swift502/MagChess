@@ -104,24 +104,27 @@ class UIBuilder:
             ),
         )
 
-        def upload_game(e: ft.ControlEvent):
+        def upload_game(white_id: str, black_id: str, players: dict[str, str], result: str):
             pgn = get_pgn()
             if pgn is None:
                 instance.notification_info("Game not found")
                 return
             else:
                 try:
+                    pgn.headers.pop("Event")
+                    pgn.headers.pop("Site")
+                    pgn.headers.pop("Round")
                     pgn.headers["Date"] = datetime.now().strftime("%Y.%m.%d")
-                    pgn.headers["White"] = "White"
-                    pgn.headers["Black"] = "Black"
-                    pgn.headers["Result"] = "*"
+                    pgn.headers["White"] = players[white_id]
+                    pgn.headers["Black"] = players[black_id]
+                    pgn.headers["Result"] = result
                     with open(data_path("games.json"), "r", encoding="utf-8") as f:
                         data: list[object] = json.load(f)
                     data.append({
                         "timestamp": datetime.now().isoformat(timespec='seconds'),
-                        "white": "White",
-                        "black": "Black",
-                        "result": "*",
+                        "white": white_id,
+                        "black": black_id,
+                        "result": result,
                         "pgn": str(pgn),
                     })
                     with open(data_path("games.json"), "w", encoding="utf-8") as f:
@@ -179,7 +182,13 @@ class UIBuilder:
             )
 
             def commit_game(e: ft.ControlEvent):
-                pass
+                if select_white.value is None or select_black.value is None or select_result.value is None:
+                    instance.notification_info("Please select values")
+                    return
+                
+                upload_game(select_white.value, select_black.value, players, select_result.value)
+                dialog.open = False
+                instance.page.update()
 
             def close_dialog(e: ft.ControlEvent):
                 dialog.open = False
