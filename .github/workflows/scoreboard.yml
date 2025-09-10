@@ -1,4 +1,4 @@
-name: Deploy to GitHub Pages
+name: Deploy Scoreboard
 
 on:
   # Trigger the workflow every time you push to the `main` branch
