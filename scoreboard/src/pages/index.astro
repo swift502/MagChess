@@ -1,9 +1,15 @@
 ---
+import "../styles/global.css";
+
 import Players from "../components/players.astro";
 import Games from "../components/games.astro";
 import Moments from "../components/moments.astro";
 
-import "../styles/global.css";
+import PlayerData from '../../../data/players.json';
+import GameData from '../../../data/games.json';
+import MomentData from '../../../data/moments.json';
+
+const players: Record<string, string> = PlayerData;
 
 const games: Array<{
 	timestamp: string;
@@ -11,41 +17,12 @@ const games: Array<{
 	black: string;
 	result: string;
 	pgn: string;
-}> = [
-	{
-		timestamp: '08. 28. 2025 19:32',
-		white: 'Alice',
-		black: 'Bob',
-		result: '1-0',
-		pgn: '1. e4 e5 2. Nf3 Nc6 3. Bb5 a6 1-0',
-	},
-	{
-		timestamp: '08. 30. 2025 08:12',
-		white: 'Charlie',
-		black: 'Alice',
-		result: '0-1',
-		pgn: '1. d4 Nf6 2. c4 g6 3. Nc3 d5 0-1',
-	},
-	{
-		timestamp: '09. 01. 2025 21:10',
-		white: 'Alice',
-		black: 'Dina',
-		result: '1/2-1/2',
-		pgn: '1. e4 c5 2. Nf3 d6 3. d4 cxd4 0-1',
-	},
-	{
-		timestamp: '09. 03. 2025 14:05',
-		white: 'Bob',
-		black: 'Charlie',
-		result: '*',
-		pgn: '1. c4 e5 2. Nc3 Nf6 3. Nf3 Nc6 1-0',
-	},
-];
+}> = GameData;
 
-// Double the samples
-games.push(...games, ...games);
-games.push(...games, ...games);
-
+const moments: Array<{
+	timestamp: string;
+	pgn: string;
+}> = MomentData;
 
 // Build leaderboard from games
 const statsMap = new Map<string, { wins: number; draws: number; losses: number }>();
@@ -61,7 +38,7 @@ for (const g of games) {
 	statsMap.get(g.black)!.losses += g.result === '1-0' ? 1 : 0;
 }
 const leaderboard = Array.from(statsMap.entries())
-	.map(([name, { wins, draws, losses }]) => ({ name, wins, draws, losses }))
+	.map(([name, { wins, draws, losses }]) => ({ name: players[name], wins, draws, losses }))
 	.sort(
 		(a, b) =>
 			b.wins - a.wins ||
@@ -98,8 +75,8 @@ const leaderboard = Array.from(statsMap.entries())
 
 			<div class="stack">
 				<Players leaderboard={leaderboard} />
-				<Games games={games} />
-				<Moments games={games} />
+				<Games games={games} players={players} />
+				<Moments moments={moments} />
 			</div>
 		</div>
 

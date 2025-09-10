@@ -1,12 +1,12 @@
 ---
-const { games } = Astro.props;
+const { games, players } = Astro.props;
 
-var results = [];
-for (const g of games) {
-    if (g.result === '1-0') results.push(`${g.white} wins`);
-    else if (g.result === '0-1') results.push(`${g.black} wins`);
-    else if (g.result === '1/2-1/2') results.push('Draw');
-    else results.push('Unknown');
+function getResult(pgnResult: string, player: string)
+{
+    if (pgnResult === '1-0') return `${player} won`;
+    else if (pgnResult === '0-1') return `${player} lost`;
+    else if (pgnResult === '1/2-1/2') return 'Draw';
+    else return 'Unknown';
 }
 
 ---
@@ -20,7 +20,7 @@ for (const g of games) {
                     <th>Timestamp</th>
                     <th>Players</th>
                     <th>Result</th>
-                    <th align="center">PGN</th>
+                    <th align="center">Data</th>
                 </tr>
             </thead>
             <tbody>
@@ -31,17 +31,17 @@ for (const g of games) {
                                 {g.timestamp}
                             </td>
                             <td>
-                                <div class="player"><span class={`dot white`}></span>{g.white}</div>
-                                <div class="player"><span class={`dot black`}></span>{g.black}</div>
+                                <div class="player"><span class={`dot white`}></span>{players[g.white]}</div>
+                                <div class="player"><span class={`dot black`}></span>{players[g.black]}</div>
                             </td>
-                            <td>{results[i]}</td>
+                            <td>{getResult(g.result, players[g.white])}</td>
                             <td align="center">
                                 <button
                                     class="btn copy"
                                     data-pgn={g.pgn}
                                     onclick="copyPGN(this)"
                                 >
-                                    Copy
+                                    PGN
                                 </button>
                             </td>
                         </tr>

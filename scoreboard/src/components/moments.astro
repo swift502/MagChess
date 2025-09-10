@@ -1,5 +1,5 @@
 ---
-const { games } = Astro.props;
+const { moments } = Astro.props;
 ---
 
 <section>
@@ -9,12 +9,12 @@ const { games } = Astro.props;
             <thead>
                 <tr>
                     <th>Timestamp</th>
-                    <th align="center">PGN</th>
+                    <th align="center">Data</th>
                 </tr>
             </thead>
             <tbody>
                 {
-                    games.map((g, i) => (
+                    moments.map((g, i) => (
                         <tr>
                             <td>
                                 {g.timestamp}
@@ -25,7 +25,7 @@ const { games } = Astro.props;
                                     data-pgn={g.pgn}
                                     onclick="copyPGN(this)"
                                 >
-                                    Copy
+                                    PGN
                                 </button>
                             </td>
                         </tr>
