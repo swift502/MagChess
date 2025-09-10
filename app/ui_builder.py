@@ -7,6 +7,7 @@ import flet as ft
 from typing import TYPE_CHECKING
 
 from constants import THEME_WHITE, THEME_BLACK
+from utilities import data_path
 
 if TYPE_CHECKING:
     from ui_instance import MagChessUI
@@ -75,14 +76,14 @@ class UIBuilder:
                 return
             else:
                 try:
-                    with open("../../data/highlights.json", "r") as f:
+                    with open(data_path("highlights.json"), "r") as f:
                         data: list[object] = json.load(f)
                     data.append({
-                        "timestamp": datetime.now().isoformat(),
+                        "timestamp": datetime.now().isoformat(timespec='seconds'),
                         "pgn": str(pgn.mainline()),
                     })
-                    with open("../../data/highlights.json", "w") as f:
-                        json.dump(data, f)
+                    with open(data_path("highlights.json"), "w") as f:
+                        json.dump(data, f, indent=2)
 
                     instance.notification_success("Highlight uploaded")
                 except Exception as ex:
@@ -114,18 +115,18 @@ class UIBuilder:
                     pgn.headers["White"] = "White"
                     pgn.headers["Black"] = "Black"
                     pgn.headers["Result"] = "*"
-                    with open("../../data/games.json", "r") as f:
+                    with open(data_path("games.json"), "r") as f:
                         data: list[object] = json.load(f)
                     data.append({
-                        "timestamp": datetime.now().isoformat(),
+                        "timestamp": datetime.now().isoformat(timespec='seconds'),
                         "white": "White",
                         "black": "Black",
                         "result": "*",
                         "pgn": str(pgn),
                     })
-                    with open("../../data/games.json", "w") as f:
-                        json.dump(data, f)
-                    
+                    with open(data_path("games.json"), "w") as f:
+                        json.dump(data, f, indent=2)
+
                     instance.notification_success("Game uploaded")
                 except Exception as ex:
                     print(ex)
@@ -138,7 +139,7 @@ class UIBuilder:
             top=26,
             right=26,
             color=ft.Colors.WHITE,
-            bgcolor="#0062E3",
+            bgcolor="#0063E4",
             style=ft.ButtonStyle(
                 padding=ft.padding.symmetric(36, 30),
                 shape=ft.RoundedRectangleBorder(20),

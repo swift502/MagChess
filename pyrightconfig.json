@@ -1,0 +1,8 @@
+{
+  "executionEnvironments": [
+    { "root": "./app" }
+  ],
+  "pythonVersion": "3.11",
+  "reportOptionalMemberAccess": "none",
+  "typeCheckingMode": "standard"
+}

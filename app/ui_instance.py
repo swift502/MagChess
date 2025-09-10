@@ -1,13 +1,12 @@
 
 import asyncio
 import concurrent.futures
-import math
 import time
 from typing import Callable
 import flet as ft
 
 from utilities import color_format
-from constants import DEV_LAYOUT, RPI
+from constants import DEV_LAYOUT
 from data import IChessboard
 from ui_builder import UIBuilder
 

@@ -1,6 +1,5 @@
-from pathlib import Path
-
 import chess
+from pathlib import Path
 
 def hex_to_rgb(hex_color: str):
     hex_color = hex_color.lstrip("#")
@@ -38,11 +37,11 @@ def inverse_lerp(a: float, b: float, value: float):
     t = (value - a) / (b - a)
     return max(0.0, min(1.0, t))
 
-def root_path(path: str) -> str:
-    return str(Path(__file__) / "../../" / path)
-
 def asset_path(path: str) -> str:
-    return str(Path(__file__) / "../../assets" / path)
+    return str(Path(__file__).parent / "assets" / path)
+
+def data_path(path: str) -> str:
+    return str(Path(__file__).parent / "../data" / path)
 
 def color_format(color: chess.Color | None):
     match color:
