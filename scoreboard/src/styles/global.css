@@ -1,0 +1,206 @@
+:root {
+    --bg: #212121;
+    --panel: #181818;
+    --text: #ffffff;
+    --muted: #a8a8a8;
+    --border: #4a4a4a;
+    --accent: #00a6ff;
+    --danger: #ef4444;
+    --radius: 16px;
+    --shadow: 0 10px 25px rgba(0, 0, 0, 0.25);
+}
+
+* {
+    box-sizing: border-box;
+}
+
+html,
+body {
+    height: 100%;
+}
+
+body {
+    margin: 0;
+    background: var(--bg);
+    color: var(--text);
+    font:
+        16px/1.5 system-ui,
+        -apple-system,
+        Segoe UI,
+        Roboto,
+        Ubuntu,
+        Cantarell,
+        Noto Sans,
+        sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+.container {
+    max-width: 1400px;
+    margin-inline: auto;
+    padding: 24px;
+}
+
+header {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 24px;
+    margin-bottom: 20px;
+}
+
+.title {
+    font-weight: 700;
+    font-size: 24px;
+    letter-spacing: 0.2px;
+}
+
+.sub {
+    color: var(--muted);
+    font-size: 14px;
+}
+
+.card {
+    background: var(--panel);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    box-shadow: var(--shadow);
+    padding: 20px;
+    padding-top: 0px;
+    overflow: auto;
+    scrollbar-color: var(--border) transparent;
+}
+
+.stack {
+    display: grid;
+    grid-template-columns: 1fr 1.8fr 1fr;
+    gap: 16px;
+}
+
+h2 {
+    padding-left: 16px;
+    font-size: 16px;
+    font-weight: 600;
+    margin: 0 0 10px;
+}
+
+table {
+    width: 100%;
+    border-collapse: separate;
+    border-spacing: 0;
+    text-align: left;
+    padding: 0px 10px;
+}
+
+thead th {
+    position: sticky;
+    top: 0px;
+    padding: 18px 2px 8px 2px;
+    z-index: 1;
+    background: var(--panel);
+    color: var(--muted);
+    font-size: 12px;
+    font-weight: 600;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    line-height: 30px;
+}
+
+tbody td {
+    line-height: 50px;
+    border-top: 1px solid var(--border);
+}
+
+tbody tr:hover {
+    background: rgba(255, 255, 255, 0.03);
+}
+
+tbody td .player {
+    line-height: normal;
+}
+
+.btn {
+    border: 1px solid var(--border);
+    background: #141414;
+    color: var(--text);
+    border-radius: 10px;
+    padding: 10px 16px;
+    cursor: pointer;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 16px;
+    font-weight: 600;
+    transition:
+        transform 0.02s ease,
+        background 0.12s ease,
+        border-color 0.12s ease;
+}
+
+.btn:hover {
+    background: #23242a;
+    border-color: #4b4d57;
+}
+
+.btn:active {
+    transform: translateY(1px);
+}
+
+.dot {
+    width: 10px;
+    height: 10px;
+    margin-right: 8px;
+    border-radius: 999px;
+    display: inline-block;
+}
+
+.dot.black {
+    background: #000000;
+    border: 1px solid #aaa;
+}
+
+.dot.white {
+    background: #eee;
+}
+
+.btn.copy {
+    padding: 8px 12px;
+    font-size: 14px;
+    --btn-bg: #1e1f24;
+}
+
+.btn.copy.success {
+    border: 1px solid var(--accent);
+}
+
+.toolbar {
+    display: flex;
+    gap: 8px;
+    align-items: center;
+}
+
+.toolbar .spacer {
+    flex: 1;
+}
+
+/* Toast */
+.toast {
+    position: fixed;
+    bottom: 16px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: #111214;
+    color: var(--text);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    padding: 10px 14px;
+    box-shadow: var(--shadow);
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.15s ease;
+}
+
+.toast.show {
+    opacity: 1;
+}

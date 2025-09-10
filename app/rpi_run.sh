@@ -2,12 +2,7 @@
 
 cd "$(dirname "${BASH_SOURCE[0]}")" || exit 1
 
-git reset --hard
-git clean -fd
-git fetch --prune origin
-git checkout -B players origin/players
-git reset --hard
-git clean -fd
+git pull --ff-only
 
 source ".venv/bin/activate"
 

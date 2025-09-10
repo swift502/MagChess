@@ -1,0 +1,37 @@
+---
+const { games } = Astro.props;
+---
+
+<section>
+    <h2>Moments</h2>
+    <div class="card">
+        <table>
+            <thead>
+                <tr>
+                    <th>Timestamp</th>
+                    <th align="center">PGN</th>
+                </tr>
+            </thead>
+            <tbody>
+                {
+                    games.map((g, i) => (
+                        <tr>
+                            <td>
+                                {g.timestamp}
+                            </td>
+                            <td align="center">
+                                <button
+                                    class="btn copy"
+                                    data-pgn={g.pgn}
+                                    onclick="copyPGN(this)"
+                                >
+                                    Copy
+                                </button>
+                            </td>
+                        </tr>
+                    ))
+                }
+            </tbody>
+        </table>
+    </div>
+</section>

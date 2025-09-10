@@ -1,0 +1,53 @@
+---
+const { games } = Astro.props;
+
+var results = [];
+for (const g of games) {
+    if (g.result === '1-0') results.push(`${g.white} wins`);
+    else if (g.result === '0-1') results.push(`${g.black} wins`);
+    else if (g.result === '1/2-1/2') results.push('Draw');
+    else results.push('Unknown');
+}
+
+---
+
+<section>
+    <h2>Games</h2>
+    <div class="card">
+        <table>
+            <thead>
+                <tr>
+                    <th>Timestamp</th>
+                    <th>Players</th>
+                    <th>Result</th>
+                    <th align="center">PGN</th>
+                </tr>
+            </thead>
+            <tbody>
+                {
+                    games.map((g, i) => (
+                        <tr>
+                            <td>
+                                {g.timestamp}
+                            </td>
+                            <td>
+                                <div class="player"><span class={`dot white`}></span>{g.white}</div>
+                                <div class="player"><span class={`dot black`}></span>{g.black}</div>
+                            </td>
+                            <td>{results[i]}</td>
+                            <td align="center">
+                                <button
+                                    class="btn copy"
+                                    data-pgn={g.pgn}
+                                    onclick="copyPGN(this)"
+                                >
+                                    Copy
+                                </button>
+                            </td>
+                        </tr>
+                    ))
+                }
+            </tbody>
+        </table>
+    </div>
+</section>

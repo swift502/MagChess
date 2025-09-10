@@ -1,0 +1,39 @@
+---
+const { leaderboard } = Astro.props;
+---
+
+<section>
+    <h2>Leaderboard</h2>
+    <div class="card">
+        <table>
+            <thead>
+                <tr>
+                    <th align="center">Rank</th>
+                    <th>Player</th>
+                    <th align="center">Wins</th>
+                    <th align="center">Draws</th>
+                    <th align="center">Losses</th>
+                </tr>
+            </thead>
+            <tbody>
+                {
+                    leaderboard.map((p, i) => (
+                        <tr>
+                            <td align="center">
+                                <strong>
+                                    {['🥇', '🥈', '🥉'][i] ?? `${i + 1}.`}
+                                </strong>
+                            </td>
+                            <td>
+                                <strong>{p.name}</strong>
+                            </td>
+                            <td align="center">{p.wins}</td>
+                            <td align="center">{p.draws}</td>
+                            <td align="center">{p.losses}</td>
+                        </tr>
+                    ))
+                }
+            </tbody>
+        </table>
+    </div>
+</section>
