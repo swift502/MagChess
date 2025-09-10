@@ -57,3 +57,7 @@ Each lego chess piece has to be fitted with a magnet on the bottom. Round 5x2mm 
 Magnet polarity is important, if white pieces read magnetic north, black pieces should be flipped and read south. The hall sensors will then read colors as positive/negative voltage, which gives the app enough information to interpret chess moves correctly.
 
 The app should be installed on a Raspberry Pi. The chessboard draws 5V and GND from the pi. Data pins are the I2C SDA and SCL pins and four mux selection pins, by default D21, D20, D16 and D12. An estimated 800mA is drawn by the hall sensors when powered.
+
+## Scoreboard
+
+Astro website to show results. Deployed via GitHub Pages here https://swift502.github.io/MagChess.
