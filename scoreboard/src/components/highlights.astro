@@ -1,10 +1,10 @@
 ---
 import { formatTimestamp } from '../scripts/utilities.ts';
-const { moments } = Astro.props;
+const { highlights } = Astro.props;
 ---
 
 <section>
-    <h2>Moments</h2>
+    <h2>Highlights</h2>
     <div class="card">
         <table>
             <thead>
@@ -15,7 +15,7 @@ const { moments } = Astro.props;
             </thead>
             <tbody>
                 {
-                    moments.map((g, i) => (
+                    highlights.map((g, i) => (
                         <tr>
                             <td>
                                 {formatTimestamp(g.timestamp)}

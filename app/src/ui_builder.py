@@ -1,9 +1,6 @@
 from __future__ import annotations
 from datetime import datetime
-import os
-import subprocess
-import shutil
-import tempfile
+import json
 import chess
 import chess.pgn
 import flet as ft
@@ -69,68 +66,79 @@ class UIBuilder:
             if board is None:
                 return None
             else:
-                pgn = chess.pgn.Game().from_board(board)
-                return str(pgn.mainline())
+                return chess.pgn.Game().from_board(board)
 
-        def on_pgn_copied(e: ft.ControlEvent):
+        def upload_highlight(e: ft.ControlEvent):
             pgn = get_pgn()
-            if pgn is not None and len(pgn) > 0:
-                instance.page.set_clipboard(pgn)
-                instance.notification_success("PGN copied to clipboard")
-            else:
+            if pgn is None:
                 instance.notification_info("Game not found")
+                return
+            else:
+                try:
+                    with open("../../data/highlights.json", "r") as f:
+                        data: list[object] = json.load(f)
+                    data.append({
+                        "timestamp": datetime.now().isoformat(),
+                        "pgn": str(pgn.mainline()),
+                    })
+                    with open("../../data/highlights.json", "w") as f:
+                        json.dump(data, f)
 
-            instance.show_ui()
+                    instance.notification_success("Highlight uploaded")
+                except Exception as ex:
+                    print(ex)
+                    instance.notification_error(f"Upload failed")
+                    return
 
-        copy_pgn_button = ft.ElevatedButton(
-            content=ft.Icon(ft.Icons.COPY, size=50),
-            on_click=on_pgn_copied,
+        upload_highlight_button = ft.ElevatedButton(
+            content=ft.Icon(ft.Icons.NOTE_ADD, size=50),
+            on_click=upload_highlight,
             top=26,
             left=26,
             color=ft.Colors.WHITE,
-            bgcolor="#54A800",
+            bgcolor="#8311c0",
             style=ft.ButtonStyle(
                 padding=ft.padding.symmetric(36, 30),
                 shape=ft.RoundedRectangleBorder(20),
             ),
         )
 
-        def gh_installed():
-            return shutil.which("gh") is not None
-
-        def create_gist_from_string(content: str):
-            filename = f"chess-{datetime.now().strftime('%Y-%m-%d-%H-%M-%S')}.pgn"
-            tmp_path = os.path.join(tempfile.gettempdir(), filename)
-            with open(tmp_path, "w", encoding="utf-8") as tmp:
-                tmp.write(content)
-
-            try:
-                cmd = ["gh", "gist", "create", tmp_path, "--public"]
-                return subprocess.run(cmd, check=True)
-            except Exception as e:
-                instance.notification_error("Error creating gist")
-            finally:
-                os.remove(tmp_path)
-
-        def on_gist_clicked(e: ft.ControlEvent):
-            if gh_installed():
-                pgn = get_pgn()
-                if pgn is not None and len(pgn) > 0:
-                    result = create_gist_from_string(pgn)
-                    if result is not None:
-                        instance.notification_success("Gist available at gist.github.com/swift502", duration=10)
-                else:
-                    instance.notification_info("Game not found")
+        def upload_game(e: ft.ControlEvent):
+            pgn = get_pgn()
+            if pgn is None:
+                instance.notification_info("Game not found")
+                return
             else:
-                instance.notification_error("GitHub CLI is not installed")
+                try:
+                    pgn.headers["Date"] = datetime.now().strftime("%Y.%m.%d")
+                    pgn.headers["White"] = "White"
+                    pgn.headers["Black"] = "Black"
+                    pgn.headers["Result"] = "*"
+                    with open("../../data/games.json", "r") as f:
+                        data: list[object] = json.load(f)
+                    data.append({
+                        "timestamp": datetime.now().isoformat(),
+                        "white": "White",
+                        "black": "Black",
+                        "result": "*",
+                        "pgn": str(pgn),
+                    })
+                    with open("../../data/games.json", "w") as f:
+                        json.dump(data, f)
+                    
+                    instance.notification_success("Game uploaded")
+                except Exception as ex:
+                    print(ex)
+                    instance.notification_error(f"Upload failed")
+                    return
 
-        gist_button = ft.ElevatedButton(
-            content=ft.Icon(ft.Icons.UPLOAD, size=50),
-            on_click=on_gist_clicked,
+        upload_game_button = ft.ElevatedButton(
+            content=ft.Icon(ft.Icons.SAVE, size=50),
+            on_click=upload_game,
             top=26,
             right=26,
             color=ft.Colors.WHITE,
-            bgcolor="#8311c0",
+            bgcolor="#0062E3",
             style=ft.ButtonStyle(
                 padding=ft.padding.symmetric(36, 30),
                 shape=ft.RoundedRectangleBorder(20),
@@ -158,7 +166,7 @@ class UIBuilder:
         )
 
         return ft.Stack(
-            controls=[copy_pgn_button, gist_button, instance.current_player_box],
+            controls=[upload_highlight_button, upload_game_button, instance.current_player_box],
             alignment=ft.alignment.top_center,
             animate_offset=150,
             offset=ft.Offset(0, -0.3),

@@ -3,11 +3,11 @@ import "../styles/global.css";
 
 import Players from "../components/players.astro";
 import Games from "../components/games.astro";
-import Moments from "../components/moments.astro";
+import Highlights from "../components/highlights.astro";
 
 import PlayerData from '../../../data/players.json';
 import GameData from '../../../data/games.json';
-import MomentData from '../../../data/moments.json';
+import HighlightData from '../../../data/highlights.json';
 
 const players: Record<string, string> = PlayerData;
 
@@ -20,10 +20,10 @@ const games: Array<{
 }> = GameData;
 games.sort((a, b) => b.timestamp.localeCompare(a.timestamp));
 
-const moments: Array<{
+const highlights: Array<{
 	timestamp: string;
 	pgn: string;
-}> = MomentData;
+}> = HighlightData;
 ---
 
 <!doctype html>
@@ -55,7 +55,7 @@ const moments: Array<{
 			<div class="stack">
 				<Players games={games} players={players} />
 				<Games games={games} players={players} />
-				<Moments moments={moments} />
+				<Highlights highlights={highlights} />
 			</div>
 		</div>
 
