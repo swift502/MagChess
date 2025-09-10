@@ -62,7 +62,7 @@ class Chessboard(IChessboard):
             elif not self.init_config and self.match_sensor_state("BB....WW" * 8):
                 self.flipped = True
                 self.init_game()
-            elif not self.game_over:
+            else:
                 self.board_state_update()
                 
             # Pieces
@@ -143,6 +143,17 @@ class Chessboard(IChessboard):
             if piece not in layout.values():
                 piece.destroy()
 
+        # Check for game over
+        outcome = self.state_stack[-1].board.outcome()
+        if outcome is not None:
+            self.game_over = True
+            self.ui.update_board_state(
+                f"Game over! Winner: {color_format(outcome.winner)}",
+                color=ft.Colors.BLACK,
+                bgcolor="#dbac16",
+            )
+
+        # Update current player display
         self.ui.update_current_player()
 
     def board_state_update(self):
@@ -157,8 +168,9 @@ class Chessboard(IChessboard):
         # Changes found, start new analysis
         self.last_analysed_sensor_state = sensor_state
         self.staging_layout = self.state_stack[-1].pieces.copy()
+        self.game_over = False
         illegal = False
-        self.ui.hide_message()
+        self.ui.hide_board_state()
 
         # Compare against current state
         missing_1, new_1, swaps_1 = self.analyse_sensor_changes(against=self.state_stack[-1])
@@ -219,14 +231,6 @@ class Chessboard(IChessboard):
 
     def process_move(self, move: chess.Move):
         self.commit_staging_layout(move)
-        outcome = self.state_stack[-1].board.outcome()
-        if outcome is not None:
-            self.game_over = True
-            self.ui.update_board_state(
-                f"Game over! Winner: {color_format(outcome.winner)}",
-                color=ft.Colors.BLACK,
-                bgcolor="#dbac16",
-            )
 
     def pop_state(self):
         self.state_stack.pop()

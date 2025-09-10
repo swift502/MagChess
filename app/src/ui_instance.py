@@ -105,7 +105,7 @@ class MagChessUI:
         self.info_box.bgcolor = bgcolor
         self.info_box.visible = True
 
-    def hide_message(self):
+    def hide_board_state(self):
         self.info_box.visible = False
 
     def notification_info(self, message: str, duration: int | None = None):
