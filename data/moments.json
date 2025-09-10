@@ -1,14 +1,14 @@
 [
     {
-        "timestamp": "05.09.2025 15:42",
+        "timestamp": "2025-09-05T15:42:00",
         "pgn": "1. a4 c5 2. Ra3 Qb6 3. Rb3 Qe6 4. d4 Qd6 5. Nh3 g6 6. Bf4 e5 7. Bxe5 Qd5 8. Bxh8 c4 9. Nf4 Qa5+ 10. Nc3 cxb3 11. Nd5 Na6 12. e4 bxc2 13. Qxc2 Nb4 14. Nxb4 Bxb4 15. d5 b6 16. Be2 Ba6 17. Bf3 Rc8 18. e5 Bxc3+ 19. bxc3 Rxc3 20. Kd2 Rxc2+ 21. Kxc2 Qc5+ 22. Kb3 Qc4+ 23. Ka3 Qc5+ 24. Ka2 Bc4+ 25. Kb2 Qb4+ 26. Kc2 Qb3+ 27. Kd2 Qd3+ 28. Ke1 Qc3+ 29. Kd1 Bb3+ 30. Ke2 Qc2+ 31. Ke3 Qc5+ 32. Kf4 Qc4+ 33. Kg3 f6 34. exf6 Qc7+ 35. Kh3 Bc2 36. Re1+ Ne7 37. Be4 Qc3+ 38. Re3 Qd2 39. Bxc2 Qxc2 40. Rxe7+ Kd8 41. Rxh7 Qd3+ 42. Kg4 Qe4+ 43. Kg5 Qf5+ 44. Kh6 Qh5+ 45. Kg7 Qxd5 46. f7 Qe5+ 47. Kg8 Qe6 48. Bf6+ Kc8 49. Kh8 Qxf6+ 50. Rg7 Kd8 51. g4 Ke7 52. g5 Qxg5 53. Rh7 Kf8 54. h4 Qf6+ 55. Rg7 Qxh4+ 56. Rh7 Qf6+ 57. Rg7 Qxg7#"
     },
     {
-        "timestamp": "05.09.2025 15:15",
+        "timestamp": "2025-09-05T15:15:00",
         "pgn": "1. a4 c5 2. Ra3 Qb6 3. Rb3 Qe6 4. d4 Qd6 5. Nh3 g6 6. Bf4 e5 7. Bxe5 Qd5 8. Bxh8 c4 9. Nf4 Qa5+ 10. Nc3 cxb3 11. Nd5 Na6 12. e4 bxc2 13. Qxc2 Nb4 14. Nxb4 Bxb4 15. d5 b6 16. Be2 Ba6 17. Bf3 Rc8 18. e5 Bxc3+ 19. bxc3 Rxc3 20. Kd2 Rxc2+ 21. Kxc2 Qc5+ 22. Kb3 Qc4+ 23. Ka3 Qc5+ 24. Ka2 Bc4+ 25. Kb2 Qb4+ 26. Kc2 Qb3+ 27. Kd2 Qd3+ 28. Ke1 Qc3+ 29. Kd1 Bb3+ 30. Ke2 Qc2+ 31. Ke3 Qc5+ 32. Kf4 Qc4+ 33. Kg3 f6 34. exf6 Qc7+ 35. Kh3 Bc2 36. Re1+ Ne7 37. Be4 Qc3+ 38. Re3 Qd2 39. Bxc2"
     },
     {
-        "timestamp": "05.09.2025 15:02",
+        "timestamp": "2025-09-05T15:02:00",
         "pgn": "1. a4 c5 2. Ra3 Qb6 3. Rb3 Qe6 4. d4 Qd6 5. Nh3 g6 6. Bf4 e5 7. Bxe5 Qd5 8. Bxh8 c4 9. Nf4 Qa5+ 10. Nc3 cxb3 11. Nd5 Na6 12. e4 bxc2 13. Qxc2 Nb4 14. Nxb4 Bxb4 15. d5 b6 16. Be2 Ba6 17. Bf3 Rc8 18. e5 Bxc3+ 19. bxc3 Rxc3 20. Kd2 Rxc2+ 21. Kxc2 Qc5+ 22. Kb3 Qc4+ 23. Ka3 Qc5+ 24. Ka2 Bc4+ 25. Kb2 Qb4+ 26. Kc2 Qb3+ 27. Kd2 Qd3+ 28. Ke1 Qc3+ 29. Kd1 Bb3+ 30. Ke2"
     }
 ]

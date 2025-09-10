@@ -18,6 +18,7 @@ const games: Array<{
 	result: string;
 	pgn: string;
 }> = GameData;
+games.sort((a, b) => b.timestamp.localeCompare(a.timestamp));
 
 const moments: Array<{
 	timestamp: string;

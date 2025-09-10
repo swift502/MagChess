@@ -1,4 +1,6 @@
 ---
+import { formatTimestamp } from '../scripts/utilities.ts';
+
 const { games, players } = Astro.props;
 
 function getResult(pgnResult: string, player: string)
@@ -28,7 +30,7 @@ function getResult(pgnResult: string, player: string)
                     games.map((g, i) => (
                         <tr>
                             <td>
-                                {g.timestamp}
+                                {formatTimestamp(g.timestamp)}
                             </td>
                             <td>
                                 <div class="player"><span class={`dot white`}></span>{players[g.white]}</div>
