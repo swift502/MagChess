@@ -74,7 +74,7 @@ header {
 
 .stack {
     display: grid;
-    grid-template-columns: 1fr 1.8fr 1fr;
+    grid-template-columns: 1.2fr 2.0fr 1fr;
     gap: 16px;
 }
 
