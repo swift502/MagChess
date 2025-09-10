@@ -2,6 +2,7 @@
 const { games, players } = Astro.props;
 
 const statsMap = new Map<string, { wins: number; draws: number; losses: number }>();
+
 // Find player stats
 for (const g of games)
 {
@@ -21,9 +22,6 @@ for (const p of Object.keys(players))
 {
     if (!statsMap.has(p)) statsMap.set(p, { wins: 0, draws: 0, losses: 0 });
 }
-
-// Hide unknown player (id 0)
-statsMap.delete('0');
 
 // Sort by wins, losses, name
 const leaderboard = Array.from(statsMap.entries())

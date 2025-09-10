@@ -76,14 +76,14 @@ class UIBuilder:
                 return
             else:
                 try:
-                    with open(data_path("highlights.json"), "r") as f:
+                    with open(data_path("highlights.json"), "r", encoding="utf-8") as f:
                         data: list[object] = json.load(f)
                     data.append({
                         "timestamp": datetime.now().isoformat(timespec='seconds'),
                         "pgn": str(pgn.mainline()),
                     })
-                    with open(data_path("highlights.json"), "w") as f:
-                        json.dump(data, f, indent=2)
+                    with open(data_path("highlights.json"), "w", encoding="utf-8") as f:
+                        json.dump(data, f, indent=4)
 
                     instance.notification_success("Highlight uploaded")
                 except Exception as ex:
@@ -92,12 +92,12 @@ class UIBuilder:
                     return
 
         upload_highlight_button = ft.ElevatedButton(
-            content=ft.Icon(ft.Icons.NOTE_ADD, size=50),
+            content=ft.Icon(ft.Icons.BOOKMARKS, size=50),
             on_click=upload_highlight,
             top=26,
             left=26,
             color=ft.Colors.WHITE,
-            bgcolor="#8311c0",
+            bgcolor="#8710cb",
             style=ft.ButtonStyle(
                 padding=ft.padding.symmetric(36, 30),
                 shape=ft.RoundedRectangleBorder(20),
@@ -115,7 +115,7 @@ class UIBuilder:
                     pgn.headers["White"] = "White"
                     pgn.headers["Black"] = "Black"
                     pgn.headers["Result"] = "*"
-                    with open(data_path("games.json"), "r") as f:
+                    with open(data_path("games.json"), "r", encoding="utf-8") as f:
                         data: list[object] = json.load(f)
                     data.append({
                         "timestamp": datetime.now().isoformat(timespec='seconds'),
@@ -124,8 +124,8 @@ class UIBuilder:
                         "result": "*",
                         "pgn": str(pgn),
                     })
-                    with open(data_path("games.json"), "w") as f:
-                        json.dump(data, f, indent=2)
+                    with open(data_path("games.json"), "w", encoding="utf-8") as f:
+                        json.dump(data, f, indent=4)
 
                     instance.notification_success("Game uploaded")
                 except Exception as ex:
@@ -133,13 +133,104 @@ class UIBuilder:
                     instance.notification_error(f"Upload failed")
                     return
 
+        def upload_game_dialog(e: ft.ControlEvent):
+            with open(data_path("players.json"), "r", encoding="utf-8") as f:
+                players: dict[str, str] = json.load(f)
+
+            text_style = ft.TextStyle(size=32)
+            option_style = ft.ButtonStyle(
+                text_style=text_style,
+                shape=ft.RoundedRectangleBorder(0),
+                padding=ft.padding.symmetric(36, 30),
+            )
+
+            select_white = ft.Dropdown(
+                label="White",
+                options=[ft.dropdown.Option(id, name, style=option_style) for id, name in players.items()],
+                # value="0",
+                # on_change=on_white_changed,
+                text_style=text_style,
+                label_style=text_style,
+                expand=True,
+            )
+
+            select_black = ft.Dropdown(
+                label="Black",
+                options=[ft.dropdown.Option(id, name, style=option_style) for id, name in players.items()],
+                # value="0",
+                # on_change=on_black_changed,
+                text_style=text_style,
+                label_style=text_style,
+                expand=True,
+            )
+
+            select_result = ft.Dropdown(
+                label="Result",
+                options=[
+                    ft.dropdown.Option("1-0", "White won", style=option_style),
+                    ft.dropdown.Option("0-1", "Black won", style=option_style),
+                    ft.dropdown.Option("1/2-1/2", "Draw", style=option_style),
+                ],
+                # value="0",
+                # on_change=on_black_changed,
+                text_style=text_style,
+                label_style=text_style,
+                expand=True,
+            )
+
+            def commit_game(e: ft.ControlEvent):
+                pass
+
+            def close_dialog(e: ft.ControlEvent):
+                dialog.open = False
+                instance.page.update()
+
+            dialog = ft.AlertDialog(
+                modal=True,
+                # title=ft.Text("Commit game"),
+                # title_text_style=text_style,
+                content=ft.Container(
+                    content=ft.Column(
+                        [select_white, select_black, select_result],
+                        tight=True,
+                        spacing=40,
+                        width=500,
+                    ),
+                    margin=ft.margin.only(top=20)
+                ),
+                actions=[
+                    ft.TextButton(
+                        "Cancel",
+                        on_click=close_dialog,
+                        style=ft.ButtonStyle(
+                            padding=ft.padding.symmetric(36, 30),
+                            text_style=text_style,
+                            color=ft.Colors.WHITE,
+                        ),
+                    ),
+                    ft.TextButton(
+                        "Commit game",
+                        on_click=commit_game,
+                        style=ft.ButtonStyle(
+                            padding=ft.padding.symmetric(32, 36),
+                            text_style=text_style,
+                            color=ft.Colors.WHITE,
+                            bgcolor="#1E8E02",
+                        ),
+                    )
+                ],
+                actions_alignment=ft.MainAxisAlignment.SPACE_BETWEEN,
+            )
+
+            instance.page.open(dialog)
+
         upload_game_button = ft.ElevatedButton(
             content=ft.Icon(ft.Icons.SAVE, size=50),
-            on_click=upload_game,
+            on_click=upload_game_dialog,
             top=26,
             right=26,
             color=ft.Colors.WHITE,
-            bgcolor="#0063E4",
+            bgcolor="#27b200",
             style=ft.ButtonStyle(
                 padding=ft.padding.symmetric(36, 30),
                 shape=ft.RoundedRectangleBorder(20),
