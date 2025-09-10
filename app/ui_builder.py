@@ -183,7 +183,7 @@ class UIBuilder:
 
             def commit_game(e: ft.ControlEvent):
                 if select_white.value is None or select_black.value is None or select_result.value is None:
-                    instance.notification_info("Please select values")
+                    instance.notification_info("Please select all values")
                     return
                 
                 upload_game(select_white.value, select_black.value, players, select_result.value)
