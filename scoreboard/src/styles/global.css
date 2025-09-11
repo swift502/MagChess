@@ -185,11 +185,11 @@ strong {
 
 .dot.black {
     background: #080808;
-    outline: 1px solid var(--border);
+    outline: 1px solid #877c6a;
 }
 
 .dot.white {
-    background: #e0e0e0;
+    background: #ffefda;
 }
 
 .toolbar {
