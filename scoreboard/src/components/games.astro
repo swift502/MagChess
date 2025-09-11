@@ -3,10 +3,10 @@ import { formatTimestamp } from '../scripts/utilities.ts';
 
 const { games, players } = Astro.props;
 
-function getResult(pgnResult: string, player: string)
+function getResult(white: string, black: string, pgnResult: string)
 {
-    if (pgnResult === '1-0') return `${player} won`;
-    else if (pgnResult === '0-1') return `${player} lost`;
+    if (pgnResult === '1-0') return white;
+    else if (pgnResult === '0-1') return black;
     else if (pgnResult === '1/2-1/2') return 'Draw';
     else return 'Unknown';
 }
@@ -21,7 +21,7 @@ function getResult(pgnResult: string, player: string)
                 <tr>
                     <th>Timestamp</th>
                     <th>Players</th>
-                    <th>Result</th>
+                    <th>Winner</th>
                     <th align="center">Data</th>
                 </tr>
             </thead>
@@ -36,7 +36,7 @@ function getResult(pgnResult: string, player: string)
                                 <div class="player"><span class={`dot white`}></span>{players[g.white]}</div>
                                 <div class="player"><span class={`dot black`}></span>{players[g.black]}</div>
                             </td>
-                            <td>{getResult(g.result, players[g.white])}</td>
+                            <td>{getResult(players[g.white], players[g.black], g.result)}</td>
                             <td align="center">
                                 <button
                                     class="btn copy"
