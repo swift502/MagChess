@@ -143,13 +143,13 @@ tbody td .player {
 }
 
 .btn {
-    border: 1px solid var(--border);
+    border: 1px solid #575757;
     color: var(--text);
     border-radius: 10px;
     cursor: pointer;
     display: inline-flex;
     align-items: center;
-    background: #141414;
+    background: #313131;
     gap: 8px;
     transition: all 0.1s ease;
 }
@@ -165,8 +165,8 @@ tbody td .player {
 }
 
 .btn:hover {
-    background: #23242a;
-    border-color: #4b4d57;
+    background: #4b4b4b;
+    border-color: #707070;
 }
 
 .btn.success {
