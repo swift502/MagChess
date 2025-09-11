@@ -36,6 +36,10 @@ body {
     -moz-osx-font-smoothing: grayscale;
 }
 
+a {
+    text-decoration: none;
+}
+
 .container {
     max-width: 1400px;
     margin-inline: auto;
