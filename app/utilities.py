@@ -43,6 +43,9 @@ def asset_path(path: str) -> str:
 def data_path(path: str) -> str:
     return str(Path(__file__).parent / "../data" / path)
 
+def get_repo_path() -> str:
+    return str(Path(__file__).parent / "../")
+
 def color_format(color: chess.Color | None):
     match color:
         case chess.WHITE:

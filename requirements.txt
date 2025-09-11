@@ -1,4 +1,5 @@
 adafruit-circuitpython-ads1x15
 chess
 flet
+GitPython
 lgpio; sys_platform == "linux"

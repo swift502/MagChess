@@ -6,8 +6,9 @@ import chess.pgn
 import flet as ft
 from typing import TYPE_CHECKING
 
-from constants import THEME_WHITE, THEME_BLACK
-from utilities import data_path
+from constants import RPI, THEME_WHITE, THEME_BLACK
+from git import Repo
+from utilities import data_path, get_repo_path
 
 if TYPE_CHECKING:
     from ui_instance import MagChessUI
@@ -62,6 +63,17 @@ class UIBuilder:
 
     @staticmethod
     def build_top_overlay(instance: MagChessUI):
+        def git_commit(file_path, commit_message):
+            if not RPI:
+                return
+
+            repo = Repo(get_repo_path())
+            repo.index.add([file_path])
+            repo.index.commit(commit_message)
+
+            origin = repo.remote(name="origin")
+            origin.push()
+
         def get_pgn():
             board = instance.chessboard.get_latest_board()
             if board is None:
@@ -85,24 +97,13 @@ class UIBuilder:
                     with open(data_path("highlights.json"), "w", encoding="utf-8") as f:
                         json.dump(data, f, indent=4)
 
+                    git_commit(data_path("highlights.json"), f"App highlight upload {datetime.now().isoformat(timespec='seconds')}")
+
                     instance.notification_success("Highlight uploaded")
                 except Exception as ex:
                     print(ex)
                     instance.notification_error(f"Upload failed")
                     return
-
-        upload_highlight_button = ft.ElevatedButton(
-            content=ft.Icon(ft.Icons.BOOKMARKS, size=50),
-            on_click=upload_highlight,
-            top=26,
-            left=26,
-            color=ft.Colors.WHITE,
-            bgcolor="#8710cb",
-            style=ft.ButtonStyle(
-                padding=ft.padding.symmetric(36, 30),
-                shape=ft.RoundedRectangleBorder(20),
-            ),
-        )
 
         def upload_game(white_id: str, black_id: str, players: dict[str, str], result: str):
             pgn = get_pgn()
@@ -129,6 +130,8 @@ class UIBuilder:
                     })
                     with open(data_path("games.json"), "w", encoding="utf-8") as f:
                         json.dump(data, f, indent=4)
+
+                    git_commit(data_path("games.json"), f"App game upload {datetime.now().isoformat(timespec='seconds')}")
 
                     instance.notification_success("Game uploaded")
                 except Exception as ex:
@@ -184,11 +187,10 @@ class UIBuilder:
             def commit_game(e: ft.ControlEvent):
                 if select_white.value is None or select_black.value is None or select_result.value is None:
                     instance.notification_info("Please select all values")
-                    return
-                
-                upload_game(select_white.value, select_black.value, players, select_result.value)
-                dialog.open = False
-                instance.page.update()
+                else:
+                    upload_game(select_white.value, select_black.value, players, select_result.value)
+                    dialog.open = False
+                    instance.page.update()
 
             def close_dialog(e: ft.ControlEvent):
                 dialog.open = False
@@ -232,6 +234,19 @@ class UIBuilder:
             )
 
             instance.page.open(dialog)
+
+        upload_highlight_button = ft.ElevatedButton(
+            content=ft.Icon(ft.Icons.BOOKMARKS, size=50),
+            on_click=upload_highlight,
+            top=26,
+            left=26,
+            color=ft.Colors.WHITE,
+            bgcolor="#8710cb",
+            style=ft.ButtonStyle(
+                padding=ft.padding.symmetric(36, 30),
+                shape=ft.RoundedRectangleBorder(20),
+            ),
+        )
 
         upload_game_button = ft.ElevatedButton(
             content=ft.Icon(ft.Icons.SAVE, size=50),
