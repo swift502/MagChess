@@ -2,9 +2,9 @@
 
 # MagChess
 
-Magnetic chess game interpreter and PGN exporter for the Lego [Traditional Chess Set](https://www.lego.com/en-cz/product/traditional-chess-set-40719). Game PGNs can be copied to clipboard or uploaded as Gists via Github CLI. 
+Magnetic chess game interpreter and PGN exporter for the Lego [Traditional Chess Set](https://www.lego.com/en-cz/product/traditional-chess-set-40719). An Astro website serves the results and shows a leaderboard.
 
-## Software
+## App
 
 ![](images/app.png)
 
@@ -67,4 +67,12 @@ The app should be installed on a Raspberry Pi. The chessboard draws 5V and GND f
 </div>
 <br>
 
-Astro website to show results. Deployed via GitHub Pages.
+Astro website showing leaderboards and a game archive. Deployed via GitHub Pages.
+
+### Build notes
+
+```bash
+npm install
+npm run dev
+npm run build
+```
