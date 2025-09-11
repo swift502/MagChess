@@ -83,7 +83,7 @@ class UIBuilder:
 
         def upload_highlight(e: ft.ControlEvent):
             pgn = get_pgn()
-            if pgn is None:
+            if pgn is None or len(str(pgn.mainline())) == 0:
                 instance.notification_info("Game not found")
                 return
             else:
@@ -107,7 +107,7 @@ class UIBuilder:
 
         def upload_game(white_id: str, black_id: str, players: dict[str, str], result: str):
             pgn = get_pgn()
-            if pgn is None:
+            if pgn is None or len(str(pgn.mainline())) == 0:
                 instance.notification_info("Game not found")
                 return
             else:
@@ -140,6 +140,11 @@ class UIBuilder:
                     return
 
         def upload_game_dialog(e: ft.ControlEvent):
+            pgn = get_pgn()
+            if pgn is None or len(str(pgn.mainline())) == 0:
+                instance.notification_info("Game not found")
+                return
+
             with open(data_path("players.json"), "r", encoding="utf-8") as f:
                 players: dict[str, str] = json.load(f)
 
