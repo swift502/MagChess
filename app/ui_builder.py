@@ -72,7 +72,8 @@ class UIBuilder:
             repo.index.commit(commit_message)
 
             origin = repo.remote(name="origin")
-            origin.push()
+            result = origin.push()
+            result.raise_if_error()
 
         def get_pgn():
             board = instance.chessboard.get_latest_board()
