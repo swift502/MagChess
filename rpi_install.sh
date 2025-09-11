@@ -13,6 +13,7 @@ ln -s /usr/lib/$arch/libmpv.so.2 ~/.local/lib/libmpv.so.1
 
 if [ ! -d ".venv" ]; then
     python -m venv .venv
+fi
 source ".venv/bin/activate"
 pip install -r requirements.txt
 deactivate
