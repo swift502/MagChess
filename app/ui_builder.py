@@ -210,8 +210,9 @@ class UIBuilder:
                     instance.notification_error("Dialog values not found")
                 else:
                     dialog.open = False
-                    instance.page.update()
                     dialog.actions[1].disabled = True
+                    instance.page.update()
+                    
                     upload_game(select_white.value, select_black.value, players, select_result.value)
 
             def close_dialog(e: ft.ControlEvent):
