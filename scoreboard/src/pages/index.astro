@@ -24,6 +24,7 @@ const highlights: Array<{
 	timestamp: string;
 	pgn: string;
 }> = HighlightData;
+highlights.sort((a, b) => b.timestamp.localeCompare(a.timestamp));
 ---
 
 <!doctype html>
