@@ -127,6 +127,7 @@ class UIBuilder:
                         "white": white_id,
                         "black": black_id,
                         "result": result,
+                        "length": instance.chessboard.get_latest_board().ply(),
                         "pgn": str(pgn),
                     })
                     with open(data_path("games.json"), "w", encoding="utf-8") as f:

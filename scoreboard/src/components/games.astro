@@ -23,6 +23,7 @@ function getResult(white: string, black: string, pgnResult: string)
                         <th>Timestamp</th>
                         <th>Players</th>
                         <th>Winner</th>
+                        <th align="center">Moves</th>
                         <th align="center">Data</th>
                     </tr>
                 </thead>
@@ -38,6 +39,9 @@ function getResult(white: string, black: string, pgnResult: string)
                                     <div class="player"><span class={`dot black`}></span>{players[g.black]}</div>
                                 </td>
                                 <td>{getResult(players[g.white], players[g.black], g.result)}</td>
+                                <td align="center">
+                                    {g.length}
+                                </td>
                                 <td align="center">
                                     <button
                                         class="btn copy"
