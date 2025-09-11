@@ -117,7 +117,7 @@ class MagChessUI:
         self.send_notification(message, color=ft.Colors.WHITE, bgcolor="#c01010", duration=duration)
 
     def send_notification(self, message: str, color: str | None = None, bgcolor: str | None = None, duration: int | None = None):
-        text = ft.Text(message, size=24, font_family="Noto Sans Light")
+        text = ft.Text(message, size=24, font_family="Noto Sans Info")
         if color is not None:
             text.color = color
 

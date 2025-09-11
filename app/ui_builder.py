@@ -4,7 +4,7 @@ import json
 import chess
 import chess.pgn
 import flet as ft
-from typing import TYPE_CHECKING
+from typing import TYPE_CHECKING, cast
 
 from constants import RPI, THEME_WHITE, THEME_BLACK
 from git import Repo
@@ -48,7 +48,7 @@ class UIBuilder:
 
     @staticmethod
     def build_info_box(instance: MagChessUI):
-        instance.info_text = ft.Text(size=24, color=ft.Colors.WHITE, font_family="Noto Sans Light")
+        instance.info_text = ft.Text(size=24, color=ft.Colors.WHITE, font_family="Noto Sans Info")
         info_box = ft.Container(
             content=instance.info_text,
             padding=ft.padding.symmetric(14, 24),
@@ -97,7 +97,7 @@ class UIBuilder:
                     with open(data_path("highlights.json"), "w", encoding="utf-8") as f:
                         json.dump(data, f, indent=4)
 
-                    git_commit(data_path("highlights.json"), f"App highlight upload {datetime.now().isoformat(timespec='seconds')}")
+                    git_commit(data_path("highlights.json"), f"App highlight upload {datetime.now().isoformat(sep=' ', timespec='seconds')}")
 
                     instance.notification_success("Highlight uploaded")
                 except Exception as ex:
@@ -131,7 +131,7 @@ class UIBuilder:
                     with open(data_path("games.json"), "w", encoding="utf-8") as f:
                         json.dump(data, f, indent=4)
 
-                    git_commit(data_path("games.json"), f"App game upload {datetime.now().isoformat(timespec='seconds')}")
+                    git_commit(data_path("games.json"), f"App game upload {datetime.now().isoformat(sep=' ', timespec='seconds')}")
 
                     instance.notification_success("Game uploaded")
                 except Exception as ex:
@@ -143,30 +143,39 @@ class UIBuilder:
             with open(data_path("players.json"), "r", encoding="utf-8") as f:
                 players: dict[str, str] = json.load(f)
 
-            text_style = ft.TextStyle(size=32)
+            text_style = ft.TextStyle(size=40, font_family="Noto Sans Dialog")
             option_style = ft.ButtonStyle(
                 text_style=text_style,
                 shape=ft.RoundedRectangleBorder(0),
                 padding=ft.padding.symmetric(36, 30),
             )
 
+            def on_option_change(e: ft.ControlEvent):
+                button: ft.TextButton = cast(ft.TextButton, dialog.actions[1])
+                if select_white.value is None or select_black.value is None or select_result.value is None:
+                    button.style.bgcolor = None
+                    button.style.color = "#777777"
+                    button.disabled = True
+                else:
+                    button.style.bgcolor = "#1E8E02"
+                    button.style.color = ft.Colors.WHITE
+                    button.disabled = False
+
             select_white = ft.Dropdown(
                 label="White",
                 options=[ft.dropdown.Option(id, name, style=option_style) for id, name in players.items()],
-                # value="0",
-                # on_change=on_white_changed,
                 text_style=text_style,
                 label_style=text_style,
+                on_change=on_option_change,
                 expand=True,
             )
 
             select_black = ft.Dropdown(
                 label="Black",
                 options=[ft.dropdown.Option(id, name, style=option_style) for id, name in players.items()],
-                # value="0",
-                # on_change=on_black_changed,
                 text_style=text_style,
                 label_style=text_style,
+                on_change=on_option_change,
                 expand=True,
             )
 
@@ -177,16 +186,15 @@ class UIBuilder:
                     ft.dropdown.Option("0-1", "Black won", style=option_style),
                     ft.dropdown.Option("1/2-1/2", "Draw", style=option_style),
                 ],
-                # value="0",
-                # on_change=on_black_changed,
                 text_style=text_style,
                 label_style=text_style,
+                on_change=on_option_change,
                 expand=True,
             )
 
             def commit_game(e: ft.ControlEvent):
                 if select_white.value is None or select_black.value is None or select_result.value is None:
-                    instance.notification_info("Please select all values")
+                    instance.notification_error("Dialog values not found")
                 else:
                     upload_game(select_white.value, select_black.value, players, select_result.value)
                     dialog.open = False
@@ -198,8 +206,6 @@ class UIBuilder:
 
             dialog = ft.AlertDialog(
                 modal=True,
-                # title=ft.Text("Commit game"),
-                # title_text_style=text_style,
                 content=ft.Container(
                     content=ft.Column(
                         [select_white, select_black, select_result],
@@ -207,7 +213,7 @@ class UIBuilder:
                         spacing=40,
                         width=500,
                     ),
-                    margin=ft.margin.only(top=20)
+                    margin=ft.margin.only(top=20, bottom=20)
                 ),
                 actions=[
                     ft.TextButton(
@@ -225,9 +231,10 @@ class UIBuilder:
                         style=ft.ButtonStyle(
                             padding=ft.padding.symmetric(32, 36),
                             text_style=text_style,
-                            color=ft.Colors.WHITE,
-                            bgcolor="#1E8E02",
+                            color="#777777",
+                            bgcolor=None,
                         ),
+                        disabled=True
                     )
                 ],
                 actions_alignment=ft.MainAxisAlignment.SPACE_BETWEEN,

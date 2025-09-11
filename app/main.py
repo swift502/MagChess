@@ -27,7 +27,8 @@ async def main(page: ft.Page):
     page.theme_mode = ft.ThemeMode.DARK
     page.fonts = {
         "Noto Sans": asset_path("fonts/NotoSans-Bold.ttf"),
-        "Noto Sans Light": asset_path("fonts/NotoSans-SemiBold.ttf"),
+        "Noto Sans Info": asset_path("fonts/NotoSans-SemiBold.ttf"),
+        "Noto Sans Dialog": asset_path("fonts/NotoSans-Regular.ttf"),
     }
 
     # App
