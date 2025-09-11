@@ -60,4 +60,11 @@ The app should be installed on a Raspberry Pi. The chessboard draws 5V and GND f
 
 ## Scoreboard
 
-Astro website to show results. Deployed via GitHub Pages here https://swift502.github.io/MagChess.
+![](images/scoreboard.png)
+
+<div align="center">
+    <a href="https://swift502.github.io/MagChess">https://swift502.github.io/MagChess</a>
+</div>
+<br>
+
+Astro website to show results. Deployed via GitHub Pages.
