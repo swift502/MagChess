@@ -67,7 +67,7 @@ The app should be installed on a Raspberry Pi. The chessboard draws 5V and GND f
 </div>
 <br>
 
-Astro website showing leaderboards and games history### archive. Deployed via GitHub Pages.
+Astro website showing leaderboards and games history archive. Deployed via GitHub Pages.
 
 ### Build notes
 
