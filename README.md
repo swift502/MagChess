@@ -8,14 +8,14 @@ Magnetic chess game interpreter and PGN exporter for the Lego [Traditional Chess
 
 ![](images/app.png)
 
-Setup:
+#### Setup
 
 ```bash
 pip install -r requirements.txt
 rpi_install.sh
 ```
 
-Run:
+#### Run
 
 ```bash
 rpi_run.sh
@@ -67,7 +67,7 @@ The app should be installed on a Raspberry Pi. The chessboard draws 5V and GND f
 </div>
 <br>
 
-Astro website showing leaderboards and games history archive. Deployed via GitHub Pages.
+Astro website showing leaderboards and games history### archive. Deployed via GitHub Pages.
 
 ### Build notes
 
