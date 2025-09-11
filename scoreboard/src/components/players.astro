@@ -41,7 +41,7 @@ let lastPoints = Infinity;
 let rankIndex = -1;
 for (const e of playerEntries)
 {
-    if (e.points !== lastPoints)
+    if (Math.abs(e.points - lastPoints) > 1e-6)
     {
         rankIndex += 1;
         lastPoints = e.points;
