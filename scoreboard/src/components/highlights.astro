@@ -22,12 +22,8 @@ const { highlights } = Astro.props;
                                     {formatTimestamp(g.timestamp)}
                                 </td>
                                 <td align="center">
-                                    <button
-                                        class="btn copy"
-                                        data-pgn={g.pgn}
-                                        onclick="copyPGN(this)"
-                                    >
-                                        PGN
+                                    <button class="btn copy" data-pgn={g.pgn} onclick="copyPGN(this)">
+                                        <img src="/icons/copy.png" alt="Icon"/>PGN
                                     </button>
                                 </td>
                             </tr>

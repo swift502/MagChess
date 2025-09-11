@@ -1,17 +1,21 @@
 :root {
-    --bg: #212121;
-    --panel: #181818;
+    --bg: #161616;
+    --panel:  #282828;
     --text: #ffffff;
     --muted: #a8a8a8;
-    --border: #4a4a4a;
-    --accent: #ffffff;
-    --danger: #ef4444;
-    --radius: 16px;
-    --shadow: 0 10px 25px rgba(0, 0, 0, 0.25);
+    --border: #444444;
+    --accent: #ffc16b;
+    --radius: 12px;
+    --shadow: 0 10px 25px rgba(0, 0, 0, 0.25), 0 2px 6px rgba(0, 0, 0, 0.25);
 }
 
 * {
     box-sizing: border-box;
+    color: var(--text);
+    font: 16px Geologica, sans-serif;
+    font-weight: 300;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
 }
 
 html,
@@ -22,18 +26,6 @@ body {
 body {
     margin: 0;
     background: var(--bg);
-    color: var(--text);
-    font:
-        16px/1.5 system-ui,
-        -apple-system,
-        Segoe UI,
-        Roboto,
-        Ubuntu,
-        Cantarell,
-        Noto Sans,
-        sans-serif;
-    -webkit-font-smoothing: antialiased;
-    -moz-osx-font-smoothing: grayscale;
 }
 
 a {
@@ -51,23 +43,17 @@ header {
     flex-direction: column;
     align-items: center;
     gap: 24px;
-    margin-bottom: 20px;
+    margin-bottom: 28px;
 }
 
 .title {
-    font-weight: 700;
+    font-weight: 600;
     font-size: 30px;
     letter-spacing: 0.2px;
 }
 
-.sub {
-    color: var(--muted);
-    font-size: 14px;
-}
-
 .card {
     background: var(--panel);
-    border: 1px solid var(--border);
     border-radius: var(--radius);
     box-shadow: var(--shadow);
     padding: 10px 10px 0px 20px;
@@ -87,13 +73,13 @@ header {
 .stack {
     display: grid;
     grid-template-columns: 1.6fr 3.0fr 1.4fr;
-    gap: 16px;
+    gap: 18px;
 }
 
 h2 {
     padding-left: 16px;
-    font-size: 16px;
-    font-weight: 600;
+    font-size: 17px;
+    font-weight: 500;
     margin: 0 0 10px;
 }
 
@@ -134,43 +120,58 @@ tbody tr:last-child td {
     padding-bottom: 10px;
 }
 
-tbody tr:hover {
-    background: rgba(255, 255, 255, 0.03);
+tbody td .player {
+    font-size: 14px;
+    display: flex;
+    align-items: center;
 }
 
-tbody td .player {
-    line-height: normal;
+strong {
+    font-weight: 500;
 }
 
 .btn {
-    border: 1px solid #303030;
-    /* border: none; */
+    border: none;
     color: var(--text);
     border-radius: 10px;
     cursor: pointer;
-    display: inline-flex;
+    display: flex;
     align-items: center;
-    background: #0f0f0f;
-    gap: 8px;
     transition: all 0.1s ease;
+    justify-content: center;
 }
 
-.btn:hover {
-    background: #1a1a1a;
-    border-color: #6b6b6b;
+.btn img {
+    width: 14px;
+    height: 14px;
 }
 
 .btn.link {
+    background: #3f3f3f;
     padding: 10px 16px;
     font-size: 16px;
+    gap: 8px;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.25);
+}
+
+.btn.link:hover {
+    background: #515151;
 }
 
 .btn.copy {
-    padding: 8px 12px;
+    border: 1px solid #606060;
+    background: transparent;
+    padding: 8px 10px;
     font-size: 14px;
+    gap: 6px;
 }
 
-.btn.success {
+.btn.copy:hover {
+    background: #333333;
+    border-color: #6a6a6a;
+}
+
+.btn.copy.success {
     border-color: var(--accent);
 }
 
@@ -183,12 +184,12 @@ tbody td .player {
 }
 
 .dot.black {
-    background: #000000;
-    border: 1px solid #aaa;
+    background: #080808;
+    outline: 1px solid var(--border);
 }
 
 .dot.white {
-    background: #eee;
+    background: #e0e0e0;
 }
 
 .toolbar {
@@ -198,10 +199,12 @@ tbody td .player {
 }
 
 .toolbar .spacer {
-    flex: 1;
+    width: 1px;
+    height: 24px;
+    background: var(--border);
+    margin: 0 6px;
 }
 
-/* Toast */
 .toast {
     position: fixed;
     bottom: 16px;
@@ -209,9 +212,8 @@ tbody td .player {
     transform: translateX(-50%);
     background: var(--panel);
     color: var(--text);
-    border: 1px solid var(--border);
     border-radius: 12px;
-    padding: 10px 14px;
+    padding: 14px 20px;
     box-shadow: var(--shadow);
     opacity: 0;
     pointer-events: none;
@@ -222,20 +224,15 @@ tbody td .player {
     opacity: 1;
 }
 
-.vert-separator {
-    width: 1px;
-    height: 24px;
-    background: var(--border);
-    margin: 0 6px;
-}
-
-@media (max-width: 900px) {
+@media (max-width: 768px) {
     .stack {
         grid-template-columns: 1fr;
     }
 
-    table.games tbody td:nth-child(1),
-    table.games thead th:nth-child(1) {
+    table.games tbody td:nth-child(3),
+    table.games thead th:nth-child(3),
+    table.games tbody td:nth-child(4),
+    table.games thead th:nth-child(4) {
         display: none;
     }
 
@@ -245,12 +242,11 @@ tbody td .player {
         width: 100%;
     }
 
-    .toolbar .vert-separator {
+    .toolbar .spacer {
         display: none;
     }
 
     .toolbar .btn {
-        display: block;
         width: 100%;
     }
 }
