@@ -166,6 +166,12 @@ class UIBuilder:
                     button.style.color = ft.Colors.WHITE
                     button.disabled = False
 
+                if select_white.value is not None and select_result.options:
+                    select_result.options[0].text = f"{players[select_white.value]} won"
+                
+                if select_black.value is not None and select_result.options:
+                    select_result.options[1].text = f"{players[select_black.value]} won"
+                
             select_white = ft.Dropdown(
                 label="White",
                 options=[ft.dropdown.Option(id, name, style=option_style) for id, name in players.items()],
