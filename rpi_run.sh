@@ -9,4 +9,4 @@ source ".venv/bin/activate"
 ARCH=$(dpkg-architecture -qDEB_HOST_MULTIARCH)
 export LD_LIBRARY_PATH="$HOME/.local/lib:/usr/lib/$ARCH:$LD_LIBRARY_PATH"
 
-python "app/src/main.py"
+python "app/main.py"
