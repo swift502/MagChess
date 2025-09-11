@@ -23,24 +23,35 @@ for (const p of Object.keys(players))
     if (!statsMap.has(p)) statsMap.set(p, { wins: 0, draws: 0, losses: 0 });
 }
 
-// Sort by wins, losses, name
-const leaderboard = Array.from(statsMap.entries())
-	.map(([name, { wins, draws, losses }]) => ({ name: players[name], wins, draws, losses }))
-	.sort(
-		(a, b) =>
-			b.wins - a.wins ||
-			a.losses - b.losses ||
-			a.name.localeCompare(b.name),
-	);
+// Create a rank dict by points (win=1, draw=0.5, loss=0)
+const rankMap = new Map<number, Array<{ name: string; wins: number; draws: number; losses: number }>>();
+for (const [id, stats] of statsMap.entries()) {
+    const points = stats.wins + stats.draws * 0.5;
+    if (!rankMap.has(points)) rankMap.set(points, []);
+    rankMap.get(points)!.push({ name: players[id], wins: stats.wins, draws: stats.draws, losses: stats.losses });
+}
 
-function getRankSymbol(rank)
-{
+function getRankSymbol(rank) {
     if (rank == 0) return '🥇';
     if (rank == 1) return '🥈';
     if (rank == 2) return '🥉';
-    if (rank == leaderboard.length - 1) return '💩';
-
+    if (rank == sortedRanks.length - 1) return '💩';
     return `${rank + 1}.`;
+}
+
+// Prepare leaderboard rows in frontmatter
+const leaderboard = [];
+const sortedRanks = Array.from(rankMap.entries()).sort((a, b) => b[0] - a[0]);
+let rank = 0;
+for (const [points, group] of sortedRanks) {
+    const sortedGroup = group.slice().sort((a, b) => a.name.localeCompare(b.name));
+    for (const player of sortedGroup) {
+        leaderboard.push({
+            rankSymbol: getRankSymbol(rank),
+            ...player
+        });
+    }
+    rank++;
 }
 ---
 
@@ -59,19 +70,17 @@ function getRankSymbol(rank)
             </thead>
             <tbody>
                 {
-                    leaderboard.map((p, i) => (
+                    leaderboard.map(row => (
                         <tr>
                             <td align="center">
-                                <strong>
-                                    {getRankSymbol(i)}
-                                </strong>
+                                <strong>{row.rankSymbol}</strong>
                             </td>
                             <td>
-                                <strong>{p.name}</strong>
+                                <strong>{row.name}</strong>
                             </td>
-                            <td align="center">{p.wins}</td>
-                            <td align="center">{p.draws}</td>
-                            <td align="center">{p.losses}</td>
+                            <td align="center">{row.wins}</td>
+                            <td align="center">{row.draws}</td>
+                            <td align="center">{row.losses}</td>
                         </tr>
                     ))
                 }
