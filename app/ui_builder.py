@@ -208,9 +208,9 @@ class UIBuilder:
                 if select_white.value is None or select_black.value is None or select_result.value is None:
                     instance.notification_error("Dialog values not found")
                 else:
-                    upload_game(select_white.value, select_black.value, players, select_result.value)
                     dialog.open = False
                     instance.page.update()
+                    upload_game(select_white.value, select_black.value, players, select_result.value)
 
             def close_dialog(e: ft.ControlEvent):
                 dialog.open = False
