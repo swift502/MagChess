@@ -248,7 +248,7 @@ class UIBuilder:
             instance.page.open(dialog)
 
         upload_highlight_button = ft.ElevatedButton(
-            content=ft.Icon(ft.Icons.BOOKMARKS, size=50),
+            content=ft.Icon(ft.Icons.STAR, size=50),
             on_click=upload_highlight,
             top=26,
             left=26,
