@@ -73,33 +73,35 @@ const leaderboard = playerEntries.map((e) =>
 <section>
     <h2>Leaderboard</h2>
     <div class="card">
-        <table>
-            <thead>
-                <tr>
-                    <th align="center">Rank</th>
-                    <th>Player</th>
-                    <th align="center" style="width: 50px;">Win</th>
-                    <th align="center" style="width: 50px;">Draw</th>
-                    <th align="center" style="width: 50px;">Loss</th>
-                </tr>
-            </thead>
-            <tbody>
-                {
-                    leaderboard.map((row) => (
-                        <tr>
-                            <td align="center">
-                                <strong>{row.rankSymbol}</strong>
-                            </td>
-                            <td>
-                                <strong>{row.name}</strong>
-                            </td>
-                            <td align="center">{row.wins}</td>
-                            <td align="center">{row.draws}</td>
-                            <td align="center">{row.losses}</td>
-                        </tr>
-                    ))
-                }
-            </tbody>
-        </table>
+        <div class="scroll-view">
+            <table>
+                <thead>
+                    <tr>
+                        <th align="center">Rank</th>
+                        <th>Player</th>
+                        <th align="center" style="width: 50px;">Win</th>
+                        <th align="center" style="width: 50px;">Draw</th>
+                        <th align="center" style="width: 50px;">Loss</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {
+                        leaderboard.map((row) => (
+                            <tr>
+                                <td align="center">
+                                    <strong>{row.rankSymbol}</strong>
+                                </td>
+                                <td>
+                                    <strong>{row.name}</strong>
+                                </td>
+                                <td align="center">{row.wins}</td>
+                                <td align="center">{row.draws}</td>
+                                <td align="center">{row.losses}</td>
+                            </tr>
+                        ))
+                    }
+                </tbody>
+            </table>
+        </div>
     </div>
 </section>

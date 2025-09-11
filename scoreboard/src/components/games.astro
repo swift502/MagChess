@@ -16,40 +16,42 @@ function getResult(white: string, black: string, pgnResult: string)
 <section>
     <h2>Games</h2>
     <div class="card">
-        <table class="games">
-            <thead>
-                <tr>
-                    <th>Timestamp</th>
-                    <th>Players</th>
-                    <th>Winner</th>
-                    <th align="center">Data</th>
-                </tr>
-            </thead>
-            <tbody>
-                {
-                    games.map((g, i) => (
-                        <tr>
-                            <td>
-                                {formatTimestamp(g.timestamp)}
-                            </td>
-                            <td>
-                                <div class="player"><span class={`dot white`}></span>{players[g.white]}</div>
-                                <div class="player"><span class={`dot black`}></span>{players[g.black]}</div>
-                            </td>
-                            <td>{getResult(players[g.white], players[g.black], g.result)}</td>
-                            <td align="center">
-                                <button
-                                    class="btn copy"
-                                    data-pgn={g.pgn}
-                                    onclick="copyPGN(this)"
-                                >
-                                    PGN
-                                </button>
-                            </td>
-                        </tr>
-                    ))
-                }
-            </tbody>
-        </table>
+        <div class="scroll-view">
+            <table class="games">
+                <thead>
+                    <tr>
+                        <th>Timestamp</th>
+                        <th>Players</th>
+                        <th>Winner</th>
+                        <th align="center">Data</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {
+                        games.map((g, i) => (
+                            <tr>
+                                <td>
+                                    {formatTimestamp(g.timestamp)}
+                                </td>
+                                <td>
+                                    <div class="player"><span class={`dot white`}></span>{players[g.white]}</div>
+                                    <div class="player"><span class={`dot black`}></span>{players[g.black]}</div>
+                                </td>
+                                <td>{getResult(players[g.white], players[g.black], g.result)}</td>
+                                <td align="center">
+                                    <button
+                                        class="btn copy"
+                                        data-pgn={g.pgn}
+                                        onclick="copyPGN(this)"
+                                    >
+                                        PGN
+                                    </button>
+                                </td>
+                            </tr>
+                        ))
+                    }
+                </tbody>
+            </table>
+        </div>
     </div>
 </section>

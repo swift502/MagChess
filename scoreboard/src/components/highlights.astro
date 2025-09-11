@@ -6,33 +6,35 @@ const { highlights } = Astro.props;
 <section>
     <h2>Highlights</h2>
     <div class="card">
-        <table>
-            <thead>
-                <tr>
-                    <th>Timestamp</th>
-                    <th align="center">Data</th>
-                </tr>
-            </thead>
-            <tbody>
-                {
-                    highlights.map((g, i) => (
-                        <tr>
-                            <td>
-                                {formatTimestamp(g.timestamp)}
-                            </td>
-                            <td align="center">
-                                <button
-                                    class="btn copy"
-                                    data-pgn={g.pgn}
-                                    onclick="copyPGN(this)"
-                                >
-                                    PGN
-                                </button>
-                            </td>
-                        </tr>
-                    ))
-                }
-            </tbody>
-        </table>
+        <div class="scroll-view">
+            <table>
+                <thead>
+                    <tr>
+                        <th>Timestamp</th>
+                        <th align="center">Data</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {
+                        highlights.map((g, i) => (
+                            <tr>
+                                <td>
+                                    {formatTimestamp(g.timestamp)}
+                                </td>
+                                <td align="center">
+                                    <button
+                                        class="btn copy"
+                                        data-pgn={g.pgn}
+                                        onclick="copyPGN(this)"
+                                    >
+                                        PGN
+                                    </button>
+                                </td>
+                            </tr>
+                        ))
+                    }
+                </tbody>
+            </table>
+        </div>
     </div>
 </section>
