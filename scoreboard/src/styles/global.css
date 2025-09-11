@@ -206,6 +206,13 @@ tbody td .player {
     opacity: 1;
 }
 
+.vert-separator {
+    width: 1px;
+    height: 24px;
+    background: var(--border);
+    margin: 0 8px;
+}
+
 @media (max-width: 900px) {
     .stack {
         grid-template-columns: 1fr;
@@ -215,5 +222,20 @@ tbody td .player {
     table.games tbody td:nth-child(1),
     table.games thead th:nth-child(1) {
         display: none;
+    }
+
+    .toolbar {
+        flex-direction: column;
+        align-items: stretch;
+        width: 100%;
+    }
+
+    .toolbar .vert-separator {
+        display: none;
+    }
+
+    .toolbar .btn {
+        display: block;
+        width: 100%;
     }
 }
