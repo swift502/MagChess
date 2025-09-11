@@ -3,6 +3,8 @@
 sudo apt update
 sudo apt install mpv libmpv2 libmpv-dev
 
+pip install -r requirements.txt
+
 sudo grep -q '^dtoverlay=i2c1,pins_2_3,baudrate=' /boot/firmware/config.txt \
   && sudo sed -i 's/^dtoverlay=i2c1,pins_2_3,baudrate=.*/dtoverlay=i2c1,pins_2_3,baudrate=400000/' /boot/firmware/config.txt \
   || echo 'dtoverlay=i2c1,pins_2_3,baudrate=400000' | sudo tee -a /boot/firmware/config.txt
