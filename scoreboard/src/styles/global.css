@@ -144,20 +144,24 @@ tbody td .player {
 
 .btn {
     border: 1px solid var(--border);
-    background: #141414;
     color: var(--text);
     border-radius: 10px;
-    padding: 10px 16px;
     cursor: pointer;
     display: inline-flex;
     align-items: center;
+    background: #141414;
     gap: 8px;
+    transition: all 0.1s ease;
+}
+
+.btn.link {
+    padding: 10px 16px;
     font-size: 16px;
-    font-weight: 600;
-    transition:
-        transform 0.02s ease,
-        background 0.12s ease,
-        border-color 0.12s ease;
+}
+
+.btn.copy {
+    padding: 8px 12px;
+    font-size: 14px;
 }
 
 .btn:hover {
@@ -165,8 +169,9 @@ tbody td .player {
     border-color: #4b4d57;
 }
 
-.btn:active {
-    transform: translateY(1px);
+.btn.success {
+    border-color: var(--accent);
+    color: var(--accent);
 }
 
 .dot {
@@ -184,16 +189,6 @@ tbody td .player {
 
 .dot.white {
     background: #eee;
-}
-
-.btn.copy {
-    padding: 8px 12px;
-    font-size: 14px;
-    --btn-bg: #1e1f24;
-}
-
-.btn.copy.success {
-    border: 1px solid var(--accent);
 }
 
 .toolbar {
@@ -239,7 +234,6 @@ tbody td .player {
         grid-template-columns: 1fr;
     }
 
-    /* Hide the first column of the games table on small screens */
     table.games tbody td:nth-child(1),
     table.games thead th:nth-child(1) {
         display: none;
