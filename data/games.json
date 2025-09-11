@@ -46,5 +46,13 @@
         "result": "1/2-1/2",
         "length": 1,
         "pgn": "[Date \"2025.09.11\"]\n[White \"Hans\"]\n[Black \"Hans\"]\n[Result \"1/2-1/2\"]\n\n1. b3 1/2-1/2"
+    },
+    {
+        "timestamp": "2025-09-11T16:37:34",
+        "white": "1",
+        "black": "1",
+        "result": "1-0",
+        "length": 3,
+        "pgn": "[Date \"2025.09.11\"]\n[White \"Hans\"]\n[Black \"Hans\"]\n[Result \"1-0\"]\n\n1. b3 b5 2. b4 1-0"
     }
 ]
