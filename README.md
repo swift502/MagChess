@@ -11,9 +11,10 @@ Magnetic chess game interpreter and PGN exporter for the Lego [Traditional Chess
 #### Setup
 
 ```bash
-pip install -r requirements.txt
 rpi_install.sh
 ```
+
+Reboot after first installation.
 
 #### Run
 
