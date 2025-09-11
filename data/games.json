@@ -33,12 +33,5 @@
         "black": "4",
         "result": "0-1",
         "pgn": "[Date \"2025.09.11\"]\n[White \"Hans\"]\n[Black \"Lopata\"]\n[Result \"0-1\"]\n\n1. e4 Nf6 2. Nc3 e5 3. d4 Bb4 4. Bg5 O-O 5. dxe5 Qe8 6. exf6 Bxc3+ 7. bxc3 Qxe4+ 8. Qe2 Re8 9. fxg7 d5 10. Rd1 Bg4 11. f3 Qxe2+ 12. Bxe2 Bf5 13. Rxd5 Bxc2 14. Rd8 Ba4 15. Rxe8+ Bxe8 16. Be7 Kxg7 17. Nh3 Nc6 18. Bc5 b6 19. Bd4+ Nxd4 20. cxd4 Rd8 21. O-O Rxd4 22. Rd1 Rb4 23. g3 Ba4 24. Re1 c5 25. Nf4 Rb2 26. Nh5+ Kf8 27. Nf6 b5 28. Nxh7+ Kg8 29. Bd3 c4 30. Re8+ Kg7 31. Re4 cxd3 32. Rh4 d2 33. Kg2 d1=Q+ 34. Kh3 Qd7+ 35. g4 Bd1 36. Ng5 Qd6 37. Rh7+ Kg8 38. Nxf7 Qxh2# 0-1"
-    },
-    {
-        "timestamp": "2025-09-11T16:17:19",
-        "white": "1",
-        "black": "1",
-        "result": "1-0",
-        "pgn": "[Date \"2025.09.11\"]\n[White \"Hans\"]\n[Black \"Hans\"]\n[Result \"1-0\"]\n\n1. a3 1-0"
     }
 ]
