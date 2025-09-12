@@ -1,73 +1,64 @@
 ---
 const { games, players } = Astro.props;
 
-// Initialize stats map
-const statsMap = new Map();
-for (const id of Object.keys(players))
-{
-    statsMap.set(id, { wins: 0, draws: 0, losses: 0 });
+function getRank(score) {
+    const rank = rankTable.indexOf(score);
+    switch (rank) {
+        case 0: return "🥇";
+        case 1: return "🥈";
+        case 2: return "🥉";
+        case rankTable.length - 1: return "💩";
+        default: return `${rank + 1}.`;
+    }
 }
 
-// Compute stats
+function ensureStat(key) {
+    if (!stats[key]) {
+        stats[key] = { wins: 0, draws: 0, losses: 0 };
+    }
+}
+
+// Build stats
+const stats = {};
 for (const g of games)
 {
-    if (!statsMap.has(g.white))
-        statsMap.set(g.white, { wins: 0, draws: 0, losses: 0 });
-    if (!statsMap.has(g.black))
-        statsMap.set(g.black, { wins: 0, draws: 0, losses: 0 });
+    ensureStat(g.white);
+    ensureStat(g.black);
 
-    const w = statsMap.get(g.white);
-    const b = statsMap.get(g.black);
+    const w = stats[g.white];
+    const b = stats[g.black];
 
     if (g.result === "1-0") { w.wins += 1; b.losses += 1; }
     else if (g.result === "0-1") { b.wins += 1; w.losses += 1; }
     else if (g.result === "1/2-1/2") { w.draws += 1; b.draws += 1; }
 }
 
-// Get raw player entries
-const playerEntries = Array.from(statsMap.entries()).map(([id, s]) => (
-{
-    name: players[id],
-    wins: s.wins,
-    draws: s.draws,
-    losses: s.losses,
-    points: s.wins + s.draws * 0.5,
-    rank: 0,
-}));
-playerEntries.sort((a, b) => b.points - a.points || a.name.localeCompare(b.name));
+// Add players with no games
+Object.keys(players).forEach(ensureStat);
 
-// Assign ranks
-let lastPoints = Infinity;
-let rankIndex = -1;
-for (const e of playerEntries)
+// Build leaderboard
+const leaderboard = [];
+const scores = new Set<number>();
+for (const [playerId, stat] of Object.entries<any>(stats))
 {
-    if (Math.abs(e.points - lastPoints) > 1e-6)
-    {
-        rankIndex += 1;
-        lastPoints = e.points;
-    }
-    e.rank = rankIndex;
+    const score = 2 * stat.wins + stat.draws;
+    scores.add(score);
+    
+    leaderboard.push({
+        name: players[playerId],
+        wins: stat.wins,
+        draws: stat.draws,
+        losses: stat.losses,
+        score: score,
+    });
 }
-const totalRanks = rankIndex + 1;
 
-// Leaderboard
-const leaderboard = playerEntries.map((e) =>
-{
-    let symbol;
-    if (e.rank === 0) symbol = "🥇";
-    else if (e.rank === 1) symbol = "🥈";
-    else if (e.rank === 2) symbol = "🥉";
-    else if (e.rank === totalRanks - 1) symbol = "💩";
-    else symbol = `${e.rank + 1}.`;
-
-    return {
-        rankSymbol: symbol,
-        name: e.name,
-        wins: e.wins,
-        draws: e.draws,
-        losses: e.losses,
-    };
-});
+// Sort data
+const rankTable = Array.from(scores).sort((a, b) => b - a);
+leaderboard.sort((a, b) =>
+    b.score - a.score ||
+    a.name.localeCompare(b.name)
+);
 ---
 
 <section>
@@ -89,7 +80,7 @@ const leaderboard = playerEntries.map((e) =>
                         leaderboard.map((row) => (
                             <tr>
                                 <td align="center">
-                                    <strong>{row.rankSymbol}</strong>
+                                    <strong>{getRank(row.score)}</strong>
                                 </td>
                                 <td>
                                     <strong>{row.name}</strong>
