@@ -2,7 +2,7 @@
 
 # MagChess
 
-Magnetic chess game interpreter and PGN exporter for the Lego [Traditional Chess Set](https://www.lego.com/en-cz/product/traditional-chess-set-40719). An Astro website serves the results and shows a leaderboard.
+Magnetic chess game interpreter and PGN exporter for the Lego [Traditional Chess Set](https://www.lego.com/en-cz/product/traditional-chess-set-40719). Python app for the Raspberry Pi, and an Astro website to serve the results and show a leaderboard.
 
 ## App
 
