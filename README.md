@@ -8,15 +8,15 @@ Magnetic chess game interpreter and PGN exporter for the Lego [Traditional Chess
 
 ![](images/app.png)
 
-#### Setup
+Setup:
 
 ```bash
 rpi_install.sh
 ```
 
-Reboot after first installation.
+After installation, a reboot is required for the I2C data rate change to take effect.
 
-#### Run
+Run:
 
 ```bash
 rpi_run.sh
