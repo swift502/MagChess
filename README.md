@@ -2,21 +2,21 @@
 
 # MagChess
 
-Magnetic chess game interpreter and PGN exporter for the Lego [Traditional Chess Set](https://www.lego.com/en-cz/product/traditional-chess-set-40719). An Astro website serves the results and shows a leaderboard.
+Magnetic chess game interpreter and PGN exporter for the Lego [Traditional Chess Set](https://www.lego.com/en-cz/product/traditional-chess-set-40719). Python app for the Raspberry Pi, and an Astro website to serve the results and show a leaderboard.
 
 ## App
 
 ![](images/app.png)
 
-#### Setup
+Setup:
 
 ```bash
 rpi_install.sh
 ```
 
-Reboot after first installation.
+After installation, a reboot is required for the I2C data rate change to take effect.
 
-#### Run
+Run:
 
 ```bash
 rpi_run.sh
@@ -68,7 +68,7 @@ The app should be installed on a Raspberry Pi. The chessboard draws 5V and GND f
 </div>
 <br>
 
-Astro website showing leaderboards and games history archive. Deployed via GitHub Pages.
+Astro website showing a leaderboard and a PGN archive. Deployed via GitHub Pages.
 
 ### Build notes
 

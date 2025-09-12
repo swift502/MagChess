@@ -1,5 +1,5 @@
 ---
-import { formatTimestamp } from '../scripts/utilities.ts';
+import { formatTimestamp, formatTimestampTooltip } from '../scripts/utilities.ts';
 
 const { games, players } = Astro.props;
 
@@ -31,24 +31,20 @@ function getResult(white: string, black: string, pgnResult: string)
                     {
                         games.map((g, i) => (
                             <tr>
-                                <td>
+                                <td title={formatTimestampTooltip(g.timestamp)}>
                                     {formatTimestamp(g.timestamp)}
                                 </td>
                                 <td>
                                     <div class="player"><span class={`dot white`}></span>{players[g.white]}</div>
                                     <div class="player"><span class={`dot black`}></span>{players[g.black]}</div>
                                 </td>
-                                <td>{getResult(players[g.white], players[g.black], g.result)}</td>
+                                <td><strong>{getResult(players[g.white], players[g.black], g.result)}</strong></td>
                                 <td align="center">
                                     {g.length}
                                 </td>
                                 <td align="center">
-                                    <button
-                                        class="btn copy"
-                                        data-pgn={g.pgn}
-                                        onclick="copyPGN(this)"
-                                    >
-                                        PGN
+                                    <button class="btn copy" data-pgn={g.pgn} onclick="copyPGN(this)">
+                                        <img src="/MagChess/icons/copy.png" alt="Icon"/>PGN
                                     </button>
                                 </td>
                             </tr>
