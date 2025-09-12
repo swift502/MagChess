@@ -1,5 +1,5 @@
 ---
-import { formatTimestamp } from '../scripts/utilities.ts';
+import { formatTimestamp, formatTimestampTooltip } from '../scripts/utilities.ts';
 const { highlights } = Astro.props;
 ---
 
@@ -10,7 +10,7 @@ const { highlights } = Astro.props;
             <table>
                 <thead>
                     <tr>
-                        <th>Timestamp</th>
+                        <th align="center">Timestamp</th>
                         <th align="center">Data</th>
                     </tr>
                 </thead>
@@ -18,7 +18,7 @@ const { highlights } = Astro.props;
                     {
                         highlights.map((g, i) => (
                             <tr>
-                                <td>
+                                <td align="center" title={formatTimestampTooltip(g.timestamp)}>
                                     {formatTimestamp(g.timestamp)}
                                 </td>
                                 <td align="center">

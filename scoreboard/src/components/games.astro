@@ -1,5 +1,5 @@
 ---
-import { formatTimestamp } from '../scripts/utilities.ts';
+import { formatTimestamp, formatTimestampTooltip } from '../scripts/utilities.ts';
 
 const { games, players } = Astro.props;
 
@@ -31,7 +31,7 @@ function getResult(white: string, black: string, pgnResult: string)
                     {
                         games.map((g, i) => (
                             <tr>
-                                <td>
+                                <td title={formatTimestampTooltip(g.timestamp)}>
                                     {formatTimestamp(g.timestamp)}
                                 </td>
                                 <td>
