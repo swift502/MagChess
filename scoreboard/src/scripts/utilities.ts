@@ -27,5 +27,5 @@ export function formatTimestampTooltip(ts: string)
     });
 
     const parts = Object.fromEntries(dateFormat.formatToParts(date).map(p => [p.type, p.value]));
-    return `${parts.day}.${parts.month}.${parts.year}. ${parts.hour}:${parts.minute}:${parts.second}`;
+    return `${parts.day}.${parts.month}.${parts.year} ${parts.hour}:${parts.minute}:${parts.second}`;
 }
