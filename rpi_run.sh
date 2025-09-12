@@ -2,7 +2,7 @@
 
 cd "$(dirname "${BASH_SOURCE[0]}")" || exit 1
 
-git pull
+git pull --ff-only
 
 source ".venv/bin/activate"
 
